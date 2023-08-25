@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Lab 1: Getting started with R"
+subtitle: "Labs are not graded, just for practice"
 date:   2023-08-29 17:37:08 -0400
 author: Katie Schuler
-categories: "Practice problems"
 ---
 
 To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.

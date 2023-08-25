@@ -1,8 +1,10 @@
 ---
 title: "Syllabus"
+subtitle: "Data Science for Studying Language and the Mind"
+website: 'test.com'
 ---
 
-Welcome to Data Science for Studying Language & the Mind! The Fall 2023 course information and syllabus are below. Course materials for previous semesters are archived [here](../archive).
+Welcome to Data Science for Studying Language & the Mind! The Fall 2023 course information and syllabus are below. Course materials for previous semesters are archived [here](https://childlanglab.gitbook.io/ling0700/).
 
 ## Course description
 Data Sci for Lang & Mind is an entry-level course designed to teach basic principles of statistics and data science to students with little or no background in statistics or computer science. Students will learn to identify patterns in data using visualizations and descriptive statistics; make predictions from data using machine learning and optimization; and quantify the certainty of their predictions using statistical models. This course aims to help students build a foundation of critical thinking and computational skills that will allow them to work with data in all fields related to the study of the mind (e.g. linguistics, psychology, philosophy, cognitive science, neuroscience).
@@ -14,7 +16,7 @@ There are **no prerequisites beyond high school algebra**. No prior programming 
 - **TAs**: [June Choe](https://yjunechoe.github.io/), [Avinash Goss](mailto:amgoss@sas.upenn.edu), [Ravi Arya](mailto:raviarya@sas.upenn.edu)
 
 ## Lectures
-Tuesday and Thursday at 10:15am in COHN 402. 
+Tuesdays and Thursdays at 10:15am in COHN 402. 
 
 ## Labs
 Hands-on practice, quiz prep, and problem set work guided by TAs.
@@ -27,24 +29,24 @@ Hands-on practice, quiz prep, and problem set work guided by TAs.
 ## Office hours
 The linguistics department is on the 3rd floor of the C-wing at [3401 Walnut street](https://facilities.upenn.edu/sites/default/files/pennaccess/PA0416-Walnut3401.pdf), between Franklin's Table and Modern Eye. 
 
-* Katie: Tue 12-1p in 314 ling dept
+* Katie: Tue 12:30-1:30p in 314 ling dept
 * June: TBD in ling dept
 * Avinash: TBD
 * Ravi: TBD
 
 ## Quizzes
-There are 4 quizzes, taken in class on the following Tuesdays.  Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and a [Course Action Notice](https://srfs.upenn.edu/student-records/course-action-notices) are required). Instead, you will be invited to submit a missed quiz for half credit (50%).
+There are 4 quizzes, taken in class on Tuesdays.  Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and a [Course Action Notice](https://srfs.upenn.edu/student-records/course-action-notices) are required). Instead, you will be invited to submit a missed quiz for half credit (50%).
 
 
 ## Problem sets
-There are 6 problem sets, due the following Sundays to [Gradescope](https://www.gradescope.com/) by 11:59pm.  Students may request an extension of up to 3 days. Extensions beyond this are not permitted, because delaying the release of solutions would negatively impact other students. After solutions are posted, late problem sets can be submitted for half credit (50%). 
+There are 6 problem sets, due on Sundays to [Gradescope](https://www.gradescope.com/) by 11:59pm.  Students may request an extension of up to 3 days. Extensions beyond this are not permitted, because delaying the release of solutions would negatively impact other students. After solutions are posted, late problem sets can be submitted for half credit (50%). 
 
 ## Grading
 
 - 60% problem sets (equally weighted, lowest dropped)
 - 40% quizzes (equally weighted)
 - Letter grade minimums: 97% A+, 93% A, 90% A-, 87% B+, 84% B, 80% B-, 77% C+, 74% C, 70% C-, 67% D+, 64% D, 61% D-, else F
-- All problems will be graded according to this [rubric](../rubric/). 
+- All problems will be graded according to this [rubric](/rubric.qmd). 
 
 ## Collaborations
 Collaboration on problem sets is highly encouraged! If you collaborate, you need to write your own code/solutions, name your collaborators, and cite any outside sources you consulted (you don't need to cite the course material).
@@ -56,12 +58,12 @@ We will support any accommodations arranged through Disability Services via the 
 There is no extra credit in the course. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%).  To ensure fair treatment across all students, all students will receive a 1% "bonus" to their final course grade: 92.54% will become 93.54%.
 
 ## Regrade requests
-Regrade requests should be made in writing within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and [rubric](../rubric/). 
+Regrade requests should be made in writing within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and [rubric](/rubric.qmd). 
 
 
 
 ## Resources
-In addition to this website, we will use the following:
+In addition to the [course website](https://kathrynschuler.com/datasci), we will use the following:
 
 * [google colab (r kernel)](https://colab.research.google.com/#create=true&language=r) - for computing
 * [canvas](https://canvas.upenn.edu/courses/1736107) - for posting grades

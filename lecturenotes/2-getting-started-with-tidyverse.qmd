@@ -3,7 +3,6 @@ layout: post
 title:  "Lecture 2: Getting started with the tidyverse"
 date:   2023-08-31 17:37:08 -0400
 author: "Katie Schuler"
-categories: "Lecture notes"
 ---
 
 ### 1 Tidyverse basics
@@ -182,34 +181,6 @@ Reading more complex file types requires functions outside the tidyverse:
 - **google sheets**  with `googlesheets4` - see [Spreadsheets](https://r4ds.hadley.nz/spreadsheets#google-sheets) in R for Data Science
 - **databases** with `DBI` - see [Databases](https://r4ds.hadley.nz/databases) in R for Data Science
 - **json data** with `jsonlite` - see [Hierarchical data](https://r4ds.hadley.nz/rectangling) in R for Data Science
-
-
-
-### 6 Quiz
-
-Practice quiz questions.
-
-
-1. Suppose we run the following code block. What will `is.data.frame(y)` return? 
-
-    > `y <- tibble(x=1:2, y=1)`
-
-1. Suppose `print(x)` returns the output below. Answer the questions that follow. 
-
-    > output 
-
-    - What will `map_dbl(x, sum)` return? 
-    - What will `x$a` return? 
-    - What will `x[[5]]` return? 
-
-1. Suppose `x[[5]]` returns `NULL`, what will `is_tibble(x)` return? 
-
-1. Can `readr` import a google sheet with the `read_csv()` function? 
-
-
-
-
-
 
 
 ### Further reading and references

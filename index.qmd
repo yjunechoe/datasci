@@ -1,9 +1,9 @@
 ---
-title: "datasci for lang & mind"
+title: "Schedule"
 subtitle: "Fall 2023"
 ---
 
-| Wk | Day | Topic | Supporting material |
+| Wk | Day | Topic | Resources |
 |-|-|-|-|
 | | | **R Foundations** | | 
 | 1 |08-28 | [Getting started with R](/lecturenotes/1-getting-started-with-r.qmd) |demo, [practice](labs/1-getting-started-with-r-lab.qmd) |

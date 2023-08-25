@@ -25,12 +25,12 @@ format:
   html: 
     theme: cosmo
     css: styles.css
-    fontsize: 0.9em
+    # fontsize: 0.9em
     toc: true
-    grid:
-      sidebar-width: 260px
-      gutter-width: 4em
-  pdf: default
+    # grid:
+    #   sidebar-width: 260px
+    #   gutter-width: 4em
+    df-print: kable
 
 
 
