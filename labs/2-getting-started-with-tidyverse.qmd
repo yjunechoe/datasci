@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Lab 2: Getting started with tidyverse"
+date:   2023-08-31 17:37:08 -0400
+author: Katie Schuler
+categories: "Practice problems"
+---
+
+Practice quiz questions.
+
+
+1. Suppose we run the following code block. What will `is.data.frame(y)` return? 
+
+    ```r
+    y <- tibble(x=1:2, y=1)`
+    ```
+
+1. Suppose `print(x)` returns the output below to answer a-c that follow. 
+
+    ```
+
+    # output
+    
+    ```
+    a. What will `map_dbl(x, sum)` return? 
+    b. What will `x$a` return? 
+    c. What will `x[[5]]` return? 
+
+1. Suppose `x[[5]]` returns `NULL`, what will `is_tibble(x)` return? 
+
+1. Can `readr` import a google sheet with the `read_csv()` function? 
+

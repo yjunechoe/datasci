@@ -1,0 +1,30 @@
+---
+title: "Rubric"
+---
+
+All quiz and problem set questions are graded with the following 4-point rubric. By "understand" we mean you understand the lecture concepts and can apply the technical skills you learned in the course.  
+
+| Score | Meaning | Description
+|-|--|-------|
+| **4** | **Perfect!** | You understand deeply and can do all parts of this problem yourself with no mistakes. |
+| **3** | **Well done!** | You understand and can do all parts of this problem yourself with very few mistakes. |
+| **2** | **Getting there** | You understand in part and can do some parts of this problem, but you need a little more practice with these topics. |
+| **1** | **Just starting** | You do not understand yet and could not do most of this problem. You need a lot more practice with these topics. |
+| **0** | **Not complete** | Blank or not legible. |
+
+
+## Overall grade
+To compute your overall grade on a problem set or quiz, we take your *average* score on all questions, add a constant of 6, and divide by 10. For example, given a problem set with 3 questions:
+
+- scores of 4-3-3 would result in a 93.3% (A): (4+3+3)/3 + 6 = 9.33/10
+- scores of 3-2-2 would result in a 83.3% (B-): (3+2+2)/3 + 6 = 8.33/10
+- scores of 1-1-1 would result in a 70% (C-): (1+1+1)/3 + 6 = 7/10
+
+We chose this rubric because all reasonable attempts receive a passing grade, but A+ is reserved for students with advanced understanding of the material. 
+
+## Missing or blank work
+
+Problem sets or quizzes that are completely missing or blank will receive a 0%. 
+
+
+

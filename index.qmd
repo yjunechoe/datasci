@@ -1,0 +1,50 @@
+---
+title: "datasci for lang & mind"
+subtitle: "Fall 2023"
+---
+
+| Wk | Day | Topic | Supporting material |
+|-|-|-|-|
+| | | **R Foundations** | | 
+| 1 |08-28 | [Getting started with R](/lecturenotes/1-getting-started-with-r.qmd) |demo, [practice](labs/1-getting-started-with-r-lab.qmd) |
+| |08-31 | [Getting started with tidyverse](lecturenotes/2-getting-started-with-tidyverse.qmd) |  |
+| 2 |09-05|  Data visualization | |
+| |09-07 | Data wrangling and tidy data |  |
+| | 09-10 | Problem set 1 |  |
+| | |**Stats Foundations** | |
+| 3 | 09-12 | Probability distributions | |
+| | 09-14 | Sampling variability | | 
+| 4 | 09-19 | `Quiz 1` | |
+| | 09-20 | Hypothesis testing | | 
+| | | **Modeling Foundations** | | 
+| 5 |  09-26 | Model building | | 
+|  | 09-28 | Model specification | | 
+| | 01-01 | Problem set 2 | | 
+| 6 | 10-03 | Model fitting | | 
+| | 10-05 | Model fitting in R | |
+| 7 | 10-10 | `Quiz 2` | | 
+| | 10-12 | *no class, fall break* | |
+| 8 | 10-17 | Model accuracy | | 
+| | 10-19 | Model accuracy in R | | 
+| | 10-22 | Problem set 3 | | 
+| 9 | 10-24 | Model reliability | | 
+| | 10-26 | Model reliability in R | | 
+| 10 | 10-31 | `Quiz 3` | | 
+| | 11-02 | *no class, katie & june @ conferece* | | 
+| | | **Hypothesis Testing with Models** | |
+| 11 | 11-07 | Hypothesis testing models | | 
+| | 11-09 | Hypothesis testing models in R | | 
+|  | 11-12 | Problem set 4 | | 
+| | | **More Advanced Models** | | 
+| 12 | 11-14 | Classification | | 
+| | 11-16 | Classification in R | | 
+| 13 | 11-21 | `Quiz 4` | | 
+| | 11-23 | *no class, thanksgiving break* | | 
+| 14 | 11-28 | Multilevel models 1 
+|  | 11-30 | Multilevel models 1 demo | | 
+|  | 12-03 | Problem set 5 | | 
+| 15 | 12-05 | Multilevel models 2 | | 
+| | 12-07 | Multilevel models 2 demo | | 
+| | 12-10 | Problem set 6 | | 
+
+: [ed](https://edstem.org/us/courses/41903/discussion/) / [canvas](https://canvas.upenn.edu/courses/1736107) / [gradescope](https://www.gradescope.com/courses/561597) / [colab (r notebook)](https://colab.research.google.com/#create=true&language=r)

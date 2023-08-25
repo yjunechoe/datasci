@@ -1,0 +1,9 @@
+---
+title: "Listing Example"
+listing:
+  categories: true
+  type: "table"
+  contents:
+    - "fall2023/lectures/*"
+    - "lab-notes/*reports.qmd"
+---

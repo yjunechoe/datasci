@@ -1,0 +1,36 @@
+project:
+  type: website
+
+website:
+  title: "datasci for lang & mind"
+  sidebar: 
+    style: "floating"
+    search: true
+    # contents: 
+    #   - index.qmd
+    #   - syllabus.qmd
+    #   - section: "Lectures"
+    #   - section: "Problem sets"
+    #   - section: "Quizzes"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Schedule
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: rubric.qmd
+        text: Rubric
+
+format:
+  html: 
+    theme: cosmo
+    css: styles.css
+    fontsize: 0.9em
+    toc: true
+    grid:
+      sidebar-width: 260px
+      gutter-width: 4em
+  pdf: default
+
+
+
