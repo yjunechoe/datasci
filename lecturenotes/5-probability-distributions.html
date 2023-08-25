@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-08-29">
+<meta name="dcterms.date" content="2023-09-12">
 
-<title>datasci for lang &amp; mind - Lab 1: Getting started with R</title>
+<title>datasci for lang &amp; mind - Lecture 5: Probablity distributions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,6 +95,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -139,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lab 1: Getting started with R</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lecture 5: Probablity distributions</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,10 +167,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link active" data-scroll-target="#r-basics">R Basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">Subsetting</a></li>
-  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r">Programming in R</a></li>
+  <li><a href="#exploring-a-simple-dataset" id="toc-exploring-a-simple-dataset" class="nav-link active" data-scroll-target="#exploring-a-simple-dataset">1 Exploring a simple dataset</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">2 Descriptive statistics</a></li>
+  <li><a href="#parametric-vs.-nonparametric" id="toc-parametric-vs.-nonparametric" class="nav-link" data-scroll-target="#parametric-vs.-nonparametric">3 Parametric vs.&nbsp;nonparametric</a></li>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">4 Probability distributions</a></li>
+  <li><a href="#probability-distributions-with-r" id="toc-probability-distributions-with-r" class="nav-link" data-scroll-target="#probability-distributions-with-r">5 Probability distributions with R</a></li>
+  <li><a href="#nonparametric-probability-distributions" id="toc-nonparametric-probability-distributions" class="nav-link" data-scroll-target="#nonparametric-probability-distributions">6 Nonparametric probability distributions</a>
+  <ul class="collapse">
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -177,8 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Getting started with R</h1>
-<p class="subtitle lead">Labs are not graded, just for practice</p>
+<h1 class="title">Lecture 5: Probablity distributions</h1>
 </div>
 
 
@@ -195,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 29, 2023</p>
+      <p class="date">September 12, 2023</p>
     </div>
   </div>
   
@@ -205,89 +211,139 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.</p>
-<section id="r-basics" class="level2">
-<h2 class="anchored" data-anchor-id="r-basics">R Basics</h2>
-<ol type="1">
-<li><p>Which of the following are expressions? Choose all that apply.</p>
-<ul>
-<li><code>10</code></li>
-<li><code>5 + 10</code></li>
-<li><code>x &lt;- 5 + 10</code></li>
-<li><code>x &lt;- y + 10</code></li>
-<li><code>mean(x)</code></li>
-</ul></li>
-<li><p>Which of the following are valid variable names in R?</p>
-<ul>
-<li><code>childAge</code></li>
-<li><code>response_time</code></li>
-<li><code>1stPlaceWinner</code></li>
-<li><code>2fast2furious</code></li>
-<li><code>fast&amp;furious</code></li>
-</ul></li>
-<li><p>Suppose we run the following code block. What will <code>ls()</code> return?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Suppose we run <code>library(tidyverse)</code> in Google Colab and receive the following error message? How do we solve this problem?</p>
-<blockquote class="blockquote">
-<p><code>NameError: name 'library' is not defined</code></p>
-</blockquote></li>
-</ol>
+<section id="exploring-a-simple-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-a-simple-dataset">1 Exploring a simple dataset</h2>
+<div class="cell">
+<details>
+<summary>Setup code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ------ setup for today's lecture notes ----- # </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># suppress startup messages at package load</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># set the theme for the plots </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size=</span><span class="dv">15</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># generate 10000 y values with mean 3 and sd 0.25</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">3</span>, <span class="at">sd=</span><span class="fl">0.25</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We begin with the simplest possible dataset: suppose we measure a single quantity <code>y</code>. What can we do with these data?</p>
+<p>We can create a visual summary of our dataset with a <strong>histogram</strong>. A histogram plots the distribution of a set of data, which allows us to get a quick visual of the data: formally we have plotted the the frequency distribution (count) of the data, but this also gives a sense of the central tendency and variability in our dataset.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span>data, <span class="fu">aes</span>(<span class="at">x=</span>y)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">binwidth =</span> <span class="fl">0.25</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">color=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="st">'lightgray'</span>, <span class="at">alpha=</span><span class="fl">0.5</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="5-probability-distributions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="vectors" class="level2">
-<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
-<ol type="1">
-<li><p>The expression <code>attributes(x)</code> returns the following result. What will <code>typeof(x)</code> return?</p>
-<blockquote class="blockquote">
-<p><code>$dim= 2 . 2</code></p>
-</blockquote></li>
-<li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Explain in one sentence the difference between an atomic vector and a list.</p></li>
-<li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return? What about <code>length(x)</code>? Explain why.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Suppose we run the following code. What will <code>y</code> return? What about <code>typeof(y)</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="subsetting" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting">Subsetting</h2>
-<ol type="1">
-<li><p>Suppose we run the following code. What will each of operations return (a - e)?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="a">
-<li><code>x[c(2,4)]</code></li>
-<li><code>x[-c(2,4)]</code></li>
-<li><code>x[]</code></li>
-<li><code>x[[2]]</code></li>
-<li><code>x[2]</code></li>
-</ol></li>
-<li><p>Suppose <code>m</code> is a matrix created with <code>matrix(c(1,2,3,4), nrow=2, ncol=2)</code>. What will each of the following operations return?</p>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">2 Descriptive statistics</h2>
+<p>We can summarize (or describe) a set of data with <strong>descriptive statistics</strong>:</p>
 <ul>
-<li><code>m[c(1), ]</code></li>
-<li><code>m[c(2), c(1, 2)]</code></li>
-<li><code>m[]</code></li>
-<li><code>m[[2]]</code></li>
-</ul></li>
-<li><p>Suppose <code>df</code> is a data frame created with <code>data.frame(x=c(1,2,3), y=c("a","b","c"))</code>. What will each of the following operations return?</p>
-<ul>
-<li><code>df[c(1,2)]</code></li>
-<li><code>df[c(1,2), c(2)]</code></li>
-<li><code>df[['x']]</code></li>
-<li><code>df[x]</code></li>
-<li><code>df[[2]]</code></li>
-</ul></li>
-<li><p>Suppose <code>df</code> is a dataframe with column names <code>ageChild</code>, <code>ageParent</code>, and <code>dateAdded</code>. What will <code>df$age</code> return? Explain why.</p></li>
-</ol>
+<li>Measures of <strong>central tendency</strong> describe where a central or typical value might fall (mean, median, mode)</li>
+<li>Measures of <strong>variability</strong> describe the dispersion or spread of values (variance, standard deviation, IQR)</li>
+<li>Measures of <strong>frequency distribution</strong> describe how frequently values occur (count)</li>
+</ul>
+<p>R has built-in functions for descriptive statistics (we saw these in lecture 1):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">n =</span> <span class="fu">n</span>(), </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fu">mean</span>(y),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">median =</span> <span class="fu">median</span>(y),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fu">sd</span>(y),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">iqr_lower =</span> <span class="fu">quantile</span>(y, <span class="fl">0.25</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">iqr_upper =</span> <span class="fu">quantile</span>(y, <span class="fl">0.75</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">median</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">iqr_lower</th>
+<th style="text-align: right;">iqr_upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">2.985311</td>
+<td style="text-align: right;">2.980945</td>
+<td style="text-align: right;">0.2484858</td>
+<td style="text-align: right;">2.815593</td>
+<td style="text-align: right;">3.154713</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </section>
-<section id="programming-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="programming-in-r">Programming in R</h2>
-<ol type="1">
-<li>Explain in one sentence the difference between a <code>for</code> loop and a <code>while</code> loop?</li>
-</ol>
+<section id="parametric-vs.-nonparametric" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-vs.-nonparametric">3 Parametric vs.&nbsp;nonparametric</h2>
+<p>Some stats are <strong>paramteric</strong> because they make assumptions about the the distribution of the data, and can therefore be computed from parameters:</p>
+<ul>
+<li>The mean and standard deviation assume the distribution is Gaussian and can therefore be computed via the following equations</li>
+<li><strong>mean</strong> <span class="math inline">\(\mu\)</span></li>
+<li><strong>sd</strong> <span class="math inline">\(\sigma\)</span></li>
+</ul>
+<p>Other stats are <strong>nonparametric</strong> because they make minimal assumptions about the distribution of the data:</p>
+<ul>
+<li>The <strong>median</strong> is the 50th percentile, the value below which 50% of the data points fall.</li>
+<li>The <strong>IQR</strong> is the difference between the 25th and 75th percentiles (sometimes called the <strong>50% coverage interval</strong> because 50% of the data fall in this range).<br>
+</li>
+<li>We can in principle calculate any arbitrary coverage interval. The 95% coverage interval — widely used in the sciences — is the difference between the 2.5 percentile and the 97.5 percentile, including all but 5% of the data.</li>
+</ul>
+</section>
+<section id="probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="probability-distributions">4 Probability distributions</h2>
+<p>A <strong>probability distribution</strong> (aka probability density function) is a mathematical function that describes the probability of observing the different possible values of a variable (or variables). We will focus on univariate distributions in this class — probability distributions of just one random variable — but probability distributions can also be multivariate.</p>
+<ul>
+<li>One of the simplest probability distributions is the <strong>uniform distribution</strong>, where all possible values of a variable are equally likely. The probability density function for the uniform distribution is given by the following equation with two parameters (the boundaries, min and max):
+<ul>
+<li><span class="math inline">\(p(x) = \frac{1}{max-min}\)</span></li>
+</ul></li>
+<li>One of the most useful probability distributions for our purposes is the <strong>Gaussian (or Normal) distribution</strong>. The probability density function for the Gaussian distribution is given by the following equation, with the parameters <span class="math inline">\(\mu\)</span> (mean) and <span class="math inline">\(\sigma\)</span> (standard deviation):
+<ul>
+<li><span class="math inline">\(p(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right)\)</span></li>
+<li>The Gaussian distribution assumes that the distribution of a set of data takes a certain form (is unimodal, symmetric, etc).</li>
+<li>When values are sampled from a Gaussian distribution, 68% of the values will be within one standard deviation from the mean and 95% within two standard deviations from the mean.</li>
+<li>When computing the mean and standard deviation of a set of data, we are fitting a Gaussian distribution to the data.</li>
+</ul></li>
+</ul>
+</section>
+<section id="probability-distributions-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="probability-distributions-with-r">5 Probability distributions with R</h2>
+<p>The probability distributions we’ve discussed so far are considered “parametric” because they are given by one or more parameters. When we use R’s functions to generate values from these distributions, we provide these parameters as arguments. Base R has four functions we will use to generate values associated with a probability distribution. - <code>dnorm(mean=5, sd=1)</code> returns the height of the <strong>probability density function</strong> at the given values - <code>pnorm(5, mean=5, sd=1)</code> returns the <strong>cumulative density function</strong> (the probability that a random number from the distribution will be less than the given values) - <code>qnorm(0.8, mean=5, sd=1)</code> returns the value whose cumulative distribution matches the probability (<strong>inverse of <code>p</code></strong>) - <code>rnorm(1000, mean=5, sd=1)</code> returns n <strong>random numbers</strong> generated from the distribution</p>
+<p>To use another distribution, change the function’s suffix to the name of the distribution and the parameters to those that define the distribution. For example, to generate n random numbers from a uniform distribution with a min of 1 and a max of 5, run <code>runif(n, min=0, max=1)</code>.</p>
+</section>
+<section id="nonparametric-probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="nonparametric-probability-distributions">6 Nonparametric probability distributions</h2>
+<p>What if the data does not meet the assumptions of the Gaussian distribution? One option is to choose another parametric probability distribution (run <code>help(Distributions)</code> for a full list of available distributions). Another is to use a nonparametric approach, where the probability distribution is not determined by parameters but is instead determined by the data. - A <strong>histogram</strong> is actually a simple, nonparametric estimate of a probability distribution. To estimate the probability distribution that generated a set of data from a histogram, we modify the scale of the y-axis so that the total area of the bars is equal to 1. - <strong>Kernel density estimation (KDE)</strong> is another nonparametric method to estimate a probability distribution. KDE is like a smooth histogram, accomplished by placeing a kernel — a tiny Gaussian distribution —&nbsp;at each observed data point and summing across kernels. We can accomplish this in ggplot with the <code>geom_density()</code> geom.</p>
+<section id="further-reading-and-references" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
+<ul>
+<li><a href="https://moderndive.com/A-appendixA.html">Appendix A: Statistical Background</a> in Modern Dive</li>
+<li><a href="https://dtkaplan.github.io/SM2-bookdown/modeling-randomness.html">Ch 11: Modeling Randomness</a> in Statistical Modeling</li>
+</ul>
+<p>https://r4ds.hadley.nz/data-visualize#visualizing-distributions</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
