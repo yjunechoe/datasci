@@ -170,7 +170,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#functional-programming-with-purrr" id="toc-functional-programming-with-purrr" class="nav-link" data-scroll-target="#functional-programming-with-purrr">3 Functional programming with purrr</a></li>
   <li><a href="#modern-data-frames-with-tibble" id="toc-modern-data-frames-with-tibble" class="nav-link" data-scroll-target="#modern-data-frames-with-tibble">4 Modern data frames with tibble</a></li>
   <li><a href="#reading-data-with-readr" id="toc-reading-data-with-readr" class="nav-link" data-scroll-target="#reading-data-with-readr">5 Reading data with readr</a></li>
-  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">6 Quiz</a></li>
   <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="2-getting-started-with-tidyverse.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -377,27 +376,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>databases</strong> with <code>DBI</code> - see <a href="https://r4ds.hadley.nz/databases">Databases</a> in R for Data Science</li>
 <li><strong>json data</strong> with <code>jsonlite</code> - see <a href="https://r4ds.hadley.nz/rectangling">Hierarchical data</a> in R for Data Science</li>
 </ul>
-</section>
-<section id="quiz" class="level3">
-<h3 class="anchored" data-anchor-id="quiz">6 Quiz</h3>
-<p>Practice quiz questions.</p>
-<ol type="1">
-<li><p>Suppose we run the following code block. What will <code>is.data.frame(y)</code> return?</p>
-<blockquote class="blockquote">
-<p><code>y &lt;- tibble(x=1:2, y=1)</code></p>
-</blockquote></li>
-<li><p>Suppose <code>print(x)</code> returns the output below. Answer the questions that follow.</p>
-<blockquote class="blockquote">
-<p>output</p>
-</blockquote>
-<ul>
-<li>What will <code>map_dbl(x, sum)</code> return?</li>
-<li>What will <code>x$a</code> return?</li>
-<li>What will <code>x[[5]]</code> return?</li>
-</ul></li>
-<li><p>Suppose <code>x[[5]]</code> returns <code>NULL</code>, what will <code>is_tibble(x)</code> return?</p></li>
-<li><p>Can <code>readr</code> import a google sheet with the <code>read_csv()</code> function?</p></li>
-</ol>
 </section>
 <section id="further-reading-and-references" class="level3">
 <h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
