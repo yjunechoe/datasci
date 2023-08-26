@@ -6,8 +6,6 @@ date:   2023-09-12
 author: "Katie Schuler"
 execute:
   echo: true
-subtitle: "Data Science for Studying Language and the Mind"
-
 ---
 
 
