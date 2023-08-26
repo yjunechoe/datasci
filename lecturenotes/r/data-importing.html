@@ -226,8 +226,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="welcome-to-the-tidyverse" class="level3">
-<h3 class="anchored" data-anchor-id="welcome-to-the-tidyverse">1 Welcome to the tidyverse</h3>
+<section id="welcome-to-the-tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-the-tidyverse">1 Welcome to the tidyverse</h2>
 <blockquote class="blockquote">
 <p>The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. ~ <a href="https://www.tidyverse.org/">Tidyverse package docs</a></p>
 </blockquote>
@@ -247,8 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>We can resolve conflicts with the <code>::</code> operator, which allows us to specify which package our intended function belongs to as a prefix: <code>stats::filter()</code> or <code>dplyr::filter()</code></li>
 </ul>
 </section>
-<section id="what-is-tidy-data" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-tidy-data">2 What is tidy data?</h3>
+<section id="what-is-tidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-tidy-data">2 What is tidy data?</h2>
 <p>The same underlying data can be represented in a table in many different ways; some easier to work with than others. The tidyverse makes use of tidy data principles to make datasets easier to work with in R. <strong>Tidy data</strong> provides a standard way of structuring datasets:</p>
 <ol type="1">
 <li>each variable forms a <strong>column</strong>; each column forms a variable</li>
@@ -261,8 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Variables as columns works well for vectorized languages (R!)</li>
 </ul>
 </section>
-<section id="functional-programming-with-purrr" class="level3">
-<h3 class="anchored" data-anchor-id="functional-programming-with-purrr">3 Functional programming with purrr</h3>
+<section id="functional-programming-with-purrr" class="level2">
+<h2 class="anchored" data-anchor-id="functional-programming-with-purrr">3 Functional programming with purrr</h2>
 <blockquote class="blockquote">
 <p>purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read. ~ purrr docs</p>
 </blockquote>
@@ -285,8 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(df, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the <code>map()</code> function or use it in a <code>for</code> loop. But the <code>map</code> family allows us go up a layer of abstraction. We can use <code>pmap()</code> when we want to apply a function element-wise to corresponding items in multiple lists.</p>
 </section>
-<section id="modern-data-frames-with-tibble" class="level3">
-<h3 class="anchored" data-anchor-id="modern-data-frames-with-tibble">4 Modern data frames with tibble</h3>
+<section id="modern-data-frames-with-tibble" class="level2">
+<h2 class="anchored" data-anchor-id="modern-data-frames-with-tibble">4 Modern data frames with tibble</h2>
 <blockquote class="blockquote">
 <p>A tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less and complain more ~ <a href="https://tibble.tidyverse.org/">tibble docs</a></p>
 </blockquote>
@@ -322,8 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>is.data.frame(x)</code></li>
 </ul>
 </section>
-<section id="reading-data-with-readr" class="level3">
-<h3 class="anchored" data-anchor-id="reading-data-with-readr">5 Reading data with readr</h3>
+<section id="reading-data-with-readr" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data-with-readr">5 Reading data with readr</h2>
 <blockquote class="blockquote">
 <p>The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs</p>
 </blockquote>
@@ -394,8 +394,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>json data</strong> with <code>jsonlite</code> - see <a href="https://r4ds.hadley.nz/rectangling">Hierarchical data</a> in R for Data Science</li>
 </ul>
 </section>
-<section id="further-reading-and-references" class="level3">
-<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
+<section id="further-reading-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h2>
 <p>Recommended further reading:</p>
 <ul>
 <li><a href="https://r4ds.hadley.nz/data-tidy">Data tidying</a> in R for Data Science</li>
