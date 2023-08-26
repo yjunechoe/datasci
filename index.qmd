@@ -5,74 +5,45 @@ subtitle: "Data Science for Studying Language and the Mind"
 ---
  <!-- resources: [ed](https://edstem.org/us/courses/41903/discussion/) / [canvas](https://canvas.upenn.edu/courses/1736107) / [gradescope](https://www.gradescope.com/courses/561597) / [colab (r notebook)](https://colab.research.google.com/#create=true&language=r) -->
 
- > Schedule may change 
-
-#### R basics
-
 | Day | Unit | Topic | Resources |
 |-|--|------|----|
 | 08-28 | R | Hello, world! | |  |
 | 08-31 | R | [R-basics](lecturenotes/r/r-basics.qmd)  | [lab1](labs/1-getting-started-with-r-lab.qmd) | 
 |  09-05 | R | [Data importing](lecturenotes/r/data-importing.qmd)  | | 
 | 09-07 | R | Data visualization |  |
-| 09-10 | R | `Problem set 1` | |
+| 09-10 | R | Problem set 1 | |
 |  09-12 | R | Data transformation | |
 |  09-14 |R | Data tidying | | 
-|  09-19 | R| `Quiz 1` | |
-<!-- : Unit 1: Data science in R -->
-
-#### Statistics foundations
-
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
+|  09-19 | R| Quiz 1 | |
 |  09-20 | Stats | Probability distributions |  | 
 |  09-26 | Stats | Sampling variability |  | 
 |  09-28 | Stats | Hypothesis testing | | 
-| 10-01 | Stats | `Problem set 2` | | 
-
-#### Model building foundations
-
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
+| 10-01 | Stats | Problem set 2 | | 
 | 10-03 | Model | Model specification | | 
 | 10-05 | Model | Model fitting | | 
-| 10-10 | Model | `Quiz 2` | | 
+| 10-10 | Model | Quiz 2 | | 
 | 10-12 | Model | **No class, break** | | 
 | 10-17 | Model | Model accuracy | | 
 | 10-19 | Model | Model reliability | | 
-| 10-22 | Model | `Problem set 3` | | 
-<!-- : Unit 3: Foundations of modeling -->
-
-#### Inference with models
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
+| 10-22 | Model | Problem set 3 | | 
 | 10-24 | Infer | Conditions for inference | | 
 | 10-26 | Infer | Inference on regression models | | 
-| 10-31 | Infer | `Quiz 3` | | 
+| 10-31 | Infer | Quiz 3 | | 
 | 11-02 | Infer | TBD | | 
-<!-- : Unit 4: Modeling for statistical inference -->
-
-#### Special topics
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
 | 11-07 | Specials | Feature selection | | 
 | 11-09 | Specials | Case study 1 | | 
-| 11-12 | Specials | `Problem set 4` | | 
+| 11-12 | Specials | Problem set 4 | | 
 | 11-14 | Specials | Ethics | | 
 | 11-16 | Specials | Case study 2 | | 
-| 11-21 | Specials | `Quiz 4` | | 
+| 11-21 | Specials | Quiz 4 | | 
 | 11-23 | Specials | **No class, break** | | 
-
-#### Advanced models
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
 | 11-28 | Advanced | Classification | | 
 | 11-30 | Advanced | Case study 3| | 
-| 12-03 | Advanced | `Problem set 5` | | 
+| 12-03 | Advanced | Problem set 5 | | 
 | 12-05 | Advanced | Multilevel models | | 
 | 12-07 | Advanced | Case study 4 | | 
-| 12-10 | Advanced | `Problem set 6` | | 
-<!-- : Unit 5: Special topics and case studies with more advanced models -->
+| 12-10 | Advanced | Problem set 6 | | 
+: Schedule may change
 
 
 
