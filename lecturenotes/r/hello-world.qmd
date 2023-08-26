@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "Hello, World!"
+date:   2023-08-29 17:37:08 -0400
+author: Katie Schuler
+subtitle: "Data Science for Studying Language and the Mind"
+
+---
+
+## Data science
+
+## 
+
+## Why R? 
+
+With many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?
+
+- Built for stats, specifically 
+- Makes nice visualizations
+- Lots of people are doing it, especially in academia
+- Easier for beginners to understand
+- Free and open source (though so are Python and Julia, MATLAB costs $)
+
+If you are interested, here is a [math professor's take](https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/) on the differences between Python, Julia, and MATLAB. Note that although they're optimized for different things, **they're all great** and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages.
+
+## Google Colab
+
+There are many ways to program with R. Some popular options include:
+
+- [R Studio](https://posit.co/products/open-source/rstudio/)
+- [Jupyter](https://jupyter.org/) 
+- [VS Code](https://code.visualstudio.com/docs/languages/r)
+- and even simply the [command line/terminal](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20the%20R%20command%20line.html)
+
+**Google Colab** is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it's simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and [Julia](https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_Colab_Notebook_Template.ipynb), too!)
+
+New R notebook:
+
+- [colab (r kernel)](https://colab.research.google.com/#create=true&language=r) - use this link to start a new R notebook
+- `File > New notebook` error, Python! `name 'x' is not defined`
+
+Cell types: 
+
+- `+ Code` - write and execute code 
+- `+ Text` - write text blocks in [markdown](https://www.markdowntutorial.com/)
+
+Left sidebar: 
+
+- `Table of contents` - outline from text headings
+- `Find and replace` - find and/or replace 
+- `Files` - upload files to cloud session
+
+Frequently used menu options:
+
+- `File > Locate in Drive` - where in your Google Drive?
+- `File > Save` - saves
+- `File > Revision history` - history of changes you made
+- `File > Download > Download .ipynb` - used to submit assignments!
+- `File > Print` - prints
+- `Runtime > Run all` - run all cells 
+- `Runtime > Run before` - run all cells before current active cell
+- `Runtime > Restart and run all` - restart runtime, then run all 
+
+Frequently used keyboard shortcuts:
+
+- `Cmd/Ctrl+S` - save 
+- `Cmd/Ctrl+Enter` - run focused cell 
+- `Cmd/Ctrl+Shift+A` - select all cells
+- `Cmd/Ctrl+/` - comment/uncomment selection
+- `Cmd/Ctrl+]` - increase indent
+- `Cmd/Ctrl+[` - decrease indent 

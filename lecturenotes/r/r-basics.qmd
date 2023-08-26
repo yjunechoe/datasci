@@ -1,73 +1,14 @@
 ---
-layout: post
-title:  "Lecture 1: Getting started with R"
-date:   2023-08-29 17:37:08 -0400
+layout: page
+title:  "R Basics"
+date:   2023-08-31
 author: Katie Schuler
+
 ---
 
-## 1 Why R? 
+## Basics
 
-With many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?
-
-- Built for stats, specifically 
-- Makes nice visualizations
-- Lots of people are doing it, especially in academia
-- Easier for beginners to understand
-- Free and open source (though so are Python and Julia, MATLAB costs $)
-
-If you are interested, here is a [math professor's take](https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/) on the differences between Python, Julia, and MATLAB. Note that although they're optimized for different things, **they're all great** and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages.
-
-## 2 Colab notebook basics  
-
-There are many ways to program with R. Some popular options include:
-
-- [R Studio](https://posit.co/products/open-source/rstudio/)
-- [Jupyter](https://jupyter.org/) 
-- [VS Code](https://code.visualstudio.com/docs/languages/r)
-- and even simply the [command line/terminal](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20the%20R%20command%20line.html)
-
-**Google Colab** is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it's simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and [Julia](https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_Colab_Notebook_Template.ipynb), too!)
-
-New R notebook:
-
-- [colab (r kernel)](https://colab.research.google.com/#create=true&language=r) - use this link to start a new R notebook
-- `File > New notebook` error, Python! `name 'x' is not defined`
-
-Cell types: 
-
-- `+ Code` - write and execute code 
-- `+ Text` - write text blocks in [markdown](https://www.markdowntutorial.com/)
-
-Left sidebar: 
-
-- `Table of contents` - outline from text headings
-- `Find and replace` - find and/or replace 
-- `Files` - upload files to cloud session
-
-Frequently used menu options:
-
-- `File > Locate in Drive` - where in your Google Drive?
-- `File > Save` - saves
-- `File > Revision history` - history of changes you made
-- `File > Download > Download .ipynb` - used to submit assignments!
-- `File > Print` - prints
-- `Runtime > Run all` - run all cells 
-- `Runtime > Run before` - run all cells before current active cell
-- `Runtime > Restart and run all` - restart runtime, then run all 
-
-Frequently used keyboard shortcuts:
-
-- `Cmd/Ctrl+S` - save 
-- `Cmd/Ctrl+Enter` - run focused cell 
-- `Cmd/Ctrl+Shift+A` - select all cells
-- `Cmd/Ctrl+/` - comment/uncomment selection
-- `Cmd/Ctrl+]` - increase indent
-- `Cmd/Ctrl+[` - decrease indent 
-
-
-## 3 R basics
-
-Defining some basic concepts: 
+Defining some basic concepts:
 
 - **Expressions** are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
     - `10` - a simple value expression that evaluates to `10`.
@@ -82,29 +23,6 @@ Defining some basic concepts:
 - **Comments** are notes you leave to yourself (within code blocks in colab) to document your code; comments are not evaluated.
 - **Messages** are notes R leaves for you, after you run your code. Messages can be simply for-your-information, warnings that something unexpected might happen, or erros if R cannot evaluate your code.
 
-Important functions to know: 
-
-- for objects:
-    - `str(x)` - returns summary of object's structure
-    - `typeof(x)` - returns object's data type
-    - `length(x)` - returns object's length
-    - `attributes(x)` - returns list of object's attributes
-    - `is.*(x)` - test if object is data type (e.g. `is.double(x)`)
-    - `as.*(x)` - coerce object to data type (e.g. `as.double(x)`)
-- for environment:
-    - `ls()` - list all variables in environment
-    - `rm(x)` - remove x variable from environment
-    - `rm(list = ls())` - remove all variables from environment
-- for packages: 
-    - `install.packages()` to install packages
-    - `library()` to load the package into your current R session.
-    - `data()` to load data from package into environment
-    - `sessionInfo()` - version information for current R session and packages
-- for help:
-    - `?mean` - get help with a function
-    - `help.search('mean')` - search help files for word or phrase
-    - `help(package='tidyverse')` - find help for a package 
-
 Ways to get help when coding in R:
 
 - **Read packages docs** - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the [dplyr package](https://dplyr.tidyverse.org/).
@@ -114,7 +32,39 @@ Ways to get help when coding in R:
 - **Ask Google/Stack Overflow** - It is a normal and important skill (not cheating) to google things while coding and learning to code! Use keywords and package names to ensure your solutions are course-relevant.
 - **Ask ChatGPT** - You can similarly use ChatGPT or other LLMs as a resource. But keep in mind they may provide a solution that is wrong or not relevant to what we are learning in this course.
 
-## 4 Vectors
+## Important functions
+
+For objects:
+
+- `str(x)` - returns summary of object's structure
+- `typeof(x)` - returns object's data type
+- `length(x)` - returns object's length
+- `attributes(x)` - returns list of object's attributes
+- `is.*(x)` - test if object is data type (e.g. `is.double(x)`)
+- `as.*(x)` - coerce object to data type (e.g. `as.double(x)`)
+
+for environment:
+
+- `ls()` - list all variables in environment
+- `rm(x)` - remove x variable from environment
+- `rm(list = ls())` - remove all variables from environment
+
+For packages: 
+
+- `install.packages()` to install packages
+- `library()` to load the package into your current R session.
+- `data()` to load data from package into environment
+- `sessionInfo()` - version information for current R session and packages
+
+For help:
+
+- `?mean` - get help with a function
+- `help.search('mean')` - search help files for word or phrase
+- `help(package='tidyverse')` - find help for a package 
+
+
+
+## Vectors
 
 One of the must fundamental data structures in R is the **vector**. There are two types:
 
@@ -160,7 +110,7 @@ Missing elements and empty vectors:
 - `NULL` - used to represent an empty or absent vector of arbitrary type. `NULL` is its own special type and always has length zero and `NULL` attributes.   
 
 
-## 5 Subsetting
+## Subsetting
 
 > Subsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R
 
@@ -199,7 +149,7 @@ When extracting single elements, note that:
 sometimes you'll get an error message, and sometimes it will return `NULL`
 
 
-## 6 Operations
+## Operations
 
 Arithmetic operators:
 
@@ -236,7 +186,7 @@ Most math operations (and many functions) are **vectorized** in R:
     - `x == 1` returns `[TRUE FALSE FALSE]`
 
 
-## 7 Built-in functions 
+## Built-in functions 
 
 Note that you do not need to memorize these built-in functions to be successful on quizzes. Use this as a reference. 
 
@@ -303,7 +253,7 @@ For simple plotting:
 - `plot(x, y)` - values of x against y
 - `hist(x)` - histogram of x
 
-## 8 Programming in R
+## Programming in R
 
 Writing **functions** and handling **flow control** are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book [Hands-On Programming with R](https://rstudio-education.github.io/hopr/). 
 

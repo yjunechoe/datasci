@@ -1,8 +1,0 @@
----
-title: "Lecture 3: Data visualization"
-author: "Katie Schuler"
-date: 09/05/2023
-draft: true
----
-
-test

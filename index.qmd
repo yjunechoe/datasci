@@ -1,50 +1,78 @@
 ---
 title: "Schedule"
-subtitle: "Fall 2023"
+subtitle: "Data Science for Studying Language and the Mind"
+
 ---
+ <!-- resources: [ed](https://edstem.org/us/courses/41903/discussion/) / [canvas](https://canvas.upenn.edu/courses/1736107) / [gradescope](https://www.gradescope.com/courses/561597) / [colab (r notebook)](https://colab.research.google.com/#create=true&language=r) -->
 
-| Wk | Day | Topic | Resources |
-|-|-|-|-|
-| | | **R Foundations** | | 
-| 1 |08-28 | [Getting started with R](/lecturenotes/1-getting-started-with-r.qmd) |demo, [practice](labs/1-getting-started-with-r-lab.qmd) |
-| |08-31 | [Getting started with tidyverse](lecturenotes/2-getting-started-with-tidyverse.qmd) |  |
-| 2 |09-05|  Data visualization | |
-| |09-07 | Data wrangling and tidy data |  |
-| | 09-10 | Problem set 1 |  |
-| | |**Stats Foundations** | |
-| 3 | 09-12 | Probability distributions | |
-| | 09-14 | Sampling variability | | 
-| 4 | 09-19 | `Quiz 1` | |
-| | 09-20 | Hypothesis testing | | 
-| | | **Modeling Foundations** | | 
-| 5 |  09-26 | Model building | | 
-|  | 09-28 | Model specification | | 
-| | 01-01 | Problem set 2 | | 
-| 6 | 10-03 | Model fitting | | 
-| | 10-05 | Model fitting in R | |
-| 7 | 10-10 | `Quiz 2` | | 
-| | 10-12 | *no class, fall break* | |
-| 8 | 10-17 | Model accuracy | | 
-| | 10-19 | Model accuracy in R | | 
-| | 10-22 | Problem set 3 | | 
-| 9 | 10-24 | Model reliability | | 
-| | 10-26 | Model reliability in R | | 
-| 10 | 10-31 | `Quiz 3` | | 
-| | 11-02 | *no class, katie & june @ conferece* | | 
-| | | **Hypothesis Testing with Models** | |
-| 11 | 11-07 | Hypothesis testing models | | 
-| | 11-09 | Hypothesis testing models in R | | 
-|  | 11-12 | Problem set 4 | | 
-| | | **More Advanced Models** | | 
-| 12 | 11-14 | Classification | | 
-| | 11-16 | Classification in R | | 
-| 13 | 11-21 | `Quiz 4` | | 
-| | 11-23 | *no class, thanksgiving break* | | 
-| 14 | 11-28 | Multilevel models 1 
-|  | 11-30 | Multilevel models 1 demo | | 
-|  | 12-03 | Problem set 5 | | 
-| 15 | 12-05 | Multilevel models 2 | | 
-| | 12-07 | Multilevel models 2 demo | | 
-| | 12-10 | Problem set 6 | | 
+ > Schedule may change 
 
-: [ed](https://edstem.org/us/courses/41903/discussion/) / [canvas](https://canvas.upenn.edu/courses/1736107) / [gradescope](https://www.gradescope.com/courses/561597) / [colab (r notebook)](https://colab.research.google.com/#create=true&language=r)
+#### R basics
+
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+| 08-28 | R | Hello, world! | |  |
+| 08-31 | R | [R-basics](lecturenotes/r/r-basics.qmd)  | [lab1](labs/1-getting-started-with-r-lab.qmd) | 
+|  09-05 | R | [Data importing](lecturenotes/r/data-importing.qmd)  | | 
+| 09-07 | R | Data visualization |  |
+| 09-10 | R | `Problem set 1` | |
+|  09-12 | R | Data transformation | |
+|  09-14 |R | Data tidying | | 
+|  09-19 | R| `Quiz 1` | |
+<!-- : Unit 1: Data science in R -->
+
+#### Statistics foundations
+
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+|  09-20 | Stats | Probability distributions |  | 
+|  09-26 | Stats | Sampling variability |  | 
+|  09-28 | Stats | Hypothesis testing | | 
+| 10-01 | Stats | `Problem set 2` | | 
+
+#### Model building foundations
+
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+| 10-03 | Model | Model specification | | 
+| 10-05 | Model | Model fitting | | 
+| 10-10 | Model | `Quiz 2` | | 
+| 10-12 | Model | **No class, break** | | 
+| 10-17 | Model | Model accuracy | | 
+| 10-19 | Model | Model reliability | | 
+| 10-22 | Model | `Problem set 3` | | 
+<!-- : Unit 3: Foundations of modeling -->
+
+#### Inference with models
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+| 10-24 | Infer | Conditions for inference | | 
+| 10-26 | Infer | Inference on regression models | | 
+| 10-31 | Infer | `Quiz 3` | | 
+| 11-02 | Infer | TBD | | 
+<!-- : Unit 4: Modeling for statistical inference -->
+
+#### Special topics
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+| 11-07 | Specials | Feature selection | | 
+| 11-09 | Specials | Case study 1 | | 
+| 11-12 | Specials | `Problem set 4` | | 
+| 11-14 | Specials | Ethics | | 
+| 11-16 | Specials | Case study 2 | | 
+| 11-21 | Specials | `Quiz 4` | | 
+| 11-23 | Specials | **No class, break** | | 
+
+#### Advanced models
+| Day | Unit | Topic | Resources |
+|-|--|------|----|
+| 11-28 | Advanced | Classification | | 
+| 11-30 | Advanced | Case study 3| | 
+| 12-03 | Advanced | `Problem set 5` | | 
+| 12-05 | Advanced | Multilevel models | | 
+| 12-07 | Advanced | Case study 4 | | 
+| 12-10 | Advanced | `Problem set 6` | | 
+<!-- : Unit 5: Special topics and case studies with more advanced models -->
+
+
+

@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  "Lecture 5: Probablity distributions"
+title:  "Probablity distributions"
+subtitle: "Lecture 5"
 date:   2023-09-12
 author: "Katie Schuler"
 execute:
   echo: true
+subtitle: "Data Science for Studying Language and the Mind"
 
 ---
 
@@ -45,13 +47,13 @@ ggplot(data=data, aes(x=y)) +
 ```
 
 ## 2 Descriptive statistics
-We can summarize (or describe) a set of data with **descriptive statistics**:
+We can summarize (or describe) a set of data with **descriptive statistics**. There are three types of measures:
 
-- Measures of **central tendency** describe where a central or typical value might fall (mean, median, mode)
-- Measures of **variability** describe the dispersion or spread of values (variance, standard deviation, IQR)
-- Measures of **frequency distribution** describe how frequently values occur (count)
+- **central tendency** describes a central or typical value (mean, median, mode)
+- **variability** describes dispersion or spread of values (variance, standard deviation, IQR)
+- **frequency distribution** describes how frequently different values occur (count)
 
-R has built-in functions for descriptive statistics (we saw these in lecture 1): 
+R has built-in functions to handle descriptive statistics (we saw these in lecture 1): 
 
 ```{r}
 data %>%
@@ -66,17 +68,17 @@ data %>%
 ```
 
 ## 3 Parametric vs. nonparametric 
-Some stats are **paramteric** because they make assumptions about the the distribution of the data, and can therefore be computed from parameters:  
+Some statistics are considered **paramteric** because they make assumptions about the the distribution of the data (can therefore be computed theoretically from parameters):  
 
 - The mean and standard deviation assume the distribution is Gaussian and can therefore be computed via the following equations 
 - **mean** $\mu$ 
 - **sd** $\sigma$
 
-Other stats are **nonparametric** because they make minimal assumptions about the distribution of the data: 
+Other statstics are **nonparametric** because they make minimal assumptions about the distribution of the data: 
 
-- The **median** is the 50th percentile, the value below which 50% of the data points fall. 
-- The **IQR** is the difference between the 25th and 75th percentiles (sometimes called the **50% coverage interval** because 50% of the data fall in this range).  
-- We can in principle calculate any arbitrary coverage interval. The 95% coverage interval — widely used in the sciences — is the difference between the 2.5 percentile and the 97.5 percentile, including all but 5% of the data. 
+- **median** is the 50th percentile, the value below which 50% of the data points fall. 
+- **inter-quartile range (IQR)** is the difference between the 25th and 75th percentiles (sometimes called the **50% coverage interval** because 50% of the data fall in this range).  
+- Note that we can calculate any arbitrary coverage interval. The 95% coverage interval — widely used in the sciences — is the difference between the 2.5 percentile and the 97.5 percentile, including all but 5% of the data. 
 
 
 ## 4 Probability distributions

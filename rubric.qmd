@@ -1,5 +1,7 @@
 ---
 title: "Rubric"
+subtitle: "Data Science for Studying Language and the Mind"
+
 ---
 
 All quiz and problem set questions are graded with the following 4-point rubric. By "understand" we mean you understand the lecture concepts and can apply the technical skills you learned in the course.  

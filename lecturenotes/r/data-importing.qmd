@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "Lecture 2: Getting started with the tidyverse"
-date:   2023-08-31 17:37:08 -0400
+title:  "Data importing"
+date:   09/05/2023
 author: "Katie Schuler"
+
 ---
 
-### 1 Tidyverse basics
+### 1 Welcome to the tidyverse
 
 > The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. ~ [Tidyverse package docs](https://www.tidyverse.org/)
 
@@ -186,6 +187,7 @@ Reading more complex file types requires functions outside the tidyverse:
 ### Further reading and references
 
 Recommended further reading:
+
 - [Data tidying](https://r4ds.hadley.nz/data-tidy) in R for Data Science
 - [Tibbles](https://r4ds.had.co.nz/tibbles.html) in R for Data Science
 - [Data import](https://r4ds.hadley.nz/data-import.html) in R for Data Science: 

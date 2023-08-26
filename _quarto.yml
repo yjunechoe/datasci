@@ -1,25 +1,69 @@
 project:
   type: website
+page-layout: article
+
 
 website:
-  title: "datasci for lang & mind"
-  sidebar: 
-    style: "floating"
-    search: true
-    # contents: 
-    #   - index.qmd
-    #   - syllabus.qmd
-    #   - section: "Lectures"
-    #   - section: "Problem sets"
-    #   - section: "Quizzes"
+  title: LING0700
+  page-navigation: true
   navbar:
+    background: light
+    search: true
     left:
-      - href: index.qmd
-        text: Schedule
-      - href: syllabus.qmd
-        text: Syllabus
-      - href: rubric.qmd
-        text: Rubric
+      - text: "Home"
+        file: index.qmd
+      - text: "Lecture Notes"
+        file: lecturenotes/r/r-basics.qmd
+      - text: "Labs"
+        file: labs/1-getting-started-with-r-lab.qmd
+
+  sidebar:
+    - title: "Home"
+      contents: 
+        - index.qmd
+        - syllabus.qmd
+        - rubric.qmd
+  
+    - title: "Lecture Notes"
+      contents:
+        - section: "R"
+          contents:
+            - lecturenotes/r/r-basics.qmd
+            - lecturenotes/r/data-importing.qmd
+
+    - title: "Labs"
+      contents:
+        - labs/1-getting-started-with-r-lab.qmd
+        # navigation items
+    
+
+# website:
+#   title: "datasci for lang & mind"
+#   page-navigation: true
+#   sidebar:
+#     contents:
+#       - section: "Unit 1: R"
+#         contents:
+#           - href: lecturenotes/hello-world.qmd
+#           - href: lecturenotes/r-basics.qmd
+#           - href: lecturenotes/data-importing.qmd
+#           - href: lecturenotes/data-visualization.qmd
+#       - text: "---"
+#       - section: "Unit 2: Stats"
+#         contents:
+#           - href: lecturenotes/probability-distributions.qmd
+#           - href: document5.qmd
+#           - href: document6.qmd
+
+          # navigation items
+  # navbar:
+  #   left:
+  #     - href: index.qmd
+  #       text: Schedule
+  #     - href: syllabus.qmd
+  #       text: Syllabus
+  #     - href: rubric.qmd
+  #       text: Rubric
 
 format:
   html: 
@@ -27,8 +71,8 @@ format:
     css: styles.css
     # fontsize: 0.9em
     toc: true
-    # grid:
-    #   sidebar-width: 260px
+    grid:
+      sidebar-width: 300px
     #   gutter-width: 4em
     df-print: kable
 
