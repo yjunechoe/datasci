@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://kschuler.github.io/datasci/labs/1-sols.html</loc>
+    <lastmod>2023-08-26T18:21:29.479Z</lastmod>
+  </url>
+  <url>
     <loc>https://kschuler.github.io/datasci/labs/1-getting-started-with-r-lab.html</loc>
-    <lastmod>2023-08-26T15:49:41.195Z</lastmod>
+    <lastmod>2023-08-26T18:21:30.003Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/labs/2-data-importing-and-viz.html</loc>
-    <lastmod>2023-08-26T15:49:41.672Z</lastmod>
+    <lastmod>2023-08-26T18:21:30.516Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rbasics.html</loc>
-    <lastmod>2023-08-26T15:49:42.101Z</lastmod>
+    <lastmod>2023-08-26T18:21:30.935Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/index.html</loc>
-    <lastmod>2023-08-26T15:49:42.509Z</lastmod>
+    <lastmod>2023-08-26T18:21:31.322Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/syllabus.html</loc>
-    <lastmod>2023-08-26T15:49:42.877Z</lastmod>
+    <lastmod>2023-08-26T18:21:31.694Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/lecturenotes/probability-distributions.html</loc>
-    <lastmod>2023-08-26T15:49:44.455Z</lastmod>
+    <lastmod>2023-08-26T18:21:33.364Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/lecturenotes/r/hello-world.html</loc>
-    <lastmod>2023-08-26T15:49:44.791Z</lastmod>
+    <lastmod>2023-08-26T18:21:33.703Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/lecturenotes/r/data-importing.html</loc>
-    <lastmod>2023-08-26T15:49:45.498Z</lastmod>
+    <lastmod>2023-08-26T18:21:34.433Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/lecturenotes/r/data-visualization.html</loc>
-    <lastmod>2023-08-26T15:49:45.742Z</lastmod>
+    <lastmod>2023-08-26T18:21:34.684Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/lecturenotes/r/r-basics.html</loc>
-    <lastmod>2023-08-26T15:49:46.668Z</lastmod>
+    <lastmod>2023-08-26T18:21:35.608Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rubric.html</loc>
-    <lastmod>2023-08-26T15:49:46.964Z</lastmod>
+    <lastmod>2023-08-26T18:21:35.914Z</lastmod>
   </url>
 </urlset>
