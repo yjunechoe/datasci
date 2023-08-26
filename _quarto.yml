@@ -16,13 +16,15 @@ website:
         file: lecturenotes/r/r-basics.qmd
       - text: "Labs"
         file: labs/1-getting-started-with-r-lab.qmd
+      - text: "Syllabus"
+        file: syllabus.qmd
 
   sidebar:
     - title: "Home"
-      contents: 
-        - index.qmd
-        - syllabus.qmd
-        - rubric.qmd
+      # contents: 
+      #   - index.qmd
+      #   - syllabus.qmd
+      #   - rubric.qmd
   
     - title: "Lecture Notes"
       contents:

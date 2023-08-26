@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "Data importing"
 date:   09/05/2023
 author: "Katie Schuler"

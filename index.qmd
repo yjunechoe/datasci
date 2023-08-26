@@ -1,9 +1,14 @@
 ---
-title: "Schedule"
-subtitle: "Data Science for Studying Language and the Mind"
+layout: page
+title: "Data sci for lang & mind"
+subtitle: "Tuesdays and Thursdays COHN 402"
 
 ---
- <!-- resources: [ed](https://edstem.org/us/courses/41903/discussion/) / [canvas](https://canvas.upenn.edu/courses/1736107) / [gradescope](https://www.gradescope.com/courses/561597) / [colab (r notebook)](https://colab.research.google.com/#create=true&language=r) -->
+ <!-- resources:  -->
+
+- contact: [katie](), [june](), [avinash](), [ravi]()
+- resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab (r notebook)](https://colab.research.google.com/#create=true&language=r)
+
 
 | Day | Unit | Topic | Resources |
 |-|--|------|----|
@@ -43,7 +48,6 @@ subtitle: "Data Science for Studying Language and the Mind"
 | 12-05 | Advanced | Multilevel models | | 
 | 12-07 | Advanced | Case study 4 | | 
 | 12-10 | Advanced | Problem set 6 | | 
-: Schedule may change
 
 
 
