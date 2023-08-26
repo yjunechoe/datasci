@@ -9,7 +9,7 @@
 <meta name="author" content="Katie Schuler">
 <meta name="dcterms.date" content="2023-08-29">
 
-<title>datasci for lang &amp; mind - Lecture 1: Getting started with R</title>
+<title>LING0700 - R Basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,11 +76,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -99,98 +99,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      datasci for lang &amp; mind
-      </li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">LING0700</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lecturenotes/hello-world.html" rel="" target="">
+ <span class="menu-text">Lecture Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">datasci for lang &amp; mind</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">R Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
- <span class="menu-text">1-getting-started-with-R.qmd</span>
-  </li>
-          <li class="sidebar-item">
- <span class="menu-text">2-getting-started-with-tidyverse.qmd</span>
-  </li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Stats Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
- <span class="menu-text">5-probability-distributions.qmd</span>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-r" id="toc-why-r" class="nav-link active" data-scroll-target="#why-r">1 Why R?</a></li>
-  <li><a href="#colab-notebook-basics" id="toc-colab-notebook-basics" class="nav-link" data-scroll-target="#colab-notebook-basics">2 Colab notebook basics</a></li>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics">3 R basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">4 Vectors</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">5 Subsetting</a></li>
-  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations">6 Operations</a></li>
-  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions">7 Built-in functions</a></li>
-  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r">8 Programming in R</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">Basics</a></li>
+  <li><a href="#important-functions" id="toc-important-functions" class="nav-link" data-scroll-target="#important-functions">Important functions</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">Subsetting</a></li>
+  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations">Operations</a></li>
+  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions">Built-in functions</a></li>
+  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r">Programming in R</a></li>
   <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
   </ul>
 </nav>
@@ -200,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 1: Getting started with R</h1>
+<h1 class="title">R Basics</h1>
 </div>
 
 
@@ -227,67 +187,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="why-r" class="level2">
-<h2 class="anchored" data-anchor-id="why-r">1 Why R?</h2>
-<p>With many programming languages available for data science (e.g.&nbsp;R, Python, Julia, MATLAB), why use R?</p>
-<ul>
-<li>Built for stats, specifically</li>
-<li>Makes nice visualizations</li>
-<li>Lots of people are doing it, especially in academia</li>
-<li>Easier for beginners to understand</li>
-<li>Free and open source (though so are Python and Julia, MATLAB costs $)</li>
-</ul>
-<p>If you are interested, here is a <a href="https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/">math professor’s take</a> on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, <strong>they’re all great</strong> and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages.</p>
-</section>
-<section id="colab-notebook-basics" class="level2">
-<h2 class="anchored" data-anchor-id="colab-notebook-basics">2 Colab notebook basics</h2>
-<p>There are many ways to program with R. Some popular options include:</p>
-<ul>
-<li><a href="https://posit.co/products/open-source/rstudio/">R Studio</a></li>
-<li><a href="https://jupyter.org/">Jupyter</a></li>
-<li><a href="https://code.visualstudio.com/docs/languages/r">VS Code</a></li>
-<li>and even simply the <a href="http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20the%20R%20command%20line.html">command line/terminal</a></li>
-</ul>
-<p><strong>Google Colab</strong> is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and <a href="https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_Colab_Notebook_Template.ipynb">Julia</a>, too!)</p>
-<p>New R notebook:</p>
-<ul>
-<li><a href="https://colab.research.google.com/#create=true&amp;language=r">colab (r kernel)</a> - use this link to start a new R notebook</li>
-<li><code>File &gt; New notebook</code> error, Python! <code>name 'x' is not defined</code></li>
-</ul>
-<p>Cell types:</p>
-<ul>
-<li><code>+ Code</code> - write and execute code</li>
-<li><code>+ Text</code> - write text blocks in <a href="https://www.markdowntutorial.com/">markdown</a></li>
-</ul>
-<p>Left sidebar:</p>
-<ul>
-<li><code>Table of contents</code> - outline from text headings</li>
-<li><code>Find and replace</code> - find and/or replace</li>
-<li><code>Files</code> - upload files to cloud session</li>
-</ul>
-<p>Frequently used menu options:</p>
-<ul>
-<li><code>File &gt; Locate in Drive</code> - where in your Google Drive?</li>
-<li><code>File &gt; Save</code> - saves</li>
-<li><code>File &gt; Revision history</code> - history of changes you made</li>
-<li><code>File &gt; Download &gt; Download .ipynb</code> - used to submit assignments!</li>
-<li><code>File &gt; Print</code> - prints</li>
-<li><code>Runtime &gt; Run all</code> - run all cells</li>
-<li><code>Runtime &gt; Run before</code> - run all cells before current active cell</li>
-<li><code>Runtime &gt; Restart and run all</code> - restart runtime, then run all</li>
-</ul>
-<p>Frequently used keyboard shortcuts:</p>
-<ul>
-<li><code>Cmd/Ctrl+S</code> - save</li>
-<li><code>Cmd/Ctrl+Enter</code> - run focused cell</li>
-<li><code>Cmd/Ctrl+Shift+A</code> - select all cells</li>
-<li><code>Cmd/Ctrl+/</code> - comment/uncomment selection</li>
-<li><code>Cmd/Ctrl+]</code> - increase indent</li>
-<li><code>Cmd/Ctrl+[</code> - decrease indent</li>
-</ul>
-</section>
-<section id="r-basics" class="level2">
-<h2 class="anchored" data-anchor-id="r-basics">3 R basics</h2>
+<section id="basics" class="level2">
+<h2 class="anchored" data-anchor-id="basics">Basics</h2>
 <p>Defining some basic concepts:</p>
 <ul>
 <li><strong>Expressions</strong> are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
@@ -305,37 +206,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Comments</strong> are notes you leave to yourself (within code blocks in colab) to document your code; comments are not evaluated.</li>
 <li><strong>Messages</strong> are notes R leaves for you, after you run your code. Messages can be simply for-your-information, warnings that something unexpected might happen, or erros if R cannot evaluate your code.</li>
 </ul>
-<p>Important functions to know:</p>
-<ul>
-<li>for objects:
-<ul>
-<li><code>str(x)</code> - returns summary of object’s structure</li>
-<li><code>typeof(x)</code> - returns object’s data type</li>
-<li><code>length(x)</code> - returns object’s length</li>
-<li><code>attributes(x)</code> - returns list of object’s attributes</li>
-<li><code>is.*(x)</code> - test if object is data type (e.g.&nbsp;<code>is.double(x)</code>)</li>
-<li><code>as.*(x)</code> - coerce object to data type (e.g.&nbsp;<code>as.double(x)</code>)</li>
-</ul></li>
-<li>for environment:
-<ul>
-<li><code>ls()</code> - list all variables in environment</li>
-<li><code>rm(x)</code> - remove x variable from environment</li>
-<li><code>rm(list = ls())</code> - remove all variables from environment</li>
-</ul></li>
-<li>for packages:
-<ul>
-<li><code>install.packages()</code> to install packages</li>
-<li><code>library()</code> to load the package into your current R session.</li>
-<li><code>data()</code> to load data from package into environment</li>
-<li><code>sessionInfo()</code> - version information for current R session and packages</li>
-</ul></li>
-<li>for help:
-<ul>
-<li><code>?mean</code> - get help with a function</li>
-<li><code>help.search('mean')</code> - search help files for word or phrase</li>
-<li><code>help(package='tidyverse')</code> - find help for a package</li>
-</ul></li>
-</ul>
 <p>Ways to get help when coding in R:</p>
 <ul>
 <li><strong>Read packages docs</strong> - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the <a href="https://dplyr.tidyverse.org/">dplyr package</a>.</li>
@@ -346,8 +216,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Ask ChatGPT</strong> - You can similarly use ChatGPT or other LLMs as a resource. But keep in mind they may provide a solution that is wrong or not relevant to what we are learning in this course.</li>
 </ul>
 </section>
+<section id="important-functions" class="level2">
+<h2 class="anchored" data-anchor-id="important-functions">Important functions</h2>
+<p>For objects:</p>
+<ul>
+<li><code>str(x)</code> - returns summary of object’s structure</li>
+<li><code>typeof(x)</code> - returns object’s data type</li>
+<li><code>length(x)</code> - returns object’s length</li>
+<li><code>attributes(x)</code> - returns list of object’s attributes</li>
+<li><code>is.*(x)</code> - test if object is data type (e.g.&nbsp;<code>is.double(x)</code>)</li>
+<li><code>as.*(x)</code> - coerce object to data type (e.g.&nbsp;<code>as.double(x)</code>)</li>
+</ul>
+<p>for environment:</p>
+<ul>
+<li><code>ls()</code> - list all variables in environment</li>
+<li><code>rm(x)</code> - remove x variable from environment</li>
+<li><code>rm(list = ls())</code> - remove all variables from environment</li>
+</ul>
+<p>For packages:</p>
+<ul>
+<li><code>install.packages()</code> to install packages</li>
+<li><code>library()</code> to load the package into your current R session.</li>
+<li><code>data()</code> to load data from package into environment</li>
+<li><code>sessionInfo()</code> - version information for current R session and packages</li>
+</ul>
+<p>For help:</p>
+<ul>
+<li><code>?mean</code> - get help with a function</li>
+<li><code>help.search('mean')</code> - search help files for word or phrase</li>
+<li><code>help(package='tidyverse')</code> - find help for a package</li>
+</ul>
+</section>
 <section id="vectors" class="level2">
-<h2 class="anchored" data-anchor-id="vectors">4 Vectors</h2>
+<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
 <p>One of the must fundamental data structures in R is the <strong>vector</strong>. There are two types:</p>
 <ul>
 <li><strong>atomic vector</strong> - elements of the same data type</li>
@@ -395,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="subsetting" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting">5 Subsetting</h2>
+<h2 class="anchored" data-anchor-id="subsetting">Subsetting</h2>
 <blockquote class="blockquote">
 <p>Subsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R</p>
 </blockquote>
@@ -434,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="operations" class="level2">
-<h2 class="anchored" data-anchor-id="operations">6 Operations</h2>
+<h2 class="anchored" data-anchor-id="operations">Operations</h2>
 <p>Arithmetic operators:</p>
 <ul>
 <li><code>+</code> - add</li>
@@ -473,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="built-in-functions" class="level2">
-<h2 class="anchored" data-anchor-id="built-in-functions">7 Built-in functions</h2>
+<h2 class="anchored" data-anchor-id="built-in-functions">Built-in functions</h2>
 <p>Note that you do not need to memorize these built-in functions to be successful on quizzes. Use this as a reference.</p>
 <p>For basic math:</p>
 <ul>
@@ -540,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="programming-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="programming-in-r">8 Programming in R</h2>
+<h2 class="anchored" data-anchor-id="programming-in-r">Programming in R</h2>
 <p>Writing <strong>functions</strong> and handling <strong>flow control</strong> are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a>.</p>
 <ul>
 <li><p><strong>Functions</strong> are reusable pieces of code that take some input, perform some task or computation, and return an output.</p>

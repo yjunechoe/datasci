@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-08-31">
+<meta name="dcterms.date" content="2023-09-07">
 
-<title>LING0700 - Lab 1: Getting started with R</title>
+<title>LING0700 - Lab 2: Getting started with tidyverse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../labs/1-getting-started-with-r-lab.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
  <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -134,53 +134,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/1-getting-started-with-r-lab.html">Lab 1: Getting started with R</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../labs/1-getting-started-with-r-lab.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lab 1: Getting started with R</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link active" data-scroll-target="#r-basics">R Basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">Subsetting</a></li>
-  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r">Programming in R</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Getting started with R</h1>
-<p class="subtitle lead">Not graded, just practice</p>
+<h1 class="title">Lab 2: Getting started with tidyverse</h1>
+<p class="subtitle lead">Labs are not graded, they are just for practice</p>
 </div>
 
 
@@ -197,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 31, 2023</p>
+      <p class="date">September 7, 2023</p>
     </div>
   </div>
   
@@ -207,90 +175,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.</p>
-<section id="r-basics" class="level2">
-<h2 class="anchored" data-anchor-id="r-basics">R Basics</h2>
+<p>Practice quiz questions.</p>
 <ol type="1">
-<li><p>Which of the following are expressions? Choose all that apply.</p>
-<ul>
-<li><code>10</code></li>
-<li><code>5 + 10</code></li>
-<li><code>x &lt;- 5 + 10</code></li>
-<li><code>x &lt;- y + 10</code></li>
-<li><code>mean(x)</code></li>
-</ul></li>
-<li><p>Which of the following are valid variable names in R?</p>
-<ul>
-<li><code>childAge</code></li>
-<li><code>response_time</code></li>
-<li><code>1stPlaceWinner</code></li>
-<li><code>2fast2furious</code></li>
-<li><code>fast&amp;furious</code></li>
-</ul></li>
-<li><p>Suppose we run the following code block. What will <code>ls()</code> return?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Suppose we run <code>library(tidyverse)</code> in Google Colab and receive the following error message? How do we solve this problem?</p>
-<blockquote class="blockquote">
-<p><code>NameError: name 'library' is not defined</code></p>
-</blockquote></li>
-</ol>
-</section>
-<section id="vectors" class="level2">
-<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
-<ol type="1">
-<li><p>The expression <code>attributes(x)</code> returns the following result. What will <code>typeof(x)</code> return?</p>
-<blockquote class="blockquote">
-<p><code>$dim= 2 . 2</code></p>
-</blockquote></li>
-<li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Explain in one sentence the difference between an atomic vector and a list.</p></li>
-<li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return? What about <code>length(x)</code>? Explain why.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Suppose we run the following code. What will <code>y</code> return? What about <code>typeof(y)</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="subsetting" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting">Subsetting</h2>
-<ol type="1">
-<li><p>Suppose we run the following code. What will each of operations return (a - e)?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li><p>Suppose we run the following code block. What will <code>is.data.frame(y)</code> return?</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">y=</span><span class="dv">1</span>)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Suppose <code>print(x)</code> returns the output below to answer a-c that follow.</p>
+<pre><code>
+# output
+</code></pre>
 <ol type="a">
-<li><code>x[c(2,4)]</code></li>
-<li><code>x[-c(2,4)]</code></li>
-<li><code>x[]</code></li>
-<li><code>x[[2]]</code></li>
-<li><code>x[2]</code></li>
+<li>What will <code>map_dbl(x, sum)</code> return?</li>
+<li>What will <code>x$a</code> return?</li>
+<li>What will <code>x[[5]]</code> return?</li>
 </ol></li>
-<li><p>Suppose <code>m</code> is a matrix created with <code>matrix(c(1,2,3,4), nrow=2, ncol=2)</code>. What will each of the following operations return?</p>
-<ul>
-<li><code>m[c(1), ]</code></li>
-<li><code>m[c(2), c(1, 2)]</code></li>
-<li><code>m[]</code></li>
-<li><code>m[[2]]</code></li>
-</ul></li>
-<li><p>Suppose <code>df</code> is a data frame created with <code>data.frame(x=c(1,2,3), y=c("a","b","c"))</code>. What will each of the following operations return?</p>
-<ul>
-<li><code>df[c(1,2)]</code></li>
-<li><code>df[c(1,2), c(2)]</code></li>
-<li><code>df[['x']]</code></li>
-<li><code>df[x]</code></li>
-<li><code>df[[2]]</code></li>
-</ul></li>
-<li><p>Suppose <code>df</code> is a dataframe with column names <code>ageChild</code>, <code>ageParent</code>, and <code>dateAdded</code>. What will <code>df$age</code> return? Explain why.</p></li>
-</ol>
-</section>
-<section id="programming-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="programming-in-r">Programming in R</h2>
-<ol type="1">
-<li>Explain in one sentence the difference between a <code>for</code> loop and a <code>while</code> loop?</li>
+<li><p>Suppose <code>x[[5]]</code> returns <code>NULL</code>, what will <code>is_tibble(x)</code> return?</p></li>
+<li><p>Can <code>readr</code> import a google sheet with the <code>read_csv()</code> function?</p></li>
 </ol>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

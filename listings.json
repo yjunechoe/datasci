@@ -2,5 +2,21 @@
   {
     "listing": "/listing.html",
     "items": []
+  },
+  {
+    "listing": "/lectures.html",
+    "items": [
+      "/lecturenotes/data-importing.html",
+      "/lecturenotes/hello-world.html",
+      "/lecturenotes/probability-distributions.html",
+      "/lecturenotes/r-basics.html"
+    ]
+  },
+  {
+    "listing": "/labs.html",
+    "items": [
+      "/labs/1-getting-started-with-r-lab.html",
+      "/labs/2-getting-started-with-tidyverse.html"
+    ]
   }
 ]
