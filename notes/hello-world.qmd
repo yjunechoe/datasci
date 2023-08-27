@@ -1,15 +1,18 @@
 ---
 layout: post
-title:  "Hello, World!"
+title:  "Hello, world!"
 date:   2023-08-29 17:37:08 -0400
 author: Katie Schuler
-subtitle: "Data Science for Studying Language and the Mind"
+subtitle: "Welcome to Datasci for Lang & Mind"
 
 ---
 
+::: {.callout-warning title="Under Construction"}
+:::
+
 ## Data science
 
-## 
+> Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.<br> ~ [inferentialthinking.com](https://inferentialthinking.com/chapters/01/1/intro.html)
 
 ## Why R? 
 

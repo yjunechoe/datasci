@@ -1,6 +1,7 @@
 ---
 title: "Syllabus"
 subtitle: "Data Science for Studying Language and the Mind"
+number-sections: false
 ---
 
 Welcome to Data Science for Studying Language & the Mind! The Fall 2023 course information and syllabus are below. Course materials for previous semesters are archived [here](https://childlanglab.gitbook.io/ling0700/).

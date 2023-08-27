@@ -1,6 +1,7 @@
 project:
   type: website
-page-layout: article
+# page-layout: article
+callout-appearance: simple
 
 
 website:
@@ -12,30 +13,43 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - text: "Lecture Notes"
-        file: lecturenotes/r/r-basics.qmd
-      - text: "Labs"
-        file: labs/1-getting-started-with-r-lab.qmd
       - text: "Syllabus"
         file: syllabus.qmd
+      - text: "Lecture Notes"
+        file: notes/hello-world.qmd
+      - text: "Labs"
+        file: labs/1-getting-started-with-r-lab.qmd
+      - text: "Assessments"
+        file: "psets/problem-set-1.qmd"
 
   sidebar:
-    - title: "Home"
-      # contents: 
-      #   - index.qmd
-      #   - syllabus.qmd
-      #   - rubric.qmd
+  #   - title: "Home"
+  #     # contents: 
+  #     #   - index.qmd
+  #     #   - syllabus.qmd
+  #     #   - rubric.qmd
   
     - title: "Lecture Notes"
       contents:
-        - section: "R"
+        - notes/hello-world.qmd
+        - section: "Learn R"
           contents:
-            - lecturenotes/r/r-basics.qmd
-            - lecturenotes/r/data-importing.qmd
+            - notes/r-basics.qmd
+            - notes/data-importing.qmd
 
     - title: "Labs"
       contents:
         - labs/1-getting-started-with-r-lab.qmd
+        # navigation items
+
+    - title: "Assessments"
+      contents:
+        - section: "Problem sets"
+          contents:
+            - psets/problem-set-1.qmd
+        - section: "Quizzes"
+        - text: "---"
+        - rubric.qmd
         # navigation items
     
 
@@ -73,6 +87,7 @@ format:
     css: styles.css
     # fontsize: 0.9em
     toc: true
+    number-sections: true
     grid:
       sidebar-width: 300px
     #   gutter-width: 4em

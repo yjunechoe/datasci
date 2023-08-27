@@ -1,53 +1,52 @@
 ---
-layout: page
-title: "Data sci for lang & mind"
+title: "Datasci for lang & mind"
 subtitle: "Tuesdays and Thursdays COHN 402"
 
 ---
  <!-- resources:  -->
 
 - contact: [katie](), [june](), [avinash](), [ravi]()
-- resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab (r notebook)](https://colab.research.google.com/#create=true&language=r)
+- resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab](https://colab.research.google.com/#create=true&language=r)
 
 
-| Day | Unit | Topic | Resources |
-|-|--|------|----|
-| 08-28 | R | Hello, world! | |  |
-| 08-31 | R | [R-basics](lecturenotes/r/r-basics.qmd)  | [lab1](labs/1-getting-started-with-r-lab.qmd) | 
-|  09-05 | R | [Data importing](lecturenotes/r/data-importing.qmd)  | | 
-| 09-07 | R | Data visualization |  |
-| 09-10 | R | Problem set 1 | |
-|  09-12 | R | Data transformation | |
-|  09-14 |R | Data tidying | | 
-|  09-19 | R| Quiz 1 | |
-|  09-20 | Stats | Probability distributions |  | 
-|  09-26 | Stats | Sampling variability |  | 
-|  09-28 | Stats | Hypothesis testing | | 
-| 10-01 | Stats | Problem set 2 | | 
-| 10-03 | Model | Model specification | | 
-| 10-05 | Model | Model fitting | | 
-| 10-10 | Model | Quiz 2 | | 
-| 10-12 | Model | **No class, break** | | 
-| 10-17 | Model | Model accuracy | | 
-| 10-19 | Model | Model reliability | | 
-| 10-22 | Model | Problem set 3 | | 
-| 10-24 | Infer | Conditions for inference | | 
-| 10-26 | Infer | Inference on regression models | | 
-| 10-31 | Infer | Quiz 3 | | 
-| 11-02 | Infer | TBD | | 
-| 11-07 | Specials | Feature selection | | 
-| 11-09 | Specials | Case study 1 | | 
-| 11-12 | Specials | Problem set 4 | | 
-| 11-14 | Specials | Ethics | | 
-| 11-16 | Specials | Case study 2 | | 
-| 11-21 | Specials | Quiz 4 | | 
-| 11-23 | Specials | **No class, break** | | 
-| 11-28 | Advanced | Classification | | 
-| 11-30 | Advanced | Case study 3| | 
-| 12-03 | Advanced | Problem set 5 | | 
-| 12-05 | Advanced | Multilevel models | | 
-| 12-07 | Advanced | Case study 4 | | 
-| 12-10 | Advanced | Problem set 6 | | 
+| Day | Topic | Resources |
+|-|-----|----|
+| 08-28 | Hello, world! | |  
+| 08-31 | R-basics  | | 
+|  09-05 |  Data importing  | | 
+| 09-07 |   Data visualization |  |
+| 09-10 |   Problem set 1 | |
+|  09-12 |   Data transformation | |
+|  09-14 |  Data tidying | | 
+|  09-19 |  Quiz 1 | |
+|  09-20 |  Probability distributions |  | 
+|  09-26 |  Sampling variability |  | 
+|  09-28 |  Hypothesis testing | | 
+| 10-01 |  Problem set 2 | | 
+| 10-03 |  Model specification | | 
+| 10-05 |  Model fitting | | 
+| 10-10 |  Quiz 2 | | 
+| 10-12 |  **No class, break** | | 
+| 10-17 |  Model accuracy | | 
+| 10-19 |  Model reliability | | 
+| 10-22 | Problem set 3 | | 
+| 10-24 | Conditions for inference | | 
+| 10-26 |  Inference on regression models | | 
+| 10-31 | Quiz 3 | | 
+| 11-02 |  TBD | | 
+| 11-07 | Feature engineering | | 
+| 11-09 |  Case study 1 | | 
+| 11-12 |  Problem set 4 | | 
+| 11-14 |  Ethics | | 
+| 11-16 |  Case study 2 | | 
+| 11-21 |  Quiz 4 | | 
+| 11-23 |  **No class, break** | | 
+| 11-28 | Classification | | 
+| 11-30 | Case study 3| | 
+| 12-03 | Problem set 5 | | 
+| 12-05 | Multilevel models | | 
+| 12-07 | Case study 4 | | 
+| 12-10 | Problem set 6 | | 
 
 
 

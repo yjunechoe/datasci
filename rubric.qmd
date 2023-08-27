@@ -1,6 +1,7 @@
 ---
 title: "Rubric"
-subtitle: "Data Science for Studying Language and the Mind"
+subtitle: "Grading rubric for problem sets and quizzes"
+number-sections: false
 
 ---
 

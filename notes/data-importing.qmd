@@ -6,7 +6,7 @@ author: "Katie Schuler"
 
 ---
 
-## 1 Welcome to the tidyverse
+## Welcome to the tidyverse
 
 > The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. ~ [Tidyverse package docs](https://www.tidyverse.org/)
 
@@ -25,7 +25,7 @@ We load the `tidyverse` like any other package, with `library(tidyverse)`. When 
 
 - We can resolve conflicts with the `::` operator, which allows us to specify which package our intended function belongs to as a prefix: `stats::filter()` or `dplyr::filter()`
 
-## 2 What is tidy data?
+## What is tidy data?
 
 The same underlying data can be represented in a table in many different ways; some easier to work with than others. The tidyverse makes use of tidy data principles to make datasets easier to work with in R. **Tidy data** provides a standard way of structuring datasets: 
 
@@ -39,7 +39,7 @@ Why is tidy data easier to work with?
 - Because consistency and uniformity are very helpful when programming
 - Variables as columns works well for vectorized languages (R!)
 
-## 3 Functional programming with purrr
+## Functional programming with purrr
 
 > purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read.  ~ purrr docs
 
@@ -67,7 +67,7 @@ map_dbl(df, mean)
 
 Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the `map()` function or use it in a `for` loop. But the `map` family allows us go up a layer of abstraction. We can use `pmap()` when we want to apply a function element-wise to corresponding items in multiple lists. 
 
-## 4 Modern data frames with tibble
+## Modern data frames with tibble
 
 > A tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less and complain more ~ [tibble docs](https://tibble.tidyverse.org/)
 
@@ -107,7 +107,7 @@ To test if something is a `tibble` or a `data.frame`:
 - `is_tibble(x)`
 - `is.data.frame(x)`
 
-## 5 Reading data with readr
+## Reading data with readr
 
 > The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs
 
