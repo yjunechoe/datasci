@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>datasci for lang &amp; mind - Listing Example</title>
+<title>LING0700 - Working documents</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,20 +63,76 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-lecture-notes .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lecture-notes'] = new List('listing-lecture-notes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-labs .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-labs'] = new List('listing-labs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-psets .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-psets'] = new List('listing-psets', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -96,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">datasci for lang &amp; mind</span>
+    <span class="navbar-title">LING0700</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -115,15 +171,19 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Schedule</span></a>
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./notes/r-basics.html" rel="" target="">
+ <span class="menu-text">Lecture Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./labs/1-getting-started-with-r-lab.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./syllabus.html" rel="" target="">
  <span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./rubric.html" rel="" target="">
- <span class="menu-text">Rubric</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -131,41 +191,27 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Listing Example</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-notes" id="toc-lecture-notes" class="nav-link active" data-scroll-target="#lecture-notes">Lecture notes</a></li>
+  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Listing Example</h1>
+<h1 class="title">Working documents</h1>
 </div>
 
 
@@ -180,12 +226,111 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="lecture-notes" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-notes">Lecture notes</h2>
+<div id="listing-lecture-notes" class="quarto-listing quarto-listing-container-table">
 
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Title
+</th>
+<th>
+Author
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1693886400000" data-listing-file-modified-sort="1693074487377" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Data importing" data-listing-filename-sort="data-importing.qmd">
+<td>
+<span class="listing-date">Sep 5, 2023</span>
+</td>
+<td>
+<a href="./notes/data-importing.html" class="title listing-title">Data importing</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693064380174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data visualization" data-listing-filename-sort="data-visualization.qmd">
+<td>
+<span class="listing-date">Sep 7, 2023</span>
+</td>
+<td>
+<a href="./notes/data-visualization.html" class="title listing-title">Data visualization</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1693345028000" data-listing-file-modified-sort="1693062709315" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Hello, World!" data-listing-filename-sort="hello-world.qmd">
+<td>
+<span class="listing-date">Aug 29, 2023</span>
+</td>
+<td>
+<a href="./notes/hello-world.html" class="title listing-title">Hello, World!</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693064825519" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Probablity distributions" data-listing-filename-sort="probability-distributions.qmd">
+<td>
+<span class="listing-date">Sep 12, 2023</span>
+</td>
+<td>
+<a href="./notes/probability-distributions.html" class="title listing-title">Probablity distributions</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1693454400000" data-listing-file-modified-sort="1693064073159" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="R Basics" data-listing-filename-sort="r-basics.qmd">
+<td>
+<span class="listing-date">Aug 31, 2023</span>
+</td>
+<td>
+<a href="./notes/r-basics.html" class="title listing-title">R Basics</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+</tbody>
 
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="labs" class="level2">
+<h2 class="anchored" data-anchor-id="labs">Labs</h2>
+<div id="listing-labs" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-labs-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-labs'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
@@ -195,12 +340,56 @@ ul.task-list li input[type="checkbox"] {
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1693073948494" data-listing-reading-time-sort="3" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="1-getting-started-with-r-lab.qmd">
+<td>
+<span class="listing-date">undefined</span>
+</td>
+<td>
+<a href="./labs/1-getting-started-with-r-lab.html" class="title listing-title">Lab 1: Getting started with R</a>
+</td>
+<td>
+<span class="listing-author"></span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693063777948" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Lab 2: Getting started with tidyverse" data-listing-filename-sort="2-data-importing-and-viz.qmd">
+<td>
+<span class="listing-date">Sep 7, 2023</span>
+</td>
+<td>
+<a href="./labs/2-data-importing-and-viz.html" class="title listing-title">Lab 2: Getting started with tidyverse</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
 </tbody>
 
 </table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-psets">
+<div class="list quarto-listing-default">
+
+</div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>

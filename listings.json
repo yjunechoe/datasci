@@ -1,22 +1,17 @@
 [
   {
-    "listing": "/listing.html",
-    "items": []
-  },
-  {
-    "listing": "/lectures.html",
+    "listing": "/wd.html",
     "items": [
-      "/lecturenotes/data-importing.html",
-      "/lecturenotes/hello-world.html",
-      "/lecturenotes/probability-distributions.html",
-      "/lecturenotes/r-basics.html"
-    ]
-  },
-  {
-    "listing": "/labs.html",
-    "items": [
+      "/notes/data-importing.html",
+      "/index.html",
+      "/slides/demo.html",
+      "/notes/hello-world.html",
       "/labs/1-getting-started-with-r-lab.html",
-      "/labs/2-getting-started-with-tidyverse.html"
+      "/psets/problem-set-1.html",
+      "/notes/r-basics.html",
+      "/rubric.html",
+      "/syllabus.html",
+      "/rbasics.html"
     ]
   }
 ]

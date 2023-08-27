@@ -119,7 +119,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lecturenotes/r/r-basics.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -127,8 +131,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Assessments</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -169,10 +173,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link active" data-scroll-target="#r-basics">R Basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting">Subsetting</a></li>
-  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r">Programming in R</a></li>
+  <li><a href="#r-basics" id="toc-r-basics" class="nav-link active" data-scroll-target="#r-basics"><span class="header-section-number">1</span> R Basics</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">2</span> Vectors</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">3</span> Subsetting</a></li>
+  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r"><span class="header-section-number">4</span> Programming in R</a></li>
   </ul>
 </nav>
     </div>
@@ -198,8 +202,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.</p>
-<section id="r-basics" class="level2">
-<h2 class="anchored" data-anchor-id="r-basics">R Basics</h2>
+<section id="r-basics" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="r-basics"><span class="header-section-number">1</span> R Basics</h2>
 <ol type="1">
 <li><p>Which of the following are expressions? Choose all that apply.</p>
 <ul>
@@ -226,8 +230,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote></li>
 </ol>
 </section>
-<section id="vectors" class="level2">
-<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
+<section id="vectors" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="vectors"><span class="header-section-number">2</span> Vectors</h2>
 <ol type="1">
 <li><p>The expression <code>attributes(x)</code> returns the following result. What will <code>typeof(x)</code> return?</p>
 <blockquote class="blockquote">
@@ -243,8 +247,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="subsetting" class="level2">
-<h2 class="anchored" data-anchor-id="subsetting">Subsetting</h2>
+<section id="subsetting" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">3</span> Subsetting</h2>
 <ol type="1">
 <li><p>Suppose we run the following code. What will each of operations return (a - e)?</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -273,8 +277,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Suppose <code>df</code> is a dataframe with column names <code>ageChild</code>, <code>ageParent</code>, and <code>dateAdded</code>. What will <code>df$age</code> return? Explain why.</p></li>
 </ol>
 </section>
-<section id="programming-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="programming-in-r">Programming in R</h2>
+<section id="programming-in-r" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="programming-in-r"><span class="header-section-number">4</span> Programming in R</h2>
 <ol type="1">
 <li>Explain in one sentence the difference between a <code>for</code> loop and a <code>while</code> loop?</li>
 </ol>
