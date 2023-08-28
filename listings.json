@@ -3,9 +3,9 @@
     "listing": "/wd.html",
     "items": [
       "/notes/data-importing.html",
-      "/index.html",
       "/slides/demo.html",
       "/notes/hello-world.html",
+      "/index.html",
       "/labs/1-getting-started-with-r-lab.html",
       "/psets/problem-set-1.html",
       "/notes/r-basics.html",

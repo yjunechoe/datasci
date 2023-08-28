@@ -9,7 +9,7 @@
 <meta name="author" content="Katie Schuler">
 <meta name="dcterms.date" content="2023-08-29">
 
-<title>LING0700 - Hello, world!</title>
+<title>LING 0700 - Hello, world!</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING0700</span>
+    <span class="navbar-title">LING 0700</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -155,6 +155,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Foundations</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Specials</span></span>
+  </li>
     </ul>
     </div>
 </nav>
@@ -166,8 +174,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#data-science" id="toc-data-science" class="nav-link active" data-scroll-target="#data-science"><span class="header-section-number">1</span> Data science</a></li>
-  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r"><span class="header-section-number">2</span> Why R?</a></li>
-  <li><a href="#google-colab" id="toc-google-colab" class="nav-link" data-scroll-target="#google-colab"><span class="header-section-number">3</span> Google Colab</a></li>
+  <li><a href="#overview-of-the-course" id="toc-overview-of-the-course" class="nav-link" data-scroll-target="#overview-of-the-course"><span class="header-section-number">2</span> Overview of the course</a></li>
+  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r"><span class="header-section-number">3</span> Why R?</a></li>
+  <li><a href="#google-colab" id="toc-google-colab" class="nav-link" data-scroll-target="#google-colab"><span class="header-section-number">4</span> Google Colab</a></li>
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">5</span> Further reading and references</a></li>
   </ul>
 </nav>
     </div>
@@ -220,11 +230,57 @@ Under Construction
 <section id="data-science" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="data-science"><span class="header-section-number">1</span> Data science</h2>
 <blockquote class="blockquote">
-<p>Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.<br> ~ <a href="https://inferentialthinking.com/chapters/01/1/intro.html">inferentialthinking.com</a></p>
+<p>Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.<br><br> <em>Computational and Inferential Thinking: The Foundations of Data Science</em></p>
 </blockquote>
+<div id="fig-datascience" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: flowchart from R for Data Science</figcaption>
+</figure>
+</div>
 </section>
-<section id="why-r" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="why-r"><span class="header-section-number">2</span> Why R?</h2>
+<section id="overview-of-the-course" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="overview-of-the-course"><span class="header-section-number">2</span> Overview of the course</h2>
+<p>Topics:</p>
+<ul>
+<li><strong>Learn R</strong> - we will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:
+<ul>
+<li>R basics</li>
+<li>Data importing</li>
+<li>Data visualization</li>
+<li>Data wrangling</li>
+</ul></li>
+<li><strong>Foundations</strong> - we will spend the next several weeks building a foundation in basic statistics and model building
+<ul>
+<li>Probability distributions</li>
+<li>Sampling variability</li>
+<li>Hypothesis testing</li>
+<li>Model specification</li>
+<li>Model fitting</li>
+<li>Model accuracy</li>
+<li>Model reliability</li>
+</ul></li>
+<li><strong>Specials</strong> - finally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:
+<ul>
+<li>Inference for regression</li>
+<li>Classification</li>
+<li>Feature engineering (preprocessing)</li>
+<li>Mixed-effect models</li>
+</ul></li>
+</ul>
+<p>Typical week:</p>
+<ul>
+<li><strong>Lecture</strong> (Tue and Thu) - conceptual overview of core topics and programming tutorials</li>
+<li><strong>Lab</strong> (Thu or Fri) - ungraded practice problems and review with TAs</li>
+</ul>
+<p>Assessments:</p>
+<ul>
+<li><strong>6 Problem sets</strong> - applying programming skills</li>
+<li><strong>4 Quizzes</strong> - testing understanding of concepts (similar to lab practice questions)</li>
+</ul>
+</section>
+<section id="why-r" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="why-r"><span class="header-section-number">3</span> Why R?</h2>
 <p>With many programming languages available for data science (e.g.&nbsp;R, Python, Julia, MATLAB), why use R?</p>
 <ul>
 <li>Built for stats, specifically</li>
@@ -235,8 +291,8 @@ Under Construction
 </ul>
 <p>If you are interested, here is a <a href="https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/">math professor’s take</a> on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, <strong>they’re all great</strong> and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages.</p>
 </section>
-<section id="google-colab" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">3</span> Google Colab</h2>
+<section id="google-colab" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">4</span> Google Colab</h2>
 <p>There are many ways to program with R. Some popular options include:</p>
 <ul>
 <li><a href="https://posit.co/products/open-source/rstudio/">R Studio</a></li>
@@ -281,6 +337,10 @@ Under Construction
 <li><code>Cmd/Ctrl+]</code> - increase indent</li>
 <li><code>Cmd/Ctrl+[</code> - decrease indent</li>
 </ul>
+</section>
+<section id="further-reading-and-references" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">5</span> Further reading and references</h2>
+<p>Recommended reading: - <a href="https://inferentialthinking.com/chapters/01/what-is-data-science.html">Ch 1 Data Science</a> from Computational and Inferential Thinking: The Foundations of Data Science</p>
 
 
 </section>

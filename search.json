@@ -44,16 +44,16 @@
   {
     "objectID": "rbasics.html",
     "href": "rbasics.html",
-    "title": "LING0700",
+    "title": "LING 0700",
     "section": "",
     "text": "2 + 3\n\n5\n\n\n\nlibrary(tidyverse)\n\nERROR: Error in library(tidyverse): there is no package called 'tidyverse'"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Datasci for lang & mind",
+    "title": "LING 0700: Datasci for lang & mind",
     "section": "",
-    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nDay\nTopic\nResources\n\n\n\n\n08-28\nHello, world!\n\n\n\n08-31\nR-basics\n\n\n\n09-05\nData importing\n\n\n\n09-07\nData visualization\n\n\n\n09-10\nProblem set 1\n\n\n\n09-12\nData transformation\n\n\n\n09-14\nData tidying\n\n\n\n09-19\nQuiz 1\n\n\n\n09-20\nProbability distributions\n\n\n\n09-26\nSampling variability\n\n\n\n09-28\nHypothesis testing\n\n\n\n10-01\nProblem set 2\n\n\n\n10-03\nModel specification\n\n\n\n10-05\nModel fitting\n\n\n\n10-10\nQuiz 2\n\n\n\n10-12\nNo class, break\n\n\n\n10-17\nModel accuracy\n\n\n\n10-19\nModel reliability\n\n\n\n10-22\nProblem set 3\n\n\n\n10-24\nConditions for inference\n\n\n\n10-26\nInference on regression models\n\n\n\n10-31\nQuiz 3\n\n\n\n11-02\nTBD\n\n\n\n11-07\nFeature engineering\n\n\n\n11-09\nCase study 1\n\n\n\n11-12\nProblem set 4\n\n\n\n11-14\nEthics\n\n\n\n11-16\nCase study 2\n\n\n\n11-21\nQuiz 4\n\n\n\n11-23\nNo class, break\n\n\n\n11-28\nClassification\n\n\n\n11-30\nCase study 3\n\n\n\n12-03\nProblem set 5\n\n\n\n12-05\nMultilevel models\n\n\n\n12-07\nCase study 4\n\n\n\n12-10\nProblem set 6"
+    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nWeek\nDay\nTopic\nResources\n\n\n\n\n1\n08-28\nHello, world!\n\n\n\n1\n08-31\nR-basics\n\n\n\n2\n09-05\nData importing\n\n\n\n2\n09-07\nData visualization\n\n\n\n2\n09-10\nProblem set 1\n\n\n\n3\n09-12\nData wrangling\n\n\n\n3\n09-14\nProbability distributions\n\n\n\n4\n09-19\nQuiz 1\n\n\n\n4\n09-20\nSampling variability\n\n\n\n5\n09-26\nHypothesis testing\n\n\n\n5\n09-28\nR tutorial\n\n\n\n5\n10-01\nProblem set 2\n\n\n\n6\n10-03\nModel specification\n\n\n\n6\n10-05\nModel fitting\n\n\n\n7\n10-10\nQuiz 2\n\n\n\n7\n10-12\nNo class, break\n\n\n\n8\n10-17\nR tutorial\n\n\n\n8\n10-19\nModel accuracy\n\n\n\n8\n10-22\nProblem set 3\n\n\n\n9\n10-24\nModel reliability\n\n\n\n9\n10-26\nR tutorial\n\n\n\n10\n10-31\nQuiz 3\n\n\n\n10\n11-02\nTBD guest\n\n\n\n11\n11-07\nClassification\n\n\n\n11\n11-09\nR tutorial\n\n\n\n11\n11-12\nProblem set 4\n\n\n\n12\n11-14\nInference\n\n\n\n12\n11-16\nR tutorial\n\n\n\n13\n11-21\nQuiz 4\n\n\n\n13\n11-23\nNo class, break\n\n\n\n14\n11-28\nFeature engineering\n\n\n\n14\n11-30\nR tutorial\n\n\n\n14\n12-03\nProblem set 5\n\n\n\n15\n12-05\nMultilevel models\n\n\n\n15\n12-07\nR tutorial\n\n\n\n15\n12-10\nProblem set 6"
   },
   {
     "objectID": "slides/demo.html#data-science",
@@ -88,21 +88,35 @@
     "href": "notes/hello-world.html#data-science",
     "title": "Hello, world!",
     "section": "1 Data science",
-    "text": "1 Data science\n\nData are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation. ~ inferentialthinking.com"
+    "text": "1 Data science\n\nData are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation. Computational and Inferential Thinking: The Foundations of Data Science\n\n\n\n\nFigure 1: flowchart from R for Data Science"
+  },
+  {
+    "objectID": "notes/hello-world.html#overview-of-the-course",
+    "href": "notes/hello-world.html#overview-of-the-course",
+    "title": "Hello, world!",
+    "section": "2 Overview of the course",
+    "text": "2 Overview of the course\nTopics:\n\nLearn R - we will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:\n\nR basics\nData importing\nData visualization\nData wrangling\n\nFoundations - we will spend the next several weeks building a foundation in basic statistics and model building\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability\n\nSpecials - finally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:\n\nInference for regression\nClassification\nFeature engineering (preprocessing)\nMixed-effect models\n\n\nTypical week:\n\nLecture (Tue and Thu) - conceptual overview of core topics and programming tutorials\nLab (Thu or Fri) - ungraded practice problems and review with TAs\n\nAssessments:\n\n6 Problem sets - applying programming skills\n4 Quizzes - testing understanding of concepts (similar to lab practice questions)"
   },
   {
     "objectID": "notes/hello-world.html#why-r",
     "href": "notes/hello-world.html#why-r",
     "title": "Hello, world!",
-    "section": "2 Why R?",
-    "text": "2 Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)\n\nIf you are interested, here is a math professor’s take on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, they’re all great and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages."
+    "section": "3 Why R?",
+    "text": "3 Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)\n\nIf you are interested, here is a math professor’s take on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, they’re all great and the technical skills and conceptual knowledge you gain in this course easily transfers to other languages."
   },
   {
     "objectID": "notes/hello-world.html#google-colab",
     "href": "notes/hello-world.html#google-colab",
     "title": "Hello, world!",
-    "section": "3 Google Colab",
-    "text": "3 Google Colab\nThere are many ways to program with R. Some popular options include:\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and Julia, too!)\nNew R notebook:\n\ncolab (r kernel) - use this link to start a new R notebook\nFile &gt; New notebook error, Python! name 'x' is not defined\n\nCell types:\n\n+ Code - write and execute code\n+ Text - write text blocks in markdown\n\nLeft sidebar:\n\nTable of contents - outline from text headings\nFind and replace - find and/or replace\nFiles - upload files to cloud session\n\nFrequently used menu options:\n\nFile &gt; Locate in Drive - where in your Google Drive?\nFile &gt; Save - saves\nFile &gt; Revision history - history of changes you made\nFile &gt; Download &gt; Download .ipynb - used to submit assignments!\nFile &gt; Print - prints\nRuntime &gt; Run all - run all cells\nRuntime &gt; Run before - run all cells before current active cell\nRuntime &gt; Restart and run all - restart runtime, then run all\n\nFrequently used keyboard shortcuts:\n\nCmd/Ctrl+S - save\nCmd/Ctrl+Enter - run focused cell\nCmd/Ctrl+Shift+A - select all cells\nCmd/Ctrl+/ - comment/uncomment selection\nCmd/Ctrl+] - increase indent\nCmd/Ctrl+[ - decrease indent"
+    "section": "4 Google Colab",
+    "text": "4 Google Colab\nThere are many ways to program with R. Some popular options include:\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and Julia, too!)\nNew R notebook:\n\ncolab (r kernel) - use this link to start a new R notebook\nFile &gt; New notebook error, Python! name 'x' is not defined\n\nCell types:\n\n+ Code - write and execute code\n+ Text - write text blocks in markdown\n\nLeft sidebar:\n\nTable of contents - outline from text headings\nFind and replace - find and/or replace\nFiles - upload files to cloud session\n\nFrequently used menu options:\n\nFile &gt; Locate in Drive - where in your Google Drive?\nFile &gt; Save - saves\nFile &gt; Revision history - history of changes you made\nFile &gt; Download &gt; Download .ipynb - used to submit assignments!\nFile &gt; Print - prints\nRuntime &gt; Run all - run all cells\nRuntime &gt; Run before - run all cells before current active cell\nRuntime &gt; Restart and run all - restart runtime, then run all\n\nFrequently used keyboard shortcuts:\n\nCmd/Ctrl+S - save\nCmd/Ctrl+Enter - run focused cell\nCmd/Ctrl+Shift+A - select all cells\nCmd/Ctrl+/ - comment/uncomment selection\nCmd/Ctrl+] - increase indent\nCmd/Ctrl+[ - decrease indent"
+  },
+  {
+    "objectID": "notes/hello-world.html#further-reading-and-references",
+    "href": "notes/hello-world.html#further-reading-and-references",
+    "title": "Hello, world!",
+    "section": "5 Further reading and references",
+    "text": "5 Further reading and references\nRecommended reading: - Ch 1 Data Science from Computational and Inferential Thinking: The Foundations of Data Science"
   },
   {
     "objectID": "notes/data-importing.html",
@@ -305,7 +319,7 @@
     "href": "syllabus.html#regrade-requests",
     "title": "Syllabus",
     "section": "Regrade requests",
-    "text": "Regrade requests\nRegrade requests should be made in writing within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and rubric."
+    "text": "Regrade requests\nRegrade requests should be submitted through Gradescope within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and rubric."
   },
   {
     "objectID": "syllabus.html#resources",
@@ -319,7 +333,7 @@
     "href": "wd.html",
     "title": "Working documents",
     "section": "",
-    "text": "Data importing\n\n\n\n\n\n\n\n\n\n\n\n\nSep 5, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nDatasci for lang & mind\n\n\nTuesdays and Thursdays COHN 402\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\nData Science for Studying Language and the Mind\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\nWelcome to Datasci for Lang & Mind\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nLab 1: Getting started with R\n\n\nNot graded, just practice\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nProblem set 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nR Basics\n\n\n\n\n\n\n\n\n\n\n\n\nAug 31, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nRubric\n\n\nGrading rubric for problem sets and quizzes\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSyllabus\n\n\nData Science for Studying Language and the Mind\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+    "text": "Data importing\n\n\n\n\n\n\n\n\n\n\n\n\nSep 5, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\nData Science for Studying Language and the Mind\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\nWelcome to Datasci for Lang & Mind\n\n\n\n\n\n\n\n\n\nAug 29, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nLING 0700: Datasci for lang & mind\n\n\nTuesdays and Thursdays COHN 402\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nLab 1: Getting started with R\n\n\nNot graded, just practice\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nProblem set 1\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nR Basics\n\n\n\n\n\n\n\n\n\n\n\n\nAug 31, 2023\n\n\nKatie Schuler\n\n\n\n\n\n\n  \n\n\n\n\nRubric\n\n\nGrading rubric for problem sets and quizzes\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSyllabus\n\n\nData Science for Studying Language and the Mind\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "rubric.html",
