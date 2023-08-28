@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-09-12">
 
-<title>LING0700 - Data transformation</title>
+<title>LING 0700 - Data transformation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING0700</span>
+    <span class="navbar-title">LING 0700</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -86,7 +87,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/r-basics.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -94,8 +99,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Assessments</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -109,7 +114,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-wrangle-and-tidy" id="toc-why-wrangle-and-tidy" class="nav-link active" data-scroll-target="#why-wrangle-and-tidy"><span class="header-section-number">1</span> Why wrangle and tidy?</a></li>
+  <li><a href="#data-wrangling-with-dplyr" id="toc-data-wrangling-with-dplyr" class="nav-link" data-scroll-target="#data-wrangling-with-dplyr"><span class="header-section-number">2</span> Data wrangling with dplyr</a></li>
+  <li><a href="#manipulating-rows" id="toc-manipulating-rows" class="nav-link" data-scroll-target="#manipulating-rows"><span class="header-section-number">3</span> Manipulating rows</a></li>
+  <li><a href="#manipulating-columns" id="toc-manipulating-columns" class="nav-link" data-scroll-target="#manipulating-columns"><span class="header-section-number">4</span> Manipulating columns</a></li>
+  <li><a href="#grouping-and-summarizing-data-frames" id="toc-grouping-and-summarizing-data-frames" class="nav-link" data-scroll-target="#grouping-and-summarizing-data-frames"><span class="header-section-number">5</span> Grouping and summarizing data frames</a></li>
+  <li><a href="#joining-data-frames" id="toc-joining-data-frames" class="nav-link" data-scroll-target="#joining-data-frames"><span class="header-section-number">6</span> Joining data frames</a></li>
+  <li><a href="#data-tidying-with-tidyr" id="toc-data-tidying-with-tidyr" class="nav-link" data-scroll-target="#data-tidying-with-tidyr"><span class="header-section-number">7</span> Data tidying with tidyr</a>
+  <ul class="collapse">
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -130,6 +150,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -137,8 +163,76 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="why-wrangle-and-tidy" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-wrangle-and-tidy"><span class="header-section-number">1</span> Why wrangle and tidy?</h2>
+</section>
+<section id="data-wrangling-with-dplyr" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-wrangling-with-dplyr"><span class="header-section-number">2</span> Data wrangling with dplyr</h2>
+<p>All <code>dplyr</code> functions (verbs) share a common structure:</p>
+<ul>
+<li>1st argument is always a data frame</li>
+<li>Subsequent arguments typically describe which columns to operate on (via their names)</li>
+<li>Output is always a new data frame</li>
+</ul>
+<p>We can group <code>dplyr</code> functions based on what they operate on:</p>
+<ul>
+<li>rows - see section 3 Manipulating rows</li>
+<li>columns - see section 4 Manipulating columns</li>
+<li>groups - see section 5 Grouping and summarizing data frames</li>
+<li>tables - see section 6 Joining data frames</li>
+</ul>
+<p>We can easily combine <code>dplyr</code> functions to solve complex problems:</p>
+<ul>
+<li>The pipe operator, <code>|&gt;</code> takes the output from one function and passes it as input (the first argument) to the next function.</li>
+<li>There is another version of the pipe, <code>%&gt;%</code>. See the reading on data transformation if you are curious about the difference.</li>
+</ul>
+<p><em>In lecture, we will demonstrate with a few <code>dplyr</code> functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems.</em></p>
+</section>
+<section id="manipulating-rows" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="manipulating-rows"><span class="header-section-number">3</span> Manipulating rows</h2>
+<p><code>filter()</code></p>
+<p><code>arrange()</code></p>
+</section>
+<section id="manipulating-columns" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="manipulating-columns"><span class="header-section-number">4</span> Manipulating columns</h2>
+<p><code>select()</code></p>
+<p><code>mutate()</code></p>
+</section>
+<section id="grouping-and-summarizing-data-frames" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="grouping-and-summarizing-data-frames"><span class="header-section-number">5</span> Grouping and summarizing data frames</h2>
+</section>
+<section id="joining-data-frames" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="joining-data-frames"><span class="header-section-number">6</span> Joining data frames</h2>
+<ul>
+<li>don’t cover, just show the functions and say we won’t cover it</li>
+</ul>
+</section>
+<section id="data-tidying-with-tidyr" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="data-tidying-with-tidyr"><span class="header-section-number">7</span> Data tidying with tidyr</h2>
+<ul>
+<li>sneak in with case study later; for now just show functions and say we won’t cover it.</li>
+</ul>
+<section id="further-reading-and-references" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
+<p>https://r4ds.hadley.nz/data-transform</p>
+<p>https://r4ds.hadley.nz/joins</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

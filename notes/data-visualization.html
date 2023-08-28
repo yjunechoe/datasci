@@ -9,7 +9,7 @@
 <meta name="author" content="Katie Schuler">
 <meta name="dcterms.date" content="2023-09-07">
 
-<title>LING0700 - Data visualization</title>
+<title>LING 0700 - Data visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../notes/data-wrangling.html" rel="next">
+<link href="../notes/data-importing.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -65,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -73,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING0700</span>
+    <span class="navbar-title">LING 0700</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -87,7 +89,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/r-basics.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../notes/hello-world.html" rel="" target="" aria-current="page">
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -95,22 +101,156 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Assessments</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/data-visualization.html">Data visualization</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello, world!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data importing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/probability-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probablity distributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/sampling-variability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling variability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesis testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-specification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model specification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model accuracy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model reliability</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feature engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/mixed-effects-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mixed-effects models</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-visualize-data" id="toc-why-visualize-data" class="nav-link active" data-scroll-target="#why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</a></li>
+  <li><a href="#data-visualization-with-ggplot2" id="toc-data-visualization-with-ggplot2" class="nav-link" data-scroll-target="#data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</a></li>
+  <li><a href="#aesthetic-mapping" id="toc-aesthetic-mapping" class="nav-link" data-scroll-target="#aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</a></li>
+  <li><a href="#geometric-objects" id="toc-geometric-objects" class="nav-link" data-scroll-target="#geometric-objects"><span class="header-section-number">4</span> Geometric objects</a></li>
+  <li><a href="#additional-layers" id="toc-additional-layers" class="nav-link" data-scroll-target="#additional-layers"><span class="header-section-number">5</span> Additional layers</a></li>
+  <li><a href="#saving-plots" id="toc-saving-plots" class="nav-link" data-scroll-target="#saving-plots"><span class="header-section-number">6</span> Saving plots</a>
+  <ul class="collapse">
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -144,9 +284,108 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>test</p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="why-visualize-data" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</h2>
+<blockquote class="blockquote">
+<p>Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science</p>
+</blockquote>
+</section>
+<section id="data-visualization-with-ggplot2" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</h2>
+<p>three main parts:</p>
+<ul>
+<li><strong>data</strong>- your (tidy) data</li>
+<li><strong>aesthetic mappings (aes)</strong> - make data visible</li>
+<li><strong>geometric objects</strong> -</li>
+</ul>
+<p>other layers:</p>
+<ul>
+<li><strong>facets</strong></li>
+<li><strong>statistics</strong> - statistical transformations of data</li>
+<li><strong>scales</strong> - map data values to visual values of aestetic</li>
+<li>coordinates</li>
+<li><strong>themes</strong> - overall visuals</li>
+</ul>
+</section>
+<section id="aesthetic-mapping" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</h2>
+<p><strong>aesthetic mappings</strong> (aes), make data visible</p>
+<ul>
+<li><code>x</code>, <code>y</code>: variable on x and y axis</li>
+<li><code>color</code>: outline color of geom</li>
+<li><code>fill</code>: fill color of geom</li>
+<li><code>group</code>: group geom belongs to</li>
+<li><code>shape</code>: shape used to plot point (circle, square, etc)</li>
+<li><code>linetype</code>: type of line used (solid, dash, et)</li>
+<li><code>size</code></li>
+</ul>
+</section>
+<section id="geometric-objects" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">4</span> Geometric objects</h2>
+<p><strong>geometric objects (geoms)</strong> - type of plot</p>
+</section>
+<section id="additional-layers" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="additional-layers"><span class="header-section-number">5</span> Additional layers</h2>
+<p>We’ll cover some in the class:</p>
+<ul>
+<li><strong>facets</strong>
+<ul>
+<li><code>facet_grid(.~var1)</code></li>
+<li><code>facet_grid(var2~.)</code></li>
+<li><code>facet_grid(var2~var1)</code></li>
+<li><code>facet_wrap(~var1)</code> - wrap facets</li>
+<li>“scales”?</li>
+</ul></li>
+<li><strong>coordinates</strong>
+<ul>
+<li><code>coord_cartesian(xlim=c(0,5))</code> - xlim, ylim</li>
+<li><code>coord_flip()</code></li>
+</ul></li>
+<li><strong>labels</strong>
+<ul>
+<li><code>labs(title="plot title")</code> - x, y, subtitle</li>
+<li><code>annotate()</code></li>
+</ul></li>
+<li><strong>statistics</strong></li>
+<li><strong>scales</strong></li>
+<li><strong>position adjustments</strong></li>
+<li><strong>themes</strong>
+<ul>
+<li><code>theme(legend.position="bottom")</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="saving-plots" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="saving-plots"><span class="header-section-number">6</span> Saving plots</h2>
+<p>Helper functions:</p>
+<ul>
+<li><code>last_plot()</code> - returns the last plot</li>
+<li><code>ggsave("plot.png", width=5, height=5)</code> - saves last plot</li>
+</ul>
+<section id="further-reading-and-references" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
+<p>Useful resources: - ggplot cheat sheet - <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></p>
+<p>Recommended further reading: - https://moderndive.com/2-viz.html</p>
+<p>Other references:</p>
+<p>https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html</p>
+<p>https://r4ds.hadley.nz/layers</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -382,7 +621,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/data-importing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data importing</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notes/data-wrangling.html" class="pagination-link">
+        <span class="nav-page-text">Data wrangling</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

@@ -1,17 +1,25 @@
 [
   {
-    "listing": "/wd.html",
+    "listing": "/drafts.html",
     "items": [
-      "/notes/data-importing.html",
-      "/slides/demo.html",
       "/notes/hello-world.html",
-      "/index.html",
-      "/labs/1-getting-started-with-r-lab.html",
-      "/psets/problem-set-1.html",
       "/notes/r-basics.html",
-      "/rubric.html",
-      "/syllabus.html",
-      "/rbasics.html"
+      "/notes/data-importing.html",
+      "/notes/data-visualization.html",
+      "/notes/data-wrangling.html",
+      "/notes/probability-distributions.html",
+      "/notes/sampling-variability.html",
+      "/notes/hypothesis-testing.html",
+      "/notes/model-specification.html",
+      "/notes/model-fitting.html",
+      "/notes/model-accuracy.html",
+      "/notes/model-reliability.html",
+      "/notes/classification.html",
+      "/notes/feature-engineering.html",
+      "/notes/inference.html",
+      "/notes/mixed-effects-models.html",
+      "/labs/1-getting-started-with-r-lab.html",
+      "/psets/problem-set-1.html"
     ]
   }
 ]

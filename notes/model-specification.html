@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-10-03">
 
-<title>LING0700 - Model specification</title>
+<title>LING 0700 - Model specification</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../notes/model-fitting.html" rel="next">
+<link href="../notes/hypothesis-testing.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -74,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING0700</span>
+    <span class="navbar-title">LING 0700</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -88,7 +91,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/r-basics.html" rel="" target="">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../notes/hello-world.html" rel="" target="" aria-current="page">
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
@@ -96,30 +103,161 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Assessments</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/model-specification.html">Model specification</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello, world!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data importing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/probability-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probablity distributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/sampling-variability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling variability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesis testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-specification.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Model specification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model accuracy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model reliability</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/feature-engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Feature engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/mixed-effects-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mixed-effects models</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exploring-relationships" id="toc-exploring-relationships" class="nav-link active" data-scroll-target="#exploring-relationships"><span class="header-section-number">1</span> 1 Exploring relationships</a></li>
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">2</span> 2 Correlation</a></li>
-  <li><a href="#correlation-as-model-building" id="toc-correlation-as-model-building" class="nav-link" data-scroll-target="#correlation-as-model-building"><span class="header-section-number">3</span> 3 Correlation as model building</a></li>
-  <li><a href="#model-building-overview" id="toc-model-building-overview" class="nav-link" data-scroll-target="#model-building-overview"><span class="header-section-number">4</span> 4 Model building overview</a></li>
-  <li><a href="#types-of-models" id="toc-types-of-models" class="nav-link" data-scroll-target="#types-of-models"><span class="header-section-number">5</span> 5 Types of models</a></li>
+  <li><a href="#correlation-as-model-building" id="toc-correlation-as-model-building" class="nav-link active" data-scroll-target="#correlation-as-model-building"><span class="header-section-number">1</span> Correlation as model building</a></li>
+  <li><a href="#model-building-overview" id="toc-model-building-overview" class="nav-link" data-scroll-target="#model-building-overview"><span class="header-section-number">2</span> Model building overview</a></li>
+  <li><a href="#types-of-models" id="toc-types-of-models" class="nav-link" data-scroll-target="#types-of-models"><span class="header-section-number">3</span> Types of models</a>
+  <ul class="collapse">
+  <li><a href="#supervised-vs-unsupervised" id="toc-supervised-vs-unsupervised" class="nav-link" data-scroll-target="#supervised-vs-unsupervised">Supervised vs unsupervised</a></li>
+  <li><a href="#regression-v-classification" id="toc-regression-v-classification" class="nav-link" data-scroll-target="#regression-v-classification">Regression v classification</a></li>
+  <li><a href="#linear-v-nonlinear-regression" id="toc-linear-v-nonlinear-regression" class="nav-link" data-scroll-target="#linear-v-nonlinear-regression">Linear v nonlinear regression</a></li>
+  </ul></li>
+  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">4</span> Model specification</a></li>
+  <li><a href="#response-variable-y" id="toc-response-variable-y" class="nav-link" data-scroll-target="#response-variable-y"><span class="header-section-number">5</span> Response variable, <span class="math inline">\(y\)</span></a></li>
+  <li><a href="#explanatory-variables-x_n" id="toc-explanatory-variables-x_n" class="nav-link" data-scroll-target="#explanatory-variables-x_n"><span class="header-section-number">6</span> Explanatory variables, <span class="math inline">\(x_n\)</span></a></li>
+  <li><a href="#functional-form" id="toc-functional-form" class="nav-link" data-scroll-target="#functional-form"><span class="header-section-number">7</span> Functional form</a></li>
+  <li><a href="#model-terms" id="toc-model-terms" class="nav-link" data-scroll-target="#model-terms"><span class="header-section-number">8</span> Model terms</a>
+  <ul class="collapse">
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -142,6 +280,12 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 3, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -149,25 +293,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="exploring-relationships" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="exploring-relationships"><span class="header-section-number">1</span> 1 Exploring relationships</h2>
-<p>Last week we explored data in which we measured a single quantity: brain size. We explored this dataset with a histogram and modeled it with a single value (mean). Suppose we have a slightly more complex dataset in which we measure both brain size and body mass (two quantities!). We might want to know whether there is a relationship between brain size and body mass. We can explore the relationship between two quantities visually with a <strong>scatter plot</strong>.</p>
-<p>(insert image of scatterplot)</p>
-<p>If there is no relationship between the variables, we say they are <strong>independent</strong>. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In our example, knowing an animal’s body size provides no information about their brain size. If there <em>is</em> some relationship between the variables, we can consider two types: 1. There may be a <strong>linear relationship</strong> between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between brain size and body mass: as body mass increases, brain size also increases. 2. Or a <strong>nonlinear relationship</strong>. Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g.&nbsp;a U-shaped curve).</p>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="correlation-as-model-building" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="correlation-as-model-building"><span class="header-section-number">1</span> Correlation as model building</h2>
+<p>Correlation is actually a simple case of model building in which we use one value (<span class="math inline">\(x\)</span>) to predict another (<span class="math inline">\(y\)</span>). Specifically, we are fitting the linear model <span class="math inline">\(y = ax + b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are free parameters. Here, <span class="math inline">\(y\)</span> is known as the <strong>response variable</strong> (the value we are trying to predict) and <span class="math inline">\(x\)</span> is the <strong>explanatory variable</strong> (the one that we are attempting to <em>explain</em> the response variable with).</p>
+<ul>
+<li>After z-scoring our variables, the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is equal to the slope of the line that best predicts <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>. In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM.</li>
+</ul>
 </section>
-<section id="correlation" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="correlation"><span class="header-section-number">2</span> 2 Correlation</h2>
-<p>One way to quantify linear relationships is with <strong>correlation (<span class="math inline">\(r\)</span>)</strong>. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive.</p>
-<p>Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then compute the average product of each variable: - show equation - we can achieve this calculation in R by computing - add getting z-score with R? - Correlation only describes linear relationships.</p>
-<p>Is the correlation we observed significantly different from zero? We can apply the techniques we learned over the past few weeks to find out. Just like the mean — and all other test statistics! — <em><span class="math inline">\(r\)</span></em> is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way: construct the sampling distribution of the correlation via bootstrapping, compute a confidence interval, and compute the p-value.</p>
-<p>(demo with infer framework)</p>
-</section>
-<section id="correlation-as-model-building" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="correlation-as-model-building"><span class="header-section-number">3</span> 3 Correlation as model building</h2>
-<p>Correlation is actually a simple case of model building in which we use one value (<span class="math inline">\(x\)</span>) to predict another (<span class="math inline">\(y\)</span>). Specifically, we are fitting the linear model <span class="math inline">\(y = ax + b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are free parameters. Here, <span class="math inline">\(y\)</span> is known as the <strong>response variable</strong> (the value we are trying to predict) and <span class="math inline">\(x\)</span> is the <strong>explanatory variable</strong> (the one that we are attempting to <em>explain</em> the response variable with). - After z-scoring our variables, the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is equal to the slope of the line that best predicts <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>. In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM.</p>
-</section>
-<section id="model-building-overview" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="model-building-overview"><span class="header-section-number">4</span> 4 Model building overview</h2>
+<section id="model-building-overview" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="model-building-overview"><span class="header-section-number">2</span> Model building overview</h2>
 <p>Ideally we want to understand statistical modeling beyond the simple case of correlation. What if we have more than one explanatory variable? What if the relationship between variables is not linear? To address model building more broadly, it is helpful to think of building any model as a four-step process. We’ll treat each of these separately over the coming weeks. The goal for today is to get a big picture overview of the model building process and the types of models we might encounter in our research.</p>
 <ul>
 <li><strong>Model specification</strong> (this week): what is the form?</li>
@@ -176,15 +323,137 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Model reliability</strong> (week 8): when you estimate the parameters, there is some uncertainty on them</li>
 </ul>
 </section>
-<section id="types-of-models" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="types-of-models"><span class="header-section-number">5</span> 5 Types of models</h2>
+<section id="types-of-models" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="types-of-models"><span class="header-section-number">3</span> Types of models</h2>
 <p>Model specification involves deciding which type of model we’d like to apply. We will mostly apply linear models in this class — for good reasons we will talk about next time! — but it’s useful to first have a conceptual overview of the types of models we <em>could</em> apply.</p>
 <!-- ![Types of models]({{site.baseurl}}/assets/images/08-typesofmodels.png){: width="600"} -->
-<p>As a starting point, we can divide statistical models into two types of learning (so called because we are trying to “learn” something about the data): - In <strong>supervised learning</strong>, we want to predict an output (or response) variable based on one or more input (or explanatory) variables. We call this supervised learning because both the input and output variables are known (sometimes this is called “labeled” data), and we are trying to learn the relationship between them. Linear regression is an example of a supervised learning model. - In <strong>unsupervised learning</strong>, there is no specific output variable that we are trying to predict. Instead, the model’s objective is to discover the underlying structure or patterns in the data. We call this unsupervised learning because only the input data is available (sometimes this is called “unlabeled” data); the model is trying to identify relationships in the data without being “supervised” by an outcome variable. PCA and cluster analysis are examples of unsupervised learning. - There are other machine learning approaches beyond these, like semi-supervised learning (combining both labeled and unlabeled data) and reinforcement learning (learning through trial and error based on rewards or penalties). But in this course we will focus on supervised learning models.</p>
-<p>Regression and classification are both types of supervised learning models — using one or more input variables to predict an output variable. The only difference between them is in type of output variable: - <strong>Regression</strong> is used when we want to predict a continuous output, meaning it is a number that can take on any value within a range (e.g.&nbsp;height, weight, response time) - <strong>Classification</strong> is used when we want to predict a categorical output, meaning it falls into specific classes or categories (e.g.&nbsp;true/false, yes/no, male/female/nonbinary). We cover this during advanced model building.</p>
-<p>There are many types of regression models, but we can simplify by dividing them into two main types of models: - In <strong>linear regression</strong>, the relationship between the explanatory variable(s) and response variable is represented by a linear equation (a straight line graphed on a two-dimensional plane). - <strong>Nonlinear regression</strong> is useful when the data does not follow a linear pattern, and the relationship between the variables is better captured by more complex functions (e.g.&nbsp;a curve or any other nonlinear shape). Nonlinear regression models can be further divided into two types: - We can <strong>linearize</strong> a nonlinear model by applying a mathematical transformation to make it look like a linear equation (e.g.&nbsp;log, square root, etc). We can fit a linearized model just like a linear model, but the prediction of the model is not linear with respect to x. - Sometimes, no matter what transformation you apply, you cannot acheive a linear form. These types of models are referred to as <strong>nonlinearizable</strong> nonlinear models and are beyond the scope of this class!</p>
+<section id="supervised-vs-unsupervised" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-vs-unsupervised">Supervised vs unsupervised</h3>
+<p>As a starting point, we can divide statistical models into two types of learning (so called because we are trying to “learn” something about the data):</p>
+<ul>
+<li>In <strong>supervised learning</strong>, we want to predict an output (or response) variable based on one or more input (or explanatory) variables. We call this supervised learning because both the input and output variables are known (sometimes this is called “labeled” data), and we are trying to learn the relationship between them. Linear regression is an example of a supervised learning model.</li>
+<li>In <strong>unsupervised learning</strong>, there is no specific output variable that we are trying to predict. Instead, the model’s objective is to discover the underlying structure or patterns in the data. We call this unsupervised learning because only the input data is available (sometimes this is called “unlabeled” data); the model is trying to identify relationships in the data without being “supervised” by an outcome variable. PCA and cluster analysis are examples of unsupervised learning.</li>
+<li>There are other machine learning approaches beyond these, like semi-supervised learning (combining both labeled and unlabeled data) and reinforcement learning (learning through trial and error based on rewards or penalties). But in this course we will focus on supervised learning models.</li>
+</ul>
+</section>
+<section id="regression-v-classification" class="level3">
+<h3 class="anchored" data-anchor-id="regression-v-classification">Regression v classification</h3>
+<p>Regression and classification are both types of supervised learning models — using one or more input variables to predict an output variable. The only difference between them is in type of output variable:</p>
+<ul>
+<li><strong>Regression</strong> is used when we want to predict a continuous output, meaning it is a number that can take on any value within a range (e.g.&nbsp;height, weight, response time)</li>
+<li><strong>Classification</strong> is used when we want to predict a categorical output, meaning it falls into specific classes or categories (e.g.&nbsp;true/false, yes/no, male/female/nonbinary). We cover this during advanced model building.</li>
+</ul>
+</section>
+<section id="linear-v-nonlinear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="linear-v-nonlinear-regression">Linear v nonlinear regression</h3>
+<p>There are many types of regression models, but we can simplify by dividing them into two main types of models:</p>
+<ul>
+<li>In <strong>linear regression</strong>, the relationship between the explanatory variable(s) and response variable is represented by a linear equation (a straight line graphed on a two-dimensional plane).</li>
+<li><strong>Nonlinear regression</strong> is useful when the data does not follow a linear pattern, and the relationship between the variables is better captured by more complex functions (e.g.&nbsp;a curve or any other nonlinear shape). Nonlinear regression models can be further divided into two types:
+<ul>
+<li>We can <strong>linearize</strong> a nonlinear model by applying a mathematical transformation to make it look like a linear equation (e.g.&nbsp;log, square root, etc). We can fit a linearized model just like a linear model, but the prediction of the model is not linear with respect to x.</li>
+<li>Sometimes, no matter what transformation you apply, you cannot acheive a linear form. These types of models are referred to as <strong>nonlinearizable</strong> nonlinear models and are beyond the scope of this class!</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="model-specification" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="model-specification"><span class="header-section-number">4</span> Model specification</h2>
+<p>Recall from last week that <strong>model specification</strong> is one aspect of the model building process. It involves selecting the functional form of the model (the type of model) and choosing which variables to include. When specifying a model, you’ll need to make the following decisions:</p>
+<ol type="1">
+<li><strong>Response variable (<span class="math inline">\(y\)</span>):</strong> Choose the variable you want to predict or explain (output).</li>
+<li><strong>Explanatory variables(<span class="math inline">\(x_n\)</span>):</strong> Choose the variables that may explain the variation in the response variable (inputs).</li>
+<li><strong>Functional form:</strong> Specify the functional relationship between the response and explanatory variables. For linear models, the relationship is linear, and we use the linear model equation as our functional form!</li>
+<li><strong>Model terms:</strong> Choose which model terms to include, which is another way of saying that you need to decide <em>how</em> to include your explanatory variables in the model (since they can be included in more than one way).</li>
+</ol>
+<p>In addition to the decisions above, the following issues can also be considered part of the model specification process. But we will consider these in future weeks.</p>
+<ul>
+<li><strong>Model assumptions:</strong> Check any assumptions underlying the model you selected (e.g.&nbsp;does the model assume the relationship is linear?).</li>
+<li><strong>Model complexity:</strong> Simple models are easier to interpret but may not capture all complexities in the data. Complex models may suffer from overfitting the data or being difficult to interpret.</li>
+</ul>
+<p>A well-specified model should be based on a clear understanding of the data, the underlying relationships, and the research question.</p>
+</section>
+<section id="response-variable-y" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="response-variable-y"><span class="header-section-number">5</span> Response variable, <span class="math inline">\(y\)</span></h2>
+<p>Choosing the response variable is usually straightforward once you’ve clearly defined your research question: what is the thing you are trying to understand? You also need to make sure whatever you’ve selected is something you can measure (or has already been measured!)</p>
+<ul>
+<li>In the swim records example, we are trying to explain variation in record times, so we choose record time as our <span class="math inline">\(y\)</span>. In the brain size example we are trying to explain variation in brain sizes, so we choose brain size as our <span class="math inline">\(y\)</span>.</li>
+<li>Remember from last time that we can use regression for continuous response variables (numbers) but we need to use classification if the response variable is categorical (categories or levels).</li>
+</ul>
+</section>
+<section id="explanatory-variables-x_n" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="explanatory-variables-x_n"><span class="header-section-number">6</span> Explanatory variables, <span class="math inline">\(x_n\)</span></h2>
+<p>Choosing which explanatory variables to include requires a bit more careful consideration. It’s one part using your knowledge about the domain you are studying and one part exploratory data analysis!</p>
+<ul>
+<li>One extreme would be to include just one explanatory variable: the obvious one based on your research question. In the swim records example, we want to understand how swim records change over time, so we should definitely include <code>time</code> as an explanatory variable. But this model is <strong>underspecified</strong>. We need to consider other variables that have the <em>potential</em> to explain variation in our response variable, even if they are not of direct interest. For example, some variation in swim record times can likely be explained by the swimmer’s gender, so we should include <code>gender</code> as an explanatory variable in our model.</li>
+<li>Importantly, we do not include every explanatory variable we can think of! We want to explain the variation in our response variable without building too complex a model or overfitting the data (<strong>overspecifying</strong>). We’ll go into more detail about this in future lectures. For now, just remember you’re Goldilocks: you want the explanatory variables in the model to explain just the right amount of variation.</li>
+</ul>
+</section>
+<section id="functional-form" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="functional-form"><span class="header-section-number">7</span> Functional form</h2>
+<p>Last lecture we introduced the types of models that we could select when specifying a model. We also mentioned that we will focus on linear models in this class (which are a type of regression model, which are themselves types of supervised learning models!)</p>
+<p>When specifying the functional form of a model, we’re literally specifying the mathematical formula we’re going to use to represent the relationship between our response and explanatory variables. <strong>Linear models</strong> are models in which the response variable (output) is a weighted sum of the explanatory variables (inputs). In other words, there is a linear relationship between the response variable and the explanatory variables. The <strong>linear model equation</strong> can be expressed in many ways (which can be confusing!). Here are four different ways of representing the formula for the linear model, to emphasize that <em>they are all the same thing</em>.</p>
+<ol type="1">
+<li>In <strong>high school algebra</strong>, the linear model equation is represented as the equation of a straight line. <span class="math inline">\(y\)</span> is the response variable, <span class="math inline">\(x\)</span> is the explanatory variable, <span class="math inline">\(a\)</span> is the slope of the line (the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>) and <span class="math inline">\(b\)</span> is the y-intercept (the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> is zero). You have (hopefully!) already encountered this equation.</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y=ax+b\)</span>.<br>
+</li>
+</ul>
+<ol start="2" type="1">
+<li>In <strong>machine learning</strong>, the linear model equation is usually represented as a weighted sum of input variables. Note that the only changes are that we refer to the free parameters as weights (<span class="math inline">\(w_n\)</span>) instead of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (to emphasize these are the weights the model learns) and the ability to add more than one input (<span class="math inline">\(x_1, x_2, ...x_n\)</span> instead of just <span class="math inline">\(x\)</span>):</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\)</span></li>
+</ul>
+<ol start="3" type="1">
+<li>In <strong>statistics</strong>, the linear model equation is also represented as a weighted sum of input variables, except we call the weights “regression coefficients” (<span class="math inline">\(\beta_n\)</span>) and we add an error term to account for unexplained variability (<span class="math inline">\(\varepsilon\)</span>):</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y = β_0 + β_1x_1 + β_2x_2 + ... + β_nx_n + ε\)</span></li>
+</ul>
+<ol start="4" type="1">
+<li>In <strong>matrix</strong> notation, the linear model equation is represented as a dot product of vectors. This is just a more compact representation of the statistics (or machine learning) way, often used in linear algebra and statistics. <span class="math inline">\(X\)</span> is the matrix containing the values of the explanatory variables, <span class="math inline">\(β\)</span> is the vector of regression coefficients, and <span class="math inline">\(\varepsilon\)</span> is the vector of error terms.</li>
+</ol>
+<ul>
+<li><span class="math inline">\(y = Xβ + ε\)</span></li>
+</ul>
+</section>
+<section id="model-terms" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="model-terms"><span class="header-section-number">8</span> Model terms</h2>
+<p>We’ve specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe <em>how</em> to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) <strong>intercept</strong>, (2) <strong>main</strong>, (3) <strong>interaction</strong>, and (4) <strong>transformation</strong>.</p>
+<ol type="1">
+<li>The <strong>intercept</strong> term, <span class="math inline">\(\beta_0\)</span>, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” or “gain” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.</li>
+</ol>
+<ul>
+<li>in R: <code>y ~ 1</code></li>
+<li>in eq: <span class="math inline">\(y=\beta_0 + \varepsilon\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Main</strong> terms (AKA <strong>main effects</strong>) represent the effect of each explanatory variable on the response variable directly. In other words, how does the response variable change as a result of changes in a given explanatory variable, when all other explanatory variables are zero? Each main term corresponds to one explanatory variable and is included in the model as a single term (<span class="math inline">\(\beta_nx_n\)</span>). We can add as many explanatory variables as we like to the model:</li>
+</ol>
+<ul>
+<li>in R: <code>y ~ 1 + year + gender</code></li>
+<li>in eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2\)</span></li>
+</ul>
+<p>Note that can include <strong>categorical explanatory variables</strong> like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.</p>
+<p><strong>Interaction</strong> terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we’re just describing how two (or more) variables <em>combine</em> to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.</p>
+<ul>
+<li>in R: <code>y ~ 1 + year + gender + year:gender</code>
+<ul>
+<li>or the short way: <code>y ~ 1 + year * gender</code></li>
+</ul></li>
+<li>in eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2\)</span></li>
+</ul>
+<p><strong>Transformation</strong> terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are <span class="math inline">\(x^2\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, and <span class="math inline">\(log(x)\)</span>. Note that <span class="math inline">\(x\)</span> must be a quantitative variable: we can’t transform categorical variables. In the swim records example, squaring the year term (<span class="math inline">\(x_1^2\)</span>) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to “be curvy, but also never slope upward”. - in R: <code>y ~ sq(year) * gender</code> - eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1^2 + \beta_2x_2 + \beta_3x_1^2x_2\)</span></p>
+<section id="further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
+<ul>
+<li><a href="https://dtkaplan.github.io/SM2-bookdown/language-of-models.html">Ch 6: Language of models</a> in Statistical Modeling</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -421,7 +690,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/hypothesis-testing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hypothesis testing</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notes/model-fitting.html" class="pagination-link">
+        <span class="nav-page-text">Model fitting</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

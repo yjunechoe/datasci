@@ -2,46 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kschuler.github.io/datasci/labs/1-getting-started-with-r-lab.html</loc>
-    <lastmod>2023-08-28T15:37:45.449Z</lastmod>
+    <lastmod>2023-08-28T18:28:00.138Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/psets/problem-set-1.html</loc>
-    <lastmod>2023-08-28T15:37:45.726Z</lastmod>
+    <lastmod>2023-08-28T18:28:00.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/drafts.html</loc>
+    <lastmod>2023-08-28T18:28:00.894Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rbasics.html</loc>
-    <lastmod>2023-08-28T15:37:46.177Z</lastmod>
+    <lastmod>2023-08-28T18:28:01.333Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/index.html</loc>
-    <lastmod>2023-08-28T15:37:46.572Z</lastmod>
+    <lastmod>2023-08-28T18:28:01.738Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/slides/demo.html</loc>
-    <lastmod>2023-08-28T15:37:46.849Z</lastmod>
+    <lastmod>2023-08-28T18:28:02.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/feature-engineering.html</loc>
+    <lastmod>2023-08-28T18:28:02.398Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/data-wrangling.html</loc>
+    <lastmod>2023-08-28T18:28:02.733Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/hello-world.html</loc>
-    <lastmod>2023-08-28T15:37:47.316Z</lastmod>
+    <lastmod>2023-08-28T18:28:03.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/classification.html</loc>
+    <lastmod>2023-08-28T18:28:03.448Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/probability-distributions.html</loc>
+    <lastmod>2023-08-28T18:28:05.171Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/model-accuracy.html</loc>
+    <lastmod>2023-08-28T18:28:05.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/inference.html</loc>
+    <lastmod>2023-08-28T18:28:06.069Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/mixed-effects-models.html</loc>
+    <lastmod>2023-08-28T18:28:06.363Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/model-fitting.html</loc>
+    <lastmod>2023-08-28T18:28:06.685Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/sampling-variability.html</loc>
+    <lastmod>2023-08-28T18:28:07.162Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/data-importing.html</loc>
-    <lastmod>2023-08-28T15:37:48.072Z</lastmod>
+    <lastmod>2023-08-28T18:28:07.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/data-visualization.html</loc>
+    <lastmod>2023-08-28T18:28:08.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/hypothesis-testing.html</loc>
+    <lastmod>2023-08-28T18:28:08.706Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/r-basics.html</loc>
-    <lastmod>2023-08-28T15:37:49.019Z</lastmod>
+    <lastmod>2023-08-28T18:28:09.648Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/model-reliability.html</loc>
+    <lastmod>2023-08-28T18:28:09.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/notes/model-specification.html</loc>
+    <lastmod>2023-08-28T18:28:10.674Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/syllabus.html</loc>
-    <lastmod>2023-08-28T15:37:49.387Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kschuler.github.io/datasci/wd.html</loc>
-    <lastmod>2023-08-28T15:37:49.917Z</lastmod>
+    <lastmod>2023-08-28T18:28:11.049Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rubric.html</loc>
-    <lastmod>2023-08-28T15:37:50.246Z</lastmod>
+    <lastmod>2023-08-28T18:28:11.392Z</lastmod>
   </url>
 </urlset>
