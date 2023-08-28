@@ -94,5 +94,6 @@ format:
     #   gutter-width: 4em
     df-print: kable
 
-
+webr:
+  service-worker-url: "../"
 
