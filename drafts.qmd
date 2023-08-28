@@ -1,0 +1,40 @@
+---
+title: Working documents
+number-sections: false
+listing: 
+  - id: lecture-notes
+    contents: 
+      - "notes/*.qmd"
+    type: table
+    sort-ui: false
+    filter-ui: false
+    sort: "date"
+  - id: labs
+    contents: 
+      - "labs/*.qmd"
+    type: table
+    sort-ui: false
+    filter-ui: false
+    sort: "date"
+  - id: psets
+    contents: 
+      - "psets/*.qmd"
+    type: table
+    sort-ui: false
+    filter-ui: false
+---
+
+## Lecture notes
+
+:::{#lecture-notes}
+:::
+
+## Labs
+
+:::{#labs}
+:::
+
+## Problem sets
+
+:::{#psets}
+:::

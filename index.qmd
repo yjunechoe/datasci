@@ -1,5 +1,5 @@
 ---
-title: "Datasci for lang & mind"
+title: "LING 0700: Datasci for lang & mind"
 subtitle: "Tuesdays and Thursdays COHN 402"
 
 ---
@@ -9,44 +9,42 @@ subtitle: "Tuesdays and Thursdays COHN 402"
 - resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab](https://colab.research.google.com/#create=true&language=r)
 
 
-| Day | Topic | Resources |
-|-|-----|----|
-| 08-28 | Hello, world! | |  
-| 08-31 | R-basics  | | 
-|  09-05 |  Data importing  | | 
-| 09-07 |   Data visualization |  |
-| 09-10 |   Problem set 1 | |
-|  09-12 |   Data transformation | |
-|  09-14 |  Data tidying | | 
-|  09-19 |  Quiz 1 | |
-|  09-20 |  Probability distributions |  | 
-|  09-26 |  Sampling variability |  | 
-|  09-28 |  Hypothesis testing | | 
-| 10-01 |  Problem set 2 | | 
-| 10-03 |  Model specification | | 
-| 10-05 |  Model fitting | | 
-| 10-10 |  Quiz 2 | | 
-| 10-12 |  **No class, break** | | 
-| 10-17 |  Model accuracy | | 
-| 10-19 |  Model reliability | | 
-| 10-22 | Problem set 3 | | 
-| 10-24 | Conditions for inference | | 
-| 10-26 |  Inference on regression models | | 
-| 10-31 | Quiz 3 | | 
-| 11-02 |  TBD | | 
-| 11-07 | Feature engineering | | 
-| 11-09 |  Case study 1 | | 
-| 11-12 |  Problem set 4 | | 
-| 11-14 |  Ethics | | 
-| 11-16 |  Case study 2 | | 
-| 11-21 |  Quiz 4 | | 
-| 11-23 |  **No class, break** | | 
-| 11-28 | Classification | | 
-| 11-30 | Case study 3| | 
-| 12-03 | Problem set 5 | | 
-| 12-05 | Multilevel models | | 
-| 12-07 | Case study 4 | | 
-| 12-10 | Problem set 6 | | 
-
-
+Week | Day | Topic | Resources |
+|- |-|-----|----|
+| 1 | 08-28 | Hello, world! | |  
+| 1 | 08-31 | R-basics  | | 
+| 2 | 09-05 |  Data importing  | | 
+| 2 | 09-07 |   Data visualization |  |
+| 2 | 09-10 |   Problem set 1 | |
+|  3 |09-12 |   Data wrangling | |
+|  3 | 09-14 |  Probability distributions | | 
+|  4 | 09-19 |  Quiz 1 | |
+| 4 | 09-20 |  Sampling variability  |  | 
+|  5 | 09-26 |  Hypothesis testing |  | 
+|  5 | 09-28 |  R tutorial | | 
+| 5 | 10-01 |  Problem set 2 | | 
+| 6 | 10-03 |  Model specification | | 
+| 6 | 10-05 |  Model fitting | | 
+| 7 | 10-10 |  Quiz 2 | | 
+| 7 | 10-12 |  **No class, break** | | 
+| 8 | 10-17 |  R tutorial | | 
+| 8 | 10-19 |  Model accuracy| | 
+| 8 | 10-22 | Problem set 3 | | 
+| 9 | 10-24 | Model reliability | | 
+| 9 | 10-26 |  R tutorial | | 
+| 10 | 10-31 | Quiz 3 | | 
+| 10 | 11-02 |  TBD guest | | 
+| 11 | 11-07 | Classification | | 
+| 11 | 11-09 |  R tutorial  | | 
+| 11 | 11-12 |  Problem set 4 | | 
+| 12 | 11-14 |  Inference | | 
+| 12 | 11-16 |  R tutorial | | 
+| 13 | 11-21 |  Quiz 4 | | 
+| 13 | 11-23 |  **No class, break** | | 
+| 14 | 11-28 | Feature engineering | | 
+| 14 | 11-30 | R tutorial | | 
+| 14 | 12-03 | Problem set 5 | | 
+| 15 | 12-05 | Multilevel models | | 
+| 15 | 12-07 | R tutorial| | 
+| 15 | 12-10 | Problem set 6 | | 
 

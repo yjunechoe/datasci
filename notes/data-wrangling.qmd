@@ -1,0 +1,60 @@
+---
+title: "Data wrangling"
+author: "Katie Schuler"
+date: 2023-09-12
+
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+## Why wrangle and tidy?
+## Data wrangling with dplyr
+
+All `dplyr` functions (verbs) share a common structure:
+
+- 1st argument is always a data frame
+- Subsequent arguments typically describe which columns to operate on (via their names) 
+- Output is always a new data frame
+
+We can group `dplyr` functions based on what they operate on:
+
+- rows - see section 3 Manipulating rows
+- columns - see section 4 Manipulating columns
+- groups - see section 5 Grouping and summarizing data frames
+- tables - see section 6 Joining data frames
+
+We can easily combine `dplyr` functions to solve complex problems:
+
+- The pipe operator, `|>` takes the output from one function and passes it as input (the first argument) to the next function.
+- There is another version of the pipe, `%>%`. See the reading on data transformation if you are curious about the difference. 
+
+*In lecture, we will demonstrate with a few `dplyr` functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems.* 
+
+## Manipulating rows
+
+`filter()`
+
+`arrange()`
+
+## Manipulating columns
+
+`select()`
+
+`mutate()`
+
+## Grouping and summarizing data frames
+
+## Joining data frames
+
+- don't cover, just show the functions and say we won't cover it
+
+## Data tidying with tidyr
+
+- sneak in with case study later; for now just show functions and say we won't cover it. 
+
+### Further reading and references
+
+https://r4ds.hadley.nz/data-transform
+
+https://r4ds.hadley.nz/joins

@@ -9,11 +9,11 @@ All quiz and problem set questions are graded with the following 4-point rubric.
 
 | Score | Meaning | Description
 |-|--|-------|
-| **4** | **Perfect!** | You understand deeply and can do all parts of this problem yourself with no mistakes. |
+| **4** | **Exceptional!** | You understand deeply and can do all parts of this problem yourself with no mistakes. |
 | **3** | **Well done!** | You understand and can do all parts of this problem yourself with very few mistakes. |
-| **2** | **Getting there** | You understand in part and can do some parts of this problem, but you need a little more practice with these topics. |
-| **1** | **Just starting** | You do not understand yet and could not do most of this problem. You need a lot more practice with these topics. |
-| **0** | **Not complete** | Blank or not legible. |
+| **2** | **Getting there** | You understand and can do some parts of this problem, but you need a little more practice with these topics. |
+| **1** | **Just starting** | You have lots of gaps in your understand and could not do most of this problem. You need a lot more practice with these topics. |
+| **0** | **Not complete** | You left this question completely blank |
 
 
 ## Overall grade
@@ -25,9 +25,9 @@ To compute your overall grade on a problem set or quiz, we take your *average* s
 
 We chose this rubric because all reasonable attempts receive a passing grade, but A+ is reserved for students with advanced understanding of the material. 
 
-## Missing or blank work
+## Missed problem sets and quizzes
 
-Problem sets or quizzes that are completely missing or blank will receive a 0%. 
+Missed problem sets or quizzes will receive an overall score of zero. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%).
 
 
 

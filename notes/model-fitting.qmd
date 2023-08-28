@@ -1,0 +1,49 @@
+---
+title: "Model fitting"
+author: "Katie Schuler"
+date: 2023-10-05
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+## Model fitting basics
+
+- in context of model building more broadly 
+- a genear overview of the concept 
+
+## Mean squared error 
+
+Cost function. 
+
+## Error surface
+
+- We can visualize the error surface for simple example: 2 parameters, $\beta_0$ and $\beta_1$, and the cost function (mean square error). 
+- Show nonlinear model v linear model figs 
+- goal is to find the minimum point
+- notice the nonlinear model can have local minimums but lm has only 1. Because lm is a **convex** function. 
+
+## Gradient descent 
+
+IF we want to estimate the free parameters in a way that would work broadly, for linear or nonlinear models, we can use **gradient descent**. 
+
+- machine learning / optimization. 
+- If we have a lot of data, we could use **stochastic gradient descent** which is the same except we... 
+
+## Ordinary least squares 
+
+As we saw above, linear models have the special property that they have a solution, the OLS. Rather than searching the error surface iteratively via gradient descent (optimization), we can solve for this point directly with **linear algebra**. 
+
+- matrix approach: we write the 3-step function. 
+- use lm() in R. 
+- infer approach: 
+    - specify(), fit() 
+
+
+
+### Further reading 
+
+- [Ch. 8 Fitting models to data](https://dtkaplan.github.io/SM2-bookdown/fitting-models-to-data.html) in Statistical Modeling
+
+
+
