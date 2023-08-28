@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 # page-layout: article
 callout-appearance: simple
 
@@ -24,11 +25,11 @@ website:
 
   sidebar:
   #   - title: "Home"
-  #     # contents: 
+  #     # contents:
   #     #   - index.qmd
   #     #   - syllabus.qmd
   #     #   - rubric.qmd
-  
+
     - title: "Lecture Notes"
       contents:
         - notes/hello-world.qmd
@@ -51,7 +52,7 @@ website:
         - text: "---"
         - rubric.qmd
         # navigation items
-    
+
 
 # website:
 #   title: "datasci for lang & mind"
@@ -82,7 +83,7 @@ website:
   #       text: Rubric
 
 format:
-  html: 
+  html:
     theme: cosmo
     css: styles.css
     # fontsize: 0.9em
