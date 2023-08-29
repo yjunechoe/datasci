@@ -2,8 +2,9 @@
 layout: page
 title:  "R basics"
 date:   2023-08-31
-author: Katie Schuler
-
+author: 
+    - Katie Schuler
+    - June Choe
 ---
 
 ## Basics
@@ -286,7 +287,6 @@ Suggested further reading:
 
 Other references: 
 
-- [Matlab vs. Julia vs. Python](https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/) from blog post by Toby Driscoll
 - [Vectors](https://adv-r.hadley.nz/vectors-chap.html) in Advanced R by Hadley Wickham
 - [Subsetting](https://adv-r.hadley.nz/subsetting.html) in Advanced R by Hadley Wickham
 - [A field guide to base R](https://r4ds.hadley.nz/base-r) in R for Data Science by Hadley Wickham

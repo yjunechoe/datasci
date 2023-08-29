@@ -16,11 +16,11 @@ website:
         file: index.qmd
       - text: "Syllabus"
         file: syllabus.qmd
-      - text: "Lecture Notes"
+      - text: "Lecture notes"
         file: notes/hello-world.qmd
       - text: "Labs"
         file: labs/1-getting-started-with-r-lab.qmd
-      - text: "Assessments"
+      - text: "Problem sets"
         file: "psets/problem-set-1.qmd"
 
   sidebar:
@@ -30,7 +30,7 @@ website:
   #     #   - syllabus.qmd
   #     #   - rubric.qmd
   
-    - title: "Lecture Notes"
+    - title: "Lecture notes"
       contents:
         - notes/hello-world.qmd
         - notes/r-basics.qmd
@@ -57,12 +57,9 @@ website:
         - labs/1-getting-started-with-r-lab.qmd
         # navigation items
 
-    - title: "Assessments"
+    - title: "Problem sets"
       contents:
-        - section: "Problem sets"
-          contents:
-            - psets/problem-set-1.qmd
-        - section: "Quizzes"
+        - psets/problem-set-1.qmd
         - text: "---"
         - rubric.qmd
         # navigation items

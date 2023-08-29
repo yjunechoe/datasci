@@ -1,6 +1,7 @@
 ---
 title: "Model specification"
-author: "Katie Schuler"
+author: 
+    - Katie Schuler
 date: 2023-10-03
 ---
 

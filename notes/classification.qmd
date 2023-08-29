@@ -1,6 +1,7 @@
 ---
 title: "Classification"
-author: "Katie Schuler"
+author: 
+    - Katie Schuler
 date: 11/07/2023
 
 ---

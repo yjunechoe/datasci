@@ -1,7 +1,8 @@
 ---
 title:  "Probablity distributions"
 date:   2023-09-12
-author: "Katie Schuler"
+author: 
+    - Katie Schuler
 execute:
   echo: true
 ---

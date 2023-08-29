@@ -1,0 +1,117 @@
+---
+title: "Hello, world!"
+subtitle: "Data Science for Studying Language and the Mind"
+author: Katie Schuler
+format: 
+    revealjs:
+        theme: default
+        incremental: true 
+---
+
+
+## Data science
+
+
+Data science is about making decisions based on incomplete information. 
+
+. . . 
+
+![from Kok & de Lange (2014)](/figures/visual-illusion.png){#fig-visualillusion fig-align="left" width=30%}
+
+This concept is not new. Brains were built for doing this!
+
+
+
+
+## But we have new tools and lots more data!
+
+. . . 
+
+![from https://www.domo.com/data-never-sleeps.](/figures/data-never-sleeps.png){#fig-dataneversleeps fig-align="left" width=80%}
+
+## Data science workflow
+
+The folks who wrote [R for Data Science](https://r4ds.hadley.nz/) proposed the following data science workflow: 
+
+![from R for Data Science](https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png){#fig-datascience fig-align="left" width=80%}
+
+## Overview of course
+
+We will spend the first few weeks getting comfortable **programming in R**, including some useful skills for data science:
+
+- R basics
+- Data importing
+- Data visualization 
+- Data wrangling 
+
+## Overview of course
+
+Then, we will spend the next several weeks building a **foundation in basic statistics and model building**: 
+
+- Probability distributions
+- Sampling variability
+- Hypothesis testing
+- Model specification
+- Model fitting 
+- Model accuracy
+- Model reliability
+
+## Overview of course
+
+Finally we will cover a selection of **more advanced topics** that are often applied in language and mind fields, with a focus on basic understanding: 
+
+- Classification
+- Feature engineering (preprocessing) 
+- Inference for regression
+- Mixed-effect models
+
+## Syllabus, briefly
+
+Each week will include two lectures and a lab: 
+
+- **Lectures** are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!
+- **Lab** is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule. 
+
+## Syllabus, briefly
+
+There are 10 graded assessments: 
+
+- **6 Problem sets** in which you will be asked to apply your newly aquired R programming skills.
+- **4 Quizzes** in which you will be tested on your understanding of lecture concepts. 
+
+## Syllabus, briefly
+
+There are a few policies to take note of: 
+
+- Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)
+- You may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students). 
+- You may submit any missed quiz or problem set by the end of the semester for half-credit (50%).
+
+## Why R? 
+
+With many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?
+
+- Built for stats, specifically 
+- Makes nice visualizations
+- Lots of people are doing it, especially in academia
+- Easier for beginners to understand
+- Free and open source (though so are Python and Julia, MATLAB costs $)
+
+## Many ways to use R
+
+- [R Studio](https://posit.co/products/open-source/rstudio/)
+- [Jupyter](https://jupyter.org/) 
+- [VS Code](https://code.visualstudio.com/docs/languages/r)
+- and even simply the [command line/terminal](http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20the%20R%20command%20line.html)
+
+## Google Colab
+
+- **Google Colab** is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. 
+- We use Google Colab because it's simple and accessible to everyone. You can start programming right away, no setup required! 
+
+## Secretly, R! 
+
+Google Colab officially supports Python, but secretly supports R (and [Julia](https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_Colab_Notebook_Template.ipynb), too!)
+
+
+- [colab (r kernel)](https://colab.research.google.com/#create=true&language=r)
