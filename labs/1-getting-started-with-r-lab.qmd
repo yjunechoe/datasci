@@ -2,37 +2,161 @@
 layout: post
 title:  "Lab 1: Getting started with R"
 subtitle: "Not graded, just practice"
+
 ---
 
 To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.
 
+```{r}
+#| code-fold: true
+#| code-summary: Setup code
+
+# dynamic exercises made possible with webexercises
+library(webexercises)
+
+```
+
+## Google Colab
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the question
+question <- "True or false? We start a new R notebook in Google Colab with `File > New notebook`"
+
+# # Define the answer choices
+choices <- c(
+    "True",
+    answer = "False"
+)
+
+cat(question,longmcq(choices))
+
+```
+
+For problem sets, how will you submit your colab notebook for grading? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# # Define the answer choices
+choices <- c(
+    answer ="`File > Download > Download .ipynb`, then upload to Gradescope",
+    "`File > Download > Download .ipynb`, then upload to Canvas",
+    "`File > Download > Download .py`, then upload to Gradescope",
+    "`File > Download > Download .py`, then upload to Canvas"
+
+)
+
+cat(longmcq(choices))
+
+```
+
+What version of R is Google Colab running? Hint: see `sessionInfo()` function.
+
+```{r}
+#| echo: false
+#| results: asis
+
+cat(fitb(c("4.3.1"), ignore_ws = TRUE, width = "20"))
+
+```
+
 ## R Basics
 
 
-1. Which of the following are expressions? Choose all that apply.
-    - `10`
-    - `5 + 10`
-    - `x <- 5 + 10`
-    - `x <- y + 10`
-    - `mean(x)`
+Which of the following are expressions? 
 
-1. Which of the following are valid variable names in R? 
-    - `childAge`
-    - `response_time`
-    - `1stPlaceWinner`
-    - `2fast2furious`
-    - `fast&furious`
+```{r}
+#| echo: false
+#| results: asis
 
-1. Suppose we run the following code block. What will `ls()` return? 
+# Define the answer choices
+choices <- c(
+    answer ="10",
+    answer = "5 + 10",
+    answer ="x <- 5 + 10",
+    answer = "x <- y + 10",
+    answer = "mean(x)"
 
-    ```r
-    x <- mean(1, 3, 5)
-    y <- median(1, 3, 5)
-    ```
+)
 
-1. Suppose we run `library(tidyverse)` in Google Colab and receive the following error message? How do we solve this problem? 
+cat(longmcq(choices))
 
-    > `NameError: name 'library' is not defined`
+```
+
+Which of the following are valid variable names in R? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="childAge",
+    answer = "response_time",
+    "1stPlaceWinner",
+    "2fast2furious",
+     "pi"
+
+)
+
+cat(longmcq(choices))
+
+```
+
+
+Suppose we open a new colab notebook and run the following code block. What will `ls()` return? 
+
+```r
+x <- mean(c(1,3,5))
+y <- median(c(1,3,5))
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+
+    "3",
+    "x=3 • y=3",
+    answer ="'x' • 'y' ",
+    "mean(c(1,3,5)) • median(c(1,3,5))"
+
+)
+
+cat(longmcq(choices))
+
+```
+
+Which of the following will load the `emo` package into the current environment? 
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+
+    "install.packages('emo')",
+    answer ="library(emo)",
+    "library('emo')",
+    "data(emo)"
+
+)
+
+cat(longmcq(choices))
+
+```
+
+
+
 
 ## Vectors
 

@@ -42,8 +42,6 @@ For objects:
 - `typeof(x)` - returns object's data type
 - `length(x)` - returns object's length
 - `attributes(x)` - returns list of object's attributes
-- `is.*(x)` - test if object is data type (e.g. `is.double(x)`)
-- `as.*(x)` - coerce object to data type (e.g. `as.double(x)`)
 
 for environment:
 
@@ -110,6 +108,12 @@ Missing elements and empty vectors:
 
 - `NA`- used to represent missing or unknown elements in vectors. Note that `NA` is contageous: expressions including `NA` usually return `NA`. Check for `NA` values with `is.na()`.
 - `NULL` - used to represent an empty or absent vector of arbitrary type. `NULL` is its own special type and always has length zero and `NULL` attributes. Check for `NULL` values with `is.null()`.
+
+## Coercion 
+
+
+- `is.*(x)` - test if object is data type (e.g. `is.double(x)`)
+- `as.*(x)` - coerce object to data type (e.g. `as.double(x)`)
 
 
 ## Subsetting
