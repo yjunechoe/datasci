@@ -7,6 +7,8 @@ engine: knitr
 filters:
   - webr
 webr:
+  show-startup-message: false
+  show-header-message: false
   service-worker-url: "../../datasci/"
 ---
 

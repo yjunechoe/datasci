@@ -110,7 +110,3 @@ format:
       sidebar-width: 300px
     #   gutter-width: 4em
     df-print: kable
-
-webr:
-  show-startup-message: false
-  show-header-message: false
