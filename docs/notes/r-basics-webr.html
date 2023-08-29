@@ -1025,6 +1025,41 @@ a`,
 <li><code>help.search('mean')</code> - search help files for word or phrase</li>
 <li><code>help(package='tidyverse')</code> - find help for a package</li>
 </ul>
+</section>
+<section id="vectors" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3</span> Vectors</h2>
+<p>One of the must fundamental data structures in R is the <strong>vector</strong>. There are two types:</p>
+<ul>
+<li><strong>atomic vector</strong> - elements of the same data type</li>
+<li><strong>list</strong> - elements refer to any object (even complex objects or other lists)</li>
+</ul>
+<p>Atomic vectors can be one of six <strong>data types</strong>:</p>
+<ul>
+<li><code>double</code> - real numbers, written in decimal (0.1234) or scientific notation (1.23e4)
+<ul>
+<li>numbers are double by default (3 is stored as 3.00)</li>
+<li>three special doubles: <code>Inf</code>, <code>-Inf</code>, and <code>NaN</code> (not a number)</li>
+</ul></li>
+<li><code>integer</code> - integers, numbers followed by <code>L</code> (3L or 1e3L)</li>
+<li><code>character</code> - strings with single or double quotes (‘hello world!’ or “hello world!”)</li>
+<li><code>logical</code> - boolean written (<code>TRUE</code> or <code>FALSE</code>) or abbreviated (<code>T</code> or <code>F</code>)</li>
+<li><code>complex</code> - complex numbers where <code>i</code> is imaginary (<code>5 + 3i</code>)</li>
+<li><code>raw</code> - stores raw bytes</li>
+</ul>
+<p>Some more complex data structures are <strong>built from atomic vectors</strong> by adding <strong>attributes</strong>:</p>
+<ul>
+<li><code>matrix</code> - a vector with a <code>dim</code> attribute representing 2 dimensions</li>
+<li><code>array</code> - a vector with a <code>dim</code> attribute representing n dimensions</li>
+<li><code>factor</code> - an integer vector with two attributes: <code>class="factor"</code> and <code>levels</code>, which defines the set of allowed values (useful for categorical data)</li>
+<li><code>date-time</code> - a double vector where the value is the number of seconds since Jan 01, 1970 and a <code>tzone</code> attribute representing the time zone</li>
+<li><code>data.frame</code> - a named list of vectors (of equal length) with attributes for <code>names</code> (column names), <code>row.names</code>, and <code>class="data.frame"</code> (used to represent datasets)</li>
+</ul>
+<p>To create atomic vectors:</p>
+<ul>
+<li><code>c(2,4,6)</code> - c for combine, returns <code>2 4 6</code></li>
+<li><code>2:4</code> - vector of integers, returns <code>2 3 4</code></li>
+<li><code>seq(2, 6, by = 2)</code> - sequence by, returns <code>2 4 6</code></li>
+</ul>
 <button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-5">Loading
   webR...</button>
 <div id="webr-editor-5"></div>
@@ -1044,7 +1079,9 @@ a`,
   let editor;
   require(['vs/editor/editor.main'], function () {
     editor = monaco.editor.create(editorDiv, {
-      value: `?mean`,
+      value: `c(2, 4, 6)
+2:4
+seq(2, 6, by = 2)`,
       language: 'r',
       theme: 'vs-light',
       automaticLayout: true,           // TODO: Could be problematic for slide decks
@@ -1184,41 +1221,6 @@ a`,
     executeCode(editor.getValue());
   };
 </script>
-</section>
-<section id="vectors" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3</span> Vectors</h2>
-<p>One of the must fundamental data structures in R is the <strong>vector</strong>. There are two types:</p>
-<ul>
-<li><strong>atomic vector</strong> - elements of the same data type</li>
-<li><strong>list</strong> - elements refer to any object (even complex objects or other lists)</li>
-</ul>
-<p>Atomic vectors can be one of six <strong>data types</strong>:</p>
-<ul>
-<li><code>double</code> - real numbers, written in decimal (0.1234) or scientific notation (1.23e4)
-<ul>
-<li>numbers are double by default (3 is stored as 3.00)</li>
-<li>three special doubles: <code>Inf</code>, <code>-Inf</code>, and <code>NaN</code> (not a number)</li>
-</ul></li>
-<li><code>integer</code> - integers, numbers followed by <code>L</code> (3L or 1e3L)</li>
-<li><code>character</code> - strings with single or double quotes (‘hello world!’ or “hello world!”)</li>
-<li><code>logical</code> - boolean written (<code>TRUE</code> or <code>FALSE</code>) or abbreviated (<code>T</code> or <code>F</code>)</li>
-<li><code>complex</code> - complex numbers where <code>i</code> is imaginary (<code>5 + 3i</code>)</li>
-<li><code>raw</code> - stores raw bytes</li>
-</ul>
-<p>Some more complex data structures are <strong>built from atomic vectors</strong> by adding <strong>attributes</strong>:</p>
-<ul>
-<li><code>matrix</code> - a vector with a <code>dim</code> attribute representing 2 dimensions</li>
-<li><code>array</code> - a vector with a <code>dim</code> attribute representing n dimensions</li>
-<li><code>factor</code> - an integer vector with two attributes: <code>class="factor"</code> and <code>levels</code>, which defines the set of allowed values (useful for categorical data)</li>
-<li><code>date-time</code> - a double vector where the value is the number of seconds since Jan 01, 1970 and a <code>tzone</code> attribute representing the time zone</li>
-<li><code>data.frame</code> - a named list of vectors (of equal length) with attributes for <code>names</code> (column names), <code>row.names</code>, and <code>class="data.frame"</code> (used to represent datasets)</li>
-</ul>
-<p>To create atomic vectors:</p>
-<ul>
-<li><code>c(2,4,6)</code> - c for combine, returns <code>2 4 6</code></li>
-<li><code>2:4</code> - vector of integers, returns <code>2 3 4</code></li>
-<li><code>seq(2:6, by=2)</code> - sequence by, returns <code>2 4 6</code></li>
-</ul>
 <p>To create more complex structures:</p>
 <ul>
 <li><code>list(x=c(1,2,3), y=c('a','b'))</code> - create a list</li>
@@ -1227,6 +1229,165 @@ a`,
 <li><code>factor(x, levels=unique(x))</code> - turn a vector into a factor</li>
 <li><code>data.frame(x=c(1,2,3), y=c('a','b','c'))</code> - create a data frame</li>
 </ul>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-6">Loading
+  webR...</button>
+<div id="webr-editor-6"></div>
+<div id="webr-code-output-6" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-6");
+  const outputDiv = document.getElementById("webr-code-output-6");
+  const editorDiv = document.getElementById("webr-editor-6");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `# Try them out here!`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
 <p>Missing elements and empty vectors:</p>
 <ul>
 <li><code>NA</code>- used to represent missing or unknown elements in vectors. Note that <code>NA</code> is contageous: expressions including <code>NA</code> usually return <code>NA</code></li>
@@ -1377,6 +1538,167 @@ a`,
 <li><code>plot(x, y)</code> - values of x against y</li>
 <li><code>hist(x)</code> - histogram of x</li>
 </ul>
+<div class="cell">
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-7">Loading
+  webR...</button>
+<div id="webr-editor-7"></div>
+<div id="webr-code-output-7" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-7");
+  const outputDiv = document.getElementById("webr-code-output-7");
+  const editorDiv = document.getElementById("webr-editor-7");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `plot(x = 1:5, y = 5:1)`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
+</div>
 </section>
 <section id="programming-in-r" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="programming-in-r"><span class="header-section-number">7</span> Programming in R</h2>

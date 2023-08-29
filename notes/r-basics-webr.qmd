@@ -95,10 +95,6 @@ For help:
 - `help.search('mean')` - search help files for word or phrase
 - `help(package='tidyverse')` - find help for a package 
 
-```{webr-r}
-?mean
-```
-
 ## Vectors
 
 One of the must fundamental data structures in R is the **vector**. There are two types:
@@ -129,7 +125,13 @@ To create atomic vectors:
 
 - `c(2,4,6)` - c for combine, returns `2 4 6`
 - `2:4` - vector of integers, returns `2 3 4`
-- `seq(2:6, by=2)` - sequence by, returns `2 4 6`
+- `seq(2, 6, by = 2)` - sequence by, returns `2 4 6`
+
+```{webr-r}
+c(2, 4, 6)
+2:4
+seq(2, 6, by = 2)
+```
 
 To create more complex structures: 
 
@@ -138,6 +140,10 @@ To create more complex structures:
 - `array(x, dim=c(2,3,2))` - create an array from x with dimensions 
 - `factor(x, levels=unique(x))` - turn a vector into a factor 
 - `data.frame(x=c(1,2,3), y=c('a','b','c'))` - create a data frame
+
+```{webr-r}
+# Try them out here!
+```
 
 Missing elements and empty vectors: 
 
@@ -287,6 +293,10 @@ For simple plotting:
 - `plot(x)` values of x in order
 - `plot(x, y)` - values of x against y
 - `hist(x)` - histogram of x
+
+```{webr}
+plot(x = 1:5, y = 5:1)
+```
 
 ## Programming in R
 

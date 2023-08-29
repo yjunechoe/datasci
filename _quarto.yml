@@ -8,7 +8,7 @@ callout-appearance: simple
 website:
   title: "LING 0700"
   page-navigation: true
-  page-footer: "Made with [Quarto](https://quarto.org/)" 
+  page-footer: "Made with [Quarto](https://quarto.org/)"
   reader-mode: true
   navbar:
     background: light
@@ -52,7 +52,7 @@ website:
         - notes/feature-engineering.qmd
         - notes/inference.qmd
         - notes/mixed-effects-models.qmd
-          
+
 
     - title: "Labs"
       contents:
@@ -110,3 +110,7 @@ format:
       sidebar-width: 300px
     #   gutter-width: 4em
     df-print: kable
+
+webr:
+  show-startup-message: false
+  show-header-message: false
