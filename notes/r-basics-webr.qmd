@@ -3,6 +3,7 @@ layout: page
 title:  "R Basics"
 date:   2023-08-31
 author: Katie Schuler
+engine: knitr
 filters:
   - webr
 ---
