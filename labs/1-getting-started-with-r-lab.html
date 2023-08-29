@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LING 0700 - Lab 1: Getting started with R</title>
+<title>LING 0700 | PSYC 2314 - Lab 1: Getting started with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,9 +95,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -105,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING 0700</span>
+    <span class="navbar-title">LING 0700 | PSYC 2314</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -140,43 +141,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/1-getting-started-with-r-lab.html">Lab 1: Getting started with R</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../labs/1-getting-started-with-r-lab.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lab 1: Getting started with R</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link active" data-scroll-target="#r-basics"><span class="header-section-number">1</span> R Basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">2</span> Vectors</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">3</span> Subsetting</a></li>
-  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r"><span class="header-section-number">4</span> Programming in R</a></li>
+  <li><a href="#google-colab" id="toc-google-colab" class="nav-link active" data-scroll-target="#google-colab"><span class="header-section-number">1</span> Google Colab</a></li>
+  <li><a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics"><span class="header-section-number">2</span> R Basics</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3</span> Vectors</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">4</span> Subsetting</a></li>
+  <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r"><span class="header-section-number">5</span> Programming in R</a></li>
   </ul>
 </nav>
     </div>
@@ -202,56 +181,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.</p>
-<section id="r-basics" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="r-basics"><span class="header-section-number">1</span> R Basics</h2>
-<ol type="1">
-<li><p>Which of the following are expressions? Choose all that apply.</p>
-<ul>
-<li><code>10</code></li>
-<li><code>5 + 10</code></li>
-<li><code>x &lt;- 5 + 10</code></li>
-<li><code>x &lt;- y + 10</code></li>
-<li><code>mean(x)</code></li>
-</ul></li>
-<li><p>Which of the following are valid variable names in R?</p>
-<ul>
-<li><code>childAge</code></li>
-<li><code>response_time</code></li>
-<li><code>1stPlaceWinner</code></li>
-<li><code>2fast2furious</code></li>
-<li><code>fast&amp;furious</code></li>
-</ul></li>
-<li><p>Suppose we run the following code block. What will <code>ls()</code> return?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Suppose we run <code>library(tidyverse)</code> in Google Colab and receive the following error message? How do we solve this problem?</p>
-<blockquote class="blockquote">
-<p><code>NameError: name 'library' is not defined</code></p>
-</blockquote></li>
-</ol>
+<div class="cell">
+<details>
+<summary>Setup code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dynamic exercises made possible with webexercises</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(webexercises)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="google-colab" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">1</span> Google Colab</h2>
+True or false? We start a new R notebook in Google Colab with <code>File &gt; New notebook</code>
+<div id="radio_RUDRYRSYQE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RUDRYRSYQE" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_RUDRYRSYQE" value="answer"> <span>False</span></label>
+</div>
+<p>For problem sets, how will you submit your colab notebook for grading?</p>
+<div id="radio_BVRBMWWDKF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BVRBMWWDKF" value="answer"> <span><code>File &gt; Download &gt; Download .ipynb</code>, then upload to Gradescope</span></label><label><input type="radio" autocomplete="off" name="radio_BVRBMWWDKF" value=""> <span><code>File &gt; Download &gt; Download .ipynb</code>, then upload to Canvas</span></label><label><input type="radio" autocomplete="off" name="radio_BVRBMWWDKF" value=""> <span><code>File &gt; Download &gt; Download .py</code>, then upload to Gradescope</span></label><label><input type="radio" autocomplete="off" name="radio_BVRBMWWDKF" value=""> <span><code>File &gt; Download &gt; Download .py</code>, then upload to Canvas</span></label>
+</div>
+<p>What version of R is Google Colab running? Hint: see <code>sessionInfo()</code> function.</p>
+<p><input class="webex-solveme nospaces" size="20" data-answer="[&quot;4.3.1&quot;]"></p>
 </section>
-<section id="vectors" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="vectors"><span class="header-section-number">2</span> Vectors</h2>
+<section id="r-basics" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="r-basics"><span class="header-section-number">2</span> R Basics</h2>
+<p>Which of the following are expressions?</p>
+<div id="radio_MCIWKLCEDQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MCIWKLCEDQ" value="answer"> <span>10</span></label><label><input type="radio" autocomplete="off" name="radio_MCIWKLCEDQ" value="answer"> <span>5 + 10</span></label><label><input type="radio" autocomplete="off" name="radio_MCIWKLCEDQ" value="answer"> <span>x &lt;- 5 + 10</span></label><label><input type="radio" autocomplete="off" name="radio_MCIWKLCEDQ" value="answer"> <span>x &lt;- y + 10</span></label><label><input type="radio" autocomplete="off" name="radio_MCIWKLCEDQ" value="answer"> <span>mean(x)</span></label>
+</div>
+<p>Which of the following are valid variable names in R?</p>
+<div id="radio_QCXVZMILRP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QCXVZMILRP" value="answer"> <span>childAge</span></label><label><input type="radio" autocomplete="off" name="radio_QCXVZMILRP" value="answer"> <span>response_time</span></label><label><input type="radio" autocomplete="off" name="radio_QCXVZMILRP" value=""> <span>1stPlaceWinner</span></label><label><input type="radio" autocomplete="off" name="radio_QCXVZMILRP" value=""> <span>2fast2furious</span></label><label><input type="radio" autocomplete="off" name="radio_QCXVZMILRP" value=""> <span>pi</span></label>
+</div>
+<p>Suppose we open a new colab notebook and run the following code block. What will <code>ls()</code> return?</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">median</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_YXJLWPMUGM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YXJLWPMUGM" value=""> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_YXJLWPMUGM" value=""> <span>x=3 • y=3</span></label><label><input type="radio" autocomplete="off" name="radio_YXJLWPMUGM" value="answer"> <span>'x' • 'y' </span></label><label><input type="radio" autocomplete="off" name="radio_YXJLWPMUGM" value=""> <span>mean(c(1,3,5)) • median(c(1,3,5))</span></label>
+</div>
+<p>Which of the following will load the <code>emo</code> package into the current environment?</p>
+<div id="radio_NHNNTHWHQR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NHNNTHWHQR" value=""> <span>install.packages('emo')</span></label><label><input type="radio" autocomplete="off" name="radio_NHNNTHWHQR" value="answer"> <span>library(emo)</span></label><label><input type="radio" autocomplete="off" name="radio_NHNNTHWHQR" value=""> <span>library('emo')</span></label><label><input type="radio" autocomplete="off" name="radio_NHNNTHWHQR" value=""> <span>data(emo)</span></label>
+</div>
+</section>
+<section id="vectors" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3</span> Vectors</h2>
 <ol type="1">
 <li><p>The expression <code>attributes(x)</code> returns the following result. What will <code>typeof(x)</code> return?</p>
 <blockquote class="blockquote">
 <p><code>$dim= 2 . 2</code></p>
 </blockquote></li>
 <li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Explain in one sentence the difference between an atomic vector and a list.</p></li>
 <li><p>Suppose we run the following code block. What will <code>typeof(x)</code> return? What about <code>length(x)</code>? Explain why.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">y=</span><span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Suppose we run the following code. What will <code>y</code> return? What about <code>typeof(y)</code>?</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">2</span>   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="subsetting" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">3</span> Subsetting</h2>
+<section id="subsetting" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">4</span> Subsetting</h2>
 <ol type="1">
 <li><p>Suppose we run the following code. What will each of operations return (a - e)?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>, <span class="at">by=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="a">
 <li><code>x[c(2,4)]</code></li>
 <li><code>x[-c(2,4)]</code></li>
@@ -277,8 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Suppose <code>df</code> is a dataframe with column names <code>ageChild</code>, <code>ageParent</code>, and <code>dateAdded</code>. What will <code>df$age</code> return? Explain why.</p></li>
 </ol>
 </section>
-<section id="programming-in-r" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="programming-in-r"><span class="header-section-number">4</span> Programming in R</h2>
+<section id="programming-in-r" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="programming-in-r"><span class="header-section-number">5</span> Programming in R</h2>
 <ol type="1">
 <li>Explain in one sentence the difference between a <code>for</code> loop and a <code>while</code> loop?</li>
 </ol>
@@ -287,6 +279,212 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

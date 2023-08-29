@@ -2,102 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kschuler.github.io/datasci/labs/1-getting-started-with-r-lab.html</loc>
-    <lastmod>2023-08-29T14:08:07.031Z</lastmod>
+    <lastmod>2023-08-29T18:34:41.212Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/labs/2-data-importing-and-viz.html</loc>
-    <lastmod>2023-08-29T14:08:07.562Z</lastmod>
+    <lastmod>2023-08-29T18:34:41.796Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/psets/problem-set-1.html</loc>
-    <lastmod>2023-08-29T14:08:07.826Z</lastmod>
+    <lastmod>2023-08-29T18:34:42.068Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kschuler.github.io/datasci/webexercises.html</loc>
+    <lastmod>2023-08-29T18:34:43.220Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/drafts.html</loc>
-    <lastmod>2023-08-29T14:08:08.312Z</lastmod>
+    <lastmod>2023-08-29T18:34:43.705Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rbasics.html</loc>
-    <lastmod>2023-08-29T14:08:08.713Z</lastmod>
+    <lastmod>2023-08-29T18:34:44.149Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/index.html</loc>
-    <lastmod>2023-08-29T14:08:09.097Z</lastmod>
+    <lastmod>2023-08-29T18:34:44.534Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/slides/hello-world.html</loc>
-    <lastmod>2023-08-29T14:08:09.487Z</lastmod>
+    <lastmod>2023-08-29T18:34:44.934Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/feature-engineering.html</loc>
-    <lastmod>2023-08-29T14:08:09.810Z</lastmod>
+    <lastmod>2023-08-29T18:34:45.252Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/data-wrangling.html</loc>
-    <lastmod>2023-08-29T14:08:10.124Z</lastmod>
+    <lastmod>2023-08-29T18:34:45.583Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/hello-world.html</loc>
-    <lastmod>2023-08-29T14:08:10.636Z</lastmod>
+    <lastmod>2023-08-29T18:34:46.107Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/classification.html</loc>
-    <lastmod>2023-08-29T14:08:10.903Z</lastmod>
+    <lastmod>2023-08-29T18:34:46.376Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/probability-distributions.html</loc>
-    <lastmod>2023-08-29T14:08:12.612Z</lastmod>
+    <lastmod>2023-08-29T18:34:48.197Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/model-accuracy.html</loc>
-    <lastmod>2023-08-29T14:08:13.222Z</lastmod>
+    <lastmod>2023-08-29T18:34:48.825Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/inference.html</loc>
-    <lastmod>2023-08-29T14:08:13.483Z</lastmod>
+    <lastmod>2023-08-29T18:34:49.111Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/mixed-effects-models.html</loc>
-    <lastmod>2023-08-29T14:08:13.762Z</lastmod>
+    <lastmod>2023-08-29T18:34:49.391Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/model-fitting.html</loc>
-    <lastmod>2023-08-29T14:08:14.075Z</lastmod>
+    <lastmod>2023-08-29T18:34:49.726Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/sampling-variability.html</loc>
-    <lastmod>2023-08-29T14:08:14.543Z</lastmod>
+    <lastmod>2023-08-29T18:34:50.202Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/data-importing.html</loc>
-    <lastmod>2023-08-29T14:08:15.273Z</lastmod>
+    <lastmod>2023-08-29T18:34:50.993Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/data-visualization.html</loc>
-    <lastmod>2023-08-29T14:08:15.618Z</lastmod>
+    <lastmod>2023-08-29T18:34:51.341Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/hypothesis-testing.html</loc>
-    <lastmod>2023-08-29T14:08:16.046Z</lastmod>
+    <lastmod>2023-08-29T18:34:51.768Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/r-basics.html</loc>
-    <lastmod>2023-08-29T14:08:17.058Z</lastmod>
+    <lastmod>2023-08-29T18:34:52.789Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/model-reliability.html</loc>
-    <lastmod>2023-08-29T14:08:17.326Z</lastmod>
+    <lastmod>2023-08-29T18:34:53.057Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/notes/model-specification.html</loc>
-    <lastmod>2023-08-29T14:08:18.031Z</lastmod>
+    <lastmod>2023-08-29T18:34:53.781Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/syllabus.html</loc>
-    <lastmod>2023-08-29T14:08:18.401Z</lastmod>
+    <lastmod>2023-08-29T18:34:54.157Z</lastmod>
   </url>
   <url>
     <loc>https://kschuler.github.io/datasci/rubric.html</loc>
-    <lastmod>2023-08-29T14:08:18.720Z</lastmod>
+    <lastmod>2023-08-29T18:34:54.471Z</lastmod>
   </url>
 </urlset>

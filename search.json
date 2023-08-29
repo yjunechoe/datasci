@@ -4,35 +4,42 @@
     "href": "labs/1-getting-started-with-r-lab.html",
     "title": "Lab 1: Getting started with R",
     "section": "",
-    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab."
+    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.\nSetup code\n# dynamic exercises made possible with webexercises\nlibrary(webexercises)"
+  },
+  {
+    "objectID": "labs/1-getting-started-with-r-lab.html#google-colab",
+    "href": "labs/1-getting-started-with-r-lab.html#google-colab",
+    "title": "Lab 1: Getting started with R",
+    "section": "1 Google Colab",
+    "text": "1 Google Colab\nTrue or false? We start a new R notebook in Google Colab with File &gt; New notebook\n\n True False\n\nFor problem sets, how will you submit your colab notebook for grading?\n\n File &gt; Download &gt; Download .ipynb, then upload to Gradescope File &gt; Download &gt; Download .ipynb, then upload to Canvas File &gt; Download &gt; Download .py, then upload to Gradescope File &gt; Download &gt; Download .py, then upload to Canvas\n\nWhat version of R is Google Colab running? Hint: see sessionInfo() function."
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#r-basics",
     "href": "labs/1-getting-started-with-r-lab.html#r-basics",
     "title": "Lab 1: Getting started with R",
-    "section": "1 R Basics",
-    "text": "1 R Basics\n\nWhich of the following are expressions? Choose all that apply.\n\n10\n5 + 10\nx &lt;- 5 + 10\nx &lt;- y + 10\nmean(x)\n\nWhich of the following are valid variable names in R?\n\nchildAge\nresponse_time\n1stPlaceWinner\n2fast2furious\nfast&furious\n\nSuppose we run the following code block. What will ls() return?\nx &lt;- mean(1, 3, 5)\ny &lt;- median(1, 3, 5)\nSuppose we run library(tidyverse) in Google Colab and receive the following error message? How do we solve this problem?\n\nNameError: name 'library' is not defined"
+    "section": "2 R Basics",
+    "text": "2 R Basics\nWhich of the following are expressions?\n\n 10 5 + 10 x &lt;- 5 + 10 x &lt;- y + 10 mean(x)\n\nWhich of the following are valid variable names in R?\n\n childAge response_time 1stPlaceWinner 2fast2furious pi\n\nSuppose we open a new colab notebook and run the following code block. What will ls() return?\nx &lt;- mean(c(1,3,5))\ny &lt;- median(c(1,3,5))\n\n 3 x=3 • y=3 'x' • 'y'  mean(c(1,3,5)) • median(c(1,3,5))\n\nWhich of the following will load the emo package into the current environment?\n\n install.packages('emo') library(emo) library('emo') data(emo)"
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#vectors",
     "href": "labs/1-getting-started-with-r-lab.html#vectors",
     "title": "Lab 1: Getting started with R",
-    "section": "2 Vectors",
-    "text": "2 Vectors\n\nThe expression attributes(x) returns the following result. What will typeof(x) return?\n\n$dim= 2 . 2\n\nSuppose we run the following code block. What will typeof(x) return?\nx &lt;- c()\nExplain in one sentence the difference between an atomic vector and a list.\nSuppose we run the following code block. What will typeof(x) return? What about length(x)? Explain why.\nx &lt;- data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\"))\nSuppose we run the following code. What will y return? What about typeof(y)?\nx &lt;- c(2,4,6)\ny &lt;- x * 2"
+    "section": "3 Vectors",
+    "text": "3 Vectors\n\nThe expression attributes(x) returns the following result. What will typeof(x) return?\n\n$dim= 2 . 2\n\nSuppose we run the following code block. What will typeof(x) return?\nx &lt;- c()\nExplain in one sentence the difference between an atomic vector and a list.\nSuppose we run the following code block. What will typeof(x) return? What about length(x)? Explain why.\nx &lt;- data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\"))\nSuppose we run the following code. What will y return? What about typeof(y)?\nx &lt;- c(2,4,6)\ny &lt;- x * 2"
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#subsetting",
     "href": "labs/1-getting-started-with-r-lab.html#subsetting",
     "title": "Lab 1: Getting started with R",
-    "section": "3 Subsetting",
-    "text": "3 Subsetting\n\nSuppose we run the following code. What will each of operations return (a - e)?\nx &lt;- seq(2:8, by=2)\n\nx[c(2,4)]\nx[-c(2,4)]\nx[]\nx[[2]]\nx[2]\n\nSuppose m is a matrix created with matrix(c(1,2,3,4), nrow=2, ncol=2). What will each of the following operations return?\n\nm[c(1), ]\nm[c(2), c(1, 2)]\nm[]\nm[[2]]\n\nSuppose df is a data frame created with data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\")). What will each of the following operations return?\n\ndf[c(1,2)]\ndf[c(1,2), c(2)]\ndf[['x']]\ndf[x]\ndf[[2]]\n\nSuppose df is a dataframe with column names ageChild, ageParent, and dateAdded. What will df$age return? Explain why."
+    "section": "4 Subsetting",
+    "text": "4 Subsetting\n\nSuppose we run the following code. What will each of operations return (a - e)?\nx &lt;- seq(2:8, by=2)\n\nx[c(2,4)]\nx[-c(2,4)]\nx[]\nx[[2]]\nx[2]\n\nSuppose m is a matrix created with matrix(c(1,2,3,4), nrow=2, ncol=2). What will each of the following operations return?\n\nm[c(1), ]\nm[c(2), c(1, 2)]\nm[]\nm[[2]]\n\nSuppose df is a data frame created with data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\")). What will each of the following operations return?\n\ndf[c(1,2)]\ndf[c(1,2), c(2)]\ndf[['x']]\ndf[x]\ndf[[2]]\n\nSuppose df is a dataframe with column names ageChild, ageParent, and dateAdded. What will df$age return? Explain why."
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#programming-in-r",
     "href": "labs/1-getting-started-with-r-lab.html#programming-in-r",
     "title": "Lab 1: Getting started with R",
-    "section": "4 Programming in R",
-    "text": "4 Programming in R\n\nExplain in one sentence the difference between a for loop and a while loop?"
+    "section": "5 Programming in R",
+    "text": "5 Programming in R\n\nExplain in one sentence the difference between a for loop and a while loop?"
   },
   {
     "objectID": "labs/2-data-importing-and-viz.html",
@@ -47,6 +54,34 @@
     "title": "Problem set 1",
     "section": "",
     "text": "Under Construction"
+  },
+  {
+    "objectID": "webexercises.html",
+    "href": "webexercises.html",
+    "title": "Webexercises",
+    "section": "",
+    "text": "This is a Web Exercise template created by the psychology teaching team at the University of Glasgow, based on ideas from Software Carpentry. This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.\nThe {webexercises} package provides a number of functions that you use in inline R code or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.\nNOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser."
+  },
+  {
+    "objectID": "webexercises.html#example-questions",
+    "href": "webexercises.html#example-questions",
+    "title": "Webexercises",
+    "section": "1 Example Questions",
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 9 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean there is a 95% probability that the true mean lies within this range"
+  },
+  {
+    "objectID": "webexercises.html#checked-sections",
+    "href": "webexercises.html#checked-sections",
+    "title": "Webexercises",
+    "section": "2 Checked sections",
+    "text": "2 Checked sections\nCreate sections with the class webex-check to add a button that hides feedback until it is pressed. Add the class webex-box to draw a box around the section (or use your own styles).\n\nI am going to learn a lot: TRUEFALSE\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion"
+  },
+  {
+    "objectID": "webexercises.html#hidden-solutions-and-hints",
+    "href": "webexercises.html#hidden-solutions-and-hints",
+    "title": "Webexercises",
+    "section": "3 Hidden solutions and hints",
+    "text": "3 Hidden solutions and hints\nYou can fence off a solution area that will be hidden behind a button using hide() before the solution and unhide() after, each as inline R code. Pass the text you want to appear on the button to the hide() function.\nIf the solution is a code chunk, instead of using hide() and unhide(), simply set the webex.hide chunk option to TRUE, or set it to the string you wish to display on the button.\nRecreate the scatterplot below, using the built-in cars dataset.\n\n\n\n\n\n\n\nI need a hint\n\nSee the documentation for plot() (?plot)\n\n\n\n\n\nClick here to see the solution\n\nplot(cars$speed, cars$dist)"
   },
   {
     "objectID": "drafts.html",
@@ -79,7 +114,7 @@
   {
     "objectID": "rbasics.html",
     "href": "rbasics.html",
-    "title": "LING 0700",
+    "title": "LING 0700 | PSYC 2314",
     "section": "",
     "text": "2 + 3\n\n5\n\n\n\nlibrary(tidyverse)\n\nERROR: Error in library(tidyverse): there is no package called 'tidyverse'"
   },
@@ -340,7 +375,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n\n\n\n\nn\nmean\nmedian\nsd\niqr_lower\niqr_upper\n\n\n\n\n1000\n2.996584\n2.999065\n0.251672\n2.824318\n3.159035"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n\n\n\n\nn\nmean\nmedian\nsd\niqr_lower\niqr_upper\n\n\n\n\n1000\n3.003879\n3.007094\n0.2508186\n2.828496\n3.167662"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -711,7 +746,7 @@
     "href": "notes/r-basics.html#important-functions",
     "title": "R basics",
     "section": "2 Important functions",
-    "text": "2 Important functions\nFor objects:\n\nstr(x) - returns summary of object’s structure\ntypeof(x) - returns object’s data type\nlength(x) - returns object’s length\nattributes(x) - returns list of object’s attributes\nis.*(x) - test if object is data type (e.g. is.double(x))\nas.*(x) - coerce object to data type (e.g. as.double(x))\n\nfor environment:\n\nls() - list all variables in environment\nrm(x) - remove x variable from environment\nrm(list = ls()) - remove all variables from environment\n\nFor packages:\n\ninstall.packages() to install packages\nlibrary() to load the package into your current R session.\ndata() to load data from package into environment\nsessionInfo() - version information for current R session and packages\n\nFor help:\n\n?mean - get help with a function\nhelp('mean') - search help files for word or phrase\nhelp(package='tidyverse') - find help for a package"
+    "text": "2 Important functions\nFor objects:\n\nstr(x) - returns summary of object’s structure\ntypeof(x) - returns object’s data type\nlength(x) - returns object’s length\nattributes(x) - returns list of object’s attributes\n\nfor environment:\n\nls() - list all variables in environment\nrm(x) - remove x variable from environment\nrm(list = ls()) - remove all variables from environment\n\nFor packages:\n\ninstall.packages() to install packages\nlibrary() to load the package into your current R session.\ndata() to load data from package into environment\nsessionInfo() - version information for current R session and packages\n\nFor help:\n\n?mean - get help with a function\nhelp('mean') - search help files for word or phrase\nhelp(package='tidyverse') - find help for a package"
   },
   {
     "objectID": "notes/r-basics.html#vectors",
@@ -721,39 +756,46 @@
     "text": "3 Vectors\nOne of the must fundamental data structures in R is the vector. There are two types:\n\natomic vector - elements of the same data type\nlist - elements refer to any object (even complex objects or other lists)\n\nAtomic vectors can be one of six data types:\n\ndouble - real numbers, written in decimal (0.1234) or scientific notation (1.23e4)\n\nnumbers are double by default (3 is stored as 3.00)\nthree special doubles: Inf, -Inf, and NaN (not a number)\n\ninteger - integers, whole numbers followed by L (3L or 1e3L)\ncharacter - strings with single or double quotes (‘hello world!’ or “hello world!”)\nlogical - boolean, written (TRUE or FALSE) or abbreviated (T or F)\ncomplex - complex numbers, where i is the imaginary number (5 + 3i)\nraw - stores raw bytes\n\nSome more complex data structures are built from atomic vectors by adding attributes:\n\nmatrix - a vector with a dim attribute representing 2 dimensions\narray - a vector with a dim attribute representing n dimensions\nfactor - an integer vector with two attributes: class=\"factor\" and levels, which defines the set of allowed values (useful for categorical data)\ndate-time - a double vector where the value is the number of seconds since Jan 01, 1970 and a tzone attribute representing the time zone\ndata.frame - a named list of vectors (of equal length) with attributes for names (column names), row.names, and class=\"data.frame\" (used to represent datasets)\n\nTo create atomic vectors:\n\nc(2,4,6) - c() function for combining elements, returns 2 4 6\n2:4 - : notation to construct a sequence of integers, returns 2 3 4\nseq(from = 2, to = 6, by=2) - seq() function to create an evenly-spaced sequence, returns 2 4 6\n\nTo create more complex structures:\n\nlist(x=c(1,2,3), y=c('a','b')) - create a list\nmatrix(x, nrow=2, ncol=2) - create a matrix from a vector x with nrow and ncol\narray(x, dim=c(2,3,2)) - create an array from a vector x with dimensions\nfactor(x, levels=unique(x)) - turn a vector x into a factor\ndata.frame(x=c(1,2,3), y=c('a','b','c')) - create a data frame\n\nMissing elements and empty vectors:\n\nNA- used to represent missing or unknown elements in vectors. Note that NA is contageous: expressions including NA usually return NA. Check for NA values with is.na().\nNULL - used to represent an empty or absent vector of arbitrary type. NULL is its own special type and always has length zero and NULL attributes. Check for NULL values with is.null()."
   },
   {
+    "objectID": "notes/r-basics.html#coercion",
+    "href": "notes/r-basics.html#coercion",
+    "title": "R basics",
+    "section": "4 Coercion",
+    "text": "4 Coercion\n\nis.*(x) - test if object is data type (e.g. is.double(x))\nas.*(x) - coerce object to data type (e.g. as.double(x))"
+  },
+  {
     "objectID": "notes/r-basics.html#subsetting",
     "href": "notes/r-basics.html#subsetting",
     "title": "R basics",
-    "section": "4 Subsetting",
-    "text": "4 Subsetting\n\nSubsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R\n\nThere are three operators for subsetting objects:\n\n[ - subsets (one or more) elements\n[[ and $ - extracts a single element\n\nThere are six ways to subset multiple elements from vectors with [:\n\nx[c(1,2)] - positive integers select elements at specified indexes\nx[-c(1,2)] - negative integers select all but elements at specified indexes\nx[c(\"name\", \"name2\")] select elements by name, if elements are named\nx[] - nothing returns the original object\nx[0] - zero returns a zero-length vector\nx[c(TRUE, TRUE)] - select elements where corresponding logical value is TRUE\n\nThese also apply when selecting multiple elements from higher dimensional objects (matrix, array, data frame), but note that:\n\nindexes for different dimensions are separated by commas [rows, columns, ...]\nomitted dimensions return all values along that dimension\nthe result is simplified to the lowest possible dimensions by default\nthey can also be indexed like a vector (selects columns)\n\nThere are 3 ways to extract a single element from any data structure:\n\n[[2]] - a single positive integer (index)\n[['name']] - a single string\nx$name - the $ operator is a useful shorthand for [['name']]\n\nWhen extracting single elements, note that:\n\n[[ is preferred for atomic vectors for clarity (though[ also works)\n$ does partial matching without warning; use options(warnPartialMatchDollar=TRUE)\nthe behavior for invalid indexes is inconsistent: sometimes you’ll get an error message, and sometimes it will return NULL"
+    "section": "5 Subsetting",
+    "text": "5 Subsetting\n\nSubsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R\n\nThere are three operators for subsetting objects:\n\n[ - subsets (one or more) elements\n[[ and $ - extracts a single element\n\nThere are six ways to subset multiple elements from vectors with [:\n\nx[c(1,2)] - positive integers select elements at specified indexes\nx[-c(1,2)] - negative integers select all but elements at specified indexes\nx[c(\"name\", \"name2\")] select elements by name, if elements are named\nx[] - nothing returns the original object\nx[0] - zero returns a zero-length vector\nx[c(TRUE, TRUE)] - select elements where corresponding logical value is TRUE\n\nThese also apply when selecting multiple elements from higher dimensional objects (matrix, array, data frame), but note that:\n\nindexes for different dimensions are separated by commas [rows, columns, ...]\nomitted dimensions return all values along that dimension\nthe result is simplified to the lowest possible dimensions by default\nthey can also be indexed like a vector (selects columns)\n\nThere are 3 ways to extract a single element from any data structure:\n\n[[2]] - a single positive integer (index)\n[['name']] - a single string\nx$name - the $ operator is a useful shorthand for [['name']]\n\nWhen extracting single elements, note that:\n\n[[ is preferred for atomic vectors for clarity (though[ also works)\n$ does partial matching without warning; use options(warnPartialMatchDollar=TRUE)\nthe behavior for invalid indexes is inconsistent: sometimes you’ll get an error message, and sometimes it will return NULL"
   },
   {
     "objectID": "notes/r-basics.html#operations",
     "href": "notes/r-basics.html#operations",
     "title": "R basics",
-    "section": "5 Operations",
-    "text": "5 Operations\nArithmetic operators:\n\n+ - add\n- - subtract\n* - multiply\n/ - divide\n^ - exponent\n\nComparison operators return true or false:\n\na == b - equal to\na != b - not equal to\na &gt; b - greater than\na &lt; b - less than\na &gt;= b - greater than or equal to\na &lt;= b - less than or equal to\n\nLogical operators combine multiple true or false statements:\n\n& - and\n| - or\n! - not\nany() - returns true if any element meets condition\nall() - returns true if all elements meet condition\n%in% - returns true if any element is in the following vector\n\nMost math operations (and many functions) are vectorized in R:\n\nthey can work on entire vectors, without the need for explicit loops or iteration.\nthis a powerful feature that allows you to write cleaner, more efficient code\nTo illustrate, suppose x &lt;- c(1, 2, 3):\n\nx + 100 returns c(101, 102, 103)\nx == 1 returns c(TRUE, FALSE, FALSE)"
+    "section": "6 Operations",
+    "text": "6 Operations\nArithmetic operators:\n\n+ - add\n- - subtract\n* - multiply\n/ - divide\n^ - exponent\n\nComparison operators return true or false:\n\na == b - equal to\na != b - not equal to\na &gt; b - greater than\na &lt; b - less than\na &gt;= b - greater than or equal to\na &lt;= b - less than or equal to\n\nLogical operators combine multiple true or false statements:\n\n& - and\n| - or\n! - not\nany() - returns true if any element meets condition\nall() - returns true if all elements meet condition\n%in% - returns true if any element is in the following vector\n\nMost math operations (and many functions) are vectorized in R:\n\nthey can work on entire vectors, without the need for explicit loops or iteration.\nthis a powerful feature that allows you to write cleaner, more efficient code\nTo illustrate, suppose x &lt;- c(1, 2, 3):\n\nx + 100 returns c(101, 102, 103)\nx == 1 returns c(TRUE, FALSE, FALSE)"
   },
   {
     "objectID": "notes/r-basics.html#built-in-functions",
     "href": "notes/r-basics.html#built-in-functions",
     "title": "R basics",
-    "section": "6 Built-in functions",
-    "text": "6 Built-in functions\nNote that you do not need to memorize these built-in functions to be successful on quizzes. Use this as a reference.\nFor basic math:\n\nlog(x) - natural log\nexp(x) - exponential\nsqrt(x) - square root\nabs(x) - absolute value\nmax(x) - largest element\nmin(x) - smallest element\nround(x, n) - round to n decimal places\nsignif(x, n) - round to n significant figures\nsum(x) - add all elements\n\nFor stats:\n\nmean(x) - mean\nmedian(x) - median\nsd(x) - standard deviation\nvar(x) - variance\nquantile(x) - percentage quantiles\nrank(x) - rank of elements\ncor(x, y) - correlation\nlm(x ~ y, data=df) - fit a linear model\nglm(x ~ y, data=df) - fit a generalized linear model\nsummary(x) - get more detailed information from a fitted model\naov(x) - analysis of variance\n\nFor vectors:\n\nsort(x) - return sorted vector\ntable(x) - see counts of values in a vector\nrev(x) - return reversed vector\nunique(x) - return unique values in a vector\narray(x, dim) - transform vector into n-dimensional array\n\nFor matrices:\n\nt(m) - transpose matrix\nm %+% n - matrix multiplication\nsolve(m, n) - find x in m * x = n\n\nFor data frames:\n\nview(df) - see the full data frame\nhead(df) - see the first 6 rows of data frame\nnrow(df) - number of rows in a data frame\nncol(df) - number of columns in a data frame\ndim(df) - number of rows and columns in a data frame\ncbind(df1, df2) - bind dataframe columns\nrbind(df1, df2) - bind dataframe rows\n\nFor strings:\n\npaste(x, y, sep=' ') - join vectors together element-wise\ntoupper(x) - convert to uppercase\ntolower(x) - convert to lowercase\nnchar(x) - number of characters in a string\n\nFor simple plotting:\n\nplot(x) values of x in order\nplot(x, y) - values of x against y\nhist(x) - histogram of x"
+    "section": "7 Built-in functions",
+    "text": "7 Built-in functions\nNote that you do not need to memorize these built-in functions to be successful on quizzes. Use this as a reference.\nFor basic math:\n\nlog(x) - natural log\nexp(x) - exponential\nsqrt(x) - square root\nabs(x) - absolute value\nmax(x) - largest element\nmin(x) - smallest element\nround(x, n) - round to n decimal places\nsignif(x, n) - round to n significant figures\nsum(x) - add all elements\n\nFor stats:\n\nmean(x) - mean\nmedian(x) - median\nsd(x) - standard deviation\nvar(x) - variance\nquantile(x) - percentage quantiles\nrank(x) - rank of elements\ncor(x, y) - correlation\nlm(x ~ y, data=df) - fit a linear model\nglm(x ~ y, data=df) - fit a generalized linear model\nsummary(x) - get more detailed information from a fitted model\naov(x) - analysis of variance\n\nFor vectors:\n\nsort(x) - return sorted vector\ntable(x) - see counts of values in a vector\nrev(x) - return reversed vector\nunique(x) - return unique values in a vector\narray(x, dim) - transform vector into n-dimensional array\n\nFor matrices:\n\nt(m) - transpose matrix\nm %+% n - matrix multiplication\nsolve(m, n) - find x in m * x = n\n\nFor data frames:\n\nview(df) - see the full data frame\nhead(df) - see the first 6 rows of data frame\nnrow(df) - number of rows in a data frame\nncol(df) - number of columns in a data frame\ndim(df) - number of rows and columns in a data frame\ncbind(df1, df2) - bind dataframe columns\nrbind(df1, df2) - bind dataframe rows\n\nFor strings:\n\npaste(x, y, sep=' ') - join vectors together element-wise\ntoupper(x) - convert to uppercase\ntolower(x) - convert to lowercase\nnchar(x) - number of characters in a string\n\nFor simple plotting:\n\nplot(x) values of x in order\nplot(x, y) - values of x against y\nhist(x) - histogram of x"
   },
   {
     "objectID": "notes/r-basics.html#programming-in-r",
     "href": "notes/r-basics.html#programming-in-r",
     "title": "R basics",
-    "section": "7 Programming in R",
-    "text": "7 Programming in R\nWriting functions and handling control flow are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book Hands-On Programming with R.\n\nFunctions are reusable pieces of code that take some input, perform some task or computation, and return an output.\nfunction(inputs){\n    # do something\n    return(output)\n}\nControl flow refers to managing the order in which expressions are executed in a program:\n\nif…else - if something is true, do this; otherwise do that\nfor loops - repeat code a specific number of times\nwhile loops - repeat code as long as certain conditions are true\nbreak - exit a loop early\nnext - skip to next iteration in a loop"
+    "section": "8 Programming in R",
+    "text": "8 Programming in R\nWriting functions and handling control flow are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book Hands-On Programming with R.\n\nFunctions are reusable pieces of code that take some input, perform some task or computation, and return an output.\nfunction(inputs){\n    # do something\n    return(output)\n}\nControl flow refers to managing the order in which expressions are executed in a program:\n\nif…else - if something is true, do this; otherwise do that\nfor loops - repeat code a specific number of times\nwhile loops - repeat code as long as certain conditions are true\nbreak - exit a loop early\nnext - skip to next iteration in a loop"
   },
   {
     "objectID": "notes/r-basics.html#further-reading-and-references",
     "href": "notes/r-basics.html#further-reading-and-references",
     "title": "R basics",
-    "section": "8 Further reading and references",
-    "text": "8 Further reading and references\nSuggested further reading:\n\nBase R Cheat Sheet\nGetting Started with Data in R in ModernDive textbook\nR Nuts and Bolts in R Programming for Data Science by Roger Peng\n\nOther references:\n\nVectors in Advanced R by Hadley Wickham\nSubsetting in Advanced R by Hadley Wickham\nA field guide to base R in R for Data Science by Hadley Wickham"
+    "section": "9 Further reading and references",
+    "text": "9 Further reading and references\nSuggested further reading:\n\nBase R Cheat Sheet\nGetting Started with Data in R in ModernDive textbook\nR Nuts and Bolts in R Programming for Data Science by Roger Peng\n\nOther references:\n\nVectors in Advanced R by Hadley Wickham\nSubsetting in Advanced R by Hadley Wickham\nA field guide to base R in R for Data Science by Hadley Wickham"
   },
   {
     "objectID": "notes/model-reliability.html",
@@ -858,14 +900,14 @@
     "href": "syllabus.html#labs",
     "title": "Syllabus",
     "section": "Labs",
-    "text": "Labs\nHands-on practice, quiz prep, and problem set work guided by TAs.\n\n402: Thu at 1:45p in WILL 4 with TA\n403: Thu at 3:30p in TOWN 305 with TA\n404: Fri at 10:15a in WILL 24 with Ravi\n405: Fri at 12:00p in TOWN 307 with Avinash"
+    "text": "Labs\nHands-on practice, quiz prep, and problem set work guided by TAs.\n\n402: Thu at 1:45p in WILL 4 with June\n403: Thu at 3:30p in TOWN 305 with June\n404: Fri at 10:15a in WILL 24 with Ravi\n405: Fri at 12:00p in TOWN 307 with Avinash"
   },
   {
     "objectID": "syllabus.html#office-hours",
     "href": "syllabus.html#office-hours",
     "title": "Syllabus",
     "section": "Office hours",
-    "text": "Office hours\nThe linguistics department is on the 3rd floor of the C-wing at 3401 Walnut street, between Franklin’s Table and Modern Eye.\n\nKatie: Tue 12:30-1:30p in 314 ling dept\nJune: TBD in ling dept\nAvinash: TBD\nRavi: TBD"
+    "text": "Office hours\nThe linguistics department is on the 3rd floor of the C-wing at 3401 Walnut street, between Franklin’s Table and Modern Eye.\n\nKatie: Tue 12:30-1:30p in 314C ling dept\nJune: Thu 12:30-1:30p in 325C ling dept\nAvinash: TBD\nRavi: TBD"
   },
   {
     "objectID": "syllabus.html#quizzes",
