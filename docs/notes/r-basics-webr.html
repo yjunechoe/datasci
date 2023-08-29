@@ -315,6 +315,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="basics" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="basics"><span class="header-section-number">1</span> Basics</h2>
+<p>Defining some basic concepts:</p>
+<ul>
+<li><strong>Expressions</strong> are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
+<ul>
+<li><code>10</code> - a simple value expression that evaluates to <code>10</code>.</li>
+<li><code>x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code></li>
+<li><code>a &lt;- x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code> and assigns the result to the variable <code>a</code></li>
+</ul>
 <button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-1">Loading
   webR...</button>
 <div id="webr-editor-1"></div>
@@ -334,8 +344,204 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   let editor;
   require(['vs/editor/editor.main'], function () {
     editor = monaco.editor.create(editorDiv, {
-      value: `fit = lm(mpg ~ am, data = mtcars)
-summary(fit)`,
+      value: `10
+x + 10
+a <- x + 10
+a`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script></li>
+<li><strong>Objects</strong> in R allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, <code>&lt;-</code>. For example, in <code>x &lt;- 10</code>, <code>x</code> is an object assigned to the value 10.</li>
+<li><strong>Names</strong> that we assign to objects must include only letters, numbers, <code>.</code>, or <code>_</code>. Names must start with a letter (or <code>.</code> if not followed by a number).</li>
+<li><strong>Attributes</strong> allow you to attach arbirary metadata to an object. For example, adding a <code>dim</code> (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array.</li>
+<li><strong>Functions</strong> (or commands) are reusable pieces of code that take some input, preform some task or computation, and return an output. Many functions are built-in to base R (see below!), others can be part of packages or even defined by you. Functions are objects!</li>
+<li><strong>Environment</strong> is the collection of all the objects (functions, variables etc.) we defined in the current R session.</li>
+<li><strong>Packages</strong> are collections of functions, data, and documentation bundled together in R. They enhance R’s capabilities by introducing new functions and specialized data structures. Packages need to be installed and loaded before you can use their functions or data.</li>
+<li><strong>Comments</strong> are notes you leave to yourself (within code blocks in colab) to document your code; comments are not evaluated.</li>
+<li><strong>Messages</strong> are notes R leaves for you, after you run your code. Messages can be simply for-your-information, warnings that something unexpected might happen, or erros if R cannot evaluate your code.</li>
+</ul>
+<p>Ways to get help when coding in R:</p>
+<ul>
+<li><strong>Read packages docs</strong> - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the <a href="https://dplyr.tidyverse.org/">dplyr package</a>.</li>
+<li><strong>Read error messages</strong> - read any error messages you receive while coding — they give clues about what is going wrong!</li>
+<li><strong>Ask R</strong> - Use R’s built-in functions to get help as you code</li>
+<li><strong>Ask on Ed</strong>- ask questions on our class discussion board!</li>
+<li><strong>Ask Google/Stack Overflow</strong> - It is a normal and important skill (not cheating) to google things while coding and learning to code! Use keywords and package names to ensure your solutions are course-relevant.</li>
+<li><strong>Ask ChatGPT</strong> - You can similarly use ChatGPT or other LLMs as a resource. But keep in mind they may provide a solution that is wrong or not relevant to what we are learning in this course.</li>
+</ul>
+</section>
+<section id="important-functions" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="important-functions"><span class="header-section-number">2</span> Important functions</h2>
+<p>For objects:</p>
+<ul>
+<li><code>str(x)</code> - returns summary of object’s structure</li>
+<li><code>typeof(x)</code> - returns object’s data type</li>
+<li><code>length(x)</code> - returns object’s length</li>
+<li><code>attributes(x)</code> - returns list of object’s attributes</li>
+<li><code>is.*(x)</code> - test if object is data type (e.g.&nbsp;<code>is.double(x)</code>)</li>
+<li><code>as.*(x)</code> - coerce object to data type (e.g.&nbsp;<code>as.double(x)</code>)</li>
+</ul>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-2">Loading
+  webR...</button>
+<div id="webr-editor-2"></div>
+<div id="webr-code-output-2" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-2");
+  const outputDiv = document.getElementById("webr-code-output-2");
+  const editorDiv = document.getElementById("webr-editor-2");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `str(a)
+typeof(a)
+length(a)
+attributes(a)
+is.numeric(a)
+as.character(a)`,
       language: 'r',
       theme: 'vs-light',
       automaticLayout: true,           // TODO: Could be problematic for slide decks
@@ -475,52 +681,173 @@ summary(fit)`,
     executeCode(editor.getValue());
   };
 </script>
-<section id="basics" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="basics"><span class="header-section-number">1</span> Basics</h2>
-<p>Defining some basic concepts:</p>
-<ul>
-<li><strong>Expressions</strong> are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
-<ul>
-<li><code>10</code> - a simple value expression that evaluates to <code>10</code>.</li>
-<li><code>x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code></li>
-<li><code>a &lt;- x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code> and assigns the result to the variable <code>a</code></li>
-</ul></li>
-<li><strong>Objects</strong> in R allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, <code>&lt;-</code>. For example, in <code>x &lt;- 10</code>, <code>x</code> is an object assigned to the value 10.</li>
-<li><strong>Names</strong> that we assign to objects must include only letters, numbers, <code>.</code>, or <code>_</code>. Names must start with a letter (or <code>.</code> if not followed by a number).</li>
-<li><strong>Attributes</strong> allow you to attach arbirary metadata to an object. For example, adding a <code>dim</code> (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array.</li>
-<li><strong>Functions</strong> (or commands) are reusable pieces of code that take some input, preform some task or computation, and return an output. Many functions are built-in to base R (see below!), others can be part of packages or even defined by you. Functions are objects!</li>
-<li><strong>Environment</strong> is the collection of all the objects (functions, variables etc.) we defined in the current R session.</li>
-<li><strong>Packages</strong> are collections of functions, data, and documentation bundled together in R. They enhance R’s capabilities by introducing new functions and specialized data structures. Packages need to be installed and loaded before you can use their functions or data.</li>
-<li><strong>Comments</strong> are notes you leave to yourself (within code blocks in colab) to document your code; comments are not evaluated.</li>
-<li><strong>Messages</strong> are notes R leaves for you, after you run your code. Messages can be simply for-your-information, warnings that something unexpected might happen, or erros if R cannot evaluate your code.</li>
-</ul>
-<p>Ways to get help when coding in R:</p>
-<ul>
-<li><strong>Read packages docs</strong> - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the <a href="https://dplyr.tidyverse.org/">dplyr package</a>.</li>
-<li><strong>Read error messages</strong> - read any error messages you receive while coding — they give clues about what is going wrong!</li>
-<li><strong>Ask R</strong> - Use R’s built-in functions to get help as you code</li>
-<li><strong>Ask on Ed</strong>- ask questions on our class discussion board!</li>
-<li><strong>Ask Google/Stack Overflow</strong> - It is a normal and important skill (not cheating) to google things while coding and learning to code! Use keywords and package names to ensure your solutions are course-relevant.</li>
-<li><strong>Ask ChatGPT</strong> - You can similarly use ChatGPT or other LLMs as a resource. But keep in mind they may provide a solution that is wrong or not relevant to what we are learning in this course.</li>
-</ul>
-</section>
-<section id="important-functions" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="important-functions"><span class="header-section-number">2</span> Important functions</h2>
-<p>For objects:</p>
-<ul>
-<li><code>str(x)</code> - returns summary of object’s structure</li>
-<li><code>typeof(x)</code> - returns object’s data type</li>
-<li><code>length(x)</code> - returns object’s length</li>
-<li><code>attributes(x)</code> - returns list of object’s attributes</li>
-<li><code>is.*(x)</code> - test if object is data type (e.g.&nbsp;<code>is.double(x)</code>)</li>
-<li><code>as.*(x)</code> - coerce object to data type (e.g.&nbsp;<code>as.double(x)</code>)</li>
-</ul>
 <p>for environment:</p>
 <ul>
 <li><code>ls()</code> - list all variables in environment</li>
 <li><code>rm(x)</code> - remove x variable from environment</li>
 <li><code>rm(list = ls())</code> - remove all variables from environment</li>
 </ul>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-3">Loading
+  webR...</button>
+<div id="webr-editor-3"></div>
+<div id="webr-code-output-3" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-3");
+  const outputDiv = document.getElementById("webr-code-output-3");
+  const editorDiv = document.getElementById("webr-editor-3");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `ls()
+# rm(a)
+a`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
 <p>For packages:</p>
 <ul>
 <li><code>install.packages()</code> to install packages</li>
@@ -528,12 +855,330 @@ summary(fit)`,
 <li><code>data()</code> to load data from package into environment</li>
 <li><code>sessionInfo()</code> - version information for current R session and packages</li>
 </ul>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-4">Loading
+  webR...</button>
+<div id="webr-editor-4"></div>
+<div id="webr-code-output-4" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-4");
+  const outputDiv = document.getElementById("webr-code-output-4");
+  const editorDiv = document.getElementById("webr-editor-4");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `sessionInfo()`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
 <p>For help:</p>
 <ul>
 <li><code>?mean</code> - get help with a function</li>
 <li><code>help.search('mean')</code> - search help files for word or phrase</li>
 <li><code>help(package='tidyverse')</code> - find help for a package</li>
 </ul>
+<button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-5">Loading
+  webR...</button>
+<div id="webr-editor-5"></div>
+<div id="webr-code-output-5" aria-live="assertive">
+  <pre style="visibility: hidden"></pre>
+</div>
+<script type="module">
+  // Retrieve webR code cell information
+  const runButton = document.getElementById("webr-run-button-5");
+  const outputDiv = document.getElementById("webr-code-output-5");
+  const editorDiv = document.getElementById("webr-editor-5");
+
+  // Add a light grey outline around the code editor
+  editorDiv.style.border = "1px solid #eee";
+
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: `?mean`,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // TODO: Could be problematic for slide decks
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5rem',               // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Add a keydown event listener for Shift+Enter using the addCommand method
+    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
+      // Code to run when Shift+Enter is pressed
+      executeCode(editor.getValue());
+    });
+
+    // Add a keydown event listener for Ctrl+Enter to run selected code
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
+      // Get the selected text from the editor
+      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+      // Code to run when Ctrl+Enter is pressed (run selected code)
+      executeCode(selectedText);
+    });
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+  });
+
+  // Function to execute the code (accepts code as an argument)
+  async function executeCode(codeToRun) {
+    // Disable run button for code cell active
+    runButton.disabled = true;
+
+    // Create a canvas variable for graphics
+    let canvas = undefined;
+
+    // Initialize webR
+    await globalThis.webR.init();
+
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
+
+    // Capture output data from evaluating the code
+    const result = await webRCodeShelter.captureR(codeToRun, {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+    });
+
+    // Start attempting to parse the result data
+    try {
+
+      // Stop creating images
+      await webR.evalRVoid("dev.off()");
+
+      // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+      const out = result.output.filter(
+        evt => evt.type == "stdout" || evt.type == "stderr"
+      ).map((evt) => evt.data).join("\n");
+
+      // Clean the state
+      const msgs = await webR.flush();
+
+      // Output each image stored
+      msgs.forEach(msg => {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
+            canvas = document.createElement("canvas");
+            canvas.setAttribute("width", 2 * 504);
+            canvas.setAttribute("height", 2 * 360);
+            canvas.style.width = "700px";
+            canvas.style.display = "block";
+            canvas.style.margin = "auto";
+          }
+        }
+      });
+
+      // Nullify the outputDiv of content
+      outputDiv.innerHTML = "";
+
+      // Design an output object for messages
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        // Display results as text
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        // If nothing is present, hide the element.
+        pre.style.visibility = "hidden";
+      }
+      outputDiv.appendChild(pre);
+
+      // Place the graphics on the canvas
+      if (canvas) {
+        const p = document.createElement("p");
+        p.appendChild(canvas);
+        outputDiv.appendChild(p);
+      }
+    } finally {
+      // Clean up the remaining code
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    executeCode(editor.getValue());
+  };
+</script>
 </section>
 <section id="vectors" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3</span> Vectors</h2>

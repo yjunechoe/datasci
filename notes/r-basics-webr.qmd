@@ -8,11 +8,6 @@ filters:
   - webr
 ---
 
-```{webr-r}
-fit = lm(mpg ~ am, data = mtcars)
-summary(fit)
-```
-
 ## Basics
 
 Defining some basic concepts:
@@ -21,6 +16,14 @@ Defining some basic concepts:
     - `10` - a simple value expression that evaluates to `10`.
     - `x + 10` - an expression that adds the value of `x` to `10`
     - `a <- x + 10` - an expression that adds the value of `x` to `10` and assigns the result to the variable `a`
+    
+    ```{webr-r}
+    10
+    x + 10
+    a <- x + 10
+    a
+    ```
+
 - **Objects** in R allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, `<-`. For example, in `x <- 10`, `x` is an object assigned to the value 10.
 - **Names** that we assign to objects must include only letters, numbers, `.`, or `_`. Names must start with a letter (or `.` if not followed by a number).
 - **Attributes** allow you to attach arbirary metadata to an object. For example, adding a `dim` (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array. 
@@ -50,11 +53,27 @@ For objects:
 - `is.*(x)` - test if object is data type (e.g. `is.double(x)`)
 - `as.*(x)` - coerce object to data type (e.g. `as.double(x)`)
 
+```{webr-r}
+str(a)
+typeof(a)
+length(a)
+attributes(a)
+is.numeric(a)
+as.character(a)
+```
+
 for environment:
 
 - `ls()` - list all variables in environment
 - `rm(x)` - remove x variable from environment
 - `rm(list = ls())` - remove all variables from environment
+
+```{webr-r}
+ls()
+# rm(a)
+a
+```
+
 
 For packages: 
 
@@ -63,13 +82,20 @@ For packages:
 - `data()` to load data from package into environment
 - `sessionInfo()` - version information for current R session and packages
 
+```{webr-r}
+sessionInfo()
+```
+
+
 For help:
 
 - `?mean` - get help with a function
 - `help.search('mean')` - search help files for word or phrase
 - `help(package='tidyverse')` - find help for a package 
 
-
+```{webr-r}
+?mean
+```
 
 ## Vectors
 
