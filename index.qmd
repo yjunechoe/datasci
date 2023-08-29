@@ -5,7 +5,7 @@ subtitle: "Tuesdays and Thursdays COHN 402"
 ---
  <!-- resources:  -->
 
-- contact: [katie](), [june](), [avinash](), [ravi]()
+- contact: [katie](mailto:kschuler@sas.upenn.edu), [june](mailto:yjchoe@sas.upenn.edu), [avinash](mailto:amgoss@sas.upenn.edu), [ravi](mailto:raviarya@sas.upenn.edu)
 - resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab](https://colab.research.google.com/#create=true&language=r)
 
 
