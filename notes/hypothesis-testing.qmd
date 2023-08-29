@@ -1,0 +1,82 @@
+---
+title: "Hypothesis testing"
+author: "Katie Schuler"
+date: 2023-09-26
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+- Suppose we have one variable and two conditions: the height of human adults by gender.
+  - This is usually what we want to do in science / with models
+  - We will start in this simple place on our way to more complex
+- Are men taller than women?
+  - Is there a difference in means? How do we know?
+
+## Hypothesis testing
+
+ - We can't! At least we can't quantify it. Intead we can use a cool statistical approach to help us: hypothesis test
+ - How it works: pos a NULL hypothesis?
+   - why null? we need to quantify it
+   - ask if the null were true, how likely is that we'd observe this result?
+  
+## p-values
+
+- One way to quantify how likely this is with a ttest.
+  - t-tests are parametric — we figure out the probability theoretically based on an existing distribution
+  - computes a p-value, which quantifies how likely it is we'd observe some result
+  - does the t-test construct the null? I think yes, theoretically, or because properties are known. 
+- Interpretation of p-value
+  - reject the null (p < some threshold)
+  - fail to reject the null (p > some threshold) 
+ 
+## Nonparametric approaches to p-values
+
+- But what if we aren't doing the mean? Or the distribution isn't normal? We can use the same principle of the sampling distribution. Two approaches to construct the null distribution from the data: 
+  - Resampling: one appraoch: shuffle around, then get the mean, construct null distribution
+  - Bootstrapping: another approach: sample with replacement, get the mean, construct null distribution
+  - which one should we pick? see k
+- p-value
+  - how likely is the observed mean? with either of these null distributions we can use the confidence interval
+  - beforehand we set an alpha value (usually 0.05) which is the cutoff for what we think is likely/unlikely.
+ 
+## There is only one test 
+
+(insert image of there is only one test) 
+
+- Allows us to appreciate that, though there is a myriad of statistical tests available, there is really only one test:
+  - descibe the flow chart 
+
+- We can use the infer package to perform this kind of hypothesis testing
+  - Show example. 
+
+  ## Exploring relationships 
+
+Last week we explored data in which we measured a single quantity: brain size. We explored this dataset with a histogram and modeled it with a single value (mean). Suppose we have a slightly more complex dataset in which we measure both brain size and body mass (two quantities!). We might want to know whether there is a relationship between brain size and body mass. We can explore the relationship between two quantities visually with a **scatter plot**.
+
+If there is no relationship between the variables, we say they are **independent**. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In our example, knowing an animal's body size provides no information about their brain size. If there *is* some relationship between the variables, we can consider two types:
+
+1. There may be a **linear relationship** between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between brain size and body mass: as body mass increases, brain size also increases. 
+2. Or a **nonlinear relationship**.  Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g. a U-shaped curve).
+
+
+
+## Correlation 
+
+One way to quantify linear relationships is with **correlation ($r$)**. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive. 
+
+Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then compute the average product of each variable: 
+
+- show equation 
+- we can achieve this calculation in R by computing 
+- add getting z-score with R? 
+- Correlation only describes linear relationships. 
+
+Is the correlation we observed significantly different from zero? We can apply the techniques we learned over the past few weeks to find out. Just like the mean — and all other test statistics! — *$r$* is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way: construct the sampling distribution of the correlation via bootstrapping, compute a confidence interval, and compute the p-value. 
+
+(demo with infer framework)
+
+## Further reading
+
+- [The logic of hypothesis testing](https://dtkaplan.github.io/SM2-bookdown/the-logic-of-hypothesis-testing.html) - Chapter 13, Statistical Modeling
+- [Hypothesis testing](https://moderndive.com/9-hypothesis-testing.html) - Chapter 9, Modern Dive

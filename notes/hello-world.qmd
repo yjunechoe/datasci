@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hello, world!"
-date:   2023-08-29 17:37:08 -0400
+date:   2023-08-29
 author: Katie Schuler
 subtitle: "Welcome to Datasci for Lang & Mind"
 
@@ -12,7 +12,43 @@ subtitle: "Welcome to Datasci for Lang & Mind"
 
 ## Data science
 
-> Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.<br> ~ [inferentialthinking.com](https://inferentialthinking.com/chapters/01/1/intro.html)
+> Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.<br><br>
+*Computational and Inferential Thinking: The Foundations of Data Science*
+
+![flowchart from R for Data Science](https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png){#fig-datascience fig-align="center" width=80%}
+
+## Overview of the course
+
+Topics: 
+
+- **Learn R** - we will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:
+    - R basics
+    - Data importing
+    - Data visualization 
+    - Data wrangling 
+- **Foundations** - we will spend the next several weeks building a foundation in basic statistics and model building 
+    - Probability distributions
+    - Sampling variability
+    - Hypothesis testing
+    - Model specification
+    - Model fitting 
+    - Model accuracy
+    - Model reliability
+- **Specials** - finally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding: 
+    - Inference for regression
+    - Classification
+    - Feature engineering (preprocessing) 
+    - Mixed-effect models
+
+Typical week: 
+
+- **Lecture** (Tue and Thu) - conceptual overview of core topics and programming tutorials 
+- **Lab** (Thu or Fri) - ungraded practice problems and review with TAs
+
+Assessments: 
+
+- **6 Problem sets** - applying programming skills
+- **4 Quizzes** - testing understanding of concepts (similar to lab practice questions)
 
 ## Why R? 
 
@@ -72,3 +108,8 @@ Frequently used keyboard shortcuts:
 - `Cmd/Ctrl+/` - comment/uncomment selection
 - `Cmd/Ctrl+]` - increase indent
 - `Cmd/Ctrl+[` - decrease indent 
+
+## Further reading and references
+
+Recommended reading: 
+- [Ch 1 Data Science](https://inferentialthinking.com/chapters/01/what-is-data-science.html) from Computational and Inferential Thinking: The Foundations of Data Science

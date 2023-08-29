@@ -1,0 +1,94 @@
+---
+title: "Data visualization"
+author: "Katie Schuler"
+date: 09/07/2023
+
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+## Why visualize data? 
+
+> Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science
+
+## Data visualization with ggplot2
+
+three main parts: 
+
+- **data**- your (tidy) data
+- **aesthetic mappings (aes)** - make data visible
+- **geometric objects** - 
+
+other layers: 
+
+- **facets** 
+- **statistics** - statistical transformations of data
+- **scales** - map data values to visual values of aestetic
+- coordinates
+- **themes** - overall visuals
+
+
+## Aesthetic mapping
+
+
+**aesthetic mappings** (aes), make data visible
+
+- `x`, `y`: variable on x and y axis
+- `color`: outline color of geom
+- `fill`: fill color of geom
+- `group`: group geom belongs to
+- `shape`: shape used to plot point (circle, square, etc)
+- `linetype`: type of line used (solid, dash, et)
+- `size`
+
+## Geometric objects
+
+**geometric objects (geoms)** - type of plot
+
+
+## Additional layers
+
+We'll cover some in the class: 
+
+- **facets**
+    - `facet_grid(.~var1)`
+    - `facet_grid(var2~.)`
+    - `facet_grid(var2~var1)`
+    - `facet_wrap(~var1)` - wrap facets
+    - "scales"? 
+- **coordinates**
+    - `coord_cartesian(xlim=c(0,5))` - xlim, ylim
+    - `coord_flip()`
+- **labels** 
+    - `labs(title="plot title")` - x, y, subtitle
+    - `annotate()`
+- **statistics**
+- **scales**
+- **position adjustments**
+- **themes**
+    - `theme(legend.position="bottom")`
+
+## Saving plots 
+
+Helper functions: 
+
+- `last_plot()` - returns the last plot
+- `ggsave("plot.png", width=5, height=5)` - saves last plot
+
+### Further reading and references
+
+Useful resources:
+- ggplot cheat sheet
+- [introduction to palmerpenguins](https://allisonhorst.github.io/palmerpenguins/articles/intro.html) 
+
+Recommended further reading: 
+- https://moderndive.com/2-viz.html
+
+
+Other references: 
+
+https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html
+
+https://r4ds.hadley.nz/layers
+

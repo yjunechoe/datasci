@@ -58,7 +58,7 @@ We will support any accommodations arranged through Disability Services via the 
 There is no extra credit in the course. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%).  To ensure fair treatment across all students, all students will receive a 1% "bonus" to their final course grade: 92.54% will become 93.54%.
 
 ## Regrade requests
-Regrade requests should be made in writing within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and [rubric](/rubric.qmd). 
+Regrade requests should be submitted through [Gradescope](https://www.gradescope.com/courses/561597) within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and [rubric](/rubric.qmd). 
 
 
 
