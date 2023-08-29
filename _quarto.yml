@@ -8,7 +8,6 @@ website:
   title: "LING 0700"
   page-navigation: true
   page-footer: "Made with [Quarto](https://quarto.org/)" 
-  reader-mode: true
   navbar:
     background: light
     search: true
@@ -39,18 +38,18 @@ website:
         - notes/data-visualization.qmd
         - notes/data-wrangling.qmd
         - text: "---"
-        - notes/probability-distributions.qmd
-        - notes/sampling-variability.qmd
-        - notes/hypothesis-testing.qmd
-        - notes/model-specification.qmd
-        - notes/model-fitting.qmd
-        - notes/model-accuracy.qmd
-        - notes/model-reliability.qmd
-        - text: "---"
-        - notes/classification.qmd
-        - notes/feature-engineering.qmd
-        - notes/inference.qmd
-        - notes/mixed-effects-models.qmd
+        # - notes/probability-distributions.qmd
+        # - notes/sampling-variability.qmd
+        # - notes/hypothesis-testing.qmd
+        # - notes/model-specification.qmd
+        # - notes/model-fitting.qmd
+        # - notes/model-accuracy.qmd
+        # - notes/model-reliability.qmd
+        # - text: "---"
+        # - notes/classification.qmd
+        # - notes/feature-engineering.qmd
+        # - notes/inference.qmd
+        # - notes/mixed-effects-models.qmd
           
 
     - title: "Labs"
