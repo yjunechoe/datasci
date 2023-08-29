@@ -6,8 +6,10 @@ callout-appearance: simple
 
 
 website:
-  title: LING0700
+  title: "LING 0700"
   page-navigation: true
+  page-footer: "Made with [Quarto](https://quarto.org/)" 
+  reader-mode: true
   navbar:
     background: light
     search: true
@@ -33,10 +35,24 @@ website:
     - title: "Lecture Notes"
       contents:
         - notes/hello-world.qmd
-        - section: "Learn R"
-          contents:
-            - notes/r-basics.qmd
-            - notes/data-importing.qmd
+        - notes/r-basics.qmd
+        - notes/data-importing.qmd
+        - notes/data-visualization.qmd
+        - notes/data-wrangling.qmd
+        - text: "---"
+        - notes/probability-distributions.qmd
+        - notes/sampling-variability.qmd
+        - notes/hypothesis-testing.qmd
+        - notes/model-specification.qmd
+        - notes/model-fitting.qmd
+        - notes/model-accuracy.qmd
+        - notes/model-reliability.qmd
+        - text: "---"
+        - notes/classification.qmd
+        - notes/feature-engineering.qmd
+        - notes/inference.qmd
+        - notes/mixed-effects-models.qmd
+          
 
     - title: "Labs"
       contents:
@@ -89,6 +105,7 @@ format:
     # fontsize: 0.9em
     toc: true
     number-sections: true
+    number-depth: 2
     grid:
       sidebar-width: 300px
     #   gutter-width: 4em

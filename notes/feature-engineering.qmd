@@ -1,0 +1,20 @@
+---
+title: "Feature engineering"
+author: "Katie Schuler"
+date: 11/14/2023
+
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+
+## Dummy coding 
+
+Including categorical variables in a model: 
+
+- One approach is to create "dummy variables", called **dummy coding**, to represent the different levels of the categorical variable. Dummy variables are coded as 1 or 0 (binary) to indicate the presence or absence of a specific category or level. R does this by default.
+- In our swim records example, R dummy codes gender by creating a dummy variable `male`, where 1 means true and 0 means false. We do not also need a female variable because when male is 0, the person must be female. Creating an additional variable gives no new information. The "left out" category is called the **reference level**. Unless you specify otherwise, R uses whatever is alphabetically first as the reference level. 
+- If a categorical variable has **more than two levels**, we can simply add a column. To illustrate, imagine our gender variable has a third level, "non-binary". We create our male column as before (1 for true, 0 for false), and add a `non-binary` column (1 for true, 0 for false). If the swimmer is neither male nor non-binary (0 in both columns), they must be female. We can have as many levels as we like in a categorical variable, but we should be aware that this adds as many terms (minus 1) to the model!  Here $x_2$ is the vector for the `male` variable and $x_3$ is the vector for the`non-binary` variable:
+  - in R: `y ~ 1 + year + gender`
+  - in eq: $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3$
