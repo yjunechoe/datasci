@@ -12,11 +12,12 @@ Defining some basic concepts:
 
 - **Expressions** are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
     - `10` - a simple value expression that evaluates to `10`.
-    - `x + 10` - an expression that adds the value of `x` to `10`
-    - `a <- x + 10` - an expression that adds the value of `x` to `10` and assigns the result to the variable `a`
+    - `x <- 10` - an expression that assigns the value of `10` to `x`.
+    - `x + 10` - an expression that adds the value of `x` to `10`.
+    - `a <- x + 10` - an expression that adds the value of `x` to `10` and assigns the result to the variable `a`.
 - **Objects** in R allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, `<-`. For example, in `x <- 10`, `x` is an object assigned to the value 10.
 - **Names** that we assign to objects must include only letters, numbers, `.`, or `_`. Names must start with a letter (or `.` if not followed by a number).
-- **Attributes** allow you to attach arbirary metadata to an object. For example, adding a `dim` (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array. 
+- **Attributes** allow you to attach arbitrary metadata to an object. For example, adding a `dim` (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array. 
 - **Functions** (or commands) are reusable pieces of code that take some input, preform some task or computation, and return an output. Many functions are built-in to base R (see below!), others can be part of packages or even defined by you. Functions are objects!
 - **Environment** is the collection of all the objects (functions, variables etc.) we defined in the current R session.
 - **Packages** are collections of functions, data, and documentation bundled together in R. They  enhance R's capabilities by introducing new functions and specialized data structures. Packages need to be installed and loaded before you can use their functions or data. 
@@ -59,7 +60,7 @@ For packages:
 For help:
 
 - `?mean` - get help with a function
-- `help.search('mean')` - search help files for word or phrase
+- `help('mean')` - search help files for word or phrase
 - `help(package='tidyverse')` - find help for a package 
 
 
@@ -76,10 +77,10 @@ Atomic vectors can be one of six **data types**:
 - `double` - real numbers, written in decimal (0.1234) or scientific notation (1.23e4)
     - numbers are double by default (3 is stored as 3.00)
     - three special doubles: `Inf`, `-Inf`, and `NaN` (not a number)
-- `integer` - integers, numbers followed by `L` (3L or 1e3L)
+- `integer` - integers, whole numbers followed by `L` (3L or 1e3L)
 - `character` - strings with single or double quotes ('hello world!' or "hello world!")
-- `logical` - boolean written (`TRUE` or `FALSE`) or abbreviated (`T` or `F`)
-- `complex` - complex numbers where `i` is imaginary (`5 + 3i`)
+- `logical` - boolean, written (`TRUE` or `FALSE`) or abbreviated (`T` or `F`)
+- `complex` - complex numbers, where `i` is the imaginary number (`5 + 3i`)
 - `raw` - stores raw bytes
 
 Some more complex data structures are **built from atomic vectors** by adding **attributes**:
@@ -92,22 +93,22 @@ Some more complex data structures are **built from atomic vectors** by adding **
 
 To create atomic vectors: 
 
-- `c(2,4,6)` - c for combine, returns `2 4 6`
-- `2:4` - vector of integers, returns `2 3 4`
-- `seq(2:6, by=2)` - sequence by, returns `2 4 6`
+- `c(2,4,6)` - `c()` function for combining elements, returns `2 4 6`
+- `2:4` - `:` notation to construct a sequence of integers, returns `2 3 4`
+- `seq(from = 2, to = 6, by=2)` - `seq()` function to create an evenly-spaced sequence, returns `2 4 6`
 
 To create more complex structures: 
 
 - `list(x=c(1,2,3), y=c('a','b'))` - create a list
-- `matrix(x, nrow=2, ncol=2)` - create a matrix from x with nrow and ncol
-- `array(x, dim=c(2,3,2))` - create an array from x with dimensions 
-- `factor(x, levels=unique(x))` - turn a vector into a factor 
+- `matrix(x, nrow=2, ncol=2)` - create a matrix from a vector `x` with nrow and ncol
+- `array(x, dim=c(2,3,2))` - create an array from a vector `x` with dimensions 
+- `factor(x, levels=unique(x))` - turn a vector `x` into a factor 
 - `data.frame(x=c(1,2,3), y=c('a','b','c'))` - create a data frame
 
 Missing elements and empty vectors: 
 
-- `NA`- used to represent missing or unknown elements in vectors. Note that `NA` is contageous: expressions including `NA` usually return `NA`
-- `NULL` - used to represent an empty or absent vector of arbitrary type. `NULL` is its own special type and always has length zero and `NULL` attributes.   
+- `NA`- used to represent missing or unknown elements in vectors. Note that `NA` is contageous: expressions including `NA` usually return `NA`. Check for `NA` values with `is.na()`.
+- `NULL` - used to represent an empty or absent vector of arbitrary type. `NULL` is its own special type and always has length zero and `NULL` attributes. Check for `NULL` values with `is.null()`.
 
 
 ## Subsetting
@@ -116,10 +117,10 @@ Missing elements and empty vectors:
 
 There are three operators for subsetting objects: 
 
-- `[` - selects multiple elements
+- `[` - *subsets* (one or more) elements
 - `[[` and `$` - *extracts* a single element  
 
-There are six ways to **select multiple elements** from vectors with `[`:
+There are six ways to **subset multiple elements** from vectors with `[`:
 
 - `x[c(1,2)]` - positive integers select elements at specified indexes
 - `x[-c(1,2)]` - negative integers select all but elements at specified indexes
@@ -182,8 +183,8 @@ Most math operations (and many functions) are **vectorized** in R:
 - they can work on entire vectors, without the need for explicit loops or iteration.
 - this a powerful feature that allows you to write cleaner, more efficient code
 - To illustrate, suppose `x <- c(1, 2, 3)`:
-    - `x + 100` returns `[101 102 103]`
-    - `x == 1` returns `[TRUE FALSE FALSE]`
+    - `x + 100` returns `c(101, 102, 103)`
+    - `x == 1` returns `c(TRUE, FALSE, FALSE)`
 
 
 ## Built-in functions 
@@ -222,7 +223,7 @@ For vectors:
 - `table(x)` - see counts of values in a vector
 - `rev(x)` - return reversed vector
 - `unique(x)` - return unique values in a vector
-- `dim(x)` - transform vector into n-dimensional array
+- `array(x, dim)` - transform vector into n-dimensional array
 
 For matrices: 
 
@@ -236,13 +237,13 @@ For data frames:
 - `head(df)` - see the first 6 rows of data frame
 - `nrow(df)` - number of rows in a data frame
 - `ncol(df)` - number of columns in a data frame
-- `dim(df)` - number of columns and rows in a data frame 
-- `cbind(df1, df2)` - bind columns 
-- `rbind(df1, df2)` - bind rows
+- `dim(df)` - number of rows and columns in a data frame 
+- `cbind(df1, df2)` - bind dataframe columns 
+- `rbind(df1, df2)` - bind dataframe rows
 
-For strings: 
+For strings:
 
-- `paste(x, y, sep=' ')` - join multiple vectors together
+- `paste(x, y, sep=' ')` - join vectors together element-wise
 - `toupper(x)` - convert to uppercase
 - `tolower(x)` - convert to lowercase
 - `nchar(x)` - number of characters in a string
@@ -255,7 +256,7 @@ For simple plotting:
 
 ## Programming in R
 
-Writing **functions** and handling **flow control** are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book [Hands-On Programming with R](https://rstudio-education.github.io/hopr/). 
+Writing **functions** and handling **control flow** are important aspects of learning to program in any language. For our purposes, some general conceptual knowledge on these topics is sufficient (see below). Those interested to learn more might enjoy the book [Hands-On Programming with R](https://rstudio-education.github.io/hopr/). 
 
 
 - **Functions** are reusable pieces of code that take some input, perform some task or computation, and return an output. 
@@ -266,13 +267,13 @@ Writing **functions** and handling **flow control** are important aspects of lea
         return(output)
     }
     ```
-- **Flow control** refers to managing the order in which expressions are executed in a program: 
+    
+- **Control flow** refers to managing the order in which expressions are executed in a program: 
     - `if`...`else` - if something is true, do this; otherwise do that
     - `for` loops - repeat code a specific number of times 
     - `while` loops - repeat code as long as certain conditions are true
     - `break` - exit a loop early
     - `next` - skip to next iteration in a loop 
-
 
 
 ## Further reading and references
