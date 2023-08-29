@@ -98,9 +98,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -179,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./notes/hello-world.html" rel="" target="">
- <span class="menu-text">Lecture Notes</span></a>
+ <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./labs/1-getting-started-with-r-lab.html" rel="" target="">
@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./psets/problem-set-1.html" rel="" target="">
- <span class="menu-text">Assessments</span></a>
+ <span class="menu-text">Problem sets</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -250,7 +250,7 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1693281600000" data-listing-file-modified-sort="1693243800782" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Hello, world!" data-listing-filename-sort="hello-world.qmd">
+<tr data-index="0" data-listing-date-sort="1693281600000" data-listing-file-modified-sort="1693317300015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Hello, world!" data-listing-filename-sort="hello-world.qmd">
 <td>
 <span class="listing-date">Aug 29, 2023</span>
 </td>
@@ -261,7 +261,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1693454400000" data-listing-file-modified-sort="1693296844019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="R basics" data-listing-filename-sort="r-basics.qmd">
+<tr data-index="1" data-listing-date-sort="1693454400000" data-listing-file-modified-sort="1693300723714" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="R basics" data-listing-filename-sort="r-basics.qmd">
 <td>
 <span class="listing-date">Aug 31, 2023</span>
 </td>
@@ -269,10 +269,10 @@ Author
 <a href="./notes/r-basics.html" class="title listing-title">R basics</a>
 </td>
 <td>
-<span class="listing-author">Katie Schuler</span>
+<span class="listing-author">Katie Schuler, June Choe</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1693886400000" data-listing-file-modified-sort="1693126180641" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Data importing" data-listing-filename-sort="data-importing.qmd">
+<tr data-index="2" data-listing-date-sort="1693886400000" data-listing-file-modified-sort="1693298912538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Data importing" data-listing-filename-sort="data-importing.qmd">
 <td>
 <span class="listing-date">Sep 5, 2023</span>
 </td>
@@ -283,7 +283,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693246952687" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data visualization" data-listing-filename-sort="data-visualization.qmd">
+<tr data-index="3" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693298817479" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data visualization" data-listing-filename-sort="data-visualization.qmd">
 <td>
 <span class="listing-date">Sep 7, 2023</span>
 </td>
@@ -294,7 +294,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693244165671" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data wrangling" data-listing-filename-sort="data-wrangling.qmd">
+<tr data-index="4" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693299081043" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data wrangling" data-listing-filename-sort="data-wrangling.qmd">
 <td>
 <span class="listing-date">Sep 12, 2023</span>
 </td>
@@ -305,7 +305,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693242278966" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Probablity distributions" data-listing-filename-sort="probability-distributions.qmd">
+<tr data-index="5" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693298765587" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Probablity distributions" data-listing-filename-sort="probability-distributions.qmd">
 <td>
 <span class="listing-date">Sep 12, 2023</span>
 </td>
@@ -327,7 +327,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-date-sort="1695700800000" data-listing-file-modified-sort="1693244255111" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Hypothesis testing" data-listing-filename-sort="hypothesis-testing.qmd">
+<tr data-index="7" data-listing-date-sort="1695700800000" data-listing-file-modified-sort="1693298800080" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Hypothesis testing" data-listing-filename-sort="hypothesis-testing.qmd">
 <td>
 <span class="listing-date">Sep 26, 2023</span>
 </td>
@@ -338,7 +338,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-date-sort="1696305600000" data-listing-file-modified-sort="1693247065215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Model specification" data-listing-filename-sort="model-specification.qmd">
+<tr data-index="8" data-listing-date-sort="1696305600000" data-listing-file-modified-sort="1693298772980" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Model specification" data-listing-filename-sort="model-specification.qmd">
 <td>
 <span class="listing-date">Oct 3, 2023</span>
 </td>
@@ -349,7 +349,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-date-sort="1696478400000" data-listing-file-modified-sort="1693243259982" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Model fitting" data-listing-filename-sort="model-fitting.qmd">
+<tr data-index="9" data-listing-date-sort="1696478400000" data-listing-file-modified-sort="1693298785392" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Model fitting" data-listing-filename-sort="model-fitting.qmd">
 <td>
 <span class="listing-date">Oct 5, 2023</span>
 </td>
@@ -360,7 +360,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-date-sort="1697688000000" data-listing-file-modified-sort="1693241458165" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Model accuracy" data-listing-filename-sort="model-accuracy.qmd">
+<tr data-index="10" data-listing-date-sort="1697688000000" data-listing-file-modified-sort="1693298789670" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Model accuracy" data-listing-filename-sort="model-accuracy.qmd">
 <td>
 <span class="listing-date">Oct 19, 2023</span>
 </td>
@@ -371,7 +371,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="11" data-listing-date-sort="1698120000000" data-listing-file-modified-sort="1693242678028" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Model reliability" data-listing-filename-sort="model-reliability.qmd">
+<tr data-index="11" data-listing-date-sort="1698120000000" data-listing-file-modified-sort="1693298777654" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Model reliability" data-listing-filename-sort="model-reliability.qmd">
 <td>
 <span class="listing-date">Oct 24, 2023</span>
 </td>
@@ -382,7 +382,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="12" data-listing-date-sort="1699333200000" data-listing-file-modified-sort="1693244840116" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Classification" data-listing-filename-sort="classification.qmd">
+<tr data-index="12" data-listing-date-sort="1699333200000" data-listing-file-modified-sort="1693298829079" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Classification" data-listing-filename-sort="classification.qmd">
 <td>
 <span class="listing-date">Nov 7, 2023</span>
 </td>
@@ -393,7 +393,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="13" data-listing-date-sort="1699938000000" data-listing-file-modified-sort="1693257457626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Feature engineering" data-listing-filename-sort="feature-engineering.qmd">
+<tr data-index="13" data-listing-date-sort="1699938000000" data-listing-file-modified-sort="1693298808039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Feature engineering" data-listing-filename-sort="feature-engineering.qmd">
 <td>
 <span class="listing-date">Nov 14, 2023</span>
 </td>
@@ -404,7 +404,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="14" data-listing-date-sort="1700283600000" data-listing-file-modified-sort="1693244897132" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Inference" data-listing-filename-sort="inference.qmd">
+<tr data-index="14" data-listing-date-sort="1700283600000" data-listing-file-modified-sort="1693298796821" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Inference" data-listing-filename-sort="inference.qmd">
 <td>
 <span class="listing-date">Nov 18, 2023</span>
 </td>
@@ -415,7 +415,7 @@ Author
 <span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="15" data-listing-date-sort="1701752400000" data-listing-file-modified-sort="1693244943443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Mixed-effects models" data-listing-filename-sort="mixed-effects-models.qmd">
+<tr data-index="15" data-listing-date-sort="1701752400000" data-listing-file-modified-sort="1693298793346" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Mixed-effects models" data-listing-filename-sort="mixed-effects-models.qmd">
 <td>
 <span class="listing-date">Dec 5, 2023</span>
 </td>
@@ -442,6 +442,9 @@ No matching items
 <thead>
 <tr>
 <th>
+Date
+</th>
+<th>
 Title
 </th>
 <th>
@@ -450,7 +453,21 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1693073948494" data-listing-reading-time-sort="3" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="1-getting-started-with-r-lab.qmd">
+<tr data-index="0" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693308574602" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Lab 2: Import and visualize data" data-listing-filename-sort="2-data-importing-and-viz.qmd">
+<td>
+<span class="listing-date">Sep 7, 2023</span>
+</td>
+<td>
+<a href="./labs/2-data-importing-and-viz.html" class="title listing-title">Lab 2: Import and visualize data</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1693073948494" data-listing-reading-time-sort="3" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="1-getting-started-with-r-lab.qmd">
+<td>
+<span class="listing-date">undefined</span>
+</td>
 <td>
 <a href="./labs/1-getting-started-with-r-lab.html" class="title listing-title">Lab 1: Getting started with R</a>
 </td>
