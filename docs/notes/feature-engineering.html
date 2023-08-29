@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-11-14">
 
-<title>LING 0700 - Syllabus</title>
+<title>LING 0700 - Feature engineering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notes/inference.html" rel="next">
+<link href="../notes/classification.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,18 +64,20 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">LING 0700</span>
     </a>
   </div>
@@ -82,23 +88,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes/hello-world.html" rel="" target="">
+    <a class="nav-link active" href="../notes/hello-world.html" rel="" target="" aria-current="page">
  <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs/1-getting-started-with-r-lab.html" rel="" target="">
+    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./psets/problem-set-1.html" rel="" target="">
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
  <span class="menu-text">Assessments</span></a>
   </li>  
 </ul>
@@ -112,29 +118,132 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/feature-engineering.html">Feature engineering</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello, world!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data importing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/probability-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probablity distributions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/sampling-variability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling variability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hypothesis-testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesis testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-specification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model specification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-accuracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model accuracy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/model-reliability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model reliability</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/feature-engineering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Feature engineering</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/mixed-effects-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mixed-effects models</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course description</a></li>
-  <li><a href="#people" id="toc-people" class="nav-link" data-scroll-target="#people">People</a></li>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours">Office hours</a></li>
-  <li><a href="#quizzes" id="toc-quizzes" class="nav-link" data-scroll-target="#quizzes">Quizzes</a></li>
-  <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets">Problem sets</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#collaborations" id="toc-collaborations" class="nav-link" data-scroll-target="#collaborations">Collaborations</a></li>
-  <li><a href="#accomodations" id="toc-accomodations" class="nav-link" data-scroll-target="#accomodations">Accomodations</a></li>
-  <li><a href="#extra-credit" id="toc-extra-credit" class="nav-link" data-scroll-target="#extra-credit">Extra credit</a></li>
-  <li><a href="#regrade-requests" id="toc-regrade-requests" class="nav-link" data-scroll-target="#regrade-requests">Regrade requests</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#dummy-coding" id="toc-dummy-coding" class="nav-link active" data-scroll-target="#dummy-coding"><span class="header-section-number">1</span> Dummy coding</a></li>
   </ul>
 </nav>
     </div>
@@ -143,15 +252,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Data Science for Studying Language and the Mind</p>
+<h1 class="title">Feature engineering</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 14, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -159,89 +279,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to Data Science for Studying Language &amp; the Mind! The Fall 2023 course information and syllabus are below. Course materials for previous semesters are archived <a href="https://childlanglab.gitbook.io/ling0700/">here</a>.</p>
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
-<p>Data Sci for Lang &amp; Mind is an entry-level course designed to teach basic principles of statistics and data science to students with little or no background in statistics or computer science. Students will learn to identify patterns in data using visualizations and descriptive statistics; make predictions from data using machine learning and optimization; and quantify the certainty of their predictions using statistical models. This course aims to help students build a foundation of critical thinking and computational skills that will allow them to work with data in all fields related to the study of the mind (e.g.&nbsp;linguistics, psychology, philosophy, cognitive science, neuroscience).</p>
-<p>There are <strong>no prerequisites beyond high school algebra</strong>. No prior programming or statistics experience is necessary, though you will still enjoy this course if you already have a little. Students who have taken several computer science or statistics classes should look for a more advanced course.</p>
-</section>
-<section id="people" class="level2">
-<h2 class="anchored" data-anchor-id="people">People</h2>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="dummy-coding" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="dummy-coding"><span class="header-section-number">1</span> Dummy coding</h2>
+<p>Including categorical variables in a model:</p>
 <ul>
-<li><strong>Instructor</strong>: <a href="http://kathrynschuler.com">Dr.&nbsp;Katie Schuler</a></li>
-<li><strong>TAs</strong>: <a href="https://yjunechoe.github.io/">June Choe</a>, <a href="mailto:amgoss@sas.upenn.edu">Avinash Goss</a>, <a href="mailto:raviarya@sas.upenn.edu">Ravi Arya</a></li>
-</ul>
-</section>
-<section id="lectures" class="level2">
-<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
-<p>Tuesdays and Thursdays at 10:15am in COHN 402.</p>
-</section>
-<section id="labs" class="level2">
-<h2 class="anchored" data-anchor-id="labs">Labs</h2>
-<p>Hands-on practice, quiz prep, and problem set work guided by TAs.</p>
+<li>One approach is to create “dummy variables”, called <strong>dummy coding</strong>, to represent the different levels of the categorical variable. Dummy variables are coded as 1 or 0 (binary) to indicate the presence or absence of a specific category or level. R does this by default.</li>
+<li>In our swim records example, R dummy codes gender by creating a dummy variable <code>male</code>, where 1 means true and 0 means false. We do not also need a female variable because when male is 0, the person must be female. Creating an additional variable gives no new information. The “left out” category is called the <strong>reference level</strong>. Unless you specify otherwise, R uses whatever is alphabetically first as the reference level.</li>
+<li>If a categorical variable has <strong>more than two levels</strong>, we can simply add a column. To illustrate, imagine our gender variable has a third level, “non-binary”. We create our male column as before (1 for true, 0 for false), and add a <code>non-binary</code> column (1 for true, 0 for false). If the swimmer is neither male nor non-binary (0 in both columns), they must be female. We can have as many levels as we like in a categorical variable, but we should be aware that this adds as many terms (minus 1) to the model! Here <span class="math inline">\(x_2\)</span> is the vector for the <code>male</code> variable and <span class="math inline">\(x_3\)</span> is the vector for the<code>non-binary</code> variable:
 <ul>
-<li>402: Thu at 1:45p in WILL 4 with TA</li>
-<li>403: Thu at 3:30p in TOWN 305 with TA</li>
-<li>404: Fri at 10:15a in WILL 24 with Ravi</li>
-<li>405: Fri at 12:00p in TOWN 307 with Avinash</li>
-</ul>
-</section>
-<section id="office-hours" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours">Office hours</h2>
-<p>The linguistics department is on the 3rd floor of the C-wing at <a href="https://facilities.upenn.edu/sites/default/files/pennaccess/PA0416-Walnut3401.pdf">3401 Walnut street</a>, between Franklin’s Table and Modern Eye.</p>
-<ul>
-<li>Katie: Tue 12:30-1:30p in 314 ling dept</li>
-<li>June: TBD in ling dept</li>
-<li>Avinash: TBD</li>
-<li>Ravi: TBD</li>
-</ul>
-</section>
-<section id="quizzes" class="level2">
-<h2 class="anchored" data-anchor-id="quizzes">Quizzes</h2>
-<p>There are 4 quizzes, taken in class on Tuesdays. Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and a <a href="https://srfs.upenn.edu/student-records/course-action-notices">Course Action Notice</a> are required). Instead, you will be invited to submit a missed quiz for half credit (50%).</p>
-</section>
-<section id="problem-sets" class="level2">
-<h2 class="anchored" data-anchor-id="problem-sets">Problem sets</h2>
-<p>There are 6 problem sets, due on Sundays to <a href="https://www.gradescope.com/">Gradescope</a> by 11:59pm. Students may request an extension of up to 3 days. Extensions beyond this are not permitted, because delaying the release of solutions would negatively impact other students. After solutions are posted, late problem sets can be submitted for half credit (50%).</p>
-</section>
-<section id="grading" class="level2">
-<h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<ul>
-<li>60% problem sets (equally weighted, lowest dropped)</li>
-<li>40% quizzes (equally weighted)</li>
-<li>Letter grade minimums: 97% A+, 93% A, 90% A-, 87% B+, 84% B, 80% B-, 77% C+, 74% C, 70% C-, 67% D+, 64% D, 61% D-, else F</li>
-<li>All problems will be graded according to this <a href="./rubric.html">rubric</a>.</li>
-</ul>
-</section>
-<section id="collaborations" class="level2">
-<h2 class="anchored" data-anchor-id="collaborations">Collaborations</h2>
-<p>Collaboration on problem sets is highly encouraged! If you collaborate, you need to write your own code/solutions, name your collaborators, and cite any outside sources you consulted (you don’t need to cite the course material).</p>
-</section>
-<section id="accomodations" class="level2">
-<h2 class="anchored" data-anchor-id="accomodations">Accomodations</h2>
-<p>We will support any accommodations arranged through Disability Services via the <a href="https://weingartencenter.universitylife.upenn.edu/disability-services/">Weingarten Center</a>.</p>
-</section>
-<section id="extra-credit" class="level2">
-<h2 class="anchored" data-anchor-id="extra-credit">Extra credit</h2>
-<p>There is no extra credit in the course. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%). To ensure fair treatment across all students, all students will receive a 1% “bonus” to their final course grade: 92.54% will become 93.54%.</p>
-</section>
-<section id="regrade-requests" class="level2">
-<h2 class="anchored" data-anchor-id="regrade-requests">Regrade requests</h2>
-<p>Regrade requests should be submitted through <a href="https://www.gradescope.com/courses/561597">Gradescope</a> within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and <a href="./rubric.html">rubric</a>.</p>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>In addition to the <a href="https://kathrynschuler.com/datasci">course website</a>, we will use the following:</p>
-<ul>
-<li><a href="https://colab.research.google.com/#create=true&amp;language=r">google colab (r kernel)</a> - for computing</li>
-<li><a href="https://canvas.upenn.edu/courses/1736107">canvas</a> - for posting grades</li>
-<li><a href="https://www.gradescope.com/courses/561597">gradescope</a> - for submitting problem sets</li>
-<li><a href="https://edstem.org/us/courses/41903/discussion/">ed discussion</a> - for announcements and questions</li>
-</ul>
-<p>Please consider using these Penn resources this semester:</p>
-<ul>
-<li><a href="https://weingartencenter.universitylife.upenn.edu/academic-support/">Weingarten Center</a> for academic support and tutoring.</li>
-<li><a href="https://wellness.upenn.edu/">Wellness at Penn</a> for health and wellbeing.</li>
+<li>in R: <code>y ~ 1 + year + gender</code></li>
+<li>in eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3\)</span></li>
+</ul></li>
 </ul>
 
 
@@ -481,6 +542,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/classification.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Classification</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notes/inference.html" class="pagination-link">
+        <span class="nav-page-text">Inference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

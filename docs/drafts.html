@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LING 0700 - Syllabus</title>
+<title>LING 0700 - Working documents</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -59,7 +61,94 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lecture-notes .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lecture-notes'] = new List('listing-lecture-notes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-labs .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-labs'] = new List('listing-labs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-psets .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-psets'] = new List('listing-psets', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -86,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./syllabus.html" rel="" target="">
  <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
@@ -122,19 +211,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course description</a></li>
-  <li><a href="#people" id="toc-people" class="nav-link" data-scroll-target="#people">People</a></li>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
+  <li><a href="#lecture-notes" id="toc-lecture-notes" class="nav-link active" data-scroll-target="#lecture-notes">Lecture notes</a></li>
   <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
-  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours">Office hours</a></li>
-  <li><a href="#quizzes" id="toc-quizzes" class="nav-link" data-scroll-target="#quizzes">Quizzes</a></li>
   <li><a href="#problem-sets" id="toc-problem-sets" class="nav-link" data-scroll-target="#problem-sets">Problem sets</a></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
-  <li><a href="#collaborations" id="toc-collaborations" class="nav-link" data-scroll-target="#collaborations">Collaborations</a></li>
-  <li><a href="#accomodations" id="toc-accomodations" class="nav-link" data-scroll-target="#accomodations">Accomodations</a></li>
-  <li><a href="#extra-credit" id="toc-extra-credit" class="nav-link" data-scroll-target="#extra-credit">Extra credit</a></li>
-  <li><a href="#regrade-requests" id="toc-regrade-requests" class="nav-link" data-scroll-target="#regrade-requests">Regrade requests</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -143,8 +222,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Data Science for Studying Language and the Mind</p>
+<h1 class="title">Working documents</h1>
 </div>
 
 
@@ -159,90 +237,284 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to Data Science for Studying Language &amp; the Mind! The Fall 2023 course information and syllabus are below. Course materials for previous semesters are archived <a href="https://childlanglab.gitbook.io/ling0700/">here</a>.</p>
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
-<p>Data Sci for Lang &amp; Mind is an entry-level course designed to teach basic principles of statistics and data science to students with little or no background in statistics or computer science. Students will learn to identify patterns in data using visualizations and descriptive statistics; make predictions from data using machine learning and optimization; and quantify the certainty of their predictions using statistical models. This course aims to help students build a foundation of critical thinking and computational skills that will allow them to work with data in all fields related to the study of the mind (e.g.&nbsp;linguistics, psychology, philosophy, cognitive science, neuroscience).</p>
-<p>There are <strong>no prerequisites beyond high school algebra</strong>. No prior programming or statistics experience is necessary, though you will still enjoy this course if you already have a little. Students who have taken several computer science or statistics classes should look for a more advanced course.</p>
-</section>
-<section id="people" class="level2">
-<h2 class="anchored" data-anchor-id="people">People</h2>
-<ul>
-<li><strong>Instructor</strong>: <a href="http://kathrynschuler.com">Dr.&nbsp;Katie Schuler</a></li>
-<li><strong>TAs</strong>: <a href="https://yjunechoe.github.io/">June Choe</a>, <a href="mailto:amgoss@sas.upenn.edu">Avinash Goss</a>, <a href="mailto:raviarya@sas.upenn.edu">Ravi Arya</a></li>
-</ul>
-</section>
-<section id="lectures" class="level2">
-<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
-<p>Tuesdays and Thursdays at 10:15am in COHN 402.</p>
+<section id="lecture-notes" class="level2">
+<h2 class="anchored" data-anchor-id="lecture-notes">Lecture notes</h2>
+<div id="listing-lecture-notes" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Title
+</th>
+<th>
+Author
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1693281600000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Hello, world!" data-listing-filename-sort="hello-world.qmd">
+<td>
+<span class="listing-date">Aug 29, 2023</span>
+</td>
+<td>
+<a href="./notes/hello-world.html" class="title listing-title">Hello, world!</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1693454400000" data-listing-file-modified-sort="1693277538213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="R Basics" data-listing-filename-sort="r-basics-webr.qmd">
+<td>
+<span class="listing-date">Aug 31, 2023</span>
+</td>
+<td>
+<a href="./notes/r-basics-webr.html" class="title listing-title">R Basics</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1693454400000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-title-sort="R basics" data-listing-filename-sort="r-basics.qmd">
+<td>
+<span class="listing-date">Aug 31, 2023</span>
+</td>
+<td>
+<a href="./notes/r-basics.html" class="title listing-title">R basics</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1693886400000" data-listing-file-modified-sort="1693241213226" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-title-sort="Data importing" data-listing-filename-sort="data-importing.qmd">
+<td>
+<span class="listing-date">Sep 5, 2023</span>
+</td>
+<td>
+<a href="./notes/data-importing.html" class="title listing-title">Data importing</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data visualization" data-listing-filename-sort="data-visualization.qmd">
+<td>
+<span class="listing-date">Sep 7, 2023</span>
+</td>
+<td>
+<a href="./notes/data-visualization.html" class="title listing-title">Data visualization</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Data wrangling" data-listing-filename-sort="data-wrangling.qmd">
+<td>
+<span class="listing-date">Sep 12, 2023</span>
+</td>
+<td>
+<a href="./notes/data-wrangling.html" class="title listing-title">Data wrangling</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1694491200000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Probablity distributions" data-listing-filename-sort="probability-distributions.qmd">
+<td>
+<span class="listing-date">Sep 12, 2023</span>
+</td>
+<td>
+<a href="./notes/probability-distributions.html" class="title listing-title">Probablity distributions</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1695182400000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-title-sort="Sampling variability" data-listing-filename-sort="sampling-variability.qmd">
+<td>
+<span class="listing-date">Sep 20, 2023</span>
+</td>
+<td>
+<a href="./notes/sampling-variability.html" class="title listing-title">Sampling variability</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="1695700800000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Hypothesis testing" data-listing-filename-sort="hypothesis-testing.qmd">
+<td>
+<span class="listing-date">Sep 26, 2023</span>
+</td>
+<td>
+<a href="./notes/hypothesis-testing.html" class="title listing-title">Hypothesis testing</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-date-sort="1696305600000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Model specification" data-listing-filename-sort="model-specification.qmd">
+<td>
+<span class="listing-date">Oct 3, 2023</span>
+</td>
+<td>
+<a href="./notes/model-specification.html" class="title listing-title">Model specification</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="10" data-listing-date-sort="1696478400000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Model fitting" data-listing-filename-sort="model-fitting.qmd">
+<td>
+<span class="listing-date">Oct 5, 2023</span>
+</td>
+<td>
+<a href="./notes/model-fitting.html" class="title listing-title">Model fitting</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-date-sort="1697688000000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="Model accuracy" data-listing-filename-sort="model-accuracy.qmd">
+<td>
+<span class="listing-date">Oct 19, 2023</span>
+</td>
+<td>
+<a href="./notes/model-accuracy.html" class="title listing-title">Model accuracy</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="12" data-listing-date-sort="1698120000000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Model reliability" data-listing-filename-sort="model-reliability.qmd">
+<td>
+<span class="listing-date">Oct 24, 2023</span>
+</td>
+<td>
+<a href="./notes/model-reliability.html" class="title listing-title">Model reliability</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="13" data-listing-date-sort="1699333200000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Classification" data-listing-filename-sort="classification.qmd">
+<td>
+<span class="listing-date">Nov 7, 2023</span>
+</td>
+<td>
+<a href="./notes/classification.html" class="title listing-title">Classification</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-date-sort="1699938000000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Feature engineering" data-listing-filename-sort="feature-engineering.qmd">
+<td>
+<span class="listing-date">Nov 14, 2023</span>
+</td>
+<td>
+<a href="./notes/feature-engineering.html" class="title listing-title">Feature engineering</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-date-sort="1700283600000" data-listing-file-modified-sort="1693277300424" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Inference" data-listing-filename-sort="inference.qmd">
+<td>
+<span class="listing-date">Nov 18, 2023</span>
+</td>
+<td>
+<a href="./notes/inference.html" class="title listing-title">Inference</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-date-sort="1701752400000" data-listing-file-modified-sort="1693277300430" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Mixed-effects models" data-listing-filename-sort="mixed-effects-models.qmd">
+<td>
+<span class="listing-date">Dec 5, 2023</span>
+</td>
+<td>
+<a href="./notes/mixed-effects-models.html" class="title listing-title">Mixed-effects models</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="labs" class="level2">
 <h2 class="anchored" data-anchor-id="labs">Labs</h2>
-<p>Hands-on practice, quiz prep, and problem set work guided by TAs.</p>
-<ul>
-<li>402: Thu at 1:45p in WILL 4 with TA</li>
-<li>403: Thu at 3:30p in TOWN 305 with TA</li>
-<li>404: Fri at 10:15a in WILL 24 with Ravi</li>
-<li>405: Fri at 12:00p in TOWN 307 with Avinash</li>
-</ul>
-</section>
-<section id="office-hours" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours">Office hours</h2>
-<p>The linguistics department is on the 3rd floor of the C-wing at <a href="https://facilities.upenn.edu/sites/default/files/pennaccess/PA0416-Walnut3401.pdf">3401 Walnut street</a>, between Franklin’s Table and Modern Eye.</p>
-<ul>
-<li>Katie: Tue 12:30-1:30p in 314 ling dept</li>
-<li>June: TBD in ling dept</li>
-<li>Avinash: TBD</li>
-<li>Ravi: TBD</li>
-</ul>
-</section>
-<section id="quizzes" class="level2">
-<h2 class="anchored" data-anchor-id="quizzes">Quizzes</h2>
-<p>There are 4 quizzes, taken in class on Tuesdays. Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and a <a href="https://srfs.upenn.edu/student-records/course-action-notices">Course Action Notice</a> are required). Instead, you will be invited to submit a missed quiz for half credit (50%).</p>
+<div id="listing-labs" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Author
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1693241213226" data-listing-reading-time-sort="3" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="1-getting-started-with-r-lab.qmd">
+<td>
+<a href="./labs/1-getting-started-with-r-lab.html" class="title listing-title">Lab 1: Getting started with R</a>
+</td>
+<td>
+<span class="listing-author"></span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="problem-sets" class="level2">
 <h2 class="anchored" data-anchor-id="problem-sets">Problem sets</h2>
-<p>There are 6 problem sets, due on Sundays to <a href="https://www.gradescope.com/">Gradescope</a> by 11:59pm. Students may request an extension of up to 3 days. Extensions beyond this are not permitted, because delaying the release of solutions would negatively impact other students. After solutions are posted, late problem sets can be submitted for half credit (50%).</p>
-</section>
-<section id="grading" class="level2">
-<h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<ul>
-<li>60% problem sets (equally weighted, lowest dropped)</li>
-<li>40% quizzes (equally weighted)</li>
-<li>Letter grade minimums: 97% A+, 93% A, 90% A-, 87% B+, 84% B, 80% B-, 77% C+, 74% C, 70% C-, 67% D+, 64% D, 61% D-, else F</li>
-<li>All problems will be graded according to this <a href="./rubric.html">rubric</a>.</li>
-</ul>
-</section>
-<section id="collaborations" class="level2">
-<h2 class="anchored" data-anchor-id="collaborations">Collaborations</h2>
-<p>Collaboration on problem sets is highly encouraged! If you collaborate, you need to write your own code/solutions, name your collaborators, and cite any outside sources you consulted (you don’t need to cite the course material).</p>
-</section>
-<section id="accomodations" class="level2">
-<h2 class="anchored" data-anchor-id="accomodations">Accomodations</h2>
-<p>We will support any accommodations arranged through Disability Services via the <a href="https://weingartencenter.universitylife.upenn.edu/disability-services/">Weingarten Center</a>.</p>
-</section>
-<section id="extra-credit" class="level2">
-<h2 class="anchored" data-anchor-id="extra-credit">Extra credit</h2>
-<p>There is no extra credit in the course. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%). To ensure fair treatment across all students, all students will receive a 1% “bonus” to their final course grade: 92.54% will become 93.54%.</p>
-</section>
-<section id="regrade-requests" class="level2">
-<h2 class="anchored" data-anchor-id="regrade-requests">Regrade requests</h2>
-<p>Regrade requests should be submitted through <a href="https://www.gradescope.com/courses/561597">Gradescope</a> within one week of receiving your graded assignment. Please explain why you believe there was a grading mistake, given the posted solutions and <a href="./rubric.html">rubric</a>.</p>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<p>In addition to the <a href="https://kathrynschuler.com/datasci">course website</a>, we will use the following:</p>
-<ul>
-<li><a href="https://colab.research.google.com/#create=true&amp;language=r">google colab (r kernel)</a> - for computing</li>
-<li><a href="https://canvas.upenn.edu/courses/1736107">canvas</a> - for posting grades</li>
-<li><a href="https://www.gradescope.com/courses/561597">gradescope</a> - for submitting problem sets</li>
-<li><a href="https://edstem.org/us/courses/41903/discussion/">ed discussion</a> - for announcements and questions</li>
-</ul>
-<p>Please consider using these Penn resources this semester:</p>
-<ul>
-<li><a href="https://weingartencenter.universitylife.upenn.edu/academic-support/">Weingarten Center</a> for academic support and tutoring.</li>
-<li><a href="https://wellness.upenn.edu/">Wellness at Penn</a> for health and wellbeing.</li>
-</ul>
+<div id="listing-psets" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Author
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1693241213226" data-listing-reading-time-sort="1" data-listing-title-sort="Problem set 1" data-listing-filename-sort="problem-set-1.qmd">
+<td>
+<a href="./psets/problem-set-1.html" class="title listing-title">Problem set 1</a>
+</td>
+<td>
+<span class="listing-author"></span>
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
 
 
 </section>

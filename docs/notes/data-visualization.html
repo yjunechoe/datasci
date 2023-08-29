@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-09-05">
+<meta name="dcterms.date" content="2023-09-07">
 
-<title>LING 0700 - Data importing</title>
+<title>LING 0700 - Data visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,8 +32,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/data-visualization.html" rel="next">
-<link href="../notes/r-basics.html" rel="prev">
+<link href="../notes/data-wrangling.html" rel="next">
+<link href="../notes/data-importing.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -155,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/data-importing.html">Data importing</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/data-visualization.html">Data visualization</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -181,13 +147,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data importing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data visualization</span></a>
   </div>
 </li>
@@ -275,12 +241,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-the-tidyverse" id="toc-welcome-to-the-tidyverse" class="nav-link active" data-scroll-target="#welcome-to-the-tidyverse"><span class="header-section-number">1</span> Welcome to the tidyverse</a></li>
-  <li><a href="#what-is-tidy-data" id="toc-what-is-tidy-data" class="nav-link" data-scroll-target="#what-is-tidy-data"><span class="header-section-number">2</span> What is tidy data?</a></li>
-  <li><a href="#functional-programming-with-purrr" id="toc-functional-programming-with-purrr" class="nav-link" data-scroll-target="#functional-programming-with-purrr"><span class="header-section-number">3</span> Functional programming with purrr</a></li>
-  <li><a href="#modern-data-frames-with-tibble" id="toc-modern-data-frames-with-tibble" class="nav-link" data-scroll-target="#modern-data-frames-with-tibble"><span class="header-section-number">4</span> Modern data frames with tibble</a></li>
-  <li><a href="#reading-data-with-readr" id="toc-reading-data-with-readr" class="nav-link" data-scroll-target="#reading-data-with-readr"><span class="header-section-number">5</span> Reading data with readr</a></li>
-  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">6</span> Further reading and references</a></li>
+  <li><a href="#why-visualize-data" id="toc-why-visualize-data" class="nav-link active" data-scroll-target="#why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</a></li>
+  <li><a href="#data-visualization-with-ggplot2" id="toc-data-visualization-with-ggplot2" class="nav-link" data-scroll-target="#data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</a></li>
+  <li><a href="#aesthetic-mapping" id="toc-aesthetic-mapping" class="nav-link" data-scroll-target="#aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</a></li>
+  <li><a href="#geometric-objects" id="toc-geometric-objects" class="nav-link" data-scroll-target="#geometric-objects"><span class="header-section-number">4</span> Geometric objects</a></li>
+  <li><a href="#additional-layers" id="toc-additional-layers" class="nav-link" data-scroll-target="#additional-layers"><span class="header-section-number">5</span> Additional layers</a></li>
+  <li><a href="#saving-plots" id="toc-saving-plots" class="nav-link" data-scroll-target="#saving-plots"><span class="header-section-number">6</span> Saving plots</a>
+  <ul class="collapse">
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data importing</h1>
+<h1 class="title">Data visualization</h1>
 </div>
 
 
@@ -306,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 5, 2023</p>
+      <p class="date">September 7, 2023</p>
     </div>
   </div>
   
@@ -316,185 +285,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="welcome-to-the-tidyverse" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="welcome-to-the-tidyverse"><span class="header-section-number">1</span> Welcome to the tidyverse</h2>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="why-visualize-data" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</h2>
 <blockquote class="blockquote">
-<p>The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. ~ <a href="https://www.tidyverse.org/">Tidyverse package docs</a></p>
+<p>Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science</p>
 </blockquote>
-<p>The <code>tidyverse</code> collection of packages includes:</p>
+</section>
+<section id="data-visualization-with-ggplot2" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</h2>
+<p>three main parts:</p>
 <ul>
-<li><code>ggplot2</code> - for data visualization</li>
-<li><code>dplyr</code> - for data wrangling</li>
-<li><code>readr</code> - for reading data</li>
-<li><code>tibble</code> - for modern data frames</li>
-<li><code>stringr</code>: for string manipulation</li>
-<li><code>forcats</code>: for dealing with factors</li>
-<li><code>tidyr</code>: for data tidying</li>
-<li><code>purrr</code>: for functional programming</li>
+<li><strong>data</strong>- your (tidy) data</li>
+<li><strong>aesthetic mappings (aes)</strong> - make data visible</li>
+<li><strong>geometric objects</strong> -</li>
 </ul>
-<p>We load the <code>tidyverse</code> like any other package, with <code>library(tidyverse)</code>. When we do, we will receive a message with (1) a list packages that were loaded and (2) a warning that there are potential conflicts with base R’s <code>stats</code> functions</p>
+<p>other layers:</p>
 <ul>
-<li>We can resolve conflicts with the <code>::</code> operator, which allows us to specify which package our intended function belongs to as a prefix: <code>stats::filter()</code> or <code>dplyr::filter()</code></li>
+<li><strong>facets</strong></li>
+<li><strong>statistics</strong> - statistical transformations of data</li>
+<li><strong>scales</strong> - map data values to visual values of aestetic</li>
+<li>coordinates</li>
+<li><strong>themes</strong> - overall visuals</li>
 </ul>
 </section>
-<section id="what-is-tidy-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="what-is-tidy-data"><span class="header-section-number">2</span> What is tidy data?</h2>
-<p>The same underlying data can be represented in a table in many different ways; some easier to work with than others. The tidyverse makes use of tidy data principles to make datasets easier to work with in R. <strong>Tidy data</strong> provides a standard way of structuring datasets:</p>
-<ol type="1">
-<li>each variable forms a <strong>column</strong>; each column forms a variable</li>
-<li>each observation forms a <strong>row</strong>; each row forms an observation</li>
-<li>value is a <strong>cell</strong>; each cell is a single value</li>
-</ol>
-<p>Why is tidy data easier to work with?</p>
+<section id="aesthetic-mapping" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</h2>
+<p><strong>aesthetic mappings</strong> (aes), make data visible</p>
 <ul>
-<li>Because consistency and uniformity are very helpful when programming</li>
-<li>Variables as columns works well for vectorized languages (R!)</li>
+<li><code>x</code>, <code>y</code>: variable on x and y axis</li>
+<li><code>color</code>: outline color of geom</li>
+<li><code>fill</code>: fill color of geom</li>
+<li><code>group</code>: group geom belongs to</li>
+<li><code>shape</code>: shape used to plot point (circle, square, etc)</li>
+<li><code>linetype</code>: type of line used (solid, dash, et)</li>
+<li><code>size</code></li>
 </ul>
 </section>
-<section id="functional-programming-with-purrr" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="functional-programming-with-purrr"><span class="header-section-number">3</span> Functional programming with purrr</h2>
-<blockquote class="blockquote">
-<p>purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read. ~ purrr docs</p>
-</blockquote>
-<p>Let’s illustrate the joy of the tidyverse with one of its packages: <code>purrr</code>. The docs say that the best place to start is the family of <code>map()</code> functions, so we’ll do that.</p>
-<p>The <code>map()</code> functions:</p>
-<ol type="1">
-<li>take a vector as input</li>
-<li>apply a function to each element</li>
-<li>return a new vector</li>
-</ol>
-<p>We say “functions” because there are 5, one for each type of vector:</p>
-<ul>
-<li><code>map()</code></li>
-<li><code>map_lgl()</code></li>
-<li><code>map_int()</code></li>
-<li><code>map_dbl()</code></li>
-<li><code>map_chr()</code></li>
-</ul>
-<p>To illustrate, suppose we have a data frame <code>df</code> with 3 columns and we want to compute the mean of each column. We could solve this with copy-and-paste (run <code>mean()</code> 3 different times) or try to use a <code>for</code> loop, but <code>map()</code> can do this with just one line:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(df, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the <code>map()</code> function or use it in a <code>for</code> loop. But the <code>map</code> family allows us go up a layer of abstraction. We can use <code>pmap()</code> when we want to apply a function element-wise to corresponding items in multiple lists.</p>
+<section id="geometric-objects" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">4</span> Geometric objects</h2>
+<p><strong>geometric objects (geoms)</strong> - type of plot</p>
 </section>
-<section id="modern-data-frames-with-tibble" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="modern-data-frames-with-tibble"><span class="header-section-number">4</span> Modern data frames with tibble</h2>
-<blockquote class="blockquote">
-<p>A tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less and complain more ~ <a href="https://tibble.tidyverse.org/">tibble docs</a></p>
-</blockquote>
-<p>Tibbles do less than data frames, in a good way:</p>
+<section id="additional-layers" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="additional-layers"><span class="header-section-number">5</span> Additional layers</h2>
+<p>We’ll cover some in the class:</p>
 <ul>
-<li>never changes type of input (never converts strings to factors!)</li>
-<li>never changes the name of variables</li>
-<li>only recycles vectors of length 1</li>
-<li>never creates row names</li>
-</ul>
-<p>You can read more in <a href="https://tibble.tidyverse.org/articles/tibble.html">vignette(“tibble”)</a> if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that <code>data.frame</code> and <code>tibble</code> sometimes behave differently. The behavior of <code>tibble</code> makes more sense for modern data science, so we should us it instead!</p>
-<p>Create a <code>tibble</code> with one of the following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) coerce an existing object with</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(x)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (2) pass a column of vectors </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">y=</span><span class="dv">1</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (3) define row-by-row, short for traansposed tibble</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tribble</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span>x, <span class="sc">~</span>y, <span class="sc">~</span>z,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a"</span>, <span class="dv">2</span>, <span class="fl">3.6</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"b"</span>, <span class="dv">1</span>, <span class="fl">8.5</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We will encounter two main ways tibbles and data frames differ:</p>
+<li><strong>facets</strong>
 <ul>
-<li><strong>printing</strong> - by default, tibbles print the first 10 rows and all columns that fit on screen, making it easier to work with large datasets. Tibbles also report the type of each column (e.g.&nbsp;<code>&lt;dbl&gt;</code>, <code>&lt;chr&gt;</code>)</li>
-<li><strong>subsetting</strong> - tibbles are more strict than data frames, which fixes two quirks we encountered last lecture when subsetting with <code>[[</code> and <code>$</code>: (1) tibbles <em>never</em> do partial matching, and (2) they <em>always</em> generate a warning if the column you are trying to extract does not exist.</li>
-</ul>
-<p>To test if something is a <code>tibble</code> or a <code>data.frame</code>:</p>
+<li><code>facet_grid(.~var1)</code></li>
+<li><code>facet_grid(var2~.)</code></li>
+<li><code>facet_grid(var2~var1)</code></li>
+<li><code>facet_wrap(~var1)</code> - wrap facets</li>
+<li>“scales”?</li>
+</ul></li>
+<li><strong>coordinates</strong>
 <ul>
-<li><code>is_tibble(x)</code></li>
-<li><code>is.data.frame(x)</code></li>
+<li><code>coord_cartesian(xlim=c(0,5))</code> - xlim, ylim</li>
+<li><code>coord_flip()</code></li>
+</ul></li>
+<li><strong>labels</strong>
+<ul>
+<li><code>labs(title="plot title")</code> - x, y, subtitle</li>
+<li><code>annotate()</code></li>
+</ul></li>
+<li><strong>statistics</strong></li>
+<li><strong>scales</strong></li>
+<li><strong>position adjustments</strong></li>
+<li><strong>themes</strong>
+<ul>
+<li><code>theme(legend.position="bottom")</code></li>
+</ul></li>
 </ul>
 </section>
-<section id="reading-data-with-readr" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="reading-data-with-readr"><span class="header-section-number">5</span> Reading data with readr</h2>
-<blockquote class="blockquote">
-<p>The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs</p>
-</blockquote>
-<p>Often we want to read in some data we’ve generated or collected outside of R. The most basic and common format is <strong>plain-text rectangular files</strong>. We will “read” these into R with readr’s <code>read_*()</code> functions.</p>
-<p>The <code>read_*()</code> functions have two important arguments:</p>
+<section id="saving-plots" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="saving-plots"><span class="header-section-number">6</span> Saving plots</h2>
+<p>Helper functions:</p>
 <ul>
-<li><strong>file path</strong> - the path to the file (that reader will try to parse)</li>
-<li><strong>column specification</strong> - a description of how each column should be converted from a character vector to a specific data type (<code>col_types</code>)</li>
+<li><code>last_plot()</code> - returns the last plot</li>
+<li><code>ggsave("plot.png", width=5, height=5)</code> - saves last plot</li>
 </ul>
-<p>There are 7 supported file types, each with their own <code>read_*()</code> function:</p>
-<ul>
-<li><code>read_csv()</code>: comma-separated values (CSV)</li>
-<li><code>read_tsv()</code>: tab-separated values (TSV)</li>
-<li><code>read_csv2()</code>: semicolon-separated values</li>
-<li><code>read_delim()</code>: delimited files (CSV and TSV are important special cases)</li>
-<li><code>read_fwf()</code>: fixed-width files</li>
-<li><code>read_table()</code>: whitespace-separated files</li>
-<li><code>read_log()</code>: web log files</li>
-</ul>
-<p>To read <code>.csv</code> files, include a path and (optionally) a column specification:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) pass only the path; readr guesses col_types </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">path=</span><span class="st">'path/to/file.csv'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (2) include a column specification with col_types</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">path=</span><span class="st">'path/to/file.csv'</span>, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_types =</span> <span class="fu">list</span>( <span class="at">x =</span> <span class="fu">col_string</span>(), <span class="at">y =</span> <span class="fu">col_skip</span>() )</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>With no colum specification, <code>readr</code> uses the the first 1000 rows to guess with a simple heuristic:</p>
-<ul>
-<li>if column contains only T/F, <code>logical</code></li>
-<li>if only numbers, <code>double</code></li>
-<li>if ISO8601 standard, <code>date</code> or <code>date-time</code></li>
-<li>otherwise <code>string</code></li>
-</ul>
-<p>There are 11 column types that can be specified:</p>
-<ul>
-<li><code>col_logical()</code> - reads as boolean TRUE FALSE values</li>
-<li><code>col_integer()</code> - reads as integer</li>
-<li><code>col_double()</code> - reads as double</li>
-<li><code>col_number()</code> - numeric parser that can ignore non-numbers</li>
-<li><code>col_character()</code> - reads as strings</li>
-<li><code>col_factor(levels, ordered = FALSE)</code> - creates factors</li>
-<li><code>col_datetime(format = "")</code> - creates date-times</li>
-<li><code>col_date(format = "")</code> - creates dates</li>
-<li><code>col_time(format = "")</code> - creates times</li>
-<li><code>col_skip()</code> - skips a column</li>
-<li><code>col_guess()</code> - tries to guess the column</li>
-</ul>
-<p>Some useful additional arguments:</p>
-<ul>
-<li>if there is <strong>no header</strong>, include <code>col_names = FALSE</code></li>
-<li>to <strong>provide a header</strong>, include <code>col_names = c("x","y","z")</code></li>
-<li>to <strong>skip some lines</strong>, include <code>skip = n</code>, where n is number of lines to skip</li>
-<li>to <strong>select which columns</strong> to import, include <code>col_select(x, y)</code></li>
-<li>to <strong>guess</strong> column types <strong>with all rows</strong>, include <code>guess_max = Inf</code></li>
-</ul>
-<p>Sometimes weird things happen. The most common problems are:</p>
-<ul>
-<li><strong>missing values are not <code>NA</code></strong> - your dataset has missing values, but they are not coded as <code>NA</code> as R expects. Solve by adding <code>na</code> argument (e.g.&nbsp;<code>na=c("N/A")</code>)</li>
-<li><strong>column names have spaces</strong> - R cannot include spaces in variable names, so it adds backticks (e.g.&nbsp;<code>`brain size`</code>); we can just refer to them with backticks, but if that gets annoying, see <code>janitor::clean_names()</code> to fix them!</li>
-</ul>
-<p>Reading more complex file types requires functions outside the tidyverse:</p>
-<ul>
-<li><strong>excel</strong> with <code>readxl</code> - see <a href="https://r4ds.hadley.nz/spreadsheets#excel">Spreadsheets</a> in R for Data Science</li>
-<li><strong>google sheets</strong> with <code>googlesheets4</code> - see <a href="https://r4ds.hadley.nz/spreadsheets#google-sheets">Spreadsheets</a> in R for Data Science</li>
-<li><strong>databases</strong> with <code>DBI</code> - see <a href="https://r4ds.hadley.nz/databases">Databases</a> in R for Data Science</li>
-<li><strong>json data</strong> with <code>jsonlite</code> - see <a href="https://r4ds.hadley.nz/rectangling">Hierarchical data</a> in R for Data Science</li>
-</ul>
-</section>
-<section id="further-reading-and-references" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">6</span> Further reading and references</h2>
-<p>Recommended further reading:</p>
-<ul>
-<li><a href="https://r4ds.hadley.nz/data-tidy">Data tidying</a> in R for Data Science</li>
-<li><a href="https://r4ds.had.co.nz/tibbles.html">Tibbles</a> in R for Data Science</li>
-<li><a href="https://r4ds.hadley.nz/data-import.html">Data import</a> in R for Data Science:</li>
-<li><a href="https://rstudio.github.io/cheatsheets/html/data-import.html?_gl=1*1fxlvya*_ga*MTI4NTg4NDIzMy4xNjkyODg0OTA4*_ga_2C0WZ1JHG0*MTY5Mjg4NDkwNy4xLjAuMTY5Mjg4NDkwNy4wLjAuMA..">readr cheatsheet</a></li>
-</ul>
+<section id="further-reading-and-references" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
+<p>Useful resources: - ggplot cheat sheet - <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></p>
+<p>Recommended further reading: - https://moderndive.com/2-viz.html</p>
+<p>Other references:</p>
+<p>https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html</p>
+<p>https://r4ds.hadley.nz/layers</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -733,13 +624,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/r-basics.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R basics</span>
+      <a href="../notes/data-importing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data importing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/data-visualization.html" class="pagination-link">
-        <span class="nav-page-text">Data visualization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/data-wrangling.html" class="pagination-link">
+        <span class="nav-page-text">Data wrangling</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
