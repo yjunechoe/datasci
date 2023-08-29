@@ -7,7 +7,7 @@ engine: knitr
 filters:
   - webr
 webr:
-  service-worker-url: "../../"
+  service-worker-url: "../../datasci/"
 ---
 
 ## Basics
