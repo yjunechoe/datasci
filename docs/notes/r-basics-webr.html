@@ -349,9 +349,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   let editor;
   require(['vs/editor/editor.main'], function () {
     editor = monaco.editor.create(editorDiv, {
-      value: `10
-x + 10
+      value: `x <- 10
 a <- x + 10
+x
 a`,
       language: 'r',
       theme: 'vs-light',

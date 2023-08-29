@@ -22,9 +22,9 @@ Defining some basic concepts:
     - `a <- x + 10` - an expression that adds the value of `x` to `10` and assigns the result to the variable `a`
     
     ```{webr-r}
-    10
-    x + 10
+    x <- 10
     a <- x + 10
+    x
     a
     ```
 
