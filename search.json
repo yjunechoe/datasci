@@ -4,42 +4,28 @@
     "href": "labs/1-getting-started-with-r-lab.html",
     "title": "Lab 1: Getting started with R",
     "section": "",
-    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.\nSetup code\n# dynamic exercises made possible with webexercises\nlibrary(webexercises)"
+    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab."
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#google-colab",
     "href": "labs/1-getting-started-with-r-lab.html#google-colab",
     "title": "Lab 1: Getting started with R",
     "section": "1 Google Colab",
-    "text": "1 Google Colab\nTrue or false? We start a new R notebook in Google Colab with File &gt; New notebook\n\n True False\n\nFor problem sets, how will you submit your colab notebook for grading?\n\n File &gt; Download &gt; Download .ipynb, then upload to Gradescope File &gt; Download &gt; Download .ipynb, then upload to Canvas File &gt; Download &gt; Download .py, then upload to Gradescope File &gt; Download &gt; Download .py, then upload to Canvas\n\nWhat version of R is Google Colab running? Hint: see sessionInfo() function."
+    "text": "1 Google Colab\nTrue or false? We start a new R notebook in Google Colab with File &gt; New notebook\n\n True False\n\nFor problem sets, how will you submit your colab notebook for grading?\n\n File &gt; Download &gt; Download .ipynb, then upload to Gradescope File &gt; Download &gt; Download .ipynb, then upload to Canvas File &gt; Download &gt; Download .py, then upload to Gradescope File &gt; Download &gt; Download .py, then upload to Canvas\n\nWhat version of R is Google Colab running? Hint: use sessionInfo()."
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#r-basics",
     "href": "labs/1-getting-started-with-r-lab.html#r-basics",
     "title": "Lab 1: Getting started with R",
     "section": "2 R Basics",
-    "text": "2 R Basics\nWhich of the following are expressions?\n\n 10 5 + 10 x &lt;- 5 + 10 x &lt;- y + 10 mean(x)\n\nWhich of the following are valid variable names in R?\n\n childAge response_time 1stPlaceWinner 2fast2furious pi\n\nSuppose we open a new colab notebook and run the following code block. What will ls() return?\nx &lt;- mean(c(1,3,5))\ny &lt;- median(c(1,3,5))\n\n 3 x=3 • y=3 'x' • 'y'  mean(c(1,3,5)) • median(c(1,3,5))\n\nWhich of the following will load the emo package into the current environment?\n\n install.packages('emo') library(emo) library('emo') data(emo)"
+    "text": "2 R Basics\nWhich of the following are expressions?\n\n 10 5 + 10 x &lt;- 5 + 10 x &lt;- y + 10 mean(x)\n\nWhich of the following are valid variable names in R?\n\n childAge response_time 1stPlaceWinner 2fast2furious pi\n\nSuppose we open a new colab notebook and run the following code block. What will be returned?\nx &lt;- 1 + 2\ny &lt;- 0 + 3\nls()\n\n 3 x=3 • y=3 'x' • 'y'  mean(c(1,3,5)) • median(c(1,3,5))\n\nWhich of the following will load the emo package into the current environment?\n\n install.packages('emo') library(emo) data(emo) attributes(emo)\n\nWhich of the following occur in the code block below?\n# compute the mean of x and y\nmean(c(x,y))\n\n a message a function a comment an expression"
   },
   {
     "objectID": "labs/1-getting-started-with-r-lab.html#vectors",
     "href": "labs/1-getting-started-with-r-lab.html#vectors",
     "title": "Lab 1: Getting started with R",
     "section": "3 Vectors",
-    "text": "3 Vectors\n\nThe expression attributes(x) returns the following result. What will typeof(x) return?\n\n$dim= 2 . 2\n\nSuppose we run the following code block. What will typeof(x) return?\nx &lt;- c()\nExplain in one sentence the difference between an atomic vector and a list.\nSuppose we run the following code block. What will typeof(x) return? What about length(x)? Explain why.\nx &lt;- data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\"))\nSuppose we run the following code. What will y return? What about typeof(y)?\nx &lt;- c(2,4,6)\ny &lt;- x * 2"
-  },
-  {
-    "objectID": "labs/1-getting-started-with-r-lab.html#subsetting",
-    "href": "labs/1-getting-started-with-r-lab.html#subsetting",
-    "title": "Lab 1: Getting started with R",
-    "section": "4 Subsetting",
-    "text": "4 Subsetting\n\nSuppose we run the following code. What will each of operations return (a - e)?\nx &lt;- seq(2:8, by=2)\n\nx[c(2,4)]\nx[-c(2,4)]\nx[]\nx[[2]]\nx[2]\n\nSuppose m is a matrix created with matrix(c(1,2,3,4), nrow=2, ncol=2). What will each of the following operations return?\n\nm[c(1), ]\nm[c(2), c(1, 2)]\nm[]\nm[[2]]\n\nSuppose df is a data frame created with data.frame(x=c(1,2,3), y=c(\"a\",\"b\",\"c\")). What will each of the following operations return?\n\ndf[c(1,2)]\ndf[c(1,2), c(2)]\ndf[['x']]\ndf[x]\ndf[[2]]\n\nSuppose df is a dataframe with column names ageChild, ageParent, and dateAdded. What will df$age return? Explain why."
-  },
-  {
-    "objectID": "labs/1-getting-started-with-r-lab.html#programming-in-r",
-    "href": "labs/1-getting-started-with-r-lab.html#programming-in-r",
-    "title": "Lab 1: Getting started with R",
-    "section": "5 Programming in R",
-    "text": "5 Programming in R\n\nExplain in one sentence the difference between a for loop and a while loop?"
+    "text": "3 Vectors\nWhat will the following code block return?\nx &lt;- 1:6\ny &lt;- matrix(x, ncols=2, nrows=2)\ntypeof(y)\n\nWhat will the following code block return?\nx &lt;- c()\nlength(x)\n\n\n\n\n\n\n\nMore questions will be released before Thursdays lab"
   },
   {
     "objectID": "labs/2-data-importing-and-viz.html",
@@ -67,7 +53,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 9 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean there is a 95% probability that the true mean lies within this range"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 49 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n there is a 95% probability that the true mean lies within this range 95% of the data fall within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -375,7 +361,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n\n\n\n\nn\nmean\nmedian\nsd\niqr_lower\niqr_upper\n\n\n\n\n1000\n3.003879\n3.007094\n0.2508186\n2.828496\n3.167662"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.00   3.01 0.244      2.83      3.17"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -795,7 +781,7 @@
     "href": "notes/r-basics.html#further-reading-and-references",
     "title": "R basics",
     "section": "9 Further reading and references",
-    "text": "9 Further reading and references\nSuggested further reading:\n\nBase R Cheat Sheet\nGetting Started with Data in R in ModernDive textbook\nR Nuts and Bolts in R Programming for Data Science by Roger Peng\n\nOther references:\n\nVectors in Advanced R by Hadley Wickham\nSubsetting in Advanced R by Hadley Wickham\nA field guide to base R in R for Data Science by Hadley Wickham"
+    "text": "9 Further reading and references\nSuggested further reading:\n\nBase R Cheat Sheet\nR Nuts and Bolts in R Programming for Data Science by Roger Peng\n\nOther references:\n\nVectors in Advanced R by Hadley Wickham\nSubsetting in Advanced R by Hadley Wickham\nA field guide to base R in R for Data Science by Hadley Wickham"
   },
   {
     "objectID": "notes/model-reliability.html",

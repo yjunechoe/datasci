@@ -60,173 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="../include/webex.css">
-</head>
-
-<body class="nav-fixed">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING 0700 | PSYC 2314</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
- <span class="menu-text">Lecture notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
- <span class="menu-text">Labs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
- <span class="menu-text">Problem sets</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#model-fitting-basics" id="toc-model-fitting-basics" class="nav-link active" data-scroll-target="#model-fitting-basics"><span class="header-section-number">1</span> Model fitting basics</a></li>
-  <li><a href="#mean-squared-error" id="toc-mean-squared-error" class="nav-link" data-scroll-target="#mean-squared-error"><span class="header-section-number">2</span> Mean squared error</a></li>
-  <li><a href="#error-surface" id="toc-error-surface" class="nav-link" data-scroll-target="#error-surface"><span class="header-section-number">3</span> Error surface</a></li>
-  <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link" data-scroll-target="#gradient-descent"><span class="header-section-number">4</span> Gradient descent</a></li>
-  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">5</span> Ordinary least squares</a>
-  <ul class="collapse">
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Model fitting</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Katie Schuler </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 5, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<section id="model-fitting-basics" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="model-fitting-basics"><span class="header-section-number">1</span> Model fitting basics</h2>
-<ul>
-<li>in context of model building more broadly</li>
-<li>a genear overview of the concept</li>
-</ul>
-</section>
-<section id="mean-squared-error" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="mean-squared-error"><span class="header-section-number">2</span> Mean squared error</h2>
-<p>Cost function.</p>
-</section>
-<section id="error-surface" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="error-surface"><span class="header-section-number">3</span> Error surface</h2>
-<ul>
-<li>We can visualize the error surface for simple example: 2 parameters, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, and the cost function (mean square error).</li>
-<li>Show nonlinear model v linear model figs</li>
-<li>goal is to find the minimum point</li>
-<li>notice the nonlinear model can have local minimums but lm has only 1. Because lm is a <strong>convex</strong> function.</li>
-</ul>
-</section>
-<section id="gradient-descent" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="gradient-descent"><span class="header-section-number">4</span> Gradient descent</h2>
-<p>IF we want to estimate the free parameters in a way that would work broadly, for linear or nonlinear models, we can use <strong>gradient descent</strong>.</p>
-<ul>
-<li>machine learning / optimization.</li>
-<li>If we have a lot of data, we could use <strong>stochastic gradient descent</strong> which is the same except we…</li>
-</ul>
-</section>
-<section id="ordinary-least-squares" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">5</span> Ordinary least squares</h2>
-<p>As we saw above, linear models have the special property that they have a solution, the OLS. Rather than searching the error surface iteratively via gradient descent (optimization), we can solve for this point directly with <strong>linear algebra</strong>.</p>
-<ul>
-<li>matrix approach: we write the 3-step function.</li>
-<li>use lm() in R.</li>
-<li>infer approach:
-<ul>
-<li>specify(), fit()</li>
-</ul></li>
-</ul>
-<section id="further-reading" class="level3">
-<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
-<ul>
-<li><a href="https://dtkaplan.github.io/SM2-bookdown/fitting-models-to-data.html">Ch. 8 Fitting models to data</a> in Statistical Modeling</li>
-</ul>
-
-
-</section>
-</section>
-
-</main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -433,6 +266,174 @@ window.onload = function() {
 }
 
 </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">LING 0700 | PSYC 2314</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Problem sets</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/kschuler/datasci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model-fitting-basics" id="toc-model-fitting-basics" class="nav-link active" data-scroll-target="#model-fitting-basics"><span class="header-section-number">1</span> Model fitting basics</a></li>
+  <li><a href="#mean-squared-error" id="toc-mean-squared-error" class="nav-link" data-scroll-target="#mean-squared-error"><span class="header-section-number">2</span> Mean squared error</a></li>
+  <li><a href="#error-surface" id="toc-error-surface" class="nav-link" data-scroll-target="#error-surface"><span class="header-section-number">3</span> Error surface</a></li>
+  <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link" data-scroll-target="#gradient-descent"><span class="header-section-number">4</span> Gradient descent</a></li>
+  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">5</span> Ordinary least squares</a>
+  <ul class="collapse">
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Model fitting</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 5, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<section id="model-fitting-basics" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="model-fitting-basics"><span class="header-section-number">1</span> Model fitting basics</h2>
+<ul>
+<li>in context of model building more broadly</li>
+<li>a genear overview of the concept</li>
+</ul>
+</section>
+<section id="mean-squared-error" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="mean-squared-error"><span class="header-section-number">2</span> Mean squared error</h2>
+<p>Cost function.</p>
+</section>
+<section id="error-surface" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="error-surface"><span class="header-section-number">3</span> Error surface</h2>
+<ul>
+<li>We can visualize the error surface for simple example: 2 parameters, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, and the cost function (mean square error).</li>
+<li>Show nonlinear model v linear model figs</li>
+<li>goal is to find the minimum point</li>
+<li>notice the nonlinear model can have local minimums but lm has only 1. Because lm is a <strong>convex</strong> function.</li>
+</ul>
+</section>
+<section id="gradient-descent" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="gradient-descent"><span class="header-section-number">4</span> Gradient descent</h2>
+<p>IF we want to estimate the free parameters in a way that would work broadly, for linear or nonlinear models, we can use <strong>gradient descent</strong>.</p>
+<ul>
+<li>machine learning / optimization.</li>
+<li>If we have a lot of data, we could use <strong>stochastic gradient descent</strong> which is the same except we…</li>
+</ul>
+</section>
+<section id="ordinary-least-squares" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">5</span> Ordinary least squares</h2>
+<p>As we saw above, linear models have the special property that they have a solution, the OLS. Rather than searching the error surface iteratively via gradient descent (optimization), we can solve for this point directly with <strong>linear algebra</strong>.</p>
+<ul>
+<li>matrix approach: we write the 3-step function.</li>
+<li>use lm() in R.</li>
+<li>infer approach:
+<ul>
+<li>specify(), fit()</li>
+</ul></li>
+</ul>
+<section id="further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
+<ul>
+<li><a href="https://dtkaplan.github.io/SM2-bookdown/fitting-models-to-data.html">Ch. 8 Fitting models to data</a> in Statistical Modeling</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -672,7 +673,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a> © 2023 Katie Schuler</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

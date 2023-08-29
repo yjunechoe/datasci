@@ -92,196 +92,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
-
-
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="include/webex.css">
-</head>
-
-<body class="nav-fixed">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">LING 0700 | PSYC 2314</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./notes/hello-world.html" rel="" target="">
- <span class="menu-text">Lecture notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./labs/1-getting-started-with-r-lab.html" rel="" target="">
- <span class="menu-text">Labs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./psets/problem-set-1.html" rel="" target="">
- <span class="menu-text">Problem sets</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#example-questions" id="toc-example-questions" class="nav-link active" data-scroll-target="#example-questions"><span class="header-section-number">1</span> Example Questions</a>
-  <ul class="collapse">
-  <li><a href="#fill-in-the-blanks-fitb" id="toc-fill-in-the-blanks-fitb" class="nav-link" data-scroll-target="#fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</a></li>
-  <li><a href="#multiple-choice-mcq" id="toc-multiple-choice-mcq" class="nav-link" data-scroll-target="#multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</a></li>
-  <li><a href="#true-or-false-torf" id="toc-true-or-false-torf" class="nav-link" data-scroll-target="#true-or-false-torf">True or False (<code>torf()</code>)</a></li>
-  <li><a href="#longer-mcqs-longmcq" id="toc-longer-mcqs-longmcq" class="nav-link" data-scroll-target="#longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</a></li>
-  </ul></li>
-  <li><a href="#checked-sections" id="toc-checked-sections" class="nav-link" data-scroll-target="#checked-sections"><span class="header-section-number">2</span> Checked sections</a></li>
-  <li><a href="#hidden-solutions-and-hints" id="toc-hidden-solutions-and-hints" class="nav-link" data-scroll-target="#hidden-solutions-and-hints"><span class="header-section-number">3</span> Hidden solutions and hints</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Webexercises</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>This is a Web Exercise template created by the <a href="http://www.psy.gla.ac.uk">psychology teaching team at the University of Glasgow</a>, based on ideas from <a href="https://software-carpentry.org/lessons/">Software Carpentry</a>. This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.</p>
-<p>The <code>{webexercises}</code> package provides a number of functions that you use in <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">inline R code</a> or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.</p>
-<p><strong>NOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser.</strong></p>
-<section id="example-questions" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="example-questions"><span class="header-section-number">1</span> Example Questions</h2>
-<section id="fill-in-the-blanks-fitb" class="level3">
-<h3 class="anchored" data-anchor-id="fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</h3>
-<p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
-<ul>
-<li>2 + 2 is <input class="webex-solveme nospaces" size="1" data-answer="[&quot;4&quot;]"></li>
-</ul>
-<p>You can also create these questions dynamically, using variables from your R session.</p>
-<ul>
-<li>The square root of 9 is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;3&quot;]"></li>
-</ul>
-<p>The blanks are case-sensitive; if you don’t care about case, use the argument <code>ignore_case = TRUE</code>.</p>
-<ul>
-<li>What is the letter after D? <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;E&quot;]"></li>
-</ul>
-<p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> (which is the default) and include spaces in your answer anywhere they could be acceptable.</p>
-<ul>
-<li>How do you load the tidyverse package? <input class="webex-solveme nospaces" size="20" data-answer="[&quot;library( tidyverse )&quot;,&quot;library( \&quot;tidyverse\&quot; )&quot;,&quot;library( 'tidyverse' )&quot;]"></li>
-</ul>
-<p>You can set more than one possible correct answer by setting the answers as a vector.</p>
-<ul>
-<li>Type a vowel: <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;,&quot;U&quot;]"></li>
-</ul>
-<p>You can use regular expressions to test answers against more complex rules.</p>
-<ul>
-<li>Type any 3 letters: <input class="webex-solveme nospaces regex" size="3" data-answer="[&quot;^[a-zA-Z]{3}$&quot;]"></li>
-</ul>
-</section>
-<section id="multiple-choice-mcq" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</h3>
-<ul>
-<li>“Never gonna give you up, never gonna: <select class="webex-select"><option value="blank"></option><option value="">let you go</option><option value="">turn you down</option><option value="">run away</option><option value="answer">let you down</option></select>”</li>
-<li>“I <select class="webex-select"><option value="blank"></option><option value="answer">bless the rains</option><option value="">guess it rains</option><option value="">sense the rain</option></select> down in Africa” -Toto</li>
-</ul>
-</section>
-<section id="true-or-false-torf" class="level3">
-<h3 class="anchored" data-anchor-id="true-or-false-torf">True or False (<code>torf()</code>)</h3>
-<ul>
-<li>True or False? You can permute values in a vector using <code>sample()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></li>
-</ul>
-</section>
-<section id="longer-mcqs-longmcq" class="level3">
-<h3 class="anchored" data-anchor-id="longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</h3>
-<p>When your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use <code>longmcq()</code> to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with <code>echo=FALSE</code>.</p>
-<p><strong>What is a p-value?</strong></p>
-<div id="radio_IZPMBYTNUJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IZPMBYTNUJ" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_IZPMBYTNUJ" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_IZPMBYTNUJ" value=""> <span>the probability of making an error in your conclusion</span></label>
-</div>
-<p><strong>What is true about a 95% confidence interval of the mean?</strong></p>
-<div id="radio_SMKWWBUYNW" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SMKWWBUYNW" value=""> <span>95% of the data fall within this range</span></label><label><input type="radio" autocomplete="off" name="radio_SMKWWBUYNW" value="answer"> <span>if you repeated the process many times, 95% of intervals calculated in this way contain the true mean</span></label><label><input type="radio" autocomplete="off" name="radio_SMKWWBUYNW" value=""> <span>there is a 95% probability that the true mean lies within this range</span></label>
-</div>
-</section>
-</section>
-<section id="checked-sections" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="checked-sections"><span class="header-section-number">2</span> Checked sections</h2>
-<p>Create sections with the class <code>webex-check</code> to add a button that hides feedback until it is pressed. Add the class <code>webex-box</code> to draw a box around the section (or use your own styles).</p>
-<div class="webex-check webex-box">
-<p>I am going to learn a lot: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
-What is a p-value?
-<div id="radio_NYDEPOKRAI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NYDEPOKRAI" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_NYDEPOKRAI" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_NYDEPOKRAI" value=""> <span>the probability of making an error in your conclusion</span></label>
-</div>
-</div>
-</section>
-<section id="hidden-solutions-and-hints" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="hidden-solutions-and-hints"><span class="header-section-number">3</span> Hidden solutions and hints</h2>
-<p>You can fence off a solution area that will be hidden behind a button using <code>hide()</code> before the solution and <code>unhide()</code> after, each as inline R code. Pass the text you want to appear on the button to the <code>hide()</code> function.</p>
-<p>If the solution is a code chunk, instead of using <code>hide()</code> and <code>unhide()</code>, simply set the <code>webex.hide</code> chunk option to TRUE, or set it to the string you wish to display on the button.</p>
-<p><strong>Recreate the scatterplot below, using the built-in <code>cars</code> dataset.</strong></p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="webexercises_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="webex-solution">
-<button>
-I need a hint
-</button>
-<p>See the documentation for <code>plot()</code> (<code>?plot</code>)</p>
-</div>
-<!-- note: you could also just set webex.hide to TRUE -->
-<div class="cell" data-webex.hide="Click here to see the solution">
-<div class="webex-solution">
-<button>
-Click here to see the solution
-</button>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-
-
-</section>
-
-</main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -488,6 +298,197 @@ window.onload = function() {
 }
 
 </script>
+
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="include/webex.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">LING 0700 | PSYC 2314</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./notes/hello-world.html" rel="" target="">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./labs/1-getting-started-with-r-lab.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Problem sets</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/kschuler/datasci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example-questions" id="toc-example-questions" class="nav-link active" data-scroll-target="#example-questions"><span class="header-section-number">1</span> Example Questions</a>
+  <ul class="collapse">
+  <li><a href="#fill-in-the-blanks-fitb" id="toc-fill-in-the-blanks-fitb" class="nav-link" data-scroll-target="#fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</a></li>
+  <li><a href="#multiple-choice-mcq" id="toc-multiple-choice-mcq" class="nav-link" data-scroll-target="#multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</a></li>
+  <li><a href="#true-or-false-torf" id="toc-true-or-false-torf" class="nav-link" data-scroll-target="#true-or-false-torf">True or False (<code>torf()</code>)</a></li>
+  <li><a href="#longer-mcqs-longmcq" id="toc-longer-mcqs-longmcq" class="nav-link" data-scroll-target="#longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</a></li>
+  </ul></li>
+  <li><a href="#checked-sections" id="toc-checked-sections" class="nav-link" data-scroll-target="#checked-sections"><span class="header-section-number">2</span> Checked sections</a></li>
+  <li><a href="#hidden-solutions-and-hints" id="toc-hidden-solutions-and-hints" class="nav-link" data-scroll-target="#hidden-solutions-and-hints"><span class="header-section-number">3</span> Hidden solutions and hints</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Webexercises</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This is a Web Exercise template created by the <a href="http://www.psy.gla.ac.uk">psychology teaching team at the University of Glasgow</a>, based on ideas from <a href="https://software-carpentry.org/lessons/">Software Carpentry</a>. This template shows how instructors can easily create interactive web documents that students can use in self-guided learning.</p>
+<p>The <code>{webexercises}</code> package provides a number of functions that you use in <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">inline R code</a> or through code chunk options to create HTML widgets (text boxes, pull down menus, buttons that reveal hidden content). Examples are given below. Render this file to HTML to see how it works.</p>
+<p><strong>NOTE: To use the widgets in the compiled HTML file, you need to have a JavaScript-enabled browser.</strong></p>
+<section id="example-questions" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="example-questions"><span class="header-section-number">1</span> Example Questions</h2>
+<section id="fill-in-the-blanks-fitb" class="level3">
+<h3 class="anchored" data-anchor-id="fill-in-the-blanks-fitb">Fill-In-The-Blanks (<code>fitb()</code>)</h3>
+<p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
+<ul>
+<li>2 + 2 is <input class="webex-solveme nospaces" size="1" data-answer="[&quot;4&quot;]"></li>
+</ul>
+<p>You can also create these questions dynamically, using variables from your R session.</p>
+<ul>
+<li>The square root of 49 is: <input class="webex-solveme nospaces" size="1" data-answer="[&quot;7&quot;]"></li>
+</ul>
+<p>The blanks are case-sensitive; if you don’t care about case, use the argument <code>ignore_case = TRUE</code>.</p>
+<ul>
+<li>What is the letter after D? <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;E&quot;]"></li>
+</ul>
+<p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> (which is the default) and include spaces in your answer anywhere they could be acceptable.</p>
+<ul>
+<li>How do you load the tidyverse package? <input class="webex-solveme nospaces" size="20" data-answer="[&quot;library( tidyverse )&quot;,&quot;library( \&quot;tidyverse\&quot; )&quot;,&quot;library( 'tidyverse' )&quot;]"></li>
+</ul>
+<p>You can set more than one possible correct answer by setting the answers as a vector.</p>
+<ul>
+<li>Type a vowel: <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;,&quot;U&quot;]"></li>
+</ul>
+<p>You can use regular expressions to test answers against more complex rules.</p>
+<ul>
+<li>Type any 3 letters: <input class="webex-solveme nospaces regex" size="3" data-answer="[&quot;^[a-zA-Z]{3}$&quot;]"></li>
+</ul>
+</section>
+<section id="multiple-choice-mcq" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-choice-mcq">Multiple Choice (<code>mcq()</code>)</h3>
+<ul>
+<li>“Never gonna give you up, never gonna: <select class="webex-select"><option value="blank"></option><option value="">let you go</option><option value="">turn you down</option><option value="">run away</option><option value="answer">let you down</option></select>”</li>
+<li>“I <select class="webex-select"><option value="blank"></option><option value="answer">bless the rains</option><option value="">guess it rains</option><option value="">sense the rain</option></select> down in Africa” -Toto</li>
+</ul>
+</section>
+<section id="true-or-false-torf" class="level3">
+<h3 class="anchored" data-anchor-id="true-or-false-torf">True or False (<code>torf()</code>)</h3>
+<ul>
+<li>True or False? You can permute values in a vector using <code>sample()</code>. <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></li>
+</ul>
+</section>
+<section id="longer-mcqs-longmcq" class="level3">
+<h3 class="anchored" data-anchor-id="longer-mcqs-longmcq">Longer MCQs (<code>longmcq()</code>)</h3>
+<p>When your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use <code>longmcq()</code> to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with <code>echo=FALSE</code>.</p>
+<p><strong>What is a p-value?</strong></p>
+<div id="radio_OYTOYYLCHN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OYTOYYLCHN" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_OYTOYYLCHN" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_OYTOYYLCHN" value=""> <span>the probability of making an error in your conclusion</span></label>
+</div>
+<p><strong>What is true about a 95% confidence interval of the mean?</strong></p>
+<div id="radio_GMZYWFAXLB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GMZYWFAXLB" value=""> <span>there is a 95% probability that the true mean lies within this range</span></label><label><input type="radio" autocomplete="off" name="radio_GMZYWFAXLB" value=""> <span>95% of the data fall within this range</span></label><label><input type="radio" autocomplete="off" name="radio_GMZYWFAXLB" value="answer"> <span>if you repeated the process many times, 95% of intervals calculated in this way contain the true mean</span></label>
+</div>
+</section>
+</section>
+<section id="checked-sections" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="checked-sections"><span class="header-section-number">2</span> Checked sections</h2>
+<p>Create sections with the class <code>webex-check</code> to add a button that hides feedback until it is pressed. Add the class <code>webex-box</code> to draw a box around the section (or use your own styles).</p>
+<div class="webex-check webex-box">
+<p>I am going to learn a lot: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></p>
+What is a p-value?
+<div id="radio_DXJKSZLGTA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DXJKSZLGTA" value=""> <span>the probability that the null hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_DXJKSZLGTA" value="answer"> <span>the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true</span></label><label><input type="radio" autocomplete="off" name="radio_DXJKSZLGTA" value=""> <span>the probability of making an error in your conclusion</span></label>
+</div>
+</div>
+</section>
+<section id="hidden-solutions-and-hints" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="hidden-solutions-and-hints"><span class="header-section-number">3</span> Hidden solutions and hints</h2>
+<p>You can fence off a solution area that will be hidden behind a button using <code>hide()</code> before the solution and <code>unhide()</code> after, each as inline R code. Pass the text you want to appear on the button to the <code>hide()</code> function.</p>
+<p>If the solution is a code chunk, instead of using <code>hide()</code> and <code>unhide()</code>, simply set the <code>webex.hide</code> chunk option to TRUE, or set it to the string you wish to display on the button.</p>
+<p><strong>Recreate the scatterplot below, using the built-in <code>cars</code> dataset.</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="webexercises_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="webex-solution">
+<button>
+I need a hint
+</button>
+<p>See the documentation for <code>plot()</code> (<code>?plot</code>)</p>
+</div>
+<!-- note: you could also just set webex.hide to TRUE -->
+<div class="cell" data-webex.hide="Click here to see the solution">
+<div class="webex-solution">
+<button>
+Click here to see the solution
+</button>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed, cars<span class="sc">$</span>dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -727,7 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a> © 2023 Katie Schuler</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

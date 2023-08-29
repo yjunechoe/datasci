@@ -60,220 +60,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="../include/webex.css">
-</head>
-
-<body class="nav-fixed">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LING 0700 | PSYC 2314</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
- <span class="menu-text">Lecture notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
- <span class="menu-text">Labs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
- <span class="menu-text">Problem sets</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link active" data-scroll-target="#hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</a></li>
-  <li><a href="#p-values" id="toc-p-values" class="nav-link" data-scroll-target="#p-values"><span class="header-section-number">2</span> p-values</a></li>
-  <li><a href="#nonparametric-approaches-to-p-values" id="toc-nonparametric-approaches-to-p-values" class="nav-link" data-scroll-target="#nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</a></li>
-  <li><a href="#there-is-only-one-test" id="toc-there-is-only-one-test" class="nav-link" data-scroll-target="#there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</a></li>
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">6</span> Correlation</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7</span> Further reading</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Hypothesis testing</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Katie Schuler </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<ul>
-<li>Suppose we have one variable and two conditions: the height of human adults by gender.
-<ul>
-<li>This is usually what we want to do in science / with models</li>
-<li>We will start in this simple place on our way to more complex</li>
-</ul></li>
-<li>Are men taller than women?
-<ul>
-<li>Is there a difference in means? How do we know?</li>
-</ul></li>
-</ul>
-<section id="hypothesis-testing" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</h2>
-<ul>
-<li>We can’t! At least we can’t quantify it. Intead we can use a cool statistical approach to help us: hypothesis test</li>
-<li>How it works: pos a NULL hypothesis?
-<ul>
-<li>why null? we need to quantify it</li>
-<li>ask if the null were true, how likely is that we’d observe this result?</li>
-</ul></li>
-</ul>
-</section>
-<section id="p-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="p-values"><span class="header-section-number">2</span> p-values</h2>
-<ul>
-<li>One way to quantify how likely this is with a ttest.
-<ul>
-<li>t-tests are parametric — we figure out the probability theoretically based on an existing distribution</li>
-<li>computes a p-value, which quantifies how likely it is we’d observe some result</li>
-<li>does the t-test construct the null? I think yes, theoretically, or because properties are known.</li>
-</ul></li>
-<li>Interpretation of p-value
-<ul>
-<li>reject the null (p &lt; some threshold)</li>
-<li>fail to reject the null (p &gt; some threshold)</li>
-</ul></li>
-</ul>
-</section>
-<section id="nonparametric-approaches-to-p-values" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</h2>
-<ul>
-<li>But what if we aren’t doing the mean? Or the distribution isn’t normal? We can use the same principle of the sampling distribution. Two approaches to construct the null distribution from the data:
-<ul>
-<li>Resampling: one appraoch: shuffle around, then get the mean, construct null distribution</li>
-<li>Bootstrapping: another approach: sample with replacement, get the mean, construct null distribution</li>
-<li>which one should we pick? see k</li>
-</ul></li>
-<li>p-value
-<ul>
-<li>how likely is the observed mean? with either of these null distributions we can use the confidence interval</li>
-<li>beforehand we set an alpha value (usually 0.05) which is the cutoff for what we think is likely/unlikely.</li>
-</ul></li>
-</ul>
-</section>
-<section id="there-is-only-one-test" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</h2>
-<p>(insert image of there is only one test)</p>
-<ul>
-<li>Allows us to appreciate that, though there is a myriad of statistical tests available, there is really only one test:
-<ul>
-<li>descibe the flow chart</li>
-</ul></li>
-<li>We can use the infer package to perform this kind of hypothesis testing
-<ul>
-<li>Show example.</li>
-</ul>
-<h2 id="exploring-relationships" data-number="5" class="anchored"><span class="header-section-number">5</span> Exploring relationships</h2></li>
-</ul>
-<p>Last week we explored data in which we measured a single quantity: brain size. We explored this dataset with a histogram and modeled it with a single value (mean). Suppose we have a slightly more complex dataset in which we measure both brain size and body mass (two quantities!). We might want to know whether there is a relationship between brain size and body mass. We can explore the relationship between two quantities visually with a <strong>scatter plot</strong>.</p>
-<p>If there is no relationship between the variables, we say they are <strong>independent</strong>. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In our example, knowing an animal’s body size provides no information about their brain size. If there <em>is</em> some relationship between the variables, we can consider two types:</p>
-<ol type="1">
-<li>There may be a <strong>linear relationship</strong> between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between brain size and body mass: as body mass increases, brain size also increases.</li>
-<li>Or a <strong>nonlinear relationship</strong>. Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g.&nbsp;a U-shaped curve).</li>
-</ol>
-</section>
-<section id="correlation" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6</span> Correlation</h2>
-<p>One way to quantify linear relationships is with <strong>correlation (<span class="math inline">\(r\)</span>)</strong>. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive.</p>
-<p>Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then compute the average product of each variable:</p>
-<ul>
-<li>show equation</li>
-<li>we can achieve this calculation in R by computing</li>
-<li>add getting z-score with R?</li>
-<li>Correlation only describes linear relationships.</li>
-</ul>
-<p>Is the correlation we observed significantly different from zero? We can apply the techniques we learned over the past few weeks to find out. Just like the mean — and all other test statistics! — <em><span class="math inline">\(r\)</span></em> is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way: construct the sampling distribution of the correlation via bootstrapping, compute a confidence interval, and compute the p-value.</p>
-<p>(demo with infer framework)</p>
-</section>
-<section id="further-reading" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7</span> Further reading</h2>
-<ul>
-<li><a href="https://dtkaplan.github.io/SM2-bookdown/the-logic-of-hypothesis-testing.html">The logic of hypothesis testing</a> - Chapter 13, Statistical Modeling</li>
-<li><a href="https://moderndive.com/9-hypothesis-testing.html">Hypothesis testing</a> - Chapter 9, Modern Dive</li>
-</ul>
-
-
-</section>
-
-</main> <!-- /main -->
 <script>
 
 /* update total correct if #webex-total_correct exists */
@@ -480,6 +266,221 @@ window.onload = function() {
 }
 
 </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">LING 0700 | PSYC 2314</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+ <span class="menu-text">Problem sets</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/kschuler/datasci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link active" data-scroll-target="#hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</a></li>
+  <li><a href="#p-values" id="toc-p-values" class="nav-link" data-scroll-target="#p-values"><span class="header-section-number">2</span> p-values</a></li>
+  <li><a href="#nonparametric-approaches-to-p-values" id="toc-nonparametric-approaches-to-p-values" class="nav-link" data-scroll-target="#nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</a></li>
+  <li><a href="#there-is-only-one-test" id="toc-there-is-only-one-test" class="nav-link" data-scroll-target="#there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">6</span> Correlation</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7</span> Further reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hypothesis testing</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 26, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<ul>
+<li>Suppose we have one variable and two conditions: the height of human adults by gender.
+<ul>
+<li>This is usually what we want to do in science / with models</li>
+<li>We will start in this simple place on our way to more complex</li>
+</ul></li>
+<li>Are men taller than women?
+<ul>
+<li>Is there a difference in means? How do we know?</li>
+</ul></li>
+</ul>
+<section id="hypothesis-testing" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</h2>
+<ul>
+<li>We can’t! At least we can’t quantify it. Intead we can use a cool statistical approach to help us: hypothesis test</li>
+<li>How it works: pos a NULL hypothesis?
+<ul>
+<li>why null? we need to quantify it</li>
+<li>ask if the null were true, how likely is that we’d observe this result?</li>
+</ul></li>
+</ul>
+</section>
+<section id="p-values" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="p-values"><span class="header-section-number">2</span> p-values</h2>
+<ul>
+<li>One way to quantify how likely this is with a ttest.
+<ul>
+<li>t-tests are parametric — we figure out the probability theoretically based on an existing distribution</li>
+<li>computes a p-value, which quantifies how likely it is we’d observe some result</li>
+<li>does the t-test construct the null? I think yes, theoretically, or because properties are known.</li>
+</ul></li>
+<li>Interpretation of p-value
+<ul>
+<li>reject the null (p &lt; some threshold)</li>
+<li>fail to reject the null (p &gt; some threshold)</li>
+</ul></li>
+</ul>
+</section>
+<section id="nonparametric-approaches-to-p-values" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</h2>
+<ul>
+<li>But what if we aren’t doing the mean? Or the distribution isn’t normal? We can use the same principle of the sampling distribution. Two approaches to construct the null distribution from the data:
+<ul>
+<li>Resampling: one appraoch: shuffle around, then get the mean, construct null distribution</li>
+<li>Bootstrapping: another approach: sample with replacement, get the mean, construct null distribution</li>
+<li>which one should we pick? see k</li>
+</ul></li>
+<li>p-value
+<ul>
+<li>how likely is the observed mean? with either of these null distributions we can use the confidence interval</li>
+<li>beforehand we set an alpha value (usually 0.05) which is the cutoff for what we think is likely/unlikely.</li>
+</ul></li>
+</ul>
+</section>
+<section id="there-is-only-one-test" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</h2>
+<p>(insert image of there is only one test)</p>
+<ul>
+<li>Allows us to appreciate that, though there is a myriad of statistical tests available, there is really only one test:
+<ul>
+<li>descibe the flow chart</li>
+</ul></li>
+<li>We can use the infer package to perform this kind of hypothesis testing
+<ul>
+<li>Show example.</li>
+</ul>
+<h2 id="exploring-relationships" data-number="5" class="anchored"><span class="header-section-number">5</span> Exploring relationships</h2></li>
+</ul>
+<p>Last week we explored data in which we measured a single quantity: brain size. We explored this dataset with a histogram and modeled it with a single value (mean). Suppose we have a slightly more complex dataset in which we measure both brain size and body mass (two quantities!). We might want to know whether there is a relationship between brain size and body mass. We can explore the relationship between two quantities visually with a <strong>scatter plot</strong>.</p>
+<p>If there is no relationship between the variables, we say they are <strong>independent</strong>. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In our example, knowing an animal’s body size provides no information about their brain size. If there <em>is</em> some relationship between the variables, we can consider two types:</p>
+<ol type="1">
+<li>There may be a <strong>linear relationship</strong> between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between brain size and body mass: as body mass increases, brain size also increases.</li>
+<li>Or a <strong>nonlinear relationship</strong>. Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g.&nbsp;a U-shaped curve).</li>
+</ol>
+</section>
+<section id="correlation" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6</span> Correlation</h2>
+<p>One way to quantify linear relationships is with <strong>correlation (<span class="math inline">\(r\)</span>)</strong>. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive.</p>
+<p>Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then compute the average product of each variable:</p>
+<ul>
+<li>show equation</li>
+<li>we can achieve this calculation in R by computing</li>
+<li>add getting z-score with R?</li>
+<li>Correlation only describes linear relationships.</li>
+</ul>
+<p>Is the correlation we observed significantly different from zero? We can apply the techniques we learned over the past few weeks to find out. Just like the mean — and all other test statistics! — <em><span class="math inline">\(r\)</span></em> is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way: construct the sampling distribution of the correlation via bootstrapping, compute a confidence interval, and compute the p-value.</p>
+<p>(demo with infer framework)</p>
+</section>
+<section id="further-reading" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7</span> Further reading</h2>
+<ul>
+<li><a href="https://dtkaplan.github.io/SM2-bookdown/the-logic-of-hypothesis-testing.html">The logic of hypothesis testing</a> - Chapter 13, Statistical Modeling</li>
+<li><a href="https://moderndive.com/9-hypothesis-testing.html">Hypothesis testing</a> - Chapter 9, Modern Dive</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -719,7 +720,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a></div>
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a> © 2023 Katie Schuler</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
