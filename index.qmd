@@ -11,7 +11,7 @@ subtitle: "Tuesdays and Thursdays COHN 402"
 
 Week | Day | Topic | Resources |
 |- |-|-----|----|
-| 1 | 08-28 | Hello, world! | |  
+| 1 | 08-28 | [Hello, world!](notes/hello-world.qmd) | [slides](/slides/hello-world.qmd)|  
 | 1 | 08-31 | R-basics  | | 
 | 2 | 09-05 |  Data importing  | | 
 | 2 | 09-07 |   Data visualization |  |
