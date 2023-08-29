@@ -4,7 +4,7 @@ callout-appearance: simple
 website:
   title: LING 0700 | PSYC 2314
   page-navigation: true
-  page-footer: Made with [Quarto](https://quarto.org/)
+  page-footer: Made with [Quarto](https://quarto.org/) &copy; 2023 Katie Schuler
   navbar:
     background: light
     search: true
@@ -19,6 +19,9 @@ website:
       file: labs/1-getting-started-with-r-lab.qmd
     - text: Problem sets
       file: psets/problem-set-1.qmd
+    tools:
+      - icon: github
+        href: https://github.com/kschuler/datasci
   sidebar:
   - title: Lecture notes
     contents:
@@ -29,7 +32,8 @@ website:
     - notes/data-wrangling.qmd
     - text: '---'
   - title: Labs
-    contents: labs/1-getting-started-with-r-lab.qmd
+    contents: 
+      - labs/1-getting-started-with-r-lab.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-1.qmd
@@ -46,5 +50,5 @@ format:
     number-depth: 2
     grid:
       sidebar-width: 300px
-    df-print: kable
-    include-after-body: include/webex.js
+    df-print: default
+    include-in-header: include/webex.js
