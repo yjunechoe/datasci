@@ -213,8 +213,8 @@ cat(longmcq(choices))
 What will the following code block return? 
 
 ```r
-x <- 1:6
-y <- matrix(x, ncols=2, nrows=2)
+x <- 1:4
+y <- matrix(x, ncol=2, nrow=2)
 typeof(y)
 
 ```
@@ -223,7 +223,7 @@ typeof(y)
 #| echo: false
 #| results: asis
 
-cat(fitb(c("double"), ignore_ws = TRUE, width = "20"))
+cat(fitb(c("integer"), ignore_ws = TRUE, width = "20"))
 
 ```
 
