@@ -59,8 +59,8 @@ format:
 ## Learning resources
 
 - [colab notebook (R kernel)](https://colab.research.google.com/#create=true&language=r)
-- [Lecture notes](/notes/r-basics.qmd) 
-- [Labs](/labs/lab-01.qmd)
+- [Lecture notes](/notes/r-basics.html) 
+- [Labs](/labs/lab-01.html)
 
 ## Basic concepts (review) {.smaller}
 

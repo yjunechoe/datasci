@@ -34,7 +34,7 @@ Create a new colab R notebook. Add a text block that includes the title "Problem
 
 ## Problem 1
 
-Suppose you record how many words your quiet roommate says to you each day for a week. Convert the vector given below from strings to doubles using coercion and store it as `words_spoken`. Use R's built-in functions to compute the total number of words your roommate said that week, the average number of words spoken per day, and the maximum number of words spoken on a single day. Store the results in a tibble. Perform a comparison operation to determine whether each day's words were above the average. Finally, use subsetting to extract the days where the number of words were in the single digits.
+Suppose you record how many words your quiet roommate says to you each day for a week. Convert the vector given below from strings to doubles using coercion and store it as `words_spoken`. Use R's built-in functions to compute the total number of words your roommate said that week, the average number of words spoken per day, and the maximum number of words spoken on a single day. Store the results in a tibble. Perform a comparison operation on the `words_spoken` vector to determine whether each day's words were above the average. Finally, use subsetting to extract the days where the number of words were in the single digits.
 
 ```r
 words_spoken_stringy <- c("5", "3", "20"," 0", "4", "35", "1")

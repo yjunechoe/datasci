@@ -288,23 +288,7 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-Which of the following code subsets the vector `x <- c("blue", "pink", "red")` to return just the first element?
 
-```{r}
-#| echo: false
-#| results: asis
-
-# Define the answer choices
-choices <- c(
-    answer="x[1]",
-    answer = "x[[1]]",
-    "x[0]",
-    answer = "x[-c(2, 3)]",
-    'x["blue"]'
-)
-
-cat(longmcq(choices))
-```
 
 What happens if you add a vector of numbers to a single number in the following expression?
 
@@ -327,6 +311,97 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
+What happens if you multiply a vector times another vector? 
+
+```r
+c(1, 3, 5) * c(10, 100, 1000)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="10 • 300 • 5000",
+    "Error: length mismatch",
+    "10 • 30 • 50 • 100 • 300 • 500 • 1000 • 3000 • 5000",
+    "a 2 x 3 matrix",
+    "Error: cannot multiply vectors"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we run the following code.  What will `any(x)` return? 
+
+```r
+x <- c(1, 5, 11) > 10
+
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="TRUE",
+    "FALSE",
+    "error: vector is double but requires logical"
+)
+
+cat(longmcq(choices))
+```
+
+## Subsetting
+
+Which of the following code subsets the vector `x <- c("blue", "pink", "red")` to return just the first element?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="x[1]",
+    answer = "x[[1]]",
+    "x[0]",
+    answer = "x[-c(2, 3)]",
+    'x["blue"]'
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we run the following code. What will `x[[2]] return?
+
+```r
+x <- seq(from = 2, to =8, by=2)
+```
+```{r}
+#| echo: false
+#| results: asis
+
+cat(fitb(c(4), ignore_ws = TRUE, width = "20"))
+
+```
+
+
+Suppose we run the following code. What will `m[1, 2] return?
+
+```r
+m <- matrix(c(10,20,30,40), nrow=2, ncol=2)
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+cat(fitb(c(30), ignore_ws = TRUE, width = "20"))
+
+```
 <!---
  
 THERE ARE FROM BEFORE webexerciser
@@ -356,16 +431,7 @@ typeof(x)
 
 
 ## Subsetting
-1. Suppose we run the following code. What will each of operations return (a - e)? 
 
-    ```r
-    x <- seq(2:8, by=2)
-    ```
-    a. `x[c(2,4)]`
-    b. `x[-c(2,4)]`
-    c. `x[]`
-    d. `x[[2]]`
-    e. `x[2]`
 
 1. Suppose `m` is a matrix created with `matrix(c(1,2,3,4), nrow=2, ncol=2)`. What will each of the following operations return?
     - `m[c(1), ]`
