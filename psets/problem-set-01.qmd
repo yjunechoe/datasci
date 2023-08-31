@@ -1,0 +1,86 @@
+---
+title:  "Problem set 1"
+subtitle: "due Sunday, September 10, 2023 at 11:59pm"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-warning title="Under Construction"}
+Additional problems will be added; you can begin work on problems 0-4.
+:::
+
+Instructions
+: Upload your `.ipynb` notebook to gradescope by 11:59pm on the due date. 
+
+- Note that each problem will be graded according to this [rubric](/rubric.qmd). Solutions that include packages or functions not covered in this course will recieve a score no higher than 2.
+- You may collaborate with any of your classmates, but you must write your own code/solutions, understand all parts of the problem, and name your collaborators. 
+- You should also cite any outside sources you consulted, like Stack Overflow or ChatGPT, with a comment near the relevant lines of code (see example below). Recycled code that has not been cited will be considered plagerism and receive a zero. 
+
+```r
+# code here was inspired by user2554330 on stack overflow: 
+# https://stackoverflow.com/questions/69091812/is-everything-a-vector-in-r
+```
+
+## Problem 0
+
+Create a new colab R notebook. Add a text block that includes the title "Problem set 1", your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading.
+
+
+## Problem 1
+
+Suppose you record how many words your quiet roommate says to you each day for a week. Convert the vector given below from strings to doubles using coercion and store it as `words_spoken`. Use R's built-in functions to compute the total number of words your roommate said that week, the average number of words spoken per day, and the maximum number of words spoken on a single day. Store the results in a tibble. Perform a comparison operation to determine whether each day's words were above the average. Finally, use subsetting to extract the days where the number of words were in the single digits.
+
+```r
+words_spoken_stringy <- c("5", "3", "20"," 0", "4", "35", "1")
+```
+
+## Problem 2
+
+Create the matrix given below. Use one of R's built-in functions to append a new row to the matrix made up of all 1s.  Multiply every number in the new matrix by 5. Then use subsetting to return the second and fourth row of values in the final matrix. 
+
+```{r}
+#| echo: false
+x <- c(3, 4, 5, 6, 7, 8, 9, 10, 11)
+matrix(x, nrow=3, ncol=3)
+
+```
+
+
+## Problem 3
+
+Create a data frame that looks like the one below. Return the structure of the dataframe with `str()`. Use subsetting to select all columns that were indicated as doubles. Compute the mean of each column in the subset dataframe using `map_*()` and convert the output to a tibble (use the pipe!).
+
+```{r}
+#| echo: false
+age <- c(30, 45, 81, 27)
+height <- c(65, 66, 72, 59)
+major <- c("cogsci", "ling", "psych", "ling")
+score <- c(100, 75, 88, 97)
+firstgen <- c(TRUE, FALSE, TRUE, FALSE)
+df <- data.frame(age, height, major, score, firstgen)
+df
+
+
+```
+
+## Problem 4
+Read the documentation for the [`emo`](https://github.com/hadley/emo) package.  Install and load the package. Then create a character vector including 8 of your favorite emojis by their keyword (see the docs for a list). Finally, use the package's `emo::ji()` function in conjunction with `map_*()` to print all 8 emojis with one line of code. Combine this output with your keyword vector in a tibble.  
+
+<!---
+ 
+## Problem Y
+Import this data and solve some common issues. ( take out the tidyverse parts from preamble) Plot a histogram of each variable.
+
+- norm has weird NA
+- exponent fine 
+- Rename a variable with back rocks 
+
+## Problem Z
+Recreate this figure from the data you imported in last P.   
+--->

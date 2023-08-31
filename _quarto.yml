@@ -1,110 +1,54 @@
 project:
   type: website
-# page-layout: article
 callout-appearance: simple
-
-
 website:
-  title: "LING 0700"
+  title: LING 0700 | PSYC 2314
   page-navigation: true
-  page-footer: "Made with [Quarto](https://quarto.org/)" 
+  page-footer: Made with [Quarto](https://quarto.org/) &copy; 2023 Katie Schuler
   navbar:
     background: light
     search: true
     left:
-      - text: "Home"
-        file: index.qmd
-      - text: "Syllabus"
-        file: syllabus.qmd
-      - text: "Lecture notes"
-        file: notes/hello-world.qmd
-      - text: "Labs"
-        file: labs/1-getting-started-with-r-lab.qmd
-      - text: "Problem sets"
-        file: "psets/problem-set-1.qmd"
-
+    - text: Home
+      file: index.qmd
+    - text: Syllabus
+      file: syllabus.qmd
+    - text: Lecture notes
+      file: notes/hello-world.qmd
+    - text: Labs
+      file: labs/lab-01.qmd
+    - text: Problem sets
+      file: psets/problem-set-01.qmd
+    # tools:
+    #   - icon: github
+    #     href: https://github.com/kschuler/datasci
   sidebar:
-  #   - title: "Home"
-  #     # contents: 
-  #     #   - index.qmd
-  #     #   - syllabus.qmd
-  #     #   - rubric.qmd
-  
-    - title: "Lecture notes"
-      contents:
-        - notes/hello-world.qmd
-        - notes/r-basics.qmd
-        - notes/data-importing.qmd
-        - notes/data-visualization.qmd
-        - notes/data-wrangling.qmd
-        - text: "---"
-        # - notes/probability-distributions.qmd
-        # - notes/sampling-variability.qmd
-        # - notes/hypothesis-testing.qmd
-        # - notes/model-specification.qmd
-        # - notes/model-fitting.qmd
-        # - notes/model-accuracy.qmd
-        # - notes/model-reliability.qmd
-        # - text: "---"
-        # - notes/classification.qmd
-        # - notes/feature-engineering.qmd
-        # - notes/inference.qmd
-        # - notes/mixed-effects-models.qmd
-          
-
-    - title: "Labs"
-      contents:
-        - labs/1-getting-started-with-r-lab.qmd
-        # navigation items
-
-    - title: "Problem sets"
-      contents:
-        - psets/problem-set-1.qmd
-        - text: "---"
-        - rubric.qmd
-        # navigation items
-    
-
-# website:
-#   title: "datasci for lang & mind"
-#   page-navigation: true
-#   sidebar:
-#     contents:
-#       - section: "Unit 1: R"
-#         contents:
-#           - href: lecturenotes/hello-world.qmd
-#           - href: lecturenotes/r-basics.qmd
-#           - href: lecturenotes/data-importing.qmd
-#           - href: lecturenotes/data-visualization.qmd
-#       - text: "---"
-#       - section: "Unit 2: Stats"
-#         contents:
-#           - href: lecturenotes/probability-distributions.qmd
-#           - href: document5.qmd
-#           - href: document6.qmd
-
-          # navigation items
-  # navbar:
-  #   left:
-  #     - href: index.qmd
-  #       text: Schedule
-  #     - href: syllabus.qmd
-  #       text: Syllabus
-  #     - href: rubric.qmd
-  #       text: Rubric
-
+  - title: Lecture notes
+    contents:
+    - notes/hello-world.qmd
+    - notes/r-basics.qmd
+    - notes/data-importing.qmd
+    - notes/data-visualization.qmd
+    - notes/data-wrangling.qmd
+    - text: '---'
+  - title: Labs
+    contents: 
+      - labs/lab-01.qmd
+  - title: Problem sets
+    contents:
+    - psets/problem-set-01.qmd
+    - text: '---'
+    - rubric.qmd
 format:
-  html: 
+  html:
     theme: cosmo
-    css: styles.css
-    # fontsize: 0.9em
+    css:
+    - styles.css
+    - include/webex.css
     toc: true
     number-sections: true
     number-depth: 2
     grid:
       sidebar-width: 300px
-    #   gutter-width: 4em
-    df-print: kable
-
-
-
+    df-print: default
+    include-in-header: include/webex.js

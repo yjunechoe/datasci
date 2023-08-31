@@ -1,9 +1,0 @@
----
-title:  "Problem set 1"
-# date:   09-10-2023
-# author: Katie Schuler
-
----
-
-::: {.callout-warning title="Under Construction"}
-:::

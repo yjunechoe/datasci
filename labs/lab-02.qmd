@@ -6,7 +6,8 @@ author:
     - Katie Schuler
 ---
 
-Practice quiz questions.
+<!---
+ Practice quiz questions.
 
 
 1. Suppose we run the following code block. What will `is.data.frame(y)` return? 
@@ -29,4 +30,5 @@ Practice quiz questions.
 1. Suppose `x[[5]]` returns `NULL`, what will `is_tibble(x)` return? 
 
 1. Can `readr` import a google sheet with the `read_csv()` function? 
-
+ 
+--->
