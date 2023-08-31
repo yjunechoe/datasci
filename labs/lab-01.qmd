@@ -54,6 +54,24 @@ cat(fitb(c("4.3.1"), ignore_ws = TRUE, width = "20"))
 
 ```
 
+What is the relationship between R and Google Colab?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "R is a programming language. Google Colab is a smaller, specific version of R.",
+    answer="R is a programming language. Google Colab is an environment where you can run R",
+    "R and Google Colab are both programming languages",
+    "R is a paid (proprietary) programming language. Google Colab is a free service."
+)
+
+cat(longmcq(choices))
+
+```
+
 ## R Basics
 
 
@@ -88,7 +106,7 @@ choices <- c(
     answer = "response_time",
     "1stPlaceWinner",
     "2fast2furious",
-     "pi"
+    "pi"
 )
 
 cat(longmcq(choices))
@@ -279,6 +297,7 @@ Which of the following code subsets the vector `x <- c("blue", "pink", "red")` t
 # Define the answer choices
 choices <- c(
     answer="x[1]",
+    answer = "x[[1]]",
     "x[0]",
     answer = "x[-c(2, 3)]",
     'x["blue"]'
@@ -299,10 +318,10 @@ c(1, 3, 5) + 1
 
 # Define the answer choices
 choices <- c(
-    "c(2, 3, 5)",
+    "2 • 3 • 5",
     "Error: length mismatch",
-    "c(1, 3, 5, 1)",
-    answer = "c(2, 3, 5)"
+    "1 • 3 • 5 • 1",
+    answer = "2 • 3 • 5"
 )
 
 cat(longmcq(choices))
