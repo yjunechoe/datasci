@@ -1,5 +1,5 @@
 ---
-title: "LING 0700: Datasci for lang & mind"
+title: "Datasci for lang & mind"
 subtitle: "Tuesdays and Thursdays COHN 402"
 
 ---
@@ -12,7 +12,7 @@ subtitle: "Tuesdays and Thursdays COHN 402"
 Week | Day | Topic | Resources |
 |- |-|-----|----|
 | 1 | 08-28 | [Hello, world!](notes/hello-world.qmd) | [slides](/slides/hello-world.qmd)|  
-| 1 | 08-31 | R-basics  | | 
+| 1 | 08-31 | R-basics  | [lab](labs/lab-01.qmd)| 
 | 2 | 09-05 |  Data importing  | | 
 | 2 | 09-07 |   Data visualization |  |
 | 2 | 09-10 |   Problem set 1 | |

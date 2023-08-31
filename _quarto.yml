@@ -16,12 +16,12 @@ website:
     - text: Lecture notes
       file: notes/hello-world.qmd
     - text: Labs
-      file: labs/1-getting-started-with-r-lab.qmd
+      file: labs/lab-01.qmd
     - text: Problem sets
-      file: psets/problem-set-1.qmd
-    tools:
-      - icon: github
-        href: https://github.com/kschuler/datasci
+      file: psets/problem-set-01.qmd
+    # tools:
+    #   - icon: github
+    #     href: https://github.com/kschuler/datasci
   sidebar:
   - title: Lecture notes
     contents:
@@ -33,10 +33,10 @@ website:
     - text: '---'
   - title: Labs
     contents: 
-      - labs/1-getting-started-with-r-lab.qmd
+      - labs/lab-01.qmd
   - title: Problem sets
     contents:
-    - psets/problem-set-1.qmd
+    - psets/problem-set-01.qmd
     - text: '---'
     - rubric.qmd
 format:

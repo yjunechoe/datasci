@@ -4,8 +4,9 @@ subtitle: "Data Science for Studying Language and the Mind"
 author: Katie Schuler
 format: 
     revealjs:
-        theme: default
+        theme: dark
         incremental: true 
+        footer: "[https://kathrynschuler.com/datasci](https://kathrynschuler.com/datasci/)"
 ---
 
 

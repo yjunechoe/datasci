@@ -161,7 +161,42 @@ cat(longmcq(choices))
 
 ## Vectors
 
-What will the following code block return? 
+Suppose we construct a vector with `c(1, "two", 3, 4, 5, 6)` and assign it to `x`. What will the following code block return? 
+
+```r
+typeof(x)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+cat(fitb(c("character"), ignore_ws = TRUE, width = "20"))
+
+```
+
+What is the previous question an example of? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "attribute addition",
+    "explicit coercion",
+    answer = "implicit coercion",
+    "none of the above"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we construct a vector of `rep(1,0 )`. What will the following code block return? 
+
+as.logical(x)
+
+- answers TRUE TRUE; TRUE FALSE; 1 0 1 0 
 
 ```r
 x <- 1:6
@@ -195,12 +230,57 @@ cat(fitb(c(0), ignore_ws = TRUE, width = "20"))
 ```
 
 
+Given the following output from `str(x)`, what will `as.logical(x)` return? 
 
-::: {.callout-warning title="More questions will be released before Thursdays lab"}
+```{r}
+#| echo: false
+x <- c(1, 0, 1, 0)
+str(x)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "an error",
+    answer="TRUE • FALSE • TRUE • FALSE",
+    'FALSE',
+    "FALSE • TRUE • FALSE • TRUE"
+)
+
+cat(longmcq(choices))
+```
+
+Given the following vector, what will `as.double(x)` return? 
+
+```{r}
+x <- c("one", "two", "three")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="an error",
+    "1 • 2 • 3",
+    '2 • 4 • 6',
+    "'one' • 'two' • 'three'"
+)
+
+cat(longmcq(choices))
+```
+
+::: {.callout-warning title="More questions will be released before Thursday's lab"}
 :::
+
+
 <!---
  
-
+THERE ARE FROM BEFORE webexerciser
 
 Suppose we run the following code block. What will `typeof(x)` return? What about `length(x)`? Explain why.
 
