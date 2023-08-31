@@ -348,7 +348,7 @@ x <- c(1, 5, 11) > 10
 choices <- c(
     answer ="TRUE",
     "FALSE",
-    "error: vector is double but requires logical"
+    "Error: vector is double but requires logical"
 )
 
 cat(longmcq(choices))
@@ -374,7 +374,7 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-Suppose we run the following code. What will `x[[2]] return?
+Suppose we run the following code. What will `x[[2]]` return?
 
 ```r
 x <- seq(from = 2, to =8, by=2)
@@ -388,7 +388,7 @@ cat(fitb(c(4), ignore_ws = TRUE, width = "20"))
 ```
 
 
-Suppose we run the following code. What will `m[1, 2] return?
+Suppose we run the following code. What will `m[1, 2]` return?
 
 ```r
 m <- matrix(c(10,20,30,40), nrow=2, ncol=2)

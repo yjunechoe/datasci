@@ -72,6 +72,18 @@ df
 ## Problem 4
 Read the documentation for the [`emo`](https://github.com/hadley/emo) package.  Install and load the package. Then create a character vector including 8 of your favorite emojis by their keyword (see the docs for a list). Finally, use the package's `emo::ji()` function in conjunction with `map_*()` to print all 8 emojis with one line of code. Combine this output with your keyword vector in a tibble.  
 
+## Problem 5 
+
+::: {.callout-warning title="Under Construction"}
+Will be added on 2023-09-03
+:::
+
+## Problem 6
+
+::: {.callout-warning title="Under Construction"}
+Will be added on 2023-09-03
+:::
+
 <!---
  
 ## Problem Y

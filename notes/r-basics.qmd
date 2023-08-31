@@ -42,6 +42,8 @@ For objects:
 - `typeof(x)` - returns object's data type
 - `length(x)` - returns object's length
 - `attributes(x)` - returns list of object's attributes
+- `x` - returns object x
+- `print(x)` - prints object x
 
 For environment: 
 
