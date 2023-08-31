@@ -63,9 +63,9 @@ What is the relationship between R and Google Colab?
 # Define the answer choices
 choices <- c(
     "R is a programming language. Google Colab is a smaller, specific version of R.",
-    answer="R is a programming language. Google Colab is an environment where you can run R",
-    "R and Google Colab are both programming languages",
-    "R is a paid (proprietary) programming language. Google Colab is a free service."
+    answer="R is a programming language. Google Colab is a development environment where you can run R",
+    "R and Google Colab are both programming languages.",
+    "R is a paid (proprietary) programming language. Google Colab is a free service to run R."
 )
 
 cat(longmcq(choices))
@@ -321,7 +321,7 @@ choices <- c(
     "2 • 3 • 5",
     "Error: length mismatch",
     "1 • 3 • 5 • 1",
-    answer = "2 • 3 • 5"
+    answer = "2 • 4 • 6"
 )
 
 cat(longmcq(choices))
