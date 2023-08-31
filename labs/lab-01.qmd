@@ -192,11 +192,7 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-Suppose we construct a vector of `rep(1,0 )`. What will the following code block return? 
-
-as.logical(x)
-
-- answers TRUE TRUE; TRUE FALSE; 1 0 1 0 
+What will the following code block return? 
 
 ```r
 x <- 1:6
@@ -255,7 +251,7 @@ cat(longmcq(choices))
 
 Given the following vector, what will `as.double(x)` return? 
 
-```{r}
+```r
 x <- c("one", "two", "three")
 ```
 
@@ -274,9 +270,43 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-::: {.callout-warning title="More questions will be released before Thursday's lab"}
-:::
+Which of the following code subsets the vector `x <- c("blue", "pink", "red")` to return just the first element?
 
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="x[1]",
+    "x[0]",
+    answer = "x[-c(2, 3)]",
+    'x["blue"]'
+)
+
+cat(longmcq(choices))
+```
+
+What happens if you add a vector of numbers to a single number in the following expression?
+
+```r
+c(1, 3, 5) + 1
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "c(2, 3, 5)",
+    "Error: length mismatch",
+    "c(1, 3, 5, 1)",
+    answer = "c(2, 3, 5)"
+)
+
+cat(longmcq(choices))
+```
 
 <!---
  
