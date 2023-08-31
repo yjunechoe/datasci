@@ -339,16 +339,15 @@ window.onload = function() {
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/1-getting-started-with-r-lab.html" rel="" target="">
+    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+    <a class="nav-link" href="../psets/problem-set-01.html" rel="" target="">
  <span class="menu-text">Problem sets</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/kschuler/datasci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -414,9 +413,9 @@ window.onload = function() {
   <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics"><span class="header-section-number">1</span> Basics</a></li>
   <li><a href="#important-functions" id="toc-important-functions" class="nav-link" data-scroll-target="#important-functions"><span class="header-section-number">2</span> Important functions</a></li>
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3</span> Vectors</a></li>
-  <li><a href="#coercion" id="toc-coercion" class="nav-link" data-scroll-target="#coercion"><span class="header-section-number">4</span> Coercion</a></li>
-  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">5</span> Subsetting</a></li>
-  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations"><span class="header-section-number">6</span> Operations</a></li>
+  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations"><span class="header-section-number">4</span> Operations</a></li>
+  <li><a href="#more-complex-structures" id="toc-more-complex-structures" class="nav-link" data-scroll-target="#more-complex-structures"><span class="header-section-number">5</span> More complex structures</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">6</span> Subsetting</a></li>
   <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions"><span class="header-section-number">7</span> Built-in functions</a></li>
   <li><a href="#programming-in-r" id="toc-programming-in-r" class="nav-link" data-scroll-target="#programming-in-r"><span class="header-section-number">8</span> Programming in R</a></li>
   <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">9</span> Further reading and references</a></li>
@@ -458,16 +457,16 @@ window.onload = function() {
 
 <section id="basics" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="basics"><span class="header-section-number">1</span> Basics</h2>
-<p>Defining some basic concepts:</p>
+<p>We begin by defining some basic concepts:</p>
 <ul>
-<li><strong>Expressions</strong> are combination of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
+<li><strong>Expressions </strong>are combinations of values, variables, operators, and functions that can be evaluated to produce a result. Expressions can be as simple as a single value or more complex involving calculations, comparisons, and function calls. They are the fundamental building blocks of programming.
 <ul>
 <li><code>10</code> - a simple value expression that evaluates to <code>10</code>.</li>
 <li><code>x &lt;- 10</code> - an expression that assigns the value of <code>10</code> to <code>x</code>.</li>
 <li><code>x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code>.</li>
-<li><code>a &lt;- x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code> and assigns the result to the variable <code>a</code>.</li>
+<li><code>a &lt;- x + 10</code> - an expression that adds the value of <code>x</code> to <code>10</code> and assigns the result to the variable <code>a</code></li>
 </ul></li>
-<li><strong>Objects</strong> in R allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, <code>&lt;-</code>. For example, in <code>x &lt;- 10</code>, <code>x</code> is an object assigned to the value 10.</li>
+<li><strong>Ojbects</strong> allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, <code>&lt;-</code>. For example, in <code>x &lt;- 10</code>, <code>x</code> is an object assigned to the value 10.</li>
 <li><strong>Names</strong> that we assign to objects must include only letters, numbers, <code>.</code>, or <code>_</code>. Names must start with a letter (or <code>.</code> if not followed by a number).</li>
 <li><strong>Attributes</strong> allow you to attach arbitrary metadata to an object. For example, adding a <code>dim</code> (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array.</li>
 <li><strong>Functions</strong> (or commands) are reusable pieces of code that take some input, preform some task or computation, and return an output. Many functions are built-in to base R (see below!), others can be part of packages or even defined by you. Functions are objects!</li>
@@ -478,11 +477,11 @@ window.onload = function() {
 </ul>
 <p>Ways to get help when coding in R:</p>
 <ul>
-<li><strong>Read packages docs</strong> - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the <a href="https://dplyr.tidyverse.org/">dplyr package</a>.</li>
+<li><strong>Read package docs</strong> - packages usually come with extensive documentation and examples. Reading the docs is one of the best ways to figure things out. Here is an example from the <a href="https://dplyr.tidyverse.org/">dplyr package</a>.</li>
 <li><strong>Read error messages</strong> - read any error messages you receive while coding — they give clues about what is going wrong!</li>
 <li><strong>Ask R</strong> - Use R’s built-in functions to get help as you code</li>
-<li><strong>Ask on Ed</strong>- ask questions on our class discussion board!</li>
-<li><strong>Ask Google/Stack Overflow</strong> - It is a normal and important skill (not cheating) to google things while coding and learning to code! Use keywords and package names to ensure your solutions are course-relevant.</li>
+<li><strong>Ask on Ed</strong> - ask questions on our class discussion board!</li>
+<li><strong>Ask Google or Stack Overflow</strong> - It is a normal and important skill (not cheating) to google things while coding and learning to code! Use keywords and package names to ensure your solutions are course-relevant.</li>
 <li><strong>Ask ChatGPT</strong> - You can similarly use ChatGPT or other LLMs as a resource. But keep in mind they may provide a solution that is wrong or not relevant to what we are learning in this course.</li>
 </ul>
 </section>
@@ -495,7 +494,7 @@ window.onload = function() {
 <li><code>length(x)</code> - returns object’s length</li>
 <li><code>attributes(x)</code> - returns list of object’s attributes</li>
 </ul>
-<p>for environment:</p>
+<p>For environment:</p>
 <ul>
 <li><code>ls()</code> - list all variables in environment</li>
 <li><code>rm(x)</code> - remove x variable from environment</li>
@@ -535,82 +534,37 @@ window.onload = function() {
 <li><code>complex</code> - complex numbers, where <code>i</code> is the imaginary number (<code>5 + 3i</code>)</li>
 <li><code>raw</code> - stores raw bytes</li>
 </ul>
-<p>Some more complex data structures are <strong>built from atomic vectors</strong> by adding <strong>attributes</strong>:</p>
-<ul>
-<li><code>matrix</code> - a vector with a <code>dim</code> attribute representing 2 dimensions</li>
-<li><code>array</code> - a vector with a <code>dim</code> attribute representing n dimensions</li>
-<li><code>factor</code> - an integer vector with two attributes: <code>class="factor"</code> and <code>levels</code>, which defines the set of allowed values (useful for categorical data)</li>
-<li><code>date-time</code> - a double vector where the value is the number of seconds since Jan 01, 1970 and a <code>tzone</code> attribute representing the time zone</li>
-<li><code>data.frame</code> - a named list of vectors (of equal length) with attributes for <code>names</code> (column names), <code>row.names</code>, and <code>class="data.frame"</code> (used to represent datasets)</li>
-</ul>
 <p>To create atomic vectors:</p>
 <ul>
 <li><code>c(2,4,6)</code> - <code>c()</code> function for combining elements, returns <code>2 4 6</code></li>
 <li><code>2:4</code> - <code>:</code> notation to construct a sequence of integers, returns <code>2 3 4</code></li>
 <li><code>seq(from = 2, to = 6, by=2)</code> - <code>seq()</code> function to create an evenly-spaced sequence, returns <code>2 4 6</code></li>
 </ul>
-<p>To create more complex structures:</p>
+<p>To check an object’s data type:</p>
 <ul>
-<li><code>list(x=c(1,2,3), y=c('a','b'))</code> - create a list</li>
-<li><code>matrix(x, nrow=2, ncol=2)</code> - create a matrix from a vector <code>x</code> with nrow and ncol</li>
-<li><code>array(x, dim=c(2,3,2))</code> - create an array from a vector <code>x</code> with dimensions</li>
-<li><code>factor(x, levels=unique(x))</code> - turn a vector <code>x</code> into a factor</li>
-<li><code>data.frame(x=c(1,2,3), y=c('a','b','c'))</code> - create a data frame</li>
-</ul>
-<p>Missing elements and empty vectors:</p>
+<li><code>typeof(x)</code> - returns the data type of object x</li>
+<li><code>is.*(x)</code> - test if object x is data type, returns <code>TRUE</code> or <code>FALSE</code>
 <ul>
-<li><code>NA</code>- used to represent missing or unknown elements in vectors. Note that <code>NA</code> is contageous: expressions including <code>NA</code> usually return <code>NA</code>. Check for <code>NA</code> values with <code>is.na()</code>.</li>
-<li><code>NULL</code> - used to represent an empty or absent vector of arbitrary type. <code>NULL</code> is its own special type and always has length zero and <code>NULL</code> attributes. Check for <code>NULL</code> values with <code>is.null()</code>.</li>
+<li><code>is.double()</code></li>
+<li><code>is.integer()</code></li>
+<li><code>is.character()</code></li>
+<li><code>is.logical()</code></li>
+</ul></li>
 </ul>
+<p>To change an object to data type (<strong>explicit coercion</strong>):</p>
+<ul>
+<li><code>as.*(x)</code> - coerce object to data type
+<ul>
+<li><code>as.double()</code></li>
+<li><code>as.integer()</code></li>
+<li><code>as.character()</code></li>
+<li><code>as.logical()</code></li>
+</ul></li>
+</ul>
+<p>Note that atomic vectors must contain only elements of the same type. If you try to include elements of different types, R will coerce them into the same type with no warning (<strong>implicit coercion</strong>) according to the heirarchy character &gt; double &gt; integer &gt; logical.</p>
 </section>
-<section id="coercion" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="coercion"><span class="header-section-number">4</span> Coercion</h2>
-<ul>
-<li><code>is.*(x)</code> - test if object is data type (e.g.&nbsp;<code>is.double(x)</code>)</li>
-<li><code>as.*(x)</code> - coerce object to data type (e.g.&nbsp;<code>as.double(x)</code>)</li>
-</ul>
-</section>
-<section id="subsetting" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">5</span> Subsetting</h2>
-<blockquote class="blockquote">
-<p>Subsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R</p>
-</blockquote>
-<p>There are three operators for subsetting objects:</p>
-<ul>
-<li><code>[</code> - <em>subsets</em> (one or more) elements</li>
-<li><code>[[</code> and <code>$</code> - <em>extracts</em> a single element</li>
-</ul>
-<p>There are six ways to <strong>subset multiple elements</strong> from vectors with <code>[</code>:</p>
-<ul>
-<li><code>x[c(1,2)]</code> - positive integers select elements at specified indexes</li>
-<li><code>x[-c(1,2)]</code> - negative integers select all but elements at specified indexes</li>
-<li><code>x[c("name", "name2")]</code> select elements by name, if elements are named</li>
-<li><code>x[]</code> - nothing returns the original object</li>
-<li><code>x[0]</code> - zero returns a zero-length vector</li>
-<li><code>x[c(TRUE, TRUE)]</code> - select elements where corresponding logical value is <code>TRUE</code></li>
-</ul>
-<p>These also apply when selecting multiple elements from <strong>higher dimensional objects</strong> (matrix, array, data frame), but note that:</p>
-<ul>
-<li>indexes for different dimensions are separated by commas <code>[rows, columns, ...]</code></li>
-<li>omitted dimensions return all values along that dimension</li>
-<li>the result is simplified to the lowest possible dimensions by default</li>
-<li>they can also be indexed like a vector (selects columns)</li>
-</ul>
-<p>There are 3 ways to <strong>extract a single element</strong> from any data structure:</p>
-<ul>
-<li><code>[[2]]</code> - a single positive integer (index)</li>
-<li><code>[['name']]</code> - a single string</li>
-<li><code>x$name</code> - the <code>$</code> operator is a useful shorthand for <code>[['name']]</code></li>
-</ul>
-<p>When extracting single elements, note that:</p>
-<ul>
-<li><code>[[</code> is preferred for atomic vectors for clarity (though<code>[</code> also works)</li>
-<li><code>$</code> does partial matching without warning; use <code>options(warnPartialMatchDollar=TRUE)</code></li>
-<li>the behavior for invalid indexes is inconsistent: sometimes you’ll get an error message, and sometimes it will return <code>NULL</code></li>
-</ul>
-</section>
-<section id="operations" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="operations"><span class="header-section-number">6</span> Operations</h2>
+<section id="operations" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="operations"><span class="header-section-number">4</span> Operations</h2>
 <p>Arithmetic operators:</p>
 <ul>
 <li><code>+</code> - add</li>
@@ -646,6 +600,69 @@ window.onload = function() {
 <li><code>x + 100</code> returns <code>c(101, 102, 103)</code></li>
 <li><code>x == 1</code> returns <code>c(TRUE, FALSE, FALSE)</code></li>
 </ul></li>
+</ul>
+</section>
+<section id="more-complex-structures" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="more-complex-structures"><span class="header-section-number">5</span> More complex structures</h2>
+<p>Some more complex data structures are <strong>built from atomic vectors</strong> by adding <strong>attributes</strong>:</p>
+<ul>
+<li><code>matrix</code> - a vector with a <code>dim</code> attribute representing 2 dimensions</li>
+<li><code>array</code> - a vector with a <code>dim</code> attribute representing n dimensions</li>
+<li><code>factor</code> - an integer vector with two attributes: <code>class="factor"</code> and <code>levels</code>, which defines the set of allowed values (useful for categorical data)</li>
+<li><code>date-time</code> - a double vector where the value is the number of seconds since Jan 01, 1970 and a <code>tzone</code> attribute representing the time zone</li>
+<li><code>data.frame</code> - a named list of vectors (of equal length) with attributes for <code>names</code> (column names), <code>row.names</code>, and <code>class="data.frame"</code> (used to represent datasets)</li>
+</ul>
+<p>To create more complex structures:</p>
+<ul>
+<li><code>list(x=c(1,2,3), y=c('a','b'))</code> - create a list</li>
+<li><code>matrix(x, nrow=2, ncol=2)</code> - create a matrix from a vector <code>x</code> with nrow and ncol</li>
+<li><code>array(x, dim=c(2,3,2))</code> - create an array from a vector <code>x</code> with dimensions</li>
+<li><code>factor(x, levels=unique(x))</code> - turn a vector <code>x</code> into a factor</li>
+<li><code>data.frame(x=c(1,2,3), y=c('a','b','c'))</code> - create a data frame</li>
+</ul>
+<p>Missing elements and empty vectors:</p>
+<ul>
+<li><code>NA</code>- used to represent missing or unknown elements in vectors. Note that <code>NA</code> is contageous: expressions including <code>NA</code> usually return <code>NA</code>. Check for <code>NA</code> values with <code>is.na()</code>.</li>
+<li><code>NULL</code> - used to represent an empty or absent vector of arbitrary type. <code>NULL</code> is its own special type and always has length zero and <code>NULL</code> attributes. Check for <code>NULL</code> values with <code>is.null()</code>.</li>
+</ul>
+</section>
+<section id="subsetting" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">6</span> Subsetting</h2>
+<blockquote class="blockquote">
+<p>Subsetting is a natural complement to str(). While str() shows you all the pieces of any object (its structure), subsetting allows you to pull out the pieces that you’re interested in. ~ Hadley Wickham, Advanced R</p>
+</blockquote>
+<p>There are three operators for subsetting objects:</p>
+<ul>
+<li><code>[</code> - <em>subsets</em> (one or more) elements</li>
+<li><code>[[</code> and <code>$</code> - <em>extracts</em> a single element</li>
+</ul>
+<p>There are six ways to <strong>subset multiple elements</strong> from vectors with <code>[</code>:</p>
+<ul>
+<li><code>x[c(1,2)]</code> - positive integers select elements at specified indexes</li>
+<li><code>x[-c(1,2)]</code> - negative integers select all but elements at specified indexes</li>
+<li><code>x[c("name", "name2")]</code> select elements by name, if elements are named</li>
+<li><code>x[]</code> - nothing returns the original object</li>
+<li><code>x[0]</code> - zero returns a zero-length vector</li>
+<li><code>x[c(TRUE, TRUE)]</code> - select elements where corresponding logical value is <code>TRUE</code></li>
+</ul>
+<p>These also apply when selecting multiple elements from <strong>higher dimensional objects</strong> (matrix, array, data frame), but note that:</p>
+<ul>
+<li>indexes for different dimensions are separated by commas <code>[rows, columns, ...]</code></li>
+<li>omitted dimensions return all values along that dimension</li>
+<li>the result is simplified to the lowest possible dimensions by default</li>
+<li>data frames can also be indexed like a vector (selects columns)</li>
+</ul>
+<p>There are 3 ways to <strong>extract a single element</strong> from any data structure:</p>
+<ul>
+<li><code>[[2]]</code> - a single positive integer (index)</li>
+<li><code>[['name']]</code> - a single string</li>
+<li><code>x$name</code> - the <code>$</code> operator is a useful shorthand for <code>[['name']]</code></li>
+</ul>
+<p>When extracting single elements, note that:</p>
+<ul>
+<li><code>[[</code> is preferred for atomic vectors for clarity (though<code>[</code> also works)</li>
+<li><code>$</code> does partial matching without warning; use <code>options(warnPartialMatchDollar=TRUE)</code></li>
+<li>the behavior for invalid indexes is inconsistent: sometimes you’ll get an error message, and sometimes it will return <code>NULL</code></li>
 </ul>
 </section>
 <section id="built-in-functions" class="level2" data-number="7">

@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-09-07">
 
-<title>LING 0700 | PSYC 2314 - Lab 1: Getting started with R</title>
+<title>LING 0700 | PSYC 2314 - Lab 2: Import and visualize data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -304,7 +272,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -334,65 +302,33 @@ window.onload = function() {
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../labs/1-getting-started-with-r-lab.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../psets/problem-set-1.html" rel="" target="">
+    <a class="nav-link" href="../psets/problem-set-01.html" rel="" target="">
  <span class="menu-text">Problem sets</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/kschuler/datasci" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/1-getting-started-with-r-lab.html">Lab 1: Getting started with R</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../labs/1-getting-started-with-r-lab.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lab 1: Getting started with R</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#google-colab" id="toc-google-colab" class="nav-link active" data-scroll-target="#google-colab"><span class="header-section-number">1</span> Google Colab</a></li>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics"><span class="header-section-number">2</span> R Basics</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3</span> Vectors</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: Getting started with R</h1>
+<h1 class="title">Lab 2: Import and visualize data</h1>
 <p class="subtitle lead">Not graded, just practice</p>
 </div>
 
@@ -400,7 +336,19 @@ window.onload = function() {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 7, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -408,152 +356,34 @@ window.onload = function() {
 
 </header>
 
-<p>To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab.</p>
-<section id="google-colab" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">1</span> Google Colab</h2>
-<p>True or false? We start a new R notebook in Google Colab with <code>File &gt; New notebook</code></p>
-<div id="radio_ASKRARZICN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ASKRARZICN" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ASKRARZICN" value="answer"> <span>False</span></label>
-</div>
-<p>For problem sets, how will you submit your colab notebook for grading?</p>
-<div id="radio_EIYJQECUIG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EIYJQECUIG" value="answer"> <span><code>File &gt; Download &gt; Download .ipynb</code>, then upload to Gradescope</span></label><label><input type="radio" autocomplete="off" name="radio_EIYJQECUIG" value=""> <span><code>File &gt; Download &gt; Download .ipynb</code>, then upload to Canvas</span></label><label><input type="radio" autocomplete="off" name="radio_EIYJQECUIG" value=""> <span><code>File &gt; Download &gt; Download .py</code>, then upload to Gradescope</span></label><label><input type="radio" autocomplete="off" name="radio_EIYJQECUIG" value=""> <span><code>File &gt; Download &gt; Download .py</code>, then upload to Canvas</span></label>
-</div>
-<p>What version of R is Google Colab running? Hint: use <code>sessionInfo()</code>.</p>
-<p><input class="webex-solveme nospaces" size="20" data-answer="[&quot;4.3.1&quot;]"></p>
-</section>
-<section id="r-basics" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="r-basics"><span class="header-section-number">2</span> R Basics</h2>
-<p>Which of the following are expressions?</p>
-<div id="radio_HHMYFCWOIP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_HHMYFCWOIP" value="answer"> <span>10</span></label><label><input type="radio" autocomplete="off" name="radio_HHMYFCWOIP" value="answer"> <span>5 + 10</span></label><label><input type="radio" autocomplete="off" name="radio_HHMYFCWOIP" value="answer"> <span>x &lt;- 5 + 10</span></label><label><input type="radio" autocomplete="off" name="radio_HHMYFCWOIP" value="answer"> <span>x &lt;- y + 10</span></label><label><input type="radio" autocomplete="off" name="radio_HHMYFCWOIP" value="answer"> <span>mean(x)</span></label>
-</div>
-<p>Which of the following are valid variable names in R?</p>
-<div id="radio_ZUTZMERAGB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZUTZMERAGB" value="answer"> <span>childAge</span></label><label><input type="radio" autocomplete="off" name="radio_ZUTZMERAGB" value="answer"> <span>response_time</span></label><label><input type="radio" autocomplete="off" name="radio_ZUTZMERAGB" value=""> <span>1stPlaceWinner</span></label><label><input type="radio" autocomplete="off" name="radio_ZUTZMERAGB" value=""> <span>2fast2furious</span></label><label><input type="radio" autocomplete="off" name="radio_ZUTZMERAGB" value=""> <span>pi</span></label>
-</div>
-<p>Suppose we open a new colab notebook and run the following code block. What will be returned?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="sc">+</span> <span class="dv">3</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="radio_CGDUMUBKBA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CGDUMUBKBA" value=""> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_CGDUMUBKBA" value=""> <span>x=3 • y=3</span></label><label><input type="radio" autocomplete="off" name="radio_CGDUMUBKBA" value="answer"> <span>'x' • 'y' </span></label><label><input type="radio" autocomplete="off" name="radio_CGDUMUBKBA" value=""> <span>mean(c(1,3,5)) • median(c(1,3,5))</span></label>
-</div>
-<p>Which of the following will load the <code>emo</code> package into the current environment?</p>
-<div id="radio_LFTUSAPOXN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LFTUSAPOXN" value=""> <span>install.packages('emo')</span></label><label><input type="radio" autocomplete="off" name="radio_LFTUSAPOXN" value="answer"> <span>library(emo)</span></label><label><input type="radio" autocomplete="off" name="radio_LFTUSAPOXN" value=""> <span>data(emo)</span></label><label><input type="radio" autocomplete="off" name="radio_LFTUSAPOXN" value=""> <span>attributes(emo)</span></label>
-</div>
-<p>Which of the following occur in the code block below?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the mean of x and y</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">c</span>(x,y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="radio_MVSKCHFFYB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MVSKCHFFYB" value=""> <span>a message</span></label><label><input type="radio" autocomplete="off" name="radio_MVSKCHFFYB" value="answer"> <span>a function</span></label><label><input type="radio" autocomplete="off" name="radio_MVSKCHFFYB" value="answer"> <span>a comment</span></label><label><input type="radio" autocomplete="off" name="radio_MVSKCHFFYB" value="answer"> <span>an expression</span></label>
-</div>
-</section>
-<section id="vectors" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3</span> Vectors</h2>
-<p>Suppose we construct a vector with <code>c(1, "two", 3, 4, 5, 6)</code> and assign it to <code>x</code>. What will the following code block return?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><input class="webex-solveme nospaces" size="20" data-answer="[&quot;character&quot;]"></p>
-<p>What is the previous question an example of?</p>
-<div id="radio_ZAKIPBKJWC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZAKIPBKJWC" value=""> <span>attribute addition</span></label><label><input type="radio" autocomplete="off" name="radio_ZAKIPBKJWC" value=""> <span>explicit coercion</span></label><label><input type="radio" autocomplete="off" name="radio_ZAKIPBKJWC" value="answer"> <span>implicit coercion</span></label><label><input type="radio" autocomplete="off" name="radio_ZAKIPBKJWC" value=""> <span>none of the above</span></label>
-</div>
-<p>Suppose we construct a vector of <code>rep(1,0 )</code>. What will the following code block return?</p>
-<p>as.logical(x)</p>
-<ul>
-<li>answers TRUE TRUE; TRUE FALSE; 1 0 1 0</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span>(x, <span class="at">ncols=</span><span class="dv">2</span>, <span class="at">nrows=</span><span class="dv">2</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><input class="webex-solveme nospaces" size="20" data-answer="[&quot;double&quot;]"></p>
-<p>What will the following code block return?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><input class="webex-solveme nospaces" size="20" data-answer="[&quot;0&quot;]"></p>
-<div class="callout callout-style-simple callout-warning callout-titled" title="More questions will be released before Thursday's lab">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-More questions will be released before Thursday’s lab
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <!---
+ Practice quiz questions.
+
+
+1. Suppose we run the following code block. What will `is.data.frame(y)` return? 
+
+    ```r
+    y <- tibble(x=1:2, y=1)`
+    ```
+
+1. Suppose `print(x)` returns the output below to answer a-c that follow. 
+
+    ```
+
+    # output
+    
+    ```
+    a. What will `map_dbl(x, sum)` return? 
+    b. What will `x$a` return? 
+    c. What will `x[[5]]` return? 
+
+1. Suppose `x[[5]]` returns `NULL`, what will `is_tibble(x)` return? 
+
+1. Can `readr` import a google sheet with the `read_csv()` function? 
  
-
-
-Suppose we run the following code block. What will `typeof(x)` return? What about `length(x)`? Explain why.
-
-    ```r
-    x <- data.frame(x=c(1,2,3), y=c("a","b","c"))
-    length(x)
-    ```
-
-1. Suppose we run the following code. What will `y` return? What about `typeof(y)`?
-
-    ```r
-    x <- c(2,4,6)
-    y <- x * 2   
-    ```
-
-## Coercion
-
-What will the following code block return? 
-
-```r
-x <- c(1, 'two', 3, 4, 5, 6)
-typeof(x)
-```
-
-
-## Subsetting
-1. Suppose we run the following code. What will each of operations return (a - e)? 
-
-    ```r
-    x <- seq(2:8, by=2)
-    ```
-    a. `x[c(2,4)]`
-    b. `x[-c(2,4)]`
-    c. `x[]`
-    d. `x[[2]]`
-    e. `x[2]`
-
-1. Suppose `m` is a matrix created with `matrix(c(1,2,3,4), nrow=2, ncol=2)`. What will each of the following operations return?
-    - `m[c(1), ]`
-    - `m[c(2), c(1, 2)]`
-    - `m[]`
-    - `m[[2]]`
-
-1. Suppose `df` is a data frame created with `data.frame(x=c(1,2,3), y=c("a","b","c"))`. What will each of the following operations return?
-    - `df[c(1,2)]`
-    - `df[c(1,2), c(2)]`
-    - `df[['x']]`
-    - `df[x]`
-    - `df[[2]]`
-
-1. Suppose `df` is a dataframe with column names `ageChild`, `ageParent`, and `dateAdded`. What will `df$age` return?  Explain why.
-
-Suppose we create a vector including every letter in the alphabet and assign it to `x`. What will the following code return? 
-
-```r
-y <- as.logical(x)
-y[[1]]
-```
-NA or <NA> 
-
-## Programming in R
-1. Explain in one sentence the difference between a `for` loop and a `while` loop?  
 --->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
