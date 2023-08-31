@@ -25,14 +25,14 @@
     "href": "labs/lab-01.html#vectors",
     "title": "Lab 1: Getting started with R",
     "section": "3 Vectors",
-    "text": "3 Vectors\nSuppose we construct a vector with c(1, \"two\", 3, 4, 5, 6) and assign it to x. What will the following code block return?\ntypeof(x)\n\nWhat is the previous question an example of?\n\n attribute addition explicit coercion implicit coercion none of the above\n\nWhat will the following code block return?\nx &lt;- 1:6\ny &lt;- matrix(x, ncols=2, nrows=2)\ntypeof(y)\n\nWhat will the following code block return?\nx &lt;- c()\nlength(x)\n\nGiven the following output from str(x), what will as.logical(x) return?\n\n\n num [1:4] 1 0 1 0\n\n\n\n an error TRUE • FALSE • TRUE • FALSE FALSE FALSE • TRUE • FALSE • TRUE\n\nGiven the following vector, what will as.double(x) return?\nx &lt;- c(\"one\", \"two\", \"three\")\n\n an error 1 • 2 • 3 2 • 4 • 6 'one' • 'two' • 'three'\n\nWhat happens if you add a vector of numbers to a single number in the following expression?\nc(1, 3, 5) + 1\n\n 2 • 3 • 5 Error: length mismatch 1 • 3 • 5 • 1 2 • 4 • 6\n\nWhat happens if you multiply a vector times another vector?\nc(1, 3, 5) * c(10, 100, 1000)\n\n 10 • 300 • 5000 Error: length mismatch 10 • 30 • 50 • 100 • 300 • 500 • 1000 • 3000 • 5000 a 2 x 3 matrix Error: cannot multiply vectors\n\nSuppose we run the following code. What will any(x) return?\nx &lt;- c(1, 5, 11) &gt; 10\n\n TRUE FALSE error: vector is double but requires logical"
+    "text": "3 Vectors\nSuppose we construct a vector with c(1, \"two\", 3, 4, 5, 6) and assign it to x. What will the following code block return?\ntypeof(x)\n\nWhat is the previous question an example of?\n\n attribute addition explicit coercion implicit coercion none of the above\n\nWhat will the following code block return?\nx &lt;- 1:6\ny &lt;- matrix(x, ncols=2, nrows=2)\ntypeof(y)\n\nWhat will the following code block return?\nx &lt;- c()\nlength(x)\n\nGiven the following output from str(x), what will as.logical(x) return?\n\n\n num [1:4] 1 0 1 0\n\n\n\n an error TRUE • FALSE • TRUE • FALSE FALSE FALSE • TRUE • FALSE • TRUE\n\nGiven the following vector, what will as.double(x) return?\nx &lt;- c(\"one\", \"two\", \"three\")\n\n an error 1 • 2 • 3 2 • 4 • 6 'one' • 'two' • 'three'\n\nWhat happens if you add a vector of numbers to a single number in the following expression?\nc(1, 3, 5) + 1\n\n 2 • 3 • 5 Error: length mismatch 1 • 3 • 5 • 1 2 • 4 • 6\n\nWhat happens if you multiply a vector times another vector?\nc(1, 3, 5) * c(10, 100, 1000)\n\n 10 • 300 • 5000 Error: length mismatch 10 • 30 • 50 • 100 • 300 • 500 • 1000 • 3000 • 5000 a 2 x 3 matrix Error: cannot multiply vectors\n\nSuppose we run the following code. What will any(x) return?\nx &lt;- c(1, 5, 11) &gt; 10\n\n TRUE FALSE Error: vector is double but requires logical"
   },
   {
     "objectID": "labs/lab-01.html#subsetting",
     "href": "labs/lab-01.html#subsetting",
     "title": "Lab 1: Getting started with R",
     "section": "4 Subsetting",
-    "text": "4 Subsetting\nWhich of the following code subsets the vector x &lt;- c(\"blue\", \"pink\", \"red\") to return just the first element?\n\n x[1] x[[1]] x[0] x[-c(2, 3)] x[“blue”]\n\nSuppose we run the following code. What will `x[[2]] return?\nx &lt;- seq(from = 2, to =8, by=2)\n\nSuppose we run the following code. What will `m[1, 2] return?\nm &lt;- matrix(c(10,20,30,40), nrow=2, ncol=2)"
+    "text": "4 Subsetting\nWhich of the following code subsets the vector x &lt;- c(\"blue\", \"pink\", \"red\") to return just the first element?\n\n x[1] x[[1]] x[0] x[-c(2, 3)] x[“blue”]\n\nSuppose we run the following code. What will x[[2]] return?\nx &lt;- seq(from = 2, to =8, by=2)\n\nSuppose we run the following code. What will m[1, 2] return?\nm &lt;- matrix(c(10,20,30,40), nrow=2, ncol=2)"
   },
   {
     "objectID": "psets/problem-set-01.html",
@@ -77,6 +77,20 @@
     "text": "Problem 4\nRead the documentation for the emo package. Install and load the package. Then create a character vector including 8 of your favorite emojis by their keyword (see the docs for a list). Finally, use the package’s emo::ji() function in conjunction with map_*() to print all 8 emojis with one line of code. Combine this output with your keyword vector in a tibble."
   },
   {
+    "objectID": "psets/problem-set-01.html#problem-5",
+    "href": "psets/problem-set-01.html#problem-5",
+    "title": "Problem set 1",
+    "section": "Problem 5",
+    "text": "Problem 5\n\n\n\n\n\n\nUnder Construction\n\n\n\nWill be added on 2023-09-03"
+  },
+  {
+    "objectID": "psets/problem-set-01.html#problem-6",
+    "href": "psets/problem-set-01.html#problem-6",
+    "title": "Problem set 1",
+    "section": "Problem 6",
+    "text": "Problem 6\n\n\n\n\n\n\nUnder Construction\n\n\n\nWill be added on 2023-09-03"
+  },
+  {
     "objectID": "webexercises.html",
     "href": "webexercises.html",
     "title": "Webexercises",
@@ -88,7 +102,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 64 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n if you repeated the process many times, 95% of intervals calculated in this way contain the true mean 95% of the data fall within this range there is a 95% probability that the true mean lies within this range"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 36 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -655,7 +669,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.00   3.00 0.249      2.83      3.17"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  2.99   2.98 0.254      2.81      3.17"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -1026,7 +1040,7 @@
     "href": "notes/r-basics.html#important-functions",
     "title": "R basics",
     "section": "2 Important functions",
-    "text": "2 Important functions\nFor objects:\n\nstr(x) - returns summary of object’s structure\ntypeof(x) - returns object’s data type\nlength(x) - returns object’s length\nattributes(x) - returns list of object’s attributes\n\nFor environment:\n\nls() - list all variables in environment\nrm(x) - remove x variable from environment\nrm(list = ls()) - remove all variables from environment\n\nFor packages:\n\ninstall.packages() to install packages\nlibrary() to load the package into your current R session.\ndata() to load data from package into environment\nsessionInfo() - version information for current R session and packages\n\nFor help:\n\n?mean - get help with a function\nhelp('mean') - search help files for word or phrase\nhelp(package='tidyverse') - find help for a package"
+    "text": "2 Important functions\nFor objects:\n\nstr(x) - returns summary of object’s structure\ntypeof(x) - returns object’s data type\nlength(x) - returns object’s length\nattributes(x) - returns list of object’s attributes\nx - returns object x\nprint(x) - prints object x\n\nFor environment:\n\nls() - list all variables in environment\nrm(x) - remove x variable from environment\nrm(list = ls()) - remove all variables from environment\n\nFor packages:\n\ninstall.packages() to install packages\nlibrary() to load the package into your current R session.\ndata() to load data from package into environment\nsessionInfo() - version information for current R session and packages\n\nFor help:\n\n?mean - get help with a function\nhelp('mean') - search help files for word or phrase\nhelp(package='tidyverse') - find help for a package"
   },
   {
     "objectID": "notes/r-basics.html#vectors",
