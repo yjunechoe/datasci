@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-08-29">
+
+<title>LING 0700 | PSYC 2314 - Hello, world!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notes/r-basics.html" rel="next">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">LING 0700 | PSYC 2314</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../notes/hello-world.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Lecture notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
+ <span class="menu-text">Labs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../psets/problem-set-01.html" rel="" target="">
+ <span class="menu-text">Problem sets</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/hello-world.html">Hello, world!</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hello-world.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Hello, world!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data importing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-data-science" id="toc-what-is-data-science" class="nav-link active" data-scroll-target="#what-is-data-science"><span class="header-section-number">1</span> What is data science?</a></li>
+  <li><a href="#data-science-workflow" id="toc-data-science-workflow" class="nav-link" data-scroll-target="#data-science-workflow"><span class="header-section-number">2</span> Data science workflow</a></li>
+  <li><a href="#overview-of-the-course" id="toc-overview-of-the-course" class="nav-link" data-scroll-target="#overview-of-the-course"><span class="header-section-number">3</span> Overview of the course</a></li>
+  <li><a href="#syllabus-briefly" id="toc-syllabus-briefly" class="nav-link" data-scroll-target="#syllabus-briefly"><span class="header-section-number">4</span> Syllabus, briefly</a></li>
+  <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r"><span class="header-section-number">5</span> Why R?</a></li>
+  <li><a href="#google-colab" id="toc-google-colab" class="nav-link" data-scroll-target="#google-colab"><span class="header-section-number">6</span> Google Colab</a></li>
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hello, world!</h1>
+<p class="subtitle lead">Welcome to Datasci for Lang &amp; Mind</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 29, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="what-is-data-science" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-is-data-science"><span class="header-section-number">1</span> What is data science?</h2>
+<blockquote class="blockquote">
+<p>Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.</p>
+<p>– <em>Computational and Inferential Thinking: The Foundations of Data Science</em></p>
+</blockquote>
+<p>Data science is about making decisions based on incomplete information. This concept is not new – brains (especially human brains!) love doing this. To illustrate, what do you see in the following image?</p>
+<div id="fig-visualillusion" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="../include/figures/visual-illusion.png" class="img-fluid figure-img" style="width:25.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: from Kok &amp; de Lange (2014)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
+</figure>
+</div>
+<p>Did you see a gray triangle on top of three circles? Most people do! But it turns out that your brain is filling in the gaps, inferring the presence of a triangle from the partial information available in the black circles <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>While the underlying concept is not new, the computational tools we use are <em>relatively</em> new. And we have a lot more data!</p>
+<div id="fig-dataneversleeps" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="../include/figures/data-never-sleeps.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: from https://www.domo.com/data-never-sleeps.</figcaption>
+</figure>
+</div>
+</section>
+<section id="data-science-workflow" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-science-workflow"><span class="header-section-number">2</span> Data science workflow</h2>
+<p>The folks who wrote <a href="https://r4ds.hadley.nz/">R for Data Science</a> proposed the following data science workflow:</p>
+<div id="fig-datascience" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: from R for Data Science</figcaption>
+</figure>
+</div>
+<p>Let’s unpack what these mean briefly:</p>
+<ol type="1">
+<li><p><strong>Import:</strong> gather data from a variety of sources, which can include structured data (like databases and spreadsheets) and unstructured data (like text, images, and videos).</p></li>
+<li><p><strong>Tidy and Transform:</strong> The raw data we import is often messy. Data scientists clean and preprocess the data, which involves removing errors, handling missing values, and transforming data into a suitable format for analysis.</p></li>
+<li><p><strong>Visualize (exploratory data analysis)</strong> visualize and summarize data to identify patterns, form hypotheses, select appropriate models, and guide further analysis.</p></li>
+<li><p><strong>Model:</strong> Using statistical methods, machine learning algorithms, and other computational techniques, data scientists build models to understand underlying patterns in the data. Models are tested using validation techniques to ensure their accuracy and reliability. Then data scientists use them to draw meaningful conclusions, like predictions about the future or inferences about populuation.</p></li>
+<li><p><strong>Communicate:</strong> Finally, a crucial part of data science is communicating findings clearly and effectively, whatever your purpose (academic, industry, or the public!)</p></li>
+<li><p><strong>Program</strong>: Surrounding all these is programming, since the computational tools are what make these possible!</p></li>
+</ol>
+<p>Data science has applications in many fields far beyond language and the mind. It allows us to make data-driven decisions, solve complex problems, and uncover hidden insights that might not be apparent through other methods.</p>
+</section>
+<section id="overview-of-the-course" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="overview-of-the-course"><span class="header-section-number">3</span> Overview of the course</h2>
+<p>We will spend the first few weeks getting comfortable <strong>programming in R</strong>, including some useful skills for data science:</p>
+<ul>
+<li>R basics</li>
+<li>Data importing</li>
+<li>Data visualization</li>
+<li>Data wrangling</li>
+</ul>
+<p>Then, we will spend the next several weeks building a <strong>foundation in basic statistics and model building</strong>:</p>
+<ul>
+<li>Probability distributions</li>
+<li>Sampling variability</li>
+<li>Hypothesis testing</li>
+<li>Model specification</li>
+<li>Model fitting</li>
+<li>Model accuracy</li>
+<li>Model reliability</li>
+</ul>
+<p>Finally we will cover a selection of <strong>more advanced topics</strong> that are often applied in language and mind fields, with a focus on basic understanding:</p>
+<ul>
+<li>Classification</li>
+<li>Feature engineering (preprocessing)</li>
+<li>Inference for regression</li>
+<li>Mixed-effect models</li>
+</ul>
+</section>
+<section id="syllabus-briefly" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="syllabus-briefly"><span class="header-section-number">4</span> Syllabus, briefly</h2>
+<p>Each week will include two lectures and a lab:</p>
+<ul>
+<li><strong>Lectures</strong> are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!</li>
+<li><strong>Lab</strong> is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule.</li>
+</ul>
+<p>There are 10 graded assessments:</p>
+<ul>
+<li><strong>6 Problem sets</strong> in which you will be asked to apply your newly aquired R programming skills.</li>
+<li><strong>4 Quizzes</strong> in which you will be tested on your understanding of lecture concepts.</li>
+</ul>
+<p>There are a few policies to take note of:</p>
+<ul>
+<li>Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)</li>
+<li>You may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students).</li>
+<li>You may submit any missed quiz or problem set by the end of the semester for half-credit (50%).</li>
+</ul>
+</section>
+<section id="why-r" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="why-r"><span class="header-section-number">5</span> Why R?</h2>
+<p>With many programming languages available for data science (e.g.&nbsp;R, Python, Julia, MATLAB), why use R?</p>
+<ul>
+<li>Built for stats, specifically</li>
+<li>Makes nice visualizations</li>
+<li>Lots of people are doing it, especially in academia</li>
+<li>Easier for beginners to understand</li>
+<li>Free and open source (though so are Python and Julia, MATLAB costs $)</li>
+</ul>
+<p>If you are interested, here is a <a href="https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/">math professor’s take</a> on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, <strong>they are all great</strong> and the technical skills and conceptual knowledge you gain in this course will transfer to other languages.</p>
+</section>
+<section id="google-colab" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="google-colab"><span class="header-section-number">6</span> Google Colab</h2>
+<p>There are many ways to program with R. Some popular options include:</p>
+<ul>
+<li><a href="https://posit.co/products/open-source/rstudio/">R Studio</a></li>
+<li><a href="https://jupyter.org/">Jupyter</a></li>
+<li><a href="https://code.visualstudio.com/docs/languages/r">VS Code</a></li>
+<li>and even simply the <a href="http://mercury.webster.edu/aleshunas/R_learning_infrastructure/Using%20the%20R%20command%20line.html">command line/terminal</a></li>
+</ul>
+<p><strong>Google Colab</strong> is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and <a href="https://colab.research.google.com/github/ageron/julia_notebooks/blob/master/Julia_Colab_Notebook_Template.ipynb">Julia</a>, too!)</p>
+<p>New R notebook:</p>
+<ul>
+<li><a href="https://colab.research.google.com/#create=true&amp;language=r">colab (r kernel)</a> - use this link to start a new R notebook</li>
+<li><code>File &gt; New notebook</code> error, Python! <code>name 'x' is not defined</code></li>
+</ul>
+<p>Cell types:</p>
+<ul>
+<li><code>+ Code</code> - write and execute code</li>
+<li><code>+ Text</code> - write text blocks in <a href="https://www.markdowntutorial.com/">markdown</a></li>
+</ul>
+<p>Left sidebar:</p>
+<ul>
+<li><code>Table of contents</code> - outline from text headings</li>
+<li><code>Find and replace</code> - find and/or replace</li>
+<li><code>Files</code> - upload files to cloud session</li>
+</ul>
+<p>Frequently used menu options:</p>
+<ul>
+<li><code>File &gt; Locate in Drive</code> - where in your Google Drive?</li>
+<li><code>File &gt; Save</code> - saves</li>
+<li><code>File &gt; Revision history</code> - history of changes you made</li>
+<li><code>File &gt; Download &gt; Download .ipynb</code> - used to submit assignments!</li>
+<li><code>File &gt; Print</code> - prints</li>
+<li><code>Runtime &gt; Run all</code> - run all cells</li>
+<li><code>Runtime &gt; Run before</code> - run all cells before current active cell</li>
+<li><code>Runtime &gt; Restart and run all</code> - restart runtime, then run all</li>
+</ul>
+<p>Frequently used keyboard shortcuts:</p>
+<ul>
+<li><code>Cmd/Ctrl+S</code> - save</li>
+<li><code>Cmd/Ctrl+Enter</code> - run focused cell</li>
+<li><code>Cmd/Ctrl+Shift+A</code> - select all cells</li>
+<li><code>Cmd/Ctrl+/</code> - comment/uncomment selection</li>
+<li><code>Cmd/Ctrl+]</code> - increase indent</li>
+<li><code>Cmd/Ctrl+[</code> - decrease indent</li>
+</ul>
+</section>
+<section id="further-reading-and-references" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</h2>
+<p>Recommended reading:</p>
+<ul>
+<li><a href="https://inferentialthinking.com/chapters/01/what-is-data-science.html">Ch 1 Data Science</a> from Computational and Inferential Thinking: The Foundations of Data Science (just skip the bits about using Python, since we are using R)</li>
+<li><a href="https://r4ds.had.co.nz/introduction.html">Ch 1 Introduction</a> in R for Data Science</li>
+<li><a href="https://www.tmwr.org/software-modeling">Ch 1 Software for Modeling</a> in Tidy Modeling with R</li>
+</ul>
+<p>Other references:</p>
+<ul>
+<li><a href="https://tobydriscoll.net/blog/matlab-vs.-julia-vs.-python/">Matlab vs.&nbsp;Julia vs.&nbsp;Python</a> from blog post by Toby Driscoll</li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Kok, P., &amp; de Lange, F. P. (2014). Shape perception simultaneously up-and downregulates neural activity in the primary visual cortex. Current Biology, 24(13), 1531-1535.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://neurosciencenews.com/neuroimaging-visual-processing-fmri-1150/<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notes/r-basics.html" class="pagination-link">
+        <span class="nav-page-text">R basics</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Made with <a href="https://quarto.org/">Quarto</a> © 2023 Katie Schuler</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

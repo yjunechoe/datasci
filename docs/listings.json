@@ -1,0 +1,26 @@
+[
+  {
+    "listing": "/drafts.html",
+    "items": [
+      "/notes/hello-world.html",
+      "/notes/r-basics.html",
+      "/notes/data-importing.html",
+      "/notes/data-visualization.html",
+      "/notes/data-wrangling.html",
+      "/notes/probability-distributions.html",
+      "/notes/sampling-variability.html",
+      "/notes/hypothesis-testing.html",
+      "/notes/model-specification.html",
+      "/notes/model-fitting.html",
+      "/notes/model-accuracy.html",
+      "/notes/model-reliability.html",
+      "/notes/classification.html",
+      "/notes/feature-engineering.html",
+      "/notes/inference.html",
+      "/notes/mixed-effects-models.html",
+      "/labs/lab-02.html",
+      "/labs/lab-01.html",
+      "/psets/problem-set-01.html"
+    ]
+  }
+]

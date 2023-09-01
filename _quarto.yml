@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 callout-appearance: simple
 website:
   title: LING 0700 | PSYC 2314
