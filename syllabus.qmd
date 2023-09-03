@@ -29,10 +29,12 @@ Hands-on practice, quiz prep, and problem set work guided by TAs.
 ## Office hours
 The linguistics department is on the 3rd floor of the C-wing at [3401 Walnut street](https://facilities.upenn.edu/sites/default/files/pennaccess/PA0416-Walnut3401.pdf), between Franklin's Table and Modern Eye. 
 
-* Katie: Tue 12:30-1:30p in 314C ling dept
-* June: Thu 12:30-1:30p in 325C ling dept
-* Avinash: TBD
-* Ravi: TBD
+|         | Day | Time        | Location                                                                         |
+|---------|-----|-------------|----------------------------------------------------------------------------------|
+| Katie   | Tue | 12:30-1:30  | 314C Ling Dept.                                                                  |
+| Avinash | Tue | 3:30-4:30   | [Zoom](https://upenn.zoom.us/j/97242897802?pwd=bnpMdlZXSFNZbUlaOG0vanBTL0dyQT09) |
+| June    | Thu | 12:30-1:30  | 325C Ling Dept.                                                                  |
+| Ravi    | Fri | 11:30-12:30 | [Zoom](https://upenn.zoom.us/j/3807592207)                                       |
 
 ## Quizzes
 There are 4 quizzes, taken in class on Tuesdays.  Missed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and a [Course Action Notice](https://srfs.upenn.edu/student-records/course-action-notices) are required). Instead, you will be invited to submit a missed quiz for half credit (50%).
