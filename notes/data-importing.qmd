@@ -40,7 +40,7 @@ Why is tidy data easier to work with?
 
 ## Functional programming with purrr
 
-> purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read.  ~ purrr docs
+> purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read.  ~ [purrr docs](https://purrr.tidyverse.org/)
 
 Let's illustrate the joy of the tidyverse with one of its packages: `purrr`. The docs say that the best place to start is the family of `map()` functions, so we'll do that.
 
@@ -65,6 +65,7 @@ map_dbl(df, mean)
 ```
 
 Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the `map()` function or use it in a `for` loop. But the `map` family allows us go up a layer of abstraction. We can use `pmap()` when we want to apply a function element-wise to corresponding items in multiple lists. 
+
 
 ## Modern data frames with tibble
 
@@ -110,7 +111,7 @@ To test if something is a `tibble` or a `data.frame`:
 
 > The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs
 
-Often we want to read in some data we've generated or collected outside of R. The most basic and common format is **plain-text rectangular files**. We will "read" these into R with readr's `read_*()` functions.
+Often we want to read in some data we've generated or collected outside of R. The most basic and common format is plain-text **rectangular** files. We will "read" these into R with readr's `read_*()` functions.
 
 The `read_*()` functions have two important arguments: 
 
@@ -171,8 +172,9 @@ Some useful additional arguments:
 
 Sometimes weird things happen. The most common problems are: 
 
-- **missing values are not `NA`** - your dataset has missing values, but they are not coded as `NA` as R expects. Solve by adding `na` argument (e.g. `na=c("N/A")`)
-- **column names have spaces** - R cannot include spaces in variable names, so it adds backticks (e.g. `` `brain size` ``); we can just refer to them with backticks, but if that gets annoying, see `janitor::clean_names()` to fix them!
+- **column contains unexpected values** - your dataset has a column that you expected to be `logical` or `double`, but there is a typo somewhere, so R has coerced the column into `character`. Solve by specifying the column type `col_double()` and then using the `problems()` function to see where R failed.
+- **missing values are not `NA`** - your dataset has missing values, but they were not coded as `NA` as R expects. Solve by adding an `na` argument (e.g. `na=c("N/A")`)
+- **column names have spaces** - your dataset has column names that include spaces, breaking R's naming rules. In these cases, R adds backticks (e.g. `` `brain size` ``); we can use the `rename()` function to fix them. If we have a lot to rename and that gets annoying, see `janitor::clean_names()`.
 
 
 Reading more complex file types requires functions outside the tidyverse:
@@ -189,5 +191,5 @@ Recommended further reading:
 
 - [Data tidying](https://r4ds.hadley.nz/data-tidy) in R for Data Science
 - [Tibbles](https://r4ds.had.co.nz/tibbles.html) in R for Data Science
-- [Data import](https://r4ds.hadley.nz/data-import.html) in R for Data Science: 
+- [Data import](https://r4ds.hadley.nz/data-import.html) in R for Data Science
 - [readr cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html?_gl=1*1fxlvya*_ga*MTI4NTg4NDIzMy4xNjkyODg0OTA4*_ga_2C0WZ1JHG0*MTY5Mjg4NDkwNy4xLjAuMTY5Mjg4NDkwNy4wLjAuMA..)

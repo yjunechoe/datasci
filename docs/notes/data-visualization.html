@@ -440,6 +440,118 @@ Under Construction
 </section>
 <section id="data-visualization-with-ggplot2" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</h2>
+<!---
+ 
+Prerequisite packages. ggplot part of tidyverse package. Already installed on Google Colab's R; just use library.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# load the tidyverse and palmer penguins libraries
+library(tidyverse)
+```
+
+::: {.cell-output .cell-output-stderr}
+```
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+```
+:::
+
+```{.r .cell-code}
+library(palmerpenguins)
+```
+:::
+
+
+
+We will also be using palmerpenguins package; show here how to use glimpse() to get a look or head() -- can also show on Tue 
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+glimpse(penguins)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+Rows: 344
+Columns: 8
+$ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
+$ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
+$ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
+$ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
+$ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
+$ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
+$ sex               <fct> male, female, female, NA, female, male, female, male…
+$ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
+```
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+head(penguins)
+```
+
+::: {.cell-output .cell-output-stdout}
+```
+# A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex <fct>, year <int>
+```
+:::
+:::
+
+
+plot we want to replicate: 
+
+here 
+
+Start with data layer; 
+
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(data = penguins) 
+```
+
+::: {.cell-output-display}
+![](data-visualization_files/figure-html/unnamed-chunk-4-1.png){width=672}
+:::
+:::
+
+
+
+sample basic plot: 
+
+
+::: {.cell}
+
+:::
+
+ 
+--->
 <p>three main parts:</p>
 <ul>
 <li><strong>data</strong>- your (tidy) data</li>
@@ -454,9 +566,11 @@ Under Construction
 <li>coordinates</li>
 <li><strong>themes</strong> - overall visuals</li>
 </ul>
+<p>special notes for Google Colab: - setting size</p>
 </section>
 <section id="aesthetic-mapping" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</h2>
+<p>Practical example: - adding type of penguins</p>
 <p><strong>aesthetic mappings</strong> (aes), make data visible</p>
 <ul>
 <li><code>x</code>, <code>y</code>: variable on x and y axis</li>
@@ -471,10 +585,13 @@ Under Construction
 <section id="geometric-objects" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">4</span> Geometric objects</h2>
 <p><strong>geometric objects (geoms)</strong> - type of plot</p>
+<ul>
+<li>show adding geom_smooth</li>
+</ul>
 </section>
 <section id="additional-layers" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="additional-layers"><span class="header-section-number">5</span> Additional layers</h2>
-<p>We’ll cover some in the class:</p>
+<p>We’ll cover some in the class: - adding labels - adding theme - adding fill</p>
 <ul>
 <li><strong>facets</strong>
 <ul>
@@ -512,11 +629,21 @@ Under Construction
 </ul>
 <section id="further-reading-and-references" class="level3">
 <h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
-<p>Useful resources: - ggplot cheat sheet - <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></p>
-<p>Recommended further reading: - https://moderndive.com/2-viz.html</p>
+<p>Useful resources:</p>
+<ul>
+<li>ggplot cheat sheet</li>
+<li><a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></li>
+</ul>
+<p>Recommended further reading:</p>
+<ul>
+<li>https://moderndive.com/2-viz.html</li>
+<li><a href="https://r4ds.hadley.nz/layers">Layers</a> in R for Data Science</li>
+</ul>
 <p>Other references:</p>
-<p>https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html</p>
-<p>https://r4ds.hadley.nz/layers</p>
+<ul>
+<li>https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html</li>
+<li>https://r4ds.hadley.nz/layers</li>
+</ul>
 
 
 </section>

@@ -1,0 +1,18 @@
+---
+title:  "Problem set 2"
+subtitle: "due Sunday, October 01, 2023 at 11:59pm"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-warning title="Under Construction"}
+:::
+
+- Brain size data; recreate the figure; involves a little wrangling to get the data; also mutate species so we have H. sapien and non H. sapien. 
+

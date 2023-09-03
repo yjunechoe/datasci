@@ -111,6 +111,7 @@ What if the data does not meet the assumptions of the Gaussian distribution? One
 ## Further reading and references
 
 - [Appendix A: Statistical Background](https://moderndive.com/A-appendixA.html) in Modern Dive
+- [Basics of descriptive statistics](https://dlf.uzh.ch/openbooks/statisticsforlinguists/chapter/basics-of-descriptive-statistics/) in Statistics for linguists
 - [Ch 11: Modeling Randomness](https://dtkaplan.github.io/SM2-bookdown/modeling-randomness.html) in Statistical Modeling
 
 https://r4ds.hadley.nz/data-visualize#visualizing-distributions

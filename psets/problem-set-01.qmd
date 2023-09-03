@@ -11,8 +11,10 @@ format:
 
 ---
 
-::: {.callout-warning title="Under Construction"}
-Additional problems will be added; you can begin work on problems 0-4.
+::: {.callout-tip}
+## Estimated time: 6 hours
+
+Allocate about **1 hour per problem**, though some will take longer than others. You may need more time if programming is completely new to you, or less if you have some experience already.
 :::
 
 Instructions
@@ -29,7 +31,7 @@ Instructions
 
 ## Problem 0
 
-Create a new colab R notebook. Add a text block that includes the title "Problem set 1", your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading.
+Create a new colab R notebook. Add a text block that includes the title "Problem set 1", your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading. Finally, load the `tidyverse` package under your heading for problem 0.
 
 
 ## Problem 1
@@ -74,25 +76,21 @@ Read the documentation for the [`emo`](https://github.com/hadley/emo) package.  
 
 ## Problem 5 
 
-::: {.callout-warning title="Under Construction"}
-Will be added on 2023-09-03
-:::
+Suppose you extend your experiment: you decide to record the number of words your quiet roommate says to you every day for the entire semester. Import the file below from the given url, ensuring that `week` is an integer vector, `words spoken` is a double, and all column names are valid variable names in R. Take care to use the approaches we discussed in lecture to identify and handle any issues. Use `glimpse` to show the resulting tibble. Finally, use these data to recreate (as faithfully as possible) the figure below. 
+
+```r
+"https://kathrynschuler.com/datasets/quiet_roommate.csv"
+```
+
+![](/include/targets/pset-1-target-5.png){#target-5 fig-align="left" width=50%}
 
 ## Problem 6
 
-::: {.callout-warning title="Under Construction"}
-Will be added on 2023-09-03
-:::
+Problem 6 makes use of the `english` dataset in the [`languageR`](https://cran.r-project.org/web/packages/languageR/languageR.pdf) package. From the documentation:
 
-<!---
- 
-## Problem Y
-Import this data and solve some common issues. ( take out the tidyverse parts from preamble) Plot a histogram of each variable.
+> This data set gives mean visual lexical decision latencies and word naming latencies to 2284
+monomorphemic English nouns and verbs, averaged for old and young subjects, with various predictor variables.
 
-- norm has weird NA
-- exponent fine 
-- Rename a variable with back rocks 
+Install and load the `languageR` library. Convert the `english` dataset to a tibble, then use `glimpse` to show the result. Finally, use the `RTlexdec`, `Familiarity`, and `AgeSubjects` columns to recreate (as faithfully as possible) the figure below. 
 
-## Problem Z
-Recreate this figure from the data you imported in last P.   
---->
+![](/include/targets/pset-1-target-6.png){#target-6 fig-align="left" width=60%}

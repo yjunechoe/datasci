@@ -2,3 +2,6 @@
 /_site/
 /_drafts/
 .Rproj.user
+.Rprofile
+datasci.Rproj
+webexercises.qmd

@@ -418,17 +418,17 @@ window.onload = function() {
 
 </header>
 
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Under Construction
+Estimated time: 6 hours
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Additional problems will be added; you can begin work on problems 0-4.</p>
+<p>Allocate about <strong>1 hour per problem</strong>, though some will take longer than others. You may need more time if programming is completely new to you, or less if you have some experience already.</p>
 </div>
 </div>
 <dl>
@@ -446,7 +446,7 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># https://stackoverflow.com/questions/69091812/is-everything-a-vector-in-r</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="problem-0" class="level2">
 <h2 class="anchored" data-anchor-id="problem-0">Problem 0</h2>
-<p>Create a new colab R notebook. Add a text block that includes the title “Problem set 1”, your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading.</p>
+<p>Create a new colab R notebook. Add a text block that includes the title “Problem set 1”, your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading. Finally, load the <code>tidyverse</code> package under your heading for problem 0.</p>
 </section>
 <section id="problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
@@ -484,47 +484,26 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 </section>
 <section id="problem-5" class="level2">
 <h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Will be added on 2023-09-03</p>
-</div>
+<p>Suppose you extend your experiment: you decide to record the number of words your quiet roommate says to you every day for the entire semester. Import the file below from the given url, ensuring that <code>week</code> is an integer vector, <code>words spoken</code> is a double, and all column names are valid variable names in R. Take care to use the approaches we discussed in lecture to identify and handle any issues. Use <code>glimpse</code> to show the resulting tibble. Finally, use these data to recreate (as faithfully as possible) the figure below.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="st">"https://kathrynschuler.com/datasets/quiet_roommate.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="target-5" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="../include/targets/pset-1-target-5.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
 </div>
 </section>
 <section id="problem-6" class="level2">
 <h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Problem 6 makes use of the <code>english</code> dataset in the <a href="https://cran.r-project.org/web/packages/languageR/languageR.pdf"><code>languageR</code></a> package. From the documentation:</p>
+<blockquote class="blockquote">
+<p>This data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various predictor variables.</p>
+</blockquote>
+<p>Install and load the <code>languageR</code> library. Convert the <code>english</code> dataset to a tibble, then use <code>glimpse</code> to show the result. Finally, use the <code>RTlexdec</code>, <code>Familiarity</code>, and <code>AgeSubjects</code> columns to recreate (as faithfully as possible) the figure below.</p>
+<div id="target-6" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="../include/targets/pset-1-target-6.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Will be added on 2023-09-03</p>
-</div>
-</div>
-<!---
- 
-## Problem Y
-Import this data and solve some common issues. ( take out the tidyverse parts from preamble) Plot a histogram of each variable.
-
-- norm has weird NA
-- exponent fine 
-- Rename a variable with back rocks 
-
-## Problem Z
-Recreate this figure from the data you imported in last P.   
---->
 
 
 </section>

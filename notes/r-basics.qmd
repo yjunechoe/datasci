@@ -16,7 +16,7 @@ We begin by defining some basic concepts:
     - `x <- 10` - an expression that assigns the value of `10` to `x`.
     - `x + 10` - an expression that adds the value of `x` to `10`.
     - `a <- x + 10` - an expression that adds the value of `x` to `10` and assigns the result to the variable `a`
-- **Ojbects** allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, `<-`. For example, in `x <- 10`, `x` is an object assigned to the value 10.
+- **Objects** allow us to store various types of data, such as numbers, text, vectors, matrices; and more complex structures like functions and data frames. Objects are created by assigning values to variable names with the assignment operator, `<-`. For example, in `x <- 10`, `x` is an object assigned to the value 10.
 - **Names** that we assign to objects must include only letters, numbers, `.`, or `_`. Names must start with a letter (or `.` if not followed by a number).
 - **Attributes** allow you to attach arbitrary metadata to an object. For example, adding a `dim` (dimension) attribute to a vector allows it to behave like a matrix or n dimensional array. 
 - **Functions** (or commands) are reusable pieces of code that take some input, preform some task or computation, and return an output. Many functions are built-in to base R (see below!), others can be part of packages or even defined by you. Functions are objects!

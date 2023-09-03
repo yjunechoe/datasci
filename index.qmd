@@ -15,7 +15,7 @@ Week | Day | Topic | Resources |
 | 1 | 08-31 | [R-basics](/notes/r-basics.qmd)  | [slides](/slides/r-basics.qmd), [demo](https://colab.research.google.com/drive/1WjgmOFe5yg6ylrjZd2aoqX1W_rrCXTz9?usp=sharing), [lab](labs/lab-01.qmd)| 
 | 2 | 09-05 |  Data importing  | | 
 | 2 | 09-07 |   Data visualization |  |
-| 2 | 09-10 |   Problem set 1 | |
+| 2 | 09-10 |   [Problem set 1](/psets/problem-set-01.qmd) | |
 |  3 |09-12 |   Data wrangling | |
 |  3 | 09-14 |  Probability distributions | | 
 |  4 | 09-19 |  Quiz 1 | |

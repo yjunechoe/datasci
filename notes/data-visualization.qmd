@@ -14,6 +14,47 @@ author:
 > Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science
 
 ## Data visualization with ggplot2
+<!---
+ 
+Prerequisite packages. ggplot part of tidyverse package. Already installed on Google Colab's R; just use library.
+
+```{r}
+# load the tidyverse and palmer penguins libraries
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+We will also be using palmerpenguins package; show here how to use glimpse() to get a look or head() -- can also show on Tue 
+
+
+```{r}
+glimpse(penguins)
+```
+
+```{r}
+head(penguins)
+```
+
+plot we want to replicate: 
+
+here 
+
+Start with data layer; 
+
+```{r}
+ggplot(data = penguins) 
+
+```
+
+
+sample basic plot: 
+
+```{r}
+
+```
+ 
+--->
 
 three main parts: 
 
@@ -29,8 +70,17 @@ other layers:
 - coordinates
 - **themes** - overall visuals
 
+special notes for Google Colab: 
+- setting size 
+
+
 
 ## Aesthetic mapping
+
+Practical example: 
+- adding type of penguins 
+
+
 
 
 **aesthetic mappings** (aes), make data visible
@@ -45,12 +95,19 @@ other layers:
 
 ## Geometric objects
 
+
 **geometric objects (geoms)** - type of plot
+
+- show adding geom_smooth 
+
 
 
 ## Additional layers
 
 We'll cover some in the class: 
+- adding labels 
+- adding theme
+- adding fill 
 
 - **facets**
     - `facet_grid(.~var1)`
@@ -80,16 +137,18 @@ Helper functions:
 ### Further reading and references
 
 Useful resources:
+
 - ggplot cheat sheet
 - [introduction to palmerpenguins](https://allisonhorst.github.io/palmerpenguins/articles/intro.html) 
 
 Recommended further reading: 
+
 - https://moderndive.com/2-viz.html
+- [Layers](https://r4ds.hadley.nz/layers) in R for Data Science
 
 
 Other references: 
 
-https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html
-
-https://r4ds.hadley.nz/layers
+- https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html
+- https://r4ds.hadley.nz/layers
 

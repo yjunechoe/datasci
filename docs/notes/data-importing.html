@@ -488,7 +488,7 @@ window.onload = function() {
 <section id="functional-programming-with-purrr" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="functional-programming-with-purrr"><span class="header-section-number">3</span> Functional programming with purrr</h2>
 <blockquote class="blockquote">
-<p>purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read. ~ purrr docs</p>
+<p>purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read. ~ <a href="https://purrr.tidyverse.org/">purrr docs</a></p>
 </blockquote>
 <p>Let’s illustrate the joy of the tidyverse with one of its packages: <code>purrr</code>. The docs say that the best place to start is the family of <code>map()</code> functions, so we’ll do that.</p>
 <p>The <code>map()</code> functions:</p>
@@ -551,7 +551,7 @@ window.onload = function() {
 <blockquote class="blockquote">
 <p>The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs</p>
 </blockquote>
-<p>Often we want to read in some data we’ve generated or collected outside of R. The most basic and common format is <strong>plain-text rectangular files</strong>. We will “read” these into R with readr’s <code>read_*()</code> functions.</p>
+<p>Often we want to read in some data we’ve generated or collected outside of R. The most basic and common format is plain-text <strong>rectangular</strong> files. We will “read” these into R with readr’s <code>read_*()</code> functions.</p>
 <p>The <code>read_*()</code> functions have two important arguments:</p>
 <ul>
 <li><strong>file path</strong> - the path to the file (that reader will try to parse)</li>
@@ -607,8 +607,9 @@ window.onload = function() {
 </ul>
 <p>Sometimes weird things happen. The most common problems are:</p>
 <ul>
-<li><strong>missing values are not <code>NA</code></strong> - your dataset has missing values, but they are not coded as <code>NA</code> as R expects. Solve by adding <code>na</code> argument (e.g.&nbsp;<code>na=c("N/A")</code>)</li>
-<li><strong>column names have spaces</strong> - R cannot include spaces in variable names, so it adds backticks (e.g.&nbsp;<code>`brain size`</code>); we can just refer to them with backticks, but if that gets annoying, see <code>janitor::clean_names()</code> to fix them!</li>
+<li><strong>column contains unexpected values</strong> - your dataset has a column that you expected to be <code>logical</code> or <code>double</code>, but there is a typo somewhere, so R has coerced the column into <code>character</code>. Solve by specifying the column type <code>col_double()</code> and then using the <code>problems()</code> function to see where R failed.</li>
+<li><strong>missing values are not <code>NA</code></strong> - your dataset has missing values, but they were not coded as <code>NA</code> as R expects. Solve by adding an <code>na</code> argument (e.g.&nbsp;<code>na=c("N/A")</code>)</li>
+<li><strong>column names have spaces</strong> - your dataset has column names that include spaces, breaking R’s naming rules. In these cases, R adds backticks (e.g.&nbsp;<code>`brain size`</code>); we can use the <code>rename()</code> function to fix them. If we have a lot to rename and that gets annoying, see <code>janitor::clean_names()</code>.</li>
 </ul>
 <p>Reading more complex file types requires functions outside the tidyverse:</p>
 <ul>
@@ -624,7 +625,7 @@ window.onload = function() {
 <ul>
 <li><a href="https://r4ds.hadley.nz/data-tidy">Data tidying</a> in R for Data Science</li>
 <li><a href="https://r4ds.had.co.nz/tibbles.html">Tibbles</a> in R for Data Science</li>
-<li><a href="https://r4ds.hadley.nz/data-import.html">Data import</a> in R for Data Science:</li>
+<li><a href="https://r4ds.hadley.nz/data-import.html">Data import</a> in R for Data Science</li>
 <li><a href="https://rstudio.github.io/cheatsheets/html/data-import.html?_gl=1*1fxlvya*_ga*MTI4NTg4NDIzMy4xNjkyODg0OTA4*_ga_2C0WZ1JHG0*MTY5Mjg4NDkwNy4xLjAuMTY5Mjg4NDkwNy4wLjAuMA..">readr cheatsheet</a></li>
 </ul>
 
