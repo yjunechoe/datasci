@@ -483,6 +483,7 @@ window.onload = function() {
 
 </header>
 
+<div class="cell">
 <button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-1">Loading
   webR...</button>
 <div id="webr-editor-1"></div>
@@ -502,8 +503,7 @@ window.onload = function() {
   let editor;
   require(['vs/editor/editor.main'], function () {
     editor = monaco.editor.create(editorDiv, {
-      value: `#| echo: false
-webr::global_prompt_install()
+      value: `webr::global_prompt_install()
 webr::install(c("dplyr", "readr"))`,
       language: 'r',
       theme: 'vs-light',
@@ -644,6 +644,7 @@ webr::install(c("dplyr", "readr"))`,
     executeCode(editor.getValue());
   };
 </script>
+</div>
 <section id="webr-chunk" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="webr-chunk"><span class="header-section-number">1</span> WebR chunk</h2>
 <button class="btn btn-default btn-webr" disabled="" type="button" id="webr-run-button-2">Loading

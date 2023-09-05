@@ -15,8 +15,7 @@ webr:
   service-worker-url: "../../datasci/"
 ---
 
-```{webr-r}
-#| echo: false
+```{webr}
 webr::global_prompt_install()
 webr::install(c("dplyr", "readr"))
 ```
