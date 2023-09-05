@@ -13,22 +13,23 @@ webr:
   show-startup-message: false
   show-header-message: false
   service-worker-url: "../../datasci/"
-  packages: ["dplyr"]
 ---
 
 ```{webr-r}
-sessionInfo()
-```
-
-```{webr-r}
-installed.packages()
+#| echo: false
+webr::global_prompt_install()
+webr::install(c("dplyr", "readr"))
 ```
 
 ## WebR chunk
 
 ```{webr-r}
-x <- mtcars %>%
-  select(1:4)
+library(dplyr)
+library(readr)
+```
+
+```{webr-r}
+x <- mtcars %>% select(1:4)
 x[1:5]
 ```
 
