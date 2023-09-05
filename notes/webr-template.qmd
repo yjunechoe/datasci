@@ -16,6 +16,10 @@ webr:
   packages: ["dplyr"]
 ---
 
+```{webr-r}
+sessionInfo()
+```
+
 ## WebR chunk
 
 ```{webr-r}
