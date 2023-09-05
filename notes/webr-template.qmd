@@ -13,13 +13,8 @@ webr:
   show-startup-message: false
   show-header-message: false
   service-worker-url: "../../datasci/"
+  packages: ["dplyr"]
 ---
-
-## Install packages for WebR
-
-```{webr-r}
-webr::install("dplyr")
-```
 
 ## WebR chunk
 
