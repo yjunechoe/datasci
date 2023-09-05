@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,8 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script>
@@ -415,7 +414,8 @@ window.onload = function() {
   <li><a href="#functional-programming-with-purrr" id="toc-functional-programming-with-purrr" class="nav-link" data-scroll-target="#functional-programming-with-purrr"><span class="header-section-number">3</span> Functional programming with purrr</a></li>
   <li><a href="#modern-data-frames-with-tibble" id="toc-modern-data-frames-with-tibble" class="nav-link" data-scroll-target="#modern-data-frames-with-tibble"><span class="header-section-number">4</span> Modern data frames with tibble</a></li>
   <li><a href="#reading-data-with-readr" id="toc-reading-data-with-readr" class="nav-link" data-scroll-target="#reading-data-with-readr"><span class="header-section-number">5</span> Reading data with readr</a></li>
-  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">6</span> Further reading and references</a></li>
+  <li><a href="#writing-data" id="toc-writing-data" class="nav-link" data-scroll-target="#writing-data"><span class="header-section-number">6</span> Writing data</a></li>
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</a></li>
   </ul>
 </nav>
     </div>
@@ -508,7 +508,6 @@ window.onload = function() {
 </ul>
 <p>To illustrate, suppose we have a data frame <code>df</code> with 3 columns and we want to compute the mean of each column. We could solve this with copy-and-paste (run <code>mean()</code> 3 different times) or try to use a <code>for</code> loop, but <code>map()</code> can do this with just one line:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(df, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the <code>map()</code> function or use it in a <code>for</code> loop. But the <code>map</code> family allows us go up a layer of abstraction. We can use <code>pmap()</code> when we want to apply a function element-wise to corresponding items in multiple lists.</p>
 </section>
 <section id="modern-data-frames-with-tibble" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="modern-data-frames-with-tibble"><span class="header-section-number">4</span> Modern data frames with tibble</h2>
@@ -522,7 +521,7 @@ window.onload = function() {
 <li>only recycles vectors of length 1</li>
 <li>never creates row names</li>
 </ul>
-<p>You can read more in <a href="https://tibble.tidyverse.org/articles/tibble.html">vignette(“tibble”)</a> if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that <code>data.frame</code> and <code>tibble</code> sometimes behave differently. The behavior of <code>tibble</code> makes more sense for modern data science, so we should us it instead!</p>
+<p>You can read more in the <a href="https://tibble.tidyverse.org/articles/tibble.html">tibble vignette</a> if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that <code>data.frame</code> and <code>tibble</code> sometimes behave differently. The behavior of <code>tibble</code> makes more sense for modern data science, so we should us it instead!</p>
 <p>Create a <code>tibble</code> with one of the following:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) coerce an existing object with</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(x)</span>
@@ -550,13 +549,14 @@ window.onload = function() {
 <section id="reading-data-with-readr" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="reading-data-with-readr"><span class="header-section-number">5</span> Reading data with readr</h2>
 <blockquote class="blockquote">
-<p>The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs</p>
+<p>The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results.</p>
+<p><a href="https://readr.tidyverse.org/">readr docs</a></p>
 </blockquote>
 <p>Often we want to read in some data we’ve generated or collected outside of R. The most basic and common format is plain-text <strong>rectangular</strong> files. We will “read” these into R with readr’s <code>read_*()</code> functions.</p>
 <p>The <code>read_*()</code> functions have two important arguments:</p>
 <ul>
-<li><strong>file path</strong> - the path to the file (that reader will try to parse)</li>
-<li><strong>column specification</strong> - a description of how each column should be converted from a character vector to a specific data type (<code>col_types</code>)</li>
+<li><code>path</code> - the path to the file (that reader will try to parse)</li>
+<li><code>col_types</code> - <strong>column specification</strong>, a description of how each column should be converted from a character vector to a specific data type</li>
 </ul>
 <p>There are 7 supported file types, each with their own <code>read_*()</code> function:</p>
 <ul>
@@ -620,8 +620,13 @@ window.onload = function() {
 <li><strong>json data</strong> with <code>jsonlite</code> - see <a href="https://r4ds.hadley.nz/rectangling">Hierarchical data</a> in R for Data Science</li>
 </ul>
 </section>
-<section id="further-reading-and-references" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">6</span> Further reading and references</h2>
+<section id="writing-data" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="writing-data"><span class="header-section-number">6</span> Writing data</h2>
+<p>We can also write to a csv file with:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(our_tibble, <span class="st">"name_of_file.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="further-reading-and-references" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</h2>
 <p>Recommended further reading:</p>
 <ul>
 <li><a href="https://r4ds.hadley.nz/data-tidy">Data tidying</a> in R for Data Science</li>

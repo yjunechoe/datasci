@@ -64,8 +64,6 @@ To illustrate, suppose we have a data frame `df` with 3 columns and we want to c
 map_dbl(df, mean)
 ```
 
-Now imagine we have 5 more data frames and we want to compute the mean of each of their columns, too. Again, we could copy and paste the `map()` function or use it in a `for` loop. But the `map` family allows us go up a layer of abstraction. We can use `pmap()` when we want to apply a function element-wise to corresponding items in multiple lists. 
-
 
 ## Modern data frames with tibble
 
@@ -78,7 +76,7 @@ Tibbles do less than data frames, in a good way:
 - only recycles vectors of length 1
 - never creates row names 
 
-You can read more in [vignette("tibble")](https://tibble.tidyverse.org/articles/tibble.html) if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that `data.frame` and `tibble` sometimes behave differently. The behavior of `tibble` makes more sense for modern data science, so we should us it instead!
+You can read more in the [tibble vignette](https://tibble.tidyverse.org/articles/tibble.html) if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that `data.frame` and `tibble` sometimes behave differently. The behavior of `tibble` makes more sense for modern data science, so we should us it instead!
 
 Create a `tibble` with one of the following:  
 
@@ -109,14 +107,16 @@ To test if something is a `tibble` or a `data.frame`:
 
 ## Reading data with readr
 
-> The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results. ~ readr docs
+> The goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results.
+> 
+> [readr docs](https://readr.tidyverse.org/)
 
 Often we want to read in some data we've generated or collected outside of R. The most basic and common format is plain-text **rectangular** files. We will "read" these into R with readr's `read_*()` functions.
 
 The `read_*()` functions have two important arguments: 
 
-- **file path** - the path to the file (that reader will try to parse)
-- **column specification** - a description of how each column should be converted from a character vector to a specific data type (`col_types`)
+- `path` - the path to the file (that reader will try to parse)
+- `col_types` - **column specification**, a description of how each column should be converted from a character vector to a specific data type
 
 There are 7 supported file types, each with their own `read_*()` function:
 
@@ -184,6 +184,14 @@ Reading more complex file types requires functions outside the tidyverse:
 - **databases** with `DBI` - see [Databases](https://r4ds.hadley.nz/databases) in R for Data Science
 - **json data** with `jsonlite` - see [Hierarchical data](https://r4ds.hadley.nz/rectangling) in R for Data Science
 
+## Writing data 
+
+We can also write to a csv file with:
+
+```r
+write_csv(our_tibble, "name_of_file.csv")
+```
+
 
 ## Further reading and references
 
@@ -193,3 +201,5 @@ Recommended further reading:
 - [Tibbles](https://r4ds.had.co.nz/tibbles.html) in R for Data Science
 - [Data import](https://r4ds.hadley.nz/data-import.html) in R for Data Science
 - [readr cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html?_gl=1*1fxlvya*_ga*MTI4NTg4NDIzMy4xNjkyODg0OTA4*_ga_2C0WZ1JHG0*MTY5Mjg4NDkwNy4xLjAuMTY5Mjg4NDkwNy4wLjAuMA..)
+
+

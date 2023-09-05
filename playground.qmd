@@ -1,0 +1,45 @@
+---
+title: "Playground"
+author: 
+    - Katie Schuler
+date: 11/07/2023
+
+---
+
+playing around with some stuff and things
+
+```{r}
+# load tidyverse
+library(tidyverse)
+```
+
+```{r}
+# make a dataframe 
+df <- data.frame(
+  x = 1:10,
+  y = 11:20,
+  z = 21:30
+)
+
+df2 <- data.frame(
+    x = 31:40,
+    y = 41:50,
+    z = 51:60
+)
+
+df3 <- data.frame(
+    x = 61:70,
+    y = 71:80,
+    z = 81:90
+)
+
+dfs <- list(df, df2, df3)
+```
+
+```{r}
+map_dbl(df, mean)
+```
+
+```{r}
+pmap_dbl(dfs, map_dbl(., mean))
+```s
