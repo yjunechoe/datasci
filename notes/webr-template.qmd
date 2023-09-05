@@ -20,6 +20,10 @@ webr:
 sessionInfo()
 ```
 
+```{webr-r}
+installed.packages()
+```
+
 ## WebR chunk
 
 ```{webr-r}
