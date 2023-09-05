@@ -1229,14 +1229,14 @@
     "href": "notes/webr-template.html",
     "title": "WebR template",
     "section": "",
-    "text": "Loading\n  webR...\n\n\n  \n\n\n\nLoading\n  webR..."
+    "text": "Loading\n  webR..."
   },
   {
     "objectID": "notes/webr-template.html#webr-chunk",
     "href": "notes/webr-template.html#webr-chunk",
     "title": "WebR template",
-    "section": "",
-    "text": "Loading\n  webR...\n\n\n  \n\n\n\nLoading\n  webR..."
+    "section": "2 WebR chunk",
+    "text": "2 WebR chunk\nLoading\n  webR...\n\n\n  \n\n\n\nLoading\n  webR..."
   },
   {
     "objectID": "psets/problem-set-01.html",
@@ -1503,5 +1503,12 @@
     "title": "Syllabus",
     "section": "Resources",
     "text": "Resources\nIn addition to the course website, we will use the following:\n\ngoogle colab (r kernel) - for computing\ncanvas - for posting grades\ngradescope - for submitting problem sets\ned discussion - for announcements and questions\n\nPlease consider using these Penn resources this semester:\n\nWeingarten Center for academic support and tutoring.\nWellness at Penn for health and wellbeing."
+  },
+  {
+    "objectID": "notes/webr-template.html#install-packages-for-webr",
+    "href": "notes/webr-template.html#install-packages-for-webr",
+    "title": "WebR template",
+    "section": "",
+    "text": "Loading\n  webR..."
   }
 ]
