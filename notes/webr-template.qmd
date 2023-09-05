@@ -13,26 +13,22 @@ webr:
   show-startup-message: false
   show-header-message: false
   service-worker-url: "../../datasci/"
+  packages: ['dplyr', 'purrr']
 ---
-
-```{webr}
-webr::global_prompt_install()
-webr::install(c("dplyr", "readr"))
-```
 
 ## WebR chunk
 
 ```{webr-r}
 library(dplyr)
-library(readr)
+library(purrr)
 ```
 
 ```{webr-r}
 x <- mtcars %>% select(1:4)
-x[1:5]
+x[1:5,]
 ```
 
 ```{webr}
-x[1:10,]
+map(x, mean)
 ```
 
