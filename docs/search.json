@@ -1,103 +1,5 @@
 [
   {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 1: Getting started with R",
-    "section": "",
-    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab."
-  },
-  {
-    "objectID": "labs/lab-01.html#google-colab",
-    "href": "labs/lab-01.html#google-colab",
-    "title": "Lab 1: Getting started with R",
-    "section": "1 Google Colab",
-    "text": "1 Google Colab\nTrue or false? We start a new R notebook in Google Colab with File &gt; New notebook\n\n True False\n\nFor problem sets, how will you submit your colab notebook for grading?\n\n File &gt; Download &gt; Download .ipynb, then upload to Gradescope File &gt; Download &gt; Download .ipynb, then upload to Canvas File &gt; Download &gt; Download .py, then upload to Gradescope File &gt; Download &gt; Download .py, then upload to Canvas\n\nWhat version of R is Google Colab running? Hint: use sessionInfo().\n\nWhat is the relationship between R and Google Colab?\n\n R is a programming language. Google Colab is a smaller, specific version of R. R is a programming language. Google Colab is a development environment where you can run R R and Google Colab are both programming languages. R is a paid (proprietary) programming language. Google Colab is a free service to run R."
-  },
-  {
-    "objectID": "labs/lab-01.html#r-basics",
-    "href": "labs/lab-01.html#r-basics",
-    "title": "Lab 1: Getting started with R",
-    "section": "2 R Basics",
-    "text": "2 R Basics\nWhich of the following are expressions?\n\n 10 5 + 10 x &lt;- 5 + 10 x &lt;- y + 10 mean(x)\n\nWhich of the following are valid variable names in R?\n\n childAge response_time 1stPlaceWinner 2fast2furious pi\n\nSuppose we open a new colab notebook and run the following code block. What will be returned?\nx &lt;- 1 + 2\ny &lt;- 0 + 3\nls()\n\n 3 x=3 • y=3 'x' • 'y'  mean(c(1,3,5)) • median(c(1,3,5))\n\nWhich of the following will load the emo package into the current environment?\n\n install.packages('emo') library(emo) data(emo) attributes(emo)\n\nWhich of the following occur in the code block below?\n# compute the mean of x and y\nmean(c(x,y))\n\n a message a function a comment an expression"
-  },
-  {
-    "objectID": "labs/lab-01.html#vectors",
-    "href": "labs/lab-01.html#vectors",
-    "title": "Lab 1: Getting started with R",
-    "section": "3 Vectors",
-    "text": "3 Vectors\nSuppose we construct a vector with c(1, \"two\", 3, 4, 5, 6) and assign it to x. What will the following code block return?\ntypeof(x)\n\nWhat is the previous question an example of?\n\n attribute addition explicit coercion implicit coercion none of the above\n\nWhat will the following code block return?\nx &lt;- 1:4\ny &lt;- matrix(x, ncol=2, nrow=2)\ntypeof(y)\n\nWhat will the following code block return?\nx &lt;- c()\nlength(x)\n\nGiven the following output from str(x), what will as.logical(x) return?\n\n\n num [1:4] 1 0 1 0\n\n\n\n an error TRUE • FALSE • TRUE • FALSE FALSE FALSE • TRUE • FALSE • TRUE\n\nGiven the following vector, what will as.double(x) return?\nx &lt;- c(\"one\", \"two\", \"three\")\n\n an error 1 • 2 • 3 2 • 4 • 6 'one' • 'two' • 'three'\n\nWhat happens if you add a vector of numbers to a single number in the following expression?\nc(1, 3, 5) + 1\n\n 2 • 3 • 5 Error: length mismatch 1 • 3 • 5 • 1 2 • 4 • 6\n\nWhat happens if you multiply a vector times another vector?\nc(1, 3, 5) * c(10, 100, 1000)\n\n 10 • 300 • 5000 Error: length mismatch 10 • 30 • 50 • 100 • 300 • 500 • 1000 • 3000 • 5000 a 2 x 3 matrix Error: cannot multiply vectors\n\nSuppose we run the following code. What will any(x) return?\nx &lt;- c(1, 5, 11) &gt; 10\n\n TRUE FALSE Error: vector is double but requires logical"
-  },
-  {
-    "objectID": "labs/lab-01.html#subsetting",
-    "href": "labs/lab-01.html#subsetting",
-    "title": "Lab 1: Getting started with R",
-    "section": "4 Subsetting",
-    "text": "4 Subsetting\nWhich of the following code subsets the vector x &lt;- c(\"blue\", \"pink\", \"red\") to return just the first element?\n\n x[1] x[[1]] x[0] x[-c(2, 3)] x[“blue”]\n\nSuppose we run the following code. What will x[[2]] return?\nx &lt;- seq(from = 2, to =8, by=2)\n\nSuppose we run the following code. What will m[1, 2] return?\nm &lt;- matrix(c(10,20,30,40), nrow=2, ncol=2)"
-  },
-  {
-    "objectID": "psets/problem-set-01.html",
-    "href": "psets/problem-set-01.html",
-    "title": "Problem set 1",
-    "section": "",
-    "text": "Estimated time: 6 hours\n\n\n\nAllocate about 1 hour per problem, though some will take longer than others. You may need more time if programming is completely new to you, or less if you have some experience already."
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-0",
-    "href": "psets/problem-set-01.html#problem-0",
-    "title": "Problem set 1",
-    "section": "Problem 0",
-    "text": "Problem 0\nCreate a new colab R notebook. Add a text block that includes the title “Problem set 1”, your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading. Finally, load the tidyverse package under your heading for problem 0."
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-1",
-    "href": "psets/problem-set-01.html#problem-1",
-    "title": "Problem set 1",
-    "section": "Problem 1",
-    "text": "Problem 1\nSuppose you record how many words your quiet roommate says to you each day for a week. Convert the vector given below from strings to doubles using coercion and store it as words_spoken. Use R’s built-in functions to compute the total number of words your roommate said that week, the average number of words spoken per day, and the maximum number of words spoken on a single day. Store the results in a tibble. Perform a comparison operation on the words_spoken vector to determine whether each day’s words were above the average. Finally, use subsetting to extract the days where the number of words were in the single digits.\nwords_spoken_stringy &lt;- c(\"5\", \"3\", \"20\",\" 0\", \"4\", \"35\", \"1\")"
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-2",
-    "href": "psets/problem-set-01.html#problem-2",
-    "title": "Problem set 1",
-    "section": "Problem 2",
-    "text": "Problem 2\nCreate the matrix given below. Use one of R’s built-in functions to append a new row to the matrix made up of all 1s. Multiply every number in the new matrix by 5. Then use subsetting to return the second and fourth row of values in the final matrix.\n\n\n     [,1] [,2] [,3]\n[1,]    3    6    9\n[2,]    4    7   10\n[3,]    5    8   11"
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-3",
-    "href": "psets/problem-set-01.html#problem-3",
-    "title": "Problem set 1",
-    "section": "Problem 3",
-    "text": "Problem 3\nCreate a data frame that looks like the one below. Return the structure of the dataframe with str(). Use subsetting to select all columns that were indicated as doubles. Compute the mean of each column in the subset dataframe using map_*() and convert the output to a tibble (use the pipe!).\n\n\n  age height  major score firstgen\n1  30     65 cogsci   100     TRUE\n2  45     66   ling    75    FALSE\n3  81     72  psych    88     TRUE\n4  27     59   ling    97    FALSE"
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-4",
-    "href": "psets/problem-set-01.html#problem-4",
-    "title": "Problem set 1",
-    "section": "Problem 4",
-    "text": "Problem 4\nRead the documentation for the emo package. Install and load the package. Then create a character vector including 8 of your favorite emojis by their keyword (see the docs for a list). Finally, use the package’s emo::ji() function in conjunction with map_*() to print all 8 emojis with one line of code. Combine this output with your keyword vector in a tibble."
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-5",
-    "href": "psets/problem-set-01.html#problem-5",
-    "title": "Problem set 1",
-    "section": "Problem 5",
-    "text": "Problem 5\nSuppose you extend your experiment: you decide to record the number of words your quiet roommate says to you every day for the entire semester. Import the file below from the given url, ensuring that week is an integer vector, words spoken is a double, and all column names are valid variable names in R. Take care to use the approaches we discussed in lecture to identify and handle any issues. Use glimpse to show the resulting tibble. Finally, use these data to recreate (as faithfully as possible) the figure below.\n\"https://kathrynschuler.com/datasets/quiet_roommate.csv\""
-  },
-  {
-    "objectID": "psets/problem-set-01.html#problem-6",
-    "href": "psets/problem-set-01.html#problem-6",
-    "title": "Problem set 1",
-    "section": "Problem 6",
-    "text": "Problem 6\nProblem 6 makes use of the english dataset in the languageR package. From the documentation:\n\nThis data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various predictor variables.\n\nInstall and load the languageR library. Convert the english dataset to a tibble, then use glimpse to show the result. Finally, use the RTlexdec, Familiarity, and AgeSubjects columns to recreate (as faithfully as possible) the figure below."
-  },
-  {
-    "objectID": "psets/problem-set-02.html",
-    "href": "psets/problem-set-02.html",
-    "title": "Problem set 2",
-    "section": "",
-    "text": "Under Construction\n\n\n\n\n\n\n\nBrain size data; recreate the figure; involves a little wrangling to get the data; also mutate species so we have H. sapien and non H. sapien."
-  },
-  {
     "objectID": "webexercises.html",
     "href": "webexercises.html",
     "title": "Webexercises",
@@ -109,7 +11,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 36 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean 95% of the data fall within this range"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 64 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -124,328 +26,6 @@
     "title": "Webexercises",
     "section": "3 Hidden solutions and hints",
     "text": "3 Hidden solutions and hints\nYou can fence off a solution area that will be hidden behind a button using hide() before the solution and unhide() after, each as inline R code. Pass the text you want to appear on the button to the hide() function.\nIf the solution is a code chunk, instead of using hide() and unhide(), simply set the webex.hide chunk option to TRUE, or set it to the string you wish to display on the button.\nRecreate the scatterplot below, using the built-in cars dataset.\n\n\n\n\n\n\n\nI need a hint\n\nSee the documentation for plot() (?plot)\n\n\n\n\n\nClick here to see the solution\n\nplot(cars$speed, cars$dist)"
-  },
-  {
-    "objectID": "drafts.html",
-    "href": "drafts.html",
-    "title": "All drafts",
-    "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "drafts.html#lecture-notes",
-    "href": "drafts.html#lecture-notes",
-    "title": "All drafts",
-    "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "drafts.html#labs",
-    "href": "drafts.html#labs",
-    "title": "All drafts",
-    "section": "Labs",
-    "text": "Labs\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nSep 7, 2023\n\n\nLab 2: Import and visualize data\n\n\nKatie Schuler\n\n\n\n\nundefined\n\n\nLab 1: Getting started with R\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "drafts.html#problem-sets",
-    "href": "drafts.html#problem-sets",
-    "title": "All drafts",
-    "section": "Problem sets",
-    "text": "Problem sets\n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nProblem set 1\n\n\n\n\n\n\n\nProblem set 2\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Datasci for lang & mind",
-    "section": "",
-    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nWeek\nDay\nTopic\nResources\n\n\n\n\n1\n08-28\nHello, world!\nslides\n\n\n1\n08-31\nR-basics\nslides, demo, lab\n\n\n2\n09-05\nData importing\nslides, demo\n\n\n2\n09-07\nData visualization\n\n\n\n2\n09-10\nProblem set 1\n\n\n\n3\n09-12\nData wrangling\n\n\n\n3\n09-14\nProbability distributions\n\n\n\n4\n09-19\nQuiz 1\n\n\n\n4\n09-20\nSampling variability\n\n\n\n5\n09-26\nHypothesis testing\n\n\n\n5\n09-28\nR tutorial\n\n\n\n5\n10-01\nProblem set 2\n\n\n\n6\n10-03\nModel specification\n\n\n\n6\n10-05\nModel fitting\n\n\n\n7\n10-10\nQuiz 2\n\n\n\n7\n10-12\nNo class, break\n\n\n\n8\n10-17\nR tutorial\n\n\n\n8\n10-19\nModel accuracy\n\n\n\n8\n10-22\nProblem set 3\n\n\n\n9\n10-24\nModel reliability\n\n\n\n9\n10-26\nR tutorial\n\n\n\n10\n10-31\nQuiz 3\n\n\n\n10\n11-02\nTBD guest\n\n\n\n11\n11-07\nClassification\n\n\n\n11\n11-09\nR tutorial\n\n\n\n11\n11-12\nProblem set 4\n\n\n\n12\n11-14\nInference\n\n\n\n12\n11-16\nR tutorial\n\n\n\n13\n11-21\nQuiz 4\n\n\n\n13\n11-23\nNo class, break\n\n\n\n14\n11-28\nFeature engineering\n\n\n\n14\n11-30\nR tutorial\n\n\n\n14\n12-03\nProblem set 5\n\n\n\n15\n12-05\nMultilevel models\n\n\n\n15\n12-07\nR tutorial\n\n\n\n15\n12-10\nProblem set 6"
-  },
-  {
-    "objectID": "slides/hello-world.html#data-science",
-    "href": "slides/hello-world.html#data-science",
-    "title": "Hello, world!",
-    "section": "Data science",
-    "text": "Data science\nData science is about making decisions based on incomplete information.\n\n\n\n\nFigure 1: from Kok & de Lange (2014)\n\n\nThis concept is not new. Brains were built for doing this!"
-  },
-  {
-    "objectID": "slides/hello-world.html#but-we-have-new-tools-and-lots-more-data",
-    "href": "slides/hello-world.html#but-we-have-new-tools-and-lots-more-data",
-    "title": "Hello, world!",
-    "section": "But we have new tools and lots more data!",
-    "text": "But we have new tools and lots more data!\n\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
-  },
-  {
-    "objectID": "slides/hello-world.html#data-science-workflow",
-    "href": "slides/hello-world.html#data-science-workflow",
-    "title": "Hello, world!",
-    "section": "Data science workflow",
-    "text": "Data science workflow\nThe folks who wrote R for Data Science proposed the following data science workflow:\n\nFigure 3: from R for Data Science"
-  },
-  {
-    "objectID": "slides/hello-world.html#overview-of-course",
-    "href": "slides/hello-world.html#overview-of-course",
-    "title": "Hello, world!",
-    "section": "Overview of course",
-    "text": "Overview of course\nWe will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:\n\nR basics\nData importing\nData visualization\nData wrangling"
-  },
-  {
-    "objectID": "slides/hello-world.html#overview-of-course-1",
-    "href": "slides/hello-world.html#overview-of-course-1",
-    "title": "Hello, world!",
-    "section": "Overview of course",
-    "text": "Overview of course\nThen, we will spend the next several weeks building a foundation in basic statistics and model building:\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability"
-  },
-  {
-    "objectID": "slides/hello-world.html#overview-of-course-2",
-    "href": "slides/hello-world.html#overview-of-course-2",
-    "title": "Hello, world!",
-    "section": "Overview of course",
-    "text": "Overview of course\nFinally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
-  },
-  {
-    "objectID": "slides/hello-world.html#syllabus-briefly",
-    "href": "slides/hello-world.html#syllabus-briefly",
-    "title": "Hello, world!",
-    "section": "Syllabus, briefly",
-    "text": "Syllabus, briefly\nEach week will include two lectures and a lab:\n\nLectures are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!\nLab is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule."
-  },
-  {
-    "objectID": "slides/hello-world.html#syllabus-briefly-1",
-    "href": "slides/hello-world.html#syllabus-briefly-1",
-    "title": "Hello, world!",
-    "section": "Syllabus, briefly",
-    "text": "Syllabus, briefly\nThere are 10 graded assessments:\n\n6 Problem sets in which you will be asked to apply your newly aquired R programming skills.\n4 Quizzes in which you will be tested on your understanding of lecture concepts."
-  },
-  {
-    "objectID": "slides/hello-world.html#syllabus-briefly-2",
-    "href": "slides/hello-world.html#syllabus-briefly-2",
-    "title": "Hello, world!",
-    "section": "Syllabus, briefly",
-    "text": "Syllabus, briefly\nThere are a few policies to take note of:\n\nMissed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)\nYou may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students).\nYou may submit any missed quiz or problem set by the end of the semester for half-credit (50%)."
-  },
-  {
-    "objectID": "slides/hello-world.html#why-r",
-    "href": "slides/hello-world.html#why-r",
-    "title": "Hello, world!",
-    "section": "Why R?",
-    "text": "Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)"
-  },
-  {
-    "objectID": "slides/hello-world.html#many-ways-to-use-r",
-    "href": "slides/hello-world.html#many-ways-to-use-r",
-    "title": "Hello, world!",
-    "section": "Many ways to use R",
-    "text": "Many ways to use R\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal"
-  },
-  {
-    "objectID": "slides/hello-world.html#google-colab",
-    "href": "slides/hello-world.html#google-colab",
-    "title": "Hello, world!",
-    "section": "Google Colab",
-    "text": "Google Colab\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc.\nWe use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required!"
-  },
-  {
-    "objectID": "slides/hello-world.html#secretly-r",
-    "href": "slides/hello-world.html#secretly-r",
-    "title": "Hello, world!",
-    "section": "Secretly, R!",
-    "text": "Secretly, R!\nGoogle Colab officially supports Python, but secretly supports R (and Julia, too!)\n\ncolab (r kernel)\n\n\n\nhttps://kathrynschuler.com/datasci"
-  },
-  {
-    "objectID": "slides/data-importing.html#problem-set-1",
-    "href": "slides/data-importing.html#problem-set-1",
-    "title": "Data Importing",
-    "section": "Problem Set 1",
-    "text": "Problem Set 1\n\ndue Sunday 11:59pm\nGet support by:\n\nAsking specific Qs on Ed\nCome to office hours\nGet a pset buddy\n\nBut we will not:\n\nAnswer “is this correct?”\nGive feedback on your entire pset before deadline\nGo over the pset in lab"
-  },
-  {
-    "objectID": "slides/data-importing.html#last-week",
-    "href": "slides/data-importing.html#last-week",
-    "title": "Data Importing",
-    "section": "Last week",
-    "text": "Last week\n\nBasic concepts\nImportant functions\nVectors\nOperations\nSubsetting - stopped here\nBuilt-in functions\nMissing values\nProgramming"
-  },
-  {
-    "objectID": "slides/data-importing.html#you-are-here",
-    "href": "slides/data-importing.html#you-are-here",
-    "title": "Data Importing",
-    "section": "You are here",
-    "text": "You are here\n\n\nData science with R\n\n\nHello, world!\nR basics\nData importing\nData visualization\nData wrangling\n\n\n\nStats & Model buidling\n\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability\n\n\n\nMore advanced\n\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
-  },
-  {
-    "objectID": "slides/data-importing.html#overview-for-today",
-    "href": "slides/data-importing.html#overview-for-today",
-    "title": "Data Importing",
-    "section": "Overview for today",
-    "text": "Overview for today\n\nTidyverse\nTidy data\npurr - functional programming\ntibble - modern data.frame\nreadr - reading data"
-  },
-  {
-    "objectID": "slides/data-importing.html#tidyverse-1",
-    "href": "slides/data-importing.html#tidyverse-1",
-    "title": "Data Importing",
-    "section": "Tidyverse",
-    "text": "Tidyverse\n\n\n\nggplot2 - for data visualization\ndplyr - for data wrangling\nreadr - for reading data\ntibble - for modern data frames\nstringr: for string manipulation\nforcats: for dealing with factors\ntidyr: for data tidying\npurrr: for functional programming\n\n\n\n\n\nFigure 1: Tidyverse hex logos from www.tidyverse.org"
-  },
-  {
-    "objectID": "slides/data-importing.html#loading-the-tidyverse",
-    "href": "slides/data-importing.html#loading-the-tidyverse",
-    "title": "Data Importing",
-    "section": "Loading the tidyverse",
-    "text": "Loading the tidyverse\nAlready installed on Google Colab’s R kernel:\n\nlibrary(tidyverse)\n\nMessage:\n\na list of packages loaded\na warning of potential name conflicts"
-  },
-  {
-    "objectID": "slides/data-importing.html#tidy-data",
-    "href": "slides/data-importing.html#tidy-data",
-    "title": "Data Importing",
-    "section": "Tidy data",
-    "text": "Tidy data\nTidyverse makes use of tidy data, a standard way of structuring datasets:\n\neach variable forms a column; each column forms a variable\neach observation forms a row; each row forms an observation\nvalue is a cell; each cell is a single value"
-  },
-  {
-    "objectID": "slides/data-importing.html#tidy-data-1",
-    "href": "slides/data-importing.html#tidy-data-1",
-    "title": "Data Importing",
-    "section": "Tidy data",
-    "text": "Tidy data\n\nFigure 2: Visual of tidy data rules, from R for Data ScienceWhy tidy data?\n\nBecause consistency and uniformity are very helpful when programming\nVariables as columns works well for vectorized languages (R!)"
-  },
-  {
-    "objectID": "slides/data-importing.html#purr-1",
-    "href": "slides/data-importing.html#purr-1",
-    "title": "Data Importing",
-    "section": "purr",
-    "text": "purr\n\npurrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read.\npurrr docs"
-  },
-  {
-    "objectID": "slides/data-importing.html#the-map_-functions",
-    "href": "slides/data-importing.html#the-map_-functions",
-    "title": "Data Importing",
-    "section": "The map_*() functions",
-    "text": "The map_*() functions\n\nTake a vector as input\nApply a function to each element\nReturn a new vector"
-  },
-  {
-    "objectID": "slides/data-importing.html#the-map_-functions-1",
-    "href": "slides/data-importing.html#the-map_-functions-1",
-    "title": "Data Importing",
-    "section": "The map_*() functions",
-    "text": "The map_*() functions\nWe say “functions” because there are 5, one for each type of vector:\n\nmap() - list\nmap_lgl() - logical\nmap_int() - integer\nmap_dbl() - double\nmap_chr() - character"
-  },
-  {
-    "objectID": "slides/data-importing.html#map-use-case",
-    "href": "slides/data-importing.html#map-use-case",
-    "title": "Data Importing",
-    "section": "map use case",
-    "text": "map use case\n\ndf &lt;- data.frame(\n    x = 1:10,\n    y = 11:20,\n    z = 21:30\n)\n\n\n\nwith copy+paste\n\nmean(df$x)\n\n[1] 5.5\n\nmean(df$y)\n\n[1] 15.5\n\nmean(df$z)\n\n[1] 25.5\n\n\n\nwith map\n\nmap(df, mean)\n\n$x\n[1] 5.5\n\n$y\n[1] 15.5\n\n$z\n[1] 25.5"
-  },
-  {
-    "objectID": "slides/data-importing.html#tibble-1",
-    "href": "slides/data-importing.html#tibble-1",
-    "title": "Data Importing",
-    "section": "tibble",
-    "text": "tibble\n\nA tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less and complain more\ntibble docs"
-  },
-  {
-    "objectID": "slides/data-importing.html#tibble-2",
-    "href": "slides/data-importing.html#tibble-2",
-    "title": "Data Importing",
-    "section": "tibble",
-    "text": "tibble\nTibbles do less than data frames, in a good way:\n\nnever changes type of input (never converts strings to factors!)\nnever changes the name of variables\nonly recycles vectors of length 1\nnever creates row names\n\n\n\nThe take-away is that data.frame and tibble sometimes behave differently. The behavior of tibble makes more sense for modern data science, so we should us it instead!"
-  },
-  {
-    "objectID": "slides/data-importing.html#create-a-tibble",
-    "href": "slides/data-importing.html#create-a-tibble",
-    "title": "Data Importing",
-    "section": "Create a tibble",
-    "text": "Create a tibble\n\n\nCoerce an existing object:\n\ndf &lt;- data.frame(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\nas_tibble(df)\n\n# A tibble: 4 × 2\n      x y    \n  &lt;int&gt; &lt;chr&gt;\n1     1 a    \n2     2 b    \n3     3 c    \n4     4 d    \n\n\nPass a column of vectors:\n\ntibble(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\n\n# A tibble: 4 × 2\n      x y    \n  &lt;int&gt; &lt;chr&gt;\n1     1 a    \n2     2 b    \n3     3 c    \n4     4 d    \n\n\n\nDefine row-by-row:\n\ntribble(\n    ~x, ~y,\n    \"a\", 1,\n    \"b\", 2,\n    \"c\", 3,\n    \"d\", 4 \n)\n\n# A tibble: 4 × 2\n  x         y\n  &lt;chr&gt; &lt;dbl&gt;\n1 a         1\n2 b         2\n3 c         3\n4 d         4"
-  },
-  {
-    "objectID": "slides/data-importing.html#test-if-tibble",
-    "href": "slides/data-importing.html#test-if-tibble",
-    "title": "Data Importing",
-    "section": "Test if tibble",
-    "text": "Test if tibble\nWith is_tibble(x) and is.data.frame(x)\n\n\nData frame:\n\ndf &lt;- data.frame(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\n\n\nis_tibble(df)\n\n[1] FALSE\n\nis.data.frame(df)\n\n[1] TRUE\n\n\n\nTibble:\n\ntib &lt;- tribble(\n    ~x, ~y,\n    \"a\", 1,\n    \"b\", 2,\n    \"c\", 3,\n    \"d\", 4 \n)\n\n\nis_tibble(tib)\n\n[1] TRUE\n\nis.data.frame(tib)\n\n[1] TRUE"
-  },
-  {
-    "objectID": "slides/data-importing.html#data.frame-v-tibble",
-    "href": "slides/data-importing.html#data.frame-v-tibble",
-    "title": "Data Importing",
-    "section": "data.frame v tibble",
-    "text": "data.frame v tibble\nYou will encounter 2 main diffs:\n\nprinting\n\nby default, tibbles print the first 10 rows and all columns that fit on screen, making it easier to work with large datasets.\nalso report the type of each column (e.g. &lt;dbl&gt;, &lt;chr&gt;)\n\nsubsetting - tibbles are more strict than data frames, which fixes two quirks we encountered last lecture when subsetting with [[ and $:\n\ntibbles never do partial matching\nthey always generate a warning if the column you are trying to extract does not exist."
-  },
-  {
-    "objectID": "slides/data-importing.html#readr-1",
-    "href": "slides/data-importing.html#readr-1",
-    "title": "Data Importing",
-    "section": "readr",
-    "text": "readr\n\nThe goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results.\nreadr docs"
-  },
-  {
-    "objectID": "slides/data-importing.html#rectangular-data",
-    "href": "slides/data-importing.html#rectangular-data",
-    "title": "Data Importing",
-    "section": "Rectangular data",
-    "text": "Rectangular data\n\nFigure 3: Sample csv file from R for Data Science"
-  },
-  {
-    "objectID": "slides/data-importing.html#read_",
-    "href": "slides/data-importing.html#read_",
-    "title": "Data Importing",
-    "section": "read_*()",
-    "text": "read_*()\nThe read_*() functions have two important arguments:\n\npath - the path to the file\ncol_types - a list of how each column should be converted to a specific data type"
-  },
-  {
-    "objectID": "slides/data-importing.html#supported-file-types-read_",
-    "href": "slides/data-importing.html#supported-file-types-read_",
-    "title": "Data Importing",
-    "section": "7 supported file types, read_*()",
-    "text": "7 supported file types, read_*()\n\nread_csv(): comma-separated values (CSV)\nread_tsv(): tab-separated values (TSV)\nread_csv2(): semicolon-separated values\nread_delim(): delimited files (CSV and TSV are important special cases)\nread_fwf(): fixed-width files\nread_table(): whitespace-separated files\nread_log(): web log files"
-  },
-  {
-    "objectID": "slides/data-importing.html#read-csv-files",
-    "href": "slides/data-importing.html#read-csv-files",
-    "title": "Data Importing",
-    "section": "Read csv files",
-    "text": "Read csv files\nPath only, readr guesses types:\nread_csv(path='\"https://pos.it/r4ds-students-csv\"')\n\nPath and specify col_types:\nread_csv(\n    path='\"https://pos.it/r4ds-students-csv\"', \n    col_types = list( x = col_string(), y = col_skip() )\n)\n\n\n\nGuessing heuristic: character &gt; date-time &gt; double &gt; logical"
-  },
-  {
-    "objectID": "slides/data-importing.html#col_types-column-specification",
-    "href": "slides/data-importing.html#col_types-column-specification",
-    "title": "Data Importing",
-    "section": "col_types column specification",
-    "text": "col_types column specification\nThere are 11 column types that can be specified:\n\ncol_logical() - reads as boolean TRUE FALSE values\ncol_integer() - reads as integer\ncol_double() - reads as double\ncol_number() - numeric parser that can ignore non-numbers\ncol_character() - reads as strings\ncol_factor(levels, ordered = FALSE) - creates factors\ncol_datetime(format = \"\") - creates date-times\ncol_date(format = \"\") - creates dates\ncol_time(format = \"\") - creates times\ncol_skip() - skips a column\ncol_guess() - tries to guess the column"
-  },
-  {
-    "objectID": "slides/data-importing.html#reading-more-complex-files",
-    "href": "slides/data-importing.html#reading-more-complex-files",
-    "title": "Data Importing",
-    "section": "Reading more complex files",
-    "text": "Reading more complex files\nReading more complex file types requires functions outside the tidyverse:\n\nexcel with readxl - see Spreadsheets in R for Data Science\ngoogle sheets with googlesheets4 - see Spreadsheets in R for Data Science\ndatabases with DBI - see Databases in R for Data Science\njson data with jsonlite - see Hierarchical data in R for Data Science"
-  },
-  {
-    "objectID": "slides/data-importing.html#writing-to-a-file",
-    "href": "slides/data-importing.html#writing-to-a-file",
-    "title": "Data Importing",
-    "section": "Writing to a file",
-    "text": "Writing to a file\nWrite to a .csv file with\nwrite_csv(students, \"students.csv\")\n\n\narguments: tibble, name to give file"
-  },
-  {
-    "objectID": "slides/data-importing.html#column-contains-unexpected-values",
-    "href": "slides/data-importing.html#column-contains-unexpected-values",
-    "title": "Data Importing",
-    "section": "Column contains unexpected values",
-    "text": "Column contains unexpected values\nYour dataset has a column that you expected to be logical or double, but there is a typo somewhere, so R has coerced the column into character.\n\nSolve by specifying the column type col_double() and then using the problems() function to see where R failed."
-  },
-  {
-    "objectID": "slides/data-importing.html#missing-values-are-not-na",
-    "href": "slides/data-importing.html#missing-values-are-not-na",
-    "title": "Data Importing",
-    "section": "Missing values are not NA",
-    "text": "Missing values are not NA\nYour dataset has missing values, but they were not coded as NA as R expects.\n\nSolve by adding an na argument (e.g. na=c(\"N/A\"))"
-  },
-  {
-    "objectID": "slides/data-importing.html#column-names-have-spaces",
-    "href": "slides/data-importing.html#column-names-have-spaces",
-    "title": "Data Importing",
-    "section": "Column names have spaces",
-    "text": "Column names have spaces\nYour dataset has column names that include spaces, breaking R’s naming rules. In these cases, R adds backticks (e.g. `brain size`); . . .\nWe can use the rename() function to fix them.\n\n\nIf we have a lot to rename and that gets annoying, see janitor::clean_names()."
   },
   {
     "objectID": "slides/r-basics.html#you-are-here",
@@ -707,144 +287,263 @@
     "text": "Notes on [[ and $:\nboth [[ and [ work for vectors; use [[\n\nx &lt;- c(1, -2, 3)\nx[[1]]\n\n[1] 1\n\nx[1]\n\n[1] 1\n\n\n$ does partial matching without warning\n\ndf &lt;- data.frame(\n        this = c(1, 2,3), \n        that = c(\"a\", \"b\", \"c\"),\n        theother = c(4, 5, 6)\n        )\n\n\ndf[['theo']]\n\nNULL\n\ndf$theo\n\n[1] 4 5 6"
   },
   {
-    "objectID": "notes/feature-engineering.html",
-    "href": "notes/feature-engineering.html",
-    "title": "Feature engineering",
+    "objectID": "slides/data-importing.html#problem-set-1",
+    "href": "slides/data-importing.html#problem-set-1",
+    "title": "Data Importing",
+    "section": "Problem Set 1",
+    "text": "Problem Set 1\n\ndue Sunday 11:59pm\nGet support by:\n\nAsking specific Qs on Ed\nCome to office hours\nGet a pset buddy\n\nBut we will not:\n\nAnswer “is this correct?”\nGive feedback on your entire pset before deadline\nGo over the pset in lab"
+  },
+  {
+    "objectID": "slides/data-importing.html#last-week",
+    "href": "slides/data-importing.html#last-week",
+    "title": "Data Importing",
+    "section": "Last week",
+    "text": "Last week\n\nBasic concepts\nImportant functions\nVectors\nOperations\nSubsetting - stopped here\nBuilt-in functions\nMissing values\nProgramming"
+  },
+  {
+    "objectID": "slides/data-importing.html#you-are-here",
+    "href": "slides/data-importing.html#you-are-here",
+    "title": "Data Importing",
+    "section": "You are here",
+    "text": "You are here\n\n\nData science with R\n\n\nHello, world!\nR basics\nData importing\nData visualization\nData wrangling\n\n\n\nStats & Model buidling\n\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability\n\n\n\nMore advanced\n\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
+  },
+  {
+    "objectID": "slides/data-importing.html#overview-for-today",
+    "href": "slides/data-importing.html#overview-for-today",
+    "title": "Data Importing",
+    "section": "Overview for today",
+    "text": "Overview for today\n\nTidyverse\nTidy data\npurr - functional programming\ntibble - modern data.frame\nreadr - reading data"
+  },
+  {
+    "objectID": "slides/data-importing.html#tidyverse-1",
+    "href": "slides/data-importing.html#tidyverse-1",
+    "title": "Data Importing",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\nggplot2 - for data visualization\ndplyr - for data wrangling\nreadr - for reading data\ntibble - for modern data frames\nstringr: for string manipulation\nforcats: for dealing with factors\ntidyr: for data tidying\npurrr: for functional programming\n\n\n\n\n\nFigure 1: Tidyverse hex logos from www.tidyverse.org"
+  },
+  {
+    "objectID": "slides/data-importing.html#loading-the-tidyverse",
+    "href": "slides/data-importing.html#loading-the-tidyverse",
+    "title": "Data Importing",
+    "section": "Loading the tidyverse",
+    "text": "Loading the tidyverse\nAlready installed on Google Colab’s R kernel:\n\nlibrary(tidyverse)\n\nMessage:\n\na list of packages loaded\na warning of potential name conflicts"
+  },
+  {
+    "objectID": "slides/data-importing.html#tidy-data",
+    "href": "slides/data-importing.html#tidy-data",
+    "title": "Data Importing",
+    "section": "Tidy data",
+    "text": "Tidy data\nTidyverse makes use of tidy data, a standard way of structuring datasets:\n\neach variable forms a column; each column forms a variable\neach observation forms a row; each row forms an observation\nvalue is a cell; each cell is a single value"
+  },
+  {
+    "objectID": "slides/data-importing.html#tidy-data-1",
+    "href": "slides/data-importing.html#tidy-data-1",
+    "title": "Data Importing",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nFigure 2: Visual of tidy data rules, from R for Data ScienceWhy tidy data?\n\nBecause consistency and uniformity are very helpful when programming\nVariables as columns works well for vectorized languages (R!)"
+  },
+  {
+    "objectID": "slides/data-importing.html#purr-1",
+    "href": "slides/data-importing.html#purr-1",
+    "title": "Data Importing",
+    "section": "purr",
+    "text": "purr\n\npurrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. If you’ve never heard of FP before, the best place to start is the family of map() functions which allow you to replace many for loops with code that is both more succinct and easier to read.\npurrr docs"
+  },
+  {
+    "objectID": "slides/data-importing.html#the-map_-functions",
+    "href": "slides/data-importing.html#the-map_-functions",
+    "title": "Data Importing",
+    "section": "The map_*() functions",
+    "text": "The map_*() functions\n\nTake a vector as input\nApply a function to each element\nReturn a new vector"
+  },
+  {
+    "objectID": "slides/data-importing.html#the-map_-functions-1",
+    "href": "slides/data-importing.html#the-map_-functions-1",
+    "title": "Data Importing",
+    "section": "The map_*() functions",
+    "text": "The map_*() functions\nWe say “functions” because there are 5, one for each type of vector:\n\nmap() - list\nmap_lgl() - logical\nmap_int() - integer\nmap_dbl() - double\nmap_chr() - character"
+  },
+  {
+    "objectID": "slides/data-importing.html#map-use-case",
+    "href": "slides/data-importing.html#map-use-case",
+    "title": "Data Importing",
+    "section": "map use case",
+    "text": "map use case\n\ndf &lt;- data.frame(\n    x = 1:10,\n    y = 11:20,\n    z = 21:30\n)\n\n\n\nwith copy+paste\n\nmean(df$x)\n\n[1] 5.5\n\nmean(df$y)\n\n[1] 15.5\n\nmean(df$z)\n\n[1] 25.5\n\n\n\nwith map\n\nmap(df, mean)\n\n$x\n[1] 5.5\n\n$y\n[1] 15.5\n\n$z\n[1] 25.5"
+  },
+  {
+    "objectID": "slides/data-importing.html#tibble-1",
+    "href": "slides/data-importing.html#tibble-1",
+    "title": "Data Importing",
+    "section": "tibble",
+    "text": "tibble\n\nA tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less and complain more\ntibble docs"
+  },
+  {
+    "objectID": "slides/data-importing.html#tibble-2",
+    "href": "slides/data-importing.html#tibble-2",
+    "title": "Data Importing",
+    "section": "tibble",
+    "text": "tibble\nTibbles do less than data frames, in a good way:\n\nnever changes type of input (never converts strings to factors!)\nnever changes the name of variables\nonly recycles vectors of length 1\nnever creates row names\n\n\n\nThe take-away is that data.frame and tibble sometimes behave differently. The behavior of tibble makes more sense for modern data science, so we should us it instead!"
+  },
+  {
+    "objectID": "slides/data-importing.html#create-a-tibble",
+    "href": "slides/data-importing.html#create-a-tibble",
+    "title": "Data Importing",
+    "section": "Create a tibble",
+    "text": "Create a tibble\n\n\nCoerce an existing object:\n\ndf &lt;- data.frame(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\nas_tibble(df)\n\n# A tibble: 4 × 2\n      x y    \n  &lt;int&gt; &lt;chr&gt;\n1     1 a    \n2     2 b    \n3     3 c    \n4     4 d    \n\n\nPass a column of vectors:\n\ntibble(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\n\n# A tibble: 4 × 2\n      x y    \n  &lt;int&gt; &lt;chr&gt;\n1     1 a    \n2     2 b    \n3     3 c    \n4     4 d    \n\n\n\nDefine row-by-row:\n\ntribble(\n    ~x, ~y,\n    \"a\", 1,\n    \"b\", 2,\n    \"c\", 3,\n    \"d\", 4 \n)\n\n# A tibble: 4 × 2\n  x         y\n  &lt;chr&gt; &lt;dbl&gt;\n1 a         1\n2 b         2\n3 c         3\n4 d         4"
+  },
+  {
+    "objectID": "slides/data-importing.html#test-if-tibble",
+    "href": "slides/data-importing.html#test-if-tibble",
+    "title": "Data Importing",
+    "section": "Test if tibble",
+    "text": "Test if tibble\nWith is_tibble(x) and is.data.frame(x)\n\n\nData frame:\n\ndf &lt;- data.frame(\n    x = 1:4,\n    y = c(\"a\", \"b\", \"c\", \"d\")\n)\n\n\nis_tibble(df)\n\n[1] FALSE\n\nis.data.frame(df)\n\n[1] TRUE\n\n\n\nTibble:\n\ntib &lt;- tribble(\n    ~x, ~y,\n    \"a\", 1,\n    \"b\", 2,\n    \"c\", 3,\n    \"d\", 4 \n)\n\n\nis_tibble(tib)\n\n[1] TRUE\n\nis.data.frame(tib)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/data-importing.html#data.frame-v-tibble",
+    "href": "slides/data-importing.html#data.frame-v-tibble",
+    "title": "Data Importing",
+    "section": "data.frame v tibble",
+    "text": "data.frame v tibble\nYou will encounter 2 main diffs:\n\nprinting\n\nby default, tibbles print the first 10 rows and all columns that fit on screen, making it easier to work with large datasets.\nalso report the type of each column (e.g. &lt;dbl&gt;, &lt;chr&gt;)\n\nsubsetting - tibbles are more strict than data frames, which fixes two quirks we encountered last lecture when subsetting with [[ and $:\n\ntibbles never do partial matching\nthey always generate a warning if the column you are trying to extract does not exist."
+  },
+  {
+    "objectID": "slides/data-importing.html#readr-1",
+    "href": "slides/data-importing.html#readr-1",
+    "title": "Data Importing",
+    "section": "readr",
+    "text": "readr\n\nThe goal of readr is to provide a fast and friendly way to read rectangular data from delimited files, such as comma-separated values (CSV) and tab-separated values (TSV). It is designed to parse many types of data found in the wild, while providing an informative problem report when parsing leads to unexpected results.\nreadr docs"
+  },
+  {
+    "objectID": "slides/data-importing.html#rectangular-data",
+    "href": "slides/data-importing.html#rectangular-data",
+    "title": "Data Importing",
+    "section": "Rectangular data",
+    "text": "Rectangular data\n\nFigure 3: Sample csv file from R for Data Science"
+  },
+  {
+    "objectID": "slides/data-importing.html#read_",
+    "href": "slides/data-importing.html#read_",
+    "title": "Data Importing",
+    "section": "read_*()",
+    "text": "read_*()\nThe read_*() functions have two important arguments:\n\npath - the path to the file\ncol_types - a list of how each column should be converted to a specific data type"
+  },
+  {
+    "objectID": "slides/data-importing.html#supported-file-types-read_",
+    "href": "slides/data-importing.html#supported-file-types-read_",
+    "title": "Data Importing",
+    "section": "7 supported file types, read_*()",
+    "text": "7 supported file types, read_*()\n\nread_csv(): comma-separated values (CSV)\nread_tsv(): tab-separated values (TSV)\nread_csv2(): semicolon-separated values\nread_delim(): delimited files (CSV and TSV are important special cases)\nread_fwf(): fixed-width files\nread_table(): whitespace-separated files\nread_log(): web log files"
+  },
+  {
+    "objectID": "slides/data-importing.html#read-csv-files",
+    "href": "slides/data-importing.html#read-csv-files",
+    "title": "Data Importing",
+    "section": "Read csv files",
+    "text": "Read csv files\nPath only, readr guesses types:\nread_csv(path='\"https://pos.it/r4ds-students-csv\"')\n\nPath and specify col_types:\nread_csv(\n    path='\"https://pos.it/r4ds-students-csv\"', \n    col_types = list( x = col_string(), y = col_skip() )\n)\n\n\n\nGuessing heuristic: character &gt; date-time &gt; double &gt; logical"
+  },
+  {
+    "objectID": "slides/data-importing.html#col_types-column-specification",
+    "href": "slides/data-importing.html#col_types-column-specification",
+    "title": "Data Importing",
+    "section": "col_types column specification",
+    "text": "col_types column specification\nThere are 11 column types that can be specified:\n\ncol_logical() - reads as boolean TRUE FALSE values\ncol_integer() - reads as integer\ncol_double() - reads as double\ncol_number() - numeric parser that can ignore non-numbers\ncol_character() - reads as strings\ncol_factor(levels, ordered = FALSE) - creates factors\ncol_datetime(format = \"\") - creates date-times\ncol_date(format = \"\") - creates dates\ncol_time(format = \"\") - creates times\ncol_skip() - skips a column\ncol_guess() - tries to guess the column"
+  },
+  {
+    "objectID": "slides/data-importing.html#reading-more-complex-files",
+    "href": "slides/data-importing.html#reading-more-complex-files",
+    "title": "Data Importing",
+    "section": "Reading more complex files",
+    "text": "Reading more complex files\nReading more complex file types requires functions outside the tidyverse:\n\nexcel with readxl - see Spreadsheets in R for Data Science\ngoogle sheets with googlesheets4 - see Spreadsheets in R for Data Science\ndatabases with DBI - see Databases in R for Data Science\njson data with jsonlite - see Hierarchical data in R for Data Science"
+  },
+  {
+    "objectID": "slides/data-importing.html#writing-to-a-file",
+    "href": "slides/data-importing.html#writing-to-a-file",
+    "title": "Data Importing",
+    "section": "Writing to a file",
+    "text": "Writing to a file\nWrite to a .csv file with\nwrite_csv(students, \"students.csv\")\n\n\narguments: tibble, name to give file"
+  },
+  {
+    "objectID": "slides/data-importing.html#column-contains-unexpected-values",
+    "href": "slides/data-importing.html#column-contains-unexpected-values",
+    "title": "Data Importing",
+    "section": "Column contains unexpected values",
+    "text": "Column contains unexpected values\nYour dataset has a column that you expected to be logical or double, but there is a typo somewhere, so R has coerced the column into character.\n\nSolve by specifying the column type col_double() and then using the problems() function to see where R failed."
+  },
+  {
+    "objectID": "slides/data-importing.html#missing-values-are-not-na",
+    "href": "slides/data-importing.html#missing-values-are-not-na",
+    "title": "Data Importing",
+    "section": "Missing values are not NA",
+    "text": "Missing values are not NA\nYour dataset has missing values, but they were not coded as NA as R expects.\n\nSolve by adding an na argument (e.g. na=c(\"N/A\"))"
+  },
+  {
+    "objectID": "slides/data-importing.html#column-names-have-spaces",
+    "href": "slides/data-importing.html#column-names-have-spaces",
+    "title": "Data Importing",
+    "section": "Column names have spaces",
+    "text": "Column names have spaces\nYour dataset has column names that include spaces, breaking R’s naming rules. In these cases, R adds backticks (e.g. `brain size`); . . .\nWe can use the rename() function to fix them.\n\n\nIf we have a lot to rename and that gets annoying, see janitor::clean_names()."
+  },
+  {
+    "objectID": "psets/problem-set-02.html",
+    "href": "psets/problem-set-02.html",
+    "title": "Problem set 2",
     "section": "",
-    "text": "Under Construction"
+    "text": "Under Construction\n\n\n\n\n\n\n\nBrain size data; recreate the figure; involves a little wrangling to get the data; also mutate species so we have H. sapien and non H. sapien."
   },
   {
-    "objectID": "notes/feature-engineering.html#dummy-coding",
-    "href": "notes/feature-engineering.html#dummy-coding",
-    "title": "Feature engineering",
-    "section": "1 Dummy coding",
-    "text": "1 Dummy coding\nIncluding categorical variables in a model:\n\nOne approach is to create “dummy variables”, called dummy coding, to represent the different levels of the categorical variable. Dummy variables are coded as 1 or 0 (binary) to indicate the presence or absence of a specific category or level. R does this by default.\nIn our swim records example, R dummy codes gender by creating a dummy variable male, where 1 means true and 0 means false. We do not also need a female variable because when male is 0, the person must be female. Creating an additional variable gives no new information. The “left out” category is called the reference level. Unless you specify otherwise, R uses whatever is alphabetically first as the reference level.\nIf a categorical variable has more than two levels, we can simply add a column. To illustrate, imagine our gender variable has a third level, “non-binary”. We create our male column as before (1 for true, 0 for false), and add a non-binary column (1 for true, 0 for false). If the swimmer is neither male nor non-binary (0 in both columns), they must be female. We can have as many levels as we like in a categorical variable, but we should be aware that this adds as many terms (minus 1) to the model! Here \\(x_2\\) is the vector for the male variable and \\(x_3\\) is the vector for thenon-binary variable:\n\nin R: y ~ 1 + year + gender\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_3\\)"
-  },
-  {
-    "objectID": "notes/data-wrangling.html",
-    "href": "notes/data-wrangling.html",
-    "title": "Data wrangling",
+    "objectID": "playground.html",
+    "href": "playground.html",
+    "title": "Playground",
     "section": "",
-    "text": "Under Construction"
+    "text": "playing around with some stuff and things\n\n# load tidyverse\nlibrary(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n# make a dataframe \ndf &lt;- data.frame(\n  x = 1:10,\n  y = 11:20,\n  z = 21:30\n)\n\ndf2 &lt;- data.frame(\n    x = 31:40,\n    y = 41:50,\n    z = 51:60\n)\n\ndf3 &lt;- data.frame(\n    x = 61:70,\n    y = 71:80,\n    z = 81:90\n)\n\ndfs &lt;- list(df, df2, df3)\n\n\nmap_dbl(df, mean)\n\n   x    y    z \n 5.5 15.5 25.5 \n\n\npmap_dbl(dfs, map_dbl(., mean)) ```s"
   },
   {
-    "objectID": "notes/data-wrangling.html#why-wrangle-and-tidy",
-    "href": "notes/data-wrangling.html#why-wrangle-and-tidy",
-    "title": "Data wrangling",
-    "section": "1 Why wrangle and tidy?",
-    "text": "1 Why wrangle and tidy?"
-  },
-  {
-    "objectID": "notes/data-wrangling.html#data-wrangling-with-dplyr",
-    "href": "notes/data-wrangling.html#data-wrangling-with-dplyr",
-    "title": "Data wrangling",
-    "section": "2 Data wrangling with dplyr",
-    "text": "2 Data wrangling with dplyr\nAll dplyr functions (verbs) share a common structure:\n\n1st argument is always a data frame\nSubsequent arguments typically describe which columns to operate on (via their names)\nOutput is always a new data frame\n\nWe can group dplyr functions based on what they operate on:\n\nrows - see section 3 Manipulating rows\ncolumns - see section 4 Manipulating columns\ngroups - see section 5 Grouping and summarizing data frames\ntables - see section 6 Joining data frames\n\nWe can easily combine dplyr functions to solve complex problems:\n\nThe pipe operator, |&gt; takes the output from one function and passes it as input (the first argument) to the next function.\nThere is another version of the pipe, %&gt;%. See the reading on data transformation if you are curious about the difference.\n\nIn lecture, we will demonstrate with a few dplyr functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems."
-  },
-  {
-    "objectID": "notes/data-wrangling.html#manipulating-rows",
-    "href": "notes/data-wrangling.html#manipulating-rows",
-    "title": "Data wrangling",
-    "section": "3 Manipulating rows",
-    "text": "3 Manipulating rows\nfilter()\narrange()"
-  },
-  {
-    "objectID": "notes/data-wrangling.html#manipulating-columns",
-    "href": "notes/data-wrangling.html#manipulating-columns",
-    "title": "Data wrangling",
-    "section": "4 Manipulating columns",
-    "text": "4 Manipulating columns\nselect()\nmutate()"
-  },
-  {
-    "objectID": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
-    "href": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
-    "title": "Data wrangling",
-    "section": "5 Grouping and summarizing data frames",
-    "text": "5 Grouping and summarizing data frames"
-  },
-  {
-    "objectID": "notes/data-wrangling.html#joining-data-frames",
-    "href": "notes/data-wrangling.html#joining-data-frames",
-    "title": "Data wrangling",
-    "section": "6 Joining data frames",
-    "text": "6 Joining data frames\n\ndon’t cover, just show the functions and say we won’t cover it"
-  },
-  {
-    "objectID": "notes/data-wrangling.html#data-tidying-with-tidyr",
-    "href": "notes/data-wrangling.html#data-tidying-with-tidyr",
-    "title": "Data wrangling",
-    "section": "7 Data tidying with tidyr",
-    "text": "7 Data tidying with tidyr\n\nsneak in with case study later; for now just show functions and say we won’t cover it.\n\n\nFurther reading and references\nhttps://r4ds.hadley.nz/data-transform\nhttps://r4ds.hadley.nz/joins"
-  },
-  {
-    "objectID": "notes/hello-world.html",
-    "href": "notes/hello-world.html",
-    "title": "Hello, world!",
+    "objectID": "notes/sampling-variability.html",
+    "href": "notes/sampling-variability.html",
+    "title": "Sampling variability",
     "section": "",
-    "text": "Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.\n– Computational and Inferential Thinking: The Foundations of Data Science\n\nData science is about making decisions based on incomplete information. This concept is not new – brains (especially human brains!) love doing this. To illustrate, what do you see in the following image?\n\n\n\nFigure 1: from Kok & de Lange (2014)1\n\n\nDid you see a gray triangle on top of three circles? Most people do! But it turns out that your brain is filling in the gaps, inferring the presence of a triangle from the partial information available in the black circles 2.\nWhile the underlying concept is not new, the computational tools we use are relatively new. And we have a lot more data!\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
+    "text": "Suppose we measure a single quantity for a single condition: the height of human adults. Let’s get a visual summary of our data with a histogram.\nWe can see that our data follow a roughly Gaussian distribution (unimodal, symmetric), so we can use the mean to describe the central tendency and standard deviation to describe the spread of the values. They are given by the following equations:\n\nmean(\\(x\\)) = \\(\\overline{x} = \\frac{\\sum_{i=i}^{n} x_{i}}{n}\\)\nsd(\\(x\\)) = \\(\\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\overline{x})^2}{n-1}}\\)"
   },
   {
-    "objectID": "notes/hello-world.html#what-is-data-science",
-    "href": "notes/hello-world.html#what-is-data-science",
-    "title": "Hello, world!",
+    "objectID": "notes/sampling-variability.html#exploring-a-simple-dataset",
+    "href": "notes/sampling-variability.html#exploring-a-simple-dataset",
+    "title": "Sampling variability",
     "section": "",
-    "text": "Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.\n– Computational and Inferential Thinking: The Foundations of Data Science\n\nData science is about making decisions based on incomplete information. This concept is not new – brains (especially human brains!) love doing this. To illustrate, what do you see in the following image?\n\n\n\nFigure 1: from Kok & de Lange (2014)1\n\n\nDid you see a gray triangle on top of three circles? Most people do! But it turns out that your brain is filling in the gaps, inferring the presence of a triangle from the partial information available in the black circles 2.\nWhile the underlying concept is not new, the computational tools we use are relatively new. And we have a lot more data!\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
+    "text": "Suppose we measure a single quantity for a single condition: the height of human adults. Let’s get a visual summary of our data with a histogram.\nWe can see that our data follow a roughly Gaussian distribution (unimodal, symmetric), so we can use the mean to describe the central tendency and standard deviation to describe the spread of the values. They are given by the following equations:\n\nmean(\\(x\\)) = \\(\\overline{x} = \\frac{\\sum_{i=i}^{n} x_{i}}{n}\\)\nsd(\\(x\\)) = \\(\\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\overline{x})^2}{n-1}}\\)"
   },
   {
-    "objectID": "notes/hello-world.html#data-science-workflow",
-    "href": "notes/hello-world.html#data-science-workflow",
-    "title": "Hello, world!",
-    "section": "2 Data science workflow",
-    "text": "2 Data science workflow\nThe folks who wrote R for Data Science proposed the following data science workflow:\n\n\n\nFigure 3: from R for Data Science\n\n\nLet’s unpack what these mean briefly:\n\nImport: gather data from a variety of sources, which can include structured data (like databases and spreadsheets) and unstructured data (like text, images, and videos).\nTidy and Transform: The raw data we import is often messy. Data scientists clean and preprocess the data, which involves removing errors, handling missing values, and transforming data into a suitable format for analysis.\nVisualize (exploratory data analysis) visualize and summarize data to identify patterns, form hypotheses, select appropriate models, and guide further analysis.\nModel: Using statistical methods, machine learning algorithms, and other computational techniques, data scientists build models to understand underlying patterns in the data. Models are tested using validation techniques to ensure their accuracy and reliability. Then data scientists use them to draw meaningful conclusions, like predictions about the future or inferences about populuation.\nCommunicate: Finally, a crucial part of data science is communicating findings clearly and effectively, whatever your purpose (academic, industry, or the public!)\nProgram: Surrounding all these is programming, since the computational tools are what make these possible!\n\nData science has applications in many fields far beyond language and the mind. It allows us to make data-driven decisions, solve complex problems, and uncover hidden insights that might not be apparent through other methods."
+    "objectID": "notes/sampling-variability.html#standard-deviation",
+    "href": "notes/sampling-variability.html#standard-deviation",
+    "title": "Sampling variability",
+    "section": "2 Standard deviation",
+    "text": "2 Standard deviation\nMost of us have an intuitive understanding of how the mean is computed: add up all the values and divide by the number of values. But what about the standard deviation? To understand how the standard deviation is computed, it helps to think the mean as a very simple model of our data: one where all cases are the same. Each individual case can be expressed as the model value plus how much the case deviates from the model value (residual, or leftover).\n\nJust as the mean describes a typical value in our data set, we can use the mean square of the residuals to describe the typical variation in our data set. To compute the mean square, we square the residuals (a neat trick that makes them all positive!) and then add them up — known as the sum of squares. Then, we divide by the number of cases, \\(n\\), minus 1. (we’ll see why we use \\(n-1\\) instead of just \\(n\\) later in the lecture).\nLater in the class, we’ll compute the mean square for all sorts of models. Here, when it’s used to describe how far a set of data are from the mean, it goes by the nickname variance. To fix the annoying squared units, we take the square root of the variance and voilà! We have the standard deviation."
   },
   {
-    "objectID": "notes/hello-world.html#overview-of-the-course",
-    "href": "notes/hello-world.html#overview-of-the-course",
-    "title": "Hello, world!",
-    "section": "3 Overview of the course",
-    "text": "3 Overview of the course\nWe will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:\n\nR basics\nData importing\nData visualization\nData wrangling\n\nThen, we will spend the next several weeks building a foundation in basic statistics and model building:\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability\n\nFinally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
+    "objectID": "notes/sampling-variability.html#sampling-distribution",
+    "href": "notes/sampling-variability.html#sampling-distribution",
+    "title": "Sampling variability",
+    "section": "3 Sampling distribution",
+    "text": "3 Sampling distribution\nWhen measuring some quantity we are usually interested in knowing something about the population (the height of human adults, for example). But in practice we can only observe a small sample of the entire population.\n\nAny statistic we compute from a random sample we’ve collected (technically known as the parameter estimate) will be subject to sampling variability and will differ from that statistic computed on the entire population (technically known as the parameter). In other words, our measurements are noisy, and we need a way to express our uncertainty on the statistic we’ve computed. Quantifying this sampling variability is an important component of statistical inference.\nThe sampling distribution is the probability distribution of the values our parameter estimate can take on. We can construct the sampling distribution by taking a random sample, computing the statistic of interest, and repeating this process many times. The spread of these results indicates how the parameter estimate will vary from different random samples.\nWe can quantify the spread of our results (AKA express our uncertainty on our parameter estimate) using a parametric approach, by computing the standard deviation of our sampling distribution (called standard error!), or using a nonparametric approach, by constructing a confidence interval."
   },
   {
-    "objectID": "notes/hello-world.html#syllabus-briefly",
-    "href": "notes/hello-world.html#syllabus-briefly",
-    "title": "Hello, world!",
-    "section": "4 Syllabus, briefly",
-    "text": "4 Syllabus, briefly\nEach week will include two lectures and a lab:\n\nLectures are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!\nLab is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule.\n\nThere are 10 graded assessments:\n\n6 Problem sets in which you will be asked to apply your newly aquired R programming skills.\n4 Quizzes in which you will be tested on your understanding of lecture concepts.\n\nThere are a few policies to take note of:\n\nMissed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)\nYou may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students).\nYou may submit any missed quiz or problem set by the end of the semester for half-credit (50%)."
+    "objectID": "notes/sampling-variability.html#standard-error-and-confidence-intervals",
+    "href": "notes/sampling-variability.html#standard-error-and-confidence-intervals",
+    "title": "Sampling variability",
+    "section": "4 Standard error and confidence intervals",
+    "text": "4 Standard error and confidence intervals\nThe standard deviation of the sampling distribution is known as the standard error. When the statistic of interest is the mean, the standard error is given by the following equation, where \\(\\sigma\\) is the standard deviation of the population and \\(n\\) is the sample size: \\(\\frac{\\sigma}{\\sqrt{n}}\\)\n\nIn practice, the standard deviation of the population is unknown, so we use the standard deviation of the sample as an estimate. That is why we use \\(n-1\\) in our mean square calculation. We assume our sample standard deviation is probably underestimating the population, so we “correct” this by dividing by \\(n-1\\) instead of \\(n\\).\nStandard error is considered parametric because we assume a parametric probability distribution (Gaussian) and compute the standard error based on what happens theoretically when we sample that distribution.\nclt? sample size relationship.\n\nWe can also quantify the sampling variability with a confidence interval, which expresses our uncertainty on our parameter estimate via a coverage interval. We can construct any confidence interval, but in ✨science✨ the convention is to choose the 95% coverage interval.\n\nRecall from last lecture that a coverage interval is a nonparametric statistic. The 95% coverage interval are the values between which 95% of the data points fall (the difference between the 2.5 percentile and the 97.5 percentile in our sampling distribution).\nConfidence intervals are closely related to standard error: assuming the sampling distribution is Gaussian (the parametric approach), the 68% confidence interval is +/- 1 standard error and the 95% confidence interval is +/- 2 standard error."
   },
   {
-    "objectID": "notes/hello-world.html#why-r",
-    "href": "notes/hello-world.html#why-r",
-    "title": "Hello, world!",
-    "section": "5 Why R?",
-    "text": "5 Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)\n\nIf you are interested, here is a math professor’s take on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, they are all great and the technical skills and conceptual knowledge you gain in this course will transfer to other languages."
+    "objectID": "notes/sampling-variability.html#bootstrapping",
+    "href": "notes/sampling-variability.html#bootstrapping",
+    "title": "Sampling variability",
+    "section": "5 Bootstrapping",
+    "text": "5 Bootstrapping\nIdeally, we would construct the sampling distribution by repeating our experiment many times, drawing new random samples from the population each time. But in practice, this is impossible. We are usually constrained — by time, money, access, etc. — such that we can only take one sample.\n\nThis is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the mean and standard deviation of the sample to approximate what would happen if we had sampled from a Gaussian probability distribution (see above!).\nWhat if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions? We can use a technique called bootstrapping.\n\nWith bootstrapping, instead of assuming a parametric probability distribution, we can use the data themselves to approximate the underlying probability distribution. In other words, instead of sampling from the population, we can sample our sample! We’re “pulling ourselves up by our bootstraps”: constructing the sampling distribution from our own data.\n\nThe procedure is very simple. To illustrate, suppose we have a set a data with 100 data points. We generate the bootstrap sampling distribution by drawing the same number of data points (100) with replacement from our data set and compute the parameter estimate — mean, median, whatever — on those points, then we repeat the process many times.\n\nThere are many ways to generate a bootstrap sampling distribution in R. We will use the infer package in this class, which was developed by Hadley Wickham (the tidyverse guy!) and others to simplify aspects of statistical inference in R.\n\nspecify(response=x): choose which variable is the focus of our inference\ngenerate(reps=n, type='bootstrap'): generate n replicates of the data\ncalculate(stat=\"mean\"): statistic to calculate on each sample; what parameter are you trying to estimate?\n\nWe can further use infer to visualize the bootstrap sampling distribution and get a confidence interval around the parameter we estimated.\n\nvisualize(): quick visualization of the distribution\nget_confidence_interval(level=0.95, type=\"percentile\"): computes the confidence interval\nshade_ci(endpoints=c(min, max)): shades the visualization with the computed confidence interval"
   },
   {
-    "objectID": "notes/hello-world.html#google-colab",
-    "href": "notes/hello-world.html#google-colab",
-    "title": "Hello, world!",
-    "section": "6 Google Colab",
-    "text": "6 Google Colab\nThere are many ways to program with R. Some popular options include:\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and Julia, too!)\nNew R notebook:\n\ncolab (r kernel) - use this link to start a new R notebook\nFile &gt; New notebook error, Python! name 'x' is not defined\n\nCell types:\n\n+ Code - write and execute code\n+ Text - write text blocks in markdown\n\nLeft sidebar:\n\nTable of contents - outline from text headings\nFind and replace - find and/or replace\nFiles - upload files to cloud session\n\nFrequently used menu options:\n\nFile &gt; Locate in Drive - where in your Google Drive?\nFile &gt; Save - saves\nFile &gt; Revision history - history of changes you made\nFile &gt; Download &gt; Download .ipynb - used to submit assignments!\nFile &gt; Print - prints\nRuntime &gt; Run all - run all cells\nRuntime &gt; Run before - run all cells before current active cell\nRuntime &gt; Restart and run all - restart runtime, then run all\n\nFrequently used keyboard shortcuts:\n\nCmd/Ctrl+S - save\nCmd/Ctrl+Enter - run focused cell\nCmd/Ctrl+Shift+A - select all cells\nCmd/Ctrl+/ - comment/uncomment selection\nCmd/Ctrl+] - increase indent\nCmd/Ctrl+[ - decrease indent"
-  },
-  {
-    "objectID": "notes/hello-world.html#further-reading-and-references",
-    "href": "notes/hello-world.html#further-reading-and-references",
-    "title": "Hello, world!",
-    "section": "7 Further reading and references",
-    "text": "7 Further reading and references\nRecommended reading:\n\nCh 1 Data Science from Computational and Inferential Thinking: The Foundations of Data Science (just skip the bits about using Python, since we are using R)\nCh 1 Introduction in R for Data Science\nCh 1 Software for Modeling in Tidy Modeling with R\n\nOther references:\n\nMatlab vs. Julia vs. Python from blog post by Toby Driscoll"
-  },
-  {
-    "objectID": "notes/hello-world.html#footnotes",
-    "href": "notes/hello-world.html#footnotes",
-    "title": "Hello, world!",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nKok, P., & de Lange, F. P. (2014). Shape perception simultaneously up-and downregulates neural activity in the primary visual cortex. Current Biology, 24(13), 1531-1535.↩︎\nhttps://neurosciencenews.com/neuroimaging-visual-processing-fmri-1150/↩︎"
-  },
-  {
-    "objectID": "notes/classification.html",
-    "href": "notes/classification.html",
-    "title": "Classification",
-    "section": "",
-    "text": "Under Construction"
+    "objectID": "notes/sampling-variability.html#further-reading",
+    "href": "notes/sampling-variability.html#further-reading",
+    "title": "Sampling variability",
+    "section": "6 Further Reading",
+    "text": "6 Further Reading"
   },
   {
     "objectID": "notes/probability-distributions.html",
@@ -858,14 +557,14 @@
     "href": "notes/probability-distributions.html#exploring-a-simple-dataset",
     "title": "Probablity distributions",
     "section": "1 Exploring a simple dataset",
-    "text": "1 Exploring a simple dataset\n\n\nSetup code\n# ------ setup for today's lecture notes ----- # \n\n# suppress startup messages at package load\nsuppressPackageStartupMessages(library(tidyverse))\n\n# set the theme for the plots \ntheme_set(theme_classic(base_size=15))\n\n# generate 10000 y values with mean 3 and sd 0.25\ndata &lt;- tibble(\n    y=rnorm(1000, mean=3, sd=0.25)\n) \n\n\nWe begin with the simplest possible dataset: suppose we measure a single quantity y. What can we do with these data?\nWe can create a visual summary of our dataset with a histogram. A histogram plots the distribution of a set of data, which allows us to get a quick visual of the data: formally we have plotted the the frequency distribution (count) of the data, but this also gives a sense of the central tendency and variability in our dataset.\n\n\nCode\nggplot(data=data, aes(x=y)) +\n    geom_histogram(\n        binwidth = 0.25,\n        color=\"black\", fill='lightgray', alpha=0.5\n    )"
+    "text": "1 Exploring a simple dataset\n\n\nSetup code\n# ------ setup for today's lecture notes ----- # \n\n# suppress startup messages at package load\nsuppressPackageStartupMessages(library(tidyverse))\n\n\nWarning: package 'ggplot2' was built under R version 4.3.1\n\n\nSetup code\n# set the theme for the plots \ntheme_set(theme_classic(base_size=15))\n\n# generate 10000 y values with mean 3 and sd 0.25\ndata &lt;- tibble(\n    y=rnorm(1000, mean=3, sd=0.25)\n) \n\n\nWe begin with the simplest possible dataset: suppose we measure a single quantity y. What can we do with these data?\nWe can create a visual summary of our dataset with a histogram. A histogram plots the distribution of a set of data, which allows us to get a quick visual of the data: formally we have plotted the the frequency distribution (count) of the data, but this also gives a sense of the central tendency and variability in our dataset.\n\n\nCode\nggplot(data=data, aes(x=y)) +\n    geom_histogram(\n        binwidth = 0.25,\n        color=\"black\", fill='lightgray', alpha=0.5\n    )"
   },
   {
     "objectID": "notes/probability-distributions.html#descriptive-statistics",
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  2.98   2.98 0.246      2.82      3.13"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.00   3.00 0.247      2.84      3.16"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -901,6 +600,13 @@
     "title": "Probablity distributions",
     "section": "7 Further reading and references",
     "text": "7 Further reading and references\n\nAppendix A: Statistical Background in Modern Dive\nBasics of descriptive statistics in Statistics for linguists\nCh 11: Modeling Randomness in Statistical Modeling\n\nhttps://r4ds.hadley.nz/data-visualize#visualizing-distributions"
+  },
+  {
+    "objectID": "notes/model-reliability.html",
+    "href": "notes/model-reliability.html",
+    "title": "Model reliability",
+    "section": "",
+    "text": "Under Construction"
   },
   {
     "objectID": "notes/model-accuracy.html",
@@ -973,102 +679,123 @@
     "text": "Under Construction"
   },
   {
-    "objectID": "notes/mixed-effects-models.html",
-    "href": "notes/mixed-effects-models.html",
-    "title": "Mixed-effects models",
+    "objectID": "notes/hello-world.html",
+    "href": "notes/hello-world.html",
+    "title": "Hello, world!",
+    "section": "",
+    "text": "Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.\n– Computational and Inferential Thinking: The Foundations of Data Science\n\nData science is about making decisions based on incomplete information. This concept is not new – brains (especially human brains!) love doing this. To illustrate, what do you see in the following image?\n\n\n\nFigure 1: from Kok & de Lange (2014)1\n\n\nDid you see a gray triangle on top of three circles? Most people do! But it turns out that your brain is filling in the gaps, inferring the presence of a triangle from the partial information available in the black circles 2.\nWhile the underlying concept is not new, the computational tools we use are relatively new. And we have a lot more data!\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
+  },
+  {
+    "objectID": "notes/hello-world.html#what-is-data-science",
+    "href": "notes/hello-world.html#what-is-data-science",
+    "title": "Hello, world!",
+    "section": "",
+    "text": "Data are descriptions of the world around us, collected through observation and stored on computers. Computers enable us to infer properties of the world from these descriptions. Data science is the discipline of drawing conclusions from data using computation.\n– Computational and Inferential Thinking: The Foundations of Data Science\n\nData science is about making decisions based on incomplete information. This concept is not new – brains (especially human brains!) love doing this. To illustrate, what do you see in the following image?\n\n\n\nFigure 1: from Kok & de Lange (2014)1\n\n\nDid you see a gray triangle on top of three circles? Most people do! But it turns out that your brain is filling in the gaps, inferring the presence of a triangle from the partial information available in the black circles 2.\nWhile the underlying concept is not new, the computational tools we use are relatively new. And we have a lot more data!\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
+  },
+  {
+    "objectID": "notes/hello-world.html#data-science-workflow",
+    "href": "notes/hello-world.html#data-science-workflow",
+    "title": "Hello, world!",
+    "section": "2 Data science workflow",
+    "text": "2 Data science workflow\nThe folks who wrote R for Data Science proposed the following data science workflow:\n\n\n\nFigure 3: from R for Data Science\n\n\nLet’s unpack what these mean briefly:\n\nImport: gather data from a variety of sources, which can include structured data (like databases and spreadsheets) and unstructured data (like text, images, and videos).\nTidy and Transform: The raw data we import is often messy. Data scientists clean and preprocess the data, which involves removing errors, handling missing values, and transforming data into a suitable format for analysis.\nVisualize (exploratory data analysis) visualize and summarize data to identify patterns, form hypotheses, select appropriate models, and guide further analysis.\nModel: Using statistical methods, machine learning algorithms, and other computational techniques, data scientists build models to understand underlying patterns in the data. Models are tested using validation techniques to ensure their accuracy and reliability. Then data scientists use them to draw meaningful conclusions, like predictions about the future or inferences about populuation.\nCommunicate: Finally, a crucial part of data science is communicating findings clearly and effectively, whatever your purpose (academic, industry, or the public!)\nProgram: Surrounding all these is programming, since the computational tools are what make these possible!\n\nData science has applications in many fields far beyond language and the mind. It allows us to make data-driven decisions, solve complex problems, and uncover hidden insights that might not be apparent through other methods."
+  },
+  {
+    "objectID": "notes/hello-world.html#overview-of-the-course",
+    "href": "notes/hello-world.html#overview-of-the-course",
+    "title": "Hello, world!",
+    "section": "3 Overview of the course",
+    "text": "3 Overview of the course\nWe will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:\n\nR basics\nData importing\nData visualization\nData wrangling\n\nThen, we will spend the next several weeks building a foundation in basic statistics and model building:\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability\n\nFinally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
+  },
+  {
+    "objectID": "notes/hello-world.html#syllabus-briefly",
+    "href": "notes/hello-world.html#syllabus-briefly",
+    "title": "Hello, world!",
+    "section": "4 Syllabus, briefly",
+    "text": "4 Syllabus, briefly\nEach week will include two lectures and a lab:\n\nLectures are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!\nLab is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule.\n\nThere are 10 graded assessments:\n\n6 Problem sets in which you will be asked to apply your newly aquired R programming skills.\n4 Quizzes in which you will be tested on your understanding of lecture concepts.\n\nThere are a few policies to take note of:\n\nMissed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)\nYou may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students).\nYou may submit any missed quiz or problem set by the end of the semester for half-credit (50%)."
+  },
+  {
+    "objectID": "notes/hello-world.html#why-r",
+    "href": "notes/hello-world.html#why-r",
+    "title": "Hello, world!",
+    "section": "5 Why R?",
+    "text": "5 Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)\n\nIf you are interested, here is a math professor’s take on the differences between Python, Julia, and MATLAB. Note that although they’re optimized for different things, they are all great and the technical skills and conceptual knowledge you gain in this course will transfer to other languages."
+  },
+  {
+    "objectID": "notes/hello-world.html#google-colab",
+    "href": "notes/hello-world.html#google-colab",
+    "title": "Hello, world!",
+    "section": "6 Google Colab",
+    "text": "6 Google Colab\nThere are many ways to program with R. Some popular options include:\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc. We use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required! Google Colab officially supports Python, but secretly supports R (and Julia, too!)\nNew R notebook:\n\ncolab (r kernel) - use this link to start a new R notebook\nFile &gt; New notebook error, Python! name 'x' is not defined\n\nCell types:\n\n+ Code - write and execute code\n+ Text - write text blocks in markdown\n\nLeft sidebar:\n\nTable of contents - outline from text headings\nFind and replace - find and/or replace\nFiles - upload files to cloud session\n\nFrequently used menu options:\n\nFile &gt; Locate in Drive - where in your Google Drive?\nFile &gt; Save - saves\nFile &gt; Revision history - history of changes you made\nFile &gt; Download &gt; Download .ipynb - used to submit assignments!\nFile &gt; Print - prints\nRuntime &gt; Run all - run all cells\nRuntime &gt; Run before - run all cells before current active cell\nRuntime &gt; Restart and run all - restart runtime, then run all\n\nFrequently used keyboard shortcuts:\n\nCmd/Ctrl+S - save\nCmd/Ctrl+Enter - run focused cell\nCmd/Ctrl+Shift+A - select all cells\nCmd/Ctrl+/ - comment/uncomment selection\nCmd/Ctrl+] - increase indent\nCmd/Ctrl+[ - decrease indent"
+  },
+  {
+    "objectID": "notes/hello-world.html#further-reading-and-references",
+    "href": "notes/hello-world.html#further-reading-and-references",
+    "title": "Hello, world!",
+    "section": "7 Further reading and references",
+    "text": "7 Further reading and references\nRecommended reading:\n\nCh 1 Data Science from Computational and Inferential Thinking: The Foundations of Data Science (just skip the bits about using Python, since we are using R)\nCh 1 Introduction in R for Data Science\nCh 1 Software for Modeling in Tidy Modeling with R\n\nOther references:\n\nMatlab vs. Julia vs. Python from blog post by Toby Driscoll"
+  },
+  {
+    "objectID": "notes/hello-world.html#footnotes",
+    "href": "notes/hello-world.html#footnotes",
+    "title": "Hello, world!",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nKok, P., & de Lange, F. P. (2014). Shape perception simultaneously up-and downregulates neural activity in the primary visual cortex. Current Biology, 24(13), 1531-1535.↩︎\nhttps://neurosciencenews.com/neuroimaging-visual-processing-fmri-1150/↩︎"
+  },
+  {
+    "objectID": "notes/data-wrangling.html",
+    "href": "notes/data-wrangling.html",
+    "title": "Data wrangling",
     "section": "",
     "text": "Under Construction"
   },
   {
-    "objectID": "notes/model-fitting.html",
-    "href": "notes/model-fitting.html",
-    "title": "Model fitting",
-    "section": "",
-    "text": "Under Construction"
+    "objectID": "notes/data-wrangling.html#why-wrangle-and-tidy",
+    "href": "notes/data-wrangling.html#why-wrangle-and-tidy",
+    "title": "Data wrangling",
+    "section": "1 Why wrangle and tidy?",
+    "text": "1 Why wrangle and tidy?"
   },
   {
-    "objectID": "notes/model-fitting.html#model-fitting-basics",
-    "href": "notes/model-fitting.html#model-fitting-basics",
-    "title": "Model fitting",
-    "section": "1 Model fitting basics",
-    "text": "1 Model fitting basics\n\nin context of model building more broadly\na genear overview of the concept"
+    "objectID": "notes/data-wrangling.html#data-wrangling-with-dplyr",
+    "href": "notes/data-wrangling.html#data-wrangling-with-dplyr",
+    "title": "Data wrangling",
+    "section": "2 Data wrangling with dplyr",
+    "text": "2 Data wrangling with dplyr\nAll dplyr functions (verbs) share a common structure:\n\n1st argument is always a data frame\nSubsequent arguments typically describe which columns to operate on (via their names)\nOutput is always a new data frame\n\nWe can group dplyr functions based on what they operate on:\n\nrows - see section 3 Manipulating rows\ncolumns - see section 4 Manipulating columns\ngroups - see section 5 Grouping and summarizing data frames\ntables - see section 6 Joining data frames\n\nWe can easily combine dplyr functions to solve complex problems:\n\nThe pipe operator, |&gt; takes the output from one function and passes it as input (the first argument) to the next function.\nThere is another version of the pipe, %&gt;%. See the reading on data transformation if you are curious about the difference.\n\nIn lecture, we will demonstrate with a few dplyr functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems."
   },
   {
-    "objectID": "notes/model-fitting.html#mean-squared-error",
-    "href": "notes/model-fitting.html#mean-squared-error",
-    "title": "Model fitting",
-    "section": "2 Mean squared error",
-    "text": "2 Mean squared error\nCost function."
+    "objectID": "notes/data-wrangling.html#manipulating-rows",
+    "href": "notes/data-wrangling.html#manipulating-rows",
+    "title": "Data wrangling",
+    "section": "3 Manipulating rows",
+    "text": "3 Manipulating rows\nfilter()\narrange()"
   },
   {
-    "objectID": "notes/model-fitting.html#error-surface",
-    "href": "notes/model-fitting.html#error-surface",
-    "title": "Model fitting",
-    "section": "3 Error surface",
-    "text": "3 Error surface\n\nWe can visualize the error surface for simple example: 2 parameters, \\(\\beta_0\\) and \\(\\beta_1\\), and the cost function (mean square error).\nShow nonlinear model v linear model figs\ngoal is to find the minimum point\nnotice the nonlinear model can have local minimums but lm has only 1. Because lm is a convex function."
+    "objectID": "notes/data-wrangling.html#manipulating-columns",
+    "href": "notes/data-wrangling.html#manipulating-columns",
+    "title": "Data wrangling",
+    "section": "4 Manipulating columns",
+    "text": "4 Manipulating columns\nselect()\nmutate()"
   },
   {
-    "objectID": "notes/model-fitting.html#gradient-descent",
-    "href": "notes/model-fitting.html#gradient-descent",
-    "title": "Model fitting",
-    "section": "4 Gradient descent",
-    "text": "4 Gradient descent\nIF we want to estimate the free parameters in a way that would work broadly, for linear or nonlinear models, we can use gradient descent.\n\nmachine learning / optimization.\nIf we have a lot of data, we could use stochastic gradient descent which is the same except we…"
+    "objectID": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
+    "href": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
+    "title": "Data wrangling",
+    "section": "5 Grouping and summarizing data frames",
+    "text": "5 Grouping and summarizing data frames"
   },
   {
-    "objectID": "notes/model-fitting.html#ordinary-least-squares",
-    "href": "notes/model-fitting.html#ordinary-least-squares",
-    "title": "Model fitting",
-    "section": "5 Ordinary least squares",
-    "text": "5 Ordinary least squares\nAs we saw above, linear models have the special property that they have a solution, the OLS. Rather than searching the error surface iteratively via gradient descent (optimization), we can solve for this point directly with linear algebra.\n\nmatrix approach: we write the 3-step function.\nuse lm() in R.\ninfer approach:\n\nspecify(), fit()\n\n\n\nFurther reading\n\nCh. 8 Fitting models to data in Statistical Modeling"
+    "objectID": "notes/data-wrangling.html#joining-data-frames",
+    "href": "notes/data-wrangling.html#joining-data-frames",
+    "title": "Data wrangling",
+    "section": "6 Joining data frames",
+    "text": "6 Joining data frames\n\ndon’t cover, just show the functions and say we won’t cover it"
   },
   {
-    "objectID": "notes/sampling-variability.html",
-    "href": "notes/sampling-variability.html",
-    "title": "Sampling variability",
-    "section": "",
-    "text": "Suppose we measure a single quantity for a single condition: the height of human adults. Let’s get a visual summary of our data with a histogram.\nWe can see that our data follow a roughly Gaussian distribution (unimodal, symmetric), so we can use the mean to describe the central tendency and standard deviation to describe the spread of the values. They are given by the following equations:\n\nmean(\\(x\\)) = \\(\\overline{x} = \\frac{\\sum_{i=i}^{n} x_{i}}{n}\\)\nsd(\\(x\\)) = \\(\\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\overline{x})^2}{n-1}}\\)"
-  },
-  {
-    "objectID": "notes/sampling-variability.html#exploring-a-simple-dataset",
-    "href": "notes/sampling-variability.html#exploring-a-simple-dataset",
-    "title": "Sampling variability",
-    "section": "",
-    "text": "Suppose we measure a single quantity for a single condition: the height of human adults. Let’s get a visual summary of our data with a histogram.\nWe can see that our data follow a roughly Gaussian distribution (unimodal, symmetric), so we can use the mean to describe the central tendency and standard deviation to describe the spread of the values. They are given by the following equations:\n\nmean(\\(x\\)) = \\(\\overline{x} = \\frac{\\sum_{i=i}^{n} x_{i}}{n}\\)\nsd(\\(x\\)) = \\(\\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\overline{x})^2}{n-1}}\\)"
-  },
-  {
-    "objectID": "notes/sampling-variability.html#standard-deviation",
-    "href": "notes/sampling-variability.html#standard-deviation",
-    "title": "Sampling variability",
-    "section": "2 Standard deviation",
-    "text": "2 Standard deviation\nMost of us have an intuitive understanding of how the mean is computed: add up all the values and divide by the number of values. But what about the standard deviation? To understand how the standard deviation is computed, it helps to think the mean as a very simple model of our data: one where all cases are the same. Each individual case can be expressed as the model value plus how much the case deviates from the model value (residual, or leftover).\n\nJust as the mean describes a typical value in our data set, we can use the mean square of the residuals to describe the typical variation in our data set. To compute the mean square, we square the residuals (a neat trick that makes them all positive!) and then add them up — known as the sum of squares. Then, we divide by the number of cases, \\(n\\), minus 1. (we’ll see why we use \\(n-1\\) instead of just \\(n\\) later in the lecture).\nLater in the class, we’ll compute the mean square for all sorts of models. Here, when it’s used to describe how far a set of data are from the mean, it goes by the nickname variance. To fix the annoying squared units, we take the square root of the variance and voilà! We have the standard deviation."
-  },
-  {
-    "objectID": "notes/sampling-variability.html#sampling-distribution",
-    "href": "notes/sampling-variability.html#sampling-distribution",
-    "title": "Sampling variability",
-    "section": "3 Sampling distribution",
-    "text": "3 Sampling distribution\nWhen measuring some quantity we are usually interested in knowing something about the population (the height of human adults, for example). But in practice we can only observe a small sample of the entire population.\n\nAny statistic we compute from a random sample we’ve collected (technically known as the parameter estimate) will be subject to sampling variability and will differ from that statistic computed on the entire population (technically known as the parameter). In other words, our measurements are noisy, and we need a way to express our uncertainty on the statistic we’ve computed. Quantifying this sampling variability is an important component of statistical inference.\nThe sampling distribution is the probability distribution of the values our parameter estimate can take on. We can construct the sampling distribution by taking a random sample, computing the statistic of interest, and repeating this process many times. The spread of these results indicates how the parameter estimate will vary from different random samples.\nWe can quantify the spread of our results (AKA express our uncertainty on our parameter estimate) using a parametric approach, by computing the standard deviation of our sampling distribution (called standard error!), or using a nonparametric approach, by constructing a confidence interval."
-  },
-  {
-    "objectID": "notes/sampling-variability.html#standard-error-and-confidence-intervals",
-    "href": "notes/sampling-variability.html#standard-error-and-confidence-intervals",
-    "title": "Sampling variability",
-    "section": "4 Standard error and confidence intervals",
-    "text": "4 Standard error and confidence intervals\nThe standard deviation of the sampling distribution is known as the standard error. When the statistic of interest is the mean, the standard error is given by the following equation, where \\(\\sigma\\) is the standard deviation of the population and \\(n\\) is the sample size: \\(\\frac{\\sigma}{\\sqrt{n}}\\)\n\nIn practice, the standard deviation of the population is unknown, so we use the standard deviation of the sample as an estimate. That is why we use \\(n-1\\) in our mean square calculation. We assume our sample standard deviation is probably underestimating the population, so we “correct” this by dividing by \\(n-1\\) instead of \\(n\\).\nStandard error is considered parametric because we assume a parametric probability distribution (Gaussian) and compute the standard error based on what happens theoretically when we sample that distribution.\nclt? sample size relationship.\n\nWe can also quantify the sampling variability with a confidence interval, which expresses our uncertainty on our parameter estimate via a coverage interval. We can construct any confidence interval, but in ✨science✨ the convention is to choose the 95% coverage interval.\n\nRecall from last lecture that a coverage interval is a nonparametric statistic. The 95% coverage interval are the values between which 95% of the data points fall (the difference between the 2.5 percentile and the 97.5 percentile in our sampling distribution).\nConfidence intervals are closely related to standard error: assuming the sampling distribution is Gaussian (the parametric approach), the 68% confidence interval is +/- 1 standard error and the 95% confidence interval is +/- 2 standard error."
-  },
-  {
-    "objectID": "notes/sampling-variability.html#bootstrapping",
-    "href": "notes/sampling-variability.html#bootstrapping",
-    "title": "Sampling variability",
-    "section": "5 Bootstrapping",
-    "text": "5 Bootstrapping\nIdeally, we would construct the sampling distribution by repeating our experiment many times, drawing new random samples from the population each time. But in practice, this is impossible. We are usually constrained — by time, money, access, etc. — such that we can only take one sample.\n\nThis is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the mean and standard deviation of the sample to approximate what would happen if we had sampled from a Gaussian probability distribution (see above!).\nWhat if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions? We can use a technique called bootstrapping.\n\nWith bootstrapping, instead of assuming a parametric probability distribution, we can use the data themselves to approximate the underlying probability distribution. In other words, instead of sampling from the population, we can sample our sample! We’re “pulling ourselves up by our bootstraps”: constructing the sampling distribution from our own data.\n\nThe procedure is very simple. To illustrate, suppose we have a set a data with 100 data points. We generate the bootstrap sampling distribution by drawing the same number of data points (100) with replacement from our data set and compute the parameter estimate — mean, median, whatever — on those points, then we repeat the process many times.\n\nThere are many ways to generate a bootstrap sampling distribution in R. We will use the infer package in this class, which was developed by Hadley Wickham (the tidyverse guy!) and others to simplify aspects of statistical inference in R.\n\nspecify(response=x): choose which variable is the focus of our inference\ngenerate(reps=n, type='bootstrap'): generate n replicates of the data\ncalculate(stat=\"mean\"): statistic to calculate on each sample; what parameter are you trying to estimate?\n\nWe can further use infer to visualize the bootstrap sampling distribution and get a confidence interval around the parameter we estimated.\n\nvisualize(): quick visualization of the distribution\nget_confidence_interval(level=0.95, type=\"percentile\"): computes the confidence interval\nshade_ci(endpoints=c(min, max)): shades the visualization with the computed confidence interval"
-  },
-  {
-    "objectID": "notes/sampling-variability.html#further-reading",
-    "href": "notes/sampling-variability.html#further-reading",
-    "title": "Sampling variability",
-    "section": "6 Further Reading",
-    "text": "6 Further Reading"
+    "objectID": "notes/data-wrangling.html#data-tidying-with-tidyr",
+    "href": "notes/data-wrangling.html#data-tidying-with-tidyr",
+    "title": "Data wrangling",
+    "section": "7 Data tidying with tidyr",
+    "text": "7 Data tidying with tidyr\n\nsneak in with case study later; for now just show functions and say we won’t cover it.\n\n\nFurther reading and references\nhttps://r4ds.hadley.nz/data-transform\nhttps://r4ds.hadley.nz/joins"
   },
   {
     "objectID": "notes/data-importing.html",
@@ -1127,6 +854,83 @@
     "text": "7 Further reading and references\nRecommended further reading:\n\nData tidying in R for Data Science\nTibbles in R for Data Science\nData import in R for Data Science\nreadr cheatsheet"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Datasci for lang & mind",
+    "section": "",
+    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nWeek\nDay\nTopic\nResources\n\n\n\n\n1\n08-28\nHello, world!\nslides\n\n\n1\n08-31\nR-basics\nslides, demo, lab\n\n\n2\n09-05\nData importing\nslides, demo\n\n\n2\n09-07\nData visualization\n\n\n\n2\n09-10\nProblem set 1\n\n\n\n3\n09-12\nData wrangling\n\n\n\n3\n09-14\nProbability distributions\n\n\n\n4\n09-19\nQuiz 1\n\n\n\n4\n09-20\nSampling variability\n\n\n\n5\n09-26\nHypothesis testing\n\n\n\n5\n09-28\nR tutorial\n\n\n\n5\n10-01\nProblem set 2\n\n\n\n6\n10-03\nModel specification\n\n\n\n6\n10-05\nModel fitting\n\n\n\n7\n10-10\nQuiz 2\n\n\n\n7\n10-12\nNo class, break\n\n\n\n8\n10-17\nR tutorial\n\n\n\n8\n10-19\nModel accuracy\n\n\n\n8\n10-22\nProblem set 3\n\n\n\n9\n10-24\nModel reliability\n\n\n\n9\n10-26\nR tutorial\n\n\n\n10\n10-31\nQuiz 3\n\n\n\n10\n11-02\nTBD guest\n\n\n\n11\n11-07\nClassification\n\n\n\n11\n11-09\nR tutorial\n\n\n\n11\n11-12\nProblem set 4\n\n\n\n12\n11-14\nInference\n\n\n\n12\n11-16\nR tutorial\n\n\n\n13\n11-21\nQuiz 4\n\n\n\n13\n11-23\nNo class, break\n\n\n\n14\n11-28\nFeature engineering\n\n\n\n14\n11-30\nR tutorial\n\n\n\n14\n12-03\nProblem set 5\n\n\n\n15\n12-05\nMultilevel models\n\n\n\n15\n12-07\nR tutorial\n\n\n\n15\n12-10\nProblem set 6"
+  },
+  {
+    "objectID": "drafts.html",
+    "href": "drafts.html",
+    "title": "All drafts",
+    "section": "",
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 5, 2023\n\n\nWebR template\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "drafts.html#lecture-notes",
+    "href": "drafts.html#lecture-notes",
+    "title": "All drafts",
+    "section": "",
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 5, 2023\n\n\nWebR template\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "drafts.html#labs",
+    "href": "drafts.html#labs",
+    "title": "All drafts",
+    "section": "Labs",
+    "text": "Labs\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nSep 7, 2023\n\n\nLab 2: Import and visualize data\n\n\nKatie Schuler\n\n\n\n\nundefined\n\n\nLab 1: Getting started with R\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "drafts.html#problem-sets",
+    "href": "drafts.html#problem-sets",
+    "title": "All drafts",
+    "section": "Problem sets",
+    "text": "Problem sets\n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nProblem set 1\n\n\n\n\n\n\n\nProblem set 2\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 1: Getting started with R",
+    "section": "",
+    "text": "To learn to program in R (or any language), you can read about how to do it, and watch someone else do it; but the only way to really learn is to do it yourself. Create some data structures, try some stuff, and see what happens! Here are some practice quiz questions to guide your learning. We will go over the solutions to these in lab."
+  },
+  {
+    "objectID": "labs/lab-01.html#google-colab",
+    "href": "labs/lab-01.html#google-colab",
+    "title": "Lab 1: Getting started with R",
+    "section": "1 Google Colab",
+    "text": "1 Google Colab\nTrue or false? We start a new R notebook in Google Colab with File &gt; New notebook\n\n True False\n\nFor problem sets, how will you submit your colab notebook for grading?\n\n File &gt; Download &gt; Download .ipynb, then upload to Gradescope File &gt; Download &gt; Download .ipynb, then upload to Canvas File &gt; Download &gt; Download .py, then upload to Gradescope File &gt; Download &gt; Download .py, then upload to Canvas\n\nWhat version of R is Google Colab running? Hint: use sessionInfo().\n\nWhat is the relationship between R and Google Colab?\n\n R is a programming language. Google Colab is a smaller, specific version of R. R is a programming language. Google Colab is a development environment where you can run R R and Google Colab are both programming languages. R is a paid (proprietary) programming language. Google Colab is a free service to run R."
+  },
+  {
+    "objectID": "labs/lab-01.html#r-basics",
+    "href": "labs/lab-01.html#r-basics",
+    "title": "Lab 1: Getting started with R",
+    "section": "2 R Basics",
+    "text": "2 R Basics\nWhich of the following are expressions?\n\n 10 5 + 10 x &lt;- 5 + 10 x &lt;- y + 10 mean(x)\n\nWhich of the following are valid variable names in R?\n\n childAge response_time 1stPlaceWinner 2fast2furious pi\n\nSuppose we open a new colab notebook and run the following code block. What will be returned?\nx &lt;- 1 + 2\ny &lt;- 0 + 3\nls()\n\n 3 x=3 • y=3 'x' • 'y'  mean(c(1,3,5)) • median(c(1,3,5))\n\nWhich of the following will load the emo package into the current environment?\n\n install.packages('emo') library(emo) data(emo) attributes(emo)\n\nWhich of the following occur in the code block below?\n# compute the mean of x and y\nmean(c(x,y))\n\n a message a function a comment an expression"
+  },
+  {
+    "objectID": "labs/lab-01.html#vectors",
+    "href": "labs/lab-01.html#vectors",
+    "title": "Lab 1: Getting started with R",
+    "section": "3 Vectors",
+    "text": "3 Vectors\nSuppose we construct a vector with c(1, \"two\", 3, 4, 5, 6) and assign it to x. What will the following code block return?\ntypeof(x)\n\nWhat is the previous question an example of?\n\n attribute addition explicit coercion implicit coercion none of the above\n\nWhat will the following code block return?\nx &lt;- 1:4\ny &lt;- matrix(x, ncol=2, nrow=2)\ntypeof(y)\n\nWhat will the following code block return?\nx &lt;- c()\nlength(x)\n\nGiven the following output from str(x), what will as.logical(x) return?\n\n\n num [1:4] 1 0 1 0\n\n\n\n an error TRUE • FALSE • TRUE • FALSE FALSE FALSE • TRUE • FALSE • TRUE\n\nGiven the following vector, what will as.double(x) return?\nx &lt;- c(\"one\", \"two\", \"three\")\n\n an error 1 • 2 • 3 2 • 4 • 6 'one' • 'two' • 'three'\n\nWhat happens if you add a vector of numbers to a single number in the following expression?\nc(1, 3, 5) + 1\n\n 2 • 3 • 5 Error: length mismatch 1 • 3 • 5 • 1 2 • 4 • 6\n\nWhat happens if you multiply a vector times another vector?\nc(1, 3, 5) * c(10, 100, 1000)\n\n 10 • 300 • 5000 Error: length mismatch 10 • 30 • 50 • 100 • 300 • 500 • 1000 • 3000 • 5000 a 2 x 3 matrix Error: cannot multiply vectors\n\nSuppose we run the following code. What will any(x) return?\nx &lt;- c(1, 5, 11) &gt; 10\n\n TRUE FALSE Error: vector is double but requires logical"
+  },
+  {
+    "objectID": "labs/lab-01.html#subsetting",
+    "href": "labs/lab-01.html#subsetting",
+    "title": "Lab 1: Getting started with R",
+    "section": "4 Subsetting",
+    "text": "4 Subsetting\nWhich of the following code subsets the vector x &lt;- c(\"blue\", \"pink\", \"red\") to return just the first element?\n\n x[1] x[[1]] x[0] x[-c(2, 3)] x[“blue”]\n\nSuppose we run the following code. What will x[[2]] return?\nx &lt;- seq(from = 2, to =8, by=2)\n\nSuppose we run the following code. What will m[1, 2] return?\nm &lt;- matrix(c(10,20,30,40), nrow=2, ncol=2)"
+  },
+  {
+    "objectID": "notes/classification.html",
+    "href": "notes/classification.html",
+    "title": "Classification",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
     "objectID": "notes/data-visualization.html",
     "href": "notes/data-visualization.html",
     "title": "Data visualization",
@@ -1176,6 +980,20 @@
     "text": "6 Saving plots\nHelper functions:\n\nlast_plot() - returns the last plot\nggsave(\"plot.png\", width=5, height=5) - saves last plot\n\n\nFurther reading and references\nUseful resources:\n\nggplot cheat sheet\nintroduction to palmerpenguins\n\nRecommended further reading:\n\nhttps://moderndive.com/2-viz.html\nLayers in R for Data Science\n\nOther references:\n\nhttps://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html\nhttps://r4ds.hadley.nz/layers"
   },
   {
+    "objectID": "notes/feature-engineering.html",
+    "href": "notes/feature-engineering.html",
+    "title": "Feature engineering",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
+    "objectID": "notes/feature-engineering.html#dummy-coding",
+    "href": "notes/feature-engineering.html#dummy-coding",
+    "title": "Feature engineering",
+    "section": "1 Dummy coding",
+    "text": "1 Dummy coding\nIncluding categorical variables in a model:\n\nOne approach is to create “dummy variables”, called dummy coding, to represent the different levels of the categorical variable. Dummy variables are coded as 1 or 0 (binary) to indicate the presence or absence of a specific category or level. R does this by default.\nIn our swim records example, R dummy codes gender by creating a dummy variable male, where 1 means true and 0 means false. We do not also need a female variable because when male is 0, the person must be female. Creating an additional variable gives no new information. The “left out” category is called the reference level. Unless you specify otherwise, R uses whatever is alphabetically first as the reference level.\nIf a categorical variable has more than two levels, we can simply add a column. To illustrate, imagine our gender variable has a third level, “non-binary”. We create our male column as before (1 for true, 0 for false), and add a non-binary column (1 for true, 0 for false). If the swimmer is neither male nor non-binary (0 in both columns), they must be female. We can have as many levels as we like in a categorical variable, but we should be aware that this adds as many terms (minus 1) to the model! Here \\(x_2\\) is the vector for the male variable and \\(x_3\\) is the vector for thenon-binary variable:\n\nin R: y ~ 1 + year + gender\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_3\\)"
+  },
+  {
     "objectID": "notes/hypothesis-testing.html",
     "href": "notes/hypothesis-testing.html",
     "title": "Hypothesis testing",
@@ -1223,6 +1041,118 @@
     "title": "Hypothesis testing",
     "section": "7 Further reading",
     "text": "7 Further reading\n\nThe logic of hypothesis testing - Chapter 13, Statistical Modeling\nHypothesis testing - Chapter 9, Modern Dive"
+  },
+  {
+    "objectID": "notes/mixed-effects-models.html",
+    "href": "notes/mixed-effects-models.html",
+    "title": "Mixed-effects models",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
+    "objectID": "notes/model-fitting.html",
+    "href": "notes/model-fitting.html",
+    "title": "Model fitting",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
+    "objectID": "notes/model-fitting.html#model-fitting-basics",
+    "href": "notes/model-fitting.html#model-fitting-basics",
+    "title": "Model fitting",
+    "section": "1 Model fitting basics",
+    "text": "1 Model fitting basics\n\nin context of model building more broadly\na genear overview of the concept"
+  },
+  {
+    "objectID": "notes/model-fitting.html#mean-squared-error",
+    "href": "notes/model-fitting.html#mean-squared-error",
+    "title": "Model fitting",
+    "section": "2 Mean squared error",
+    "text": "2 Mean squared error\nCost function."
+  },
+  {
+    "objectID": "notes/model-fitting.html#error-surface",
+    "href": "notes/model-fitting.html#error-surface",
+    "title": "Model fitting",
+    "section": "3 Error surface",
+    "text": "3 Error surface\n\nWe can visualize the error surface for simple example: 2 parameters, \\(\\beta_0\\) and \\(\\beta_1\\), and the cost function (mean square error).\nShow nonlinear model v linear model figs\ngoal is to find the minimum point\nnotice the nonlinear model can have local minimums but lm has only 1. Because lm is a convex function."
+  },
+  {
+    "objectID": "notes/model-fitting.html#gradient-descent",
+    "href": "notes/model-fitting.html#gradient-descent",
+    "title": "Model fitting",
+    "section": "4 Gradient descent",
+    "text": "4 Gradient descent\nIF we want to estimate the free parameters in a way that would work broadly, for linear or nonlinear models, we can use gradient descent.\n\nmachine learning / optimization.\nIf we have a lot of data, we could use stochastic gradient descent which is the same except we…"
+  },
+  {
+    "objectID": "notes/model-fitting.html#ordinary-least-squares",
+    "href": "notes/model-fitting.html#ordinary-least-squares",
+    "title": "Model fitting",
+    "section": "5 Ordinary least squares",
+    "text": "5 Ordinary least squares\nAs we saw above, linear models have the special property that they have a solution, the OLS. Rather than searching the error surface iteratively via gradient descent (optimization), we can solve for this point directly with linear algebra.\n\nmatrix approach: we write the 3-step function.\nuse lm() in R.\ninfer approach:\n\nspecify(), fit()\n\n\n\nFurther reading\n\nCh. 8 Fitting models to data in Statistical Modeling"
+  },
+  {
+    "objectID": "notes/model-specification.html",
+    "href": "notes/model-specification.html",
+    "title": "Model specification",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
+    "objectID": "notes/model-specification.html#correlation-as-model-building",
+    "href": "notes/model-specification.html#correlation-as-model-building",
+    "title": "Model specification",
+    "section": "1 Correlation as model building",
+    "text": "1 Correlation as model building\nCorrelation is actually a simple case of model building in which we use one value (\\(x\\)) to predict another (\\(y\\)). Specifically, we are fitting the linear model \\(y = ax + b\\), where \\(a\\) and \\(b\\) are free parameters. Here, \\(y\\) is known as the response variable (the value we are trying to predict) and \\(x\\) is the explanatory variable (the one that we are attempting to explain the response variable with).\n\nAfter z-scoring our variables, the correlation between \\(x\\) and \\(y\\) is equal to the slope of the line that best predicts \\(y\\) from \\(x\\). In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM."
+  },
+  {
+    "objectID": "notes/model-specification.html#model-building-overview",
+    "href": "notes/model-specification.html#model-building-overview",
+    "title": "Model specification",
+    "section": "2 Model building overview",
+    "text": "2 Model building overview\nIdeally we want to understand statistical modeling beyond the simple case of correlation. What if we have more than one explanatory variable? What if the relationship between variables is not linear? To address model building more broadly, it is helpful to think of building any model as a four-step process. We’ll treat each of these separately over the coming weeks. The goal for today is to get a big picture overview of the model building process and the types of models we might encounter in our research.\n\nModel specification (this week): what is the form?\nModel fitting (week 6); you have the form, how do you guess the free parameters?\nModel accuracy (week 7): you’ve estimated the parameters, how well does that model describe your data?\nModel reliability (week 8): when you estimate the parameters, there is some uncertainty on them"
+  },
+  {
+    "objectID": "notes/model-specification.html#types-of-models",
+    "href": "notes/model-specification.html#types-of-models",
+    "title": "Model specification",
+    "section": "3 Types of models",
+    "text": "3 Types of models\nModel specification involves deciding which type of model we’d like to apply. We will mostly apply linear models in this class — for good reasons we will talk about next time! — but it’s useful to first have a conceptual overview of the types of models we could apply.\n\n\nSupervised vs unsupervised\nAs a starting point, we can divide statistical models into two types of learning (so called because we are trying to “learn” something about the data):\n\nIn supervised learning, we want to predict an output (or response) variable based on one or more input (or explanatory) variables. We call this supervised learning because both the input and output variables are known (sometimes this is called “labeled” data), and we are trying to learn the relationship between them. Linear regression is an example of a supervised learning model.\nIn unsupervised learning, there is no specific output variable that we are trying to predict. Instead, the model’s objective is to discover the underlying structure or patterns in the data. We call this unsupervised learning because only the input data is available (sometimes this is called “unlabeled” data); the model is trying to identify relationships in the data without being “supervised” by an outcome variable. PCA and cluster analysis are examples of unsupervised learning.\nThere are other machine learning approaches beyond these, like semi-supervised learning (combining both labeled and unlabeled data) and reinforcement learning (learning through trial and error based on rewards or penalties). But in this course we will focus on supervised learning models.\n\n\n\nRegression v classification\nRegression and classification are both types of supervised learning models — using one or more input variables to predict an output variable. The only difference between them is in type of output variable:\n\nRegression is used when we want to predict a continuous output, meaning it is a number that can take on any value within a range (e.g. height, weight, response time)\nClassification is used when we want to predict a categorical output, meaning it falls into specific classes or categories (e.g. true/false, yes/no, male/female/nonbinary). We cover this during advanced model building.\n\n\n\nLinear v nonlinear regression\nThere are many types of regression models, but we can simplify by dividing them into two main types of models:\n\nIn linear regression, the relationship between the explanatory variable(s) and response variable is represented by a linear equation (a straight line graphed on a two-dimensional plane).\nNonlinear regression is useful when the data does not follow a linear pattern, and the relationship between the variables is better captured by more complex functions (e.g. a curve or any other nonlinear shape). Nonlinear regression models can be further divided into two types:\n\nWe can linearize a nonlinear model by applying a mathematical transformation to make it look like a linear equation (e.g. log, square root, etc). We can fit a linearized model just like a linear model, but the prediction of the model is not linear with respect to x.\nSometimes, no matter what transformation you apply, you cannot acheive a linear form. These types of models are referred to as nonlinearizable nonlinear models and are beyond the scope of this class!"
+  },
+  {
+    "objectID": "notes/model-specification.html#model-specification",
+    "href": "notes/model-specification.html#model-specification",
+    "title": "Model specification",
+    "section": "4 Model specification",
+    "text": "4 Model specification\nRecall from last week that model specification is one aspect of the model building process. It involves selecting the functional form of the model (the type of model) and choosing which variables to include. When specifying a model, you’ll need to make the following decisions:\n\nResponse variable (\\(y\\)): Choose the variable you want to predict or explain (output).\nExplanatory variables(\\(x_n\\)): Choose the variables that may explain the variation in the response variable (inputs).\nFunctional form: Specify the functional relationship between the response and explanatory variables. For linear models, the relationship is linear, and we use the linear model equation as our functional form!\nModel terms: Choose which model terms to include, which is another way of saying that you need to decide how to include your explanatory variables in the model (since they can be included in more than one way).\n\nIn addition to the decisions above, the following issues can also be considered part of the model specification process. But we will consider these in future weeks.\n\nModel assumptions: Check any assumptions underlying the model you selected (e.g. does the model assume the relationship is linear?).\nModel complexity: Simple models are easier to interpret but may not capture all complexities in the data. Complex models may suffer from overfitting the data or being difficult to interpret.\n\nA well-specified model should be based on a clear understanding of the data, the underlying relationships, and the research question."
+  },
+  {
+    "objectID": "notes/model-specification.html#response-variable-y",
+    "href": "notes/model-specification.html#response-variable-y",
+    "title": "Model specification",
+    "section": "5 Response variable, \\(y\\)",
+    "text": "5 Response variable, \\(y\\)\nChoosing the response variable is usually straightforward once you’ve clearly defined your research question: what is the thing you are trying to understand? You also need to make sure whatever you’ve selected is something you can measure (or has already been measured!)\n\nIn the swim records example, we are trying to explain variation in record times, so we choose record time as our \\(y\\). In the brain size example we are trying to explain variation in brain sizes, so we choose brain size as our \\(y\\).\nRemember from last time that we can use regression for continuous response variables (numbers) but we need to use classification if the response variable is categorical (categories or levels)."
+  },
+  {
+    "objectID": "notes/model-specification.html#explanatory-variables-x_n",
+    "href": "notes/model-specification.html#explanatory-variables-x_n",
+    "title": "Model specification",
+    "section": "6 Explanatory variables, \\(x_n\\)",
+    "text": "6 Explanatory variables, \\(x_n\\)\nChoosing which explanatory variables to include requires a bit more careful consideration. It’s one part using your knowledge about the domain you are studying and one part exploratory data analysis!\n\nOne extreme would be to include just one explanatory variable: the obvious one based on your research question. In the swim records example, we want to understand how swim records change over time, so we should definitely include time as an explanatory variable. But this model is underspecified. We need to consider other variables that have the potential to explain variation in our response variable, even if they are not of direct interest. For example, some variation in swim record times can likely be explained by the swimmer’s gender, so we should include gender as an explanatory variable in our model.\nImportantly, we do not include every explanatory variable we can think of! We want to explain the variation in our response variable without building too complex a model or overfitting the data (overspecifying). We’ll go into more detail about this in future lectures. For now, just remember you’re Goldilocks: you want the explanatory variables in the model to explain just the right amount of variation."
+  },
+  {
+    "objectID": "notes/model-specification.html#functional-form",
+    "href": "notes/model-specification.html#functional-form",
+    "title": "Model specification",
+    "section": "7 Functional form",
+    "text": "7 Functional form\nLast lecture we introduced the types of models that we could select when specifying a model. We also mentioned that we will focus on linear models in this class (which are a type of regression model, which are themselves types of supervised learning models!)\nWhen specifying the functional form of a model, we’re literally specifying the mathematical formula we’re going to use to represent the relationship between our response and explanatory variables. Linear models are models in which the response variable (output) is a weighted sum of the explanatory variables (inputs). In other words, there is a linear relationship between the response variable and the explanatory variables. The linear model equation can be expressed in many ways (which can be confusing!). Here are four different ways of representing the formula for the linear model, to emphasize that they are all the same thing.\n\nIn high school algebra, the linear model equation is represented as the equation of a straight line. \\(y\\) is the response variable, \\(x\\) is the explanatory variable, \\(a\\) is the slope of the line (the relationship between \\(x\\) and \\(y\\)) and \\(b\\) is the y-intercept (the value of \\(y\\) when \\(x\\) is zero). You have (hopefully!) already encountered this equation.\n\n\n\\(y=ax+b\\).\n\n\n\nIn machine learning, the linear model equation is usually represented as a weighted sum of input variables. Note that the only changes are that we refer to the free parameters as weights (\\(w_n\\)) instead of \\(a\\) and \\(b\\) (to emphasize these are the weights the model learns) and the ability to add more than one input (\\(x_1, x_2, ...x_n\\) instead of just \\(x\\)):\n\n\n\\(y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\\)\n\n\nIn statistics, the linear model equation is also represented as a weighted sum of input variables, except we call the weights “regression coefficients” (\\(\\beta_n\\)) and we add an error term to account for unexplained variability (\\(\\varepsilon\\)):\n\n\n\\(y = β_0 + β_1x_1 + β_2x_2 + ... + β_nx_n + ε\\)\n\n\nIn matrix notation, the linear model equation is represented as a dot product of vectors. This is just a more compact representation of the statistics (or machine learning) way, often used in linear algebra and statistics. \\(X\\) is the matrix containing the values of the explanatory variables, \\(β\\) is the vector of regression coefficients, and \\(\\varepsilon\\) is the vector of error terms.\n\n\n\\(y = Xβ + ε\\)"
+  },
+  {
+    "objectID": "notes/model-specification.html#model-terms",
+    "href": "notes/model-specification.html#model-terms",
+    "title": "Model specification",
+    "section": "8 Model terms",
+    "text": "8 Model terms\nWe’ve specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe how to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) intercept, (2) main, (3) interaction, and (4) transformation.\n\nThe intercept term, \\(\\beta_0\\), is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” or “gain” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.\n\n\nin R: y ~ 1\nin eq: \\(y=\\beta_0 + \\varepsilon\\)\n\n\nMain terms (AKA main effects) represent the effect of each explanatory variable on the response variable directly. In other words, how does the response variable change as a result of changes in a given explanatory variable, when all other explanatory variables are zero? Each main term corresponds to one explanatory variable and is included in the model as a single term (\\(\\beta_nx_n\\)). We can add as many explanatory variables as we like to the model:\n\n\nin R: y ~ 1 + year + gender\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\n\nNote that can include categorical explanatory variables like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.\nInteraction terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we’re just describing how two (or more) variables combine to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.\n\nin R: y ~ 1 + year + gender + year:gender\n\nor the short way: y ~ 1 + year * gender\n\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_1x_2\\)\n\nTransformation terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are \\(x^2\\), \\(\\sqrt{x}\\), and \\(log(x)\\). Note that \\(x\\) must be a quantitative variable: we can’t transform categorical variables. In the swim records example, squaring the year term (\\(x_1^2\\)) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to “be curvy, but also never slope upward”. - in R: y ~ sq(year) * gender - eq: \\(y = \\beta_0 + \\beta_1x_1^2 + \\beta_2x_2 + \\beta_3x_1^2x_2\\)\n\nFurther reading\n\nCh 6: Language of models in Statistical Modeling"
   },
   {
     "objectID": "notes/r-basics.html",
@@ -1295,74 +1225,186 @@
     "text": "9 Further reading and references\nSuggested further reading:\n\nBase R Cheat Sheet\nR Nuts and Bolts in R Programming for Data Science by Roger Peng\n\nOther references:\n\nVectors in Advanced R by Hadley Wickham\nSubsetting in Advanced R by Hadley Wickham\nA field guide to base R in R for Data Science by Hadley Wickham"
   },
   {
-    "objectID": "notes/model-reliability.html",
-    "href": "notes/model-reliability.html",
-    "title": "Model reliability",
+    "objectID": "notes/webr-template.html",
+    "href": "notes/webr-template.html",
+    "title": "WebR template",
     "section": "",
-    "text": "Under Construction"
+    "text": "Loading\n  webR..."
   },
   {
-    "objectID": "notes/model-specification.html",
-    "href": "notes/model-specification.html",
-    "title": "Model specification",
+    "objectID": "notes/webr-template.html#webr-chunk",
+    "href": "notes/webr-template.html#webr-chunk",
+    "title": "WebR template",
     "section": "",
-    "text": "Under Construction"
+    "text": "Loading\n  webR..."
   },
   {
-    "objectID": "notes/model-specification.html#correlation-as-model-building",
-    "href": "notes/model-specification.html#correlation-as-model-building",
-    "title": "Model specification",
-    "section": "1 Correlation as model building",
-    "text": "1 Correlation as model building\nCorrelation is actually a simple case of model building in which we use one value (\\(x\\)) to predict another (\\(y\\)). Specifically, we are fitting the linear model \\(y = ax + b\\), where \\(a\\) and \\(b\\) are free parameters. Here, \\(y\\) is known as the response variable (the value we are trying to predict) and \\(x\\) is the explanatory variable (the one that we are attempting to explain the response variable with).\n\nAfter z-scoring our variables, the correlation between \\(x\\) and \\(y\\) is equal to the slope of the line that best predicts \\(y\\) from \\(x\\). In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM."
+    "objectID": "psets/problem-set-01.html",
+    "href": "psets/problem-set-01.html",
+    "title": "Problem set 1",
+    "section": "",
+    "text": "Estimated time: 6 hours\n\n\n\nAllocate about 1 hour per problem, though some will take longer than others. You may need more time if programming is completely new to you, or less if you have some experience already."
   },
   {
-    "objectID": "notes/model-specification.html#model-building-overview",
-    "href": "notes/model-specification.html#model-building-overview",
-    "title": "Model specification",
-    "section": "2 Model building overview",
-    "text": "2 Model building overview\nIdeally we want to understand statistical modeling beyond the simple case of correlation. What if we have more than one explanatory variable? What if the relationship between variables is not linear? To address model building more broadly, it is helpful to think of building any model as a four-step process. We’ll treat each of these separately over the coming weeks. The goal for today is to get a big picture overview of the model building process and the types of models we might encounter in our research.\n\nModel specification (this week): what is the form?\nModel fitting (week 6); you have the form, how do you guess the free parameters?\nModel accuracy (week 7): you’ve estimated the parameters, how well does that model describe your data?\nModel reliability (week 8): when you estimate the parameters, there is some uncertainty on them"
+    "objectID": "psets/problem-set-01.html#problem-0",
+    "href": "psets/problem-set-01.html#problem-0",
+    "title": "Problem set 1",
+    "section": "Problem 0",
+    "text": "Problem 0\nCreate a new colab R notebook. Add a text block that includes the title “Problem set 1”, your name, and the date. Add a text block with a heading for each problem in the set. As you work through the problem set, include your code/solutions below the appropriate heading. Finally, load the tidyverse package under your heading for problem 0."
   },
   {
-    "objectID": "notes/model-specification.html#types-of-models",
-    "href": "notes/model-specification.html#types-of-models",
-    "title": "Model specification",
-    "section": "3 Types of models",
-    "text": "3 Types of models\nModel specification involves deciding which type of model we’d like to apply. We will mostly apply linear models in this class — for good reasons we will talk about next time! — but it’s useful to first have a conceptual overview of the types of models we could apply.\n\n\nSupervised vs unsupervised\nAs a starting point, we can divide statistical models into two types of learning (so called because we are trying to “learn” something about the data):\n\nIn supervised learning, we want to predict an output (or response) variable based on one or more input (or explanatory) variables. We call this supervised learning because both the input and output variables are known (sometimes this is called “labeled” data), and we are trying to learn the relationship between them. Linear regression is an example of a supervised learning model.\nIn unsupervised learning, there is no specific output variable that we are trying to predict. Instead, the model’s objective is to discover the underlying structure or patterns in the data. We call this unsupervised learning because only the input data is available (sometimes this is called “unlabeled” data); the model is trying to identify relationships in the data without being “supervised” by an outcome variable. PCA and cluster analysis are examples of unsupervised learning.\nThere are other machine learning approaches beyond these, like semi-supervised learning (combining both labeled and unlabeled data) and reinforcement learning (learning through trial and error based on rewards or penalties). But in this course we will focus on supervised learning models.\n\n\n\nRegression v classification\nRegression and classification are both types of supervised learning models — using one or more input variables to predict an output variable. The only difference between them is in type of output variable:\n\nRegression is used when we want to predict a continuous output, meaning it is a number that can take on any value within a range (e.g. height, weight, response time)\nClassification is used when we want to predict a categorical output, meaning it falls into specific classes or categories (e.g. true/false, yes/no, male/female/nonbinary). We cover this during advanced model building.\n\n\n\nLinear v nonlinear regression\nThere are many types of regression models, but we can simplify by dividing them into two main types of models:\n\nIn linear regression, the relationship between the explanatory variable(s) and response variable is represented by a linear equation (a straight line graphed on a two-dimensional plane).\nNonlinear regression is useful when the data does not follow a linear pattern, and the relationship between the variables is better captured by more complex functions (e.g. a curve or any other nonlinear shape). Nonlinear regression models can be further divided into two types:\n\nWe can linearize a nonlinear model by applying a mathematical transformation to make it look like a linear equation (e.g. log, square root, etc). We can fit a linearized model just like a linear model, but the prediction of the model is not linear with respect to x.\nSometimes, no matter what transformation you apply, you cannot acheive a linear form. These types of models are referred to as nonlinearizable nonlinear models and are beyond the scope of this class!"
+    "objectID": "psets/problem-set-01.html#problem-1",
+    "href": "psets/problem-set-01.html#problem-1",
+    "title": "Problem set 1",
+    "section": "Problem 1",
+    "text": "Problem 1\nSuppose you record how many words your quiet roommate says to you each day for a week. Convert the vector given below from strings to doubles using coercion and store it as words_spoken. Use R’s built-in functions to compute the total number of words your roommate said that week, the average number of words spoken per day, and the maximum number of words spoken on a single day. Store the results in a tibble. Perform a comparison operation on the words_spoken vector to determine whether each day’s words were above the average. Finally, use subsetting to extract the days where the number of words were in the single digits.\nwords_spoken_stringy &lt;- c(\"5\", \"3\", \"20\",\" 0\", \"4\", \"35\", \"1\")"
   },
   {
-    "objectID": "notes/model-specification.html#model-specification",
-    "href": "notes/model-specification.html#model-specification",
-    "title": "Model specification",
-    "section": "4 Model specification",
-    "text": "4 Model specification\nRecall from last week that model specification is one aspect of the model building process. It involves selecting the functional form of the model (the type of model) and choosing which variables to include. When specifying a model, you’ll need to make the following decisions:\n\nResponse variable (\\(y\\)): Choose the variable you want to predict or explain (output).\nExplanatory variables(\\(x_n\\)): Choose the variables that may explain the variation in the response variable (inputs).\nFunctional form: Specify the functional relationship between the response and explanatory variables. For linear models, the relationship is linear, and we use the linear model equation as our functional form!\nModel terms: Choose which model terms to include, which is another way of saying that you need to decide how to include your explanatory variables in the model (since they can be included in more than one way).\n\nIn addition to the decisions above, the following issues can also be considered part of the model specification process. But we will consider these in future weeks.\n\nModel assumptions: Check any assumptions underlying the model you selected (e.g. does the model assume the relationship is linear?).\nModel complexity: Simple models are easier to interpret but may not capture all complexities in the data. Complex models may suffer from overfitting the data or being difficult to interpret.\n\nA well-specified model should be based on a clear understanding of the data, the underlying relationships, and the research question."
+    "objectID": "psets/problem-set-01.html#problem-2",
+    "href": "psets/problem-set-01.html#problem-2",
+    "title": "Problem set 1",
+    "section": "Problem 2",
+    "text": "Problem 2\nCreate the matrix given below. Use one of R’s built-in functions to append a new row to the matrix made up of all 1s. Multiply every number in the new matrix by 5. Then use subsetting to return the second and fourth row of values in the final matrix.\n\n\n     [,1] [,2] [,3]\n[1,]    3    6    9\n[2,]    4    7   10\n[3,]    5    8   11"
   },
   {
-    "objectID": "notes/model-specification.html#response-variable-y",
-    "href": "notes/model-specification.html#response-variable-y",
-    "title": "Model specification",
-    "section": "5 Response variable, \\(y\\)",
-    "text": "5 Response variable, \\(y\\)\nChoosing the response variable is usually straightforward once you’ve clearly defined your research question: what is the thing you are trying to understand? You also need to make sure whatever you’ve selected is something you can measure (or has already been measured!)\n\nIn the swim records example, we are trying to explain variation in record times, so we choose record time as our \\(y\\). In the brain size example we are trying to explain variation in brain sizes, so we choose brain size as our \\(y\\).\nRemember from last time that we can use regression for continuous response variables (numbers) but we need to use classification if the response variable is categorical (categories or levels)."
+    "objectID": "psets/problem-set-01.html#problem-3",
+    "href": "psets/problem-set-01.html#problem-3",
+    "title": "Problem set 1",
+    "section": "Problem 3",
+    "text": "Problem 3\nCreate a data frame that looks like the one below. Return the structure of the dataframe with str(). Use subsetting to select all columns that were indicated as doubles. Compute the mean of each column in the subset dataframe using map_*() and convert the output to a tibble (use the pipe!).\n\n\n  age height  major score firstgen\n1  30     65 cogsci   100     TRUE\n2  45     66   ling    75    FALSE\n3  81     72  psych    88     TRUE\n4  27     59   ling    97    FALSE"
   },
   {
-    "objectID": "notes/model-specification.html#explanatory-variables-x_n",
-    "href": "notes/model-specification.html#explanatory-variables-x_n",
-    "title": "Model specification",
-    "section": "6 Explanatory variables, \\(x_n\\)",
-    "text": "6 Explanatory variables, \\(x_n\\)\nChoosing which explanatory variables to include requires a bit more careful consideration. It’s one part using your knowledge about the domain you are studying and one part exploratory data analysis!\n\nOne extreme would be to include just one explanatory variable: the obvious one based on your research question. In the swim records example, we want to understand how swim records change over time, so we should definitely include time as an explanatory variable. But this model is underspecified. We need to consider other variables that have the potential to explain variation in our response variable, even if they are not of direct interest. For example, some variation in swim record times can likely be explained by the swimmer’s gender, so we should include gender as an explanatory variable in our model.\nImportantly, we do not include every explanatory variable we can think of! We want to explain the variation in our response variable without building too complex a model or overfitting the data (overspecifying). We’ll go into more detail about this in future lectures. For now, just remember you’re Goldilocks: you want the explanatory variables in the model to explain just the right amount of variation."
+    "objectID": "psets/problem-set-01.html#problem-4",
+    "href": "psets/problem-set-01.html#problem-4",
+    "title": "Problem set 1",
+    "section": "Problem 4",
+    "text": "Problem 4\nRead the documentation for the emo package. Install and load the package. Then create a character vector including 8 of your favorite emojis by their keyword (see the docs for a list). Finally, use the package’s emo::ji() function in conjunction with map_*() to print all 8 emojis with one line of code. Combine this output with your keyword vector in a tibble."
   },
   {
-    "objectID": "notes/model-specification.html#functional-form",
-    "href": "notes/model-specification.html#functional-form",
-    "title": "Model specification",
-    "section": "7 Functional form",
-    "text": "7 Functional form\nLast lecture we introduced the types of models that we could select when specifying a model. We also mentioned that we will focus on linear models in this class (which are a type of regression model, which are themselves types of supervised learning models!)\nWhen specifying the functional form of a model, we’re literally specifying the mathematical formula we’re going to use to represent the relationship between our response and explanatory variables. Linear models are models in which the response variable (output) is a weighted sum of the explanatory variables (inputs). In other words, there is a linear relationship between the response variable and the explanatory variables. The linear model equation can be expressed in many ways (which can be confusing!). Here are four different ways of representing the formula for the linear model, to emphasize that they are all the same thing.\n\nIn high school algebra, the linear model equation is represented as the equation of a straight line. \\(y\\) is the response variable, \\(x\\) is the explanatory variable, \\(a\\) is the slope of the line (the relationship between \\(x\\) and \\(y\\)) and \\(b\\) is the y-intercept (the value of \\(y\\) when \\(x\\) is zero). You have (hopefully!) already encountered this equation.\n\n\n\\(y=ax+b\\).\n\n\n\nIn machine learning, the linear model equation is usually represented as a weighted sum of input variables. Note that the only changes are that we refer to the free parameters as weights (\\(w_n\\)) instead of \\(a\\) and \\(b\\) (to emphasize these are the weights the model learns) and the ability to add more than one input (\\(x_1, x_2, ...x_n\\) instead of just \\(x\\)):\n\n\n\\(y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n\\)\n\n\nIn statistics, the linear model equation is also represented as a weighted sum of input variables, except we call the weights “regression coefficients” (\\(\\beta_n\\)) and we add an error term to account for unexplained variability (\\(\\varepsilon\\)):\n\n\n\\(y = β_0 + β_1x_1 + β_2x_2 + ... + β_nx_n + ε\\)\n\n\nIn matrix notation, the linear model equation is represented as a dot product of vectors. This is just a more compact representation of the statistics (or machine learning) way, often used in linear algebra and statistics. \\(X\\) is the matrix containing the values of the explanatory variables, \\(β\\) is the vector of regression coefficients, and \\(\\varepsilon\\) is the vector of error terms.\n\n\n\\(y = Xβ + ε\\)"
+    "objectID": "psets/problem-set-01.html#problem-5",
+    "href": "psets/problem-set-01.html#problem-5",
+    "title": "Problem set 1",
+    "section": "Problem 5",
+    "text": "Problem 5\nSuppose you extend your experiment: you decide to record the number of words your quiet roommate says to you every day for the entire semester. Import the file below from the given url, ensuring that week is an integer vector, words spoken is a double, and all column names are valid variable names in R. Take care to use the approaches we discussed in lecture to identify and handle any issues. Use glimpse to show the resulting tibble. Finally, use these data to recreate (as faithfully as possible) the figure below.\n\"https://kathrynschuler.com/datasets/quiet_roommate.csv\""
   },
   {
-    "objectID": "notes/model-specification.html#model-terms",
-    "href": "notes/model-specification.html#model-terms",
-    "title": "Model specification",
-    "section": "8 Model terms",
-    "text": "8 Model terms\nWe’ve specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe how to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) intercept, (2) main, (3) interaction, and (4) transformation.\n\nThe intercept term, \\(\\beta_0\\), is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” or “gain” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.\n\n\nin R: y ~ 1\nin eq: \\(y=\\beta_0 + \\varepsilon\\)\n\n\nMain terms (AKA main effects) represent the effect of each explanatory variable on the response variable directly. In other words, how does the response variable change as a result of changes in a given explanatory variable, when all other explanatory variables are zero? Each main term corresponds to one explanatory variable and is included in the model as a single term (\\(\\beta_nx_n\\)). We can add as many explanatory variables as we like to the model:\n\n\nin R: y ~ 1 + year + gender\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2\\)\n\nNote that can include categorical explanatory variables like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.\nInteraction terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we’re just describing how two (or more) variables combine to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.\n\nin R: y ~ 1 + year + gender + year:gender\n\nor the short way: y ~ 1 + year * gender\n\nin eq: \\(y = \\beta_0 + \\beta_1x_1 + \\beta_2x_2 + \\beta_3x_1x_2\\)\n\nTransformation terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are \\(x^2\\), \\(\\sqrt{x}\\), and \\(log(x)\\). Note that \\(x\\) must be a quantitative variable: we can’t transform categorical variables. In the swim records example, squaring the year term (\\(x_1^2\\)) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to “be curvy, but also never slope upward”. - in R: y ~ sq(year) * gender - eq: \\(y = \\beta_0 + \\beta_1x_1^2 + \\beta_2x_2 + \\beta_3x_1^2x_2\\)\n\nFurther reading\n\nCh 6: Language of models in Statistical Modeling"
+    "objectID": "psets/problem-set-01.html#problem-6",
+    "href": "psets/problem-set-01.html#problem-6",
+    "title": "Problem set 1",
+    "section": "Problem 6",
+    "text": "Problem 6\nProblem 6 makes use of the english dataset in the languageR package. From the documentation:\n\nThis data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various predictor variables.\n\nInstall and load the languageR library. Convert the english dataset to a tibble, then use glimpse to show the result. Finally, use the RTlexdec, Familiarity, and AgeSubjects columns to recreate (as faithfully as possible) the figure below."
+  },
+  {
+    "objectID": "rubric.html",
+    "href": "rubric.html",
+    "title": "Rubric",
+    "section": "",
+    "text": "All quiz and problem set questions are graded with the following 4-point rubric. By “understand” we mean you understand the lecture concepts and can apply the technical skills you learned in the course. Solutions that include packages or functions not covered in this course will recieve a highest possible score of 2."
+  },
+  {
+    "objectID": "rubric.html#overall-grade",
+    "href": "rubric.html#overall-grade",
+    "title": "Rubric",
+    "section": "Overall grade",
+    "text": "Overall grade\nTo compute your overall grade on a problem set or quiz, we take your average score on all questions, add a constant of 6, and divide by 10. For example, given a problem set with 3 questions:\n\nscores of 4-3-3 would result in a 93.3% (A): (4+3+3)/3 + 6 = 9.33/10\nscores of 3-2-2 would result in a 83.3% (B-): (3+2+2)/3 + 6 = 8.33/10\nscores of 1-1-1 would result in a 70% (C-): (1+1+1)/3 + 6 = 7/10\n\nWe chose this rubric because all reasonable attempts receive a passing grade, but A+ is reserved for students with advanced understanding of the material."
+  },
+  {
+    "objectID": "rubric.html#missed-problem-sets-and-quizzes",
+    "href": "rubric.html#missed-problem-sets-and-quizzes",
+    "title": "Rubric",
+    "section": "Missed problem sets and quizzes",
+    "text": "Missed problem sets and quizzes\nMissed problem sets or quizzes will receive an overall score of zero. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%)."
+  },
+  {
+    "objectID": "slides/hello-world.html#data-science",
+    "href": "slides/hello-world.html#data-science",
+    "title": "Hello, world!",
+    "section": "Data science",
+    "text": "Data science\nData science is about making decisions based on incomplete information.\n\n\n\n\nFigure 1: from Kok & de Lange (2014)\n\n\nThis concept is not new. Brains were built for doing this!"
+  },
+  {
+    "objectID": "slides/hello-world.html#but-we-have-new-tools-and-lots-more-data",
+    "href": "slides/hello-world.html#but-we-have-new-tools-and-lots-more-data",
+    "title": "Hello, world!",
+    "section": "But we have new tools and lots more data!",
+    "text": "But we have new tools and lots more data!\n\n\n\n\nFigure 2: from https://www.domo.com/data-never-sleeps."
+  },
+  {
+    "objectID": "slides/hello-world.html#data-science-workflow",
+    "href": "slides/hello-world.html#data-science-workflow",
+    "title": "Hello, world!",
+    "section": "Data science workflow",
+    "text": "Data science workflow\nThe folks who wrote R for Data Science proposed the following data science workflow:\n\nFigure 3: from R for Data Science"
+  },
+  {
+    "objectID": "slides/hello-world.html#overview-of-course",
+    "href": "slides/hello-world.html#overview-of-course",
+    "title": "Hello, world!",
+    "section": "Overview of course",
+    "text": "Overview of course\nWe will spend the first few weeks getting comfortable programming in R, including some useful skills for data science:\n\nR basics\nData importing\nData visualization\nData wrangling"
+  },
+  {
+    "objectID": "slides/hello-world.html#overview-of-course-1",
+    "href": "slides/hello-world.html#overview-of-course-1",
+    "title": "Hello, world!",
+    "section": "Overview of course",
+    "text": "Overview of course\nThen, we will spend the next several weeks building a foundation in basic statistics and model building:\n\nProbability distributions\nSampling variability\nHypothesis testing\nModel specification\nModel fitting\nModel accuracy\nModel reliability"
+  },
+  {
+    "objectID": "slides/hello-world.html#overview-of-course-2",
+    "href": "slides/hello-world.html#overview-of-course-2",
+    "title": "Hello, world!",
+    "section": "Overview of course",
+    "text": "Overview of course\nFinally we will cover a selection of more advanced topics that are often applied in language and mind fields, with a focus on basic understanding:\n\nClassification\nFeature engineering (preprocessing)\nInference for regression\nMixed-effect models"
+  },
+  {
+    "objectID": "slides/hello-world.html#syllabus-briefly",
+    "href": "slides/hello-world.html#syllabus-briefly",
+    "title": "Hello, world!",
+    "section": "Syllabus, briefly",
+    "text": "Syllabus, briefly\nEach week will include two lectures and a lab:\n\nLectures are on Tuesdays and Thursdays at 10:15am and will be a mix of conceptual overviews and R tutorials. It is a good idea to bring your laptop so you can follow along and try stuff in R!\nLab is on Thursday or Friday and will consist of (ungraded) practice problems and concept review with TAs. You may attend any lab section that works for your schedule."
+  },
+  {
+    "objectID": "slides/hello-world.html#syllabus-briefly-1",
+    "href": "slides/hello-world.html#syllabus-briefly-1",
+    "title": "Hello, world!",
+    "section": "Syllabus, briefly",
+    "text": "Syllabus, briefly\nThere are 10 graded assessments:\n\n6 Problem sets in which you will be asked to apply your newly aquired R programming skills.\n4 Quizzes in which you will be tested on your understanding of lecture concepts."
+  },
+  {
+    "objectID": "slides/hello-world.html#syllabus-briefly-2",
+    "href": "slides/hello-world.html#syllabus-briefly-2",
+    "title": "Hello, world!",
+    "section": "Syllabus, briefly",
+    "text": "Syllabus, briefly\nThere are a few policies to take note of:\n\nMissed quizzes cannot be made up except in cases of genuine conflict or emergency (documentation and course action notice required)\nYou may request an extension on any problem set of up to 3 days. But extensions beyond 3 days will not be granted (because delying solutions will negative impact other students).\nYou may submit any missed quiz or problem set by the end of the semester for half-credit (50%)."
+  },
+  {
+    "objectID": "slides/hello-world.html#why-r",
+    "href": "slides/hello-world.html#why-r",
+    "title": "Hello, world!",
+    "section": "Why R?",
+    "text": "Why R?\nWith many programming languages available for data science (e.g. R, Python, Julia, MATLAB), why use R?\n\nBuilt for stats, specifically\nMakes nice visualizations\nLots of people are doing it, especially in academia\nEasier for beginners to understand\nFree and open source (though so are Python and Julia, MATLAB costs $)"
+  },
+  {
+    "objectID": "slides/hello-world.html#many-ways-to-use-r",
+    "href": "slides/hello-world.html#many-ways-to-use-r",
+    "title": "Hello, world!",
+    "section": "Many ways to use R",
+    "text": "Many ways to use R\n\nR Studio\nJupyter\nVS Code\nand even simply the command line/terminal"
+  },
+  {
+    "objectID": "slides/hello-world.html#google-colab",
+    "href": "slides/hello-world.html#google-colab",
+    "title": "Hello, world!",
+    "section": "Google Colab",
+    "text": "Google Colab\n\nGoogle Colab is a cloud-based Jupyter notebook that allows you to write, execute, and share code like a google doc.\nWe use Google Colab because it’s simple and accessible to everyone. You can start programming right away, no setup required!"
+  },
+  {
+    "objectID": "slides/hello-world.html#secretly-r",
+    "href": "slides/hello-world.html#secretly-r",
+    "title": "Hello, world!",
+    "section": "Secretly, R!",
+    "text": "Secretly, R!\nGoogle Colab officially supports Python, but secretly supports R (and Julia, too!)\n\ncolab (r kernel)\n\n\n\nhttps://kathrynschuler.com/datasci"
   },
   {
     "objectID": "syllabus.html",
@@ -1461,33 +1503,5 @@
     "title": "Syllabus",
     "section": "Resources",
     "text": "Resources\nIn addition to the course website, we will use the following:\n\ngoogle colab (r kernel) - for computing\ncanvas - for posting grades\ngradescope - for submitting problem sets\ned discussion - for announcements and questions\n\nPlease consider using these Penn resources this semester:\n\nWeingarten Center for academic support and tutoring.\nWellness at Penn for health and wellbeing."
-  },
-  {
-    "objectID": "rubric.html",
-    "href": "rubric.html",
-    "title": "Rubric",
-    "section": "",
-    "text": "All quiz and problem set questions are graded with the following 4-point rubric. By “understand” we mean you understand the lecture concepts and can apply the technical skills you learned in the course. Solutions that include packages or functions not covered in this course will recieve a highest possible score of 2."
-  },
-  {
-    "objectID": "rubric.html#overall-grade",
-    "href": "rubric.html#overall-grade",
-    "title": "Rubric",
-    "section": "Overall grade",
-    "text": "Overall grade\nTo compute your overall grade on a problem set or quiz, we take your average score on all questions, add a constant of 6, and divide by 10. For example, given a problem set with 3 questions:\n\nscores of 4-3-3 would result in a 93.3% (A): (4+3+3)/3 + 6 = 9.33/10\nscores of 3-2-2 would result in a 83.3% (B-): (3+2+2)/3 + 6 = 8.33/10\nscores of 1-1-1 would result in a 70% (C-): (1+1+1)/3 + 6 = 7/10\n\nWe chose this rubric because all reasonable attempts receive a passing grade, but A+ is reserved for students with advanced understanding of the material."
-  },
-  {
-    "objectID": "rubric.html#missed-problem-sets-and-quizzes",
-    "href": "rubric.html#missed-problem-sets-and-quizzes",
-    "title": "Rubric",
-    "section": "Missed problem sets and quizzes",
-    "text": "Missed problem sets and quizzes\nMissed problem sets or quizzes will receive an overall score of zero. However, students can submit any missed problem set or quiz by the end of the semester for half credit (50%)."
-  },
-  {
-    "objectID": "playground.html",
-    "href": "playground.html",
-    "title": "Playground",
-    "section": "",
-    "text": "playing around with some stuff and things\n\n# load tidyverse\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n# make a dataframe \ndf &lt;- data.frame(\n  x = 1:10,\n  y = 11:20,\n  z = 21:30\n)\n\ndf2 &lt;- data.frame(\n    x = 31:40,\n    y = 41:50,\n    z = 51:60\n)\n\ndf3 &lt;- data.frame(\n    x = 61:70,\n    y = 71:80,\n    z = 81:90\n)\n\ndfs &lt;- list(df, df2, df3)\n\n\nmap_dbl(df, mean)\n\n   x    y    z \n 5.5 15.5 25.5 \n\n\npmap_dbl(dfs, map_dbl(., mean)) ```s"
   }
 ]

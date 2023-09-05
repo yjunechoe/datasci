@@ -1,0 +1,26 @@
+---
+layout: page
+title:  "WebR template"
+date:   2023-09-05
+author: 
+    - Katie Schuler
+    - June Choe
+## WebR setup:
+engine: knitr
+filters:
+  - webr
+webr:
+  show-startup-message: false
+  show-header-message: false
+  service-worker-url: "../../datasci/"
+  packages: ['tidyverse']
+---
+
+## WebR chunk
+
+```{webr-r}
+library(tidyverse)
+mtcars %>%
+  slice(1:5)
+```
+
