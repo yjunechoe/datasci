@@ -304,8 +304,9 @@ Writing **functions** and handling **control flow** are important aspects of lea
 
 Suggested further reading:
 
-- [Base R Cheat Sheet](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf)
+- [Getting started with Data in R](https://moderndive.com/1-getting-started.html#code) from Modern Dive textbook
 - [R Nuts and Bolts](https://bookdown.org/rdpeng/rprogdatascience/r-nuts-and-bolts.html) in R Programming for Data Science by Roger Peng
+- [Base R Cheat Sheet](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf)
 
 Other references: 
 
