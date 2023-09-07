@@ -363,15 +363,19 @@ cat(longmcq(choices))
 
 ## Data visualization
 
-::: {.callout-warning title="Under Construction"}
-:::
 
-We will continue working with the `ratings` dataset from the visualization lecture:
+
+We will continue working with the `ratings` dataset from the visualization lecture (part of the `languageR` package). It contains the following variables: 
 
 ```{r}
+#| echo: false
 library(languageR)
 ```
 
+```{r}
+#| echo: false
+glimpse(ratings)
+```
 
 Fill in the blanks below with one of the following words: `data`, `aesthetics`, `geom`. 
 
@@ -417,9 +421,73 @@ ggplot(
 
 # Define the answer choices
 choices <- c(
-    answer="A",
-    "B"
+    "A",
+    answer="B",
+    "C"
 )
 
 cat(longmcq(choices))
 ```
+
+Suppose we want to map the variable `Complex` to the color aesthetic in a scatterplot. Which of the following arguments should we pass to `geom_point()`? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "color = Complex",
+    answer="mapping=aes(color = Complex)",
+    "color = mapping(Complex)",
+    answer="aes(color=Complex)"
+)
+
+cat(longmcq(choices))
+```
+
+Which geoms are depicted in the following figure? 
+
+![](/include/figures/guess-geom.png){#fig-guessgeom fig-align="center" width=50%}
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "geom_histogram()",
+    answer="geom_density()",
+    "geom_bar()",
+    "geom_smooth()",
+    "geom_point()"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+Which geoms are depicted in the following figure? 
+
+![](/include/figures/guess-geom2.png){#fig-guessgeom2 fig-align="center" width=50%}
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="geom_histogram()",
+    "geom_density()",
+    "geom_bar()",
+    "geom_smooth()",
+    "geom_point()"
+)
+
+cat(longmcq(choices))
+```
+
+::: {.callout-warning title="Under Construction"}
+We will add more practice questions soon!
+:::
