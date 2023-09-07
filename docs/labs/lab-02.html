@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Katie Schuler">
+<meta name="dcterms.date" content="2023-09-07">
 
-<title>LING 0700 | PSYC 2314 – lab-02</title>
+<title>LING 0700 | PSYC 2314 - Lab 2: Import and visualize data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../labs/lab-01.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -270,7 +307,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -300,7 +337,7 @@ window.onload = function() {
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
+    <a class="nav-link active" href="../labs/lab-01.html" rel="" target="" aria-current="page">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
@@ -313,21 +350,213 @@ window.onload = function() {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-02.html">Lab 2: Import and visualize data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1: Getting started with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 2: Import and visualize data</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link active" data-scroll-target="#tidyverse"><span class="header-section-number">1</span> Tidyverse</a></li>
+  <li><a href="#purrr" id="toc-purrr" class="nav-link" data-scroll-target="#purrr"><span class="header-section-number">2</span> purrr</a></li>
+  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="header-section-number">3</span> Tibbles</a></li>
+  <li><a href="#readr" id="toc-readr" class="nav-link" data-scroll-target="#readr"><span class="header-section-number">4</span> readr</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization"><span class="header-section-number">5</span> Data visualization</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 2: Import and visualize data</h1>
+<p class="subtitle lead">Not graded, just practice</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katie Schuler </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 7, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="tidyverse" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="tidyverse"><span class="header-section-number">1</span> Tidyverse</h2>
+<p>What is the relationship between tidyverse and readr?</p>
+<div id="radio_SOTYZRADAA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SOTYZRADAA" value=""> <span>tidyverse is a package in the readr family of packages</span></label><label><input type="radio" autocomplete="off" name="radio_SOTYZRADAA" value="answer"> <span>readr is a package in the tidyverse family of packages</span></label><label><input type="radio" autocomplete="off" name="radio_SOTYZRADAA" value=""> <span>tidyverse and readr are two unrelated packages</span></label><label><input type="radio" autocomplete="off" name="radio_SOTYZRADAA" value=""> <span>tidyverse and reader are two names for the same package</span></label>
+</div>
+<p>In the tidyverse, what does “tidy data” refer to?</p>
+<div id="radio_WEEQMZXLHD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WEEQMZXLHD" value=""> <span>any data we load into the tidyverse</span></label><label><input type="radio" autocomplete="off" name="radio_WEEQMZXLHD" value=""> <span>a dataset with no missing values</span></label><label><input type="radio" autocomplete="off" name="radio_WEEQMZXLHD" value="answer"> <span>a standard way to organize a dataset</span></label><label><input type="radio" autocomplete="off" name="radio_WEEQMZXLHD" value=""> <span>the process of cleaning a dataset</span></label>
+</div>
+<p>What is the purpose of the <code>purrr</code> package?</p>
+<div id="radio_SUULUXHUAJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SUULUXHUAJ" value=""> <span>Data visualization</span></label><label><input type="radio" autocomplete="off" name="radio_SUULUXHUAJ" value=""> <span>Data wrangling</span></label><label><input type="radio" autocomplete="off" name="radio_SUULUXHUAJ" value=""> <span>Data importing</span></label><label><input type="radio" autocomplete="off" name="radio_SUULUXHUAJ" value="answer"> <span>Functional programming</span></label><label><input type="radio" autocomplete="off" name="radio_SUULUXHUAJ" value=""> <span>All of the above</span></label>
+</div>
+<p>What is the primary purpose of the <code>readr</code> package?</p>
+<div id="radio_ZYTMKLAOKQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZYTMKLAOKQ" value=""> <span>Data visualization</span></label><label><input type="radio" autocomplete="off" name="radio_ZYTMKLAOKQ" value=""> <span>Data wrangling</span></label><label><input type="radio" autocomplete="off" name="radio_ZYTMKLAOKQ" value="answer"> <span>Data importing</span></label><label><input type="radio" autocomplete="off" name="radio_ZYTMKLAOKQ" value=""> <span>Functional programming</span></label><label><input type="radio" autocomplete="off" name="radio_ZYTMKLAOKQ" value=""> <span>All of the above</span></label>
+</div>
+<p>Which of the following returned this message?</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div id="radio_TWSERJJMRQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TWSERJJMRQ" value="answer"> <span><code>library(tidyverse)</code></span></label><label><input type="radio" autocomplete="off" name="radio_TWSERJJMRQ" value=""> <span><code>family(tidyverse)</code></span></label><label><input type="radio" autocomplete="off" name="radio_TWSERJJMRQ" value=""> <span><code>library.collection(tidyverse)</code></span></label><label><input type="radio" autocomplete="off" name="radio_TWSERJJMRQ" value=""> <span><code>library(tidyverse, report=TRUE)</code></span></label>
+</div>
+</section>
+<section id="purrr" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="purrr"><span class="header-section-number">2</span> purrr</h2>
+<p>Suppose we have the following tibble, stored with the variable <code>df</code>. What will <code>map(df, mean)</code> return?</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+      x     y     z
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;
+1     1     5     9
+2     2     6    10
+3     3     7    11
+4     4     8    12</code></pre>
+</div>
+</div>
+<div id="radio_UGRVVLXMUD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UGRVVLXMUD" value=""> <span>the mean of each row</span></label><label><input type="radio" autocomplete="off" name="radio_UGRVVLXMUD" value="answer"> <span>the mean of each column</span></label><label><input type="radio" autocomplete="off" name="radio_UGRVVLXMUD" value=""> <span>the mean of all values</span></label><label><input type="radio" autocomplete="off" name="radio_UGRVVLXMUD" value=""> <span>Error: cannot compute mean of type integer</span></label>
+</div>
+<p>Suppose we wanted to coerce each column in the previous tibble to the data type <code>double</code> with one line of code. Fill in the two arguments to <code>map</code> that would accomplish this:</p>
+<ul>
+<li>map(<input class="webex-solveme nospaces" size="10" data-answer="[&quot;df&quot;]">, <input class="webex-solveme nospaces" size="10" data-answer="[&quot;as.double&quot;]">)</li>
+</ul>
+</section>
+<section id="tibbles" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">3</span> Tibbles</h2>
+<p>Suppose we run the following code block. What will <code>is.data.frame(tib)</code> return?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tib <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_UFHAGVLJLM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UFHAGVLJLM" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_UFHAGVLJLM" value=""> <span>False</span></label>
+</div>
+<p>What will <code>typeof(tib)</code> return?</p>
+<div id="radio_RHVRMGLCYC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value=""> <span>double</span></label><label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value=""> <span>character</span></label><label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value=""> <span><code>double</code> • <code>character</code></span></label><label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value="answer"> <span>list</span></label><label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value=""> <span>tibble</span></label><label><input type="radio" autocomplete="off" name="radio_RHVRMGLCYC" value=""> <span>data.frame</span></label>
+</div>
+<p>Given the following <code>df</code> how do we convert</p>
+<ul>
+<li>as_tibble()</li>
+</ul>
+<p>Suppose we run <code>tribble</code>, what will is_tibble() return?</p>
+<ul>
+<li>True</li>
+</ul>
+<p>Suppose we run tib$a, what will return?</p>
+<ul>
+<li>an error</li>
+<li>age via a partial match</li>
+<li>cell a</li>
+<li>all cells matching a</li>
+</ul>
+<p>Suppose <code>x[[5]]</code> returns <code>NULL</code>, what will <code>is_tibble(x)</code> return?</p>
+</section>
+<section id="readr" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="readr"><span class="header-section-number">4</span> readr</h2>
+<p>as csv; as table</p>
+<p>What does the csv in <code>read_csv()</code> stand for? Fill in the blank</p>
+<ul>
+<li>[comma] separated values</li>
+</ul>
+<p>Suppose we have attempt to import the following csv file with the code below. What will be the result?</p>
+<p>TABLE</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>code that specifies column col_type </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We import, but we were expecting col x to be a double. Which argument should we specify to fix this issue?</p>
+<ul>
+<li>NA</li>
+</ul>
+<p>Col names question; we import; how do we refer to them?</p>
+<p>col names question; how do we repair them?</p>
+<p>True or false, we can use readr to import a google sheet:</p>
+<ul>
+<li>True</li>
+<li>False</li>
+</ul>
+</section>
+<section id="data-visualization" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="data-visualization"><span class="header-section-number">5</span> Data visualization</h2>
+<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Under Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -563,6 +792,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 1: Getting started with R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

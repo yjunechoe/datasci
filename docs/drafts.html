@@ -98,9 +98,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -649,6 +649,9 @@ No matching items
 <thead>
 <tr>
 <th>
+Date
+</th>
+<th>
 Title
 </th>
 <th>
@@ -657,17 +660,23 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1693527664115" data-listing-reading-time-sort="7" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="lab-01.qmd">
+<tr data-index="0" data-listing-date-sort="1694059200000" data-listing-file-modified-sort="1694105188280" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="Lab 2: Import and visualize data" data-listing-filename-sort="lab-02.qmd">
 <td>
-<a href="./labs/lab-01.html" class="title listing-title">Lab 1: Getting started with R</a>
+<span class="listing-date">Sep 7, 2023</span>
 </td>
 <td>
-<span class="listing-author"></span>
+<a href="./labs/lab-02.html" class="title listing-title">Lab 2: Import and visualize data</a>
+</td>
+<td>
+<span class="listing-author">Katie Schuler</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1694095459691" data-listing-reading-time-sort="0" data-listing-filename-sort="lab-02.qmd">
+<tr data-index="1" data-listing-file-modified-sort="1693527664115" data-listing-reading-time-sort="7" data-listing-title-sort="Lab 1: Getting started with R" data-listing-filename-sort="lab-01.qmd">
 <td>
-<span class="listing-title">undefined</span>
+<span class="listing-date">undefined</span>
+</td>
+<td>
+<a href="./labs/lab-01.html" class="title listing-title">Lab 1: Getting started with R</a>
 </td>
 <td>
 <span class="listing-author"></span>
