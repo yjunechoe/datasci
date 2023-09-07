@@ -389,7 +389,7 @@
     "href": "slides/data-importing.html#read_",
     "title": "Data Importing",
     "section": "read_*()",
-    "text": "read_*()\nThe read_*() functions have two important arguments:\n\npath - the path to the file\ncol_types - a list of how each column should be converted to a specific data type"
+    "text": "read_*()\nThe read_*() functions have two important arguments:\n\nfile - the path to the file\ncol_types - a list of how each column should be converted to a specific data type"
   },
   {
     "objectID": "slides/data-importing.html#supported-file-types-read_",
@@ -403,7 +403,7 @@
     "href": "slides/data-importing.html#read-csv-files",
     "title": "Data Importing",
     "section": "Read csv files",
-    "text": "Read csv files\nPath only, readr guesses types:\nread_csv(path='\"https://pos.it/r4ds-students-csv\"')\n\nPath and specify col_types:\nread_csv(\n    path='\"https://pos.it/r4ds-students-csv\"', \n    col_types = list( x = col_string(), y = col_skip() )\n)\n\n\n\nGuessing heuristic: character &gt; date-time &gt; double &gt; logical"
+    "text": "Read csv files\nPath only, readr guesses types:\nread_csv(file='\"https://pos.it/r4ds-students-csv\"')\n\nPath and specify col_types:\nread_csv(\n    file='\"https://pos.it/r4ds-students-csv\"', \n    col_types = list( x = col_string(), y = col_skip() )\n)\n\n\n\nGuessing heuristic: character &gt; date-time &gt; double &gt; logical"
   },
   {
     "objectID": "slides/data-importing.html#col_types-column-specification",
