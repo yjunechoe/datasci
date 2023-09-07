@@ -173,7 +173,7 @@ What will `typeof(tib)` return?
 choices <- c(
     "double", 
     "character",
-    "`double` • `character`",
+    "'double' • 'character'",
     answer ="list",
     "tibble",
     "data.frame"
@@ -191,7 +191,7 @@ Which of the following would convert a dataframe, `df`, to a tibble?
 
 # Define the answer choices
 choices <- c(
-    answer ="as_tibble(df)", 
+    answer ="`as_tibble(df)`", 
     "`as.data.frame(df, tibble)`",
     "`tribble(df)`",
     answer ="`df %>% as_tibble()`",
@@ -429,7 +429,7 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-Suppose we want to map the variable `Complex` to the color aesthetic in a scatterplot. Which of the following arguments should we pass to `geom_point()`? 
+Suppose we want to map the variable `Complex` to the color aesthetic in a scatterplot. Which of the following arguments could we pass to `geom_point()`? 
 
 ```{r}
 #| echo: false
