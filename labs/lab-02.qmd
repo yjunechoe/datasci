@@ -244,7 +244,7 @@ Suppose we create the following tibble, `tib`, what will `tib$a` return?
 
 # Define the answer choices
 choices <- c(
-    answer="an error", 
+    answer="a warning and the value NULL", 
     "`age` via partial matching",
     "`age` and `alt_name` via partial matching",
     "`hazel`, `graham`, `joan`, and `joanie` via partial matching",
@@ -320,7 +320,7 @@ choices <- c(
     answer="`data[1]`",
     answer="`data[[1]]`",
     "`data[[Student ID]]`",
-    answer="```data[[`Student ID`]]```"
+    answer="`` data$`Student ID` ``"
 )
 
 cat(longmcq(choices))
