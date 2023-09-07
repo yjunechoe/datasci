@@ -182,53 +182,183 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-Given the following `df` how do we convert 
+Which of the following would convert a dataframe, `df`, to a tibble?  
 
-- as_tibble()
 
-Suppose we run `tribble`, what will is_tibble() return? 
+```{r}
+#| echo: false
+#| results: asis
 
-- True
+# Define the answer choices
+choices <- c(
+    answer ="as_tibble(df)", 
+    "`as.data.frame(df, tibble)`",
+    "`tribble(df)`",
+    answer ="`df %>% as_tibble()`",
+    answer = "`df |> as_tibble()`"
+)
 
-Suppose we run tib$a, what will return?
+cat(longmcq(choices))
+```
 
-- an error
-- age via a partial match 
-- cell a 
-- all cells matching a 
+Suppose we run the following code, what will `is_tibble()` return? 
 
-Suppose `x[[5]]` returns `NULL`, what will `is_tibble(x)` return? 
+```r
+x <- tribble(
+    ~x, ~y, 
+    2, 3, 
+    4, 5
+)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="True",
+    "False"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+Suppose we create the following tibble, `tib`, what will `tib$a` return?
+
+```{r}
+#| echo: false
+(tib <- tibble(
+    age = c(1, 2, 3, 5),
+    name = c("dory", "hazel", "graham", "joan"),
+    alt_name = c("dolores", NA, NA, "joanie")
+))
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="an error", 
+    "`age` via partial matching",
+    "`age` and `alt_name` via partial matching",
+    "`hazel`, `graham`, `joan`, and `joanie` via partial matching",
+    "an empty vector"
+)
+
+cat(longmcq(choices))
+```
+
 
 ## readr 
 
-as csv; as table
+Many questions below refer to this dataset, borrowed from R4DS and available at the url [https://pos.it/r4ds-students-csv](https://pos.it/r4ds-students-csv). 
+
+![borrowed from R for Data Science](/include/figures/rectangle-data.png){#fig-rectangledata fig-align="center" width=60%}
 
 
 
-What does the csv in `read_csv()` stand for? Fill in the blank 
+What does the csv in `read_csv()` stand for? Fill in the blank. 
 
-- [comma] separated values 
+- `r fitb("comma", width = 10)` separated values 
 
-Suppose we have attempt to import the following csv file with the code below. What will be the result? 
 
-TABLE 
+Suppose we attempt to import the csv file given above with the code below. What will be the result? 
 
 ```r
-code that specifies column col_type 
+data <- read_csv("https://pos.it/r4ds-students-csv",
+    col_types = list(AGE = col_double())
+)
 ```
 
-We import, but we were expecting col x to be a double. Which argument should we specify to fix this issue? 
 
-- NA 
+```{r}
+#| echo: false
+#| results: asis
 
-Col names question; we import; how do we refer to them? 
+# Define the answer choices
+choices <- c(
+    "imports with no errors or warnings",
+    "fails to import, throws error", 
+    answer="imports, but with a warning that there are parsing issues",
+    "imports, but changes the column name to `age`"
+)
 
-col names question; how do we repair them? 
+cat(longmcq(choices))
+```
 
-True or false, we can use readr to import a google sheet: 
 
-- True
-- False 
+
+Suppose we import the dataset given above and name it `data`. What will `is.na(data[3,3])` return? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "True",
+    answer="False"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we import the dataset given above and name it `data`. Which of the following would return the first column? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="`data[1]`",
+    answer="`data[[1]]`",
+    "`data[[Student ID]]`",
+    answer="```data[[`Student ID`]]```"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, assuming the same dataset the following code would rename the `Student ID` column to `student_id`? 
+
+```r
+data %>% rename(student_id = `Student ID`)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="True",
+    "False"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, we can use a `read_*()` function from `readr` to import a google sheet.
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "True",
+    answer="False"
+)
+
+cat(longmcq(choices))
+```
 
 
 ## Data visualization
