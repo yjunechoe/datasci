@@ -43,6 +43,8 @@ website:
 format:
   html:
     theme: cosmo
+    fontsize: 1em
+    linestretch: 1.5
     css:
     - styles.css
     - include/webex.css
