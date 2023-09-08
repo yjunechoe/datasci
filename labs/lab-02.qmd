@@ -1,0 +1,493 @@
+---
+title:  "Lab 2: Import and visualize data"
+subtitle: "Not graded, just practice"
+date:   2023-09-07
+author: Katie Schuler
+---
+
+
+```{r}
+#| echo: false
+
+library(webexercises)
+```
+
+## Tidyverse
+
+What is the relationship between tidyverse and readr? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "tidyverse is a package in the readr family of packages", 
+    answer ="readr is a package in the tidyverse family of packages",
+    "tidyverse and readr are two unrelated packages",
+    "tidyverse and reader are two names for the same package"
+)
+
+cat(longmcq(choices))
+```
+
+In the tidyverse, what does "tidy data" refer to? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "any data we load into the tidyverse",
+    "a dataset with no missing values",
+    answer="a standard way to organize a dataset",
+    "the process of cleaning a dataset"
+)
+
+cat(longmcq(choices))
+```
+
+What is the purpose of the `purrr` package? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "Data visualization",
+    "Data wrangling",
+    "Data importing",
+    answer="Functional programming",
+    "All of the above"
+)
+
+cat(longmcq(choices))
+```
+
+What is the primary purpose of the `readr` package? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "Data visualization",
+    "Data wrangling",
+    answer="Data importing",
+    "Functional programming",
+    "All of the above"
+)
+
+cat(longmcq(choices))
+```
+
+Which of the following returned this message? 
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="`library(tidyverse)`",
+    "`family(tidyverse)`",
+    "`library.collection(tidyverse)`",
+    "`library(tidyverse, report=TRUE)`"
+)
+
+cat(longmcq(choices))
+```
+
+
+## purrr 
+
+Suppose we have the following tibble, stored with the variable `df`. What will `map(df, mean)` return? 
+
+```{r}
+#| echo: false
+
+df <- tibble(
+    x = 1:4,
+    y = 5:8,
+    z = 9:12
+)
+print(df)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "the mean of each row",
+    answer="the mean of each column",
+    "the mean of all values",
+    "Error: cannot compute mean of type integer"
+)
+
+cat(longmcq(choices))
+```
+
+
+Suppose we wanted to coerce each column in the previous tibble to the data type `double` with one line of code. Fill in the two arguments to `map` that would accomplish this: 
+
+- map(`r fitb("df", width = 10)`, `r fitb("as.double", width = 10)`)
+
+
+
+## Tibbles
+
+Suppose we run the following code block. What will `is.data.frame(tib)` return? 
+
+```r
+tib <- tibble(x = 1:2, y = c("a", "b"))
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(answer ="True","False")
+
+cat(longmcq(choices))
+```
+
+What will `typeof(tib)` return? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "double", 
+    "character",
+    "'double' • 'character'",
+    answer ="list",
+    "tibble",
+    "data.frame"
+)
+
+cat(longmcq(choices))
+```
+
+Which of the following would convert a dataframe, `df`, to a tibble?  
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="`as_tibble(df)`", 
+    "`as.data.frame(df, tibble)`",
+    "`tribble(df)`",
+    answer ="`df %>% as_tibble()`",
+    answer = "`df |> as_tibble()`"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we run the following code, what will `is_tibble()` return? 
+
+```r
+x <- tribble(
+    ~x, ~y, 
+    2, 3, 
+    4, 5
+)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="True",
+    "False"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+Suppose we create the following tibble, `tib`, what will `tib$a` return?
+
+```{r}
+#| echo: false
+(tib <- tibble(
+    age = c(1, 2, 3, 5),
+    name = c("dory", "hazel", "graham", "joan"),
+    alt_name = c("dolores", NA, NA, "joanie")
+))
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="a warning and the value NULL", 
+    "`age` via partial matching",
+    "`age` and `alt_name` via partial matching",
+    "`hazel`, `graham`, `joan`, and `joanie` via partial matching",
+    "an empty vector"
+)
+
+cat(longmcq(choices))
+```
+
+
+## readr 
+
+Many questions below refer to this dataset, borrowed from R4DS and available at the url [https://pos.it/r4ds-students-csv](https://pos.it/r4ds-students-csv). 
+
+![borrowed from R for Data Science](/include/figures/rectangle-data.png){#fig-rectangledata fig-align="center" width=60%}
+
+
+
+What does the csv in `read_csv()` stand for? Fill in the blank. 
+
+- `r fitb("comma", width = 10)` separated values 
+
+
+Suppose we attempt to import the csv file given above with the code below. What will be the result? 
+
+```r
+data <- read_csv("https://pos.it/r4ds-students-csv",
+    col_types = list(AGE = col_double())
+)
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "imports with no errors or warnings",
+    "fails to import, throws error", 
+    answer="imports, but with a warning that there are parsing issues",
+    "imports, but changes the column name to `age`"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+Suppose we import the dataset given above and name it `data`. What will `is.na(data[3,3])` return? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "True",
+    answer="False"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we import the dataset given above and name it `data`. Which of the following would return the first column? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="`data[1]`",
+    answer="`data[[1]]`",
+    "`data[[Student ID]]`",
+    answer="`` data$`Student ID` ``"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, assuming the same dataset the following code would rename the `Student ID` column to `student_id`? 
+
+```r
+data %>% rename(student_id = `Student ID`)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="True",
+    "False"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, we can use a `read_*()` function from `readr` to import a google sheet.
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "True",
+    answer="False"
+)
+
+cat(longmcq(choices))
+```
+
+
+## Data visualization
+
+
+
+We will continue working with the `ratings` dataset from the visualization lecture (part of the `languageR` package). It contains the following variables: 
+
+```{r}
+#| echo: false
+library(languageR)
+```
+
+```{r}
+#| echo: false
+glimpse(ratings)
+```
+
+Fill in the blanks below with one of the following words: `data`, `aesthetics`, `geom`. 
+
+> The basic ggplot involves: (1) using your `r fitb("data", width = 10)`, (2) defining how variables are mapped to visual properties (`r fitb("aesthetics", width = 10)`), and (3) determining the geometrical object that a plot uses to represent data (`r fitb("geom", width = 10)`)
+
+When ggplot2 maps a categorical variable to an aesthetic, it automatically assigns a unique value of the aesthetic to each level of the variable. What is this process called?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "level assignment",
+    "variable aestheticization",
+    "autofill",
+    answer="scaling"
+)
+
+cat(longmcq(choices))
+```
+
+The code below generated which of the following figures? 
+
+```{r}
+#| eval: false
+
+ggplot(
+    data = ratings,
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+) + 
+    geom_point(mapping = aes(color = Class)) +
+    geom_smooth(method = "lm") +
+    theme_classic(base_size=20)
+```
+
+![](/include/figures/global-v-local.png){#fig-globallocal fig-align="center" width=100%}
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "A",
+    answer="B",
+    "C"
+)
+
+cat(longmcq(choices))
+```
+
+Suppose we want to map the variable `Complex` to the color aesthetic in a scatterplot. Which of the following arguments could we pass to `geom_point()`? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "color = Complex",
+    answer="mapping=aes(color = Complex)",
+    "color = mapping(Complex)",
+    answer="aes(color=Complex)"
+)
+
+cat(longmcq(choices))
+```
+
+Which geoms are depicted in the following figure? 
+
+![](/include/figures/guess-geom.png){#fig-guessgeom fig-align="center" width=50%}
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "geom_histogram()",
+    answer="geom_density()",
+    "geom_bar()",
+    "geom_smooth()",
+    "geom_point()"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+Which geoms are depicted in the following figure? 
+
+![](/include/figures/guess-geom2.png){#fig-guessgeom2 fig-align="center" width=50%}
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="geom_histogram()",
+    "geom_density()",
+    "geom_bar()",
+    "geom_smooth()",
+    "geom_point()"
+)
+
+cat(longmcq(choices))
+```
+
+::: {.callout-warning title="Under Construction"}
+We will add more practice questions soon!
+:::
