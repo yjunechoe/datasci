@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -466,6 +467,7 @@ window.onload = function() {
 <li><code>forcats</code>: for dealing with factors</li>
 <li><code>tidyr</code>: for data tidying</li>
 <li><code>purrr</code>: for functional programming</li>
+<li><code>lubridate</code>: for working with dates and times</li>
 </ul>
 <p>We load the <code>tidyverse</code> like any other package, with <code>library(tidyverse)</code>. When we do, we will receive a message with (1) a list packages that were loaded and (2) a warning that there are potential conflicts with base R’s <code>stats</code> functions</p>
 <ul>
@@ -498,7 +500,7 @@ window.onload = function() {
 <li>apply a function to each element</li>
 <li>return a new vector</li>
 </ol>
-<p>We say “functions” because there are 5, one for each type of vector:</p>
+<p>We say “functions” because there are 5, the generic <code>map()</code> function and <code>map_*()</code> variants for each type of vector:</p>
 <ul>
 <li><code>map()</code></li>
 <li><code>map_lgl()</code></li>
@@ -507,7 +509,8 @@ window.onload = function() {
 <li><code>map_chr()</code></li>
 </ul>
 <p>To illustrate, suppose we have a data frame <code>df</code> with 3 columns and we want to compute the mean of each column. We could solve this with copy-and-paste (run <code>mean()</code> 3 different times) or try to use a <code>for</code> loop, but <code>map()</code> can do this with just one line:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(df, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We use `map_dbl()` because `mean()` returns a *double* value</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(df, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="modern-data-frames-with-tibble" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="modern-data-frames-with-tibble"><span class="header-section-number">4</span> Modern data frames with tibble</h2>
@@ -523,13 +526,13 @@ window.onload = function() {
 </ul>
 <p>You can read more in the <a href="https://tibble.tidyverse.org/articles/tibble.html">tibble vignette</a> if you are interested, but understanding these differences is not necessary to be successful in the course. The take-away is that <code>data.frame</code> and <code>tibble</code> sometimes behave differently. The behavior of <code>tibble</code> makes more sense for modern data science, so we should us it instead!</p>
 <p>Create a <code>tibble</code> with one of the following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) coerce an existing object with</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) coerce an existing object (e.g., a data frame) to tibble</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(x)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (2) pass a column of vectors </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (2) construct a tibble from a column of vectors</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">y=</span><span class="dv">1</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (3) define row-by-row, short for traansposed tibble</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (3) define row-by-row, short for transposed tibble</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tribble</span>(</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span>x, <span class="sc">~</span>y, <span class="sc">~</span>z,</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a"</span>, <span class="dv">2</span>, <span class="fl">3.6</span>,</span>
@@ -555,7 +558,7 @@ window.onload = function() {
 <p>Often we want to read in some data we’ve generated or collected outside of R. The most basic and common format is plain-text <strong>rectangular</strong> files. We will “read” these into R with readr’s <code>read_*()</code> functions.</p>
 <p>The <code>read_*()</code> functions have two important arguments:</p>
 <ul>
-<li><code>path</code> - the path to the file (that reader will try to parse)</li>
+<li><code>file</code> - the path to the file (that reader will try to parse)</li>
 <li><code>col_types</code> - <strong>column specification</strong>, a description of how each column should be converted from a character vector to a specific data type</li>
 </ul>
 <p>There are 7 supported file types, each with their own <code>read_*()</code> function:</p>
@@ -568,16 +571,16 @@ window.onload = function() {
 <li><code>read_table()</code>: whitespace-separated files</li>
 <li><code>read_log()</code>: web log files</li>
 </ul>
-<p>To read <code>.csv</code> files, include a path and (optionally) a column specification:</p>
+<p>To read <code>.csv</code> files, include a path and (optionally) a column specification in <code>col_types</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (1) pass only the path; readr guesses col_types </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">path=</span><span class="st">'path/to/file.csv'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="at">file=</span><span class="st">'path/to/file.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (2) include a column specification with col_types</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">path=</span><span class="st">'path/to/file.csv'</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">file=</span><span class="st">'path/to/file.csv'</span>, </span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_types =</span> <span class="fu">list</span>( <span class="at">x =</span> <span class="fu">col_string</span>(), <span class="at">y =</span> <span class="fu">col_skip</span>() )</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>With no colum specification, <code>readr</code> uses the the first 1000 rows to guess with a simple heuristic:</p>
+<p>With no column specification, <code>readr</code> uses the the first 1000 rows to guess with a simple heuristic:</p>
 <ul>
 <li>if column contains only T/F, <code>logical</code></li>
 <li>if only numbers, <code>double</code></li>
@@ -600,7 +603,7 @@ window.onload = function() {
 </ul>
 <p>Some useful additional arguments:</p>
 <ul>
-<li>if there is <strong>no header</strong>, include <code>col_names = FALSE</code></li>
+<li>if there is <strong>no header</strong> (the top row containing column names), include <code>col_names = FALSE</code></li>
 <li>to <strong>provide a header</strong>, include <code>col_names = c("x","y","z")</code></li>
 <li>to <strong>skip some lines</strong>, include <code>skip = n</code>, where n is number of lines to skip</li>
 <li>to <strong>select which columns</strong> to import, include <code>col_select(x, y)</code></li>

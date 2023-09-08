@@ -19,6 +19,7 @@ The `tidyverse` collection of packages includes:
 - `forcats`: for dealing with factors
 - `tidyr`: for data tidying
 - `purrr`: for functional programming
+- `lubridate`: for working with dates and times
 
 We load the `tidyverse` like any other package, with `library(tidyverse)`. When we do, we will receive a message with (1) a list packages that were loaded and (2) a warning that there are potential conflicts with base R's `stats` functions
 
@@ -50,7 +51,7 @@ The `map()` functions:
 2. apply a function to each element
 3. return a new vector
 
-We say "functions" because there are 5, one for each type of vector: 
+We say "functions" because there are 5, the generic `map()` function and `map_*()` variants for each type of vector: 
 
 - `map()`
 - `map_lgl()`
@@ -61,6 +62,7 @@ We say "functions" because there are 5, one for each type of vector:
 To illustrate, suppose we have a data frame `df` with 3 columns and we want to compute the mean of each column. We could solve this with copy-and-paste (run `mean()` 3 different times) or try to use a `for` loop, but `map()` can do this with just one line: 
 
 ```r
+# We use `map_dbl()` because `mean()` returns a *double* value
 map_dbl(df, mean)
 ```
 
@@ -81,13 +83,13 @@ You can read more in the [tibble vignette](https://tibble.tidyverse.org/articles
 Create a `tibble` with one of the following:  
 
 ```r
-# (1) coerce an existing object with
+# (1) coerce an existing object (e.g., a data frame) to tibble
 as_tibble(x)
 
-# (2) pass a column of vectors 
+# (2) construct a tibble from a column of vectors
 tibble(x=1:5, y=1)
 
-# (3) define row-by-row, short for traansposed tibble
+# (3) define row-by-row, short for transposed tibble
 tribble(
     ~x, ~y, ~z,
     "a", 2, 3.6,
@@ -115,7 +117,7 @@ Often we want to read in some data we've generated or collected outside of R. Th
 
 The `read_*()` functions have two important arguments: 
 
-- `path` - the path to the file (that reader will try to parse)
+- `file` - the path to the file (that reader will try to parse)
 - `col_types` - **column specification**, a description of how each column should be converted from a character vector to a specific data type
 
 There are 7 supported file types, each with their own `read_*()` function:
@@ -128,20 +130,20 @@ There are 7 supported file types, each with their own `read_*()` function:
 - `read_table()`: whitespace-separated files
 - `read_log()`: web log files
 
-To read `.csv` files, include a path and (optionally) a column specification:
+To read `.csv` files, include a path and (optionally) a column specification in `col_types`:
 
 ```r
 # (1) pass only the path; readr guesses col_types 
-read_csv(path='path/to/file.csv')
+read_csv(file='path/to/file.csv')
 
 # (2) include a column specification with col_types
 read_csv(
-    path='path/to/file.csv', 
+    file='path/to/file.csv', 
     col_types = list( x = col_string(), y = col_skip() )
 )
 ```
 
-With no colum specification, `readr` uses the the first 1000 rows to guess with a simple heuristic: 
+With no column specification, `readr` uses the the first 1000 rows to guess with a simple heuristic: 
 
 - if column contains only T/F, `logical`
 - if only numbers, `double`
@@ -164,7 +166,7 @@ There are 11 column types that can be specified:
 
 Some useful additional arguments:
 
-- if there is **no header**, include `col_names = FALSE`
+- if there is **no header** (the top row containing column names), include `col_names = FALSE`
 - to **provide a header**, include `col_names = c("x","y","z")`
 - to **skip some lines**, include `skip = n`, where n is number of lines to skip
 - to **select which columns** to import, include `col_select(x, y)`
@@ -201,5 +203,4 @@ Recommended further reading:
 - [Tibbles](https://r4ds.had.co.nz/tibbles.html) in R for Data Science
 - [Data import](https://r4ds.hadley.nz/data-import.html) in R for Data Science
 - [readr cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html?_gl=1*1fxlvya*_ga*MTI4NTg4NDIzMy4xNjkyODg0OTA4*_ga_2C0WZ1JHG0*MTY5Mjg4NDkwNy4xLjAuMTY5Mjg4NDkwNy4wLjAuMA..)
-
 
