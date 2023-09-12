@@ -414,13 +414,14 @@ window.onload = function() {
   <li><a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"><span class="header-section-number">3</span> Geoms</a></li>
   <li><a href="#other-layers" id="toc-other-layers" class="nav-link" data-scroll-target="#other-layers"><span class="header-section-number">4</span> Other layers</a>
   <ul class="collapse">
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets">Facets</a></li>
   <li><a href="#labels" id="toc-labels" class="nav-link" data-scroll-target="#labels">Labels</a></li>
   <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
   <li><a href="#scales" id="toc-scales" class="nav-link" data-scroll-target="#scales">Scales</a></li>
-  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets">Facets</a></li>
-  <li><a href="#position-adjustments" id="toc-position-adjustments" class="nav-link" data-scroll-target="#position-adjustments">Position adjustments</a></li>
   </ul></li>
   <li><a href="#shortcuts" id="toc-shortcuts" class="nav-link" data-scroll-target="#shortcuts"><span class="header-section-number">5</span> Shortcuts</a></li>
+  <li><a href="#saving-plots" id="toc-saving-plots" class="nav-link" data-scroll-target="#saving-plots"><span class="header-section-number">6</span> Saving plots</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7</span> Further reading</a></li>
   </ul>
 </nav>
     </div>
@@ -456,69 +457,60 @@ window.onload = function() {
 
 </header>
 
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<div class="cell">
-<details>
-<summary>Setup code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(languageR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<!-- ## Why visualize data?
-
-- why visualize. grammar of graphics. installing?  -->
+<blockquote class="blockquote">
+<p>Acknowledgement: These notes are heavily influenced by <a href="https://r4ds.hadley.nz/data-visualize">Ch 2 Data visualization</a> and <a href="https://r4ds.hadley.nz/layers">Ch 10 Layers</a> in the R for Data Science textbook!</p>
+</blockquote>
 <section id="visualization-with-ggplot2" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="visualization-with-ggplot2"><span class="header-section-number">1</span> Visualization with ggplot2</h2>
-<p>There are many ways to visualize data with R. We will use <code>ggplot2</code>, one of the core pacakges in the <code>tidyverse</code>.</p>
+<p>There are many ways to visualize data with R. One great option is <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a>, one of the core pacakges in the <code>tidyverse</code>.</p>
 <ul>
 <li><code>ggplot2</code> makes use of a system for describing and creating graphics known as the layered <strong>grammar of graphics</strong></li>
 <li>learning this one simple system allows you to generate many different types of plots</li>
 </ul>
-<p>To create a plot with <code>ggplot2</code>, you call the function <code>ggplot()</code>, which creates a <strong>plot object</strong> that you then add <strong>layers</strong> to. There are 3 basic requirements for every ggplot:</p>
+<p>To create a plot with <code>ggplot2</code>, you call the function <code>ggplot()</code>, which creates a <strong>plot object</strong> Then you add <strong>layers</strong> to the object. There are 3 basic requirements for every ggplot:</p>
 <ol type="1">
 <li><strong>data</strong> - what dataset are you ploting? Including only data generates an empty canvas</li>
 <li><strong>aesthetics</strong> - define how variables in your dataset are mapped to visual properties in the plot</li>
 <li><strong>geoms</strong> - determine the geometrical object that a plot uses to represent the data</li>
 </ol>
 <p>We can think of the following as a basic template for any ggplot:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">&lt;GEOM_FUNCTION&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> <span class="er">&lt;</span>GEOM_FUNCTION<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>One common <strong>warning</strong> you will encounter is about missing values. <code>ggplot2</code> will always let you know that some of your data could not be plotted in the way you specified. Usually this is good to know, but nothing to worry about:</p>
 <blockquote class="blockquote">
 <p>Removed n rows containing missing values</p>
 </blockquote>
-<p>We won’t cover everything you can do with ggplot (that would be a lot!) In lecture we’ll demo the most common features, but you should feel comfortable using the ggplot2 docs to figure out how to do other things.</p>
+<p>We won’t cover everything you can do with ggplot2 (that would be a lot!) In lecture we’ll demo the most common features, but you should feel comfortable using <a href="https://ggplot2.tidyverse.org/reference/">ggplot2’s function reference</a> to figure out how to do other things.</p>
 </section>
 <section id="aesthetics" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="aesthetics"><span class="header-section-number">2</span> Aesthetics</h2>
 <p>There are two ways we can determine the aesthetics of a plot:</p>
 <ul>
-<li><strong>mapping</strong> allows us to determine aesthetics based on a variable, which are passed as arguments in <code>aes(color=var)</code>.</li>
-<li><strong>setting</strong> allows us to set aesthetics to a constant value, which are passed as their own argument <code>color=var</code></li>
+<li><strong>mapping</strong> allows us to determine aesthetics based on a variable, which are passed as arguments. e.g.&nbsp;<code>mapping=aes(color=var)</code>.</li>
+<li><strong>setting</strong> allows us to set aesthetics to a constant value, which are passed as their own argument e.g.&nbsp;<code>color=var</code></li>
 </ul>
-<p>When we <strong>map</strong> aesthetics, ggplot2 selects reasonable scales – known as <strong>scaling</strong> – and creates legends to describe the mapping for us (except for x and y aesthetics; for those ggplot creates the axis). But when we <strong>set</strong> aesthetics, we must select the value for the aesthetic manually.</p>
+<p>When we <strong>map</strong> categorical variables to aesthetics, ggplot2 assigns a unique value of the aesthetic to each unique value of the variable.</p>
+<ul>
+<li>This process is known as <strong>scaling</strong>; we can override the scale ggplot2 selected by adding a <a href="#scales"><code>scales</code></a> layer.</li>
+<li>ggplot2 also automatically creates a legend to describe the mapping for us (except for x and y aesthetics, where ggplot2 simply creates the axis – no legend is necessary).</li>
+</ul>
+<p>When we <strong>set</strong> aesthetics, we must select the value for the aesthetic manually.</p>
 <ul>
 <li><strong>color</strong> and <strong>fill</strong> - set name of a color as a string, e.g.&nbsp;<code>color="blue"</code></li>
-<li>alpha - set value between 0 and 1, where 0 is most transparent, e.g.&nbsp;<code>alpha=0.5</code></li>
-<li>size - set size of point in mm, e.g.&nbsp;<code>size=1</code></li>
-<li>shape - set shape of point as a number, e.g.&nbsp;<code>shape=1</code>. There are 25 built in shapes (see below)</li>
-<li>linetype -</li>
+<li><strong>alpha</strong> - set value between 0 and 1, where 0 is most transparent, e.g.&nbsp;<code>alpha=0.5</code></li>
+<li><strong>size</strong> - set size of point in mm, e.g.&nbsp;<code>size=1</code></li>
+<li><strong>shape</strong> - set shape of point as a number 1-25, e.g.&nbsp;<code>shape=1</code>. There are 25 built in shapes (see below)</li>
+<li><strong>linetype</strong> - a name of “blank”, “solid”, “dashed”, “dotted”, “dotdash”, “longdash”, “twodash”, e.g.&nbsp;<code>linetype="dotted"</code></li>
 </ul>
+<div id="fig-shapes" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../include/figures/shapes-r4ds.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: from R4DS’s figure 10.1 showing the available shapes</figcaption>
+</figure>
+</div>
 <p>There are <strong>3 common warnings</strong> people encounter when <strong>mapping categorical variables</strong></p>
 <blockquote class="blockquote">
 <ol type="1">
@@ -534,26 +526,68 @@ Under Construction
 </section>
 <section id="geoms" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="geoms"><span class="header-section-number">3</span> Geoms</h2>
+<p><strong>Geoms</strong> are the geometric objects used to represent the data in your plot. To change the geom, simply change the geom function</p>
 <ul>
-<li><p><strong><code>geom_*()</code></strong> - to change the geom, simply change the geom function</p>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org/reference/#geoms">Available geoms</a></li>
-</ul></li>
-<li><p><strong>the mapping argument</strong> - every geom takes a mapping argument that allows you to define the aesetic mapping locally</p></li>
-<li><p><strong>data argument</strong> - every geom also takes a data argument that allows you to define the data locally</p></li>
+<li><code>geom_histogram()</code> - histogram, distribution of a continuous variable</li>
+<li><code>geom_density()</code> - distribution of a continuous variable</li>
+<li><code>geom_bar()</code>- distribution of categorical data</li>
+<li><code>geom_point()</code> - scatterplot</li>
+<li><code>geom_smooth()</code> - smoothed line of best fit</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/#geoms">All available geoms</a></li>
 </ul>
-<p>When using the mapping and data arguments in geoms, remember:</p>
+<p><strong>Mapping and data</strong>: Every geom function takes a <strong>mapping</strong> argument and a <strong>data</strong> argument, both can be defined either globally in the <code>ggplot()</code> layer or locally in the geom layer. When defining mappings or data locally in the geom layer, remember:</p>
 <ul>
 <li>they are <em>local</em>, meaning they only apply to <em>that specific layer</em></li>
 <li>they will extend or override any <em>global</em> mappings or data you specified in <code>ggplot()</code></li>
 <li>they (usefully!) allow you to specify different aesthetics or data in different layers</li>
 </ul>
+<p><strong>Position</strong>: Every geom also takes a <strong>position</strong> argument, which adjusts the position of the geom. We will encounter this most often in <code>geom_bar()</code> and <code>geom_point()</code>:</p>
+<ul>
+<li><p>For <code>geom_bar()</code>, the default position is <strong>stacked</strong>, e.g.&nbsp;<code>position="stacked"</code>, but there are 3 other options: (1) <strong>dodge</strong> would place overlapping bars next to each other, (2) <strong>fill</strong> would make each set of stacked bars the same height (a relative frequency plot), (3) <strong>identity</strong> would make the bars overlapping (which isn’t very useful – we’d only see the tallest one!)</p></li>
+<li><p>For <code>geom_point()</code>, set <code>position="jitter"</code> to add a small amount of random noise to each point, which speads them out! Technically makes your plot less accurate, but can also reveal important information. (<code>geom_jitter()</code> is shorthand for <code>geom_point(position="jitter")</code>)</p></li>
+</ul>
+<p><strong>Stat</strong>: All geoms also take a <strong>stat</strong> argument, which is short for <strong>statistical transformation</strong>. Many geoms have <code>stat="identity"</code> as their default argument, which means they plot the raw (untransformed) data from your dataset (<code>geom_point()</code> is one of them!). But some geoms <em>do</em> calculate new values to plot by default. For example:</p>
+<ul>
+<li><code>geom_bar()</code> and <code>geom_histogram()</code> bin the data and plot the <strong>bin counts</strong> (the number of points that fall in each bin) by default</li>
+<li><code>geom_smooth()</code> fits a model to your data and plots the prediction from the model</li>
+<li><code>geom_boxplot()</code> computes the five-number summary of the distribution (more on this next week!) and then display that number as a summary</li>
+</ul>
+<p>Usually we use the default stat, so we don’t need to specify it at all. But sometimes when making <code>geom_bar()</code> plots, we want to override the default to <code>stat="identity"</code> to make the height of the bars map to the raw values of a y variable.</p>
+<p><strong>Other geom-specific arguments</strong>: Certain geoms make frequent use of other more specific arguments. Two we will encounter often are:</p>
+<ul>
+<li>For <code>geom_smooth()</code>, we set the smoothing method with the <strong>method</strong> argument, e.g.&nbsp;<code>method="lm"</code></li>
+<li>For <code>geom_histogram()</code>, we set the number of bins with the <strong>bins</strong> argument or the width of the bins with the <strong>binwidth</strong> argument, e.g.&nbsp;<code>binwidth=30</code>.</li>
+</ul>
 </section>
 <section id="other-layers" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="other-layers"><span class="header-section-number">4</span> Other layers</h2>
+<p>There are many other layers that can be specified in ggplot2 to create more complex plots. I find this figure helpful in understanding the layered nature of the <strong>grammar of graphics</strong>:</p>
+<div id="fig-gglayers" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../include/figures/gglayers.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Adapeted from The Grammar of Graphics by Leland Wilkinson</figcaption>
+</figure>
+</div>
+<p>Below we’ll outline some common uses for the following layers. We demoed most of this in class, but a few of them might be new to you!</p>
+<ul>
+<li><strong>facets</strong> - display subsets of data</li>
+<li><strong>labels</strong> - modifies axis, legend and plot labels</li>
+<li><strong>themes</strong> - overall visuals</li>
+<li><strong>scales</strong> - map data values to visual values of aestetic</li>
+</ul>
+<section id="facets" class="level3">
+<h3 class="anchored" data-anchor-id="facets">Facets</h3>
+<p>Facets are smaller plots that display different subsets of the data. They are often used as an alternative to aesthetics to plot additional categorical variables.</p>
+<ul>
+<li><code>facet_wrap(~var)</code> - splits a plot into subplots based on a categorical variable; each subplot displays a subset of the data. The <strong>ncol</strong> argument takes a number and specifies the number of columns.</li>
+<li><code>facet_grid(rows~cols)</code> - splits a plot into subplots with the combination of two variables, one as the rows of the facet and one as the columns. To leave off rows (or cols), use the <code>.</code>, e.g.&nbsp;<code>facet_grid(.~species)</code></li>
+<li><code>scales</code> - by default facets share the same scale and range for x and y aesthetics. Set the <code>scales</code> argument to “free” to allow for different axis scales, e.g.&nbsp;<code>scales="free"</code></li>
+</ul>
+</section>
 <section id="labels" class="level3">
 <h3 class="anchored" data-anchor-id="labels">Labels</h3>
-<p>The labels layer allows you to modify axis, legend, and plot labels with the <code>labs()</code> function. <code>labs()</code> takes several argument. Some are a straightforward name, like:</p>
+<p>The <code>labs()</code> functions allows you to modify axis, legend, and plot labels. <code>labs()</code> takes several arguments.</p>
+<p>Some are a straightforward name, like:</p>
 <ul>
 <li><strong>title</strong> - plot title</li>
 <li><strong>subtitle</strong> - plot subtitle</li>
@@ -569,7 +603,7 @@ Under Construction
 </section>
 <section id="themes" class="level3">
 <h3 class="anchored" data-anchor-id="themes">Themes</h3>
-<p>ggplot comes with many <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">complete themes</a> which control how everything is displayed (except data!). A few favorites include:</p>
+<p>ggplot2 comes with many <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">complete themes</a> which control how everything is displayed (except data!). A few favorites include:</p>
 <ul>
 <li><code>theme_gray()</code> - the default</li>
 <li><code>theme_bw()</code> - classic dark-on-light theme</li>
@@ -584,40 +618,10 @@ Under Construction
 </section>
 <section id="scales" class="level3">
 <h3 class="anchored" data-anchor-id="scales">Scales</h3>
-<p><a href="https://ggplot2.tidyverse.org/reference/#scales">Scales</a> control the details of how data values are translated to visual properties. Adding a scale layer overrides the default scales that ggplot uses automatically. For example:</p>
+<p><a href="https://ggplot2.tidyverse.org/reference/#scales">Scales</a> control the details of how data values are translated to visual properties. Adding a scale layer overrides the default scales that ggplot2 uses automatically. There are many kinds of scales, but we will mostly encounter them when changing colors of things:</p>
 <ul>
-<li><code>scale_color_brewer()</code> - changes the color scale</li>
-<li><code>scale_fill_manual()</code> - also changes the color, set to manual values with <strong>values</strong> argument</li>
-</ul>
-</section>
-<section id="facets" class="level3">
-<h3 class="anchored" data-anchor-id="facets">Facets</h3>
-<ul>
-<li><p><code>facet_wrap(~var)</code> - splits a plot into subplots based on a categorical variable; each subplot displays a subset of the data</p></li>
-<li><p><code>facet_grid(rows~cols)</code> - splits a plot into subplots with the combination of two variables</p></li>
-<li><p><code>scales</code> - by default facets share the same scale and range for x and y aesthetics. Set the <code>scales</code> argument to “free” to allow for different axis scales.</p></li>
-</ul>
-<!-- ### Statistical transformations
-
-
--  Stat 
-- Default stats
-- Overriding default stats  -->
-</section>
-<section id="position-adjustments" class="level3">
-<h3 class="anchored" data-anchor-id="position-adjustments">Position adjustments</h3>
-<ul>
-<li><code>geom_bar()</code> - the default position is <code>"stacked"</code>, but there are 3 other options:
-<ul>
-<li><code>position="identity"</code></li>
-<li><code>position="dodge"</code></li>
-<li><code>position="fill"</code></li>
-</ul></li>
-<li><code>geom_point()</code> -
-<ul>
-<li><code>poisiton="jitter"</code> - adds a small amount of random noise to each point, which speads them out! Technically makes your plot less accurate, but can also reveal important information.</li>
-<li><code>geom_jitter()</code> - is a shorthand for <code>geom_point(position="jitter")</code></li>
-</ul></li>
+<li><code>scale_color_brewer()</code> - changes the color, allows you to <a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html">select color palettes</a> from the RColorBrewer package with <strong>palette</strong> argument, e.g.&nbsp;<code>palette="Greens"</code></li>
+<li><code>scale_fill_manual()</code> - also changes the color, set to manual values with <strong>values</strong> argument, e.g.&nbsp;<code>values=c("green", "blue", "red")</code></li>
 </ul>
 </section>
 </section>
@@ -625,28 +629,52 @@ Under Construction
 <h2 data-number="5" class="anchored" data-anchor-id="shortcuts"><span class="header-section-number">5</span> Shortcuts</h2>
 <p>When calling ggplot2 (or any function!) we can specify argument names explicitly or leave them off (implicit). Leaving off the names makes code more conscise, so you’ll typically see it that way.</p>
 <ul>
-<li><p><strong>explicit</strong> naming of arguments allow us to write them in any order (because we indicate them to ggplot by their name)</p>
+<li><p><strong>explicit</strong> naming of arguments allow us to write them in any order (because we indicate them to ggplot2 by their name)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> my_data,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>implict</strong> argument names means we have to specify them in a perscribed order (data first!) so ggplot2 can identify them without their name</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> my_data,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    my_data,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>implict</strong> argument names means we have to specify them in a perscribed order (data first!) so ggplot can identify them without their name</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    my_data,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 <p>Another shortcut you’ll encounter is <strong>the pipe operator</strong>, <code>%&gt;%</code>. The pipe takes the thing on its left and passes it along to the function on its right (as the function’s first argument)</p>
 <ul>
 <li><p><code>x %&gt;% y</code> is equivalent to <code>f(x, y)</code></p></li>
 <li><p>since the first argument to ggplot() is data, you’ll typically see the pipe used like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<!-- ## Saving plots -->
-<!-- ## Further reading  -->
+</section>
+<section id="saving-plots" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="saving-plots"><span class="header-section-number">6</span> Saving plots</h2>
+<p>Often we want to save a plot (to add it to a presentation or paper). We can accomplish this with <code>ggsave()</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save your most recent plot with the name</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myfigurename.png"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># specify the width and height; can also specify which units you mean</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"myfigurename.png"</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"mtcars.pdf"</span>, <span class="at">width =</span> <span class="dv">20</span>, <span class="at">height =</span> <span class="dv">20</span>, <span class="at">units =</span> <span class="st">"cm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Google Colab, you can find your saved plot by clicking the file icon on the left side bar.</p>
+</section>
+<section id="further-reading" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7</span> Further reading</h2>
+<p>Recommended further reading:</p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/data-visualize">Ch 2 Data visualization</a> in R for Data Science</li>
+<li>https://moderndive.com/2-viz.html</li>
+<li><a href="https://r4ds.hadley.nz/layers">Ch 10 Layers</a> in R for Data Science</li>
+</ul>
+<p>Other useful resources:</p>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/reference">ggplot2 function reference</a></li>
+<li><a href="https://ggplot2.tidyverse.org/#cheatsheet">ggplot2 cheat sheet</a></li>
+<li><a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></li>
+</ul>
 
 
 </section>
