@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-09-07">
+<meta name="dcterms.date" content="2023-09-12">
 
 <title>LING 0700 | PSYC 2314 - Data visualization</title>
 <style>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -375,15 +409,18 @@ window.onload = function() {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-visualize-data" id="toc-why-visualize-data" class="nav-link active" data-scroll-target="#why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</a></li>
-  <li><a href="#data-visualization-with-ggplot2" id="toc-data-visualization-with-ggplot2" class="nav-link" data-scroll-target="#data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</a></li>
-  <li><a href="#aesthetic-mapping" id="toc-aesthetic-mapping" class="nav-link" data-scroll-target="#aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</a></li>
-  <li><a href="#geometric-objects" id="toc-geometric-objects" class="nav-link" data-scroll-target="#geometric-objects"><span class="header-section-number">4</span> Geometric objects</a></li>
-  <li><a href="#additional-layers" id="toc-additional-layers" class="nav-link" data-scroll-target="#additional-layers"><span class="header-section-number">5</span> Additional layers</a></li>
-  <li><a href="#saving-plots" id="toc-saving-plots" class="nav-link" data-scroll-target="#saving-plots"><span class="header-section-number">6</span> Saving plots</a>
+  <li><a href="#visualization-with-ggplot2" id="toc-visualization-with-ggplot2" class="nav-link active" data-scroll-target="#visualization-with-ggplot2"><span class="header-section-number">1</span> Visualization with ggplot2</a></li>
+  <li><a href="#aesthetics" id="toc-aesthetics" class="nav-link" data-scroll-target="#aesthetics"><span class="header-section-number">2</span> Aesthetics</a></li>
+  <li><a href="#geoms" id="toc-geoms" class="nav-link" data-scroll-target="#geoms"><span class="header-section-number">3</span> Geoms</a></li>
+  <li><a href="#other-layers" id="toc-other-layers" class="nav-link" data-scroll-target="#other-layers"><span class="header-section-number">4</span> Other layers</a>
   <ul class="collapse">
-  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
+  <li><a href="#labels" id="toc-labels" class="nav-link" data-scroll-target="#labels">Labels</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes">Themes</a></li>
+  <li><a href="#scales" id="toc-scales" class="nav-link" data-scroll-target="#scales">Scales</a></li>
+  <li><a href="#facets" id="toc-facets" class="nav-link" data-scroll-target="#facets">Facets</a></li>
+  <li><a href="#position-adjustments" id="toc-position-adjustments" class="nav-link" data-scroll-target="#position-adjustments">Position adjustments</a></li>
   </ul></li>
+  <li><a href="#shortcuts" id="toc-shortcuts" class="nav-link" data-scroll-target="#shortcuts"><span class="header-section-number">5</span> Shortcuts</a></li>
   </ul>
 </nav>
     </div>
@@ -409,7 +446,7 @@ window.onload = function() {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 7, 2023</p>
+      <p class="date">September 12, 2023</p>
     </div>
   </div>
   
@@ -432,221 +469,186 @@ Under Construction
 
 </div>
 </div>
-<section id="why-visualize-data" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="why-visualize-data"><span class="header-section-number">1</span> Why visualize data?</h2>
+<div class="cell">
+<details>
+<summary>Setup code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(languageR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<!-- ## Why visualize data?
+
+- why visualize. grammar of graphics. installing?  -->
+<section id="visualization-with-ggplot2" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="visualization-with-ggplot2"><span class="header-section-number">1</span> Visualization with ggplot2</h2>
+<p>There are many ways to visualize data with R. We will use <code>ggplot2</code>, one of the core pacakges in the <code>tidyverse</code>.</p>
+<ul>
+<li><code>ggplot2</code> makes use of a system for describing and creating graphics known as the layered <strong>grammar of graphics</strong></li>
+<li>learning this one simple system allows you to generate many different types of plots</li>
+</ul>
+<p>To create a plot with <code>ggplot2</code>, you call the function <code>ggplot()</code>, which creates a <strong>plot object</strong> that you then add <strong>layers</strong> to. There are 3 basic requirements for every ggplot:</p>
+<ol type="1">
+<li><strong>data</strong> - what dataset are you ploting? Including only data generates an empty canvas</li>
+<li><strong>aesthetics</strong> - define how variables in your dataset are mapped to visual properties in the plot</li>
+<li><strong>geoms</strong> - determine the geometrical object that a plot uses to represent the data</li>
+</ol>
+<p>We can think of the following as a basic template for any ggplot:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="sc">&lt;</span>DATA<span class="sc">&gt;</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="sc">&lt;</span>MAPPINGS<span class="sc">&gt;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">&lt;GEOM_FUNCTION&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>One common <strong>warning</strong> you will encounter is about missing values. <code>ggplot2</code> will always let you know that some of your data could not be plotted in the way you specified. Usually this is good to know, but nothing to worry about:</p>
 <blockquote class="blockquote">
-<p>Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science</p>
+<p>Removed n rows containing missing values</p>
 </blockquote>
+<p>We won’t cover everything you can do with ggplot (that would be a lot!) In lecture we’ll demo the most common features, but you should feel comfortable using the ggplot2 docs to figure out how to do other things.</p>
 </section>
-<section id="data-visualization-with-ggplot2" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="data-visualization-with-ggplot2"><span class="header-section-number">2</span> Data visualization with ggplot2</h2>
-<!---
- 
-Prerequisite packages. ggplot part of tidyverse package. Already installed on Google Colab's R; just use library.
-
-
-::: {.cell}
-
-```{.r .cell-code}
-# load the tidyverse and palmer penguins libraries
-library(tidyverse)
-```
-
-::: {.cell-output .cell-output-stderr}
-```
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.3     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-```
-:::
-
-```{.r .cell-code}
-library(palmerpenguins)
-```
-:::
-
-
-
-We will also be using palmerpenguins package; show here how to use glimpse() to get a look or head() -- can also show on Tue 
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-glimpse(penguins)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-Rows: 344
-Columns: 8
-$ species           <fct> Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
-$ island            <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
-$ bill_length_mm    <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
-$ bill_depth_mm     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
-$ flipper_length_mm <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
-$ body_mass_g       <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
-$ sex               <fct> male, female, female, NA, female, male, female, male…
-$ year              <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
-```
-:::
-:::
-
-::: {.cell}
-
-```{.r .cell-code}
-head(penguins)
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-# A tibble: 6 × 8
-  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-  <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
-1 Adelie  Torgersen           39.1          18.7               181        3750
-2 Adelie  Torgersen           39.5          17.4               186        3800
-3 Adelie  Torgersen           40.3          18                 195        3250
-4 Adelie  Torgersen           NA            NA                  NA          NA
-5 Adelie  Torgersen           36.7          19.3               193        3450
-6 Adelie  Torgersen           39.3          20.6               190        3650
-# ℹ 2 more variables: sex <fct>, year <int>
-```
-:::
-:::
-
-
-plot we want to replicate: 
-
-here 
-
-Start with data layer; 
-
-
-::: {.cell}
-
-```{.r .cell-code}
-ggplot(data = penguins) 
-```
-
-::: {.cell-output-display}
-![](data-visualization_files/figure-html/unnamed-chunk-4-1.png){width=672}
-:::
-:::
-
-
-
-sample basic plot: 
-
-
-::: {.cell}
-
-:::
-
- 
---->
-<p>three main parts:</p>
+<section id="aesthetics" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="aesthetics"><span class="header-section-number">2</span> Aesthetics</h2>
+<p>There are two ways we can determine the aesthetics of a plot:</p>
 <ul>
-<li><strong>data</strong>- your (tidy) data</li>
-<li><strong>aesthetic mappings (aes)</strong> - make data visible</li>
-<li><strong>geometric objects</strong> -</li>
+<li><strong>mapping</strong> allows us to determine aesthetics based on a variable, which are passed as arguments in <code>aes(color=var)</code>.</li>
+<li><strong>setting</strong> allows us to set aesthetics to a constant value, which are passed as their own argument <code>color=var</code></li>
 </ul>
-<p>other layers:</p>
+<p>When we <strong>map</strong> aesthetics, ggplot2 selects reasonable scales – known as <strong>scaling</strong> – and creates legends to describe the mapping for us (except for x and y aesthetics; for those ggplot creates the axis). But when we <strong>set</strong> aesthetics, we must select the value for the aesthetic manually.</p>
 <ul>
-<li><strong>facets</strong></li>
-<li><strong>statistics</strong> - statistical transformations of data</li>
-<li><strong>scales</strong> - map data values to visual values of aestetic</li>
-<li>coordinates</li>
-<li><strong>themes</strong> - overall visuals</li>
+<li><strong>color</strong> and <strong>fill</strong> - set name of a color as a string, e.g.&nbsp;<code>color="blue"</code></li>
+<li>alpha - set value between 0 and 1, where 0 is most transparent, e.g.&nbsp;<code>alpha=0.5</code></li>
+<li>size - set size of point in mm, e.g.&nbsp;<code>size=1</code></li>
+<li>shape - set shape of point as a number, e.g.&nbsp;<code>shape=1</code>. There are 25 built in shapes (see below)</li>
+<li>linetype -</li>
 </ul>
-<p>special notes for Google Colab: - setting size</p>
-</section>
-<section id="aesthetic-mapping" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="aesthetic-mapping"><span class="header-section-number">3</span> Aesthetic mapping</h2>
-<p>Practical example: - adding type of penguins</p>
-<p><strong>aesthetic mappings</strong> (aes), make data visible</p>
+<p>There are <strong>3 common warnings</strong> people encounter when <strong>mapping categorical variables</strong></p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>The shape palette can deal with a maximum of 6 discrete values</li>
+<li>Removed n rows containing missing values</li>
+<li>Using alpha for a discrete value is not advised.</li>
+</ol>
+</blockquote>
 <ul>
-<li><code>x</code>, <code>y</code>: variable on x and y axis</li>
-<li><code>color</code>: outline color of geom</li>
-<li><code>fill</code>: fill color of geom</li>
-<li><code>group</code>: group geom belongs to</li>
-<li><code>shape</code>: shape used to plot point (circle, square, etc)</li>
-<li><code>linetype</code>: type of line used (solid, dash, et)</li>
-<li><code>size</code></li>
+<li>The first two happen when mapping <strong>shape</strong>, because by default ggplot2 will use no more than 6 shapes at a time (and any additional levels are discarded)</li>
+<li>The last one happens when mapping <strong>size</strong> or <strong>alpha</strong>, because it is strange to map an unordered categorical variable to an ordered aesthetic. Size and alpha imply there is some ranking but there is none!</li>
 </ul>
 </section>
-<section id="geometric-objects" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">4</span> Geometric objects</h2>
-<p><strong>geometric objects (geoms)</strong> - type of plot</p>
+<section id="geoms" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="geoms"><span class="header-section-number">3</span> Geoms</h2>
 <ul>
-<li>show adding geom_smooth</li>
-</ul>
-</section>
-<section id="additional-layers" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="additional-layers"><span class="header-section-number">5</span> Additional layers</h2>
-<p>We’ll cover some in the class: - adding labels - adding theme - adding fill</p>
+<li><p><strong><code>geom_*()</code></strong> - to change the geom, simply change the geom function</p>
 <ul>
-<li><strong>facets</strong>
-<ul>
-<li><code>facet_grid(.~var1)</code></li>
-<li><code>facet_grid(var2~.)</code></li>
-<li><code>facet_grid(var2~var1)</code></li>
-<li><code>facet_wrap(~var1)</code> - wrap facets</li>
-<li>“scales”?</li>
+<li><a href="https://ggplot2.tidyverse.org/reference/#geoms">Available geoms</a></li>
 </ul></li>
-<li><strong>coordinates</strong>
+<li><p><strong>the mapping argument</strong> - every geom takes a mapping argument that allows you to define the aesetic mapping locally</p></li>
+<li><p><strong>data argument</strong> - every geom also takes a data argument that allows you to define the data locally</p></li>
+</ul>
+<p>When using the mapping and data arguments in geoms, remember:</p>
 <ul>
-<li><code>coord_cartesian(xlim=c(0,5))</code> - xlim, ylim</li>
-<li><code>coord_flip()</code></li>
+<li>they are <em>local</em>, meaning they only apply to <em>that specific layer</em></li>
+<li>they will extend or override any <em>global</em> mappings or data you specified in <code>ggplot()</code></li>
+<li>they (usefully!) allow you to specify different aesthetics or data in different layers</li>
+</ul>
+</section>
+<section id="other-layers" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="other-layers"><span class="header-section-number">4</span> Other layers</h2>
+<section id="labels" class="level3">
+<h3 class="anchored" data-anchor-id="labels">Labels</h3>
+<p>The labels layer allows you to modify axis, legend, and plot labels with the <code>labs()</code> function. <code>labs()</code> takes several argument. Some are a straightforward name, like:</p>
+<ul>
+<li><strong>title</strong> - plot title</li>
+<li><strong>subtitle</strong> - plot subtitle</li>
+<li><strong>caption</strong> - caption at bottom right of plot</li>
+</ul>
+<p>Others are mapped to aesthetics, like:</p>
+<ul>
+<li><strong>x</strong> - the x axis label</li>
+<li><strong>y</strong> - the y axis label</li>
+<li><strong>color</strong> - the legend for the color aesthetic</li>
+<li><strong>size</strong> - the legend for the size aesthetic</li>
+</ul>
+</section>
+<section id="themes" class="level3">
+<h3 class="anchored" data-anchor-id="themes">Themes</h3>
+<p>ggplot comes with many <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">complete themes</a> which control how everything is displayed (except data!). A few favorites include:</p>
+<ul>
+<li><code>theme_gray()</code> - the default</li>
+<li><code>theme_bw()</code> - classic dark-on-light theme</li>
+<li><code>theme_minimal()</code> - minimal theme with no backgroun annotations</li>
+<li><code>theme_classic()</code> - a classic looking theme with no gridelines</li>
+</ul>
+<p>Themes take a few arguments, two of which we may use in the class:</p>
+<ul>
+<li><strong>base_size</strong> - base font size, given in pts</li>
+<li><strong>base_family</strong> - base font family to use</li>
+</ul>
+</section>
+<section id="scales" class="level3">
+<h3 class="anchored" data-anchor-id="scales">Scales</h3>
+<p><a href="https://ggplot2.tidyverse.org/reference/#scales">Scales</a> control the details of how data values are translated to visual properties. Adding a scale layer overrides the default scales that ggplot uses automatically. For example:</p>
+<ul>
+<li><code>scale_color_brewer()</code> - changes the color scale</li>
+<li><code>scale_fill_manual()</code> - also changes the color, set to manual values with <strong>values</strong> argument</li>
+</ul>
+</section>
+<section id="facets" class="level3">
+<h3 class="anchored" data-anchor-id="facets">Facets</h3>
+<ul>
+<li><p><code>facet_wrap(~var)</code> - splits a plot into subplots based on a categorical variable; each subplot displays a subset of the data</p></li>
+<li><p><code>facet_grid(rows~cols)</code> - splits a plot into subplots with the combination of two variables</p></li>
+<li><p><code>scales</code> - by default facets share the same scale and range for x and y aesthetics. Set the <code>scales</code> argument to “free” to allow for different axis scales.</p></li>
+</ul>
+<!-- ### Statistical transformations
+
+
+-  Stat 
+- Default stats
+- Overriding default stats  -->
+</section>
+<section id="position-adjustments" class="level3">
+<h3 class="anchored" data-anchor-id="position-adjustments">Position adjustments</h3>
+<ul>
+<li><code>geom_bar()</code> - the default position is <code>"stacked"</code>, but there are 3 other options:
+<ul>
+<li><code>position="identity"</code></li>
+<li><code>position="dodge"</code></li>
+<li><code>position="fill"</code></li>
 </ul></li>
-<li><strong>labels</strong>
+<li><code>geom_point()</code> -
 <ul>
-<li><code>labs(title="plot title")</code> - x, y, subtitle</li>
-<li><code>annotate()</code></li>
-</ul></li>
-<li><strong>statistics</strong></li>
-<li><strong>scales</strong></li>
-<li><strong>position adjustments</strong></li>
-<li><strong>themes</strong>
-<ul>
-<li><code>theme(legend.position="bottom")</code></li>
+<li><code>poisiton="jitter"</code> - adds a small amount of random noise to each point, which speads them out! Technically makes your plot less accurate, but can also reveal important information.</li>
+<li><code>geom_jitter()</code> - is a shorthand for <code>geom_point(position="jitter")</code></li>
 </ul></li>
 </ul>
 </section>
-<section id="saving-plots" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="saving-plots"><span class="header-section-number">6</span> Saving plots</h2>
-<p>Helper functions:</p>
-<ul>
-<li><code>last_plot()</code> - returns the last plot</li>
-<li><code>ggsave("plot.png", width=5, height=5)</code> - saves last plot</li>
-</ul>
-<section id="further-reading-and-references" class="level3">
-<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
-<p>Useful resources:</p>
-<ul>
-<li>ggplot cheat sheet</li>
-<li><a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">introduction to palmerpenguins</a></li>
-</ul>
-<p>Recommended further reading:</p>
-<ul>
-<li>https://moderndive.com/2-viz.html</li>
-<li><a href="https://r4ds.hadley.nz/layers">Layers</a> in R for Data Science</li>
-</ul>
-<p>Other references:</p>
-<ul>
-<li>https://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html</li>
-<li>https://r4ds.hadley.nz/layers</li>
-</ul>
-
-
 </section>
+<section id="shortcuts" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="shortcuts"><span class="header-section-number">5</span> Shortcuts</h2>
+<p>When calling ggplot2 (or any function!) we can specify argument names explicitly or leave them off (implicit). Leaving off the names makes code more conscise, so you’ll typically see it that way.</p>
+<ul>
+<li><p><strong>explicit</strong> naming of arguments allow us to write them in any order (because we indicate them to ggplot by their name)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> my_data,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>implict</strong> argument names means we have to specify them in a perscribed order (data first!) so ggplot can identify them without their name</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    my_data,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p>Another shortcut you’ll encounter is <strong>the pipe operator</strong>, <code>%&gt;%</code>. The pipe takes the thing on its left and passes it along to the function on its right (as the function’s first argument)</p>
+<ul>
+<li><p><code>x %&gt;% y</code> is equivalent to <code>f(x, y)</code></p></li>
+<li><p>since the first argument to ggplot() is data, you’ll typically see the pipe used like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> weight, <span class="at">y =</span> height)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<!-- ## Saving plots -->
+<!-- ## Further reading  -->
+
+
 </section>
 
 </main> <!-- /main -->

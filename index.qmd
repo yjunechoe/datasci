@@ -14,14 +14,14 @@ Week | Day | Topic | Resources |
 | 1 | 08-28 | [Hello, world!](notes/hello-world.qmd) | [slides](/slides/hello-world.qmd)|  
 | 1 | 08-31 | [R-basics](/notes/r-basics.qmd)  | [slides](/slides/r-basics.qmd), [demo](https://colab.research.google.com/drive/1WjgmOFe5yg6ylrjZd2aoqX1W_rrCXTz9?usp=sharing), [lab](labs/lab-01.qmd)| 
 | 2 | 09-05 |  [Data importing](/notes//data-importing.qmd)  | [slides](/slides/data-importing.qmd), [demo](https://colab.research.google.com/drive/1xHEa4cT99JO5Bnh3RroMphCyt3DLjpxT?usp=sharing)| 
-| 2 | 09-07 |   Data visualization | [slides](/slides/data-visualization.qmd), [lab](/labs/lab-02.qmd) |
+| 2 | 09-07 |   [Data visualization](/notes/data-visualization.qmd) | [slides](/slides/data-visualization.qmd), [lab](/labs/lab-02.qmd) |
 | 2 | 09-10 |   [Problem set 1](/psets/problem-set-01.qmd) | |
-|  3 |09-12 |   Data wrangling | |
-|  3 | 09-14 |  Probability distributions | | 
+|  3 | 09-12 |   More data visualization |  |
+|  3 | 09-14 |  Data wrangling | | 
 |  4 | 09-19 |  Quiz 1 | |
-| 4 | 09-20 |  Sampling variability  |  | 
-|  5 | 09-26 |  Hypothesis testing |  | 
-|  5 | 09-28 |  R tutorial | | 
+| 4 | 09-20 |  Probability distributions |  | 
+|  5 | 09-26 | Sampling variability |  | 
+|  5 | 09-28 |  Hypothesis testing  | | 
 | 5 | 10-01 |  Problem set 2 | | 
 | 6 | 10-03 |  Model specification | | 
 | 6 | 10-05 |  Model fitting | | 

@@ -151,7 +151,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 49 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean there is a 95% probability that the true mean lies within this range"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 9 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n if you repeated the process many times, 95% of intervals calculated in this way contain the true mean 95% of the data fall within this range there is a 95% probability that the true mean lies within this range"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -172,14 +172,14 @@
     "href": "drafts.html",
     "title": "All drafts",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "drafts.html#lecture-notes",
     "href": "drafts.html#lecture-notes",
     "title": "All drafts",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "drafts.html#labs",
@@ -200,7 +200,7 @@
     "href": "index.html",
     "title": "Datasci for lang & mind",
     "section": "",
-    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nWeek\nDay\nTopic\nResources\n\n\n\n\n1\n08-28\nHello, world!\nslides\n\n\n1\n08-31\nR-basics\nslides, demo, lab\n\n\n2\n09-05\nData importing\nslides, demo\n\n\n2\n09-07\nData visualization\nslides, lab\n\n\n2\n09-10\nProblem set 1\n\n\n\n3\n09-12\nData wrangling\n\n\n\n3\n09-14\nProbability distributions\n\n\n\n4\n09-19\nQuiz 1\n\n\n\n4\n09-20\nSampling variability\n\n\n\n5\n09-26\nHypothesis testing\n\n\n\n5\n09-28\nR tutorial\n\n\n\n5\n10-01\nProblem set 2\n\n\n\n6\n10-03\nModel specification\n\n\n\n6\n10-05\nModel fitting\n\n\n\n7\n10-10\nQuiz 2\n\n\n\n7\n10-12\nNo class, break\n\n\n\n8\n10-17\nR tutorial\n\n\n\n8\n10-19\nModel accuracy\n\n\n\n8\n10-22\nProblem set 3\n\n\n\n9\n10-24\nModel reliability\n\n\n\n9\n10-26\nR tutorial\n\n\n\n10\n10-31\nQuiz 3\n\n\n\n10\n11-02\nTBD guest\n\n\n\n11\n11-07\nClassification\n\n\n\n11\n11-09\nR tutorial\n\n\n\n11\n11-12\nProblem set 4\n\n\n\n12\n11-14\nInference\n\n\n\n12\n11-16\nR tutorial\n\n\n\n13\n11-21\nQuiz 4\n\n\n\n13\n11-23\nNo class, break\n\n\n\n14\n11-28\nFeature engineering\n\n\n\n14\n11-30\nR tutorial\n\n\n\n14\n12-03\nProblem set 5\n\n\n\n15\n12-05\nMultilevel models\n\n\n\n15\n12-07\nR tutorial\n\n\n\n15\n12-10\nProblem set 6"
+    "text": "contact: katie, june, avinash, ravi\nresources: ed, canvas, gradescope, colab\n\n\n\n\nWeek\nDay\nTopic\nResources\n\n\n\n\n1\n08-28\nHello, world!\nslides\n\n\n1\n08-31\nR-basics\nslides, demo, lab\n\n\n2\n09-05\nData importing\nslides, demo\n\n\n2\n09-07\nData visualization\nslides, lab\n\n\n2\n09-10\nProblem set 1\n\n\n\n3\n09-12\nMore data visualization\n\n\n\n3\n09-14\nData wrangling\n\n\n\n4\n09-19\nQuiz 1\n\n\n\n4\n09-20\nProbability distributions\n\n\n\n5\n09-26\nSampling variability\n\n\n\n5\n09-28\nHypothesis testing\n\n\n\n5\n10-01\nProblem set 2\n\n\n\n6\n10-03\nModel specification\n\n\n\n6\n10-05\nModel fitting\n\n\n\n7\n10-10\nQuiz 2\n\n\n\n7\n10-12\nNo class, break\n\n\n\n8\n10-17\nR tutorial\n\n\n\n8\n10-19\nModel accuracy\n\n\n\n8\n10-22\nProblem set 3\n\n\n\n9\n10-24\nModel reliability\n\n\n\n9\n10-26\nR tutorial\n\n\n\n10\n10-31\nQuiz 3\n\n\n\n10\n11-02\nTBD guest\n\n\n\n11\n11-07\nClassification\n\n\n\n11\n11-09\nR tutorial\n\n\n\n11\n11-12\nProblem set 4\n\n\n\n12\n11-14\nInference\n\n\n\n12\n11-16\nR tutorial\n\n\n\n13\n11-21\nQuiz 4\n\n\n\n13\n11-23\nNo class, break\n\n\n\n14\n11-28\nFeature engineering\n\n\n\n14\n11-30\nR tutorial\n\n\n\n14\n12-03\nProblem set 5\n\n\n\n15\n12-05\nMultilevel models\n\n\n\n15\n12-07\nR tutorial\n\n\n\n15\n12-10\nProblem set 6"
   },
   {
     "objectID": "slides/hello-world.html#data-science",
@@ -931,6 +931,20 @@
     "text": "the pipe %&gt;% and ggplot\n\n\nImplied argument names:\n\nggplot(\n    data = ratings,\n    mapping = aes(\n        x = Frequency,\n        y = meanFamiliarity\n    )\n) + \n   geom_point()\n\n\n\n\n\nImplied argument names + pipe:\n\nratings %&gt;% \nggplot(\n    aes(\n        x = Frequency,\n        y = meanFamiliarity\n    )\n) + \n   geom_point()\n\n\n\n\n\n\n\n\nNote that we pipe %&gt;% in arguments to functions but we ADD + layers to ggplot. Common mistake!"
   },
   {
+    "objectID": "slides/data-visualization.html#exercise-1",
+    "href": "slides/data-visualization.html#exercise-1",
+    "title": "Data Visualization",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nThe basic ggplot\n\n\nFigure 1: Data from penguins dataframe in palmerpenguins package"
+  },
+  {
+    "objectID": "slides/data-visualization.html#exercise-2",
+    "href": "slides/data-visualization.html#exercise-2",
+    "title": "Data Visualization",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nAdding aesthetics and layers\n\n\n\nFigure 2: Data from penguins dataframe in palmerpenguins package\nhttps://kathrynschuler.com/datasci"
+  },
+  {
     "objectID": "slides/r-basics.html#you-are-here",
     "href": "slides/r-basics.html#you-are-here",
     "title": "R basics",
@@ -1260,6 +1274,62 @@
     "text": "7 Data tidying with tidyr\n\nsneak in with case study later; for now just show functions and say we won’t cover it.\n\n\nFurther reading and references\nhttps://r4ds.hadley.nz/data-transform\nhttps://r4ds.hadley.nz/joins"
   },
   {
+    "objectID": "notes/data-visualization-delete.html",
+    "href": "notes/data-visualization-delete.html",
+    "title": "Data visualization 1",
+    "section": "",
+    "text": "Under Construction"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#acknowledgements",
+    "href": "notes/data-visualization-delete.html#acknowledgements",
+    "title": "Data visualization 1",
+    "section": "1 Acknowledgements",
+    "text": "1 Acknowledgements\nToday’s lectures notes and slides were influenced by and adapted from Ch 2 in R for Data Science and various materials by Dr. Colin Rundel at Duke"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#why-visualize-data",
+    "href": "notes/data-visualization-delete.html#why-visualize-data",
+    "title": "Data visualization 1",
+    "section": "2 Why visualize data?",
+    "text": "2 Why visualize data?\n\n“Visualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data.” – R for Data Science"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#data-visualization-with-ggplot2",
+    "href": "notes/data-visualization-delete.html#data-visualization-with-ggplot2",
+    "title": "Data visualization 1",
+    "section": "3 Data visualization with ggplot2",
+    "text": "3 Data visualization with ggplot2\n\nthree main parts:\n\ndata- your (tidy) data\naesthetic mappings (aes) - make data visible\ngeometric objects -\n\nother layers:\n\nfacets\nstatistics - statistical transformations of data\nscales - map data values to visual values of aestetic\ncoordinates\nthemes - overall visuals\n\nspecial notes for Google Colab: - setting size"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#aesthetic-mappings",
+    "href": "notes/data-visualization-delete.html#aesthetic-mappings",
+    "title": "Data visualization 1",
+    "section": "4 Aesthetic mappings",
+    "text": "4 Aesthetic mappings\nPractical example: - adding type of penguins\naesthetic mappings (aes), make data visible\n\nx, y: variable on x and y axis\ncolor: outline color of geom\nfill: fill color of geom\ngroup: group geom belongs to\nshape: shape used to plot point (circle, square, etc)\nlinetype: type of line used (solid, dash, et)\nsize"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#geometric-objects",
+    "href": "notes/data-visualization-delete.html#geometric-objects",
+    "title": "Data visualization 1",
+    "section": "5 Geometric objects",
+    "text": "5 Geometric objects\ngeometric objects (geoms) - type of plot\n\nshow adding geom_smooth"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#additional-layers",
+    "href": "notes/data-visualization-delete.html#additional-layers",
+    "title": "Data visualization 1",
+    "section": "6 Additional layers",
+    "text": "6 Additional layers\nWe’ll cover some in the class: - adding labels - adding theme - adding fill\n\nfacets\n\nfacet_grid(.~var1)\nfacet_grid(var2~.)\nfacet_grid(var2~var1)\nfacet_wrap(~var1) - wrap facets\n“scales”?\n\ncoordinates\n\ncoord_cartesian(xlim=c(0,5)) - xlim, ylim\ncoord_flip()\n\nlabels\n\nlabs(title=\"plot title\") - x, y, subtitle\nannotate()\n\nstatistics\nscales\nposition adjustments\nthemes\n\ntheme(legend.position=\"bottom\")"
+  },
+  {
+    "objectID": "notes/data-visualization-delete.html#saving-plots",
+    "href": "notes/data-visualization-delete.html#saving-plots",
+    "title": "Data visualization 1",
+    "section": "7 Saving plots",
+    "text": "7 Saving plots\nHelper functions:\n\nlast_plot() - returns the last plot\nggsave(\"plot.png\", width=5, height=5) - saves last plot\n\n\nFurther reading and references\nUseful resources:\n\nggplot cheat sheet\nintroduction to palmerpenguins\n\nRecommended further reading:\n\nCh 2 Data visualization in R for Data Science\nhttps://moderndive.com/2-viz.html\nLayers in R for Data Science\n\nOther references:\n\nhttps://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html\nhttps://r4ds.hadley.nz/layers"
+  },
+  {
     "objectID": "notes/hello-world.html",
     "href": "notes/hello-world.html",
     "title": "Hello, world!",
@@ -1348,7 +1418,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  2.99   2.99 0.251      2.82      3.16"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  2.99   2.99 0.248      2.83      3.15"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -1614,49 +1684,42 @@
     "href": "notes/data-visualization.html",
     "title": "Data visualization",
     "section": "",
-    "text": "Under Construction"
+    "text": "Under Construction\nSetup code\nlibrary(tidyverse)\nlibrary(languageR)"
   },
   {
-    "objectID": "notes/data-visualization.html#why-visualize-data",
-    "href": "notes/data-visualization.html#why-visualize-data",
+    "objectID": "notes/data-visualization.html#visualization-with-ggplot2",
+    "href": "notes/data-visualization.html#visualization-with-ggplot2",
     "title": "Data visualization",
-    "section": "1 Why visualize data?",
-    "text": "1 Why visualize data?\n\nVisualization is a fundamentally human activity. A good visualization will show you things you did not expect or raise new questions about the data. A good visualization might also hint that you’re asking the wrong question or that you need to collect different data. ~ R for Data Science"
+    "section": "1 Visualization with ggplot2",
+    "text": "1 Visualization with ggplot2\nThere are many ways to visualize data with R. We will use ggplot2, one of the core pacakges in the tidyverse.\n\nggplot2 makes use of a system for describing and creating graphics known as the layered grammar of graphics\nlearning this one simple system allows you to generate many different types of plots\n\nTo create a plot with ggplot2, you call the function ggplot(), which creates a plot object that you then add layers to. There are 3 basic requirements for every ggplot:\n\ndata - what dataset are you ploting? Including only data generates an empty canvas\naesthetics - define how variables in your dataset are mapped to visual properties in the plot\ngeoms - determine the geometrical object that a plot uses to represent the data\n\nWe can think of the following as a basic template for any ggplot:\nggplot(\n    data = &lt;DATA&gt;,\n    mapping = aes(&lt;MAPPINGS&gt;)\n) + \n`&lt;GEOM_FUNCTION&gt;\nOne common warning you will encounter is about missing values. ggplot2 will always let you know that some of your data could not be plotted in the way you specified. Usually this is good to know, but nothing to worry about:\n\nRemoved n rows containing missing values\n\nWe won’t cover everything you can do with ggplot (that would be a lot!) In lecture we’ll demo the most common features, but you should feel comfortable using the ggplot2 docs to figure out how to do other things."
   },
   {
-    "objectID": "notes/data-visualization.html#data-visualization-with-ggplot2",
-    "href": "notes/data-visualization.html#data-visualization-with-ggplot2",
+    "objectID": "notes/data-visualization.html#aesthetics",
+    "href": "notes/data-visualization.html#aesthetics",
     "title": "Data visualization",
-    "section": "2 Data visualization with ggplot2",
-    "text": "2 Data visualization with ggplot2\n\nthree main parts:\n\ndata- your (tidy) data\naesthetic mappings (aes) - make data visible\ngeometric objects -\n\nother layers:\n\nfacets\nstatistics - statistical transformations of data\nscales - map data values to visual values of aestetic\ncoordinates\nthemes - overall visuals\n\nspecial notes for Google Colab: - setting size"
+    "section": "2 Aesthetics",
+    "text": "2 Aesthetics\nThere are two ways we can determine the aesthetics of a plot:\n\nmapping allows us to determine aesthetics based on a variable, which are passed as arguments in aes(color=var).\nsetting allows us to set aesthetics to a constant value, which are passed as their own argument color=var\n\nWhen we map aesthetics, ggplot2 selects reasonable scales – known as scaling – and creates legends to describe the mapping for us (except for x and y aesthetics; for those ggplot creates the axis). But when we set aesthetics, we must select the value for the aesthetic manually.\n\ncolor and fill - set name of a color as a string, e.g. color=\"blue\"\nalpha - set value between 0 and 1, where 0 is most transparent, e.g. alpha=0.5\nsize - set size of point in mm, e.g. size=1\nshape - set shape of point as a number, e.g. shape=1. There are 25 built in shapes (see below)\nlinetype -\n\nThere are 3 common warnings people encounter when mapping categorical variables\n\n\nThe shape palette can deal with a maximum of 6 discrete values\nRemoved n rows containing missing values\nUsing alpha for a discrete value is not advised.\n\n\n\nThe first two happen when mapping shape, because by default ggplot2 will use no more than 6 shapes at a time (and any additional levels are discarded)\nThe last one happens when mapping size or alpha, because it is strange to map an unordered categorical variable to an ordered aesthetic. Size and alpha imply there is some ranking but there is none!"
   },
   {
-    "objectID": "notes/data-visualization.html#aesthetic-mapping",
-    "href": "notes/data-visualization.html#aesthetic-mapping",
+    "objectID": "notes/data-visualization.html#geoms",
+    "href": "notes/data-visualization.html#geoms",
     "title": "Data visualization",
-    "section": "3 Aesthetic mapping",
-    "text": "3 Aesthetic mapping\nPractical example: - adding type of penguins\naesthetic mappings (aes), make data visible\n\nx, y: variable on x and y axis\ncolor: outline color of geom\nfill: fill color of geom\ngroup: group geom belongs to\nshape: shape used to plot point (circle, square, etc)\nlinetype: type of line used (solid, dash, et)\nsize"
+    "section": "3 Geoms",
+    "text": "3 Geoms\n\ngeom_*() - to change the geom, simply change the geom function\n\nAvailable geoms\n\nthe mapping argument - every geom takes a mapping argument that allows you to define the aesetic mapping locally\ndata argument - every geom also takes a data argument that allows you to define the data locally\n\nWhen using the mapping and data arguments in geoms, remember:\n\nthey are local, meaning they only apply to that specific layer\nthey will extend or override any global mappings or data you specified in ggplot()\nthey (usefully!) allow you to specify different aesthetics or data in different layers"
   },
   {
-    "objectID": "notes/data-visualization.html#geometric-objects",
-    "href": "notes/data-visualization.html#geometric-objects",
+    "objectID": "notes/data-visualization.html#other-layers",
+    "href": "notes/data-visualization.html#other-layers",
     "title": "Data visualization",
-    "section": "4 Geometric objects",
-    "text": "4 Geometric objects\ngeometric objects (geoms) - type of plot\n\nshow adding geom_smooth"
+    "section": "4 Other layers",
+    "text": "4 Other layers\n\nLabels\nThe labels layer allows you to modify axis, legend, and plot labels with the labs() function. labs() takes several argument. Some are a straightforward name, like:\n\ntitle - plot title\nsubtitle - plot subtitle\ncaption - caption at bottom right of plot\n\nOthers are mapped to aesthetics, like:\n\nx - the x axis label\ny - the y axis label\ncolor - the legend for the color aesthetic\nsize - the legend for the size aesthetic\n\n\n\nThemes\nggplot comes with many complete themes which control how everything is displayed (except data!). A few favorites include:\n\ntheme_gray() - the default\ntheme_bw() - classic dark-on-light theme\ntheme_minimal() - minimal theme with no backgroun annotations\ntheme_classic() - a classic looking theme with no gridelines\n\nThemes take a few arguments, two of which we may use in the class:\n\nbase_size - base font size, given in pts\nbase_family - base font family to use\n\n\n\nScales\nScales control the details of how data values are translated to visual properties. Adding a scale layer overrides the default scales that ggplot uses automatically. For example:\n\nscale_color_brewer() - changes the color scale\nscale_fill_manual() - also changes the color, set to manual values with values argument\n\n\n\nFacets\n\nfacet_wrap(~var) - splits a plot into subplots based on a categorical variable; each subplot displays a subset of the data\nfacet_grid(rows~cols) - splits a plot into subplots with the combination of two variables\nscales - by default facets share the same scale and range for x and y aesthetics. Set the scales argument to “free” to allow for different axis scales.\n\n\n\n\nPosition adjustments\n\ngeom_bar() - the default position is \"stacked\", but there are 3 other options:\n\nposition=\"identity\"\nposition=\"dodge\"\nposition=\"fill\"\n\ngeom_point() -\n\npoisiton=\"jitter\" - adds a small amount of random noise to each point, which speads them out! Technically makes your plot less accurate, but can also reveal important information.\ngeom_jitter() - is a shorthand for geom_point(position=\"jitter\")"
   },
   {
-    "objectID": "notes/data-visualization.html#additional-layers",
-    "href": "notes/data-visualization.html#additional-layers",
+    "objectID": "notes/data-visualization.html#shortcuts",
+    "href": "notes/data-visualization.html#shortcuts",
     "title": "Data visualization",
-    "section": "5 Additional layers",
-    "text": "5 Additional layers\nWe’ll cover some in the class: - adding labels - adding theme - adding fill\n\nfacets\n\nfacet_grid(.~var1)\nfacet_grid(var2~.)\nfacet_grid(var2~var1)\nfacet_wrap(~var1) - wrap facets\n“scales”?\n\ncoordinates\n\ncoord_cartesian(xlim=c(0,5)) - xlim, ylim\ncoord_flip()\n\nlabels\n\nlabs(title=\"plot title\") - x, y, subtitle\nannotate()\n\nstatistics\nscales\nposition adjustments\nthemes\n\ntheme(legend.position=\"bottom\")"
-  },
-  {
-    "objectID": "notes/data-visualization.html#saving-plots",
-    "href": "notes/data-visualization.html#saving-plots",
-    "title": "Data visualization",
-    "section": "6 Saving plots",
-    "text": "6 Saving plots\nHelper functions:\n\nlast_plot() - returns the last plot\nggsave(\"plot.png\", width=5, height=5) - saves last plot\n\n\nFurther reading and references\nUseful resources:\n\nggplot cheat sheet\nintroduction to palmerpenguins\n\nRecommended further reading:\n\nhttps://moderndive.com/2-viz.html\nLayers in R for Data Science\n\nOther references:\n\nhttps://r.qcbs.ca/workshop03/book-en/the-basics-of-visualizing-data.html\nhttps://r4ds.hadley.nz/layers"
+    "section": "5 Shortcuts",
+    "text": "5 Shortcuts\nWhen calling ggplot2 (or any function!) we can specify argument names explicitly or leave them off (implicit). Leaving off the names makes code more conscise, so you’ll typically see it that way.\n\nexplicit naming of arguments allow us to write them in any order (because we indicate them to ggplot by their name)\nggplot(\n    data = my_data,\n    mapping = aes(x = weight, y = height)\n)\nimplict argument names means we have to specify them in a perscribed order (data first!) so ggplot can identify them without their name\nggplot(\n    my_data,\n    aes(x = weight, y = height)\n)\n\nAnother shortcut you’ll encounter is the pipe operator, %&gt;%. The pipe takes the thing on its left and passes it along to the function on its right (as the function’s first argument)\n\nx %&gt;% y is equivalent to f(x, y)\nsince the first argument to ggplot() is data, you’ll typically see the pipe used like this:\nmy_data %&gt;% \nggplot(\n    aes(x = weight, y = height)\n)"
   },
   {
     "objectID": "notes/hypothesis-testing.html",

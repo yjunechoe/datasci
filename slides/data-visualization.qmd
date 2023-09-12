@@ -1469,6 +1469,14 @@ ggplot(
 Note that we pipe `%>%` in arguments to functions but we ADD `+` layers to ggplot. Common mistake!
 :::
 
-# Questions? 
+## Exercise 1
 
-Have a great weekend!
+> The basic ggplot
+
+![Data from `penguins` dataframe in `palmerpenguins` package](/include/targets/class-target-basicpenguins.png){#fig-basicpenguintarget}
+
+## Exercise 2
+
+> Adding aesthetics and layers
+
+![Data from `penguins` dataframe in `palmerpenguins` package](/include/targets/class-target-penguins.png){#fig-penguintarget}
