@@ -344,7 +344,7 @@ reading data
 
 The `read_*()` functions have two important arguments: 
 
-1. `path` - the path to the file 
+1. `file` - the path to the file 
 2. `col_types` - a list of how each column should be converted to a specific data type
 
 ## 7 supported file types, `read_*()`
@@ -362,7 +362,7 @@ The `read_*()` functions have two important arguments:
 Path only, `readr` guesses types: 
 
 ```r
-read_csv(path='"https://pos.it/r4ds-students-csv"')
+read_csv(file='"https://pos.it/r4ds-students-csv"')
 
 ```
 . . .
@@ -370,7 +370,7 @@ read_csv(path='"https://pos.it/r4ds-students-csv"')
 Path and specify col_types:
 ```r
 read_csv(
-    path='"https://pos.it/r4ds-students-csv"', 
+    file='"https://pos.it/r4ds-students-csv"', 
     col_types = list( x = col_string(), y = col_skip() )
 )
 ```
