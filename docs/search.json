@@ -151,7 +151,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 4 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 49 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -1418,7 +1418,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  2.99   3.00 0.253      2.82      3.17"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.02   3.02 0.246      2.85      3.18"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",
@@ -1720,6 +1720,20 @@
     "title": "Data visualization",
     "section": "5 Shortcuts",
     "text": "5 Shortcuts\nWhen calling ggplot2 (or any function!) we can specify argument names explicitly or leave them off (implicit). Leaving off the names makes code more conscise, so you’ll typically see it that way.\n\nexplicit naming of arguments allow us to write them in any order (because we indicate them to ggplot2 by their name)\nggplot(\n    data = my_data,\n    mapping = aes(x = weight, y = height)\n)\nimplict argument names means we have to specify them in a perscribed order (data first!) so ggplot2 can identify them without their name\nggplot(\n    my_data,\n    aes(x = weight, y = height)\n)\n\nAnother shortcut you’ll encounter is the pipe operator, %&gt;%. The pipe takes the thing on its left and passes it along to the function on its right (as the function’s first argument)\n\nx %&gt;% y is equivalent to f(x, y)\nsince the first argument to ggplot() is data, you’ll typically see the pipe used like this:\nmy_data %&gt;% \nggplot(\n    aes(x = weight, y = height)\n)"
+  },
+  {
+    "objectID": "notes/data-visualization.html#saving-plots",
+    "href": "notes/data-visualization.html#saving-plots",
+    "title": "Data visualization",
+    "section": "6 Saving plots",
+    "text": "6 Saving plots\nOften we want to save a plot (to add it to a presentation or paper). We can accomplish this with ggsave().\n# save your most recent plot with the name\nggsave(\"myfigurename.png\")\n\n# specify the width and height; can also specify which units you mean\nggsave(\"myfigurename.png\", width = 4, height = 4)\nggsave(\"mtcars.pdf\", width = 20, height = 20, units = \"cm\")\nIn Google Colab, you can find your saved plot by clicking the file icon on the left side bar."
+  },
+  {
+    "objectID": "notes/data-visualization.html#further-reading",
+    "href": "notes/data-visualization.html#further-reading",
+    "title": "Data visualization",
+    "section": "7 Further reading",
+    "text": "7 Further reading\nRecommended further reading:\n\nCh 2 Data visualization in R for Data Science\nhttps://moderndive.com/2-viz.html\nCh 10 Layers in R for Data Science\n\nOther useful resources:\n\nggplot2 function reference\nggplot2 cheat sheet\nintroduction to palmerpenguins"
   },
   {
     "objectID": "notes/hypothesis-testing.html",
@@ -2035,19 +2049,5 @@
     "title": "Playground",
     "section": "",
     "text": "playing around with some stuff and things\n\n# load tidyverse\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n# make a dataframe \ndf &lt;- data.frame(\n  x = 1:10,\n  y = 11:20,\n  z = 21:30\n)\n\ndf2 &lt;- data.frame(\n    x = 31:40,\n    y = 41:50,\n    z = 51:60\n)\n\ndf3 &lt;- data.frame(\n    x = 61:70,\n    y = 71:80,\n    z = 81:90\n)\n\ndfs &lt;- list(df, df2, df3)\n\n\nmap_dbl(df, mean)\n\n   x    y    z \n 5.5 15.5 25.5 \n\n\npmap_dbl(dfs, map_dbl(., mean)) ```s"
-  },
-  {
-    "objectID": "notes/data-visualization.html#saving-plots",
-    "href": "notes/data-visualization.html#saving-plots",
-    "title": "Data visualization",
-    "section": "6 Saving plots",
-    "text": "6 Saving plots\nOften we want to save a plot (to add it to a presentation or paper). We can accomplish this with ggsave().\n# save your most recent plot with the name\nggsave(\"myfigurename.png\")\n\n# specify the width and height; can also specify which units you mean\nggsave(\"myfigurename.png\", width = 4, height = 4)\nggsave(\"mtcars.pdf\", width = 20, height = 20, units = \"cm\")\nIn Google Colab, you can find your saved plot by clicking the file icon on the left side bar."
-  },
-  {
-    "objectID": "notes/data-visualization.html#further-reading",
-    "href": "notes/data-visualization.html#further-reading",
-    "title": "Data visualization",
-    "section": "7 Further reading",
-    "text": "7 Further reading\nRecommended further reading:\n\nCh 2 Data visualization in R for Data Science\nhttps://moderndive.com/2-viz.html\nCh 10 Layers in R for Data Science\n\nOther useful resources:\n\nggplot2 function reference\nggplot2 cheat sheet\nintroduction to palmerpenguins"
   }
 ]
