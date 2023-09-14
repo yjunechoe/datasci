@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-09-12">
+<meta name="dcterms.date" content="2023-09-14">
 
 <title>LING 0700 | PSYC 2314 - Data wrangling</title>
 <style>
@@ -374,16 +374,13 @@ window.onload = function() {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-wrangle-and-tidy" id="toc-why-wrangle-and-tidy" class="nav-link active" data-scroll-target="#why-wrangle-and-tidy"><span class="header-section-number">1</span> Why wrangle and tidy?</a></li>
+  <li><a href="#why-wrangle" id="toc-why-wrangle" class="nav-link active" data-scroll-target="#why-wrangle"><span class="header-section-number">1</span> Why wrangle?</a></li>
   <li><a href="#data-wrangling-with-dplyr" id="toc-data-wrangling-with-dplyr" class="nav-link" data-scroll-target="#data-wrangling-with-dplyr"><span class="header-section-number">2</span> Data wrangling with dplyr</a></li>
   <li><a href="#manipulating-rows" id="toc-manipulating-rows" class="nav-link" data-scroll-target="#manipulating-rows"><span class="header-section-number">3</span> Manipulating rows</a></li>
   <li><a href="#manipulating-columns" id="toc-manipulating-columns" class="nav-link" data-scroll-target="#manipulating-columns"><span class="header-section-number">4</span> Manipulating columns</a></li>
-  <li><a href="#grouping-and-summarizing-data-frames" id="toc-grouping-and-summarizing-data-frames" class="nav-link" data-scroll-target="#grouping-and-summarizing-data-frames"><span class="header-section-number">5</span> Grouping and summarizing data frames</a></li>
-  <li><a href="#joining-data-frames" id="toc-joining-data-frames" class="nav-link" data-scroll-target="#joining-data-frames"><span class="header-section-number">6</span> Joining data frames</a></li>
-  <li><a href="#data-tidying-with-tidyr" id="toc-data-tidying-with-tidyr" class="nav-link" data-scroll-target="#data-tidying-with-tidyr"><span class="header-section-number">7</span> Data tidying with tidyr</a>
-  <ul class="collapse">
-  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references">Further reading and references</a></li>
-  </ul></li>
+  <li><a href="#group-and-summarise" id="toc-group-and-summarise" class="nav-link" data-scroll-target="#group-and-summarise"><span class="header-section-number">5</span> Group and summarise</a></li>
+  <li><a href="#more-advanced" id="toc-more-advanced" class="nav-link" data-scroll-target="#more-advanced"><span class="header-section-number">6</span> More advanced</a></li>
+  <li><a href="#further-reading-and-references" id="toc-further-reading-and-references" class="nav-link" data-scroll-target="#further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</a></li>
   </ul>
 </nav>
     </div>
@@ -409,7 +406,7 @@ window.onload = function() {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 12, 2023</p>
+      <p class="date">September 14, 2023</p>
     </div>
   </div>
   
@@ -419,21 +416,11 @@ window.onload = function() {
 
 </header>
 
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-<section id="why-wrangle-and-tidy" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="why-wrangle-and-tidy"><span class="header-section-number">1</span> Why wrangle and tidy?</h2>
+<section id="why-wrangle" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-wrangle"><span class="header-section-number">1</span> Why wrangle?</h2>
+<blockquote class="blockquote">
+<p>Visualization is an important tool for generating insight, but it’s rare that you get the data in exactly the right form you need to make the graph you want. Often you’ll need to create some new variables or summaries to answer your questions with your data, or maybe you just want to rename the variables or reorder the observations to make the data a little easier to work with.</p>
+</blockquote>
 </section>
 <section id="data-wrangling-with-dplyr" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="data-wrangling-with-dplyr"><span class="header-section-number">2</span> Data wrangling with dplyr</h2>
@@ -455,39 +442,91 @@ Under Construction
 <li>The pipe operator, <code>|&gt;</code> takes the output from one function and passes it as input (the first argument) to the next function.</li>
 <li>There is another version of the pipe, <code>%&gt;%</code>. See the reading on data transformation if you are curious about the difference.</li>
 </ul>
-<p><em>In lecture, we will demonstrate with a few <code>dplyr</code> functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems.</em></p>
+<p><em>In lecture, we will demonstrate with the 3 most common <code>dplyr</code> functions for manipulating rows, manipulating columns, and grouping. But you should feel comfortable reading the docs/resources to use others to solve unique problems.</em></p>
 </section>
 <section id="manipulating-rows" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="manipulating-rows"><span class="header-section-number">3</span> Manipulating rows</h2>
-<p><code>filter()</code></p>
-<p><code>arrange()</code></p>
+<p><strong><code>filter()</code></strong> filters rows, allowing you to keep only some rows based on the values of the columns.</p>
+<ul>
+<li>the first argument is a data frame (all dplyr verbs)</li>
+<li>subsequent arguments are the conditions that must be true to keep the row (using R’s logical and comparison operators we learned in <a href="../notes/r-basics.html">R basics</a>!), e.g.&nbsp;<code>filter(age &gt; 18)</code></li>
+<li>a common filtering mistake is to use <code>=</code> instead of the logical operator <code>==</code>!</li>
+</ul>
+<p><strong><code>arrange()</code></strong> arranges the rows in the order you specify based on column values (does not change the number of rows, just changes their order)</p>
+<ul>
+<li>the first argument is a data frame (all dplyr verbs)</li>
+<li>subsequent arguments are a set of column names to order by</li>
+<li>note that the default order is ascending, but you can specify descending by wrapping the column in the <code>desc()</code> function</li>
+</ul>
+<p><strong><code>distinct()</code></strong> finds unique rows in a dataset, but you can also provide column names</p>
+<ul>
+<li>the first argument is a data frame</li>
+<li>optionally subsequent arguments provides column names to find the distinct combination of some variables</li>
+<li>note that if you provide column names, distinct will only return those columns unless you add the argument <code>.keep_all=TRUE</code></li>
+</ul>
 </section>
 <section id="manipulating-columns" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="manipulating-columns"><span class="header-section-number">4</span> Manipulating columns</h2>
-<p><code>select()</code></p>
-<p><code>mutate()</code></p>
-</section>
-<section id="grouping-and-summarizing-data-frames" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="grouping-and-summarizing-data-frames"><span class="header-section-number">5</span> Grouping and summarizing data frames</h2>
-</section>
-<section id="joining-data-frames" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="joining-data-frames"><span class="header-section-number">6</span> Joining data frames</h2>
+<p><strong><code>mutate()</code></strong> adds new columns that are calculated from existing columns</p>
 <ul>
-<li>don’t cover, just show the functions and say we won’t cover it</li>
+<li>first argument is a data frame (all dplyr verbs)</li>
+<li>subsequent arguments are the new column name, an equals sign, followed by an expression you want to use to calculate the new value, e.g.&nbsp;<code>difference=age_end - age_start</code></li>
+<li>by default new columns are added to the right, but the <code>.before</code> and <code>.after</code> arguments allows you to add them before/after specific positions (by position number, e.g.&nbsp;<code>.before=1</code> or by column name, e.g.&nbsp;<code>before=age</code>)</li>
+</ul>
+<p><strong><code>select()</code></strong> selects columns based on their names</p>
+<ul>
+<li>first argument is a data frame (all dplyr verbs)</li>
+<li>subsequent arguments can be the names of the columns you want to keep</li>
+<li>use the <code>:</code> operator to select everything from one column to another, e.g.&nbsp;<code>age:height</code></li>
+<li>you can also use logical operators like <code>&amp;</code> (and) or <code>!</code> (not) to identify the subset of columns you want to select, e.g.&nbsp;<code>!age:height</code></li>
+<li>you can also rename columns within select by putting the name of the column and an equals sign before the column you want to select, e.g.&nbsp;<code>new_name=selected_column</code></li>
+</ul>
+<p><strong><code>rename()</code></strong> we’ve already seen this function when importing data. Rename is used when want to keep all of our columns but rename one or more.</p>
+<ul>
+<li>first argument is a data frame (all dplyr verbs)</li>
+<li>subsequent arguments are the columns we would like to rename, e.g.&nbsp;<code>new_colname=old_colname</code></li>
 </ul>
 </section>
-<section id="data-tidying-with-tidyr" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="data-tidying-with-tidyr"><span class="header-section-number">7</span> Data tidying with tidyr</h2>
+<section id="group-and-summarise" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="group-and-summarise"><span class="header-section-number">5</span> Group and summarise</h2>
+<p>In addition to manipulating rows and columns in your dataset, <code>dplyr</code> also allows you to work with groups</p>
+<p><strong><code>group_by()</code></strong> is used to divide your dataset into groups that are meaningful for your analysis.</p>
 <ul>
-<li>sneak in with case study later; for now just show functions and say we won’t cover it.</li>
+<li><code>group_by()</code> doesn’t change the data, but adds a groups attribute, which tells R that subsequent operations will be performed by group</li>
+<li>you can tell if a data frame is grouped by the first line of the output (or with <code>attributes()</code>!)</li>
 </ul>
-<section id="further-reading-and-references" class="level3">
-<h3 class="anchored" data-anchor-id="further-reading-and-references">Further reading and references</h3>
-<p>https://r4ds.hadley.nz/data-transform</p>
-<p>https://r4ds.hadley.nz/joins</p>
-
-
+<p><strong><code>summarise()</code></strong> is often used after <code>group_by()</code> to calculate summary statistics on grouped data, which returns a data frame with a single row for each group</p>
+<ul>
+<li>you can add any number of summary stats; usually you want to name them something that makes sense for your analysis<br>
+</li>
+<li><code>n()</code> is a particularly useful summary stat to add to <a href="../notes/r-basics.html#built-in-functions">our list</a> that returns a count</li>
+<li>use the argument <code>na.rm=TRUE</code> to compute the summary statistics with NAs removed (remember they are contageous!)</li>
+<li>note that the returned data frame is iteself grouped, but in a <a href="https://r4ds.hadley.nz/data-transform#grouping-by-multiple-variables">quirky way</a>, with one fewer group (you may get a warning about this). You can add the argument <strong><code>.groups="drop"</code></strong> to drop all groups or <strong><code>.groups="keep"</code></strong> to keep them all</li>
+<li>to avoid this quirk, <code>summarise()</code> also has a cool new <strong><code>.by</code></strong> argument that can be used <strong>instead of calling <code>group_by()</code></strong>, which always returns an ungrouped data frame.</li>
+</ul>
+<p><strong><code>ungroup()</code></strong> is used to remove the grouping attribute from a data frame</p>
 </section>
+<section id="more-advanced" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="more-advanced"><span class="header-section-number">6</span> More advanced</h2>
+<p>There are a few more advanced techniques for transforming and tidying data that we won’t cover now, but might be useful to you in your own research.</p>
+<ul>
+<li><strong>joins</strong> - sometimes you have more than one dataset that you want to join into one. <code>dplyr</code> also has functions for handling that. <a href="https://r4ds.hadley.nz/joins">Learn more about joins</a></li>
+<li><strong>pivots</strong> - sometimes your data doesn’t arrive in the tidy data form. The <code>tidyr</code> package can help with <code>pivot_longer()</code> and <code>pivot_wider()</code>. <a href="https://r4ds.hadley.nz/data-tidy">Learn more about pivots</a></li>
+</ul>
+</section>
+<section id="further-reading-and-references" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="further-reading-and-references"><span class="header-section-number">7</span> Further reading and references</h2>
+<p>Recommended further reading:</p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/data-transform">Ch 4 Data transformation</a> in R for Data Science textbook</li>
+</ul>
+<p>Other references:</p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/joins">Ch 20 Joins</a> in R for Data Science textbook</li>
+<li><a href="https://r4ds.hadley.nz/data-tidy">Ch 6 Data tidying</a> in R for Data Science textbook</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

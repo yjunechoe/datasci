@@ -35,7 +35,7 @@ One common **warning** you will encounter is about missing values. `ggplot2` wil
 > Removed n rows containing missing values 
 
 
-We won't cover everything you can do with ggplot2 (that would be a lot!) In lecture we'll demo the most common features, but you should feel comfortable using [ggplot2's function reference](https://ggplot2.tidyverse.org/reference/) to figure out how to do other things.
+*We won't cover everything you can do with `ggplot2` (that would be a lot!) In lecture we'll demo the most common features, but you should feel comfortable using [ggplot2's function reference](https://ggplot2.tidyverse.org/reference/) to figure out how to do other things.*
 
 
 ## Aesthetics 

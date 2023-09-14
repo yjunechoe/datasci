@@ -151,7 +151,7 @@
     "href": "webexercises.html#example-questions",
     "title": "Webexercises",
     "section": "1 Example Questions",
-    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 49 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n 95% of the data fall within this range there is a 95% probability that the true mean lies within this range if you repeated the process many times, 95% of intervals calculated in this way contain the true mean"
+    "text": "1 Example Questions\n\nFill-In-The-Blanks (fitb())\nCreate fill-in-the-blank questions using fitb(), providing the answer as the first argument.\n\n2 + 2 is \n\nYou can also create these questions dynamically, using variables from your R session.\n\nThe square root of 64 is: \n\nThe blanks are case-sensitive; if you don’t care about case, use the argument ignore_case = TRUE.\n\nWhat is the letter after D? \n\nIf you want to ignore differences in whitespace use, use the argument ignore_ws = TRUE (which is the default) and include spaces in your answer anywhere they could be acceptable.\n\nHow do you load the tidyverse package? \n\nYou can set more than one possible correct answer by setting the answers as a vector.\n\nType a vowel: \n\nYou can use regular expressions to test answers against more complex rules.\n\nType any 3 letters: \n\n\n\nMultiple Choice (mcq())\n\n“Never gonna give you up, never gonna: let you goturn you downrun awaylet you down”\n“I bless the rainsguess it rainssense the rain down in Africa” -Toto\n\n\n\nTrue or False (torf())\n\nTrue or False? You can permute values in a vector using sample(). TRUEFALSE\n\n\n\nLonger MCQs (longmcq())\nWhen your answers are very long, sometimes a drop-down select box gets formatted oddly. You can use longmcq() to deal with this. Since the answers are long, It’s probably best to set up the options inside an R chunk with echo=FALSE.\nWhat is a p-value?\n\n the probability that the null hypothesis is true the probability of the observed, or more extreme, data, under the assumption that the null-hypothesis is true the probability of making an error in your conclusion\n\nWhat is true about a 95% confidence interval of the mean?\n\n if you repeated the process many times, 95% of intervals calculated in this way contain the true mean 95% of the data fall within this range there is a 95% probability that the true mean lies within this range"
   },
   {
     "objectID": "webexercises.html#checked-sections",
@@ -172,14 +172,14 @@
     "href": "drafts.html",
     "title": "All drafts",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 14, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "drafts.html#lecture-notes",
     "href": "drafts.html#lecture-notes",
     "title": "All drafts",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 29, 2023\n\n\nHello, world!\n\n\nKatie Schuler\n\n\n\n\nAug 31, 2023\n\n\nR basics\n\n\nKatie Schuler, June Choe\n\n\n\n\nSep 5, 2023\n\n\nData importing\n\n\nKatie Schuler\n\n\n\n\nSep 7, 2023\n\n\nData visualization 1\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nData visualization\n\n\nKatie Schuler\n\n\n\n\nSep 12, 2023\n\n\nProbablity distributions\n\n\nKatie Schuler\n\n\n\n\nSep 14, 2023\n\n\nData wrangling\n\n\nKatie Schuler\n\n\n\n\nSep 20, 2023\n\n\nSampling variability\n\n\nKatie Schuler\n\n\n\n\nSep 26, 2023\n\n\nHypothesis testing\n\n\nKatie Schuler\n\n\n\n\nOct 3, 2023\n\n\nModel specification\n\n\nKatie Schuler\n\n\n\n\nOct 5, 2023\n\n\nModel fitting\n\n\nKatie Schuler\n\n\n\n\nOct 19, 2023\n\n\nModel accuracy\n\n\nKatie Schuler\n\n\n\n\nOct 24, 2023\n\n\nModel reliability\n\n\nKatie Schuler\n\n\n\n\nNov 7, 2023\n\n\nClassification\n\n\nKatie Schuler\n\n\n\n\nNov 14, 2023\n\n\nFeature engineering\n\n\nKatie Schuler\n\n\n\n\nNov 18, 2023\n\n\nInference\n\n\nKatie Schuler\n\n\n\n\nDec 5, 2023\n\n\nMixed-effects models\n\n\nKatie Schuler\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "drafts.html#labs",
@@ -1222,56 +1222,56 @@
     "href": "notes/data-wrangling.html",
     "title": "Data wrangling",
     "section": "",
-    "text": "Under Construction"
+    "text": "Visualization is an important tool for generating insight, but it’s rare that you get the data in exactly the right form you need to make the graph you want. Often you’ll need to create some new variables or summaries to answer your questions with your data, or maybe you just want to rename the variables or reorder the observations to make the data a little easier to work with."
   },
   {
-    "objectID": "notes/data-wrangling.html#why-wrangle-and-tidy",
-    "href": "notes/data-wrangling.html#why-wrangle-and-tidy",
+    "objectID": "notes/data-wrangling.html#why-wrangle",
+    "href": "notes/data-wrangling.html#why-wrangle",
     "title": "Data wrangling",
-    "section": "1 Why wrangle and tidy?",
-    "text": "1 Why wrangle and tidy?"
+    "section": "",
+    "text": "Visualization is an important tool for generating insight, but it’s rare that you get the data in exactly the right form you need to make the graph you want. Often you’ll need to create some new variables or summaries to answer your questions with your data, or maybe you just want to rename the variables or reorder the observations to make the data a little easier to work with."
   },
   {
     "objectID": "notes/data-wrangling.html#data-wrangling-with-dplyr",
     "href": "notes/data-wrangling.html#data-wrangling-with-dplyr",
     "title": "Data wrangling",
     "section": "2 Data wrangling with dplyr",
-    "text": "2 Data wrangling with dplyr\nAll dplyr functions (verbs) share a common structure:\n\n1st argument is always a data frame\nSubsequent arguments typically describe which columns to operate on (via their names)\nOutput is always a new data frame\n\nWe can group dplyr functions based on what they operate on:\n\nrows - see section 3 Manipulating rows\ncolumns - see section 4 Manipulating columns\ngroups - see section 5 Grouping and summarizing data frames\ntables - see section 6 Joining data frames\n\nWe can easily combine dplyr functions to solve complex problems:\n\nThe pipe operator, |&gt; takes the output from one function and passes it as input (the first argument) to the next function.\nThere is another version of the pipe, %&gt;%. See the reading on data transformation if you are curious about the difference.\n\nIn lecture, we will demonstrate with a few dplyr functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems."
+    "text": "2 Data wrangling with dplyr\nAll dplyr functions (verbs) share a common structure:\n\n1st argument is always a data frame\nSubsequent arguments typically describe which columns to operate on (via their names)\nOutput is always a new data frame\n\nWe can group dplyr functions based on what they operate on:\n\nrows - see section 3 Manipulating rows\ncolumns - see section 4 Manipulating columns\ngroups - see section 5 Grouping and summarizing data frames\ntables - see section 6 Joining data frames\n\nWe can easily combine dplyr functions to solve complex problems:\n\nThe pipe operator, |&gt; takes the output from one function and passes it as input (the first argument) to the next function.\nThere is another version of the pipe, %&gt;%. See the reading on data transformation if you are curious about the difference.\n\nIn lecture, we will demonstrate with the 3 most common dplyr functions for manipulating rows, manipulating columns, and grouping. But you should feel comfortable reading the docs/resources to use others to solve unique problems."
   },
   {
     "objectID": "notes/data-wrangling.html#manipulating-rows",
     "href": "notes/data-wrangling.html#manipulating-rows",
     "title": "Data wrangling",
     "section": "3 Manipulating rows",
-    "text": "3 Manipulating rows\nfilter()\narrange()"
+    "text": "3 Manipulating rows\nfilter() filters rows, allowing you to keep only some rows based on the values of the columns.\n\nthe first argument is a data frame (all dplyr verbs)\nsubsequent arguments are the conditions that must be true to keep the row (using R’s logical and comparison operators we learned in R basics!), e.g. filter(age &gt; 18)\na common filtering mistake is to use = instead of the logical operator ==!\n\narrange() arranges the rows in the order you specify based on column values (does not change the number of rows, just changes their order)\n\nthe first argument is a data frame (all dplyr verbs)\nsubsequent arguments are a set of column names to order by\nnote that the default order is ascending, but you can specify descending by wrapping the column in the desc() function\n\ndistinct() finds unique rows in a dataset, but you can also provide column names\n\nthe first argument is a data frame\noptionally subsequent arguments provides column names to find the distinct combination of some variables\nnote that if you provide column names, distinct will only return those columns unless you add the argument .keep_all=TRUE"
   },
   {
     "objectID": "notes/data-wrangling.html#manipulating-columns",
     "href": "notes/data-wrangling.html#manipulating-columns",
     "title": "Data wrangling",
     "section": "4 Manipulating columns",
-    "text": "4 Manipulating columns\nselect()\nmutate()"
+    "text": "4 Manipulating columns\nmutate() adds new columns that are calculated from existing columns\n\nfirst argument is a data frame (all dplyr verbs)\nsubsequent arguments are the new column name, an equals sign, followed by an expression you want to use to calculate the new value, e.g. difference=age_end - age_start\nby default new columns are added to the right, but the .before and .after arguments allows you to add them before/after specific positions (by position number, e.g. .before=1 or by column name, e.g. before=age)\n\nselect() selects columns based on their names\n\nfirst argument is a data frame (all dplyr verbs)\nsubsequent arguments can be the names of the columns you want to keep\nuse the : operator to select everything from one column to another, e.g. age:height\nyou can also use logical operators like & (and) or ! (not) to identify the subset of columns you want to select, e.g. !age:height\nyou can also rename columns within select by putting the name of the column and an equals sign before the column you want to select, e.g. new_name=selected_column\n\nrename() we’ve already seen this function when importing data. Rename is used when want to keep all of our columns but rename one or more.\n\nfirst argument is a data frame (all dplyr verbs)\nsubsequent arguments are the columns we would like to rename, e.g. new_colname=old_colname"
   },
   {
-    "objectID": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
-    "href": "notes/data-wrangling.html#grouping-and-summarizing-data-frames",
+    "objectID": "notes/data-wrangling.html#group-and-summarise",
+    "href": "notes/data-wrangling.html#group-and-summarise",
     "title": "Data wrangling",
-    "section": "5 Grouping and summarizing data frames",
-    "text": "5 Grouping and summarizing data frames"
+    "section": "5 Group and summarise",
+    "text": "5 Group and summarise\nIn addition to manipulating rows and columns in your dataset, dplyr also allows you to work with groups\ngroup_by() is used to divide your dataset into groups that are meaningful for your analysis.\n\ngroup_by() doesn’t change the data, but adds a groups attribute, which tells R that subsequent operations will be performed by group\nyou can tell if a data frame is grouped by the first line of the output (or with attributes()!)\n\nsummarise() is often used after group_by() to calculate summary statistics on grouped data, which returns a data frame with a single row for each group\n\nyou can add any number of summary stats; usually you want to name them something that makes sense for your analysis\n\nn() is a particularly useful summary stat to add to our list that returns a count\nuse the argument na.rm=TRUE to compute the summary statistics with NAs removed (remember they are contageous!)\nnote that the returned data frame is iteself grouped, but in a quirky way, with one fewer group (you may get a warning about this). You can add the argument .groups=\"drop\" to drop all groups or .groups=\"keep\" to keep them all\nto avoid this quirk, summarise() also has a cool new .by argument that can be used instead of calling group_by(), which always returns an ungrouped data frame.\n\nungroup() is used to remove the grouping attribute from a data frame"
   },
   {
-    "objectID": "notes/data-wrangling.html#joining-data-frames",
-    "href": "notes/data-wrangling.html#joining-data-frames",
+    "objectID": "notes/data-wrangling.html#more-advanced",
+    "href": "notes/data-wrangling.html#more-advanced",
     "title": "Data wrangling",
-    "section": "6 Joining data frames",
-    "text": "6 Joining data frames\n\ndon’t cover, just show the functions and say we won’t cover it"
+    "section": "6 More advanced",
+    "text": "6 More advanced\nThere are a few more advanced techniques for transforming and tidying data that we won’t cover now, but might be useful to you in your own research.\n\njoins - sometimes you have more than one dataset that you want to join into one. dplyr also has functions for handling that. Learn more about joins\npivots - sometimes your data doesn’t arrive in the tidy data form. The tidyr package can help with pivot_longer() and pivot_wider(). Learn more about pivots"
   },
   {
-    "objectID": "notes/data-wrangling.html#data-tidying-with-tidyr",
-    "href": "notes/data-wrangling.html#data-tidying-with-tidyr",
+    "objectID": "notes/data-wrangling.html#further-reading-and-references",
+    "href": "notes/data-wrangling.html#further-reading-and-references",
     "title": "Data wrangling",
-    "section": "7 Data tidying with tidyr",
-    "text": "7 Data tidying with tidyr\n\nsneak in with case study later; for now just show functions and say we won’t cover it.\n\n\nFurther reading and references\nhttps://r4ds.hadley.nz/data-transform\nhttps://r4ds.hadley.nz/joins"
+    "section": "7 Further reading and references",
+    "text": "7 Further reading and references\nRecommended further reading:\n\nCh 4 Data transformation in R for Data Science textbook\n\nOther references:\n\nCh 20 Joins in R for Data Science textbook\nCh 6 Data tidying in R for Data Science textbook"
   },
   {
     "objectID": "notes/data-visualization-delete.html",
@@ -1418,7 +1418,7 @@
     "href": "notes/probability-distributions.html#descriptive-statistics",
     "title": "Probablity distributions",
     "section": "2 Descriptive statistics",
-    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.02   3.02 0.246      2.85      3.18"
+    "text": "2 Descriptive statistics\nWe can summarize (or describe) a set of data with descriptive statistics. There are three types of measures:\n\ncentral tendency describes a central or typical value (mean, median, mode)\nvariability describes dispersion or spread of values (variance, standard deviation, IQR)\nfrequency distribution describes how frequently different values occur (count)\n\nR has built-in functions to handle descriptive statistics (we saw these in lecture 1):\n\ndata %&gt;%\n    summarise(\n        n = n(), \n        mean = mean(y),\n        median = median(y),\n        sd = sd(y),\n        iqr_lower = quantile(y, 0.25),\n        iqr_upper = quantile(y, 0.75)\n    ) \n\n# A tibble: 1 × 6\n      n  mean median    sd iqr_lower iqr_upper\n  &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1  1000  3.01   3.01 0.247      2.85      3.17"
   },
   {
     "objectID": "notes/probability-distributions.html#parametric-vs.-nonparametric",

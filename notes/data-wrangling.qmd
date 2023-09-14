@@ -1,15 +1,16 @@
 ---
 title: "Data wrangling"
-date: 2023-09-12
+date: 2023-09-14
 author: 
     - Katie Schuler
 
 ---
 
-::: {.callout-warning title="Under Construction"}
-:::
 
-## Why wrangle and tidy?
+## Why wrangle? 
+
+> Visualization is an important tool for generating insight, but it’s rare that you get the data in exactly the right form you need to make the graph you want. Often you’ll need to create some new variables or summaries to answer your questions with your data, or maybe you just want to rename the variables or reorder the observations to make the data a little easier to work with.
+
 ## Data wrangling with dplyr
 
 All `dplyr` functions (verbs) share a common structure:
@@ -30,32 +31,91 @@ We can easily combine `dplyr` functions to solve complex problems:
 - The pipe operator, `|>` takes the output from one function and passes it as input (the first argument) to the next function.
 - There is another version of the pipe, `%>%`. See the reading on data transformation if you are curious about the difference. 
 
-*In lecture, we will demonstrate with a few `dplyr` functions, but you should feel comfortable reading the docs/resources to use others to solve unique problems.* 
+*In lecture, we will demonstrate with the 3 most common `dplyr` functions for manipulating rows, manipulating columns, and grouping. But you should feel comfortable reading the docs/resources to use others to solve unique problems.* 
 
 ## Manipulating rows
 
-`filter()`
 
-`arrange()`
+**`filter()`** filters rows, allowing you to keep only some rows based on the values of the columns. 
+
+- the first argument is a data frame (all dplyr verbs)
+- subsequent arguments are the conditions that must be true to keep the row (using R's logical and comparison operators we learned in [R basics](/notes/r-basics.qmd)!), e.g. `filter(age > 18)`
+- a common filtering mistake is to use `=` instead of the logical operator `==`! 
+
+**`arrange()`** arranges the rows in the order you specify based on column values (does not change the number of rows, just changes their order)
+
+- the first argument is a data frame (all dplyr verbs)
+- subsequent arguments are a set of column names to order by 
+- note that the default order is ascending, but you can specify descending by wrapping the column in the `desc()` function 
+
+**`distinct()`** finds unique rows in a dataset, but you can also provide column names 
+
+- the first argument is a data frame
+- optionally subsequent arguments provides column names to find the distinct combination of some variables 
+- note that if you provide column names, distinct will only return those columns unless you add the argument `.keep_all=TRUE`
+
 
 ## Manipulating columns
 
-`select()`
+**`mutate()`** adds new columns that are calculated from existing columns 
 
-`mutate()`
+- first argument is a data frame (all dplyr verbs)
+- subsequent arguments are the new column name, an equals sign, followed by an expression you want to use to calculate the new value, e.g. `difference=age_end - age_start` 
+- by default new columns are added to the right, but the `.before` and `.after` arguments allows you to add them before/after specific positions (by position number, e.g. `.before=1` or by column name, e.g. `before=age`)
 
-## Grouping and summarizing data frames
+**`select()`** selects columns based on their names  
 
-## Joining data frames
+- first argument is a data frame (all dplyr verbs)
+- subsequent arguments can be the names of the columns you want to keep 
+- use the `:` operator to select everything from one column to another, e.g. `age:height`
+- you can also use logical operators like `&` (and) or `!` (not) to identify the subset of columns you want to select, e.g. `!age:height`
+- you can also rename columns within select by putting the name of the column and an equals sign before the column you want to select, e.g. `new_name=selected_column`
 
-- don't cover, just show the functions and say we won't cover it
+**`rename()`** we've already seen this function when importing data. Rename is used when want to keep all of our columns but rename one or more.  
 
-## Data tidying with tidyr
+- first argument is a data frame (all dplyr verbs)
+- subsequent arguments are the columns we would like to rename, e.g. `new_colname=old_colname`
 
-- sneak in with case study later; for now just show functions and say we won't cover it. 
 
-### Further reading and references
+## Group and summarise
 
-https://r4ds.hadley.nz/data-transform
+In addition to manipulating rows and columns in your dataset, `dplyr` also allows you to work with groups
 
-https://r4ds.hadley.nz/joins
+**`group_by()`** is used to divide your dataset into groups that are meaningful for your analysis. 
+
+-  `group_by()` doesn't change the data, but adds a groups attribute, which tells R that subsequent operations will be performed by group 
+- you can tell if a data frame is grouped by the first line of the output (or with `attributes()`!)
+
+
+**`summarise()`** is often used after `group_by()` to calculate summary statistics on grouped data, which returns a data frame with a single row for each group 
+
+- you can add any number of summary stats; usually you want to name them something that makes sense for your analysis  
+- `n()` is a particularly useful summary stat to add to [our list](/notes/r-basics.qmd#built-in-functions) that returns a count 
+- use the argument `na.rm=TRUE` to compute the summary statistics with NAs removed (remember they are contageous!)
+- note that the returned data frame is iteself grouped, but in a [quirky way](https://r4ds.hadley.nz/data-transform#grouping-by-multiple-variables), with one fewer group (you may get a warning about this). You can add the argument **`.groups="drop"`** to drop all groups or **`.groups="keep"`** to keep them all
+- to avoid this quirk, `summarise()` also has a cool new **`.by`** argument that can be used **instead of calling `group_by()`**, which always returns an ungrouped data frame.
+
+**`ungroup()`** is used to remove the grouping attribute from a data frame
+
+
+
+
+## More advanced 
+
+There are a few more advanced techniques for transforming and tidying data that we won't cover now, but might be useful to you in your own research.
+
+- **joins** - sometimes you have more than one dataset that you want to join into one. `dplyr` also has functions for handling that. [Learn more about joins](https://r4ds.hadley.nz/joins)
+- **pivots** - sometimes your data doesn't arrive in the tidy data form.  The `tidyr` package can help with  `pivot_longer()` and `pivot_wider()`. [Learn more about pivots](https://r4ds.hadley.nz/data-tidy)
+
+
+## Further reading and references
+
+Recommended further reading: 
+
+- [Ch 4 Data transformation](https://r4ds.hadley.nz/data-transform) in R for Data Science textbook
+
+
+Other references: 
+
+- [Ch 20 Joins](https://r4ds.hadley.nz/joins) in R for Data Science textbook
+- [Ch 6 Data tidying](https://r4ds.hadley.nz/data-tidy) in R for Data Science textbook

@@ -17,7 +17,7 @@ Week | Day | Topic | Resources |
 | 2 | 09-07 |   [Data visualization](/notes/data-visualization.qmd) | [slides](/slides/data-visualization.qmd), [demo](https://colab.research.google.com/drive/1B3VInRhxnq4rL5RPlW4CnNDpWUeo0KS2?usp=sharing), [lab](/labs/lab-02.qmd) |
 | 2 | 09-10 |   [Problem set 1](/psets/problem-set-01.qmd) | |
 |  3 | 09-12 |   More data visualization | see 09-07, [demo](https://colab.research.google.com/drive/1_gPlVNnI_SnTG3gL0YcLXEirCPKuyrfx?usp=sharing) |
-|  3 | 09-14 |  Data wrangling | | 
+|  3 | 09-14 |  [Data wrangling](/notes/data-wrangling.qmd) | | 
 |  4 | 09-19 |  Quiz 1 | |
 | 4 | 09-20 |  Probability distributions |  | 
 |  5 | 09-26 | Sampling variability |  | 
