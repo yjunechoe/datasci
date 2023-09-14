@@ -1,0 +1,383 @@
+---
+title:  "Lab 3: Visualize and wrangle data"
+subtitle: "Not graded, just practice"
+date:   2023-09-14
+author: Katie Schuler
+number-sections: true
+number-depth: 3
+---
+
+
+```{r}
+#| echo: false
+#| message: false
+
+library(webexercises)
+library(tidyverse)
+library(languageR)
+```
+
+
+Todays lab will make use of the `ratings` data in the `languageR` package. `glimpse()` of data frame is provided for your reference. 
+
+```{r}
+ratings %>% glimpse()
+```
+
+## `ggplot2` 
+
+
+Given code blocks a, b, and c; and the plot below:
+
+```{r}
+#| output: false
+# CODE BLOCK a ---------------------------#
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+    ) +
+    geom_point(color = "blue")
+
+# CODE BLOCK b ---------------------------#
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity, color = "blue")
+    ) 
+
+# CODE BLOCK c ---------------------------#
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+    ) +
+    geom_point()
+```
+
+```{r}
+#| echo: false
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+    ) +
+    geom_point(color = "blue") +
+    labs(tag="A")
+```
+
+Which of the code blocks above generate this plot?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="a", "b", "c"
+)
+
+cat(longmcq(choices))
+```
+
+In plot A above, is the color aesthetic mapped, set, or both? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+   "mapped", answer="set", "both"
+)
+
+cat(longmcq(choices))
+```
+
+In plot A above, which of the following aesthetics should we set to make the points more transparent?
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+   "color", "fill", answer="alpha", "shape"
+)
+
+cat(longmcq(choices))
+```
+
+In plot A above, which of the following would change the x axis label to "FQ"?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+   answer ="add a `labs()` layer with `x='FQ'` argument",
+   "add a `labs()` layer with `y='FQ'` argument",
+   "change the mapping argument from `x='Frequency'` to `x='FQ'`" 
+)
+
+cat(longmcq(choices))
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+    ) +
+    geom_point(color = "red") +
+    geom_smooth(method = "lm") +
+    labs(tag="B") 
+```
+
+In plot B above, which geom(s) are used to represent the data? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+   "geom_histogram()", "geom_density()", "geom_bar()", answer="geom_point()", answer="geom_smooth()"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, the blue line in plot B above is mapped to the Class aesthetic? 
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c("True", answer="False")
+
+cat(longmcq(choices))
+```
+
+In plot B above, which of the following variables is mapped to the x aesthetic? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="Frequency", 
+    "meanFamiliarity", 
+    "FreqSingular",
+    "FreqPlural"
+)
+
+cat(longmcq(choices))
+```
+
+True or false, in plot B above, the default statistical transformation in the geom responsible for the red dots is "identity".
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(answer="True", "False")
+
+cat(longmcq(choices))
+```
+
+Suppse we run the code below. Which of the following plots will be returned? 
+
+```r
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity, color = Class)
+    ) +
+    geom_point() +
+    geom_smooth(method = "lm", color = "red") 
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity, color = Class)
+    ) +
+    geom_point(color = "red") +
+    geom_smooth(method = "lm") +
+    labs(tag="B") 
+
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity, color = Class)
+    ) +
+    geom_point() +
+    geom_smooth(method = "lm", color = "red") +
+    labs(tag="B") 
+```
+
+
+
+## `dplyr` 
+
+
+Which of the following `dplyr` functions retuns a data frame? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="`select()`", 
+    answer ="`mutate()`", 
+    answer ="`filter()`",
+    answer ="`rename()`",
+    "None of the above"
+)
+
+cat(longmcq(choices))
+```
+
+
+Which of the following `dplyr` functions takes a number as their first argument? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "`select()`", 
+    "`mutate()`", 
+    "`filter()`",
+    "`rename()`",
+    answer = "None of the above"
+)
+
+cat(longmcq(choices))
+```
+
+
+True or false, the following code blocks are equivalent. 
+
+```r
+# option 1
+ratings %>% select(Word, Frequency) %>% glimpse()
+
+# option 2
+glimpse(select(ratings, Word, Frequency))
+
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(answer="True", "False")
+
+cat(longmcq(choices))
+```
+
+
+ 
+
+True or false, the following code options are equivalent 
+
+
+```r
+# option 1
+ratings %>% 
+    select(Word:Class) %>% 
+    mutate(Length/Frequency, .after = Class)
+
+# option 2
+ratings %>% 
+    select(Word:Class) %>% 
+    mutate(Length/Frequency)
+
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(answer="True", "False")
+
+cat(longmcq(choices))
+```
+
+
+
+Suppose you run the following code block. How many rows would be in the resulting data frame? `r fitb(2, width =4)`
+
+```r 
+
+ratings %>% group_by(Class) %>% summarise(n = n())
+
+```
+
+
+Given the code block in the previous question, what will `n()` do? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "summarize all classes including the letter n",
+    answer = "counts the number of rows per Class",
+    "adds the string `n` before each value of Class",
+    "error: missing arguments to n()"
+
+)
+
+cat(longmcq(choices))
+```
+
+::: {.callout-warning title="Under Construction"}
+We will add more practice questions tomorrow so you have more practice to study for Tuesdays Quiz!!
+:::
+
+
+
+
+
+<!-- Which of the following code blocks returned this data frame?  -->
+
+
+<!-- ### Columns 
+
+Suppose you used mutate to add a column dividing Frequency by FamiliySize and the following data frame was returned. Which of the following arguments were specified? 
+
+Suppose you run the following code. How many of the 14 columns in the original dataset would be returned? 
+
+True or false, the following code blocks are equivalent. 
+
+rename and select rename 
+
+### Group and summarise
+
+True or false, `group_by()` generates a grouped data frame. 
+
+
+
+
+True or false, the following code blocks are equivalent. 
+ -->
+
+
+
+
+

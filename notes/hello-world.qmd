@@ -28,7 +28,7 @@ While the underlying concept is not new, the computational tools we use are *rel
 
 The folks who wrote [R for Data Science](https://r4ds.hadley.nz/) proposed the following data science workflow: 
 
-![from R for Data Science](https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png){#fig-datascience fig-align="left" width=80%}
+![from R for Data Science](/include/figures/datascience-workflow.png){#fig-datascience fig-align="left" width=80%}
 
 Let's unpack what these mean briefly: 
 

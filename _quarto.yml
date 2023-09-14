@@ -36,6 +36,7 @@ website:
     contents: 
       - labs/lab-01.qmd
       - labs/lab-02.qmd
+      - labs/lob-03.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
@@ -58,3 +59,4 @@ format:
       sidebar-width: 300px
     df-print: default
     include-in-header: include/webex.js
+
