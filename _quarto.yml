@@ -39,6 +39,8 @@ website:
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
+    - text: Problem set 1 solutions
+      url: https://colab.research.google.com/drive/1SE3nfYFeY3hvWVjmn2fNYtzNCVaaTQLM?usp=sharing
     - text: '---'
     - rubric.qmd
 format:

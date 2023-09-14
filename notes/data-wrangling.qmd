@@ -6,6 +6,9 @@ author:
 
 ---
 
+::: {.callout-note title="Acknowledgement"}
+These notes are adapted from [Ch 4 Data transformation](https://r4ds.hadley.nz/data-transform) in R for Data Science
+:::
 
 ## Why wrangle? 
 

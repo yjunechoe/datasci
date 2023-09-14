@@ -5,7 +5,11 @@ author: Katie Schuler
 
 ---
 
-> Acknowledgement: These notes are heavily influenced by [Ch 2 Data visualization](https://r4ds.hadley.nz/data-visualize) and [Ch 10 Layers](https://r4ds.hadley.nz/layers) in the R for Data Science textbook!
+::: {.callout-note title="Acknowledgement"}
+These notes are adapted from [Ch 2 Data visualization](https://r4ds.hadley.nz/data-visualize) and [Ch 10 Layers](https://r4ds.hadley.nz/layers) in R for Data Science
+:::
+
+
 
 ## Visualization with ggplot2
 
