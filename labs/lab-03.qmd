@@ -199,7 +199,7 @@ Suppse we run the code below. Which of the following plots will be returned?
 
 # Define the answer choices
 choices <- c(
-    answer="C", "D"
+    "C", answer="D"
 )
 
 cat(longmcq(choices))

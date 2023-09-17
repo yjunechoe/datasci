@@ -1,0 +1,93 @@
+---
+title:  "Quiz 1"
+subtitle: "Tuesday, September 19, 2023 at 10:15am"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-tip}
+## Estimated time: 30 minutes
+
+You may need more time if programming is completely new to you, or less if you have some experience already.
+:::
+
+Instructions
+: Upload your `.ipynb` notebook to gradescope by 11:59pm on the due date. 
+
+- Note that each problem will be graded according to this [rubric](/rubric.qmd). Solutions that include packages or functions not covered in this course will recieve a score no higher than 2.
+- You may collaborate with any of your classmates, but you must write your own code/solutions, understand all parts of the problem, and name your collaborators. 
+- You should also cite any outside sources you consulted, like Stack Overflow or ChatGPT, with a comment near the relevant lines of code (see example below). Recycled code that has not been cited will be considered plagerism and receive a zero. 
+
+\begin{flushleft}
+\makebox[12cm]{\textbf{Name}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{Student Number}:\ \hrulefill}
+\end{flushleft}
+
+\begin{center}
+\textbf{Score by topic area}\\
+\begin{tabular}{|l|l|}\hline
+R basics: general &   \\ \hline
+R basics: vectors, operations, subsetting &  \\ \hline
+Data importing &  \\ \hline
+Data visualization: basics &  \\ \hline
+Data visualization: layers  &  \\ \hline
+Data wrangling &  \\ \hline
+Average & \\ \hline
+Effort constant & 6 \\ \hline
+\end{tabular}
+\end{center}
+
+\clearpage
+
+## 1 R basics: general 
+
+
+
+<!-- (a) Suppose you run the following code and you want to remove the `y` variable from the current environment. Which command could you run? Choose one.
+
+    ```r
+    x <- 1 + 2 
+    y <- 3 + 4
+    z <- 0
+    ```
+    - [ ] `ls(y)`
+    - [ ] `rm(list = ls())`
+    - [ ] `rm(y)` 
+    - [ ] All of the above
+
+(b) 
+
+(c) Which of the following will load the `readr` package into the current environment? Choose all that apply.
+    - [ ] `library(tidyverse)`
+    - [ ] `library(readr)`
+    - [ ] `install.packages("tidyverse")`
+    - [ ] `install.packages("readr")`
+    - [ ] `import(readr)`
+
+
+(d) What is the difference between a `for` loop and a `while` loop? Choose one.
+    - [ ]  `for` loops repeat code a specific number of times and `while` loops repeat code as long as certain conditions are true
+    - [ ] `for` loops repeat code as long as certain conditions are true and `while` loops repeat code a specific number of times 
+    - [ ] `for` loops 
+    - [ ] No difference
+(e)
+
+(f) -->
+
+## 2 R basics: vectors, operations, subsetting 
+
+## 3 Data importing
+
+## 4 Data visualization: basics 
+
+## 5 Data visualization: layers
+
+## 6 Data wrangling 
+
