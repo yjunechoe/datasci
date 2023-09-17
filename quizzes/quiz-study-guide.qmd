@@ -6,7 +6,7 @@ author:
 
 ---
 
-You will receive a single score (0-4, see [rubric](/rubric.qmd)) for each topic area representing your understanding of the course material in that area. 
+You will receive a single score (0-4, see [rubric](/rubric.qmd)) for each topic area representing your understanding of the course material in that area.  A great way to study for quizzes in general is to (1) study the lecture notes and (2) quiz yourself with the labs. 
 
 ## Quiz 1 
 
