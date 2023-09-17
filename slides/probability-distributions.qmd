@@ -1,0 +1,18 @@
+---
+title: "Data wrangling"
+subtitle: "Data Science for Studying Language and the Mind"
+author: Katie Schuler
+date: 09-14-2023
+echo: true
+format: 
+    revealjs:
+        theme: dark
+        slide-number: true
+        incremental: true 
+        footer: "[https://kathrynschuler.com/datasci](https://kathrynschuler.com/datasci/)"
+---
+
+```{r}
+
+
+```

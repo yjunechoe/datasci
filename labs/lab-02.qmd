@@ -488,6 +488,4 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-::: {.callout-warning title="Under Construction"}
-We will add more practice questions soon!
-:::
+

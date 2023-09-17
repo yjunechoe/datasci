@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../labs/lab-02.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -306,7 +307,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -336,12 +337,16 @@ window.onload = function() {
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
+    <a class="nav-link active" href="../labs/lab-01.html" rel="" target="" aria-current="page">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../psets/problem-set-01.html" rel="" target="">
  <span class="menu-text">Problem sets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../quizzes/quiz-study-guide.html" rel="" target="">
+ <span class="menu-text">Quizzes</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -349,18 +354,53 @@ window.onload = function() {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-03.html">Lab 3: Visualize and wrangle data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1: Getting started with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2: Import and visualize data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 3: Visualize and wrangle data</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link active" data-scroll-target="#ggplot2"><span class="header-section-number">1</span> <code>ggplot2</code></a></li>
-  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="header-section-number">2</span> <code>dplyr</code></a></li>
+  <li><a href="#more-visualization" id="toc-more-visualization" class="nav-link active" data-scroll-target="#more-visualization"><span class="header-section-number">1</span> <code>More visualization</code></a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling"><span class="header-section-number">2</span> <code>Data wrangling</code></a></li>
   </ul>
 </nav>
     </div>
@@ -419,8 +459,8 @@ $ meanSizeRating   &lt;dbl&gt; 1.8912, 3.6275, 2.4730, 1.7597, 1.8660, 1.7737, 3
 $ meanFamiliarity  &lt;dbl&gt; 3.72, 3.60, 5.84, 4.40, 3.68, 4.12, 2.12, 5.68, 3.20,…</code></pre>
 </div>
 </div>
-<section id="ggplot2" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">1</span> <code>ggplot2</code></h2>
+<section id="more-visualization" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="more-visualization"><span class="header-section-number">1</span> <code>More visualization</code></h2>
 <p>Given code blocks a, b, and c; and the plot below:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CODE BLOCK a ---------------------------#</span></span>
@@ -446,21 +486,21 @@ $ meanFamiliarity  &lt;dbl&gt; 3.72, 3.60, 5.84, 4.40, 3.68, 4.12, 2.12, 5.68, 3
 <p><img src="lab-03_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Which of the code blocks above generate this plot?</p>
-<div id="radio_ZBOLFVLVHG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZBOLFVLVHG" value="answer"> <span>a</span></label><label><input type="radio" autocomplete="off" name="radio_ZBOLFVLVHG" value=""> <span>b</span></label><label><input type="radio" autocomplete="off" name="radio_ZBOLFVLVHG" value=""> <span>c</span></label>
+<p>Which of the code blocks above generate plot A above?</p>
+<div id="radio_YFUNWUWHEK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YFUNWUWHEK" value="answer"> <span>a</span></label><label><input type="radio" autocomplete="off" name="radio_YFUNWUWHEK" value=""> <span>b</span></label><label><input type="radio" autocomplete="off" name="radio_YFUNWUWHEK" value=""> <span>c</span></label>
 </div>
 <p>In plot A above, is the color aesthetic mapped, set, or both?</p>
-<div id="radio_DWYVQOFWPK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_DWYVQOFWPK" value=""> <span>mapped</span></label><label><input type="radio" autocomplete="off" name="radio_DWYVQOFWPK" value="answer"> <span>set</span></label><label><input type="radio" autocomplete="off" name="radio_DWYVQOFWPK" value=""> <span>both</span></label>
+<div id="radio_MNTTCFKYIT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MNTTCFKYIT" value=""> <span>mapped</span></label><label><input type="radio" autocomplete="off" name="radio_MNTTCFKYIT" value="answer"> <span>set</span></label><label><input type="radio" autocomplete="off" name="radio_MNTTCFKYIT" value=""> <span>both</span></label>
 </div>
 <p>In plot A above, which of the following aesthetics should we set to make the points more transparent?</p>
-<div id="radio_ZCLVGNGXGS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZCLVGNGXGS" value=""> <span>color</span></label><label><input type="radio" autocomplete="off" name="radio_ZCLVGNGXGS" value=""> <span>fill</span></label><label><input type="radio" autocomplete="off" name="radio_ZCLVGNGXGS" value="answer"> <span>alpha</span></label><label><input type="radio" autocomplete="off" name="radio_ZCLVGNGXGS" value=""> <span>shape</span></label>
+<div id="radio_UPZVSIHMDY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UPZVSIHMDY" value=""> <span>color</span></label><label><input type="radio" autocomplete="off" name="radio_UPZVSIHMDY" value=""> <span>fill</span></label><label><input type="radio" autocomplete="off" name="radio_UPZVSIHMDY" value="answer"> <span>alpha</span></label><label><input type="radio" autocomplete="off" name="radio_UPZVSIHMDY" value=""> <span>shape</span></label>
 </div>
 <p>In plot A above, which of the following would change the x axis label to “FQ”?</p>
-<div id="radio_SOLNKLFRBX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SOLNKLFRBX" value="answer"> <span>add a <code>labs()</code> layer with <code>x=&amp;apos;FQ&amp;apos;</code> argument</span></label><label><input type="radio" autocomplete="off" name="radio_SOLNKLFRBX" value=""> <span>add a <code>labs()</code> layer with <code>y=&amp;apos;FQ&amp;apos;</code> argument</span></label><label><input type="radio" autocomplete="off" name="radio_SOLNKLFRBX" value=""> <span>change the mapping argument from <code>x=&amp;apos;Frequency&amp;apos;</code> to <code>x=&amp;apos;FQ&amp;apos;</code></span></label>
+<div id="radio_NLIJLZREDZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NLIJLZREDZ" value="answer"> <span>add a <code>labs()</code> layer with <code>x="FQ"</code> argument</span></label><label><input type="radio" autocomplete="off" name="radio_NLIJLZREDZ" value=""> <span>add a <code>labs()</code> layer with <code>y="FQ"</code> argument</span></label><label><input type="radio" autocomplete="off" name="radio_NLIJLZREDZ" value=""> <span>change the mapping argument from <code>x="Frequency"</code> to <code>x="FQ"</code></span></label>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -468,22 +508,25 @@ $ meanFamiliarity  &lt;dbl&gt; 3.72, 3.60, 5.84, 4.40, 3.68, 4.12, 2.12, 5.68, 3
 </div>
 </div>
 <p>In plot B above, which geom(s) are used to represent the data?</p>
-<div id="radio_GHXNPCSESS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GHXNPCSESS" value=""> <span>geom_histogram()</span></label><label><input type="radio" autocomplete="off" name="radio_GHXNPCSESS" value=""> <span>geom_density()</span></label><label><input type="radio" autocomplete="off" name="radio_GHXNPCSESS" value=""> <span>geom_bar()</span></label><label><input type="radio" autocomplete="off" name="radio_GHXNPCSESS" value="answer"> <span>geom_point()</span></label><label><input type="radio" autocomplete="off" name="radio_GHXNPCSESS" value="answer"> <span>geom_smooth()</span></label>
+<div id="radio_AZSPIHGMQE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_AZSPIHGMQE" value=""> <span>geom_histogram()</span></label><label><input type="radio" autocomplete="off" name="radio_AZSPIHGMQE" value=""> <span>geom_density()</span></label><label><input type="radio" autocomplete="off" name="radio_AZSPIHGMQE" value=""> <span>geom_bar()</span></label><label><input type="radio" autocomplete="off" name="radio_AZSPIHGMQE" value="answer"> <span>geom_point()</span></label><label><input type="radio" autocomplete="off" name="radio_AZSPIHGMQE" value="answer"> <span>geom_smooth()</span></label>
 </div>
 <p>True or false, the blue line in plot B above is mapped to the Class aesthetic?</p>
-<div id="radio_QOHEBCEUQG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QOHEBCEUQG" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_QOHEBCEUQG" value="answer"> <span>False</span></label>
+<div id="radio_PIMIJJPFEG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PIMIJJPFEG" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_PIMIJJPFEG" value="answer"> <span>False</span></label>
 </div>
 <p>In plot B above, which of the following variables is mapped to the x aesthetic?</p>
-<div id="radio_UCZRMFCEKB" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UCZRMFCEKB" value="answer"> <span>Frequency</span></label><label><input type="radio" autocomplete="off" name="radio_UCZRMFCEKB" value=""> <span>meanFamiliarity</span></label><label><input type="radio" autocomplete="off" name="radio_UCZRMFCEKB" value=""> <span>FreqSingular</span></label><label><input type="radio" autocomplete="off" name="radio_UCZRMFCEKB" value=""> <span>FreqPlural</span></label>
+<div id="radio_FWTLRBSDTS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FWTLRBSDTS" value="answer"> <span>Frequency</span></label><label><input type="radio" autocomplete="off" name="radio_FWTLRBSDTS" value=""> <span>meanFamiliarity</span></label><label><input type="radio" autocomplete="off" name="radio_FWTLRBSDTS" value=""> <span>FreqSingular</span></label><label><input type="radio" autocomplete="off" name="radio_FWTLRBSDTS" value=""> <span>FreqPlural</span></label>
 </div>
 <p>True or false, in plot B above, the default statistical transformation in the geom responsible for the red dots is “identity”.</p>
-<div id="radio_MUEHNUEDBR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_MUEHNUEDBR" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_MUEHNUEDBR" value=""> <span>False</span></label>
+<div id="radio_ZVRJDJLWHR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZVRJDJLWHR" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ZVRJDJLWHR" value=""> <span>False</span></label>
 </div>
 <p>Suppse we run the code below. Which of the following plots will be returned?</p>
+<div id="radio_HFWSKRWILR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HFWSKRWILR" value="answer"> <span>C</span></label><label><input type="radio" autocomplete="off" name="radio_HFWSKRWILR" value=""> <span>D</span></label>
+</div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> ratings, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Frequency, <span class="at">y =</span> meanFamiliarity, <span class="at">color =</span> Class)</span>
@@ -493,86 +536,147 @@ $ meanFamiliarity  &lt;dbl&gt; 3.72, 3.60, 5.84, 4.40, 3.68, 4.12, 2.12, 5.68, 3
 <div class="cell caption-bottom quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="lab-03_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="lab-03_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="lab-03_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
+<p><img src="lab-03_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</div>
+<p>Suppose we run the following code block, which plot will be returned?</p>
+<div id="radio_VTLYWHMJDP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VTLYWHMJDP" value=""> <span>E</span></label><label><input type="radio" autocomplete="off" name="radio_VTLYWHMJDP" value="answer"> <span>F</span></label><label><input type="radio" autocomplete="off" name="radio_VTLYWHMJDP" value=""> <span>G</span></label><label><input type="radio" autocomplete="off" name="radio_VTLYWHMJDP" value=""> <span>H</span></label>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> ratings, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Class, <span class="at">fill =</span> Complex)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell caption-bottom quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-17-3.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-17-4.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<p>To generate the facets in the plot below, which of the following lines of code must be included?</p>
+<div id="radio_DDMIHWHZOT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DDMIHWHZOT" value=""> <span><code>facet_grid(Complex ~ Class)</code></span></label><label><input type="radio" autocomplete="off" name="radio_DDMIHWHZOT" value="answer"> <span><code>facet_grid(Class ~ Complex)</code></span></label><label><input type="radio" autocomplete="off" name="radio_DDMIHWHZOT" value=""> <span><code>facet_grid(.~ Complex)</code></span></label><label><input type="radio" autocomplete="off" name="radio_DDMIHWHZOT" value=""> <span><code>facet_wrap(Class~Complex, ncol = 2)</code></span></label>
+</div>
+<div class="cell caption-bottom">
+<div class="cell-output-display">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>To adjust the size of the font to 20pt in the complete theme <code>theme_minimal()</code>, what argument should we include?</p>
+<div id="radio_RCVNBGRGCB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RCVNBGRGCB" value="answer"> <span><code>base_size(20)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RCVNBGRGCB" value=""> <span><code>size=20</code></span></label><label><input type="radio" autocomplete="off" name="radio_RCVNBGRGCB" value=""> <span><code>font_family_size=20</code></span></label><label><input type="radio" autocomplete="off" name="radio_RCVNBGRGCB" value=""> <span>None of the above</span></label>
+</div>
+<p>What would happen if we added the layer <code>scale_fill_manual(values = c("green", "orange"))</code> to the following plot?</p>
+<div class="cell caption-bottom quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="lab-03_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="radio_MLXOGQLAPO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MLXOGQLAPO" value=""> <span>error: no fill aesthetic specified</span></label><label><input type="radio" autocomplete="off" name="radio_MLXOGQLAPO" value="answer"> <span>complex would turn green and simplex would turn orange</span></label><label><input type="radio" autocomplete="off" name="radio_MLXOGQLAPO" value=""> <span>simplex would turn green and complex would turn orange</span></label><label><input type="radio" autocomplete="off" name="radio_MLXOGQLAPO" value=""> <span>No change</span></label>
 </div>
 </section>
-<section id="dplyr" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="dplyr"><span class="header-section-number">2</span> <code>dplyr</code></h2>
+<section id="data-wrangling" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">2</span> <code>Data wrangling</code></h2>
 <p>Which of the following <code>dplyr</code> functions retuns a data frame?</p>
-<div id="radio_VTQSGEZTYN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VTQSGEZTYN" value="answer"> <span><code>select()</code></span></label><label><input type="radio" autocomplete="off" name="radio_VTQSGEZTYN" value="answer"> <span><code>mutate()</code></span></label><label><input type="radio" autocomplete="off" name="radio_VTQSGEZTYN" value="answer"> <span><code>filter()</code></span></label><label><input type="radio" autocomplete="off" name="radio_VTQSGEZTYN" value="answer"> <span><code>rename()</code></span></label><label><input type="radio" autocomplete="off" name="radio_VTQSGEZTYN" value=""> <span>None of the above</span></label>
+<div id="radio_WCCVRIFXRR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WCCVRIFXRR" value="answer"> <span><code>select()</code></span></label><label><input type="radio" autocomplete="off" name="radio_WCCVRIFXRR" value="answer"> <span><code>mutate()</code></span></label><label><input type="radio" autocomplete="off" name="radio_WCCVRIFXRR" value="answer"> <span><code>filter()</code></span></label><label><input type="radio" autocomplete="off" name="radio_WCCVRIFXRR" value="answer"> <span><code>rename()</code></span></label><label><input type="radio" autocomplete="off" name="radio_WCCVRIFXRR" value=""> <span>None of the above</span></label>
 </div>
 <p>Which of the following <code>dplyr</code> functions takes a number as their first argument?</p>
-<div id="radio_CKFENVVMKR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CKFENVVMKR" value=""> <span><code>select()</code></span></label><label><input type="radio" autocomplete="off" name="radio_CKFENVVMKR" value=""> <span><code>mutate()</code></span></label><label><input type="radio" autocomplete="off" name="radio_CKFENVVMKR" value=""> <span><code>filter()</code></span></label><label><input type="radio" autocomplete="off" name="radio_CKFENVVMKR" value=""> <span><code>rename()</code></span></label><label><input type="radio" autocomplete="off" name="radio_CKFENVVMKR" value="answer"> <span>None of the above</span></label>
+<div id="radio_UPNJUNYIYV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UPNJUNYIYV" value=""> <span><code>select()</code></span></label><label><input type="radio" autocomplete="off" name="radio_UPNJUNYIYV" value=""> <span><code>mutate()</code></span></label><label><input type="radio" autocomplete="off" name="radio_UPNJUNYIYV" value=""> <span><code>filter()</code></span></label><label><input type="radio" autocomplete="off" name="radio_UPNJUNYIYV" value=""> <span><code>rename()</code></span></label><label><input type="radio" autocomplete="off" name="radio_UPNJUNYIYV" value="answer"> <span>None of the above</span></label>
 </div>
 <p>True or false, the following code blocks are equivalent.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># option 1</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">select</span>(Word, Frequency) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># option 2</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">select</span>(ratings, Word, Frequency))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="radio_KOZIUDISUR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KOZIUDISUR" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_KOZIUDISUR" value=""> <span>False</span></label>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># option 1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">select</span>(Word, Frequency) <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># option 2</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(<span class="fu">select</span>(ratings, Word, Frequency))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_XLVTYGSLZX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XLVTYGSLZX" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_XLVTYGSLZX" value=""> <span>False</span></label>
 </div>
 <p>True or false, the following code options are equivalent</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># option 1</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Word<span class="sc">:</span>Class) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(Length<span class="sc">/</span>Frequency, <span class="at">.after =</span> Class)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># option 2</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Word<span class="sc">:</span>Class) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(Length<span class="sc">/</span>Frequency)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="radio_RUCMRDMZNU" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RUCMRDMZNU" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_RUCMRDMZNU" value=""> <span>False</span></label>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># option 1</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Word<span class="sc">:</span>Class) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(Length<span class="sc">/</span>Frequency, <span class="at">.after =</span> Class)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># option 2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(Word<span class="sc">:</span>Class) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(Length<span class="sc">/</span>Frequency)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_XIDONMXKTN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XIDONMXKTN" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_XIDONMXKTN" value=""> <span>False</span></label>
 </div>
-<p>Suppose you run the following code block. How many rows would be in the resulting data frame? <input class="webex-solveme nospaces" size="4" data-answer="[&quot;2&quot;]"></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Recall that there are two possible values in the <code>Class</code> variable in the <code>ratings</code> dataset: “animal” or “plant”. How many rows would be in the data frame returned by the following code block? <input class="webex-solveme nospaces" size="4" data-answer="[&quot;2&quot;]"></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Given the code block in the previous question, what will <code>n()</code> do?</p>
-<div id="radio_CBZVIBBELL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CBZVIBBELL" value=""> <span>summarize all classes including the letter n</span></label><label><input type="radio" autocomplete="off" name="radio_CBZVIBBELL" value="answer"> <span>counts the number of rows per Class</span></label><label><input type="radio" autocomplete="off" name="radio_CBZVIBBELL" value=""> <span>adds the string <code>n</code> before each value of Class</span></label><label><input type="radio" autocomplete="off" name="radio_CBZVIBBELL" value=""> <span>error: missing arguments to n()</span></label>
+<div id="radio_LEYYARZUAT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LEYYARZUAT" value=""> <span>summarize all classes including the letter n</span></label><label><input type="radio" autocomplete="off" name="radio_LEYYARZUAT" value="answer"> <span>count the number of rows per Class</span></label><label><input type="radio" autocomplete="off" name="radio_LEYYARZUAT" value=""> <span>adds the string <code>n</code> before each value of Class</span></label><label><input type="radio" autocomplete="off" name="radio_LEYYARZUAT" value=""> <span>error: missing arguments to n()</span></label>
 </div>
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>True or false, the following code blocks will return the same dataframe</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code block 1</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">complexity =</span> Complex) </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># code block 2</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">complexity =</span> Complex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_RGTYKNKJCF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RGTYKNKJCF" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_RGTYKNKJCF" value="answer"> <span>False</span></label>
 </div>
-<div class="callout-title-container flex-fill">
-Under Construction
+<p>Which of the following code blocks will return a dataframe including only the rows in <code>ratings</code> for which the Class value is “animal”?</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code block a</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="at">Class =</span> <span class="st">"animal"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># code block b</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Class <span class="sc">==</span> <span class="st">"animal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_QPFDVNVJPC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QPFDVNVJPC" value=""> <span>a</span></label><label><input type="radio" autocomplete="off" name="radio_QPFDVNVJPC" value="answer"> <span>b</span></label><label><input type="radio" autocomplete="off" name="radio_QPFDVNVJPC" value=""> <span>both a and b</span></label>
 </div>
+<p>By default the <code>arrange()</code> function arranges the rows in ascending order. Which of the following code blocks would arrange the Frequency variable in descending order?</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code block a</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(Frequency, <span class="at">order =</span> <span class="st">"descending"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># code block b</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(Frequency, <span class="at">order =</span> <span class="st">"reverse"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># code block c</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Frequency))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_MQRFZYOHTZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MQRFZYOHTZ" value=""> <span>a</span></label><label><input type="radio" autocomplete="off" name="radio_MQRFZYOHTZ" value=""> <span>b</span></label><label><input type="radio" autocomplete="off" name="radio_MQRFZYOHTZ" value="answer"> <span>c</span></label><label><input type="radio" autocomplete="off" name="radio_MQRFZYOHTZ" value=""> <span>a and b</span></label><label><input type="radio" autocomplete="off" name="radio_MQRFZYOHTZ" value=""> <span>a and c</span></label>
 </div>
-<div class="callout-body-container callout-body">
-<p>We will add more practice questions tomorrow so you have more practice to study for Tuesdays Quiz!!</p>
+<p>Which of the following code blocks could be used to return the mean frequency by class?</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code block a</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>( <span class="at">mean =</span> <span class="fu">mean</span>(Frequency) )</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># code block b</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">summarise</span>( </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(Frequency), <span class="at">.by =</span> <span class="fu">c</span>(Class) )</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># code block c</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> <span class="fu">mean</span>(Frequency) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="radio_QYCKOMCBBI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value=""> <span>a only</span></label><label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value=""> <span>b only</span></label><label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value=""> <span>c only</span></label><label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value="answer"> <span>a and b</span></label><label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value=""> <span>b and c</span></label><label><input type="radio" autocomplete="off" name="radio_QYCKOMCBBI" value=""> <span>a, b, and c</span></label>
 </div>
-</div>
-<!-- Which of the following code blocks returned this data frame?  -->
-<!-- ### Columns 
-
-Suppose you used mutate to add a column dividing Frequency by FamiliySize and the following data frame was returned. Which of the following arguments were specified? 
-
-Suppose you run the following code. How many of the 14 columns in the original dataset would be returned? 
-
-True or false, the following code blocks are equivalent. 
-
-rename and select rename 
-
-### Group and summarise
-
-True or false, `group_by()` generates a grouped data frame. 
-
-
-
-
-True or false, the following code blocks are equivalent. 
- -->
 
 
 </section>
@@ -811,6 +915,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-02.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 2: Import and visualize data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

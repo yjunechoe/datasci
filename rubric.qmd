@@ -7,13 +7,13 @@ number-sections: false
 
 All quiz and problem set questions are graded with the following 4-point rubric. By "understand" we mean you understand the lecture concepts and can apply the technical skills you learned in the course.  Solutions that include packages or functions not covered in this course will recieve a highest possible score of 2.
 
-| Score | Meaning | Description
-|-|--|-------|
-| **4** | **Exceptional!** | You understand the course material deeply and can do all parts of this problem yourself with no mistakes. |
-| **3** | **Well done!** | You understand the course material and can do all parts of this problem yourself with very few mistakes. |
-| **2** | **Getting there** | You understand the course material to some extent and can do some parts of this problem, but you need a little more practice to get there. |
-| **1** | **Just starting** | You have lots of gaps in your understanding of the course material and could not do most of this problem. You need a lot more practice to get there. |
-| **0** | **Not complete** | You left this question completely blank |
+| Score | % | Meaning | Description
+|-|-|--|-------|
+| **4** | 100% | **Exceptional!** | You understand the course material deeply and can do all parts of this problem yourself with no mistakes. |
+| **3** | 90% | **Well done!** | You understand the course material and can do all parts of this problem yourself with very few mistakes. |
+| **2** | 80% | **Getting there** | You understand the course material to some extent and can do some parts of this problem, but you need a little more practice to get there. |
+| **1** | 70% | **Just starting** | You have lots of gaps in your understanding of the course material and could not do most of this problem. You need a lot more practice to get there. |
+| **0** | 60% | **Not complete** | You left this question completely blank |
 
 
 ## Overall grade

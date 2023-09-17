@@ -24,7 +24,7 @@ Todays lab will make use of the `ratings` data in the `languageR` package. `glim
 ratings %>% glimpse()
 ```
 
-## `ggplot2` 
+## `More visualization` 
 
 
 Given code blocks a, b, and c; and the plot below:
@@ -62,7 +62,7 @@ ggplot(
     labs(tag="A")
 ```
 
-Which of the code blocks above generate this plot?
+Which of the code blocks above generate plot A above?
 
 ```{r}
 #| echo: false
@@ -113,9 +113,9 @@ In plot A above, which of the following would change the x axis label to "FQ"?
 
 # Define the answer choices
 choices <- c(
-   answer ="add a `labs()` layer with `x='FQ'` argument",
-   "add a `labs()` layer with `y='FQ'` argument",
-   "change the mapping argument from `x='Frequency'` to `x='FQ'`" 
+   answer ='add a `labs()` layer with `x="FQ"` argument',
+   'add a `labs()` layer with `y="FQ"` argument',
+   'change the mapping argument from `x="Frequency"` to `x="FQ"`' 
 )
 
 cat(longmcq(choices))
@@ -192,6 +192,19 @@ cat(longmcq(choices))
 
 Suppse we run the code below. Which of the following plots will be returned? 
 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="C", "D"
+)
+
+cat(longmcq(choices))
+```
+
 ```r
 ggplot(
     data = ratings, 
@@ -213,7 +226,7 @@ ggplot(
     ) +
     geom_point(color = "red") +
     geom_smooth(method = "lm") +
-    labs(tag="B") 
+    labs(tag="C") 
 
 ggplot(
     data = ratings, 
@@ -221,12 +234,156 @@ ggplot(
     ) +
     geom_point() +
     geom_smooth(method = "lm", color = "red") +
-    labs(tag="B") 
+    labs(tag="D") 
+```
+
+Suppose we run the following code block, which plot will be returned?
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "E", answer ="F", "G", "H"
+)
+
+cat(longmcq(choices))
+```
+
+```r
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Class, fill = Complex)
+    ) +
+    geom_bar() 
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Class, fill = Complex)
+    ) +
+    geom_bar(position = "dodge") +
+    labs(tag="E") 
+
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Class, fill = Complex)
+    ) +
+    geom_bar() +
+    labs(tag="F") 
+
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Complex, fill = Class)
+    ) +
+    geom_bar(position = "dodge") +
+    labs(tag="G") 
+
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Complex, fill = Class)
+    ) +
+    geom_bar() +
+    labs(tag="H") 
+```
+
+To generate the facets in the plot below, which of the following lines of code must be included? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "`facet_grid(Complex ~ Class)`", 
+    answer="`facet_grid(Class ~ Complex)`", 
+    "`facet_grid(.~ Complex)`",
+    "`facet_wrap(Class~Complex, ncol = 2)`"
+)
+
+cat(longmcq(choices))
 ```
 
 
 
-## `dplyr` 
+```{r}
+#| echo: false
+#| message: false
+#| layout-valign: bottom
+#| cap-location: bottom
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Frequency, y = meanFamiliarity)
+    ) +
+    geom_point() +
+    facet_grid(Class ~ Complex) +
+    theme_bw() +
+    labs(tag="I") 
+```
+
+To adjust the size of the font to 20pt in the complete theme `theme_minimal()`, what argument should we include?
+
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer ="`base_size(20)`",
+    "`size=20`",
+    "`font_family_size=20`",
+    "None of the above"
+)
+
+cat(longmcq(choices))
+```
+
+What would happen if we added the layer `scale_fill_manual(values = c("green", "orange"))` to the following plot? 
+
+```{r}
+#| echo: false
+#| message: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+ggplot(
+    data = ratings, 
+    mapping = aes(x = Class, fill = Complex)
+    ) +
+    geom_bar(position = "dodge") +
+    labs(tag="J") 
+```
+
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "error: no fill aesthetic specified",
+    answer ="complex would turn green and simplex would turn orange",
+    "simplex would turn green and complex would turn orange",
+    "No change"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+## `Data wrangling` 
 
 
 Which of the following `dplyr` functions retuns a data frame? 
@@ -319,12 +476,10 @@ cat(longmcq(choices))
 
 
 
-Suppose you run the following code block. How many rows would be in the resulting data frame? `r fitb(2, width =4)`
+Recall that there are two possible values in the `Class` variable in the `ratings` dataset: "animal" or "plant". How many rows would be in the data frame returned by the following code block? `r fitb(2, width =4)`
 
 ```r 
-
 ratings %>% group_by(Class) %>% summarise(n = n())
-
 ```
 
 
@@ -337,7 +492,7 @@ Given the code block in the previous question, what will `n()` do?
 # Define the answer choices
 choices <- c(
     "summarize all classes including the letter n",
-    answer = "counts the number of rows per Class",
+    answer = "count the number of rows per Class",
     "adds the string `n` before each value of Class",
     "error: missing arguments to n()"
 
@@ -346,38 +501,93 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-::: {.callout-warning title="Under Construction"}
-We will add more practice questions tomorrow so you have more practice to study for Tuesdays Quiz!!
-:::
+True or false, the following code blocks will return the same dataframe
+
+```r
+# code block 1
+ratings %>% select(complexity = Complex) 
 
 
+# code block 2
+ratings %>% rename(complexity = Complex)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c("True", answer="False")
+
+cat(longmcq(choices))
+```
 
 
+Which of the following code blocks will return a dataframe including only the rows in `ratings` for which the Class value is "animal"? 
 
-<!-- Which of the following code blocks returned this data frame?  -->
+```r
+# code block a
+ratings %>% filter(Class = "animal")
 
+# code block b
+ratings %>% filter(Class == "animal")
+```
 
-<!-- ### Columns 
+```{r}
+#| echo: false
+#| results: asis
 
-Suppose you used mutate to add a column dividing Frequency by FamiliySize and the following data frame was returned. Which of the following arguments were specified? 
+# Define the answer choices
+choices <- c("a", answer="b", "both a and b")
 
-Suppose you run the following code. How many of the 14 columns in the original dataset would be returned? 
-
-True or false, the following code blocks are equivalent. 
-
-rename and select rename 
-
-### Group and summarise
-
-True or false, `group_by()` generates a grouped data frame. 
-
-
-
-
-True or false, the following code blocks are equivalent. 
- -->
+cat(longmcq(choices))
+```
 
 
+By default the `arrange()` function arranges the rows in ascending order. Which of the following code blocks would arrange the Frequency variable in descending order? 
+
+```r
+# code block a
+ratings %>% arrange(Frequency, order = "descending")
+
+# code block b
+ratings %>% arrange(Frequency, order = "reverse")
+
+# code block c
+ratings %>% arrange(desc(Frequency))
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c("a", "b", answer ="c", "a and b", "a and c")
+
+cat(longmcq(choices))
+```
 
 
+Which of the following code blocks could be used to return the mean frequency by class? 
 
+```r
+# code block a
+ratings %>% group_by(Class) %>% summarise( mean = mean(Frequency) )
+
+# code block b
+ratings %>% summarise( 
+    mean = mean(Frequency), .by = c(Class) )
+
+# code block c
+ratings %>% mean(Frequency) %>% group_by(Class)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c("a only", "b only", "c only", answer="a and b", "b and c", "a, b, and c")
+
+cat(longmcq(choices))
+```

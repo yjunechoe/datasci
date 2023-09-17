@@ -20,6 +20,8 @@ website:
       file: labs/lab-01.qmd
     - text: Problem sets
       file: psets/problem-set-01.qmd
+    - text: Quizzes
+      file: quizzes/quiz-study-guide.qmd
     # tools:
     #   - icon: github
     #     href: https://github.com/kschuler/datasci
@@ -36,7 +38,7 @@ website:
     contents: 
       - labs/lab-01.qmd
       - labs/lab-02.qmd
-      - labs/lob-03.qmd
+      - labs/lab-03.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
@@ -44,6 +46,9 @@ website:
       url: https://colab.research.google.com/drive/1SE3nfYFeY3hvWVjmn2fNYtzNCVaaTQLM?usp=sharing
     - text: '---'
     - rubric.qmd
+  - title: Quizzes
+    contents: 
+      - quizzes/quiz-study-guide.qmd
 format:
   html:
     theme: cosmo
