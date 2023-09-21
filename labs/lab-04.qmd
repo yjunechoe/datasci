@@ -179,6 +179,7 @@ data %>% summarise(
 
 ```
 
+`r fitb(0, ignore_case = TRUE)`
 
 (c) Suppose your data is normally distributed and has a mean of 25 and a standard deviation of 5. What is the probability a random value drawn from your dataset will be less than 20? Select the closest value.
 
