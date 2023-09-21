@@ -39,6 +39,7 @@ website:
       - labs/lab-01.qmd
       - labs/lab-02.qmd
       - labs/lab-03.qmd
+      - labs/lab-04.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
