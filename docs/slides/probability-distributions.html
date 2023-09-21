@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Katie Schuler">
-  <meta name="dcterms.date" content="2023-09-14">
-  <title>LING 0700 | PSYC 2314 - Data wrangling</title>
+  <meta name="dcterms.date" content="2023-09-21">
+  <title>LING 0700 | PSYC 2314 - Probability Distributions &amp; Sampling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Data wrangling</h1>
+  <h1 class="title">Probability Distributions &amp; Sampling</h1>
   <p class="subtitle">Data Science for Studying Language and the Mind</p>
 
 <div class="quarto-title-authors">
@@ -337,15 +402,495 @@ Katie Schuler
 </div>
 </div>
 
-  <p class="date">2023-09-14</p>
+  <p class="date">2023-09-21</p>
 </section>
-<section class="slide level2">
+<section id="you-are-here" class="slide level2 smaller">
+<h2>You are <code>here</code></h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h5 id="data-science-with-r">Data science with R</h5>
+<div>
+<ul>
+<li>Hello, world!</li>
+<li>R basics</li>
+<li>Data importing</li>
+<li>Data visualization</li>
+<li>Data wrangling</li>
+</ul>
+</div>
+</div><div class="column" style="width:33%;">
+<h5 id="stats-model-buidling">Stats &amp; Model buidling</h5>
+<div>
+<ul>
+<li><code>Probability distributions</code></li>
+<li><code>Sampling variability</code></li>
+<li>Hypothesis testing</li>
+<li>Model specification</li>
+<li>Model fitting</li>
+<li>Model accuracy</li>
+<li>Model reliability</li>
+</ul>
+</div>
+</div><div class="column" style="width:33%;">
+<h5 id="more-advanced">More advanced</h5>
+<div>
+<ul>
+<li>Classification</li>
+<li>Feature engineering (preprocessing)</li>
+<li>Inference for regression</li>
+<li>Mixed-effect models</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="attribution" class="slide level2">
+<h2>Attribution</h2>
+<ul>
+<li class="fragment">Inspired by a MATLAB course Katie took by Kendrick Kay</li>
+<li class="fragment">Data simulated from Ritchie et al 2018:</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Sex Differences in the Adult Human Brain: Evidence from 5216 UK Biobank Participants</p>
+</blockquote>
+</div>
+</section>
+<section>
+<section id="explore-a-simple-dataset" class="title-slide slide level1 center">
+<h1>Explore a simple dataset</h1>
 
+</section>
+<section id="dataset" class="slide level2 smaller">
+<h2>Dataset</h2>
+<p>Suppose we measure a single quantity: <code>brain volume of human adults</code></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 5,216
+Columns: 1
+$ volume &lt;dbl&gt; 1193.283, 1150.383, 1242.702, 1206.808, 1235.955, 1292.399, 120…</code></pre>
+</div>
+
+</div>
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="visualize-the-distribution" class="slide level2 smaller">
+<h2>Visualize the distribution</h2>
+<p>Visualize the distribution of the data with a <code>histogram</code></p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="measure-of-central-tendency" class="slide level2 smaller">
+<h2>Measure of central tendency</h2>
+<p>Summarize the data with a single value: <code>mean</code>, a measure of where a central or typical value might fall</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>sum_stats <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="at">n =</span> <span class="fu">n</span>(), </span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(volume))</span>
+<span id="cb2-4"><a href="#cb2-4"></a>sum_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+      n  mean
+  &lt;int&gt; &lt;dbl&gt;
+1  5216 1173.</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="measure-of-variability" class="slide level2 smaller">
+<h2>Measure of variability</h2>
+<p>Summarize the spread of the data with <code>standard deviation</code></p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>sum_stats <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="at">n =</span> <span class="fu">n</span>(), </span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(volume),</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(volume))</span>
+<span id="cb4-5"><a href="#cb4-5"></a>sum_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+      n  mean    sd
+  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  5216 1173.  112.</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="parametric-statistics" class="slide level2">
+<h2>Parametric statistics</h2>
+<p>Mean and sd are <code>parametric</code> summary statistics. They are given by the following equations:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math inline">\(mean(x) = \bar{x} = \frac{\sum_{i=i}^{n} x_{i}}{n}\)</span></p>
+</div><div class="column" style="width:50%;">
+<p>sd(<span class="math inline">\(x\)</span>) = <span class="math inline">\(\sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1}}\)</span></p>
+</div>
+</div>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment">Mean and sd are a good summary of the data when the distribution is <code>normal</code> (<strong>gaussian</strong>)</li>
+</ul>
+</section>
+<section id="nonparametric-statistics" class="slide level2">
+<h2>Nonparametric statistics</h2>
+<p>But suppose our distribution is not normal.</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="nonparametric-statistics-1" class="slide level2">
+<h2>Nonparametric statistics</h2>
+<p>mean and sd are not a good summary anymore.</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="median" class="slide level2 smaller">
+<h2>Median</h2>
+<p>Instead we can use the median as our measure of central tendency.</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>np_sum_stats <span class="ot">&lt;-</span> not_normal <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="at">n =</span> <span class="fu">n</span>(), </span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="at">median =</span> <span class="fu">median</span>(y))</span>
+<span id="cb6-4"><a href="#cb6-4"></a>np_sum_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+      n median
+  &lt;int&gt;  &lt;dbl&gt;
+1   111     15</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="iqr" class="slide level2 smaller">
+<h2>IQR</h2>
+<p>And the interquartile range (<code>IQR</code>) as a measure of the spread in our data.</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>np_sum_stats <span class="ot">&lt;-</span> not_normal <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    <span class="at">n =</span> <span class="fu">n</span>(), </span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="at">median =</span> <span class="fu">median</span>(y),</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="at">lower =</span> <span class="fu">quantile</span>(y, <span class="fl">0.25</span>),</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="at">upper =</span> <span class="fu">quantile</span>(y, <span class="fl">0.75</span>) )</span>
+<span id="cb8-6"><a href="#cb8-6"></a>np_sum_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+      n median lower upper
+  &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1   111     15     5    25</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="probability-distributions" class="title-slide slide level1 smaller center">
+<h1>Probability distributions</h1>
+<p>A mathematical function that describes the probability of observing different possible values of a variable</p>
+</section>
+<section id="uniform-probability-distribution" class="slide level2 smaller">
+<h2>Uniform probability distribution</h2>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<section id="uniform-probability-distirubtion" class="slide level2 smaller">
+<h2>Uniform probability distirubtion</h2>
+<p>All possible values are equally likely</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>uniform_sample <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="at">min =</span> <span class="fu">min</span>(y), </span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="at">max =</span> <span class="fu">max</span>(y), </span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="at">prob =</span> <span class="dv">1</span><span class="sc">/</span>(max <span class="sc">-</span> min))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+    min   max  prob
+  &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
+1     1    10 0.111</code></pre>
+</div>
+</div>
+<p>height of prob density func</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">dunif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1111111</code></pre>
+</div>
+</div>
+<p>prob less than given value</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">punif</span>(<span class="dv">4</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3333333</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(p(x) = \frac{1}{max-min}\)</span></p>
+</section>
+<section id="gaussian-normal-probability-distribution" class="slide level2 smaller">
+<h2>Gaussian (normal) probability distribution</h2>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<section id="gaussian-normal-probability-distribution-1" class="slide level2 smaller">
+<h2>Gaussian (normal) probability distribution</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>height of prob density func</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">#dunif(4, min = 1, max = 10)</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">dnorm</span>(<span class="dv">4</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.0001338302</code></pre>
+</div>
+</div>
+<p>prob less than given value</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co">#punif(4, min = 1, max = 10)</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">pnorm</span>(<span class="dv">4</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9999683</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(p(x) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right)\)</span></p>
+</section></section>
+<section>
+<section id="sampling-variability" class="title-slide slide level1 center">
+<h1>Sampling variability</h1>
+
+</section>
+<section id="the-population" class="slide level2 smaller">
+<h2>The population</h2>
+<p>We actually want to know something about the <code>population</code>: the mean brain volume of Penn undergrads (the <strong>parameter</strong>)</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<section id="the-sample" class="slide level2 smaller">
+<h2>The sample</h2>
+<p>But we only have a small <code>sample</code> of the population: maybe we can measure the brain volume of 100 students</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
+<section id="sampling-variability-1" class="slide level2 smaller">
+<h2>Sampling variability</h2>
+<p>Any statistic we compute from a random sample we’ve collected (<strong>parameter estimate</strong>) will be subject to <code>sampling variability</code> and will differ from that statistics computed on the entire population (<strong>parameter</strong>)</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
+<section id="sampling-variability-2" class="slide level2 smaller">
+<h2>Sampling variability</h2>
+<p>If we took another sample of 100 students, our parameter estimate would be different.</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-27-1.png" width="960" class="r-stretch"></section>
+<section id="sampling-distribution" class="slide level2 smaller">
+<h2>Sampling distribution</h2>
+<p>The <code>sampling distribution</code> is the probability distribution of values our parameter estimate can take on. Constructed by taking a random sample, computing stat of interest, and repeating many times.</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-28-1.png" width="960" class="r-stretch"></section>
+<section id="quantifying-sampling-variability" class="slide level2 smaller">
+<h2>Quantifying sampling variability</h2>
+<p>The <code>spread</code> of the sampling distribution indicates how the parameter estimate will vary from different random samples. We can quantify the spread (express our uncertainty on our parameter estimate) in two ways</p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
+<section id="quantifying-sampling-variability-with-standard-error" class="slide level2 smaller">
+<h2>Quantifying sampling variability with <code>standard error</code></h2>
+<p>One way is to compute the standard deviation of the sampling distribution: the <code>standard error</code></p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-30-1.png" width="960" class="r-stretch"></section>
+<section id="quantifying-sampling-variability-with-a-confidence-interval" class="slide level2">
+<h2>Quantifying sampling variability with a <code class="smaller">confidence interval</code></h2>
+<p>Another way is to construct a <code>confidence interval</code></p>
+
+<img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-31-1.png" width="960" class="r-stretch"></section>
+<section id="practical-considerations" class="slide level2">
+<h2>Practical considerations</h2>
+<ul>
+<li class="fragment">We don’t have access to the entire population</li>
+<li class="fragment">We can (usually) only do our experiment once</li>
+</ul>
+</section></section>
+<section>
+<section id="bootstrapping" class="title-slide slide level1 center">
+<h1>Bootstrapping</h1>
+<p>To construct the sampling distribution</p>
+</section>
+<section id="bootstrapping-1" class="slide level2">
+<h2>Bootstrapping</h2>
+<p>Instead of assuming a parametric probability distributon, we use the data themselves to approximate the underlying distribution: we <code>sample our sample</code>!</p>
+</section></section>
+<section>
+<section id="bootsrapping-with-infer" class="title-slide slide level1 center">
+<h1>Bootsrapping with <code>infer</code></h1>
+
+</section>
+<section id="infer-is-part-of-tidymodels" class="slide level2">
+<h2><code>infer</code> is part of <code>tidymodels</code></h2>
+<blockquote>
+<p>The tidymodels framework is a collection of packages for modeling and machine learning using tidyverse principles.</p>
+</blockquote>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">install.packages</span>(<span class="st">"tidymodels"</span>)<span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="generate-the-sampling-distribution" class="slide level2 smaller">
+<h2>Generate the sampling distribution</h2>
+<p>Generate the sampling distribution with <code>specify()</code>, <code>generate()</code>, and <code>calculate()</code></p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>bootstrap_distribution <span class="ot">&lt;-</span> sample1  <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">specify</span>(<span class="at">response =</span> volume) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a></span>
+<span id="cb21-6"><a href="#cb21-6"></a>bootstrap_distribution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: volume (numeric)
+# A tibble: 1,000 × 2
+   replicate  stat
+       &lt;int&gt; &lt;dbl&gt;
+ 1         1 1238.
+ 2         2 1262.
+ 3         3 1259.
+ 4         4 1232.
+ 5         5 1226.
+ 6         6 1294.
+ 7         7 1259.
+ 8         8 1246.
+ 9         9 1226.
+10        10 1235.
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-the-bootstrap-distribution" class="slide level2 smaller">
+<h2>Visualize the bootstrap distribution</h2>
+<p>Visualize the bootstrap distribution you generated with <code>visualize()</code></p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>bootstrap_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">visualize</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-34-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="quantify-the-spread-with-se" class="slide level2 smaller">
+<h2>Quantify the spread with <code>se</code></h2>
+<p>Quantify the spread of the sampling distributon with <code>get_confidence_interval()</code>, using <strong>standard error</strong></p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>se_bootstrap <span class="ot">&lt;-</span> bootstrap_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">get_confidence_interval</span>(</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="at">type =</span> <span class="st">"se"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">point_estimate =</span> <span class="fu">mean</span>(sample1<span class="sc">$</span>volume)</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  )</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a>se_bootstrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1    1210.    1274.</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>bootstrap_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">shade_confidence_interval</span>(</span>
+<span id="cb26-4"><a href="#cb26-4"></a>    <span class="at">endpoints =</span> se_bootstrap</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="quantify-the-spread-with-ci" class="slide level2 smaller">
+<h2>Quantify the spread with <code>ci</code></h2>
+<p>Quantify the spread of the sampling distributon with <code>get_confidence_interval</code>, using a <strong>confidence interval</strong></p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>ci_bootstrap <span class="ot">&lt;-</span> bootstrap_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">get_confidence_interval</span>(</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    <span class="at">type  =</span><span class="st">"percentile"</span>, </span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">level =</span> <span class="fl">0.95</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a>  )</span>
+<span id="cb27-6"><a href="#cb27-6"></a></span>
+<span id="cb27-7"><a href="#cb27-7"></a>ci_bootstrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1    1211.    1273.</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>bootstrap_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">shade_confidence_interval</span>(</span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="at">endpoints =</span> ci_bootstrap</span>
+<span id="cb29-5"><a href="#cb29-5"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="probability-distributions_files/figure-revealjs/unnamed-chunk-38-1.png" width="960"></p>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 <p><a href="https://kathrynschuler.com/datasci/">https://kathrynschuler.com/datasci</a></p>
 </div>
-</section>
+</div>
+</section></section>
     </div>
   </div>
 

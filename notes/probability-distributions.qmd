@@ -49,7 +49,7 @@ ggplot(data=data, aes(x=y)) +
 We can summarize (or describe) a set of data with **descriptive statistics**. There are three types of measures:
 
 - **central tendency** describes a central or typical value (mean, median, mode)
-- **variability** describes dispersion or spread of values (variance, standard deviation, IQR)
+- **variability** describes dispersion or spread of values (variance, standard deviation, range, IQR)
 - **frequency distribution** describes how frequently different values occur (count)
 
 R has built-in functions to handle descriptive statistics (we saw these in lecture 1): 
@@ -110,9 +110,13 @@ What if the data does not meet the assumptions of the Gaussian distribution? One
 
 ## Further reading and references
 
-- [Appendix A: Statistical Background](https://moderndive.com/A-appendixA.html) in Modern Dive
+Suggested further reading:
+
 - [Basics of descriptive statistics](https://dlf.uzh.ch/openbooks/statisticsforlinguists/chapter/basics-of-descriptive-statistics/) in Statistics for linguists
+- [Appendix A: Statistical Background](https://moderndive.com/A-appendixA.html) in Modern Dive
 - [Ch 11: Modeling Randomness](https://dtkaplan.github.io/SM2-bookdown/modeling-randomness.html) in Statistical Modeling
+
+Other references: 
 
 https://r4ds.hadley.nz/data-visualize#visualizing-distributions
 

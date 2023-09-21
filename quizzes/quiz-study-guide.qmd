@@ -58,3 +58,18 @@ Quiz 1 will test the following learning objectives, divided into 6 topic areas. 
     - Group and summarise data with `group_by()`, `summarise()`, and `ungroup()` 
     - Evaulate `dplyr` functions that include the common arguments we covered in class 
 
+## Quiz 2
+
+Quiz 2 will test the following learning objectives, divided into 5 topic areas. For each topic area, you should be able to do the list that follows. You can think of this as a studying checklist!
+
+::: {.callout-warning}
+
+More learning objectives will be added as we cover these topics in lecture.
+:::
+
+1. **Probability distributions**
+    - Explore a dataset with a histogram and descriptive statistics
+2. **Sampling variability**
+3. **Hypothesis testing**
+4. **Model specification**
+5. **Model fitting**

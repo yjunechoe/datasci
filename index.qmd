@@ -19,7 +19,7 @@ Week | Day | Topic | Resources |
 |  3 | 09-12 |   More data visualization | see 09-07, [demo](https://colab.research.google.com/drive/1_gPlVNnI_SnTG3gL0YcLXEirCPKuyrfx?usp=sharing) |
 |  3 | 09-14 |  [Data wrangling](/notes/data-wrangling.qmd) | [slides](/slides/data-wrangling.qmd), [lab](/labs/lab-03.qmd) | 
 |  4 | 09-19 |  Quiz 1 | [study guide](/quizzes/quiz-study-guide.qmd) |
-| 4 | 09-20 |  Probability distributions |  | 
+| 4 | 09-20 |  Probability distributions & Sampling | [slides](/slides/probability-distributions.qmd) | 
 |  5 | 09-26 | Sampling variability |  | 
 |  5 | 09-28 |  Hypothesis testing  | | 
 | 5 | 10-01 |  Problem set 2 | | 

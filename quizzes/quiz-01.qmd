@@ -1,6 +1,6 @@
 ---
 title:  "Quiz 1"
-subtitle: "Tuesday, September 19, 2023 at 10:15am"
+subtitle: "Data Science for Studying Language & the Mind"
 # author: 
 #     name: Katie Schuler
 #     affiliation: University of Pennsylvania
@@ -17,17 +17,27 @@ format:
 You may need more time if programming is completely new to you, or less if you have some experience already.
 :::
 
-Instructions
-: Upload your `.ipynb` notebook to gradescope by 11:59pm on the due date. 
+**Instructions**
 
-- Note that each problem will be graded according to this [rubric](/rubric.qmd). Solutions that include packages or functions not covered in this course will recieve a score no higher than 2.
-- You may collaborate with any of your classmates, but you must write your own code/solutions, understand all parts of the problem, and name your collaborators. 
-- You should also cite any outside sources you consulted, like Stack Overflow or ChatGPT, with a comment near the relevant lines of code (see example below). Recycled code that has not been cited will be considered plagerism and receive a zero. 
+- The quiz is closed book/note/computer/phone
+- If you need to use the restroom, leave your exam and phone with the TA
+- You have 60 minutes to complete the quiz. If you finish early, you may turn in your quiz and leave early
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+```
+
+\newcommand\answerbox{%%
+    \framebox(400,50){}}
 
 \begin{flushleft}
 \makebox[12cm]{\textbf{Name}:\ \hrulefill}
 \medskip
-\makebox[12cm]{\textbf{Student Number}:\ \hrulefill}
+\makebox[12cm]{\textbf{PennKey}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{Lab section TA}:\ \hrulefill}
 \end{flushleft}
 
 \begin{center}
@@ -39,8 +49,8 @@ Data importing &  \\ \hline
 Data visualization: basics &  \\ \hline
 Data visualization: layers  &  \\ \hline
 Data wrangling &  \\ \hline
-Average & \\ \hline
-Effort constant & 6 \\ \hline
+Total & \\ \hline
+
 \end{tabular}
 \end{center}
 
@@ -48,9 +58,7 @@ Effort constant & 6 \\ \hline
 
 ## 1 R basics: general 
 
-
-
-<!-- (a) Suppose you run the following code and you want to remove the `y` variable from the current environment. Which command could you run? Choose one.
+(a) Suppose you run the following code. Which command could you run to remove the `y` variable from the current environment? Choose all that apply.
 
     ```r
     x <- 1 + 2 
@@ -60,34 +68,426 @@ Effort constant & 6 \\ \hline
     - [ ] `ls(y)`
     - [ ] `rm(list = ls())`
     - [ ] `rm(y)` 
-    - [ ] All of the above
+    - [ ] `remove(y)`
 
-(b) 
+(b) Write an expression that would assign the value `10` to the variable name `my_var`? 
 
-(c) Which of the following will load the `readr` package into the current environment? Choose all that apply.
+    \answerbox
+
+(c) Which of the following would install the `praise` package? Choose all that apply.
+    - [ ] `library(praise)`
+    - [ ] `install(praise)`
+    - [ ] `install.packages("praise")`
+    - [ ] `install.packages(praise)`
+
+(d) Suppose you run the following code. Which functions would return the structure of the object you defined? Choose one.
+
+    ```r
+    x <- c("bus", "stop")
+    ```
+    - [ ] `length(x)`
+    - [ ] `print(x)`
+    - [ ] `str(x)`
+    - [ ] `attributes(x)` 
+    - [ ] None of the above
+
+\clearpage 
+
+## 2 R basics: vectors, operations, subsetting 
+
+(a) Suppose you run the following code. What will length(x) return? Write your answer in the box below.
+
+    ```r
+    x <- 1:5
+    ```
+    \answerbox
+
+
+
+(b) Suppose you run the following code. What will `y > 4` return? Write your answer in the box below and **show your work**.
+
+    ```r
+    x <- seq(2, 8, by = 2)
+    y <- x[c(-4)]
+    ```
+    \answerbox
+
+(c) Suppose you run the following code. What will `typeof(x)` return? 
+
+    ```r
+    x <- c("true", "false", "true", "false")
+    ```
+    - [ ] `double`
+    - [ ] `integer`
+    - [ ] `character`
+    - [ ] `logical`
+
+(d) Suppose you create the following data frame and assign it to the `df` variable. What will `sum(df$antique)` return?
+
+    ```{r}
+    #| echo: false
+
+
+    df <- data.frame(
+        antique = 1:3,
+        age = 2:4,
+        show = c("a", "b", "c")
+        
+    )
+    print(df)
+
+    ```
+
+    - [ ] NULL
+    - [ ] Error: no columns include value "antique"
+    - [ ] 6
+    - [ ] 9 
+    - [ ] 15
+
+## 3 Data importing
+
+(a) Which of the following will load the `readr` package into the current environment? Choose all that apply.
     - [ ] `library(tidyverse)`
     - [ ] `library(readr)`
     - [ ] `install.packages("tidyverse")`
     - [ ] `install.packages("readr")`
+    - [ ] `import(tidyverse)`
     - [ ] `import(readr)`
 
+(b) Suppose `print(x)` returns the following. What will `is.data.frame(x)` return? Write your answer in the box below.
 
-(d) What is the difference between a `for` loop and a `while` loop? Choose one.
-    - [ ]  `for` loops repeat code a specific number of times and `while` loops repeat code as long as certain conditions are true
-    - [ ] `for` loops repeat code as long as certain conditions are true and `while` loops repeat code a specific number of times 
-    - [ ] `for` loops 
-    - [ ] No difference
-(e)
+    ```{r}
+    #| echo: false
 
-(f) -->
 
-## 2 R basics: vectors, operations, subsetting 
+    x <- tibble(
+        x = 1:4,
+        y = 5:8,
+        z = 9:12
+    )
+    print(x)
+    ```
 
-## 3 Data importing
+    \answerbox
+
+(c) Suppose you import "junesales.csv", shown below, with the following code. What would `data$Sale` return? Choose one.
+
+    ```
+    Year, Month, Day, Sale
+    2023, June, 1, 0
+    2023, June, 2, 1
+    2023, June, 3, 0
+    2023, June, 4, 1
+    ```
+
+    ```r
+    data <- read_csv("junesales.csv",
+        col_types = list(Sale = col_logical())
+    )
+    ```
+    - [ ] A `double` vector with values `0 1 0 1`
+    - [ ] A `logical` vector with values `FALSE TRUE FALSE TRUE`
+    - [ ] A double vector with values `NA NA NA NA`
+    - [ ] `NULL`
+
+(d) Suppose you import a dataset with `readr`, but when you `print(data)` you notice that the `age` column was identified as `character` when you were expecting `double`. Given the resulting tibble, which of the following arguments could you include in blank in the code below to solve this problem?
+
+
+    ```{r}
+    #| echo: false
+    data <- tibble(
+        age = c(18, "na", 25, 21), 
+        graduated = c(F, F, T, T), 
+        gpa = c(NA, 3.8, 2.9, 3.1)
+    )
+    print(data)
+    ```
+
+    ```r
+    data <- read_csv("data.csv", ________)
+    ```
+
+    - [ ] `.drop = NA`
+    - [ ] `skip = 1`
+    - [ ] `guess_max = Inf`
+    - [ ] `na = c("na")`
+    - [ ] `col_names = FALSE`
+
+\clearpage
 
 ## 4 Data visualization: basics 
 
+Section 5 makes use of the `durationsGe` dataset and plots A, B, and C in the appendix.
+
+
+(a) Which of the plots above (A and B) did the code blocks below generate?
+
+    ```r
+    # code 1
+    ggplot(durationsGe, aes(x = DurationOfPrefix, fill = Sex)) +
+        geom_density(fill = "lightgray") +
+        theme_classic(base_size = 12) +
+        labs(y = "") +
+        scale_fill_manual(values = c("white", "gray", "black"))
+    # code 2
+    ggplot(durationsGe, aes(x = DurationOfPrefix)) +
+        geom_density(fill = "lightgray") +
+        theme_classic(base_size = 12) +
+        labs(y = "")
+    ```
+    - [ ] Code 1 generates plot A, code 2 generates plot B
+    - [ ] Code 2 generates plot A, code 1 generates plot B
+    - [ ] Code 1 and 2 both generate plot A
+    - [ ] Code 1 and 2 both generate plot B 
+    - [ ] Code 1 and 2 generate neither plot A nor plot B
+
+(b) Which geoms could be depicted in plots A and B? Choose all that apply. 
+
+    - [ ] `geom_histogram()`
+    - [ ] `geom_smooth()`
+    - [ ] `geom_line()`
+    - [ ] `geom_density()`
+    - [ ] `geom_bar()`
+
+\clearpage
+
+(c) True or false, the following code blocks generate the same figure. Write your answer in the following box and **explain why**.
+
+    ```r
+    # code block 1
+    ggplot(
+        data=durationsGe, 
+        mapping = aes(y = DurationOfPrefix, x = Sex)) + 
+            geom_bar(stat = "identity") 
+
+    # code block 2
+      ggplot(
+        aes(y = DurationOfPrefix, x = Sex),
+        durationsGe) + 
+            geom_bar(stat = "identity") 
+
+    ```
+
+    \answerbox
+
+
+(d) The code below makes use of a new geom, `geom_rug()`, to generate plot C, in which each individual data point is plotted along the x-axis like a "rug". In the box below, rewrite the code such the color of the rug is mapped to the `Sex` variable and the bars of the histogram are filled in with the color "lightblue". 
+
+    ```r
+    ggplot(durationsGe, aes(x = DurationOfPrefix)) +
+        geom_rug() + 
+        geom_histogram() +
+        theme_classic(base_size = 12) 
+
+    ```
+
+    \answerbox
+
+
+\clearpage
+
 ## 5 Data visualization: layers
 
+Section 5 makes use of the `durationsGe` dataset and plots D, E, and F in the appendix.
+
+
+
+(a) Which of the following would add a small amount of random noise around each point in plot D? Choose all that apply.
+
+    - [ ] add the argument `position = "jitter"` to `geom_point()`
+    - [ ] add the argument `position = "random"` to `geom_point()`
+    - [ ] add the argument `rand_noise = TRUE` to `geom_point()`
+    - [ ] replace `geom_point()` with `geom_jitter()`
+    - [ ] replace `geom_point()` with `geom_noise()` 
+
+
+(b) Which of the following could change plot D to plot E? Choose all that apply
+
+    - [ ] add `facet_wrap(~Sex)`
+    - [ ] add `facet_wrap(~Sex, ncol = 2)`
+    - [ ] add `facet_wrap(~Sex, ncol = 3)`
+    - [ ] add `facet_grid(Sex~.)`
+    - [ ] add `facet_grid(.~Sex)`
+    - [ ] add `facet(.by = c(Sex))`
+
+
+(c) Which of the following arguments to `geom_histogram()` could be present in the code that returned plot F? Choose all that apply.
+
+    - [ ] `bins=12`
+    - [ ] `bins=11`
+    - [ ] `binwidth=1`
+    - [ ] `binwidth=3`
+    - [ ] `stat="identity"`
+
+(d) Which of the following layers are required to produce plot F? Note that the plot uses the complete theme `theme_minimal()` and the font is 20pt Palatino. Choose all that apply.
+
+    - [ ] `theme_minimal(use=TRUE)`
+    - [ ] `theme_minimal(base_size = 20, base_family = "Palatino")`
+    - [ ] `labs(title = "Histogram of speech rate")`
+    - [ ] `font(size=20, family="Palatino")`
+    - [ ] `scale_fill_manual(values = c("gray"))`
+
+\clearpage
+
 ## 6 Data wrangling 
+
+Section 6 makes use of the `durationsGe` dataset in the appendix.
+
+
+(a) The `Sex` variable in the `durationsGe` dataset has the following distinct values: `"male" "female" NA`. How many rows would be in the object returned by the following code block? Write your answer in the box below.
+
+    ```{r}
+    #| echo: false
+
+    library(languageR)
+    ```
+
+    ```r
+    durationsGe %>% 
+        filter(Sex %in% c("female")) %>%
+        summarise(minBirthYear=min(YearOfBirth, na.rm=TRUE), .by=c(Sex))
+    ```
+
+    \answerbox
+
+
+(b) True or false, the following code options are equivalent.
+
+    ```r
+    # option 1
+    durationsGe %>% 
+        select(Frequency) %>% 
+        filter(Frequency > 40) %>%
+        distinct()
+
+    # option 2
+    just_freq <- select(durationsGe, Frequency)
+    freq_under_40 <- filter(just_freq, Frequency > 40)
+    distinct(freq_under_40)
+    ```
+
+    - [ ] True
+    - [ ] False
+
+(c) Fill in the blank in the code below such that it returns a new column called "count", which counts of the number of rows in the `durationsGe` dataset per `Sex`
+
+    ```r
+    ratings %>% group_by(Sex) %>% summarise(_________)
+    ```
+
+    \answerbox
+
+(d) True or false, the following code options are equivalent. 
+
+    ```r
+    # option 1
+    durationsGe %>% 
+        select(Freq=Frequency, Speaker:DurationOfPrefix) %>% 
+        mutate(AgeInYears = 2023 - YearOfBirth, .before = Freq)
+
+    # option 2
+    durationsGe %>% 
+        select(Frequency:DurationOfPrefix) %>% 
+        rename(Freq = Frequency) %>%
+        mutate(AgeInYears = 2023 - YearOfBirth, .before = 1)
+
+    ```
+
+    - [ ] True
+    - [ ] False
+
+\clearpage
+
+*This page is intentionally blank in case you need scratch paper*
+
+\clearpage
+
+## Appendix A: Data
+
+
+Sections 4-6 make use of `durationsGe` data in the `languageR` package. The dataset includes the duration of the prefix ge- in Dutch by various speakers from the Spoken Dutch Corpus. 
+
+```{r}
+library(languageR)
+glimpse(durationsGe)
+```
+
+\clearpage 
+
+## Appendix B: Plots section 4
+
+```{r}
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+
+ggplot(durationsGe, aes(x = DurationOfPrefix, fill = Sex)) +
+    geom_density(fill = "lightgray") +
+    theme_classic(base_size = 15) +
+    labs(tag = "A", y = "")
+
+ggplot(durationsGe, aes(x = DurationOfPrefix, fill = Sex)) +
+    geom_density() +
+    theme_classic(base_size = 15) +
+    labs(tag = "B", y = "") +
+    scale_fill_manual(values = c("white", "gray", "black"))
+```
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+ggplot(durationsGe, aes(x = DurationOfPrefix)) +
+    geom_rug() + 
+    geom_histogram() +
+    theme_classic(base_size = 12) +
+    labs(tag = "C")
+```
+
+\clearpage
+
+## Appendix C: Plots section 5
+
+```{r}
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+
+ggplot(durationsGe, aes(x = SpeechRate, y = DurationOfPrefix)) +
+    geom_point(alpha = 0.5) + 
+    geom_smooth(method = "lm") +
+    theme_classic(base_size = 15) +
+    labs(tag = "D")
+
+ggplot(durationsGe, aes(x = SpeechRate, y = DurationOfPrefix)) +
+    geom_point(alpha = 0.5) + 
+    geom_smooth(method = "lm") + 
+    facet_grid(. ~ Sex) +
+    theme_classic(base_size = 15) +
+    labs(tag = "E")
+
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+#| layout-valign: bottom
+#| cap-location: bottom
+#| 
+ggplot(data = durationsGe, mapping = aes(x = SpeechRate)) +
+    geom_histogram(fill = "lightgray", bins = 12) +
+    theme_minimal(base_family = "Palatino", base_size = 20) +
+    labs(title = "Histogram of speech rate", tag="F") 
+    
+```
+
 
