@@ -150,7 +150,7 @@ cat(longmcq(choices))
 
 ## Probability distributions
 
-(a) Write code to generate 200 data points, sampled from a gaussian distribution with a mean of 0 and a standard deveiation of 1.
+(a) Write code to generate 200 data points, sampled from a gaussian distribution with a mean of 0 and a standard deviation of 1.
 
 ```{r}
 #| code-summary: "Answer"
