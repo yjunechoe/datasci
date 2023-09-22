@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,7 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -479,12 +480,12 @@ window.onload = function() {
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">iqr_lower =</span> <span class="fu">quantile</span>(volume, <span class="fl">0.25</span>),</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">iqr_upper =</span> <span class="fu">quantile</span>(volume, <span class="fl">0.75</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Some statistics are considered <strong>paramteric</strong> because they make assumptions about the the distribution of the data (can therefore be computed theoretically from parameters). The mean and standard deviation assume the distribution is <strong>Gaussian</strong> and can therefore be computed via the following equations:</p>
+<p>Some statistics are considered <strong>parametric</strong> because they make assumptions about the the distribution of the data (can therefore be computed theoretically from parameters). The mean and standard deviation assume the distribution is <strong>Gaussian</strong> (aka “normal”) and can therefore be computed via the following equations:</p>
 <ul>
 <li><span class="math inline">\(mean(x) = \overline{x} = \frac{\sum_{i=i}^{n} x_{i}}{n}\)</span></li>
 <li><span class="math inline">\(sd(x) = \sqrt{\frac{\sum_{i=1}^n (x_i - \overline{x})^2}{n-1}}\)</span></li>
 </ul>
-<p>Other statstics are <strong>nonparametric</strong> because they make minimal assumptions about the distribution of the data:</p>
+<p>Other statistics are <strong>non-parametric</strong> because they make minimal assumptions about the distribution of the data:</p>
 <ul>
 <li><strong>median</strong> is the 50th percentile, the value below which 50% of the data points fall.</li>
 <li><strong>inter-quartile range (IQR)</strong> is the difference between the 25th and 75th percentiles (sometimes called the <strong>50% coverage interval</strong> because 50% of the data fall in this range).<br>
@@ -495,7 +496,7 @@ window.onload = function() {
 </section>
 <section id="probability-distributions" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="probability-distributions"><span class="header-section-number">2</span> Probability distributions</h2>
-<p>A <strong>probability distribution</strong> (aka probability density function) is a mathematical function that describes the probability of observing the different possible values of a variable (or variables!)</p>
+<p>A <strong>probability distribution</strong> (aka “probability density function (PDF)”) is a mathematical function that describes the probability of observing the different possible values of a variable (or variables!)</p>
 <p>One of the simplest probability distributions is the <strong>uniform distribution</strong>, where all possible values of a variable are equally likely. The probability density function for the uniform distribution is given by the following equation with two parameters (the boundaries, <code>min</code> and <code>max</code>):</p>
 <ul>
 <li><span class="math inline">\(p(x) = \frac{1}{max-min}\)</span></li>
@@ -546,17 +547,18 @@ Most of us have an intuitive understanding of how the mean is computed: add up a
 <h2 data-number="4" class="anchored" data-anchor-id="bootstrapping"><span class="header-section-number">4</span> Bootstrapping</h2>
 <p>Ideally, we would construct the sampling distribution by repeating our experiment many times, drawing new random samples from the population each time. But in practice, this is impossible. We are usually constrained — by time, money, access, etc. — such that we can only take <em>one</em> sample.</p>
 <ul>
-<li>This is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the mean and standard deviation of the sample to approximate what would happen if we <em>had</em> sampled from a Gaussian probability distribution (see above!).</li>
-<li>What if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions? We can use a technique called bootstrapping.</li>
+<li>This is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the sample standard deviation, to approximate what would happen if we <em>had</em> sampled from a Gaussian probability distribution (see above!).</li>
+<li>What if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions (i.e., the assumption that our distribution is well-characterized by mean and standard deviation)? We can use a technique called bootstrapping.</li>
 </ul>
 <p>With <strong>bootstrapping</strong>, instead of assuming a parametric probability distribution, we can use the data themselves to approximate the underlying probability distribution. In other words, instead of sampling from the population, we can sample our sample! We’re “pulling ourselves up by our bootstraps”: constructing the sampling distribution from our own data.</p>
 <ul>
 <li>The procedure is very simple. To illustrate, suppose we have a set a data with 100 data points. We generate the bootstrap sampling distribution by drawing the same number of data points (100) <em>with replacement</em> from our data set and compute the parameter estimate — mean, median, whatever — on those points, then we repeat the process many times.</li>
+<li>However, there is <a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">“no free lunch”</a>. Bootstrapping still relies on the (weaker) assumption that your sample is a <em>representative sample</em> of the population. If your sample was not representative, then bootstrapping will not help you estimate the parameters any better. Garbage in, garbage out!</li>
 </ul>
 <p>There are many ways to generate a bootstrap sampling distribution in R. We will use the <a href="https://infer.netlify.app/"><code>infer</code></a> package in this class, which was developed by Hadley Wickham (the <code>tidyverse</code> guy!) and others to simplify aspects of statistical inference in R.</p>
 <ul>
 <li><code>specify(response=x)</code>: choose which variable is the focus of our inference</li>
-<li><code>generate(reps=n, type='bootstrap')</code>: generate n replicates of the data</li>
+<li><code>generate(reps=n, type="bootstrap")</code>: generate n replicates of the data</li>
 <li><code>calculate(stat="mean")</code>: statistic to calculate on each sample; what parameter are you trying to estimate?</li>
 </ul>
 <p>We can further use <code>infer</code> to visualize the bootstrap sampling distribution and get a confidence interval around the parameter we estimated.</p>
@@ -574,7 +576,7 @@ Most of us have an intuitive understanding of how the mean is computed: add up a
 <li><a href="https://moderndive.com/A-appendixA.html">Appendix A: Statistical Background</a> in Modern Dive</li>
 <li><a href="https://moderndive.com/7-sampling.html">Ch 7 Sampling</a> in Modern Dive</li>
 <li><a href="https://moderndive.com/8-confidence-intervals.html">Ch 8 Bootstrapping and Confidence Intervals</a> in Modern Dive</li>
-<li><a href="https://cran.r-project.org/web/packages/infer/vignettes/infer.html">Infer package vignette</a></li>
+<li><a href="https://infer.netlify.app/articles/infer">Infer package introductory vignette</a></li>
 <li><a href="https://dtkaplan.github.io/SM2-bookdown/modeling-randomness.html">Ch 11: Modeling Randomness</a> in Statistical Modeling</li>
 </ul>
 
