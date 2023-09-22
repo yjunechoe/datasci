@@ -30,13 +30,13 @@ data %>%
     ) 
 ```
 
-Some statistics are considered **paramteric** because they make assumptions about the the distribution of the data (can therefore be computed theoretically from parameters). The mean and standard deviation assume the distribution is **Gaussian** and can therefore be computed via the following equations: 
+Some statistics are considered **parametric** because they make assumptions about the the distribution of the data (can therefore be computed theoretically from parameters). The mean and standard deviation assume the distribution is **Gaussian** (aka "normal") and can therefore be computed via the following equations: 
 
 - $mean(x) = \overline{x} = \frac{\sum_{i=i}^{n} x_{i}}{n}$
 - $sd(x) = \sqrt{\frac{\sum_{i=1}^n (x_i - \overline{x})^2}{n-1}}$
 
 
-Other statstics are **nonparametric** because they make minimal assumptions about the distribution of the data: 
+Other statistics are **non-parametric** because they make minimal assumptions about the distribution of the data: 
 
 - **median** is the 50th percentile, the value below which 50% of the data points fall. 
 - **inter-quartile range (IQR)** is the difference between the 25th and 75th percentiles (sometimes called the **50% coverage interval** because 50% of the data fall in this range).  
@@ -47,7 +47,7 @@ Other statstics are **nonparametric** because they make minimal assumptions abou
 
 ## Probability distributions
 
-A **probability distribution** (aka probability density function) is a mathematical function that describes the probability of observing the different possible values of a variable (or variables!)  
+A **probability distribution** (aka "probability density function (PDF)") is a mathematical function that describes the probability of observing the different possible values of a variable (or variables!)  
 
 One of the simplest probability distributions is the **uniform distribution**, where all possible values of a variable are equally likely. The probability density function for the uniform distribution is given by the following equation with two parameters (the boundaries, `min` and `max`): 
 
@@ -113,7 +113,7 @@ With **bootstrapping**, instead of assuming a parametric probability distributio
 There are many ways to generate a bootstrap sampling distribution in R. We will use the [`infer`](https://infer.netlify.app/) package in this class, which was developed by Hadley Wickham (the `tidyverse` guy!) and others to simplify aspects of statistical inference in R. 
 
   - `specify(response=x)`: choose which variable is the focus of our inference 
-  - `generate(reps=n, type='bootstrap')`: generate n replicates of the data 
+  - `generate(reps=n, type="bootstrap")`: generate n replicates of the data 
   - `calculate(stat="mean")`: statistic to calculate on each sample; what parameter are you trying to estimate? 
 
 We can further use `infer` to visualize the bootstrap sampling distribution and get a confidence interval around the parameter we estimated. 
@@ -132,5 +132,5 @@ Suggested further reading:
 - [Appendix A: Statistical Background](https://moderndive.com/A-appendixA.html) in Modern Dive
 - [Ch 7 Sampling](https://moderndive.com/7-sampling.html) in Modern Dive
 - [Ch 8 Bootstrapping and Confidence Intervals](https://moderndive.com/8-confidence-intervals.html) in Modern Dive
-- [Infer package vignette](https://cran.r-project.org/web/packages/infer/vignettes/infer.html)
+- [Infer package introductory vignette](https://infer.netlify.app/articles/infer)
 - [Ch 11: Modeling Randomness](https://dtkaplan.github.io/SM2-bookdown/modeling-randomness.html) in Statistical Modeling
