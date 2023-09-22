@@ -102,13 +102,13 @@ We can also quantify the sampling variability with a **confidence interval**, wh
 
 Ideally, we would construct the sampling distribution by repeating our experiment many times, drawing new random samples from the population each time. But in practice, this is impossible. We are usually constrained — by time, money, access, etc. — such that we can only take *one* sample. 
 
-- This is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the mean and standard deviation of the sample to approximate what would happen if we *had* sampled from a Gaussian probability distribution (see above!). 
-- What if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions? We can use a technique called bootstrapping. 
+- This is no problem if we can assume the underlying population distribution is Gaussian: we can just compute the standard error, which relies on the sample standard deviation, to approximate what would happen if we *had* sampled from a Gaussian probability distribution (see above!). 
+- What if the underlying distribution is not Gaussian, or we want to drop these parametric assumptions (i.e., the assumption that our distribution is well-characterized by mean and standard deviation)? We can use a technique called bootstrapping. 
 
 With **bootstrapping**, instead of assuming a parametric probability distribution, we can use the data themselves to approximate the underlying probability distribution. In other words, instead of sampling from the population, we can sample our sample! We're "pulling ourselves up by our bootstraps": constructing the sampling distribution from our own data.
 
 - The procedure is very simple. To illustrate, suppose we have a set a data with 100 data points. We generate the bootstrap sampling distribution by drawing the same number of data points (100) *with replacement* from our data set and compute the parameter estimate — mean, median, whatever — on those points, then we repeat the process many times. 
-
+- However, there is ["no free lunch"](https://en.wikipedia.org/wiki/No_free_lunch_theorem). Bootstrapping still relies on the (weaker) assumption that your sample is a *representative sample* of the population. If your sample was not representative, then bootstrapping will not help you estimate the parameters any better. Garbage in, garbage out!
 
 There are many ways to generate a bootstrap sampling distribution in R. We will use the [`infer`](https://infer.netlify.app/) package in this class, which was developed by Hadley Wickham (the `tidyverse` guy!) and others to simplify aspects of statistical inference in R. 
 
