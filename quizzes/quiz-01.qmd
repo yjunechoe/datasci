@@ -398,9 +398,6 @@ Section 6 makes use of the `durationsGe` dataset in the appendix.
 
 \clearpage
 
-*This page is intentionally blank in case you need scratch paper*
-
-\clearpage
 
 ## Appendix A: Data
 

@@ -50,6 +50,9 @@ website:
   - title: Quizzes
     contents: 
       - quizzes/quiz-study-guide.qmd
+      - text: '---'
+      - quizzes/quiz-01.qmd
+      - quizzes/quiz-01-solutions.qmd
 format:
   html:
     theme: cosmo
