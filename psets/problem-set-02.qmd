@@ -52,7 +52,11 @@ The dataset below includes data simulated from [Ritchie et al 2018](https://acad
 
 ## Problem 3
 
-Continuing with your filtered brain volume data, use `infer` to construct the bootstrap sampling distribution and quantify the spread of the distribution with standard error. Create a visualization that includes a histogram of the distribution and a shaded confidence interval with the standard error you computed.
+Continuing with your filtered brain volume data, use `infer` to construct the bootstrap sampling distribution of the mean brain volume and quantify the spread of the distribution with standard error. Create a visualization that includes a histogram of the distribution and a shaded confidence interval with the standard error you computed.
+
+<!-- ## Problem 4
+
+- hypothesis testing; use all the data, is there a difference between sexes? Compute the MEDIAN -->
 
 
 
