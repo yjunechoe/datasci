@@ -67,9 +67,12 @@ Quiz 2 will test the following learning objectives, divided into 5 topic areas. 
 More learning objectives will be added as we cover these topics in lecture.
 :::
 
-1. **Probability distributions**
-    - Explore a dataset with a histogram and descriptive statistics
-2. **Sampling variability**
-3. **Hypothesis testing**
-4. **Model specification**
-5. **Model fitting**
+1. **Sampling distribution**
+    - Explore a simple dataset with a histogram and summary statistics 
+    - Recognize uniform and gaussian probability distributions in a plot or equation and use R's functions `d*()`, `p*()`, and `r*()` to work with these distributions
+    - Explain the difference between the parameter and the paramter estimate
+
+2. **Hypothesis testing**
+    
+3. **Model specification**
+4. **Model fitting**

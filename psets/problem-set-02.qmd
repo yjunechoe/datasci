@@ -11,8 +11,51 @@ format:
 
 ---
 
-::: {.callout-warning title="Under Construction"}
+
+::: {.callout-tip}
+## Estimated time: 6 hours
+
+Allocate about **1 hour per problem**, though some will take longer than others. You may need more time if programming is completely new to you, or less if you have some experience already.
 :::
 
-- Brain size data; recreate the figure; involves a little wrangling to get the data; also mutate species so we have H. sapien and non H. sapien. 
+Instructions
+: Upload your `.ipynb` notebook to gradescope by 11:59pm on the due date. 
 
+- Note that each problem will be graded according to this [rubric](/rubric.qmd). Solutions that include packages or functions not covered in this course will recieve a score no higher than 2.
+- You may collaborate with any of your classmates, but you must write your own code/solutions, understand all parts of the problem, and name your collaborators. 
+- You should also cite any outside sources you consulted, like Stack Overflow or ChatGPT, with a comment near the relevant lines of code (see example below). Recycled code that has not been cited will be considered plagerism and receive a zero. 
+
+```r
+# code here was inspired by user2554330 on stack overflow: 
+# https://stackoverflow.com/questions/69091812/is-everything-a-vector-in-r
+```
+
+## Problem 0
+
+> not graded
+
+Create a new colab R notebook. Please include the title "Problem set 2", your name, the date, and any collaborators somewhere at the top. 
+
+<!-- You must make all visualizations with `ggplot` (via `infer`, where appropriate) and ensure your plots communicate information clearly.  -->
+
+## Problem 1 
+
+Suppose you want to simulate data for the age at which typically developing babies produce their first word. Create a tibble with a single column for age that includes 500 samples generated from the Gaussian probability distribution with a mean age of 12 months and a standard deviation of 1 month. Plot your data with a density plot. Given this Gaussian distirbution, what is the probability that a baby says their first word by the time they are 10 months? Return this value with one of R's functions for probability distributions.
+
+## Problem 2
+
+The dataset below includes data simulated from [Ritchie et al 2018](https://academic.oup.com/cercor/article/28/8/2959/4996558?fbclid=IwAR3I9IcKIlGqDzW-GDzF7v0ZWGO0mPx2RP8raCWDUJS7nWVEMsk8yY3wLlw&login=false), including the total brain `volume` and `sex` of 5216 subjects. Suppose you are interested in just one sex. Filter the data to include only male or only female participants (data scientists choice!). Explore these data with a histogram and use `summarise()` to report both paramteric and nonparamteric summary statistics. 
+
+```r
+"http://kathrynschuler.com/datasets/brain_volume.csv"
+```
+
+## Problem 3
+
+Continuing with your filtered brain volume data, use `infer` to construct the bootstrap sampling distribution and quantify the spread of the distribution with standard error. Create a visualization that includes a histogram of the distribution and a shaded confidence interval with the standard error you computed.
+
+
+
+::: {.callout-warning title="Under Construction"}
+More problems will be added by Sunday night! You can start work on the first 3 now.
+:::
