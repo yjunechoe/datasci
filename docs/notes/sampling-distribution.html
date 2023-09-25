@@ -459,9 +459,22 @@ window.onload = function() {
 
 </header>
 
+<div class="callout callout-style-simple callout-note callout-titled" title="Acknowledgement">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Acknowledgement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These notes are inspired by a MATLAB course by Kendrick Kay</p>
+</div>
+</div>
 <section id="exploring-a-simple-dataset" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="exploring-a-simple-dataset"><span class="header-section-number">1</span> Exploring a simple dataset</h2>
-<p>Suppose we measure a single quantity of interest: the brain volume of human adults (the simplest possible dataset!). How do we explore these data?</p>
+<p>Suppose we measure a single quantity of interest (the simplest possible dataset!): the brain volume of human adults. How do we explore these data?</p>
 <p>We can create a visual summary of our dataset with a <strong>histogram</strong>. A histogram plots the distribution of a set of data, which allows us to get a quick visual of the data: formally we have plotted the the frequency distribution (count) of the data, but this also gives a sense of the central tendency and variability in our dataset.</p>
 <p>We can summarize (or describe) a set of data with <strong>summary statistics</strong> (aka descriptive statistics). There are three summary stats we typically use:</p>
 <ul>
@@ -515,6 +528,7 @@ window.onload = function() {
 <li><code>rnorm(1000, mean=5, sd=1)</code> returns n <strong>random numbers</strong> generated from the distribution</li>
 </ul>
 <p>To use another distribution, change the function’s suffix to the name of the distribution and the parameters to those that define the distribution. For example, to generate n random numbers from a uniform distribution with a min of 1 and a max of 5, run <code>runif(n, min=0, max=1)</code></p>
+<p>What if the data does not meet the assumptions of the Gaussian distribution? One option is to choose another parametric probability distribution (run <code>help(Distributions)</code> for a full list of available distributions). Another is to use a nonparametric approach, where the probability distribution is not determined by parameters but is instead determined by the data.</p>
 <!-- ## Standard deviation
 
 Most of us have an intuitive understanding of how the mean is computed: add up all the values and divide by the number of values.  But what about the standard deviation? To understand how the standard deviation is computed, it helps to think the mean as a very simple model of our data: one where all cases are the same. Each individual case can be expressed as the **model value** plus how much the case deviates from the model value (**residual**, or leftover).

@@ -408,6 +408,9 @@ window.onload = function() {
   <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
   <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
   <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="problem-set-02.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -473,27 +476,26 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 <section id="problem-2" class="level2">
 <h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
 <p>The dataset below includes data simulated from <a href="https://academic.oup.com/cercor/article/28/8/2959/4996558?fbclid=IwAR3I9IcKIlGqDzW-GDzF7v0ZWGO0mPx2RP8raCWDUJS7nWVEMsk8yY3wLlw&amp;login=false">Ritchie et al 2018</a>, including the total brain <code>volume</code> and <code>sex</code> of 5216 subjects. Suppose you are interested in just one sex. Filter the data to include only male or only female participants (data scientists choice!). Explore these data with a histogram and use <code>summarise()</code> to report both paramteric and nonparamteric summary statistics.</p>
+<blockquote class="blockquote">
+<p>Note that your research assistant has accidentally coded sex female as <code>NA</code>. You’ll need to solve this issue with your dplyr skills!</p>
+</blockquote>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">"http://kathrynschuler.com/datasets/brain_volume.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="problem-3" class="level2">
 <h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
 <p>Continuing with your filtered brain volume data, use <code>infer</code> to construct the bootstrap sampling distribution of the mean brain volume and quantify the spread of the distribution with standard error. Create a visualization that includes a histogram of the distribution and a shaded confidence interval with the standard error you computed.</p>
-<!-- ## Problem 4
-
-- hypothesis testing; use all the data, is there a difference between sexes? Compute the MEDIAN -->
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Under Construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>More problems will be added by Sunday night! You can start work on the first 3 now.</p>
-</div>
-</div>
+</section>
+<section id="problem-4" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
+<p>Suppose you now want to know whether there is a difference in <em>median</em> brain volume between the sexes. Use <code>infer</code> to construct the null distribution and to compute the observed difference in medians. Visualize the null distribution and shade the p-value, including the observed difference in medians. Return the p-value. Should you reject the null hypothesis? Why or why not?</p>
+</section>
+<section id="problem-5" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
+<p>Suppose you asked each participant to think of a number (integer) between 1 and 100. Assume each participant is equally likely to select a given number. Add a column to the brain volume data that samples from this distribution for all 5216 participants. Coerce this column to an integer if necessary. Explore this new variable with a histogram and summary statistics appropriate for this distribution.</p>
+</section>
+<section id="problem-6" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+<p>Suppose you now want to know whether participant brain volume is correlated with the random number they selected. Explore this relationship with a scatter plot. Use <code>infer</code> to construct the null distribution and to compute the observed correlation. Visualize the null distribution and shade the p-value, including the observed correlation. Return the p-value. Should you reject the null hypothesis? Why or why not?</p>
 
 
 </section>

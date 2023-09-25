@@ -4,9 +4,13 @@ author: "Katie Schuler"
 date: 2023-09-21
 ---
 
+::: {.callout-note title="Acknowledgement"}
+These notes are inspired by a MATLAB course by Kendrick Kay
+:::
+
 ## Exploring a simple dataset
 
-Suppose we measure a single quantity of interest: the brain volume of human adults (the simplest possible dataset!). How do we explore these data?
+Suppose we measure a single quantity of interest (the simplest possible dataset!): the brain volume of human adults. How do we explore these data?
 
 We can create a visual summary of our dataset with a **histogram**. A histogram plots the distribution of a set of data, which allows us to get a quick visual of the data: formally we have plotted the the frequency distribution (count) of the data, but this also gives a sense of the central tendency and variability in our dataset.
 
@@ -68,6 +72,8 @@ The probability distributions we've discussed so far are considered "parametric"
 - `rnorm(1000, mean=5, sd=1)` returns n **random numbers** generated from the distribution
 
 To use another distribution, change the function's suffix to the name of the distribution and the parameters to those that define the distribution. For example, to generate n random numbers from a uniform distribution with a min of 1 and a max of 5, run `runif(n, min=0, max=1)`
+
+What if the data does not meet the assumptions of the Gaussian distribution? One option is to choose another parametric probability distribution (run `help(Distributions)` for a full list of available distributions). Another is to use a nonparametric approach, where the probability distribution is not determined by parameters but is instead determined by the data.
 
 <!-- ## Standard deviation
 

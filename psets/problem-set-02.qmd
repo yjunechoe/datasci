@@ -46,6 +46,8 @@ Suppose you want to simulate data for the age at which typically developing babi
 
 The dataset below includes data simulated from [Ritchie et al 2018](https://academic.oup.com/cercor/article/28/8/2959/4996558?fbclid=IwAR3I9IcKIlGqDzW-GDzF7v0ZWGO0mPx2RP8raCWDUJS7nWVEMsk8yY3wLlw&login=false), including the total brain `volume` and `sex` of 5216 subjects. Suppose you are interested in just one sex. Filter the data to include only male or only female participants (data scientists choice!). Explore these data with a histogram and use `summarise()` to report both paramteric and nonparamteric summary statistics. 
 
+> Note that your research assistant has accidentally coded sex female as `NA`. You'll need to solve this issue with your dplyr skills!
+
 ```r
 "http://kathrynschuler.com/datasets/brain_volume.csv"
 ```
@@ -54,12 +56,14 @@ The dataset below includes data simulated from [Ritchie et al 2018](https://acad
 
 Continuing with your filtered brain volume data, use `infer` to construct the bootstrap sampling distribution of the mean brain volume and quantify the spread of the distribution with standard error. Create a visualization that includes a histogram of the distribution and a shaded confidence interval with the standard error you computed.
 
-<!-- ## Problem 4
+## Problem 4
 
-- hypothesis testing; use all the data, is there a difference between sexes? Compute the MEDIAN -->
+Suppose you now want to know whether there is a difference in *median* brain volume between the sexes. Use `infer` to construct the null distribution and to compute the observed difference in medians. Visualize the null distribution and shade the p-value, including the observed difference in medians. Return the p-value. Should you reject the null hypothesis? Why or why not? 
 
+## Problem 5 
 
+Suppose you asked each participant to think of a number (integer) between 1 and 100. Assume each participant is equally likely to select a given number. Add a column to the brain volume data that samples from this distribution for all 5216 participants. Coerce this column to an integer if necessary. Explore this new variable with a histogram and summary statistics appropriate for this distribution.
 
-::: {.callout-warning title="Under Construction"}
-More problems will be added by Sunday night! You can start work on the first 3 now.
-:::
+## Problem 6 
+
+Suppose you now want to know whether participant brain volume is correlated with the random number they selected. Explore this relationship with a scatter plot. Use `infer` to construct the null distribution and to compute the observed correlation. Visualize the null distribution and shade the p-value, including the observed correlation. Return the p-value. Should you reject the null hypothesis? Why or why not? 
