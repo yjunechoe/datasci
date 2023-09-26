@@ -1,6 +1,6 @@
 ---
 title:  "Problem set 2"
-subtitle: "due Sunday, October 01, 2023 at 11:59pm"
+subtitle: "due Tuesday, October 03, 2023 at 11:59pm"
 # author: 
 #     name: Katie Schuler
 #     affiliation: University of Pennsylvania

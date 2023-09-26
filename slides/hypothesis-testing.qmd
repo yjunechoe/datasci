@@ -1,0 +1,205 @@
+---
+title: "Hypothesis testing"
+subtitle: "Data Science for Studying Language and the Mind"
+author: Katie Schuler
+date: 09-26-2023
+echo: true
+format: 
+    revealjs:
+        theme: dark
+        slide-number: true
+        incremental: true 
+        footer: "[https://kathrynschuler.com/datasci](https://kathrynschuler.com/datasci/)"
+---
+
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(infer)
+
+theme_set(theme_classic(base_size = 20))
+set.seed(60)
+
+```
+
+# Explore a simple dataset 
+
+## Title
+
+
+
+```{r}
+#| echo: false 
+
+females <- tibble(
+    volume = rnorm(5625, mean = 1200, sd = 92),
+    sex = "female"
+)
+
+males <- tibble(
+    volume = rnorm(5625, mean = 1220, sd = 98),
+    sex = "male"
+)
+
+penn_pop <- bind_rows(males, females)
+penn_sample <- penn_pop %>% slice_sample(n = 200)
+penn_sample_f <- filter(penn_sample, sex == "female")
+penn_sample_m <- filter(penn_sample, sex == "male")
+
+mean_f <- mean(penn_sample_f$volume)
+mean_m <- mean(penn_sample_m$volume)
+
+```
+
+
+
+Sampling variability or difference in means?
+
+```{r}
+#| echo: false
+ggplot(penn_pop, aes(x = volume)) +
+    geom_histogram(color = "black", fill = "white", position="identity") +
+    geom_rug(data = penn_sample_f, aes(x = volume, color = sex)) +
+    geom_vline(xintercept = mean_f, linewidth=2, color = "red")
+  
+```
+
+
+
+## Title 
+
+```{r}
+#| echo: false
+ggplot(penn_pop, aes(x = volume)) +
+    geom_histogram(color = "black", fill = "white", position="identity") +
+    geom_rug(data = penn_sample, aes(x = volume, color = sex))+
+    geom_vline(xintercept = mean_f, linewidth=2, color = "red") +
+    geom_vline(xintercept = mean_m, linewidth=2, color = "blue") +
+    scale_color_manual(values = c("red", "blue"))
+  
+```
+
+. . . 
+
+Observed difference in means
+```{r}
+#| echo: false
+(observed_diff <- mean_m - mean_f)
+```
+
+## Which can we reason about? 
+
+```{r}
+#| echo: false
+ggplot(penn_pop, aes(x = volume)) +
+    geom_histogram(color = "black", fill = "white", position="identity") +
+    geom_rug(data = penn_sample, aes(x = volume, color = sex))+
+    geom_vline(xintercept = mean_f, linewidth=2, color = "red") +
+    geom_vline(xintercept = mean_m, linewidth=2, color = "blue") +
+    scale_color_manual(values = c("red", "blue"))
+  
+```
+
+- $H_0$: Not different, just sampling variability 
+- $H_1$: Penn males have bigger brains than Penn females
+
+## Logic of hypothesis testing {.smaller}
+
+(1) Assume the null hypothesis is true, then draw out the consequences of that assumption via formal `deductive reasoning`
+    - If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+
+(2) Compare our observed value of test statistic $S$ to the distribution $P$ and make one of two possible `inferences`:
+    - $S$ is a plausible outcome from $P$ `fail to reject`
+    - $S$ is not a plausible outcome from $P$ `reject`
+
+## 1 Deductive reasoning {.smaller}
+
+If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+
+```{r}
+#| echo: false
+
+null_distribution <- penn_sample %>% 
+  specify(volume ~ sex) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = 1000, type = "permute") %>%
+  calculate(stat = "diff in means", order = c("male", "female")) 
+
+null_distribution %>% 
+  filter(replicate == 1) %>%
+  ggplot(aes(x = stat)) +
+  geom_rug(linewidth = 2, color = "black", alpha = 0.5) +
+    coord_cartesian(xlim = c(-60, 60))
+
+```
+
+## 1 Deductive reasoning {.smaller}
+
+If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+
+```{r}
+#| echo: false
+
+
+null_distribution %>% 
+  filter(replicate == 1 | replicate == 10) %>%
+  ggplot(aes(x = stat)) +
+  geom_rug(linewidth = 1, color = "black", alpha = 0.5) +
+  coord_cartesian(xlim = c(-60, 60))
+
+```
+
+## 1 Deductive reasoning {.smaller}
+
+If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+
+```{r}
+#| echo: false
+
+
+null_distribution %>% 
+ # filter(replicate ) %>%
+  ggplot(aes(x = stat)) +
+  geom_rug(linewidth = 1, color = "black", alpha = 0.5) 
+
+```
+
+## 1 Deductive reasoning {.smaller}
+
+If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+
+```{r}
+#| echo: false
+
+
+null_distribution %>% visualize() + geom_rug(aes(x = stat)) 
+```
+
+## 2 Inference {.smaller}
+
+Compare our observed value of test statistic $S$ to the distribution $P$ and ask: was it a plausible outcome? 
+
+```{r}
+#| echo: false
+
+pval <- null_distribution %>%
+    get_p_value(obs_stat = observed_diff, direction = "both")
+
+null_distribution %>% visualize() + geom_rug(aes(x = stat))  +
+  shade_p_value(obs_stat = observed_diff, direction = "both") +
+  labs(caption = "p<0.05") +
+  annotate(geom = "text", x = observed_diff +8, y = 175, label = pval$p_value, color = "red", size = 6)
+
+```
+
+
+## Null hypothesis 
+
+```{r}
+#| echo: false
+ggplot(penn_pop, aes(x = sex, y = volume, fill = sex)) +
+    geom_boxplot()
+```
