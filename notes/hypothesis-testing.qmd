@@ -171,6 +171,14 @@ Finally, if the p-value is small enough — less than some threshold we decide u
 
 ![This figure borrowed from reddit can help you remember the error types. (Null hypothesis here is "NOT pregnant")](/include/figures/type1-type2-errors.png)
 
+::: {.callout-tip collapse="true"}
+## Do you know the "The boy who cried wolf" story?
+
+Remembering which error is I or II can be tricky. June likes to analogize it to "The boy who cried wolf" to remember errors in chronological order:
+
+- **Type I** error is the *first* thing that happens: Townspeople think there is a wolf, but it's not actually there! (**false positive** - wrongly thinking that the effect is *present*)
+- **Type II** error is the *second* thing that happens: The wolf actually appears but townspeople don't believe it! (**false negative** - wrongly thinking that the effect is *absent*)
+:::
 
 ## There is only one test
 
