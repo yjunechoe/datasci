@@ -21,7 +21,7 @@ Week | Day | Topic | Resources |
 |  4 | 09-19 |  [Quiz 1](/quizzes/quiz-01.qmd) | [study guide](/quizzes/quiz-study-guide.qmd), [solutions](/quizzes/quiz-01-solutions.qmd) |
 | 4 | 09-20 |  [Sampling distribution](/notes/sampling-distribution.qmd) | [slides](/slides/sampling-distribution.qmd), [lab](/labs/lab-04.qmd) | 
 |  5 | 09-26 | **Class cancelled** |  | 
-|  5 | 09-28 |  [Hypothesis testing](/notes/hypothesis-testing.qmd) | [slides](/slides/hypothesis-testing.qmd) | 
+|  5 | 09-28 |  [Hypothesis testing](/notes/hypothesis-testing.qmd) | [slides](/slides/hypothesis-testing.qmd), [demo](https://colab.research.google.com/drive/1x9vpKr2zqnDEzsMnBfQvU2h5h_X5kzN_) | 
 | 5 | 10-03 |  [Problem set 2](/psets/problem-set-02.qmd) || 
 | 6 | 10-03 |  Model specification | | 
 | 6 | 10-05 |  Model fitting | | 
