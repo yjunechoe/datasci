@@ -25,9 +25,8 @@ set.seed(60)
 
 ```
 
-# Explore a simple dataset 
+# Explore a more complex dataset 
 
-## Title
 
 
 
@@ -54,22 +53,46 @@ mean_m <- mean(penn_sample_m$volume)
 
 ```
 
+## Last week: single quantity
 
-
-Sampling variability or difference in means?
+We explored brain volume 
 
 ```{r}
-#| echo: false
-ggplot(penn_pop, aes(x = volume)) +
-    geom_histogram(color = "black", fill = "white", position="identity") +
-    geom_rug(data = penn_sample_f, aes(x = volume, color = sex)) +
-    geom_vline(xintercept = mean_f, linewidth=2, color = "red")
-  
+penn_sample %>%
+  ggplot(aes(x = volume)) +
+  geom_histogram(color = "gray")
 ```
 
+## This week: two quantities
 
+Brain volume AND sex 
 
-## Title 
+## Visualize with boxplot {.smaller}
+
+A useful visualization for a categorical variable is a boxplot: 
+
+```{r}
+penn_sample %>%
+  ggplot(aes(y = volume, x = sex)) +
+  geom_boxplot(aes(color = sex))
+```
+
+## Observed difference in means {.smaller}
+
+Do the two sexes differ in mean brain volume?
+
+```{r}
+obs_diff <- penn_sample %>% 
+  specify(response = volume, explanatory = sex) %>%
+  calculate(stat = "diff in means", order = c("male", "female"))
+
+obs_diff
+```
+
+## Observed difference in means {.smaller}
+
+Sampling variability or true difference in means?
+
 
 ```{r}
 #| echo: false
@@ -82,124 +105,183 @@ ggplot(penn_pop, aes(x = volume)) +
   
 ```
 
-. . . 
 
-Observed difference in means
-```{r}
-#| echo: false
-(observed_diff <- mean_m - mean_f)
-```
+# Hypothesis testing framework
 
-## Which can we reason about? 
+## 3-step process {.smaller}
 
-```{r}
-#| echo: false
-ggplot(penn_pop, aes(x = volume)) +
-    geom_histogram(color = "black", fill = "white", position="identity") +
-    geom_rug(data = penn_sample, aes(x = volume, color = sex))+
-    geom_vline(xintercept = mean_f, linewidth=2, color = "red") +
-    geom_vline(xintercept = mean_m, linewidth=2, color = "blue") +
-    scale_color_manual(values = c("red", "blue"))
-  
-```
+To determine whether the brains of male and female Penn students differ with respect to the mean, we can use a framework for decision making called **hypothesis testing**. 
 
-- $H_0$: Not different, just sampling variability 
-- $H_1$: Penn males have bigger brains than Penn females
+1. First we pose a **null hypothesis** that our result is due to nothing but chance (sampling variability)
+2. Then we ask: if the null hypothesis is true, how likely is our observed pattern of results? This liklihood is the **p-value**. 
+3. Finally, if the p-value is less some threshold we decide upon (<0.05) then we **reject** the null hypothesis.
 
-## Logic of hypothesis testing {.smaller}
+## Step 1: Pose the null hypothesis {.smaller}
 
-(1) Assume the null hypothesis is true, then draw out the consequences of that assumption via formal `deductive reasoning`
-    - If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+We pose a null hypothesis for practical reasons: it is the hypothesis for which we can simulate data. We can construct the sampling distribution for a hypothetical world in which our observed value is due to chance (we call this the **null distribution**). 
 
-(2) Compare our observed value of test statistic $S$ to the distribution $P$ and make one of two possible `inferences`:
-    - $S$ is a plausible outcome from $P$ `fail to reject`
-    - $S$ is not a plausible outcome from $P$ `reject`
+- To construct the null distribution we can use a process called **randomization**. 
+- Randomization is similar to bootstrapping except, on each repeat, we will shuffle the sex and randomly assigning it to each participant. 
+- This simulates a world in which there is no relationship between brain volume and sex.
 
-## 1 Deductive reasoning {.smaller}
-
-If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+## Step 1: Pose the null hypothesis {.smaller}
 
 ```{r}
 #| echo: false
+
 
 null_distribution <- penn_sample %>% 
-  specify(volume ~ sex) %>%
+  specify(response = volume, explanatory = sex) %>%
   hypothesize(null = "independence") %>%
   generate(reps = 1000, type = "permute") %>%
   calculate(stat = "diff in means", order = c("male", "female")) 
 
 null_distribution %>% 
-  filter(replicate == 1) %>%
-  ggplot(aes(x = stat)) +
-  geom_rug(linewidth = 2, color = "black", alpha = 0.5) +
-    coord_cartesian(xlim = c(-60, 60))
-
+  visualize() + 
+  labs(x = "stat (difference in means)")
 ```
 
-## 1 Deductive reasoning {.smaller}
+## Step 2: How likely is our observed pattern? {.smaller}
 
-If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+If the null hypothesis is true, how likely is our observed pattern of results? 
+
+- We can quantify this liklihood directly with the p-value: count the number of values in our null distribution that are more extreme than our observed value and divide that by the number of simulations we generated. 
+
+. . . 
+```{r}
+null_distribution %>% 
+  filter(abs(stat) > obs_diff$stat) %>%
+  summarise(p = n()/1000)
+```
+
+## Step 2: How likely is our observed pattern? {.smaller}
+
+Or `infer` can handle this for us with the `get_p_value()` function:
+
+```{r}
+null_distribution %>%
+  get_p_value(obs_stat = obs_diff, direction = "both")
+```
+
+- A large p-value means our observed value is very likely under the null hypotheisis. 
+- A small p-value means our observed value is very unlikely under the null hypothsis. 
+
+## Step 2: How likely is our observed pattern? {.smaller}
 
 ```{r}
 #| echo: false
 
 
 null_distribution %>% 
-  filter(replicate == 1 | replicate == 10) %>%
-  ggplot(aes(x = stat)) +
-  geom_rug(linewidth = 1, color = "black", alpha = 0.5) +
-  coord_cartesian(xlim = c(-60, 60))
+  visualize() + 
+  shade_p_value(obs_stat = obs_diff, direction = "two-sided") +
+  labs(x = "stat (difference in means)")
 
 ```
 
-## 1 Deductive reasoning {.smaller}
+## Step 3: Decide whether to reject {.smaller}
 
-If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+Finally, if the p-value is small enough — less than some threshold we decide upon — we reject the null hypothesis. By convention we consider a p-value less than 0.05 to be implausible enough that we can reject the null hypothesis. 
 
 ```{r}
 #| echo: false
 
 
 null_distribution %>% 
- # filter(replicate ) %>%
-  ggplot(aes(x = stat)) +
-  geom_rug(linewidth = 1, color = "black", alpha = 0.5) 
+  visualize() + 
+  shade_p_value(obs_stat = obs_diff, direction = "two-sided") +
+  labs(x = "stat (difference in means)")
 
 ```
 
-## 1 Deductive reasoning {.smaller}
+## Step 3: Decide whether to reject {.smaller}
 
-If $H_0$ is true, then test statistics $S$ will be drawn from probability distribution $P$
+Note that obtaining our observed value is *implausible* under the null, but not *impossible*. In other words, our decision to reject (or not) could be wrong!
+
+- When we reject a null hypothesis that was actually true, we call it a **type I error**.
+- When we fail to reject a null hypothesis that was actually false, we call it a **type II error** 
+
+## Remembering the error types {.smaller}
+
+![This figure borrowed from reddit can help you remember the error types. (Null hypothesis here is "NOT pregnant")](/include/figures/type1-type2-errors.png)
+
+# Demo the whole process
+
+# There is only one test
+
+## There is only one test {.smaller}
+
+If you understand this framework, you can understand any hypothesis test (t-test, chi-squared, etc).
+
+![Figure borrowed from Modern Dive textbook](/include/figures/one-test.png){fig-align="center" width=50%}
+
+
+## Two ways to simulate data {.smaller}
+
+Remember from last week that there are two ways we can construct a sampling distribution (simulate data):
+
+1. **Nonparametrically**, via brute computational force (simulating many repeats of the same experiment with bootstrapping or randomization) 
+2. **Parametrically**, by assuming the data were sampled from known probability distribution and working out what happens theoretically under that distribution. 
+
+## Demo with t-test 
+
+# Exploring relationships
 
 ```{r}
-#| echo: false
-
-
-null_distribution %>% visualize() + geom_rug(aes(x = stat)) 
+library(languageR)
 ```
 
-## 2 Inference {.smaller}
+## Visualize with scatter plot {.smaller}
 
-Compare our observed value of test statistic $S$ to the distribution $P$ and ask: was it a plausible outcome? 
+We can explore the relationship between two quantities visually with a **scatter plot**.
 
 ```{r}
-#| echo: false
-
-pval <- null_distribution %>%
-    get_p_value(obs_stat = observed_diff, direction = "both")
-
-null_distribution %>% visualize() + geom_rug(aes(x = stat))  +
-  shade_p_value(obs_stat = observed_diff, direction = "both") +
-  labs(caption = "p<0.05") +
-  annotate(geom = "text", x = observed_diff +8, y = 175, label = pval$p_value, color = "red", size = 6)
+#| layout-ncol: 2
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point()
 
 ```
 
+## Possible relationships {.smaller}
 
-## Null hypothesis 
+If there is no relationship between the variables, we say they are **independent**: knowing the value of one variable provides no information about the other variable.
+
+. . . 
+
+If there *is* some relationship between the variables, we can consider two types:
+
+1. There may be a **linear relationship** between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). 
+2. Or a **nonlinear relationship**. Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g. a U-shaped curve).
+
+# Correlation
+
+## Correlation {.smaller}
+
+One way to quantify linear relationships is with **correlation ($r$)**. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive. 
+
+![Figure borrowed from iStock photos](/include/figures/correlation.jpeg){fig-align="center" width=50%}
+
+## Correlation formally {.smaller}
+
+Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then computing the average product of each variable: 
+
+$r=\frac{\sum_{i=1}^n (\frac{x_i - \bar{x}}{sd(x)})(\frac{y_i - \bar{y}}{sd(y)})}{n}$
+
+## Correlation with R {.smaller}
+
+Or we can use R's built in correlation function: `cor(x,y)`
 
 ```{r}
-#| echo: false
-ggplot(penn_pop, aes(x = sex, y = volume, fill = sex)) +
-    geom_boxplot()
+cor(ratings$Frequency, ratings$meanFamiliarity)
 ```
+
+## Correlation and sampling variability
+
+Just like the mean — and all other test statistics! — *$r$* is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way we did for the mean last week: construct the sampling distribution of the correlation via bootstrapping and compute a confidence interval. 
+
+## Correlation and hypothesis testing
+
+How do we test whether the correlation we observed in the data is significantly different from zero? We can use hypothesis testing (as learned today)! Here our null hypothesis that there is no relationship between the variables (they are **independent**). 
+
+# Demo with correlation

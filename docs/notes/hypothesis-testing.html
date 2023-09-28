@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-09-26">
+<meta name="dcterms.date" content="2023-09-28">
 
 <title>LING 0700 | PSYC 2314 - Hypothesis testing</title>
 <style>
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,6 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../notes/sampling-distribution.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -274,7 +309,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -300,15 +335,15 @@ window.onload = function() {
  <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes/hello-world.html" rel="" target="">
+    <a class="nav-link active" href="../notes/hello-world.html" rel="" target="" aria-current="page">
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/lab-01.html" rel="" target="">
+    <a class="nav-link" href="../labs/lab-04.html" rel="" target="">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../psets/problem-set-01.html" rel="" target="">
+    <a class="nav-link" href="../psets/problem-set-02.html" rel="" target="">
  <span class="menu-text">Problem sets</span></a>
   </li>  
   <li class="nav-item">
@@ -321,22 +356,89 @@ window.onload = function() {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/hypothesis-testing.html">Hypothesis testing</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello, world!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/r-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-importing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data importing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/sampling-distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling distribution</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/hypothesis-testing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Hypothesis testing</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link active" data-scroll-target="#hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</a></li>
-  <li><a href="#p-values" id="toc-p-values" class="nav-link" data-scroll-target="#p-values"><span class="header-section-number">2</span> p-values</a></li>
-  <li><a href="#nonparametric-approaches-to-p-values" id="toc-nonparametric-approaches-to-p-values" class="nav-link" data-scroll-target="#nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</a></li>
-  <li><a href="#there-is-only-one-test" id="toc-there-is-only-one-test" class="nav-link" data-scroll-target="#there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</a></li>
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">6</span> Correlation</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7</span> Further reading</a></li>
+  <li><a href="#hypothesis-testing-framework" id="toc-hypothesis-testing-framework" class="nav-link active" data-scroll-target="#hypothesis-testing-framework"><span class="header-section-number">1</span> Hypothesis testing framework</a>
+  <ul class="collapse">
+  <li><a href="#step-1-pose-the-null-hypothesis" id="toc-step-1-pose-the-null-hypothesis" class="nav-link" data-scroll-target="#step-1-pose-the-null-hypothesis">Step 1: Pose the null hypothesis</a></li>
+  <li><a href="#step-2-how-likely-is-our-observed-pattern" id="toc-step-2-how-likely-is-our-observed-pattern" class="nav-link" data-scroll-target="#step-2-how-likely-is-our-observed-pattern">Step 2: How likely is our observed pattern?</a></li>
+  <li><a href="#step-3-decide-whether-to-reject-the-null" id="toc-step-3-decide-whether-to-reject-the-null" class="nav-link" data-scroll-target="#step-3-decide-whether-to-reject-the-null">Step 3: Decide whether to reject the null</a></li>
+  </ul></li>
+  <li><a href="#there-is-only-one-test" id="toc-there-is-only-one-test" class="nav-link" data-scroll-target="#there-is-only-one-test"><span class="header-section-number">2</span> There is only one test</a>
+  <ul class="collapse">
+  <li><a href="#t-test-example" id="toc-t-test-example" class="nav-link" data-scroll-target="#t-test-example">t-test example</a></li>
+  </ul></li>
+  <li><a href="#exploring-relationships" id="toc-exploring-relationships" class="nav-link" data-scroll-target="#exploring-relationships"><span class="header-section-number">3</span> Exploring relationships</a></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">4</span> Correlation</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5</span> Further reading</a></li>
   </ul>
 </nav>
     </div>
@@ -362,7 +464,7 @@ window.onload = function() {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2023</p>
+      <p class="date">September 28, 2023</p>
     </div>
   </div>
   
@@ -372,112 +474,416 @@ window.onload = function() {
 
 </header>
 
-<div class="callout callout-style-simple callout-warning callout-titled" title="Under Construction">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell">
+<details>
+<summary>Setup code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the packages we need</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># set the theme of all figures</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">14</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># set a seed so we get the same random stuff every time</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">60</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># generate some data for female penn students</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>females <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">volume =</span> <span class="fu">rnorm</span>(<span class="dv">5625</span>, <span class="at">mean =</span> <span class="dv">1200</span>, <span class="at">sd =</span> <span class="dv">92</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="st">"female"</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># generate some data for male penn students</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>males <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">volume =</span> <span class="fu">rnorm</span>(<span class="dv">5625</span>, <span class="at">mean =</span> <span class="dv">1220</span>, <span class="at">sd =</span> <span class="dv">98</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">sex =</span> <span class="st">"male"</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># make the whole population </span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>penn_pop <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(males, females)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co"># sample 200 participants from this population</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>penn_sample <span class="ot">&lt;-</span> penn_pop <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">200</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># get just the female and just the male participants</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># to use in figures </span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>penn_sample_f <span class="ot">&lt;-</span> <span class="fu">filter</span>(penn_sample, sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>penn_sample_m <span class="ot">&lt;-</span> <span class="fu">filter</span>(penn_sample, sex <span class="sc">==</span> <span class="st">"male"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the mean to use in some figures </span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>mean_f <span class="ot">&lt;-</span> <span class="fu">mean</span>(penn_sample_f<span class="sc">$</span>volume)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>mean_m <span class="ot">&lt;-</span> <span class="fu">mean</span>(penn_sample_m<span class="sc">$</span>volume)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="callout-title-container flex-fill">
-Under Construction
+<p>Last week we explored a simple dataset in which we measured brain volume for a sample of Penn students and computed the mean. Suppose we now want to take into account the sex of the students. What can we do with these data?</p>
+<p>The first thing we should do is visualize our data. A useful visualization for a categorical variable is a boxplot:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penn_sample <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> volume, <span class="at">x =</span> sex)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">color =</span> sex))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-
+<p>One thing we might want to ask is whether the two sexes differ in mean brain volume. Let’s compute the difference we observe in our sample with <code>infer</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> penn_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> volume, <span class="at">explanatory =</span> sex) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>obs_diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: volume (numeric)
+Explanatory: sex (factor)
+# A tibble: 1 × 1
+   stat
+  &lt;dbl&gt;
+1  19.2</code></pre>
 </div>
 </div>
-<ul>
-<li>Suppose we have one variable and two conditions: the height of human adults by gender.
-<ul>
-<li>This is usually what we want to do in science / with models</li>
-<li>We will start in this simple place on our way to more complex</li>
-</ul></li>
-<li>Are men taller than women?
-<ul>
-<li>Is there a difference in means? How do we know?</li>
-</ul></li>
-</ul>
-<section id="hypothesis-testing" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">1</span> Hypothesis testing</h2>
-<ul>
-<li>We can’t! At least we can’t quantify it. Intead we can use a cool statistical approach to help us: hypothesis test</li>
-<li>How it works: pos a NULL hypothesis?
-<ul>
-<li>why null? we need to quantify it</li>
-<li>ask if the null were true, how likely is that we’d observe this result?</li>
-</ul></li>
-</ul>
-</section>
-<section id="p-values" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="p-values"><span class="header-section-number">2</span> p-values</h2>
-<ul>
-<li>One way to quantify how likely this is with a ttest.
-<ul>
-<li>t-tests are parametric — we figure out the probability theoretically based on an existing distribution</li>
-<li>computes a p-value, which quantifies how likely it is we’d observe some result</li>
-<li>does the t-test construct the null? I think yes, theoretically, or because properties are known.</li>
-</ul></li>
-<li>Interpretation of p-value
-<ul>
-<li>reject the null (p &lt; some threshold)</li>
-<li>fail to reject the null (p &gt; some threshold)</li>
-</ul></li>
-</ul>
-</section>
-<section id="nonparametric-approaches-to-p-values" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="nonparametric-approaches-to-p-values"><span class="header-section-number">3</span> Nonparametric approaches to p-values</h2>
-<ul>
-<li>But what if we aren’t doing the mean? Or the distribution isn’t normal? We can use the same principle of the sampling distribution. Two approaches to construct the null distribution from the data:
-<ul>
-<li>Resampling: one appraoch: shuffle around, then get the mean, construct null distribution</li>
-<li>Bootstrapping: another approach: sample with replacement, get the mean, construct null distribution</li>
-<li>which one should we pick? see k</li>
-</ul></li>
-<li>p-value
-<ul>
-<li>how likely is the observed mean? with either of these null distributions we can use the confidence interval</li>
-<li>beforehand we set an alpha value (usually 0.05) which is the cutoff for what we think is likely/unlikely.</li>
-</ul></li>
-</ul>
-</section>
-<section id="there-is-only-one-test" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="there-is-only-one-test"><span class="header-section-number">4</span> There is only one test</h2>
-<p>(insert image of there is only one test)</p>
-<ul>
-<li>Allows us to appreciate that, though there is a myriad of statistical tests available, there is really only one test:
-<ul>
-<li>descibe the flow chart</li>
-</ul></li>
-<li>We can use the infer package to perform this kind of hypothesis testing
-<ul>
-<li>Show example.</li>
-</ul>
-<h2 id="exploring-relationships" data-number="5" class="anchored"><span class="header-section-number">5</span> Exploring relationships</h2></li>
-</ul>
-<p>Last week we explored data in which we measured a single quantity: brain size. We explored this dataset with a histogram and modeled it with a single value (mean). Suppose we have a slightly more complex dataset in which we measure both brain size and body mass (two quantities!). We might want to know whether there is a relationship between brain size and body mass. We can explore the relationship between two quantities visually with a <strong>scatter plot</strong>.</p>
-<p>If there is no relationship between the variables, we say they are <strong>independent</strong>. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In our example, knowing an animal’s body size provides no information about their brain size. If there <em>is</em> some relationship between the variables, we can consider two types:</p>
+<p>Last week we saw that the mean of any sample drawn from the population will be subject to sampling variability. The same situation applies here: the difference in means will also differ depending on our sample. Thus, even if we find a difference in means, that difference could be due to sampling error (not any true difference in the population).</p>
+<section id="hypothesis-testing-framework" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="hypothesis-testing-framework"><span class="header-section-number">1</span> Hypothesis testing framework</h2>
+<p>To determine whether the brains of male and female Penn students differ with respect to the mean, we can use a framework for decision making called <strong>hypothesis testing</strong>. We can think of this as a 3-step process:</p>
 <ol type="1">
-<li>There may be a <strong>linear relationship</strong> between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between brain size and body mass: as body mass increases, brain size also increases.</li>
+<li>First we pose a <strong>null hypothesis</strong> that our result is due to nothing but chance (sampling variability)</li>
+<li>Then we ask: if the null hypothesis is true, how likely is our observed pattern of results? This liklihood is the <strong>p-value</strong>.</li>
+<li>Finally, if the p-value is less some threshold we decide upon (&lt;0.05) then we <strong>reject</strong> the null hypothesis.</li>
+</ol>
+<section id="step-1-pose-the-null-hypothesis" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-pose-the-null-hypothesis">Step 1: Pose the null hypothesis</h3>
+<p>We pose a null hypothesis for practical reasons: it is the hypothesis for which we can simulate data. We can construct the sampling distribution for a hypothetical world in which our observed value is due to chance (we call this the <strong>null distribution</strong>).</p>
+<ul>
+<li>To construct the null distribution we can use a process called <strong>randomization</strong>.</li>
+<li>Randomization is similar to bootstrapping except, on each repeat, we will shuffle the sex and randomly assigning it to each participant.</li>
+<li>This simulates a world in which there is no relationship between brain volume and sex.</li>
+</ul>
+<!-- We pose a null hypothesis for practical reasons. We want to avoid reasoning about the real world (full of unknowns!) and instead construct a hypothetical world where we can assume the hypothesis is true and draw out the consequences of that assumption with deductive reasoning:  -->
+<!-- > If hypothesis $H$ is true, then the test statistic $S$ will be drawn from probability distribution $P$
+
+- Our **test statistic $S$** is the observed difference in means between males and females in our sample of Penn students. 
+- Our **null hypothesis $H$** is that the difference in means is due to chance (nothing more than sampling variability). 
+- Our **probability distribution $P$** is the sampling distribution for the test statistic (here the difference in means) in our hypothetical null hypothesis world where the difference is due to nothing but chance (sampling variability)! This sampling distribution has a special name, the **null distribution**, and has the practical advantage that it is something we can simulate with our data. -->
+<div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="ot">&lt;-</span> penn_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> volume, <span class="at">explanatory =</span> sex) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>)) </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"stat (difference in means)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-how-likely-is-our-observed-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-how-likely-is-our-observed-pattern">Step 2: How likely is our observed pattern?</h3>
+<p>If the null hypothesis is true, how likely is our observed pattern of results? We can quantify this liklihood directly with the p-value: count the number of values in our null distribution that are more extreme than our observed value and divide that by the number of simulations we generated.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(stat) <span class="sc">&gt;</span> obs_diff<span class="sc">$</span>stat) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">p =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+      p
+  &lt;dbl&gt;
+1  0.24</code></pre>
+</div>
+</div>
+<p>Or <code>infer</code> can handle this for us with the <code>get_p_value()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> obs_diff, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.242</code></pre>
+</div>
+</div>
+<p>A large p-value means our observed value is very likely under the null hypotheisis. A small p-value means our observed value is very unlikely under the null hypothsis.</p>
+<div>
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>obs_diff <span class="ot">&lt;-</span> penn_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">observe</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    volume <span class="sc">~</span> sex,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"diff in means"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="sc">%&gt;%</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_diff, <span class="at">direction =</span> <span class="st">"two-sided"</span>) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"stat (difference in means)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-decide-whether-to-reject-the-null" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-decide-whether-to-reject-the-null">Step 3: Decide whether to reject the null</h3>
+<p>Finally, if the p-value is small enough — less than some threshold we decide upon — we reject the null hypothesis. By convention we consider a p-value less than 0.05 to be implausible enough that we can reject the null hypothesis (read more about <a href="https://inferentialthinking.com/chapters/11/3/Decisions_and_Uncertainty.html#historical-note-on-the-conventions">why 0.05</a>. Note that obtaining our observed value is <em>implausible</em> under the null, but not <em>impossible</em>. In other words, our decision to reject (or not) could be wrong!</p>
+<ul>
+<li>When we reject a null hypothesis that was actually true, we call it a <strong>type I error</strong>.</li>
+<li>When we fail to reject a null hypothesis that was actually false, we call it a <strong>type II error</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../include/figures/type1-type2-errors.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">This figure borrowed from reddit can help you remember the error types. (Null hypothesis here is “NOT pregnant”)</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="there-is-only-one-test" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="there-is-only-one-test"><span class="header-section-number">2</span> There is only one test</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../include/figures/one-test.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure borrowed from Modern Dive textbook</figcaption>
+</figure>
+</div>
+<p>Computer scientist Allen Downey famously dubbed the framework outlined above the “There is only one test” framework. It allows us to appreciate that, though there are a myriad of statistical tests available, there is really only one hypothesis test. If you understand this general framework, you can understand any hypothesis test (t-test, chi-squared, etc).</p>
+<p>Remember from last week that there are two ways we can construct a sampling distribution (simulate data):</p>
+<ol type="1">
+<li><strong>Nonparametrically</strong>, via brute computational force (simulating many repeats of the same experiment with bootstrapping or randomization)</li>
+<li><strong>Parametrically</strong>, by assuming the data were sampled from known probability distribution and working out what happens theoretically under that distribution.</li>
+</ol>
+<p>In the approach above, I’ve demonstrated the nonparametric way. But we could have opted for a parametric test instead. Let’s illustrate with a t-test.</p>
+<section id="t-test-example" class="level3">
+<h3 class="anchored" data-anchor-id="t-test-example">t-test example</h3>
+<p>We can use R’s built in function to perform a t-test to compare two means.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(penn_sample_m<span class="sc">$</span>volume, penn_sample_f<span class="sc">$</span>volume)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  penn_sample_m$volume and penn_sample_f$volume
+t = 1.1921, df = 197.16, p-value = 0.2347
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -12.56993  50.99280
+sample estimates:
+mean of x mean of y 
+ 1220.573  1201.362 </code></pre>
+</div>
+</div>
+<p>Under the hood, the <code>t.test()</code> is performing the same “one test”, it is just constructing the null distribution parametrically (assuming a known probability distribution defined by parameters). We can see this with <code>infer</code> by asking it to <code>assume()</code> a distribution rather than <code>generate()</code> data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the observed value (t)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>obs_val <span class="ot">&lt;-</span> penn_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> volume, <span class="at">explanatory =</span> sex) <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"t"</span>,<span class="at">order =</span> <span class="fu">c</span>(<span class="st">"male"</span>, <span class="st">"female"</span>)) </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>obs_val</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: volume (numeric)
+Explanatory: sex (factor)
+# A tibble: 1 × 1
+   stat
+  &lt;dbl&gt;
+1  1.19</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assume the t distribution </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>null_distribution_theo <span class="ot">&lt;-</span> penn_sample <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> volume, <span class="at">explanatory =</span> sex) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assume</span>(<span class="at">distribution =</span><span class="st">"t"</span>) </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># return the p value </span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>null_distribution_theo <span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">get_p_value</span>(obs_val, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.235</code></pre>
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualize the theoretical distribution</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>null_distribution_theo <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(obs_val, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exploring-relationships" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="exploring-relationships"><span class="header-section-number">3</span> Exploring relationships</h2>
+<p>So far we explored data in which we measured a single quantity: brain volume. Suppose we have a slightly more complex dataset in which we measure two quantities! Let’s use the <code>ratings</code> data from the <code>languageR</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(languageR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We might want to know whether there is a relationship between two variables. We can explore the relationship between two quantities visually with a <strong>scatter plot</strong>.</p>
+<div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Frequency, <span class="at">y =</span> meanFamiliarity)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>If there is no relationship between the variables, we say they are <strong>independent</strong>. We can think of independence in the following way: knowing the value of one variable provides no information about the other variable. In the <code>ratings</code> data, that would mean the word’s actual frequency provides provides no information about the participants mean familiarity rating. If there <em>is</em> some relationship between the variables, we can consider two types:</p>
+<ol type="1">
+<li>There may be a <strong>linear relationship</strong> between the variables. When one goes up the other goes up (positive) or when one goes up the other goes down (negative). In our example, there is a linear relationship between meanFamiliairity and Frequency: as Frequency increases, meanFamiliarity also increases.</li>
 <li>Or a <strong>nonlinear relationship</strong>. Nonlinear is a very broad category that encompasses all relationships that are not linear (e.g.&nbsp;a U-shaped curve).</li>
 </ol>
 </section>
-<section id="correlation" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="correlation"><span class="header-section-number">6</span> Correlation</h2>
+<section id="correlation" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="correlation"><span class="header-section-number">4</span> Correlation</h2>
 <p>One way to quantify linear relationships is with <strong>correlation (<span class="math inline">\(r\)</span>)</strong>. Correlation expresses the linear relationship as a range from -1 to 1, where -1 means the relationship is perfectly negative and 1 means the relationship is perfectly positive.</p>
-<p>Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then compute the average product of each variable:</p>
-<ul>
-<li>show equation</li>
-<li>we can achieve this calculation in R by computing</li>
-<li>add getting z-score with R?</li>
-<li>Correlation only describes linear relationships.</li>
-</ul>
-<p>Is the correlation we observed significantly different from zero? We can apply the techniques we learned over the past few weeks to find out. Just like the mean — and all other test statistics! — <em><span class="math inline">\(r\)</span></em> is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way: construct the sampling distribution of the correlation via bootstrapping, compute a confidence interval, and compute the p-value.</p>
-<p>(demo with infer framework)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../include/figures/correlation.jpeg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure borrowed from iStock photos</figcaption>
+</figure>
+</div>
+<p>Correlation can be calculated by taking the z-score of each variable (a normalization technique in which we subtract the mean and divide by the standard deviation) and then computing the average product of each variable:</p>
+<p><span class="math inline">\(r=\frac{\sum_{i=1}^n (\frac{x_i - \bar{x}}{sd(x)})(\frac{y_i - \bar{y}}{sd(y)})}{n}\)</span></p>
+<p>Or we can use R’s built in correlation function: <code>cor(x,y)</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(ratings<span class="sc">$</span>Frequency, ratings<span class="sc">$</span>meanFamiliarity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4820286</code></pre>
+</div>
+</div>
+<p>Just like the mean — and all other test statistics! — <em><span class="math inline">\(r\)</span></em> is subject to sampling variability. We can indicate our uncertainty around the correlation we observe in the same way we did for the mean last week: construct the sampling distribution of the correlation via bootstrapping and compute a confidence interval.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the observed correlation </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>obs_corr <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> meanFamiliarity, <span class="at">explanatory =</span> Frequency) <span class="sc">%&gt;%</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"correlation"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>obs_corr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: meanFamiliarity (numeric)
+Explanatory: Frequency (numeric)
+# A tibble: 1 × 1
+   stat
+  &lt;dbl&gt;
+1 0.482</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># construct the sampling distribution</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>samp_dist <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> meanFamiliarity, <span class="at">explanatory =</span> Frequency) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"bootstrap"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"correlation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a confidence interval</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> samp_dist <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_confidence_interval</span>(<span class="at">level =</span> <span class="fl">0.95</span>, <span class="at">type =</span> <span class="st">"percentile"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>ci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower_ci upper_ci
+     &lt;dbl&gt;    &lt;dbl&gt;
+1    0.302    0.631</code></pre>
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualize the distribution </span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>samp_dist <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_ci</span>(ci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>How do we test whether the correlation we observed in the data is significantly different from zero? We can use hypothesis testing (as learned today)! Here our null hypothesis that there is no relationship between the variables (they are <strong>independent</strong>). First we generate the null distribution:</p>
+<div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate the null distribution </span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>null_distribution_corr <span class="ot">&lt;-</span> ratings <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> meanFamiliarity, <span class="at">explanatory =</span> Frequency) <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"correlation"</span>) </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>null_distribution_corr <span class="sc">%&gt;%</span> </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Then we ask how likily our observed correlation is under the null hypothesis (get a p-value):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the p-value</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>null_distribution_corr <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> obs_corr, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Please be cautious in reporting a p-value of 0. This result is an
+approximation based on the number of `reps` chosen in the `generate()` step.
+See `?get_p_value()` for more information.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1       0</code></pre>
+</div>
+</div>
+<div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># visualize p-value on the null distribution</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>null_distribution_corr <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">visualize</span>() <span class="sc">+</span> </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> obs_corr, <span class="at">direction =</span> <span class="st">"two-sided"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="hypothesis-testing_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Finally we decide whether to reject the null hypothesis if the liklihood of observing this correlation under the null is small enough (&lt;0.05). We can see that our observed correlation is very unlikely in the null distribution (p-value = 0), so we reject the null hypothesis.</p>
 </section>
-<section id="further-reading" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7</span> Further reading</h2>
+<section id="further-reading" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5</span> Further reading</h2>
 <ul>
 <li><a href="https://dtkaplan.github.io/SM2-bookdown/the-logic-of-hypothesis-testing.html">The logic of hypothesis testing</a> - Chapter 13, Statistical Modeling</li>
 <li><a href="https://moderndive.com/9-hypothesis-testing.html">Hypothesis testing</a> - Chapter 9, Modern Dive</li>
+<li><a href="https://inferentialthinking.com/chapters/11/3/Decisions_and_Uncertainty.html">Decisions and Uncertainty</a> - Chapter 11 Section 3 Inferential Thinking</li>
 </ul>
 
 
@@ -717,6 +1123,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/sampling-distribution.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sampling distribution</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

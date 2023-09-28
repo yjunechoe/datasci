@@ -17,9 +17,9 @@ website:
     - text: Lecture notes
       file: notes/hello-world.qmd
     - text: Labs
-      file: labs/lab-01.qmd
+      file: labs/lab-04.qmd
     - text: Problem sets
-      file: psets/problem-set-01.qmd
+      file: psets/problem-set-02.qmd
     - text: Quizzes
       file: quizzes/quiz-study-guide.qmd
     # tools:
@@ -35,6 +35,7 @@ website:
     - notes/data-wrangling.qmd
     - text: '---'
     - notes/sampling-distribution.qmd
+    - notes/hypothesis-testing.qmd
   - title: Labs
     contents: 
       - labs/lab-01.qmd
@@ -44,9 +45,9 @@ website:
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
-    - psets/problem-set-02.qmd
     - text: Problem set 1 solutions
       url: https://colab.research.google.com/drive/1SE3nfYFeY3hvWVjmn2fNYtzNCVaaTQLM?usp=sharing
+    - psets/problem-set-02.qmd
     - text: '---'
     - rubric.qmd
   - title: Quizzes
@@ -59,7 +60,7 @@ format:
   html:
     theme: cosmo
     fontsize: 1em
-    linestretch: 1.5
+    linestretch: 1.35
     css:
     - styles.css
     - include/webex.css
