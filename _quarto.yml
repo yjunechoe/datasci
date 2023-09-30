@@ -37,11 +37,13 @@ website:
     - notes/sampling-distribution.qmd
     - notes/hypothesis-testing.qmd
   - title: Labs
-    contents: 
+    contents:
       - labs/lab-01.qmd
       - labs/lab-02.qmd
       - labs/lab-03.qmd
       - labs/lab-04.qmd
+      - text: "Lab 5: Hypothesis testing (Colab notebook)"
+        url: https://colab.research.google.com/drive/1UzCgib6XIurxKAiNjn7GetvS6VWCocRd?usp=sharing
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
@@ -51,7 +53,7 @@ website:
     - text: '---'
     - rubric.qmd
   - title: Quizzes
-    contents: 
+    contents:
       - quizzes/quiz-study-guide.qmd
       - text: '---'
       - quizzes/quiz-01.qmd
