@@ -12,20 +12,20 @@ date: 2023-10-03
 
 Correlation is actually a simple case of model building in which we use one value ($x$) to predict another ($y$). Specifically, we are fitting the linear model $y = ax + b$, where $a$ and $b$ are free parameters.  Here, $y$ is known as the **response variable** (the value we are trying to predict) and $x$ is the **explanatory variable** (the one that we are attempting to *explain* the response variable with). 
 
-- After z-scoring our variables, the correlation between $x$ and $y$ is equal to the slope of the line that best predicts $y$ from $x$. In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM.
+- After z-scoring our variables, the correlation between $x$ and $y$ is equal to the slope of the line that best predicts $y$ from $x$. 
 
 ## Model building overview
 
 Ideally we want to understand statistical modeling beyond the simple case of correlation. What if we have more than one explanatory variable? What if the relationship between variables is not linear? To address model building more broadly, it is helpful to think of building any model as a four-step process. We'll treat each of these separately over the coming weeks. The goal for today is to get a big picture overview of the model building process and the types of models we might encounter in our research. 
 
 - **Model specification** (this week): what is the form?
-- **Model fitting** (week 6); you have the form, how do you guess the free parameters? 
-- **Model accuracy** (week 7): you've estimated the parameters, how well does that model describe your data? 
-- **Model reliability** (week 8): when you estimate the parameters, there is some uncertainty on them
+- **Model fitting** (this week); you have the form, how do you guess the free parameters? 
+- **Model accuracy** (after break): you've estimated the parameters, how well does that model describe your data? 
+- **Model reliability** (after break): when you estimate the parameters, there is some uncertainty on them
 
 ## Types of models
 
-Model specification involves deciding which type of model we'd like to apply. We will mostly apply linear models in this class — for good reasons we will talk about next time! — but it's useful to first have a conceptual overview of the types of models we *could* apply. 
+Model specification involves deciding which type of model we'd like to apply. We will mostly apply linear models in this class, but it's useful to first have a conceptual overview of the types of models we *could* apply. 
 
 
 <!-- ![Types of models]({{site.baseurl}}/assets/images/08-typesofmodels.png){: width="600"} -->
@@ -71,21 +71,21 @@ In addition to the decisions above, the following issues can also be considered 
 
 A well-specified model should be based on a clear understanding of the data, the underlying relationships, and the research question. 
 
-## Response variable, $y$
+### Response variable, $y$
 
 Choosing the response variable is usually straightforward once you've clearly defined your research question: what is the thing you are trying to understand? You also need to make sure whatever you've selected is something you can measure (or has already been measured!)
 
 - In the swim records example, we are trying to explain variation in record times, so we choose record time as our $y$. In the brain size example we are trying to explain variation in brain sizes, so we choose brain size as our $y$.
 - Remember from last time that we can use regression for continuous response variables (numbers) but we need to use classification if the response variable is categorical (categories or levels). 
 
-## Explanatory variables, $x_n$
+### Explanatory variables, $x_n$
 
 Choosing which explanatory variables to include requires a bit more careful consideration. It's one part using your knowledge about the domain you are studying and one part exploratory data analysis!
 
 - One extreme would be to include just one explanatory variable: the obvious one based on your research question. In the swim records example, we want to understand how swim records change over time, so we should definitely include `time` as an explanatory variable.  But this model is **underspecified**.  We need to consider other variables that have the *potential* to explain variation in our response variable, even if they are not of direct interest. For example, some variation in swim record times can likely be explained by the swimmer's gender, so we should include `gender` as an explanatory variable in our model.
 - Importantly, we do not include every explanatory variable we can think of! We want to explain the variation in our response variable without building too complex a model or overfitting the data (**overspecifying**). We'll go into more detail about this in future lectures. For now, just remember you're Goldilocks: you want the explanatory variables in the model to explain just the right amount of variation.
 
-## Functional form
+### Functional form
 
 Last lecture we introduced the types of models that we could select when specifying a model. We also mentioned that we will focus on linear models in this class (which are a type of regression model, which are themselves types of supervised learning models!)
 
@@ -100,7 +100,7 @@ When specifying the functional form of a model, we're literally specifying the m
 4. In **matrix** notation, the linear model equation is represented as a dot product of vectors. This is just a more compact representation of the statistics (or machine learning) way, often used in linear algebra and statistics. $X$ is the matrix containing the values of the explanatory variables, $β$ is the vector of regression coefficients, and $\varepsilon$ is the vector of error terms.
   - $y = Xβ + ε$
  
-## Model terms
+### Model terms
 
 We've specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe *how* to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) **intercept**, (2) **main**, (3) **interaction**, and (4) **transformation**.
 
@@ -111,21 +111,19 @@ We've specified our response and explanatory variables and the functional form o
 2. **Main** terms (AKA **main effects**) represent the effect of each explanatory variable on the response variable directly. In other words, how does the response variable change as a result of changes in a given explanatory variable, when all other explanatory variables are zero? Each main term corresponds to one explanatory variable and is included in the model as a single term ($\beta_nx_n$). We can add as many explanatory variables as we like to the model:
   - in R: `y ~ 1 + year + gender` 
   - in eq: $y = \beta_0 + \beta_1x_1 + \beta_2x_2$
-
-Note that can include **categorical explanatory variables** like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.
-
+  - Note that can include **categorical explanatory variables** like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.
 
 
 
-**Interaction** terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we're just describing how two (or more) variables *combine* to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.
 
+3. **Interaction** terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we're just describing how two (or more) variables *combine* to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.
   - in R: `y ~ 1 + year + gender + year:gender` 
       - or the short way: `y ~ 1 + year * gender`
   - in eq: $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2$
 
 
 
-**Transformation** terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are $x^2$, $\sqrt{x}$, and $log(x)$. Note that $x$ must be a quantitative variable: we can't transform categorical variables. In the swim records example, squaring the year term ($x_1^2$) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to "be curvy, but also never slope upward". 
+4. **Transformation** terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are $x^2$, $\sqrt{x}$, and $log(x)$. Note that $x$ must be a quantitative variable: we can't transform categorical variables. In the swim records example, squaring the year term ($x_1^2$) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to "be curvy, but also never slope upward". 
   - in R: `y ~ sq(year) * gender`
   - eq: $y = \beta_0 + \beta_1x_1^2 + \beta_2x_2 + \beta_3x_1^2x_2$
 

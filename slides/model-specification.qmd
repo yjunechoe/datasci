@@ -1,0 +1,384 @@
+---
+title: "Model specification"
+subtitle: "Data Science for Studying Language and the Mind"
+author: Katie Schuler
+date: 10-03-2023
+echo: true
+format: 
+    revealjs:
+        theme: dark
+        slide-number: true
+        incremental: true 
+        footer: "[https://kathrynschuler.com/datasci](https://kathrynschuler.com/datasci/)"
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(infer)
+
+
+theme_set(theme_classic(base_size = 20))
+set.seed(60)
+
+```
+
+## You are `here` {.smaller} 
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+##### Data science with R 
+::: {.nonincremental}
+- Hello, world!
+- R basics
+- Data importing
+- Data visualization
+- Data wrangling 
+:::
+:::
+
+::: {.column width="33%"}
+
+##### Stats & Model buidling
+::: {.nonincremental}
+- Sampling distribution
+- Hypothesis testing
+- `Model specification`
+- Model fitting 
+- Model accuracy
+- Model reliability
+:::
+:::
+
+::: {.column width="33%"}
+
+##### More advanced 
+::: {.nonincremental}
+
+- Classification
+- Feature engineering (preprocessing) 
+- Inference for regression
+- Mixed-effect models
+::: 
+:::
+
+::::
+
+## We've been modeling! {.smaller}
+
+```{r}
+#| echo: false
+#| 
+library(languageR)
+```
+
+- The black dots are our data
+- y is the response variable 
+- x is the explanatory variable
+
+```{r}
+#| echo: false
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point() 
+
+```
+
+## We've been modeling! {.smaller}
+
+The red line is our model (a linear model)
+
+```{r}
+#| echo: false
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) 
+
+```
+
+## We've been modeling! {.smaller}
+
+- Model specification: $y=ax+b$
+- Fit the model: estimate free parameters $a$ and $b$ 
+- Fitted model: $y=0.39x+2.02$
+
+```{r}
+#| echo: false
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+
+```
+
+
+
+## Model building overview {.smaller}
+
+- **Model specification** (this week): what is the form?
+- **Model fitting** (this week); you have the form, how do you guess the free parameters? 
+- **Model accuracy** (after break): you've estimated the parameters, how well does that model describe your data? 
+- **Model reliability** (after break): when you estimate the parameters, there is some uncertainty on them
+
+## Types of models {.smaller}
+
+![](/include/figures/types-of-models.png)
+
+## Supervised learning {.smaller}
+
+![](/include/figures/supervised-learning.png)
+
+::: aside
+Figure by Kendrick Kay
+:::
+
+## Regression v classification {.smaller}
+
+![](/include/figures/regression.png)
+
+::: aside
+Figure by Kendrick Kay
+:::
+
+## Regression v classification {.smaller}
+
+![](/include/figures/classification.png)
+
+::: aside
+Figure by Kendrick Kay
+:::
+
+
+## Linear v nonlinear
+
+![](/include/figures/linear-v-nonlinear.png)
+
+::: aside
+Figure by Kendrick Kay
+:::
+
+## Model building overview refresh
+
+- **Model specification** (this week): what is the form?
+- **Model fitting** (this week); you have the form, how do you guess the free parameters? 
+- **Model accuracy** (after break): you've estimated the parameters, how well does that model describe your data? 
+- **Model reliability** (after break): when you estimate the parameters, there is some uncertainty on them
+
+## Model specification 
+
+## Today's dataset: `swim records`
+
+How have world swim records in the 100m changed over the years?
+
+```{r}
+library(mosaic)
+glimpse(SwimRecords)
+```
+
+## Response variable $y$ {.smaller}
+
+What is the thing you are trying to understand?
+
+```{r}
+#| echo: false
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year)) +
+    geom_point() +
+    labs(y = "time \n{response, data}")
+
+```
+
+## Explanatory variable(s) $x_n$ {.smaller} 
+
+What could **explain** the variation in your response variable? 
+
+::: {.panel-tabset}
+
+## year 
+
+```{r}
+#| echo: false
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year)) +
+    geom_point() +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+## year + sex
+
+```{r}
+#| echo: false
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year, color = sex)) +
+    geom_point() +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+:::
+
+## Functional form {.smaller}
+
+- Model specification: $y=ax+b$
+- Fit the model: estimate free parameters $a$ and $b$ 
+- Fitted model: $y=0.39x+2.02$
+
+```{r}
+#| echo: false
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+
+```
+
+## Functional form {.smaller}
+
+- high school algebra: $y=ax+b$
+- machine learning: $y = w_0 + w_1x_1 + w_2x_2 + ... + w_nx_n$ 
+- statistics: $y = β_0 + β_1x_1 + β_2x_2 + ... + β_nx_n + ε$
+- matrix: $y = Xβ + ε$
+
+```{r}
+#| echo: false
+ratings %>% 
+  ggplot(aes(x = Frequency, y = meanFamiliarity)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+
+```
+
+
+
+## Model terms {.smaller}
+
+Model terms describe *how* to include our explanatory variables in our model formula — there is more than one way!
+
+1. Intercept
+2. Main 
+3. Interaction 
+4. Transformation
+
+## Intercept  {.smaller}
+
+  - in R: `y ~ 1`
+  - in eq: $y=\beta_0 + \varepsilon$
+
+```{r}
+#| echo: false
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year)) +
+    geom_point(aes(shape = sex), size = 2) +
+    geom_smooth(method = "lm", 
+        formula = "y ~ 1", 
+        se = FALSE, color = "black") +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+## Main {.smaller}
+
+  - in R: `y ~ 1 + year + gender` 
+  - in eq: $y = \beta_0 + \beta_1x_1 + \beta_2x_2$
+
+::: {.panel-tabset}
+
+## year 
+
+```{r}
+#| echo: false
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year)) +
+    geom_point(aes(shape = sex), size = 2) +
+    geom_smooth(method = "lm", 
+        formula = "y ~ x", 
+        se = FALSE, color = "black") +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+## sex 
+
+```{r}
+#| echo: false
+
+model <- lm(time ~ sex, data = SwimRecords)
+model_data <- SwimRecords %>%
+    mutate(model_value = predict(model, SwimRecords))
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year, shape = sex)) +
+    geom_point(size = 2) +
+    geom_line(
+        data = model_data, 
+        aes(y = model_value, x = year)) +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+## year + sex
+
+```{r}
+#| echo: false
+
+model <- lm(time ~ year + sex, data = SwimRecords)
+model_data <- SwimRecords %>%
+    mutate(model_value = predict(model, SwimRecords))
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year, shape = sex)) +
+    geom_point(size = 2) +
+    geom_line(
+        data = model_data, 
+        aes(y = model_value, x = year)) +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+::: 
+
+## Interaction {.smaller}
+
+ - in R: `y ~ 1 + year + gender + year:gender` 
+      - or the short way: `y ~ 1 + year * gender`
+  - in eq: $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2$
+
+```{r}
+#| echo: false
+
+model <- lm(time ~ year*sex, data = SwimRecords)
+model_data <- SwimRecords %>%
+    mutate(model_value = predict(model, SwimRecords))
+
+SwimRecords %>%
+    ggplot(aes(y = time, x = year, shape = sex)) +
+    geom_point(size = 2) +
+    geom_line(
+        data = model_data, 
+        aes(y = model_value, x = year)) +
+    labs(y = "time \n{response, data}",
+        x = "year \n{explanatory, regressors}")
+
+```
+
+## Transformation {.smaller}
+
+
+![](/include/figures/transformation.png)

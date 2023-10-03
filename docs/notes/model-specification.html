@@ -339,12 +339,12 @@ window.onload = function() {
   <li><a href="#regression-v-classification" id="toc-regression-v-classification" class="nav-link" data-scroll-target="#regression-v-classification">Regression v classification</a></li>
   <li><a href="#linear-v-nonlinear-regression" id="toc-linear-v-nonlinear-regression" class="nav-link" data-scroll-target="#linear-v-nonlinear-regression">Linear v nonlinear regression</a></li>
   </ul></li>
-  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">4</span> Model specification</a></li>
-  <li><a href="#response-variable-y" id="toc-response-variable-y" class="nav-link" data-scroll-target="#response-variable-y"><span class="header-section-number">5</span> Response variable, <span class="math inline">\(y\)</span></a></li>
-  <li><a href="#explanatory-variables-x_n" id="toc-explanatory-variables-x_n" class="nav-link" data-scroll-target="#explanatory-variables-x_n"><span class="header-section-number">6</span> Explanatory variables, <span class="math inline">\(x_n\)</span></a></li>
-  <li><a href="#functional-form" id="toc-functional-form" class="nav-link" data-scroll-target="#functional-form"><span class="header-section-number">7</span> Functional form</a></li>
-  <li><a href="#model-terms" id="toc-model-terms" class="nav-link" data-scroll-target="#model-terms"><span class="header-section-number">8</span> Model terms</a>
+  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">4</span> Model specification</a>
   <ul class="collapse">
+  <li><a href="#response-variable-y" id="toc-response-variable-y" class="nav-link" data-scroll-target="#response-variable-y">Response variable, <span class="math inline">\(y\)</span></a></li>
+  <li><a href="#explanatory-variables-x_n" id="toc-explanatory-variables-x_n" class="nav-link" data-scroll-target="#explanatory-variables-x_n">Explanatory variables, <span class="math inline">\(x_n\)</span></a></li>
+  <li><a href="#functional-form" id="toc-functional-form" class="nav-link" data-scroll-target="#functional-form">Functional form</a></li>
+  <li><a href="#model-terms" id="toc-model-terms" class="nav-link" data-scroll-target="#model-terms">Model terms</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul></li>
   </ul>
@@ -399,7 +399,7 @@ Under Construction
 <h2 data-number="1" class="anchored" data-anchor-id="correlation-as-model-building"><span class="header-section-number">1</span> Correlation as model building</h2>
 <p>Correlation is actually a simple case of model building in which we use one value (<span class="math inline">\(x\)</span>) to predict another (<span class="math inline">\(y\)</span>). Specifically, we are fitting the linear model <span class="math inline">\(y = ax + b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are free parameters. Here, <span class="math inline">\(y\)</span> is known as the <strong>response variable</strong> (the value we are trying to predict) and <span class="math inline">\(x\)</span> is the <strong>explanatory variable</strong> (the one that we are attempting to <em>explain</em> the response variable with).</p>
 <ul>
-<li>After z-scoring our variables, the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is equal to the slope of the line that best predicts <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>. In our example data set, the correlation between brain size and body mass is NUM and the slope of the line that best describes the relationship between these z-scored variables is also NUM.</li>
+<li>After z-scoring our variables, the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is equal to the slope of the line that best predicts <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>.</li>
 </ul>
 </section>
 <section id="model-building-overview" class="level2" data-number="2">
@@ -407,14 +407,14 @@ Under Construction
 <p>Ideally we want to understand statistical modeling beyond the simple case of correlation. What if we have more than one explanatory variable? What if the relationship between variables is not linear? To address model building more broadly, it is helpful to think of building any model as a four-step process. We’ll treat each of these separately over the coming weeks. The goal for today is to get a big picture overview of the model building process and the types of models we might encounter in our research.</p>
 <ul>
 <li><strong>Model specification</strong> (this week): what is the form?</li>
-<li><strong>Model fitting</strong> (week 6); you have the form, how do you guess the free parameters?</li>
-<li><strong>Model accuracy</strong> (week 7): you’ve estimated the parameters, how well does that model describe your data?</li>
-<li><strong>Model reliability</strong> (week 8): when you estimate the parameters, there is some uncertainty on them</li>
+<li><strong>Model fitting</strong> (this week); you have the form, how do you guess the free parameters?</li>
+<li><strong>Model accuracy</strong> (after break): you’ve estimated the parameters, how well does that model describe your data?</li>
+<li><strong>Model reliability</strong> (after break): when you estimate the parameters, there is some uncertainty on them</li>
 </ul>
 </section>
 <section id="types-of-models" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="types-of-models"><span class="header-section-number">3</span> Types of models</h2>
-<p>Model specification involves deciding which type of model we’d like to apply. We will mostly apply linear models in this class — for good reasons we will talk about next time! — but it’s useful to first have a conceptual overview of the types of models we <em>could</em> apply.</p>
+<p>Model specification involves deciding which type of model we’d like to apply. We will mostly apply linear models in this class, but it’s useful to first have a conceptual overview of the types of models we <em>could</em> apply.</p>
 <!-- ![Types of models]({{site.baseurl}}/assets/images/08-typesofmodels.png){: width="600"} -->
 <section id="supervised-vs-unsupervised" class="level3">
 <h3 class="anchored" data-anchor-id="supervised-vs-unsupervised">Supervised vs unsupervised</h3>
@@ -461,25 +461,24 @@ Under Construction
 <li><strong>Model complexity:</strong> Simple models are easier to interpret but may not capture all complexities in the data. Complex models may suffer from overfitting the data or being difficult to interpret.</li>
 </ul>
 <p>A well-specified model should be based on a clear understanding of the data, the underlying relationships, and the research question.</p>
-</section>
-<section id="response-variable-y" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="response-variable-y"><span class="header-section-number">5</span> Response variable, <span class="math inline">\(y\)</span></h2>
+<section id="response-variable-y" class="level3">
+<h3 class="anchored" data-anchor-id="response-variable-y">Response variable, <span class="math inline">\(y\)</span></h3>
 <p>Choosing the response variable is usually straightforward once you’ve clearly defined your research question: what is the thing you are trying to understand? You also need to make sure whatever you’ve selected is something you can measure (or has already been measured!)</p>
 <ul>
 <li>In the swim records example, we are trying to explain variation in record times, so we choose record time as our <span class="math inline">\(y\)</span>. In the brain size example we are trying to explain variation in brain sizes, so we choose brain size as our <span class="math inline">\(y\)</span>.</li>
 <li>Remember from last time that we can use regression for continuous response variables (numbers) but we need to use classification if the response variable is categorical (categories or levels).</li>
 </ul>
 </section>
-<section id="explanatory-variables-x_n" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="explanatory-variables-x_n"><span class="header-section-number">6</span> Explanatory variables, <span class="math inline">\(x_n\)</span></h2>
+<section id="explanatory-variables-x_n" class="level3">
+<h3 class="anchored" data-anchor-id="explanatory-variables-x_n">Explanatory variables, <span class="math inline">\(x_n\)</span></h3>
 <p>Choosing which explanatory variables to include requires a bit more careful consideration. It’s one part using your knowledge about the domain you are studying and one part exploratory data analysis!</p>
 <ul>
 <li>One extreme would be to include just one explanatory variable: the obvious one based on your research question. In the swim records example, we want to understand how swim records change over time, so we should definitely include <code>time</code> as an explanatory variable. But this model is <strong>underspecified</strong>. We need to consider other variables that have the <em>potential</em> to explain variation in our response variable, even if they are not of direct interest. For example, some variation in swim record times can likely be explained by the swimmer’s gender, so we should include <code>gender</code> as an explanatory variable in our model.</li>
 <li>Importantly, we do not include every explanatory variable we can think of! We want to explain the variation in our response variable without building too complex a model or overfitting the data (<strong>overspecifying</strong>). We’ll go into more detail about this in future lectures. For now, just remember you’re Goldilocks: you want the explanatory variables in the model to explain just the right amount of variation.</li>
 </ul>
 </section>
-<section id="functional-form" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="functional-form"><span class="header-section-number">7</span> Functional form</h2>
+<section id="functional-form" class="level3">
+<h3 class="anchored" data-anchor-id="functional-form">Functional form</h3>
 <p>Last lecture we introduced the types of models that we could select when specifying a model. We also mentioned that we will focus on linear models in this class (which are a type of regression model, which are themselves types of supervised learning models!)</p>
 <p>When specifying the functional form of a model, we’re literally specifying the mathematical formula we’re going to use to represent the relationship between our response and explanatory variables. <strong>Linear models</strong> are models in which the response variable (output) is a weighted sum of the explanatory variables (inputs). In other words, there is a linear relationship between the response variable and the explanatory variables. The <strong>linear model equation</strong> can be expressed in many ways (which can be confusing!). Here are four different ways of representing the formula for the linear model, to emphasize that <em>they are all the same thing</em>.</p>
 <ol type="1">
@@ -508,8 +507,8 @@ Under Construction
 <li><span class="math inline">\(y = Xβ + ε\)</span></li>
 </ul>
 </section>
-<section id="model-terms" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="model-terms"><span class="header-section-number">8</span> Model terms</h2>
+<section id="model-terms" class="level3">
+<h3 class="anchored" data-anchor-id="model-terms">Model terms</h3>
 <p>We’ve specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe <em>how</em> to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) <strong>intercept</strong>, (2) <strong>main</strong>, (3) <strong>interaction</strong>, and (4) <strong>transformation</strong>.</p>
 <ol type="1">
 <li>The <strong>intercept</strong> term, <span class="math inline">\(\beta_0\)</span>, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” or “gain” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.</li>
@@ -524,9 +523,11 @@ Under Construction
 <ul>
 <li>in R: <code>y ~ 1 + year + gender</code></li>
 <li>in eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2\)</span></li>
+<li>Note that can include <strong>categorical explanatory variables</strong> like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.</li>
 </ul>
-<p>Note that can include <strong>categorical explanatory variables</strong> like gender, we just need to find a way to represent the same information numerically, since linear models require numerical inputs.</p>
-<p><strong>Interaction</strong> terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we’re just describing how two (or more) variables <em>combine</em> to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.</p>
+<ol start="3" type="1">
+<li><strong>Interaction</strong> terms allow us to express that the effect of one explanatory variable on the response variable is different at different values of another explanatory variable. For example, in the swim records data, the effect of gender on record times changes over year (or said another way, the effect of year on record times is different for men and women). We are still describing how variation in the response variable is explained by one or more explanatory variables, we’re just describing how two (or more) variables <em>combine</em> to influence the response. In the linear model equation, we add a term to the model in which we multiply the values of the interacting variables.</li>
+</ol>
 <ul>
 <li>in R: <code>y ~ 1 + year + gender + year:gender</code>
 <ul>
@@ -534,7 +535,14 @@ Under Construction
 </ul></li>
 <li>in eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_1x_2\)</span></li>
 </ul>
-<p><strong>Transformation</strong> terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are <span class="math inline">\(x^2\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, and <span class="math inline">\(log(x)\)</span>. Note that <span class="math inline">\(x\)</span> must be a quantitative variable: we can’t transform categorical variables. In the swim records example, squaring the year term (<span class="math inline">\(x_1^2\)</span>) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to “be curvy, but also never slope upward”. - in R: <code>y ~ sq(year) * gender</code> - eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1^2 + \beta_2x_2 + \beta_3x_1^2x_2\)</span></p>
+<ol start="4" type="1">
+<li><strong>Transformation</strong> terms allow us to modify the explanatory variables to accommodate nonlinear relationships with the response variable. Some of the most common transformations are <span class="math inline">\(x^2\)</span>, <span class="math inline">\(\sqrt{x}\)</span>, and <span class="math inline">\(log(x)\)</span>. Note that <span class="math inline">\(x\)</span> must be a quantitative variable: we can’t transform categorical variables. In the swim records example, squaring the year term (<span class="math inline">\(x_1^2\)</span>) allowed our model to have a curve shape. But notice that this makes it seem like record times are slowing down after 1990. This is obviously not the case — records inherently only get faster! — but models lack common sense, and there is no easy math way to tell our model to “be curvy, but also never slope upward”.</li>
+</ol>
+<ul>
+<li>in R: <code>y ~ sq(year) * gender</code></li>
+<li>eq: <span class="math inline">\(y = \beta_0 + \beta_1x_1^2 + \beta_2x_2 + \beta_3x_1^2x_2\)</span></li>
+</ul>
+</section>
 <section id="further-reading" class="level3">
 <h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
 <ul>
