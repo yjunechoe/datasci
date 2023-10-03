@@ -14,6 +14,8 @@ website:
       file: index.qmd
     - text: Syllabus
       file: syllabus.qmd
+    - text: Office Hours
+      file: syllabus.qmd#office-hours
     - text: Lecture notes
       file: notes/hello-world.qmd
     - text: Labs
@@ -36,6 +38,7 @@ website:
     - text: '---'
     - notes/sampling-distribution.qmd
     - notes/hypothesis-testing.qmd
+    - notes/model-specification.qmd
   - title: Labs
     contents:
       - labs/lab-01.qmd

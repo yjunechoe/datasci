@@ -31,7 +31,7 @@ The linguistics department is on the 3rd floor of the C-wing at [3401 Walnut str
 
 |         | Day | Time        | Location                                                                         |
 |---------|-----|-------------|----------------------------------------------------------------------------------|
-| Katie   | Tue | 12:30-1:30  | 314C Ling Dept.                                                                  |
+| Katie   | Tue | 12:30-1:30  | [Zoom](https://upenn.zoom.us/my/katieschuler)                                                     |
 | Avinash | Tue | 3:30-4:30   | [Zoom](https://upenn.zoom.us/j/97242897802?pwd=bnpMdlZXSFNZbUlaOG0vanBTL0dyQT09) |
 | June    | Thu | 12:30-1:30  | 318C Ling Dept.                                                                  |
 | Ravi    | Fri | 11:30-12:30 | [Zoom](https://upenn.zoom.us/j/3807592207)                                       |
