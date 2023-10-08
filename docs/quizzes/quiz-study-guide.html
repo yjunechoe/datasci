@@ -267,6 +267,8 @@ window.onload = function() {
 
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../include/webex.css">
@@ -471,37 +473,33 @@ window.onload = function() {
 </section>
 <section id="quiz-2" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="quiz-2"><span class="header-section-number">2</span> Quiz 2</h2>
-<p>Quiz 2 will test the following learning objectives, divided into 4 topic areas. For each topic area, you should be able to do the list that follows. You can think of this as a studying checklist!</p>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>More learning objectives will be added as we cover these topics in lecture.</p>
-</div>
-</div>
-</div>
+<p>Quiz 2 will test the following learning objectives, divided into 3 topic areas. For each topic area, you should be able to do the list that follows. You can think of this as a studying checklist!</p>
 <ol type="1">
-<li><p><strong>Sampling distribution</strong></p>
+<li><strong>Sampling distribution</strong>
 <ul>
-<li>Explore a simple dataset with a histogram and summary statistics</li>
+<li>Explore a dataset with an appropriate figure (histogram, boxplot, scatterplot) and summary statistics appropriate for the distribution.</li>
 <li>Recognize uniform and Gaussian probability distributions in a plot or equation and use R’s functions <code>d*()</code>, <code>p*()</code>, and <code>r*()</code> to work with these distributions</li>
 <li>Explain the difference between the parameter and the paramter estimate</li>
 <li>Construct the sampling distribution of a paramater estimate with <code>infer</code> and quantify the spread of the distribution with a confidence interval.</li>
 </ul></li>
-<li><p><strong>Hypothesis testing</strong></p></li>
-<li><p><strong>Model specification</strong></p>
+<li><strong>Hypothesis testing</strong>
+<ul>
+<li>Given a set of data, implement the 3-step hypothesis testing framework <strong>nonparametrically</strong>: (1) Pose a null hypothesis, (2) quantify how likely a given pattern of results is under the null, and (3) determine whether to reject the null (conceptually and with the <code>infer</code> framework).</li>
+<li>Given a theoretical distriubiton (e.g.&nbsp;t), implement the 3-step hypothesis testing framework <strong>parametrically</strong>.</li>
+<li>Given an observed correlation, determine whether a correlation is positive, negative, or no correlation.</li>
+<li>Explain correlation as model building</li>
+</ul></li>
+<li><strong>Model specification</strong>
 <ul>
 <li>Classify a model as supervised or unsupervised, regression or classification, and linear or nonlinear</li>
+<li>Identify the response and explanatory variables from a given research question or model</li>
 <li>Recognize the 4 ways of writing the linear model equation</li>
-</ul></li>
-<li><p><strong>Model fitting</strong></p>
-<ul>
-<li>Estimate the free parameters of a linear model with the gradient descent approach</li>
-<li>Estimate the free parameters of a linear model with the OLS approach</li>
+<li>Select the equation (e.g <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2\)</span>) or R expression (e.g.&nbsp;<code>y ~ year + gender</code>) for a plotted model</li>
 </ul></li>
 </ol>
+<!-- 4. **Model fitting**
+    - Estimate the free parameters of a linear model with the gradient descent approach
+    - Estimate the free parameters of a linear model with the OLS approach -->
 
 
 </section>

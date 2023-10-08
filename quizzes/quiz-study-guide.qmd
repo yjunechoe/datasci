@@ -60,25 +60,27 @@ Quiz 1 will test the following learning objectives, divided into 6 topic areas. 
 
 ## Quiz 2
 
-Quiz 2 will test the following learning objectives, divided into 4 topic areas. For each topic area, you should be able to do the list that follows. You can think of this as a studying checklist!
+Quiz 2 will test the following learning objectives, divided into 3 topic areas. For each topic area, you should be able to do the list that follows. You can think of this as a studying checklist!
 
-::: {.callout-warning}
-
-More learning objectives will be added as we cover these topics in lecture.
-:::
 
 1. **Sampling distribution**
-    - Explore a simple dataset with a histogram and summary statistics 
+    - Explore a dataset with an appropriate figure (histogram, boxplot, scatterplot) and summary statistics appropriate for the distribution.
     - Recognize uniform and Gaussian probability distributions in a plot or equation and use R's functions `d*()`, `p*()`, and `r*()` to work with these distributions
     - Explain the difference between the parameter and the paramter estimate
     - Construct the sampling distribution of a paramater estimate with `infer` and quantify the spread of the distribution with a confidence interval.
 
 2. **Hypothesis testing**
-    
+    - Given a set of data, implement the 3-step hypothesis testing framework **nonparametrically**: (1) Pose a null hypothesis, (2) quantify how likely a given pattern of results is under the null, and (3) determine whether to reject the null (conceptually and with the `infer` framework).
+    - Given a theoretical distriubiton (e.g. t), implement the 3-step hypothesis testing framework **parametrically**.
+    - Given an observed correlation, determine whether a correlation is positive, negative, or no correlation. 
+    - Explain correlation as model building
 3. **Model specification**
     - Classify a model as supervised or unsupervised, regression or classification, and linear or nonlinear
+    - Identify the response and explanatory variables from a given research question or model 
     - Recognize the 4 ways of writing the linear model equation 
+    - Select the equation (e.g $y = \beta_0 + \beta_1x_1 + \beta_2x_2$) or R expression (e.g. `y ~ year + gender`) for a plotted model
 
-4. **Model fitting**
+
+<!-- 4. **Model fitting**
     - Estimate the free parameters of a linear model with the gradient descent approach
-    - Estimate the free parameters of a linear model with the OLS approach
+    - Estimate the free parameters of a linear model with the OLS approach -->

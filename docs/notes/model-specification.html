@@ -582,7 +582,7 @@ Under Construction
 <h3 class="anchored" data-anchor-id="model-terms">Model terms</h3>
 <p>We’ve specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe <em>how</em> to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) <strong>intercept</strong>, (2) <strong>main</strong>, (3) <strong>interaction</strong>, and (4) <strong>transformation</strong>.</p>
 <ol type="1">
-<li>The <strong>intercept</strong> term, <span class="math inline">\(\beta_0\)</span>, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” or “gain” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.</li>
+<li>The <strong>intercept</strong> term, <span class="math inline">\(\beta_0\)</span>, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the “offset” parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.</li>
 </ol>
 <ul>
 <li>in R: <code>y ~ 1</code></li>

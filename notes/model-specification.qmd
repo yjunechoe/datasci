@@ -104,7 +104,7 @@ When specifying the functional form of a model, we're literally specifying the m
 
 We've specified our response and explanatory variables and the functional form of our model. Now we need to specify the model terms. Model terms describe *how* to include the explanatory variables in our model (they can be included in more than one way!) There are four kinds of terms: (1) **intercept**, (2) **main**, (3) **interaction**, and (4) **transformation**.
 
-1. The **intercept** term, $\beta_0$, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the "offset" or "gain" parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.
+1. The **intercept** term, $\beta_0$, is a constant (not variable) capturing the typical value of the response variable when all explanatory variables are zero. It allows the model to have an offset from the origin, so it is also called the "offset" parameter in some fields. Unless it makes sense for our response variable to be zero when all other variables are zero (it rarely does!) we should include the intercept term.
   - in R: `y ~ 1`
   - in eq: $y=\beta_0 + \varepsilon$
 
