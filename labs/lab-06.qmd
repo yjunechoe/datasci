@@ -274,6 +274,7 @@ Johnson and Newport (1989) also wanted to address the following question:
 
 To address this question, they separated subjects into two groups: those who arrived as children, between the ages of 3-15 (figure A) and those who arrived as adults, between the ages of 17-39 (figure B). For each group, they computed the correlation between age of exposure and score on the English proficiency test.
 
+
 (a) Given the scatterplots of these data, which of the following could be their observed correlations for these groups? 
 
 
@@ -283,7 +284,7 @@ To address this question, they separated subjects into two groups: those who arr
 #| layout-ncol: 2
 
 johnson_newport_1989 %>%
-    filter(ageGroup != "17-39") %>%
+    filter(ageGroup %in% c("3-7", "8-10", "11-15")) %>%
     ggplot(aes(x = age, y = score)) +
     geom_point() +
     labs(tag = "A", title = "Subjects Arriving Ages 3-15 (kids)")
@@ -303,10 +304,9 @@ johnson_newport_1989 %>%
 
 # Define the answer choices
 choices <- c(
-    "A: r = 0.226, B: r = -0.884",
-    "A: r = -0.226, B: r = 0.884",
-    answer="A: r = -0.884, B: r = 0.226",
-    "A: r = 0.884, B: r = -0.226"
+    "A: r = -0.0276, B: r = -0.884",
+    answer="A: r = -0.884, B: r = -0.0276",
+    "A: r = 0.884, B: r = -0.0276"
 )
 
 cat(longmcq(choices))
@@ -327,7 +327,7 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-(c) Johnson and Newport used hypothesis testing to determine whether the correlation they observed for each group was significantly different from zero. Focusing on group B (arrived to US between 17-39) we computed a p-value of `0.336` on the correlation we observed in our simulated data. Which figure could represent this p-value visualized on a null distribution generated nonparametrically from 1000 repetitions? 
+(c) Johnson and Newport used hypothesis testing to determine whether the correlation they observed for each group was significantly different from zero. Focusing on group B (arrived to US between 17-39) we computed a p-value of `0.942` on the correlation we observed in our simulated data. Which figure could represent this p-value visualized on a null distribution generated nonparametrically from 1000 repetitions? 
 
 ```{r}
 #| echo: false
@@ -354,7 +354,7 @@ null_distribution <- adults %>%
 
 null_distribution %>%
     visualize() +
-    shade_p_value(0.5, direction = "two-sided") +
+    shade_p_value(0.9, direction = "two-sided") +
     labs(tag = "A")
 
 null_distribution %>%
