@@ -54,6 +54,8 @@ website:
     - text: Problem set 1 solutions
       url: https://colab.research.google.com/drive/1SE3nfYFeY3hvWVjmn2fNYtzNCVaaTQLM?usp=sharing
     - psets/problem-set-02.qmd
+    - text: Problem set 2 solutions
+      url: https://colab.research.google.com/drive/1wat_tzmHySFaXJh5n3kbfXqQ4UIFPClq?usp=sharing
     - text: '---'
     - rubric.qmd
   - title: Quizzes
