@@ -163,7 +163,7 @@ rnorm(200, mean = 0, sd = 1)
 
 ```{r}
 #| echo: false
-data <- tibble(y = runif(500, max = 10, min = 5 ))
+data <- tibble(y = runif(500, max = 10, min = 5.01 ))
 
 ```
 
