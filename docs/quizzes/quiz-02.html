@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,7 +89,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -306,7 +307,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -348,7 +349,7 @@ window.onload = function() {
  <span class="menu-text">Problem sets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../quizzes/quiz-study-guide.html" rel="" target="">
+    <a class="nav-link active" href="../quizzes/quiz-study-guide.html" rel="" target="" aria-current="page">
  <span class="menu-text">Quizzes</span></a>
   </li>  
 </ul>
@@ -357,10 +358,53 @@ window.onload = function() {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../quizzes/quiz-02.html">Quiz 2</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz-study-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz study guides</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 1</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz-01-solutions.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz 1 Solutions</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quiz 2</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -402,7 +446,7 @@ window.onload = function() {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Estimated time: 20 minutes
+Estimated time: 30 minutes
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -417,7 +461,7 @@ Estimated time: 20 minutes
 </ul>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The data</h2>
-<p>This quiz refers to data simulated from Johnson &amp; Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in the critical period for language acquisition and wanted to know whether the participants’ age of arrival to the United States played a role in their English language proficiency.</p>
+<p>This quiz refers to data simulated from Johnson &amp; Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in whether the participants’ age of arrival to the United States played a role in their English language proficiency.</p>
 <p>The simulated data are stored in the tibble <code>johnson_newport_1989</code>. Here is a <code>glimpse()</code> at the tibble for your reference:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(johnson_newport_1989)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -460,7 +504,7 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># C. get confidence interval </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> samp_distribution <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">get_confidence_interval</span>(<span class="at">type =</span> <span class="st">"percentile"</span>, <span class="at">level =</span> _________)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">get_confidence_interval</span>(<span class="at">type =</span> <span class="st">"percentile"</span>, <span class="at">level =</span> <span class="fl">0.68</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># D. visualize sampling distribution and confidence interval </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>samp_distribution <span class="sc">%&gt;%</span></span>
@@ -493,12 +537,12 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 <p>Draw __________ data points _____________ replacement, compute the ____________.</p>
 </blockquote>
 <ol start="4" type="a">
-<li><p>Which of the following could have been used to fill in the blank in code block C above? Choose all that apply.</p>
+<li><p>The shaded area of the figure shows a 68% confidence interval. If we were to increase the <code>level</code> of confidence to 95%, the confidence interval would become:</p>
 <ul class="task-list">
-<li><input type="checkbox">23</li>
-<li><input type="checkbox">220</li>
-<li><input type="checkbox">0.68</li>
-<li><input type="checkbox">23.9</li>
+<li><input type="checkbox">Narrower</li>
+<li><input type="checkbox">Broader</li>
+<li><input type="checkbox">Stay the same</li>
+<li><input type="checkbox">There’s insufficient information to determine this</li>
 </ul></li>
 </ol>
 </section>
@@ -531,7 +575,7 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="ot">&lt;-</span> johnson_newport_1989 <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(ageGroup <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"17-39"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">specify</span>(<span class="at">response =</span> score, <span class="at">explanatory =</span> ageGroup) <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hypothesize</span>( <span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in medians"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"17-39"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -539,7 +583,7 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># D. visualize the null and shade p-value</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>null_distribution <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">visualize</span>()  <span class="sc">+</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> diff_medians, <span class="at">direction =</span> <span class="st">"both"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> diff_medians, <span class="at">direction =</span> <span class="st">"both"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -567,8 +611,10 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 <ul class="task-list">
 <li><input type="checkbox">Reject the null hypothesis</li>
 <li><input type="checkbox">Fail to reject the null hypothesis</li>
+<li><input type="checkbox">Prove the research hypothesis to be true</li>
+<li><input type="checkbox">Prove the null hypothesis to be true</li>
 </ul></li>
-<li><p>Given our simulated null distribution, do you agree with their decision? Explain why based on the simulation.</p></li>
+<li><p>When we calculate the p-value from the simulated null distribution using the <code>get_p_value()</code> function, we get <strong>p = 0</strong>. Is this a problem? Why or why not? Explain what a p-value of 0 means in this context.</p></li>
 </ol>
 </section>
 <section id="correlation" class="level2">
@@ -621,7 +667,7 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 </section>
 <section id="model-specification" class="level2">
 <h2 class="anchored" data-anchor-id="model-specification">4 Model specification</h2>
-<p>Below are two different models, A and B, of Johnson and Newport’s data on whether years of exposure to English predict participant scores on the grammaticality judgement task.</p>
+<p>Below are two different models, A and B, of Johnson and Newport’s data on whether years of exposure to English predict participant scores on the grammaticality judgement task. The models are fitted with information about both measures.</p>
 <div class="cell quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -640,9 +686,9 @@ $ langGroup &lt;chr&gt; "native", "native", "native", "native", "native", "nativ
 <li><input type="checkbox">unsupervised learning, classification model</li>
 <li><input type="checkbox">unsupervised learning, regression model</li>
 </ul></li>
-<li><p>Suppose the model A is specified with the response variable (score) and one explanatory variable (exposure). Which of the following equations could be used to express the model? Choose all that apply.</p>
+<li><p>Suppose that a model is specified with one response and one explanatory variables. Which of the following could be used to express the model? Choose all that apply.</p>
 <ul class="task-list">
-<li><input type="checkbox"><span class="math inline">\(y=ax+b\)</span></li>
+<li><input type="checkbox"><span class="math inline">\(y = ax+b\)</span></li>
 <li><input type="checkbox"><span class="math inline">\(y = w_0 + w_1x_1 + w_2x_2\)</span></li>
 <li><input type="checkbox"><span class="math inline">\(y = β_0 + β_1x_1 + \epsilon\)</span></li>
 <li><input type="checkbox"><span class="math inline">\(y = Xβ + ε\)</span></li>

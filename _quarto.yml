@@ -64,6 +64,8 @@ website:
       - text: '---'
       - quizzes/quiz-01.qmd
       - quizzes/quiz-01-solutions.qmd
+      - text: '---'
+      - quizzes/quiz-02.qmd
 format:
   html:
     theme: cosmo

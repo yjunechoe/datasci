@@ -12,7 +12,7 @@ format:
 ---
 
 ::: {.callout-tip}
-## Estimated time: 20 minutes
+## Estimated time: 30 minutes
 
 You may need more time if programming is completely new to you, or less if you have some experience already.
 :::
@@ -76,8 +76,8 @@ mutate(langGroup = ifelse(ageGroup == "0", "native", "non-native"))
 \begin{tabular}{|l|l|}\hline
 Sampling distribution &   \\ \hline
 Hypothesis testing &  \\ \hline
-Correlation \\ \hline
-Model specification \\ \hline
+Correlation & \\ \hline
+Model specification & \\ \hline
 Total & \\ \hline
 
 \end{tabular}
@@ -87,7 +87,7 @@ Total & \\ \hline
 
 ## The data 
 
-This quiz refers to data simulated from Johnson & Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in the critical period for language acquisition and wanted to know whether the participants' age of arrival to the United States played a role in their English language proficiency. 
+This quiz refers to data simulated from Johnson & Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in whether the participants' age of arrival to the United States played a role in their English language proficiency. 
 
 The simulated data are stored in the tibble `johnson_newport_1989`. Here is a `glimpse()` at the tibble for your reference: 
 
@@ -132,7 +132,7 @@ ci2 <- samp_distribution %>%
 ```r
 # C. get confidence interval 
 ci <- samp_distribution %>%
-    get_confidence_interval(type = "percentile", level = _________)
+    get_confidence_interval(type = "percentile", level = 0.68)
 
 ```
 
@@ -163,12 +163,12 @@ samp_distribution %>%
 
 > Draw __________ data points _____________ replacement, compute the ____________. 
 
-(d) Which of the following could have been used to fill in the blank in code block C above? Choose all that apply.
+(d) The shaded area of the figure shows a 68% confidence interval. If we were to increase the `level` of confidence to 95%, the confidence interval would become:
 
-    - [ ] 23
-    - [ ] 220
-    - [ ] 0.68
-    - [ ] 23.9
+    - [ ] Narrower
+    - [ ] Broader
+    - [ ] Stay the same
+    - [ ] There's insufficient information to determine this
 
 ## 2 Hypothesis testing 
 
@@ -201,7 +201,7 @@ diff_medians <- johnson_newport_1989 %>%
 null_distribution <- johnson_newport_1989 %>%
     filter(ageGroup %in% c("0", "17-39")) %>%
     specify(response = score, explanatory = ageGroup) %>%
-    hypothesize( null = "independence") %>%
+    hypothesize(null = "independence") %>%
     generate(reps = 1000, type = "permute") %>%
     calculate(stat = "diff in medians", order = c("0", "17-39")) 
 ```
@@ -212,7 +212,7 @@ null_distribution <- johnson_newport_1989 %>%
 # D. visualize the null and shade p-value
 null_distribution %>%
     visualize()  +
-    shade_p_value(obs_stat = diff_medians, direction = "both" )
+    shade_p_value(obs_stat = diff_medians, direction = "both")
 ```
 
 
@@ -234,8 +234,10 @@ null_distribution %>%
 
     - [ ] Reject the null hypothesis
     - [ ] Fail to reject the null hypothesis
+    - [ ] Prove the research hypothesis to be true
+    - [ ] Prove the null hypothesis to be true
 
-(d) Given our simulated null distribution, do you agree with their decision? Explain why based on the simulation.
+(d) When we calculate the p-value from the simulated null distribution using the `get_p_value()` function, we get **p = 0**. Is this a problem? Why or why not? Explain what a p-value of 0 means in this context.
 
     \answerbox
 
@@ -255,7 +257,7 @@ dat <- rnorm_multi(n = 46,
                   empirical = FALSE)
 
 dat %>% ggplot(aes(x = exposure, y = score)) +
-geom_point()
+geom_point(alpha = .8)
 ```
 
 
@@ -328,7 +330,7 @@ null_distribution %>%
 
 ## 4 Model specification
 
-Below are two different models, A and B, of Johnson and Newport's data on whether years of exposure to English predict participant scores on the grammaticality judgement task. 
+Below are two different models, A and B, of Johnson and Newport's data on whether years of exposure to English predict participant scores on the grammaticality judgement task. The models are fitted with information about both measures.
 
 ```{r}
 #| echo: false
@@ -366,10 +368,9 @@ aes(x = exposure, y =  score)) +
     - [ ] unsupervised learning, classification model
     - [ ] unsupervised learning, regression model
 
-(b) Suppose the model A is specified with the response variable (score) and one explanatory variable (exposure). Which of the following equations could be used to express the model? Choose all that apply.
+(b) Suppose that a model is specified with one response and one explanatory variables. Which of the following could be used to express the model? Choose all that apply.
 
-
-    - [ ] $y=ax+b$
+    - [ ] $y = ax+b$
     - [ ] $y = w_0 + w_1x_1 + w_2x_2$
     - [ ] $y = β_0 + β_1x_1 + \epsilon$
     - [ ] $y = Xβ + ε$
