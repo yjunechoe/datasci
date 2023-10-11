@@ -1,0 +1,392 @@
+---
+title:  "Quiz 2"
+subtitle: "Data Science for Studying Language & the Mind"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-tip}
+## Estimated time: 30 minutes
+
+You may need more time if programming is completely new to you, or less if you have some experience already.
+:::
+
+**Instructions**
+
+- The quiz is closed book/note/computer/phone
+- If you need to use the restroom, leave your exam and phone with the TA
+- You have 60 minutes to complete the quiz. If you finish early, you may turn in your quiz and leave early
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(infer)
+library(faux)
+theme_set(theme_gray(base_size = 16))
+set.seed(60)
+```
+
+```{r}
+#| echo: false
+
+native <- tibble(
+    score = rnorm(23, 268.8 , 2.9), 
+    age = 0, 
+    ageGroup = "0"
+)
+
+three <- tibble( score = rnorm(7, 269.3, 2.8), 
+    age = runif(7, 3, 7), ageGroup = "3-7")
+eight <- tibble( score = rnorm(8, 256.0, 6.0), 
+    age = runif(8, 8, 10), ageGroup = "8-10")
+eleven <- tibble( score = rnorm(8, 235.9, 13.6), 
+    age = runif(8, 11, 15), ageGroup = "11-15")
+seventeen <- tibble( score = rnorm(23, 210.3, 22.8), 
+    age = runif(23, 17, 39), ageGroup = "17-39")
+
+johnson_newport_1989 <- bind_rows(
+    native, three, eight, eleven, seventeen
+)  %>%
+mutate(langGroup = ifelse(ageGroup == "0", "native", "non-native"))
+
+
+```
+
+\newcommand\answerbox{%%
+    \framebox(400,50){}}
+
+\begin{flushleft}
+\makebox[12cm]{\textbf{Name}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{PennKey}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{Lab section TA}:\ \hrulefill}
+\end{flushleft}
+
+\begin{center}
+\textbf{Score by topic area}\\
+\begin{tabular}{|l|l|}\hline
+Sampling distribution &   \\ \hline
+Hypothesis testing &  \\ \hline
+Correlation & \\ \hline
+Model specification & \\ \hline
+Total & \\ \hline
+
+\end{tabular}
+\end{center}
+
+\clearpage
+
+## The data 
+
+This quiz refers to data simulated from Johnson & Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in whether the participants' age of arrival to the United States played a role in their English language proficiency. 
+
+The simulated data are stored in the tibble `johnson_newport_1989`. Here is a `glimpse()` at the tibble for your reference: 
+
+```{r}
+glimpse(johnson_newport_1989)
+```
+
+## 1 Sampling distribution
+
+Johnson and Newport (1989) reported the mean and standard deviation of participants' scores on the English proficiency test, grouped by an `ageGroup` variable, which divides age into 5 groups. Below we computed the **median** and **IQR** as the descriptive statistics on our simulated data. Then, we used `infer` to generate the sampling distribution for the **17-39 year old age group**, visualize the distribution, and shade the confidence interval. 
+
+```{r}
+# A. compute descriptive statistics by group 
+johnson_newport_1989 %>% group_by(ageGroup) %>%
+    summarise(n = n(), median = median(score), 
+        lower = quantile(score, 0.25), upper = quantile(score, 0.75))
+```
+
+
+```{r}
+# B. generate the sampling distribution 17-39 group
+samp_distribution <- johnson_newport_1989 %>%
+    filter(ageGroup == "17-39") %>%
+    specify(response = score) %>%
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "median") 
+```
+
+```{r}
+#| echo: false
+#| message: false
+
+# hide ci so we can ask about getting the ci a few ways
+ci <- samp_distribution %>%
+    get_confidence_interval(level = 0.68, type = "percentile")
+
+ci2 <- samp_distribution %>%
+    get_confidence_interval(type = "se", point_estimate = 271)
+
+```
+
+```r
+# C. get confidence interval 
+ci <- samp_distribution %>%
+    get_confidence_interval(type = "percentile", level = 0.68)
+
+```
+
+```{r}
+#| layout-ncol: 2
+
+# D. visualize sampling distribution and confidence interval 
+samp_distribution %>%
+    visualize() +
+    shade_ci(endpoints = ci)
+```
+
+
+(a) True or false, the descriptive statistics reported above are parametric.
+
+    - [ ] True 
+    - [x] False
+
+(b) The sampling distribution of the median looks approximately Gaussian. The probability densitiy function for the Gaussian distribution is given by which of the following equations? 
+
+
+    - [ ] $\frac{\sum_{i=i}^{n} x_{i}}{n}$
+    - [x] $\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right)$
+    - [ ] $\frac{1}{max-min}$
+    - [ ] $\sqrt{\frac{\sum_{i=1}^n (x_i - \overline{x})^2}{n-1}}$
+
+(c)  Fill in the blanks in the sentence below to describe what happens *on each repeat* in code B above, in which we constructed the sampling distribution.
+
+> Draw **23** data points **with** replacement, compute the **median**. 
+
+(d) The shaded area of the figure shows a 68% confidence interval. If we were to increase the `level` of confidence to 95%, the confidence interval would become:
+
+    - [ ] Narrower
+    - [x] Broader
+    - [ ] Stay the same
+    - [ ] There's insufficient information to determine this
+
+## 2 Hypothesis testing 
+
+Suppose we want to know whether the participants who arrived as adults (17-39 age group) acheived native performance. We decide to address this question via the 3-step hypothesis testing framework in which we investigate the difference in **medians** between the native English speakers (0 age group) and the 17-39 age group. 
+
+
+```{r}
+#| layout-ncol: 2
+# A. visualize difference with a boxplot
+johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "17-39")) %>%
+    ggplot(aes(y = score, x = ageGroup)) +
+    geom_boxplot()
+
+```
+
+\clearpage 
+
+```{r}
+# B. compute observed difference in means
+diff_medians <- johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "17-39")) %>%
+    specify(response = score, explanatory = ageGroup) %>%
+    calculate(stat = "diff in medians", order = c("0", "17-39"))
+
+```
+
+```{r}
+# C. construct the null distribution with infer
+null_distribution <- johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "17-39")) %>%
+    specify(response = score, explanatory = ageGroup) %>%
+    hypothesize(null = "independence") %>%
+    generate(reps = 1000, type = "permute") %>%
+    calculate(stat = "diff in medians", order = c("0", "17-39")) 
+```
+
+```{r}
+#| layout-ncol: 2
+
+# D. visualize the null and shade p-value
+null_distribution %>%
+    visualize()  +
+    shade_p_value(obs_stat = diff_medians, direction = "both")
+```
+
+
+(a) Step 1 is to pose the null hypothesis. True or false, the null hypothesis here is that the observed difference in medians is due age group (age of arrival in the US). 
+
+    - [ ] True
+    - [x] False
+
+\clearpage 
+
+(b) Step 2 is to ask, if the null hypothesis is true, how likely is our observed pattern of results? We quantify this likelihood with:
+
+    - [ ] diff in medians
+    - [ ] correlation
+    - [ ] liklihood estimation
+    - [x] p-value
+
+(c) Step 3 is to decide whether to reject the null hypothesis. Johnson and Newport concluded that the two groups were significantly different from each other, suggesting that participants who arrived to the US after age 17 did not achieve native proficiency. This implies that they:
+
+    - [x] Reject the null hypothesis
+    - [ ] Fail to reject the null hypothesis
+    - [ ] Prove the research hypothesis to be true
+    - [ ] Prove the null hypothesis to be true
+
+(d) When we calculate the p-value from the simulated null distribution using the `get_p_value()` function, we get **p = 0**. Is this a problem? Why or why not? Explain what a p-value of 0 means in this context.
+
+    > **Answer**: This is not a problem. A p-value of exactly 0 in this context indicates that 0 out of the 1000 samples from the null had a difference in medians that's more extreme than the one observed in our sample.
+
+## 3 Correlation
+
+Johnson and Newport (1989) also wanted to ask whether years of exposure to English predicted score on the English proficiency task. To address this, they computed the correlation between score and exposure.
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+
+dat <- rnorm_multi(n = 46, 
+                  mu = c(242, 20),
+                  sd = c(10, 5),
+                  r = c(0.2), 
+                  varnames = c("score", "exposure"),
+                  empirical = FALSE)
+
+dat %>% ggplot(aes(x = exposure, y = score)) +
+geom_point(alpha = .8)
+```
+
+
+\clearpage 
+
+(a) Given the scatterplot of these data, which of the following could be their observed correlation? 
+
+    - [ ] $-0.88$
+    - [ ] $0.88$
+    - [x] $0.16$
+    - [ ] $0.5$
+
+(b) True or false, the correlations computed on these data were subject to sampling variability.
+
+    - [x] True
+    - [ ] False
+
+(c) Johnson and Newport used hypothesis testing to determine whether the correlation they observed was significantly different from zero. We computed a p-value of `0.624` on the correlation we observed in our simulated data. Which figure could represent this p-value visualized on a null distribution generated nonparametrically from 1000 repetitions?
+
+```{r}
+#| echo: false
+
+
+obs_corr <- dat %>%
+    specify(response = score, explanatory = exposure) %>%
+    calculate(stat = "correlation") 
+
+
+null_distribution <- dat %>%
+    specify(response = score, explanatory = exposure) %>%
+    hypothesize(null = "independence") %>%
+    generate(reps = 1000, type = "permute") %>%
+    calculate(stat = "correlation") 
+
+```
+
+
+```{r}
+#| echo: false 
+#| layout-ncol: 3
+
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(0.23, direction = "two-sided") +
+    labs(tag = "A")
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(0.624, direction = "two-sided") +
+    labs(tag = "B")
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(obs_corr, direction = "two-sided") +
+    labs(tag = "C")
+
+
+
+```
+
+> **Answer**: Figure C
+
+(d) What type of relationship does the correlation between years of exposure and score suggest?
+
+    - [x] Linear
+    - [ ] Nonlinear
+    - [ ] Independence 
+    - [ ] Permute
+
+\clearpage 
+
+## 4 Model specification
+
+Below are two different models, A and B, of Johnson and Newport's data on whether years of exposure to English predict participant scores on the grammaticality judgement task. The models are fitted with information about both measures.
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+
+
+dat %>%
+ggplot(
+aes(x = exposure, y =  score)) +
+    geom_point() +
+    geom_smooth(
+        method = "lm", 
+        formula = "y ~ x",
+        se = FALSE, 
+        linewidth = 2
+    ) + labs(tag = "A")
+
+dat %>%
+ggplot(
+aes(x = exposure, y =  score)) +
+    geom_point() +
+    geom_smooth(
+        method = "lm", 
+        formula = "y ~ 1",
+        se = FALSE, 
+        linewidth = 2
+    ) + labs(tag = "B")  
+
+```
+
+(a) Which of the following best describes model B? 
+
+    - [ ] supervised learning, classification model
+    - [x] supervised learning, regression model
+    - [ ] unsupervised learning, classification model
+    - [ ] unsupervised learning, regression model
+
+(b) Suppose that a model is specified with one response and one explanatory variables. Which of the following could be used to express the model? Choose all that apply.
+
+    - [x] $y = ax+b$
+    - [ ] $y = w_0 + w_1x_1 + w_2x_2$
+    - [x] $y = β_0 + β_1x_1 + \epsilon$
+    - [x] $y = Xβ + ε$
+
+(c) Which of the following model terms are included in model A? 
+
+    - [x] intercept
+    - [x] main
+    - [ ] interaction
+    - [ ] transformation
+
+(d) Which of the following model terms are included in model B? 
+
+    - [x] intercept
+    - [ ] main
+    - [ ] interaction
+    - [ ] transformation
