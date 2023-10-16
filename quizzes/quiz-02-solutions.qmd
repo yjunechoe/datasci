@@ -1,5 +1,5 @@
 ---
-title:  "Quiz 2"
+title:  "Quiz 2 Solutions"
 subtitle: "Data Science for Studying Language & the Mind"
 # author: 
 #     name: Katie Schuler
