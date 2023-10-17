@@ -25,7 +25,7 @@ Week | Day | Topic | Resources |
 | 5 | 10-03 |  [Problem set 2](/psets/problem-set-02.qmd) || 
 | 6 | 10-03 |  [Model specification](/notes/model-specification.qmd) | [slides](/slides/model-specification.qmd) | 
 | 6 | 10-05 |  [Quiz 2 review](https://colab.research.google.com/drive/1TwLVKtgUzVV09qnky_9YAAUOlDNArXno?usp=sharing) | [practice quiz](/labs/lab-06.qmd)| 
-| 7 | 10-10 |  Quiz 2 | | 
+| 7 | 10-10 |  [Quiz 2](/quizzes/quiz-02.qmd) | [solutions](/quizzes/quiz-02-solutions.qmd) | 
 | 7 | 10-12 |  **No class, break** | | 
 | 8 | 10-17 |  Model fitting | | 
 | 8 | 10-19 |  Model fitting tutorial| | 
