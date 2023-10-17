@@ -27,7 +27,7 @@ Week | Day | Topic | Resources |
 | 6 | 10-05 |  [Quiz 2 review](https://colab.research.google.com/drive/1TwLVKtgUzVV09qnky_9YAAUOlDNArXno?usp=sharing) | [practice quiz](/labs/lab-06.qmd)| 
 | 7 | 10-10 |  Quiz 2 | | 
 | 7 | 10-12 |  **No class, break** | | 
-| 8 | 10-17 |  Model fitting | | 
+| 8 | 10-17 |  Model fitting | [slides](/slides/model-fitting.qmd) | 
 | 8 | 10-19 |  Model fitting tutorial| | 
 | 8 | 10-22 | Problem set 3 | | 
 | 9 | 10-24 | Model accuracy | | 
