@@ -47,7 +47,9 @@ website:
       - labs/lab-04.qmd
       - text: "Lab 5: Hypothesis testing (Colab notebook)"
         url: https://colab.research.google.com/drive/1UzCgib6XIurxKAiNjn7GetvS6VWCocRd?usp=sharing
-      - labs/lab-06.qmd
+      - labs/lab-051.qmd
+      - text: "Lab 6: Model fitting (Colab notebook)"
+        url: https://colab.research.google.com/drive/1KCZMSCCDXW8NMjVqXkzV5I5mbMdLEPdE?usp=sharing
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd

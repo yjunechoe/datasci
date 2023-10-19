@@ -1,0 +1,564 @@
+---
+title:  "Practice Quiz 2"
+subtitle: "Not graded, just practice"
+date:   2023-10-06
+author: Katie Schuler
+number-sections: false
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(webexercises)
+library(tidyverse)
+library(infer)
+theme_set(theme_gray(base_size = 16))
+set.seed(60)
+```
+
+```{r}
+#| echo: false
+
+native <- tibble(
+    score = rnorm(23, 268.8 , 2.9), 
+    age = 0, 
+    ageGroup = "0"
+)
+
+three <- tibble( score = rnorm(7, 269.3, 2.8), 
+    age = runif(7, 3, 7), ageGroup = "3-7")
+eight <- tibble( score = rnorm(8, 256.0, 6.0), 
+    age = runif(8, 8, 10), ageGroup = "8-10")
+eleven <- tibble( score = rnorm(8, 235.9, 13.6), 
+    age = runif(8, 11, 15), ageGroup = "11-15")
+seventeen <- tibble( score = rnorm(23, 210.3, 22.8), 
+    age = runif(23, 17, 39), ageGroup = "17-39")
+
+johnson_newport_1989 <- bind_rows(
+    native, three, eight, eleven, seventeen
+)  %>%
+mutate(langGroup = ifelse(ageGroup == "0", "native", "non-native"))
+
+
+```
+
+## The data
+
+This quiz refers to data simulated from Johnson & Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in the critical period for language acquisition and wanted to know whether the participants' age of arrival to the United States played a role in their English language proficiency. 
+
+The simulated data are stored in the tibble `johnson_newport_1989`. Here is a `glimpse()` at the tibble for your reference: 
+
+```{r}
+glimpse(johnson_newport_1989)
+```
+
+
+## 1 Sampling distribution 
+
+
+Johnson and Newport (1989) reported the mean and standard deviation of participants' scores on the English proficiency test, grouped by an `ageGroup` variable, which divides age into 5 groups. Below we computed these descriptive statistics on our simulated data. Then, we used `infer` to generate the sampling distribution for the 3-7 year old age group, visualize the distribution, and shade the confidence interval. 
+
+```{r}
+# A. compute descriptive statistics by group 
+johnson_newport_1989 %>% 
+    group_by(ageGroup) %>%
+    summarise(n = n(), mean = mean(score), sd = sd(score))
+```
+
+```{r}
+# B. generate the sampling distribution for 3-7 group
+samp_distribution <- johnson_newport_1989 %>%
+    filter(ageGroup == "3-7") %>%
+    specify(response = score) %>%
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "mean") 
+```
+
+```{r}
+#| echo: false
+#| message: false
+
+# hide ci so we can ask about getting the ci a few ways
+ci <- samp_distribution %>%
+    get_confidence_interval(level = 0.68, type = "percentile")
+
+ci2 <- samp_distribution %>%
+    get_confidence_interval(type = "se", point_estimate = 271)
+
+```
+
+```r
+# C. get confidence interval 
+ci <- samp_distribution %>%
+    get_confidence_interval(______________)
+
+```
+
+```{r}
+#| layout-ncol: 2
+
+# D. visualize sampling distribution and confidence interval 
+samp_distribution %>%
+    visualize() +
+    shade_ci(endpoints = ci)
+```
+
+(a) True or false, the descriptive statistics reported above are parametric.
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer=TRUE, 
+    FALSE
+)
+
+cat(longmcq(choices))
+```
+
+(b) The sampling distribution of the mean looks approximately Gaussian. The probability densitiy function for the Gaussian distribution is given by which of the following equations? 
+
+
+    1. $\frac{\sum_{i=i}^{n} x_{i}}{n}$
+    2. $\sqrt{\frac{\sum_{i=1}^n (x_i - \overline{x})^2}{n-1}}$
+    2. $\frac{1}{max-min}$
+    3. $\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{2}\right)$
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+     1, 2, 3, answer=4
+)
+
+cat(longmcq(choices))
+```
+
+
+(c) Fill in the blanks in the sentence below to describe what happens *on each repeat* in code B above, in which we constructed the sampling distribution.
+
+> Draw `r mcq(c(answer=7, 100, 1000))` data points `r mcq(c(answer="with", "without"))` replacement, compute the `r mcq(c("bootstrap", answer="mean", "response", "score"))`
+
+
+
+(d) Which of the following could have been used to fill in the blank  in code block C above? Choose all that apply.
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+     answer="type = 'percentile', level = 0.68", 
+     "type = 'percentile', level = 271", 
+     answer="type = 'se', point_estimate = 271", 
+     "type = 'se', point_estimate = 0.68"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+
+
+## 2 Hypothesis testing 
+
+Johnson and Newport (1989) began with the following question: 
+
+> "The primary question of this study involved examining the relationship between age of learning English as a second language and performance on the test of English grammar...The first comparison involved determining whether there was any difference between the age 3-7 group and the native group in their performance in English." ~ p78 
+
+We replicated this below using our simulated data and the 3-step hypothesis testing framework we learned in lecture: 
+
+```{r}
+#| layout-ncol: 2
+# A. visualize difference with a boxplot
+johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "3-7")) %>%
+    ggplot(aes(y = score, x = ageGroup)) +
+    geom_boxplot()
+
+```
+
+```{r}
+# B. compute observed difference in means
+diff_means <- johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "3-7")) %>%
+    specify(response = score, explanatory = ageGroup) %>%
+    calculate(stat = "diff in means", order = c("0", "3-7"))
+
+```
+
+```{r}
+# C. construct the null distribution with infer
+null_distribution <- johnson_newport_1989 %>%
+    filter(ageGroup %in% c("0", "3-7")) %>%
+    specify(response = score, explanatory = ageGroup) %>%
+    hypothesize( null = "independence") %>%
+    generate(reps = 1000, type = "permute") %>%
+    calculate(stat = "diff in means", order = c("0", "3-7")) 
+```
+
+```{r}
+#| layout-ncol: 2
+
+# D. visualize the null and shade p-value
+null_distribution %>%
+    visualize()  +
+    shade_p_value(obs_stat = diff_means, direction = "both" )
+```
+
+(a) Step 1 is to pose the null hypothesis. True or false, the null hypothesis here is that the observed difference in means is due to nothing but chance. 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer=TRUE, 
+    FALSE
+)
+
+cat(longmcq(choices))
+```
+
+(b) Step 2 is to ask, if the null hypothesis is true, how likely is our observed pattern of results? We quantify this likelihood with:
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "diff in means",
+    answer="p-value", 
+    "correlation",
+    "response"
+)
+
+cat(longmcq(choices))
+```
+
+(c) Step 3 is to decide whether to reject the null hypothesis. Johnson and Newport concluded that the two groups were not significantly different from each other, suggesting that participants who arrived to the US by age 7 acheived native proficiency. This implies that they `r mcq(c("reject the null hypothesis", answer="fail to reject the null hypothsis"))`
+
+
+(d) Given our simulated null distribution, do you agree with their decision? Explain why based on the simulation.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Answer"
+#| eval: false
+
+"I agree with their decision. Under the null hypothesis, the observed
+ difference in means is just under -2. Given the shaded p-value, we 
+ can see that observing this difference is fairly likely under the 
+ null hypothesis. So we should fail to reject the null hypothsis."
+
+```
+
+
+
+## 3 Correlation 
+
+Johnson and Newport (1989) also wanted to address the following question:
+
+> "An important question to answer is whether, throughout adulthood, performance continues to decline as a function of age of exposure or whether it plateaus at some point (H. Gleitman, personal communication). If the explanation for late learners’ poorer performance relates to maturation, performance should not continue to decline over age, for presumably there are not many important maturational differences between, for example, the brain of a 17-year old and the brain of a 27-year old..." ~ page 79
+
+To address this question, they separated subjects into two groups: those who arrived as children, between the ages of 3-15 (figure A) and those who arrived as adults, between the ages of 17-39 (figure B). For each group, they computed the correlation between age of exposure and score on the English proficiency test.
+
+
+(a) Given the scatterplots of these data, which of the following could be their observed correlations for these groups? 
+
+
+
+```{r}
+#| echo: false 
+#| layout-ncol: 2
+
+johnson_newport_1989 %>%
+    filter(ageGroup %in% c("3-7", "8-10", "11-15")) %>%
+    ggplot(aes(x = age, y = score)) +
+    geom_point() +
+    labs(tag = "A", title = "Subjects Arriving Ages 3-15 (kids)")
+
+johnson_newport_1989 %>%
+    filter(ageGroup == "17-39") %>%
+    ggplot(aes(x = age, y = score)) +
+    geom_point() +
+    labs(tag = "B", title = "Subjects Arriving Ages 17-39 (adults)")
+
+
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "A: r = -0.0276, B: r = -0.884",
+    answer="A: r = -0.884, B: r = -0.0276",
+    "A: r = 0.884, B: r = -0.0276"
+)
+
+cat(longmcq(choices))
+```
+
+(b) True or false, the correlations computed on these data were subject to sampling variability.
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer=TRUE, 
+    FALSE
+)
+
+cat(longmcq(choices))
+```
+
+(c) Johnson and Newport used hypothesis testing to determine whether the correlation they observed for each group was significantly different from zero. Focusing on group B (arrived to US between 17-39) we computed a p-value of `0.942` on the correlation we observed in our simulated data. Which figure could represent this p-value visualized on a null distribution generated nonparametrically from 1000 repetitions? 
+
+```{r}
+#| echo: false
+
+adults <- johnson_newport_1989 %>% 
+    filter(ageGroup == "17-39") 
+
+obs_corr <- adults %>%
+    specify(response = score, explanatory = age) %>%
+    calculate(stat = "correlation") 
+
+null_distribution <- adults %>%
+    specify(response = score, explanatory = age) %>%
+    hypothesize(null = "independence") %>%
+    generate(reps = 1000, type = "permute") %>%
+    calculate(stat = "correlation") 
+
+```
+
+
+```{r}
+#| echo: false 
+#| layout-ncol: 3
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(0.9, direction = "two-sided") +
+    labs(tag = "A")
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(obs_corr, direction = "two-sided") +
+    labs(tag = "B")
+
+null_distribution %>%
+    visualize() +
+    shade_p_value(0.336, direction = "two-sided") +
+    labs(tag = "C")
+
+```
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "A", answer="B", "C"
+)
+
+cat(longmcq(choices))
+```
+
+(d) What type of relationship would a correlation between age and score suggest? 
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="linear",
+    "nonlinear",
+    "independence",
+    "none of the above"
+)
+
+cat(longmcq(choices))
+```
+
+
+
+
+
+## 4 Model specification
+
+Two different models: A and B, represented by the blue and red lines. 
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+johnson_newport_1989 %>%
+filter(ageGroup != "0") %>%
+ggplot(
+aes(x = age, y = score)) +
+    geom_point() +
+    geom_smooth(
+        method = "lm", 
+        formula = "y ~ 1",
+        se = FALSE, 
+        linewidth = 2
+    ) + labs(tag = "A")
+
+johnson_newport_1989 %>%
+filter(ageGroup != "0") %>%
+ggplot(
+aes(x = age, y = score)) +
+    geom_point() +
+    geom_smooth(
+        method = "lm", 
+        formula = "y ~ x",
+        se = FALSE, 
+        linewidth = 2,
+        color = "red"
+    ) + labs(tag = "B")
+
+```
+
+
+(a) Which of the following best describes model A (blue line)?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer = "supervised learning, regression model",
+    "unsupervised learning, regression model",
+    "supervised learning, classification model",
+    "unsupervised learning, classification model"
+)
+
+cat(longmcq(choices))
+```
+
+(b) Suppose the model B (red line) is specified with the response variable (score) and one explanatory variable (age). Which of the following equations could be used to express the model? Choose all that apply.
+
+    1. $y=ax+b$
+    2. $y = w_0 + w_1x_1$
+    3. $y = β_0 + β_1x_1 + β_2x_2 + \epsilon$
+    4. $y = Xβ + ε$
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer = 1,
+    answer = 2,
+    3,
+    answer = 4
+)
+
+cat(longmcq(choices))
+```
+
+Which of the following model terms are included in model A (blue line)?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="intercept",
+    "main", 
+    "interaction",
+    "transformation"
+)
+
+cat(longmcq(choices))
+```
+
+Which of the following model terms are included in model B (red line)?
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer="intercept",
+    answer="main", 
+    "interaction",
+    "transformation"
+)
+
+cat(longmcq(choices))
+```
+
+
+<!-- ## Appendix A: Critical Period
+
+
+The following questions refer to data in the 
+`johnson_newport_1989` tibble.  These data were simulated from Johnson & Newport (1989), who studied the English language proficiency of 46 native Korean or Chinese speakers who arrived in the US between the ages of 3 and 39. The researchers were interested in the critical period for language acquisition and wanted to know whether age of arrival to the US effected the proficiency the learners were able to obtain in English. 
+
+
+
+
+```{r}
+glimpse(johnson_newport_1989)
+```
+
+```{r}
+ggplot(johnson_newport_1989, 
+aes(x = age, y = score)) +
+geom_point() 
+```
+
+```{r}
+johnson_newport_1989 %>%
+    group_by(ageGroup) %>%
+    summarise(
+        n = n(), 
+        mean = mean(score),
+        sd = mean(score),
+        median = median(score),
+        lower = quantile(score, 0.25),
+        upper = quantile(score, 0.75)
+    )
+```
+
+
+1. What is the 
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+   answer="mean", 
+   answer="median", 
+   "standard deviation",
+   "inter quartile range (IQR)"
+)
+
+cat(longmcq(choices))
+``` -->
