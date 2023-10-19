@@ -28,7 +28,7 @@ Week | Day | Topic | Resources |
 | 7 | 10-10 |  [Quiz 2](/quizzes/quiz-02.qmd) | [solutions](/quizzes/quiz-02-solutions.qmd) | 
 | 7 | 10-12 |  **No class, break** | | 
 | 8 | 10-17 |  Model fitting | [slides](/slides/model-fitting.qmd) | 
-| 8 | 10-19 |  Model fitting tutorial| | 
+| 8 | 10-19 |  Model fitting tutorial| [slides](/slides/model-fitting-R.qmd) | 
 | 9 | 10-24 | Model accuracy | | 
 | 9 | 10-26 |  Model accuracy tutorial | | 
 | 9 | 10-26 | [Problem set 3](/psets/problem-set-03.qmd) | | 

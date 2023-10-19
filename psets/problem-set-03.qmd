@@ -103,6 +103,6 @@ The function given below finds the ordinary least squares estimate via matrix op
  }
 ```
 
-Use this function to estimate the free parameters of the model specified in problem 2.
+Use this function to estimate the free parameters of the model specified in problem 2. Are the parameters estimated by the matrix operation the same as those returned by `lm()`? Explain why or why not.
 
 
