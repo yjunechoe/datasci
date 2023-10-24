@@ -1,5 +1,5 @@
 ---
-title:  "Lab 07"
+title:  "Lab 07: Model fit practice quiz"
 subtitle: "Not graded, just practice"
 date:   2023-10-19
 author: Katie Schuler

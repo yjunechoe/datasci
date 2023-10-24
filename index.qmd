@@ -29,7 +29,7 @@ Week | Day | Topic | Resources |
 | 7 | 10-12 |  **No class, break** | | 
 | 8 | 10-17 |  Model fitting | [slides](/slides/model-fitting.qmd) | 
 | 8 | 10-19 |  Model fitting tutorial | [slides](/slides/model-fitting-R.qmd), [demo](https://colab.research.google.com/drive/1ZUUbscTuTC5uj_DNxZYy7-R3o71msMG0?usp=sharing) | 
-| 9 | 10-24 | Model accuracy | | 
+| 9 | 10-24 | [Model accuracy](/notes/model-accuracy.qmd) | [slides](/slides/model-accuracy.qmd) | 
 | 9 | 10-26 |  Model accuracy tutorial | | 
 | 9 | 10-26 | [Problem set 3](/psets/problem-set-03.qmd) | | 
 | 10 | 10-31 | Quiz 3 review | | 
