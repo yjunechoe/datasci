@@ -1,7 +1,7 @@
 ---
-title:  "Lab 07: Model fit practice quiz"
+title:  "Practice quiz 3"
 subtitle: "Not graded, just practice"
-date:   2023-10-19
+date:   2023-10-26
 author: Katie Schuler
 number-sections: false
 ---
@@ -335,13 +335,35 @@ cat(longmcq(choices))
 ## Model accuracy in R 
 
 
-A few more questions will be added on the following code output! 
+Questions 19-20 refer to the following code and output:
 
 ```{r}
 model <- lm(y ~ 1 + x, data)
 summary(model)
 ```
-Questions X-X refer to the following code (block B): 
+
+19. What is the $R^2$ value for the model fit above? 
+
+`r fitb(0.8822, width=10)`
+
+20. Does the value you entered in 19 reflect $R^2$ on the population or on the sample? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "population",
+    answer = "sample"
+)
+
+cat(longmcq(choices))
+
+```
+
+
+Questions 21-23 refer to the following code and output: 
 
 ```{r}
 # we divide the data into v folds for cross-validation
@@ -371,12 +393,50 @@ fitted_models %>%
 
 ```
 
-
-
-
+21. In the cross-validation performed above, how many folds were the data split into? 
 
 ```{r}
-# we divide the data into v folds for cross-validation
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "2",
+   "5",
+    answer = "10"
+)
+
+cat(longmcq(choices))
+
+```
+
+22. What $R^2$ do we estimate for the population? 
+
+`r fitb(0.890, width = 10)`
+
+23. What model has been fit? 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer = "`y ~ x`",
+    "`y ~ x^2`",
+   "`x ~ y`",
+    "`vfold_cv`"
+)
+
+cat(longmcq(choices))
+
+```
+
+
+Questions 24-26 refer to the following code and output: 
+
+```{r}
+# we bootstrap the data for cross-validation
 set.seed(2) 
 bootstrap <- bootstraps(data) 
 
@@ -384,10 +444,46 @@ bootstrap <- bootstraps(data)
 fitted_models_boot <- 
   fit_resamples(
     object = our_workflow, 
-    resamples = splits
+    resamples = bootstrap
     ) 
 
 fitted_models_boot %>%
     collect_metrics()
+
+```
+
+24. How many bootstrap samples did we generate? 
+
+`r fitb(25, width = 10)`
+
+25. True or false, we fit the same model to the bootstrap data as we did in the cross-validation code. 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    answer = "TRUE",
+    "FALSE"
+)
+
+cat(longmcq(choices))
+
+```
+
+26. True or false, the $R^2$ estimated by bootstrapping is equal to the $R^2$ estimated by cross-validation.
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "TRUE",
+    answer="FALSE"
+)
+
+cat(longmcq(choices))
 
 ```

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Katie Schuler">
-<meta name="dcterms.date" content="2023-10-19">
+<meta name="dcterms.date" content="2023-10-26">
 
-<title>LING 0700 | PSYC 2314 - Lab 07: Model fit practice quiz</title>
+<title>LING 0700 | PSYC 2314 - Practice quiz 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -365,7 +365,7 @@ window.onload = function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07: Model fit practice quiz</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-07.html">Practice quiz 3</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -422,7 +422,7 @@ window.onload = function() {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lab 07: Model fit practice quiz</span></a>
+ <span class="menu-text">Practice quiz 3</span></a>
   </div>
 </li>
     </ul>
@@ -447,7 +447,7 @@ window.onload = function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 07: Model fit practice quiz</h1>
+<h1 class="title">Practice quiz 3</h1>
 <p class="subtitle lead">Not graded, just practice</p>
 </div>
 
@@ -465,7 +465,7 @@ window.onload = function() {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 19, 2023</p>
+      <p class="date">October 26, 2023</p>
     </div>
   </div>
   
@@ -621,7 +621,7 @@ Coefficients:
 </section>
 <section id="model-accuracy-in-r" class="level2">
 <h2 class="anchored" data-anchor-id="model-accuracy-in-r">Model accuracy in R</h2>
-<p>A few more questions will be added on the following code output!</p>
+<p>Questions 19-20 refer to the following code and output:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, data)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -646,7 +646,17 @@ Multiple R-squared:  0.8822,    Adjusted R-squared:  0.8816
 F-statistic:  1483 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
-<p>Questions X-X refer to the following code (block B):</p>
+<ol start="19" type="1">
+<li>What is the <span class="math inline">\(R^2\)</span> value for the model fit above?</li>
+</ol>
+<p><input class="webex-solveme nospaces" size="10" data-answer="[&quot;0.8822&quot;,&quot;.8822&quot;]"></p>
+<ol start="20" type="1">
+<li>Does the value you entered in 19 reflect <span class="math inline">\(R^2\)</span> on the population or on the sample?</li>
+</ol>
+<div id="radio_HMGVIDZMZD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HMGVIDZMZD" value=""> <span>population</span></label><label><input type="radio" autocomplete="off" name="radio_HMGVIDZMZD" value="answer"> <span>sample</span></label>
+</div>
+<p>Questions 21-23 refer to the following code and output:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we divide the data into v folds for cross-validation</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) </span>
@@ -680,8 +690,25 @@ F-statistic:  1483 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 2 rsq     standard   0.890    10  0.0146 Preprocessor1_Model1</code></pre>
 </div>
 </div>
+<ol start="21" type="1">
+<li>In the cross-validation performed above, how many folds were the data split into?</li>
+</ol>
+<div id="radio_EKKVYXMOIC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EKKVYXMOIC" value=""> <span>2</span></label><label><input type="radio" autocomplete="off" name="radio_EKKVYXMOIC" value=""> <span>5</span></label><label><input type="radio" autocomplete="off" name="radio_EKKVYXMOIC" value="answer"> <span>10</span></label>
+</div>
+<ol start="22" type="1">
+<li>What <span class="math inline">\(R^2\)</span> do we estimate for the population?</li>
+</ol>
+<p><input class="webex-solveme nospaces" size="10" data-answer="[&quot;0.89&quot;,&quot;.89&quot;]"></p>
+<ol start="23" type="1">
+<li>What model has been fit?</li>
+</ol>
+<div id="radio_EZIDQKSBHV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EZIDQKSBHV" value="answer"> <span><code>y ~ x</code></span></label><label><input type="radio" autocomplete="off" name="radio_EZIDQKSBHV" value=""> <span><code>y ~ x^2</code></span></label><label><input type="radio" autocomplete="off" name="radio_EZIDQKSBHV" value=""> <span><code>x ~ y</code></span></label><label><input type="radio" autocomplete="off" name="radio_EZIDQKSBHV" value=""> <span><code>vfold_cv</code></span></label>
+</div>
+<p>Questions 24-26 refer to the following code and output:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we divide the data into v folds for cross-validation</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we bootstrap the data for cross-validation</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bootstrap <span class="ot">&lt;-</span> <span class="fu">bootstraps</span>(data) </span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -689,7 +716,7 @@ F-statistic:  1483 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>fitted_models_boot <span class="ot">&lt;-</span> </span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit_resamples</span>(</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> our_workflow, </span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> splits</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> bootstrap</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>fitted_models_boot <span class="sc">%&gt;%</span></span>
@@ -698,9 +725,25 @@ F-statistic:  1483 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 <pre><code># A tibble: 2 × 6
   .metric .estimator  mean     n std_err .config             
   &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
-1 rmse    standard   0.507    10  0.0397 Preprocessor1_Model1
-2 rsq     standard   0.890    10  0.0146 Preprocessor1_Model1</code></pre>
+1 rmse    standard   0.507    25 0.00946 Preprocessor1_Model1
+2 rsq     standard   0.887    25 0.00377 Preprocessor1_Model1</code></pre>
 </div>
+</div>
+<ol start="24" type="1">
+<li>How many bootstrap samples did we generate?</li>
+</ol>
+<p><input class="webex-solveme nospaces" size="10" data-answer="[&quot;25&quot;]"></p>
+<ol start="25" type="1">
+<li>True or false, we fit the same model to the bootstrap data as we did in the cross-validation code.</li>
+</ol>
+<div id="radio_RANYYBIKAA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RANYYBIKAA" value="answer"> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_RANYYBIKAA" value=""> <span>FALSE</span></label>
+</div>
+<ol start="26" type="1">
+<li>True or false, the <span class="math inline">\(R^2\)</span> estimated by bootstrapping is equal to the <span class="math inline">\(R^2\)</span> estimated by cross-validation.</li>
+</ol>
+<div id="radio_BZRLVVGAEP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BZRLVVGAEP" value=""> <span>TRUE</span></label><label><input type="radio" autocomplete="off" name="radio_BZRLVVGAEP" value="answer"> <span>FALSE</span></label>
 </div>
 
 
