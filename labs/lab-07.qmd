@@ -319,8 +319,8 @@ cat(longmcq(choices))
 choices <- c(
     answer="cross validation",
     answer = "bootstrapping",
-    "regression",
-    "set.seed"
+    "set.seed", 
+    "none of the above"
 )
 
 cat(longmcq(choices))
