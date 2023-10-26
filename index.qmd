@@ -32,7 +32,7 @@ Week | Day | Topic | Resources |
 | 9 | 10-24 | [Model accuracy](/notes/model-accuracy.qmd) | [slides](/slides/model-accuracy.qmd) | 
 | 9 | 10-26 |  [Model accuracy tutorial](https://colab.research.google.com/drive/10bTZpdhEYh1xYlXUnv76VJIXRAgODK7q?usp=sharing) | [demo solutions](https://colab.research.google.com/drive/1mk_d6pWPwbgcrHgAfHETghsJi1K9KS5k?usp=sharing) | 
 | 9 | 10-26 | [Problem set 3](/psets/problem-set-03.qmd) | | 
-| 10 | 10-31 | Quiz 3 review | | 
+| 10 | 10-31 | Quiz 3 review | [practice quiz 3](/labs/lab-07.qmd) | 
 | 10 | 11-02 |  Quiz 3 (thursday!) | | 
 | 11 | 11-07 | Model reliability | | 
 | 11 | 11-09 |  Model reliability tutorial | | 

@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../labs/lab-051.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -308,7 +309,7 @@ window.onload = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -342,7 +343,7 @@ window.onload = function() {
  <span class="menu-text">Lecture notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs/lab-04.html" rel="" target="">
+    <a class="nav-link active" href="../labs/lab-04.html" rel="" target="" aria-current="page">
  <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
@@ -359,10 +360,75 @@ window.onload = function() {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/lab-07.html">Lab 07: Model fit practice quiz</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1: Getting started with R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2: Import and visualize data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3: Visualize and wrangle data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Sampling distribution</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://colab.research.google.com/drive/1UzCgib6XIurxKAiNjn7GetvS6VWCocRd?usp=sharing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Hypothesis testing (Colab notebook)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-051.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Practice Quiz 2</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://colab.research.google.com/drive/1KCZMSCCDXW8NMjVqXkzV5I5mbMdLEPdE?usp=sharing" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6: Model fitting (Colab notebook)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab-07.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 07: Model fit practice quiz</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -371,6 +437,8 @@ window.onload = function() {
   <ul>
   <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link active" data-scroll-target="#model-fitting">Model fitting</a></li>
   <li><a href="#model-fitting-in-r" id="toc-model-fitting-in-r" class="nav-link" data-scroll-target="#model-fitting-in-r">Model fitting in R</a></li>
+  <li><a href="#model-accuracy" id="toc-model-accuracy" class="nav-link" data-scroll-target="#model-accuracy">Model accuracy</a></li>
+  <li><a href="#model-accuracy-in-r" id="toc-model-accuracy-in-r" class="nav-link" data-scroll-target="#model-accuracy-in-r">Model accuracy in R</a></li>
   </ul>
 </nav>
     </div>
@@ -468,7 +536,7 @@ $convergence
 <label><input type="radio" autocomplete="off" name="radio_HQJOIJECML" value="answer"> <span>3.37930046, 0.06683237</span></label><label><input type="radio" autocomplete="off" name="radio_HQJOIJECML" value=""> <span>0, 0</span></label><label><input type="radio" autocomplete="off" name="radio_HQJOIJECML" value=""> <span>959.4293</span></label><label><input type="radio" autocomplete="off" name="radio_HQJOIJECML" value=""> <span>6, 0</span></label><label><input type="radio" autocomplete="off" name="radio_HQJOIJECML" value=""> <span>all of the above</span></label>
 </div>
 <ol start="9" type="1">
-<li>What paramters were used to initialized the algorithm?</li>
+<li>What parameters were used to initialized the algorithm?</li>
 </ol>
 <div id="radio_YXXAFUTYEX" class="webex-radiogroup">
 <label><input type="radio" autocomplete="off" name="radio_YXXAFUTYEX" value=""> <span>3.37930046, 0.06683237</span></label><label><input type="radio" autocomplete="off" name="radio_YXXAFUTYEX" value="answer"> <span>0, 0</span></label><label><input type="radio" autocomplete="off" name="radio_YXXAFUTYEX" value=""> <span>959.4293</span></label><label><input type="radio" autocomplete="off" name="radio_YXXAFUTYEX" value=""> <span>6, 0</span></label>
@@ -502,6 +570,137 @@ Coefficients:
 </ol>
 <div id="radio_VQWPRTNCNB" class="webex-radiogroup">
 <label><input type="radio" autocomplete="off" name="radio_VQWPRTNCNB" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_VQWPRTNCNB" value=""> <span>False</span></label>
+</div>
+</section>
+<section id="model-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="model-accuracy">Model accuracy</h2>
+<p>Question 13 refers to the following figure:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="lab-07_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<ol start="13" type="1">
+<li>In the figure above, which of the following corresponds to the residuals?</li>
+</ol>
+<div id="radio_NKPXXGDYRX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NKPXXGDYRX" value=""> <span>blue line</span></label><label><input type="radio" autocomplete="off" name="radio_NKPXXGDYRX" value="answer"> <span>red lines</span></label><label><input type="radio" autocomplete="off" name="radio_NKPXXGDYRX" value=""> <span>black dots</span></label><label><input type="radio" autocomplete="off" name="radio_NKPXXGDYRX" value=""> <span>none of the above</span></label>
+</div>
+<ol start="14" type="1">
+<li>Suppose the <span class="math inline">\(R^2\)</span> value on the model in the figure above is about 0.88. Given this value, which of the following best describes the accuracy of the model?</li>
+</ol>
+<div id="radio_HREXKLWYUA" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HREXKLWYUA" value="answer"> <span>fairly high accuracy </span></label><label><input type="radio" autocomplete="off" name="radio_HREXKLWYUA" value=""> <span>fairly low accuracy</span></label><label><input type="radio" autocomplete="off" name="radio_HREXKLWYUA" value=""> <span>not enough information</span></label>
+</div>
+<ol start="15" type="1">
+<li>Suppose 0.88 reflects the <span class="math inline">\(R^2\)</span> for our fitted model on our sample. Which of the following is true about the <span class="math inline">\(R^2\)</span> for our fitted model on the population?</li>
+</ol>
+<div id="radio_WWJFSYYCYH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WWJFSYYCYH" value=""> <span>tends to be higher</span></label><label><input type="radio" autocomplete="off" name="radio_WWJFSYYCYH" value="answer"> <span>tends to be lower</span></label><label><input type="radio" autocomplete="off" name="radio_WWJFSYYCYH" value=""> <span>the same</span></label>
+</div>
+<ol start="16" type="1">
+<li>Which of the following best describes an overfit model?</li>
+</ol>
+<div id="radio_KHVAOBEUGG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KHVAOBEUGG" value=""> <span>performs well predicting new values, but poorly on the sample</span></label><label><input type="radio" autocomplete="off" name="radio_KHVAOBEUGG" value="answer"> <span>performs well on the sample, but poorly predicting new values</span></label><label><input type="radio" autocomplete="off" name="radio_KHVAOBEUGG" value=""> <span>performs poorly both on the sample and predicting new values</span></label><label><input type="radio" autocomplete="off" name="radio_KHVAOBEUGG" value=""> <span>performs well both on the sample and predicting new values</span></label>
+</div>
+<ol start="17" type="1">
+<li>How can we estimate <span class="math inline">\(R^2\)</span> on the population? Choose all that apply.</li>
+</ol>
+<div id="radio_LGKFYWRNIV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LGKFYWRNIV" value="answer"> <span>cross validation</span></label><label><input type="radio" autocomplete="off" name="radio_LGKFYWRNIV" value="answer"> <span>bootstrapping</span></label><label><input type="radio" autocomplete="off" name="radio_LGKFYWRNIV" value=""> <span>regression</span></label><label><input type="radio" autocomplete="off" name="radio_LGKFYWRNIV" value=""> <span>set.seed</span></label>
+</div>
+<ol start="18" type="1">
+<li>Fill in the blanks below to best describe cross validation:
+<ul>
+<li>Leave some out</li>
+<li>Fit a model on the data <select class="webex-select"><option value="blank"></option><option value="">left out</option><option value="answer">kept in</option></select></li>
+<li>Evaluate the mdoel on the data <select class="webex-select"><option value="blank"></option><option value="answer">left out</option><option value="">kept in</option></select></li>
+</ul></li>
+</ol>
+</section>
+<section id="model-accuracy-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="model-accuracy-in-r">Model accuracy in R</h2>
+<p>A few more questions will be added on the following code output!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> x, data)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ 1 + x, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.38959 -0.32626 -0.04605  0.31967  1.65977 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  2.08280    0.07418   28.08   &lt;2e-16 ***
+x            0.47844    0.01242   38.51   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5139 on 198 degrees of freedom
+Multiple R-squared:  0.8822,    Adjusted R-squared:  0.8816 
+F-statistic:  1483 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Questions X-X refer to the following code (block B):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we divide the data into v folds for cross-validation</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>splits <span class="ot">&lt;-</span> <span class="fu">vfold_cv</span>(data)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model secification </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>model_spec <span class="ot">&lt;-</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span>  </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="at">engine =</span> <span class="st">"lm"</span>)  </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># add a workflow</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>our_workflow <span class="ot">&lt;-</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(model_spec) <span class="sc">%&gt;%</span>  </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_formula</span>(y <span class="sc">~</span> x) </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># fit models to our folds </span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>fitted_models <span class="ot">&lt;-</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit_resamples</span>(</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> our_workflow, </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> splits</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>fitted_models <span class="sc">%&gt;%</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collect_metrics</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  .metric .estimator  mean     n std_err .config             
+  &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
+1 rmse    standard   0.507    10  0.0397 Preprocessor1_Model1
+2 rsq     standard   0.890    10  0.0146 Preprocessor1_Model1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we divide the data into v folds for cross-validation</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>) </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bootstrap <span class="ot">&lt;-</span> <span class="fu">bootstraps</span>(data) </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fit models to our folds </span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>fitted_models_boot <span class="ot">&lt;-</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit_resamples</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> our_workflow, </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> splits</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>fitted_models_boot <span class="sc">%&gt;%</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collect_metrics</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  .metric .estimator  mean     n std_err .config             
+  &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               
+1 rmse    standard   0.507    10  0.0397 Preprocessor1_Model1
+2 rsq     standard   0.890    10  0.0146 Preprocessor1_Model1</code></pre>
+</div>
 </div>
 
 
@@ -741,6 +940,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../labs/lab-051.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practice Quiz 2</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

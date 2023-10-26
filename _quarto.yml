@@ -51,6 +51,7 @@ website:
       - labs/lab-051.qmd
       - text: "Lab 6: Model fitting (Colab notebook)"
         url: https://colab.research.google.com/drive/1KCZMSCCDXW8NMjVqXkzV5I5mbMdLEPdE?usp=sharing
+      - labs/lab-07.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
