@@ -188,7 +188,7 @@ labs(tag = "B", title = "High MSE")
 ```
 
 
-OLS 
+
 
 
 

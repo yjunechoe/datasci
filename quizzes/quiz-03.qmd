@@ -1,0 +1,269 @@
+---
+title:  "Quiz 3"
+subtitle: "Data Science for Studying Language & the Mind"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-tip}
+## Estimated time: 30 minutes
+
+You may need more time if programming is completely new to you, or less if you have some experience already.
+:::
+
+**Instructions**
+
+- The quiz is closed book/note/computer/phone
+- If you need to use the restroom, leave your exam and phone with the TA
+- You have 60 minutes to complete the quiz. If you finish early, you may turn in your quiz and leave early
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(optimg)
+theme_set(theme_gray(base_size = 16))
+```
+
+```{r}
+#| echo: false
+
+set.seed(1234)
+beta0 = 60
+beta1 = 0.8
+beta2 = 0.2
+data <- tibble(
+    hours = runif(500, min = 0, max = 100), # time practicing
+    instrument_recoded = sample(c(1, 0), 500, replace = TRUE),
+    skill = beta0+(beta1*hours) + (beta2*instrument_recoded) + rnorm(500, sd=25)
+) %>% mutate(instrument = ifelse(instrument_recoded == 1, "piano", "guitar"))
+
+```
+
+\newcommand\answerbox{%%
+    \framebox(400,50){}}
+
+\begin{flushleft}
+\makebox[12cm]{\textbf{Name}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{PennKey}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{Lab section TA}:\ \hrulefill}
+\end{flushleft}
+
+\begin{center}
+\textbf{Score by topic area}\\
+\begin{tabular}{|l|l|}\hline
+Model Fitting &   \\ \hline
+Model Fitting in R &  \\ \hline
+Model Accuracy & \\ \hline
+Model Accuracy in R & \\ \hline
+Total & \\ \hline
+
+\end{tabular}
+\end{center}
+
+\clearpage
+
+## The data
+
+Suppose we want to study the effect hours practicing an instrument has on your ultimate skill level with the instrument. We study 500 participants who are learning to play either piano or guitar. Below we explore these data in a few ways. 
+
+```{r}
+glimpse(data)
+```
+
+```{r}
+#| echo: false
+
+ggplot(data = data, aes(x = hours, y = skill)) + 
+    facet_grid(.~ instrument) +
+    geom_point()
+
+```
+
+```{r}
+data %>% 
+    group_by(instrument) %>%
+    summarise( 
+        n = n(), 
+        mean_skill = mean(skill), sd_skill = sd(skill), 
+        mean_hours = mean(hours), sd_hours = sd(hours))
+
+```
+
+## 1 Model Fitting 
+
+Suppose we fit a model represented by the following equation, where $x_1$ is the number of hours spent pracicing, $x_2$ is the instrument, and $y$ is the skill acheived: 
+
+$y = b_0 + b_1x_1 + b_2x_2$ 
+
+(a) Which of the following would work to estimate the free parameters of this model? Choose one.
+
+    - [ ] only gradient descent
+    - [ ] only ordinary least squares
+    - [ ] both gradient descent and ordinary least squares
+
+(b) True or false, ordinary least squares finds the best fitting free paramters by solving a system of linear equations.
+
+    - [ ] True
+    - [ ] False
+
+(c) True or false, when performing gradient descent on a **nonlinear** model, we might arrive at a local minimum and miss the global one. 
+
+    - [ ] True
+    - [ ] False
+
+(d) True or False, given the model above, gradient descent and ordinary least squares would both converge on approximately the same parameter estimates. 
+
+    - [ ] True
+    - [ ] False
+
+## 2 Model Fitting in R 
+
+Questions in section 2 refer to the code below.
+
+```{r}
+#| echo: false
+
+model <- lm(skill ~ hours + instrument_recoded, data = data)
+
+SSE <- function(data, par){
+    data %>%
+        mutate(pred = 
+        par[1] + par[2]*hours + par[3]*instrument_recoded) %>%
+        mutate(error = skill - pred) %>%
+        mutate(sq_error = error ^2) %>%
+        with(sum(sq_error))
+}
+
+```
+
+```{r}
+
+# fit model with lm
+model
+
+#fit model with optimg 
+optimg(data = data, par = c(1,1,1), fn=SSE, method = "STGD")
+
+```
+
+
+(a) What parameters did the gradient descent algorithm try first? 
+
+    \answerbox
+
+(b) Which of the following could be the model specification in R? Choose all the apply.
+
+    - [ ] `skill ~ hours + instrument_recoded`
+    - [ ] `skill ~ hours * instrument_recoded`
+    - [ ] `skill ~ 1 + hours + instrument_recoded`
+    - [ ] `y ~ x`
+    - [ ] `y ~ 1 + x`
+
+(c) Given the equation given below, what are the best fitting free parameter for $b_1$ and $b_2$? 
+
+> $y = b_0 + b_1x_1 + b_2x_2$ where $x_1$ is the number of hours spent practicing, $x_2$ is the instrument, and $y$ is the skill acheived. 
+
+    \answerbox
+
+(d) Which of the following could be the value of the sum of squared errors when the parameters $b_0$, $b_1$, and $b_2$ are set to 0?
+
+    - [ ] exactly 286497.6
+    - [ ] a value higher than 286497.6
+    - [ ] a value lower than 286497.6
+    - [ ] approximately 26 
+    - [ ] approximately 0
+
+
+## 3 Model Accuracy 
+
+Questions in section 3 refer to the following code below. 
+
+```{r}
+summary(model)
+```
+
+(a) What is the $R^2$ for this model? 
+
+    \answerbox
+
+(b) Which of the following is true about this $R^2$ value? 
+
+    - [ ] tends to overestimate $R^2$ on the population 
+    - [ ] tends to underestimate $R^2$ on the population
+    - [ ] tends to overestimate $R^2$ on the sample
+    - [ ] tends to underestimate $R^2$ on the sample
+
+(c) Explain why an overfit model would perfrom well on the sample, but poorly on predicting new values.
+
+    \answerbox 
+
+(d) True or false, we can use cross-valiation **or** bootstrapping to estimate $R^2$ on the population? 
+
+    - [ ] True
+    - [ ] False
+
+## 4 Model Accuracy in R 
+
+Quesitons in section 4 refer to the following code:
+
+```{r}
+# we divide the data 
+set.seed(2) 
+splits <- vfold_cv(data, v = 20)
+
+# model secification 
+model_spec <- 
+  linear_reg() %>%  
+  set_engine(engine = "lm")  
+
+# add a workflow
+our_workflow <- 
+  workflow() %>%
+  add_model(model_spec) %>%  
+  add_formula(skill ~ hours + instrument_recoded) 
+
+# fit models 
+fitted_models <- 
+  fit_resamples(
+    object = our_workflow, 
+    resamples = splits
+    ) 
+
+fitted_models %>%
+    collect_metrics()
+
+```
+
+(a) In the outupt above, what is our estimate for $R^2$ on the population? 
+
+    \answerbox
+
+(b) In the code above, what method did we use to estimate $R^2$ on the population? Choose one.
+
+    - [ ] k-fold cross-valiation 
+    - [ ] leave one out cross-valiation 
+    - [ ] boostrapping 
+    - [ ] workflow() 
+
+(c) In the code above, how many models did we fit when calling `fit_resamples()`? 
+
+    - [ ] 2
+    - [ ] 20
+    - [ ] 10
+    - [ ] 100 
+
+(d) True or false, if we estimated the $R^2$ for the population with another approach, the value would be exactly the same.
+
+    - [ ] True
+    - [ ] False 
