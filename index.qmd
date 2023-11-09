@@ -35,7 +35,7 @@ Week | Day | Topic | Resources |
 | 10 | 10-31 | Quiz 3 review | [practice quiz 3](/labs/lab-07.qmd), [slido](https://app.sli.do/event/mULhVrupEurtJD8dGKwqE1) | 
 | 10 | 11-02 |  Quiz 3 (thursday!) | | 
 | 11 | 11-07 | [Model reliability](/slides/model-reliability.qmd) | | 
-| 11 | 11-09 |  Model reliability tutorial | | 
+| 11 | 11-09 |  [Model reliability tutorial](https://docs.google.com/presentation/d/1q-6lQnfcA9LfLysMc5A7U6-g4aFDKRrmVoLh8X08S-4/edit?usp=sharing) | | 
 | 11 | 11-12 |  Problem set 4 | | 
 | 12 | 11-14 |  Classification | | 
 | 12 | 11-16 |  tutorial / review | | 
