@@ -12,7 +12,7 @@ format:
 ---
 
 ::: {.callout-tip}
-## Estimated time: 30 minutes
+## Estimated time: 40 minutes
 
 You may need more time if programming is completely new to you, or less if you have some experience already.
 :::
@@ -102,7 +102,7 @@ data %>%
 
 ## 1 Model Fitting 
 
-Suppose we fit a model represented by the following equation, where $x_1$ is the number of hours spent pracicing, $x_2$ is the instrument, and $y$ is the skill acheived: 
+Suppose we fit a model represented by the following equation, where $x_1$ is the number of hours spent practicing, $x_2$ is the instrument, and $y$ is the skill acheived: 
 
 $y = b_0 + b_1x_1 + b_2x_2$ 
 
@@ -112,20 +112,21 @@ $y = b_0 + b_1x_1 + b_2x_2$
     - [ ] only ordinary least squares
     - [ ] both gradient descent and ordinary least squares
 
-(b) True or false, ordinary least squares finds the best fitting free paramters by solving a system of linear equations.
+(b) True or false, when performing gradient descent on a **nonlinear** model, we might arrive at a local minimum and miss the global one.
 
     - [ ] True
     - [ ] False
 
-(c) True or false, when performing gradient descent on a **nonlinear** model, we might arrive at a local minimum and miss the global one. 
+(c) True or False, given the model above, gradient descent and ordinary least squares would both converge on approximately the same parameter estimates.
 
     - [ ] True
     - [ ] False
 
-(d) True or False, given the model above, gradient descent and ordinary least squares would both converge on approximately the same parameter estimates. 
+(d) The following plots a linear model of the formula `y ~ 1 + x` and one data point. Which dashed line represents the model's **residual** for this point? Circle one.
 
-    - [ ] True
-    - [ ] False
+![](figs/quiz3-residuals.png){width=90%}
+
+\newpage
 
 ## 2 Model Fitting in R 
 
@@ -149,7 +150,6 @@ SSE <- function(data, par){
 
 ```{r}
 
-# fit model with lm
 model
 
 #fit model with optimg 
@@ -157,65 +157,73 @@ optimg(data = data, par = c(1,1,1), fn=SSE, method = "STGD")
 
 ```
 
-
-(a) What parameters did the gradient descent algorithm try first? 
-
-    \answerbox
-
-(b) Which of the following could be the model specification in R? Choose all the apply.
+(a) Which of the following could be the model specification in R? Choose all the apply.
 
     - [ ] `skill ~ hours + instrument_recoded`
     - [ ] `skill ~ hours * instrument_recoded`
     - [ ] `skill ~ 1 + hours + instrument_recoded`
-    - [ ] `y ~ x`
-    - [ ] `y ~ 1 + x`
 
-(c) Given the equation given below, what are the best fitting free parameter for $b_1$ and $b_2$? 
+(b) In the code, `SSE()` is a function we have defined to calculate the sum of squared errors. Which of the following correctly describes the steps of calculating SSE? Choose one.
 
-> $y = b_0 + b_1x_1 + b_2x_2$ where $x_1$ is the number of hours spent practicing, $x_2$ is the instrument, and $y$ is the skill acheived. 
+    - [ ] 1) calculate the residuals, 2) square each of the residuals, 3) add them up
+    - [ ] 1) calculate the residuals, 2) add them up, 3) square the sum of residuals
+    - [ ] 1) calculate the residuals, 2) calculate their standard deviation, 3) square it
+    - [ ] 1) calculate the residuals, 2) calculate their mean, 3) square it
 
-    \answerbox
+(c) Using the estimated parameters from `lm()`, fill in the blanks to calculate the model's predicted value of `skill` for a participant who played the **piano** for **20 hours**. You may round to the first decimal place.
 
-(d) Which of the following could be the value of the sum of squared errors when the parameters $b_0$, $b_1$, and $b_2$ are set to 0?
+\hspace*{1cm}
 
+        skill = ____________ + ( ____________ * 20 ) + ( 0.7 * ___________ )
+
+\hspace*{1cm}
+
+(d) Which of the following is the most likely value of the sum of squared errors when the parameters $b_0$, $b_1$, and $b_2$ are all set to 0? Choose one.
+
+    - [ ] exactly 0
     - [ ] exactly 286497.6
     - [ ] a value higher than 286497.6
     - [ ] a value lower than 286497.6
-    - [ ] approximately 26 
-    - [ ] approximately 0
 
 
 ## 3 Model Accuracy 
 
-Questions in section 3 refer to the following code below. 
+Questions in section 3 refer to the following `summary()` of the same model from section 2:
 
-```{r}
-summary(model)
-```
+(a) Which of the following is a correct interpretation of the model's $R^2$ value? Choose one.
 
-(a) What is the $R^2$ for this model? 
+    - [ ] The model has a 46.49% chance of explaining the true pattern in the data.
+    - [ ] The model explains 46.49% of the variance found in the data.
+    - [ ] The sample shows 46.49% of the variance found in the population.
 
-    \answerbox
-
-(b) Which of the following is true about this $R^2$ value? 
+(b) Which of the following is true about the model's $R^2$? Choose all that apply.
 
     - [ ] tends to overestimate $R^2$ on the population 
     - [ ] tends to underestimate $R^2$ on the population
     - [ ] tends to overestimate $R^2$ on the sample
     - [ ] tends to underestimate $R^2$ on the sample
 
-(c) Explain why an overfit model would perfrom well on the sample, but poorly on predicting new values.
+\newpage
 
-    \answerbox 
+(c) Which one of the following is true about $R^2$? Use the below formula as a guide and choose one.
 
-(d) True or false, we can use cross-valiation **or** bootstrapping to estimate $R^2$ on the population? 
+    $R^2=1-\frac{unexplained \; variance}{total \; variance}$
 
-    - [ ] True
-    - [ ] False
+    - [ ] The unexplained variance refers to the fact that linear model haveh low accuracy.
+    - [ ] The total variance is about the overall variability of the data in the population.
+    - [ ] $R^2$ of 0 means that the model predicts the mean of the data but nothing else.
+    - [ ] $R^2$ of 1 means that the model will be perfect at predicting new data points.
+
+(d) Which of the following is a correct statement about estimating $R^2$ for the _population_? Choose all that apply.
+
+    - [ ] We can use OLS
+    - [ ] We can use bootstrapping
+    - [ ] We can use cross-validation
+    - [ ] We must go out and collect more samples from the population
 
 ## 4 Model Accuracy in R 
 
-Quesitons in section 4 refer to the following code:
+Questions in section 4 refer to the following code:
 
 ```{r}
 # we divide the data 
@@ -235,35 +243,34 @@ our_workflow <-
 
 # fit models 
 fitted_models <- 
-  fit_resamples(
-    object = our_workflow, 
-    resamples = splits
-    ) 
+  fit_resamples(object = our_workflow, 
+                resamples = splits) 
 
 fitted_models %>%
-    collect_metrics()
-
+  collect_metrics()
 ```
 
-(a) In the outupt above, what is our estimate for $R^2$ on the population? 
+(a) In the output above, what is the $R^2$ estimate for the population?
 
-    \answerbox
+    - [ ] 23.8
+    - [ ] 0.468
+    - [ ] 0.468 + 0.0267
 
-(b) In the code above, what method did we use to estimate $R^2$ on the population? Choose one.
+(b) In the code above, which method did we use to estimate $R^2$ on the population? Choose one.
 
     - [ ] k-fold cross-valiation 
-    - [ ] leave one out cross-valiation 
+    - [ ] leave one out cross-valiation
     - [ ] boostrapping 
-    - [ ] workflow() 
 
 (c) In the code above, how many models did we fit when calling `fit_resamples()`? 
 
-    - [ ] 2
-    - [ ] 20
     - [ ] 10
+    - [ ] 20
     - [ ] 100 
 
-(d) True or false, if we estimated the $R^2$ for the population with another approach, the value would be exactly the same.
+(d) You are no longer doing a valid cross-validation if you change (choose all that apply):
 
-    - [ ] True
-    - [ ] False 
+    - [ ] How many iterations you want to do.
+    - [ ] How much data you want to use for each part of training vs. testing.
+    - [ ] Whether models are fitted to the entire sample instead of a part of the sample
+    - [ ] Whether models are tested on the training data instead of the testing data
