@@ -1,5 +1,5 @@
 ---
-title:  "Problem set 3"
+title:  "Problem set 4"
 subtitle: "due Monday, November 20 at 11:59pm"
 # author: 
 #     name: Katie Schuler
