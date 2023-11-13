@@ -74,6 +74,9 @@ website:
       - text: '---'
       - quizzes/quiz-02.qmd
       - quizzes/quiz-02-solutions.qmd
+      - text: '---'
+      - quizzes/quiz-03.qmd
+      - quizzes/quiz-03-solutions.qmd
 format:
   html:
     theme: cosmo
