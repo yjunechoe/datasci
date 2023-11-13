@@ -63,6 +63,7 @@ website:
     - psets/problem-set-03.qmd
     - text: Problem set 3 solutions
       url: https://colab.research.google.com/drive/1ckf5lO6tWXXk5POWsPSs0dr7ohLtjYUq?usp=sharing
+    - psets/problem-set-04.qmd
     - text: '---'
     - rubric.qmd
   - title: Quizzes
