@@ -37,7 +37,7 @@ Week | Day | Topic | Resources |
 | 11 | 11-07 | [Model reliability](/slides/model-reliability.qmd) | | 
 | 11 | 11-09 |  [Model reliability tutorial](https://docs.google.com/presentation/d/1q-6lQnfcA9LfLysMc5A7U6-g4aFDKRrmVoLh8X08S-4/edit?usp=sharing) | | 
 | 12 | 11-14 |  [Classification](https://docs.google.com/presentation/d/1NgfcytvWWOyobq0yE-56XFPvI2-IiBiLVQLAxLC7g1Y/edit?usp=sharing) | [reading](http://www.feat.engineering/important-concepts) | 
-| 12 | 11-16 |  tutorial / review | | 
+| 12 | 11-16 |  [Classification tutorial](https://docs.google.com/presentation/d/1Bu1OMc_ivGDWEOi2hA5eZTB8HJsJtIiU6FraIJDeEK4/edit?usp=sharing) | | 
 | 12 | 11-20 | [Problem set 4](/psets/problem-set-04.qmd) | | 
 | 13 | 11-21 |  **Class cancelled** | | 
 | 13 | 11-23 |  **No class, break** | | 
