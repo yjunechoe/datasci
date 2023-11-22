@@ -66,6 +66,8 @@ website:
     - text: Problem set 3 solutions
       url: https://colab.research.google.com/drive/1ckf5lO6tWXXk5POWsPSs0dr7ohLtjYUq?usp=sharing
     - psets/problem-set-04.qmd
+    - text: Problem set 4 solutions
+      url: https://colab.research.google.com/drive/1qrJkTLrxa-b-hnI1V3S4JHfS2y2w-9p6?usp=sharing
     - text: '---'
     - rubric.qmd
   - title: Quizzes
