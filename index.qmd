@@ -41,10 +41,10 @@ Week | Day | Topic | Resources |
 | 12 | 11-20 | [Problem set 4](/psets/problem-set-04.qmd) | | 
 | 13 | 11-21 |  **Class cancelled** | | 
 | 13 | 11-23 |  **No class, break** | | 
-| 14 | 11-28 | Inference | | 
+| 14 | 11-28 | Quiz 4 review | | [Practice quiz 4](labs/lab-08.qmd)
 | 14 | 11-30 | Quiz 4 (thursday!) | | 
 | 14 | 12-03 | Problem set 5 | | 
-| 15 | 12-05 | Feature engineering | | 
+| 15 | 12-05 | Inference | | 
 | 15 | 12-07 | Multilevel models | | 
 | 15 | 12-10 | Problem set 6 | | 
 
