@@ -17,16 +17,13 @@ library(tidymodels)
 theme_set(theme_gray(base_size = 16))
 set.seed(60)
 
-data <- tibble(
-    y = rnorm(1000, 5, 1), 
-    noise = rnorm(1000, 10, 4), 
-    x = y + 10 + noise
-)
+data_n10 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sample10.csv") 
+data_n200 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sample200.csv") 
 ```
 
 ## 1 Model reliability 
 
-a. As we collect more data, our paramter estimates
+a. As we collect more data, our parameter estimates
 
 ```{r}
 #| echo: false
@@ -42,7 +39,49 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-b. Each figure below plots 100 bootstrapped models. Which figure includes more data points? 
+b. Each figure below plots 100 bootstrapped models with data drawn from the same population. In one figure, the model is fit to 10 data points. In the other, each model is fit to 200 data points. Which figure shows the model fit to 200 data points? 
+
+```{r}
+#| echo: false
+#| layout-ncol: 2
+
+bootstrapped_fits <- data_n10 %>%
+  specify(y ~ x) %>%
+  generate(reps = 100, type = "bootstrap") %>%
+  fit()
+
+bootstrapped_fits_wide <- bootstrapped_fits %>%
+  spread(term, estimate)
+
+ggplot(
+  data = data_n10,
+  mapping = aes(x = x, y = y)
+) +
+  geom_point(alpha = 0) +
+  geom_abline(data = bootstrapped_fits_wide,
+     aes(slope =  x, intercept = intercept, group = replicate), alpha = 0.05)  +
+  labs(tag = "A")
+
+
+bootstrapped_fits <- data_n200 %>%
+  specify(y ~ x) %>%
+  generate(reps = 100, type = "bootstrap") %>%
+  fit()
+
+bootstrapped_fits_wide <- bootstrapped_fits %>%
+  spread(term, estimate)
+
+ggplot(
+  data = data_n200,
+  mapping = aes(x = x, y = y)
+) +
+  geom_point(alpha = 0) +
+  geom_abline(data = bootstrapped_fits_wide,
+     aes(slope =  x, intercept = intercept, group = replicate), alpha = 0.05)  +
+  #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, linewidth = 2) +
+  labs(tag = "B")
+
+```
 
 ```{r}
 #| echo: false
@@ -131,11 +170,7 @@ cat(longmcq(choices))
 
 a. The model `y ~ poly(x,2)` is plotted in which of the figures below? 
 
-
-
-
-
-b. Which of the equations below expresses a quadratic polynomial?  
+![](/include/figures/polys.png)
 
 ```{r}
 #| echo: false
@@ -143,10 +178,34 @@ b. Which of the equations below expresses a quadratic polynomial?
 
 # Define the answer choices
 choices <- c(
-    "A",
-    "B",
-    answer="C", 
-    "D"
+    "1",
+    "2",
+    answer="3", 
+    "4"
+)
+
+cat(longmcq(choices))
+```
+
+
+b. Which of the equations below expresses a quadratic polynomial model in R?  
+
+    1. `y ~ poly(x, 1)`
+    2. `y ~ poly(x, 2)`
+    3. `y ~ poly(x, 3)`
+    4. `y ~ poly(x, 4)`
+
+
+```{r}
+#| echo: false
+#| results: asis
+
+# Define the answer choices
+choices <- c(
+    "1",
+    answer ="2",
+    "3", 
+    "4"
 )
 
 cat(longmcq(choices))
@@ -222,6 +281,8 @@ cat(longmcq(choices))
 
 d. In the figure below, which aspect shows the response variable? 
 
+![](/include/figures/pquiz4-3d.png)
+
 ```{r}
 #| echo: false
 #| results: asis
@@ -237,7 +298,10 @@ choices <- c(
 cat(longmcq(choices))
 ```
 
-e. Which figure below could be a classification model? 
+e. Which figure below could show a plotted classification model? Choose all that apply.
+
+![](/include/figures/pquiz4-3e.png)
+
 
 ```{r}
 #| echo: false
@@ -245,9 +309,9 @@ e. Which figure below could be a classification model?
 
 # Define the answer choices
 choices <- c(
-    "Figure A",
-    answer ="Figure B",
-    "both"
+    answer = "Figure A",
+    answer = "Figure B",
+    answer = "Figure C"
 )
 
 cat(longmcq(choices))
@@ -271,7 +335,7 @@ Naive Bayes classifiers
 ```
 
 
-## Classification in R 
+## 4 Classification in R 
 
 a. We can impliment classification via `r mcq(c("linear regression", "cubic polynomials", answer =  "logistic regression", "nearest-neighbor regression", "all of the above"))`
 
@@ -320,6 +384,22 @@ cat(longmcq(choices))
 ```
 
 f. Which of the following fits a logistic regression model in R? Choose one.
+
+
+```r
+# code A
+glm(y ~ x, data = data, family = "binomial")
+
+# code B
+data %>%
+    specify(y ~ x) %>%
+    fit() 
+
+# code C 
+logistic_reg %>%
+    set_engine("glm") %>%
+    fit(y ~ x, data = data)
+```
 
 ```{r}
 #| echo: false
