@@ -8,9 +8,7 @@ subtitle: "Tuesdays and Thursdays COHN 402"
 - contact: [katie](mailto:kschuler@sas.upenn.edu), [june](mailto:yjchoe@sas.upenn.edu), [avinash](mailto:amgoss@sas.upenn.edu), [ravi](mailto:raviarya@sas.upenn.edu)
 - resources: [ed](https://edstem.org/us/courses/41903/discussion/), [canvas](https://canvas.upenn.edu/courses/1736107), [gradescope](https://www.gradescope.com/courses/561597), [colab](https://colab.research.google.com/#create=true&language=r)
 
-The course website is not available right now. Check back after Quiz 4 ends. 
 
-<!-- 
 Week | Day | Topic | Resources |
 |- |-|-----|----|
 | 1 | 08-28 | [Hello, world!](notes/hello-world.qmd) | [slides](/slides/hello-world.qmd)|  
@@ -49,4 +47,4 @@ Week | Day | Topic | Resources |
 | 15 | 12-05 | Inference | | 
 | 15 | 12-07 | Multilevel models | | 
 | 15 | 12-10 | Problem set 6 | | 
- -->
+
