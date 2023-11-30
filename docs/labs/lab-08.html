@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -363,16 +329,7 @@ window.onload = function() {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#model-reliability" id="toc-model-reliability" class="nav-link active" data-scroll-target="#model-reliability">1 Model reliability</a></li>
-  <li><a href="#nonlinear-models" id="toc-nonlinear-models" class="nav-link" data-scroll-target="#nonlinear-models">Nonlinear models</a></li>
-  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">3 Classification</a></li>
-  <li><a href="#classification-in-r" id="toc-classification-in-r" class="nav-link" data-scroll-target="#classification-in-r">4 Classification in R</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -407,206 +364,235 @@ window.onload = function() {
 
 </header>
 
-<section id="model-reliability" class="level2">
-<h2 class="anchored" data-anchor-id="model-reliability">1 Model reliability</h2>
-<ol type="a">
-<li>As we collect more data, our parameter estimates</li>
-</ol>
-<div id="radio_SPBEZTBJFS" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value="answer"> <span>become more reliable</span></label><label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value=""> <span>become less reliable</span></label><label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value=""> <span>stay the same</span></label>
-</div>
-<ol start="2" type="a">
-<li>Each figure below plots 100 bootstrapped models with data drawn from the same population. In one figure, the model is fit to 10 data points. In the other, each model is fit to 200 data points. Which figure shows the model fit to 200 data points?</li>
-</ol>
-<div class="cell quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="lab-08_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="lab-08_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</div>
-<div id="radio_PGLBGFAPEN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value=""> <span>Figure A</span></label><label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value="answer"> <span>Figure B</span></label><label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value=""> <span>Both figures have the same number of data points</span></label>
-</div>
-<ol start="3" type="a">
-<li>As we collect more data, what happens to the confidence interval around our parameter estimates?</li>
-</ol>
-<div id="radio_ZEABOPGFRT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value=""> <span>It gets bigger (wider)</span></label><label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value=""> <span>It stays the same</span></label><label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value="answer"> <span>It gets smaller (narrower)</span></label>
-</div>
-<ol start="4" type="a">
-<li>True or false, we can obtain confidence intervals around parameter estimates for models in the same we we did for point estimates like the mean.</li>
-</ol>
-<div id="radio_ZOGGNPVTTK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZOGGNPVTTK" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ZOGGNPVTTK" value=""> <span>False</span></label>
-</div>
-<ol start="5" type="a">
-<li>Model reliability asks how certain we can be about our parameter estimates. Why is there uncertainty around our parameter estimates?</li>
-</ol>
-<div class="cell">
-<details>
-<summary>answer</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Because we are interested in the model parameters that </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">best describe the population from which the sample was</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st"> drawn. Due to sampling error, we can expect some </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st"> variability in the model parameters."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ol start="6" type="a">
-<li>The figure below shows the model fit for a sample of 10 participants. Suppose we repeated our experiment with 10 new participants. True or false, fitting the same model to these new data would yield approximately the same parameter estimates.</li>
-</ol>
-<div id="radio_ZHHLXZCJSC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZHHLXZCJSC" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ZHHLXZCJSC" value="answer"> <span>False</span></label>
-</div>
-<ol start="7" type="a">
-<li>True or false, a model with high accuracy must also have high reliability.</li>
-</ol>
-<div id="radio_BSAKYDBJIN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BSAKYDBJIN" value=""> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_BSAKYDBJIN" value="answer"> <span>False</span></label>
-</div>
-</section>
-<section id="nonlinear-models" class="level2">
-<h2 class="anchored" data-anchor-id="nonlinear-models">Nonlinear models</h2>
-<ol type="a">
-<li>The model <code>y ~ poly(x,2)</code> is plotted in which of the figures below?</li>
-</ol>
-<p><img src="../include/figures/polys.png" class="img-fluid"></p>
-<div id="radio_TJMQMRFPZC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""> <span>1</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""> <span>2</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value="answer"> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""> <span>4</span></label>
-</div>
-<ol start="2" type="a">
-<li><p>Which of the equations below expresses a quadratic polynomial model in R?</p>
-<ol type="1">
-<li><code>y ~ poly(x, 1)</code></li>
-<li><code>y ~ poly(x, 2)</code></li>
-<li><code>y ~ poly(x, 3)</code></li>
-<li><code>y ~ poly(x, 4)</code></li>
-</ol></li>
-</ol>
-<div id="radio_RNKZINHWHR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""> <span>1</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value="answer"> <span>2</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""> <span>4</span></label>
-</div>
-<ol start="3" type="a">
-<li>True or false, <code>lm()</code> can be used to fit a linearized nonlinear model.</li>
-</ol>
-<div id="radio_IOTWJWYTAL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IOTWJWYTAL" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_IOTWJWYTAL" value=""> <span>False</span></label>
-</div>
-<ol start="4" type="a">
-<li><p>Fill in each blank below with the model building process best described by the definition:</p>
-<ul>
-<li><select class="webex-select"><option value="blank"></option><option value="">model specification</option><option value="answer">model fitting</option><option value="">model accuracy</option><option value="">model reliability</option></select> is finding the best fitting parameter estimates.</li>
-<li><select class="webex-select"><option value="blank"></option><option value="">model specification</option><option value="">model fitting</option><option value="">model accuracy</option><option value="answer">model reliability</option></select> is quantifying the uncertainty on the parameter estimates.</li>
-<li><select class="webex-select"><option value="blank"></option><option value="answer">model specification</option><option value="">model fitting</option><option value="">model accuracy</option><option value="">model reliability</option></select> is choosing the type of model and its functional form.</li>
-<li><select class="webex-select"><option value="blank"></option><option value="">model specification</option><option value="">model fitting</option><option value="answer">model accuracy</option><option value="">model reliability</option></select> is quantifying how well our model fits our data.</li>
-</ul></li>
-</ol>
-</section>
-<section id="classification" class="level2">
-<h2 class="anchored" data-anchor-id="classification">3 Classification</h2>
-<ol type="a">
-<li>Which of the following aspects of model building apply to classification models? (Choose all that apply)</li>
-</ol>
-<div id="radio_UUYJDJGFKP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"> <span>specify</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"> <span>fit</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"> <span>accuracy</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"> <span>reliability</span></label>
-</div>
-<ol start="2" type="a">
-<li>What is the difference between regression and classification?</li>
-</ol>
-<div class="cell">
-<details>
-<summary>answer</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Regression predicts a continuous response varaible, </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">classification predicts a discrete response variable"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ol start="3" type="a">
-<li>Which accuracy metric is best applied to classification models?</li>
-</ol>
-<div id="radio_LUNXAOMWQZ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""> <span>R squared</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""> <span>RMSE</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value="answer"> <span>Pecent correct</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""> <span>All of the above</span></label>
-</div>
-<ol start="4" type="a">
-<li>In the figure below, which aspect shows the response variable?</li>
-</ol>
-<p><img src="../include/figures/pquiz4-3d.png" class="img-fluid"></p>
-<div id="radio_KKNMHTMQQT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""> <span>x-axis</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""> <span>y-axis</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value="answer"> <span>color of points</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""> <span>blue line</span></label>
-</div>
-<ol start="5" type="a">
-<li>Which figure below could show a plotted classification model? Choose all that apply.</li>
-</ol>
-<p><img src="../include/figures/pquiz4-3e.png" class="img-fluid"></p>
-<div id="radio_TPPNGWNMAL" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"> <span>Figure A</span></label><label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"> <span>Figure B</span></label><label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"> <span>Figure C</span></label>
-</div>
-<ol start="6" type="a">
-<li>Name two kinds of linear classifiers</li>
-</ol>
-<div class="cell">
-<details>
-<summary>answer</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">"Any 2 of those mentioned in class: </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">Logistic regression</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">Linear discriminant analysis (LDA)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">Linear support vector machines (SVM)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">Nearest-prototype classifiers</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">Naive Bayes classifiers</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="classification-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="classification-in-r">4 Classification in R</h2>
-<ol type="a">
-<li><p>We can impliment classification via <select class="webex-select"><option value="blank"></option><option value="">linear regression</option><option value="">cubic polynomials</option><option value="answer">logistic regression</option><option value="">nearest-neighbor regression</option><option value="">all of the above</option></select></p></li>
-<li><p>True or false, in R, we can perform logistic regression with a generalized linear model.</p></li>
-</ol>
-<div id="radio_UAIGGRUSAT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UAIGGRUSAT" value="answer"> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_UAIGGRUSAT" value=""> <span>False</span></label>
-</div>
-<ol start="3" type="a">
-<li>What 3 elements do all GLMs have?</li>
-</ol>
-<div class="cell">
-<details>
-<summary>answer</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">"1. A particular distribution for modeling the response variable</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">2. A linear model </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">3. A link function</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<ol start="4" type="a">
-<li>What is the link function for logistic regression?</li>
-</ol>
-<div id="radio_BYDWKZJSWO" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value="answer"> <span>logistic function</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""> <span>polynomial expansion</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""> <span>log transformation</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""> <span>inverse transformation</span></label>
-</div>
-<ol start="6" type="a">
-<li>Which of the following fits a logistic regression model in R? Choose one.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code A</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># code B</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">specify</span>(y <span class="sc">~</span> x) <span class="sc">%&gt;%</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fit</span>() </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># code C </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>logistic_reg <span class="sc">%&gt;%</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_engine</span>(<span class="st">"glm"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fit</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="radio_SFZUYSYHKD" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""> <span>code A</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""> <span>code B</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""> <span>code C</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""> <span>code A and B only</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value="answer"> <span>all of the above</span></label>
-</div>
+<p>The practice quiz is not available right now. Check back after Quiz 4 ends.</p>
+<!-- 
+## 1 Model reliability 
+
+a. As we collect more data, our parameter estimates
 
 
-</section>
+<div class='webex-radiogroup' id='radio_SPBEZTBJFS'><label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value="answer"></input> <span>become more reliable</span></label><label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value=""></input> <span>become less reliable</span></label><label><input type="radio" autocomplete="off" name="radio_SPBEZTBJFS" value=""></input> <span>stay the same</span></label></div>
+
+
+b. Each figure below plots 100 bootstrapped models with data drawn from the same population. In one figure, the model is fit to 10 data points. In the other, each model is fit to 200 data points. Which figure shows the model fit to 200 data points? 
+
+
+::: {.cell layout-ncol="2"}
+::: {.cell-output-display}
+![](lab-08_files/figure-html/unnamed-chunk-3-1.png){width=672}
+:::
+
+::: {.cell-output-display}
+![](lab-08_files/figure-html/unnamed-chunk-3-2.png){width=672}
+:::
+:::
+
+<div class='webex-radiogroup' id='radio_PGLBGFAPEN'><label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value=""></input> <span>Figure A</span></label><label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value="answer"></input> <span>Figure B</span></label><label><input type="radio" autocomplete="off" name="radio_PGLBGFAPEN" value=""></input> <span>Both figures have the same number of data points</span></label></div>
+
+
+c. As we collect more data, what happens to the confidence interval around our parameter estimates? 
+
+
+<div class='webex-radiogroup' id='radio_ZEABOPGFRT'><label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value=""></input> <span>It gets bigger (wider)</span></label><label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value=""></input> <span>It stays the same</span></label><label><input type="radio" autocomplete="off" name="radio_ZEABOPGFRT" value="answer"></input> <span>It gets smaller (narrower)</span></label></div>
+
+
+d. True or false, we can obtain confidence intervals around parameter estimates for models in the same we we did for point estimates like the mean. 
+
+
+<div class='webex-radiogroup' id='radio_ZOGGNPVTTK'><label><input type="radio" autocomplete="off" name="radio_ZOGGNPVTTK" value="answer"></input> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ZOGGNPVTTK" value=""></input> <span>False</span></label></div>
+
+
+e. Model reliability asks how certain we can be about our parameter estimates. Why is there uncertainty around our parameter estimates? 
+
+
+::: {.cell}
+
+```{.r .cell-code  code-fold="true" code-summary="answer"}
+"Because we are interested in the model parameters that 
+best describe the population from which the sample was
+ drawn. Due to sampling error, we can expect some 
+ variability in the model parameters."
+```
+:::
+
+
+f. The figure below shows the model fit for a sample of 10 participants. Suppose we repeated our experiment with 10 new participants. True or false, fitting the same model to these new data would yield approximately the same parameter estimates. 
+
+
+<div class='webex-radiogroup' id='radio_ZHHLXZCJSC'><label><input type="radio" autocomplete="off" name="radio_ZHHLXZCJSC" value=""></input> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_ZHHLXZCJSC" value="answer"></input> <span>False</span></label></div>
+
+
+g. True or false, a model with high accuracy must also have high reliability.
+
+
+<div class='webex-radiogroup' id='radio_BSAKYDBJIN'><label><input type="radio" autocomplete="off" name="radio_BSAKYDBJIN" value=""></input> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_BSAKYDBJIN" value="answer"></input> <span>False</span></label></div>
+
+
+
+## Nonlinear models 
+
+a. The model `y ~ poly(x,2)` is plotted in which of the figures below? 
+
+![](/include/figures/polys.png)
+
+
+<div class='webex-radiogroup' id='radio_TJMQMRFPZC'><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""></input> <span>1</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""></input> <span>2</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value="answer"></input> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_TJMQMRFPZC" value=""></input> <span>4</span></label></div>
+
+
+
+b. Which of the equations below expresses a quadratic polynomial model in R?  
+
+    1. `y ~ poly(x, 1)`
+    2. `y ~ poly(x, 2)`
+    3. `y ~ poly(x, 3)`
+    4. `y ~ poly(x, 4)`
+
+
+
+<div class='webex-radiogroup' id='radio_RNKZINHWHR'><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""></input> <span>1</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value="answer"></input> <span>2</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""></input> <span>3</span></label><label><input type="radio" autocomplete="off" name="radio_RNKZINHWHR" value=""></input> <span>4</span></label></div>
+
+
+c. True or false, `lm()` can be used to fit a linearized nonlinear model. 
+
+
+<div class='webex-radiogroup' id='radio_IOTWJWYTAL'><label><input type="radio" autocomplete="off" name="radio_IOTWJWYTAL" value="answer"></input> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_IOTWJWYTAL" value=""></input> <span>False</span></label></div>
+
+
+d. Fill in each blank below with the model building process best described by the definition: 
+
+    - <select class='webex-select'><option value='blank'></option><option value=''>model specification</option><option value='answer'>model fitting</option><option value=''>model accuracy</option><option value=''>model reliability</option></select> is finding the best fitting parameter estimates.
+    - <select class='webex-select'><option value='blank'></option><option value=''>model specification</option><option value=''>model fitting</option><option value=''>model accuracy</option><option value='answer'>model reliability</option></select> is quantifying the uncertainty on the parameter estimates.
+    - <select class='webex-select'><option value='blank'></option><option value='answer'>model specification</option><option value=''>model fitting</option><option value=''>model accuracy</option><option value=''>model reliability</option></select> is choosing the type of model and its functional form.
+    - <select class='webex-select'><option value='blank'></option><option value=''>model specification</option><option value=''>model fitting</option><option value='answer'>model accuracy</option><option value=''>model reliability</option></select> is quantifying how well our model fits our data. 
+
+
+## 3 Classification 
+
+a. Which of the following aspects of model building apply to classification models? (Choose all that apply)
+
+
+<div class='webex-radiogroup' id='radio_UUYJDJGFKP'><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"></input> <span>specify</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"></input> <span>fit</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"></input> <span>accuracy</span></label><label><input type="radio" autocomplete="off" name="radio_UUYJDJGFKP" value="answer"></input> <span>reliability</span></label></div>
+
+
+b. What is the difference between regression and classification? 
+
+
+::: {.cell}
+
+```{.r .cell-code  code-fold="true" code-summary="answer"}
+"Regression predicts a continuous response varaible, 
+classification predicts a discrete response variable"
+```
+:::
+
+
+c. Which accuracy metric is best applied to classification models? 
+
+
+<div class='webex-radiogroup' id='radio_LUNXAOMWQZ'><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""></input> <span>R squared</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""></input> <span>RMSE</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value="answer"></input> <span>Pecent correct</span></label><label><input type="radio" autocomplete="off" name="radio_LUNXAOMWQZ" value=""></input> <span>All of the above</span></label></div>
+
+
+d. In the figure below, which aspect shows the response variable? 
+
+![](/include/figures/pquiz4-3d.png)
+
+
+<div class='webex-radiogroup' id='radio_KKNMHTMQQT'><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""></input> <span>x-axis</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""></input> <span>y-axis</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value="answer"></input> <span>color of points</span></label><label><input type="radio" autocomplete="off" name="radio_KKNMHTMQQT" value=""></input> <span>blue line</span></label></div>
+
+
+e. Which figure below could show a plotted classification model? Choose all that apply.
+
+![](/include/figures/pquiz4-3e.png)
+
+
+
+<div class='webex-radiogroup' id='radio_TPPNGWNMAL'><label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"></input> <span>Figure A</span></label><label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"></input> <span>Figure B</span></label><label><input type="radio" autocomplete="off" name="radio_TPPNGWNMAL" value="answer"></input> <span>Figure C</span></label></div>
+
+
+
+f. Name two kinds of linear classifiers
+
+
+::: {.cell}
+
+```{.r .cell-code  code-fold="true" code-summary="answer"}
+"Any 2 of those mentioned in class: 
+Logistic regression
+Linear discriminant analysis (LDA)
+Linear support vector machines (SVM)
+Nearest-prototype classifiers
+Naive Bayes classifiers
+"
+```
+:::
+
+
+
+## 4 Classification in R 
+
+a. We can impliment classification via <select class='webex-select'><option value='blank'></option><option value=''>linear regression</option><option value=''>cubic polynomials</option><option value='answer'>logistic regression</option><option value=''>nearest-neighbor regression</option><option value=''>all of the above</option></select>
+
+b. True or false, in R, we can perform logistic regression with a generalized linear model. 
+
+
+<div class='webex-radiogroup' id='radio_UAIGGRUSAT'><label><input type="radio" autocomplete="off" name="radio_UAIGGRUSAT" value="answer"></input> <span>True</span></label><label><input type="radio" autocomplete="off" name="radio_UAIGGRUSAT" value=""></input> <span>False</span></label></div>
+
+
+c. What 3 elements do all GLMs have? 
+
+
+::: {.cell}
+
+```{.r .cell-code  code-fold="true" code-summary="answer"}
+"1. A particular distribution for modeling the response variable
+2. A linear model 
+3. A link function
+"
+```
+:::
+
+
+d. What is the link function for logistic regression? 
+
+
+<div class='webex-radiogroup' id='radio_BYDWKZJSWO'><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value="answer"></input> <span>logistic function</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""></input> <span>polynomial expansion</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""></input> <span>log transformation</span></label><label><input type="radio" autocomplete="off" name="radio_BYDWKZJSWO" value=""></input> <span>inverse transformation</span></label></div>
+
+
+f. Which of the following fits a logistic regression model in R? Choose one.
+
+
+```r
+# code A
+glm(y ~ x, data = data, family = "binomial")
+
+# code B
+data %>%
+    specify(y ~ x) %>%
+    fit() 
+
+# code C 
+logistic_reg %>%
+    set_engine("glm") %>%
+    fit(y ~ x, data = data)
+```
+
+
+<div class='webex-radiogroup' id='radio_SFZUYSYHKD'><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""></input> <span>code A</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""></input> <span>code B</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""></input> <span>code C</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value=""></input> <span>code A and B only</span></label><label><input type="radio" autocomplete="off" name="radio_SFZUYSYHKD" value="answer"></input> <span>all of the above</span></label></div>
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -21,6 +21,9 @@ data_n10 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sampl
 data_n200 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sample200.csv") 
 ```
 
+The practice quiz is not available right now. Check back after Quiz 4 ends.
+
+<!-- 
 ## 1 Model reliability 
 
 a. As we collect more data, our parameter estimates
@@ -428,4 +431,4 @@ cat(longmcq(choices))
 
 
 
-
+ -->

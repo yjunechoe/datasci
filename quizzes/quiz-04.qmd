@@ -1,0 +1,237 @@
+---
+title:  "Quiz 4"
+subtitle: "Data Science for Studying Language & the Mind"
+# author: 
+#     name: Katie Schuler
+#     affiliation: University of Pennsylvania
+number-sections: false
+format: 
+  html: default
+  pdf: default
+
+---
+
+::: {.callout-tip}
+## Estimated time: 20 minutes
+
+You may need more time if programming is completely new to you, or less if you have some experience already.
+:::
+
+**Instructions**
+
+- The quiz is closed book/note/computer/phone
+- If you need to use the restroom, leave your exam and phone with the TA
+- You have 60 minutes to complete the quiz. If you finish early, you may turn in your quiz and leave early
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+theme_set(theme_classic(base_size = 16))
+set.seed(60)
+
+data_n10 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sample10.csv") 
+data_n200 <- read_csv("http://kathrynschuler.com/datasets/model-reliability-sample200.csv") 
+```
+
+\newcommand\answerbox{%%
+    \framebox(400,50){}}
+
+\begin{flushleft}
+\makebox[12cm]{\textbf{Name}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{PennKey}:\ \hrulefill}
+\medskip
+\makebox[12cm]{\textbf{Lab section TA}:\ \hrulefill}
+\end{flushleft}
+
+\begin{center}
+\textbf{Score by topic area}\\
+\begin{tabular}{|l|l|}\hline
+Model Reliability   \\ \hline
+Nonlinear Models &  \\ \hline
+Classification & \\ \hline
+Classification in R & \\ \hline
+Total & \\ \hline
+
+\end{tabular}
+\end{center}
+
+\clearpage
+
+
+## 1 Model reliability 
+
+
+(a) True or false, as we collect more data, the confidence interval around our parameter estimates gets bigger (wider). 
+
+    - [ ] True
+    - [ ] False
+
+(b) Model reliability asks how certain we can be about our parameter estimates. Why is there uncertainty around our parameter estimates? 
+
+    \answerbox
+
+(c) True or false, a model with low reliability also has low accuracy. 
+
+    - [ ] True
+    - [ ] False
+
+(d) Suppose we conduct an experiment by drawing a random sample from the population. We fit a linear model to these data. Then we repeat our experiment 10 times, fitting the same model each time. Which figure could show the fitted models for the 10 experiments? Choose all that apply.
+
+
+    ```{r}
+    #| echo: false
+    #| layout-ncol: 3
+
+    bootstrapped_fits <- data_n10 %>%
+    specify(y ~ x) %>%
+    generate(reps = 10, type = "bootstrap") %>%
+    fit()
+
+    bootstrapped_fits_wide <- bootstrapped_fits %>%
+    spread(term, estimate)
+
+    ggplot(
+    data = data_n10,
+    mapping = aes(x = x, y = y)
+    ) +
+    geom_point(alpha = 0) +
+    geom_abline(data = bootstrapped_fits_wide,
+        aes(slope =  x, intercept = intercept, group = replicate))  +
+    labs(tag = "A", title = "10 different model fits")
+
+
+    bootstrapped_fits <- data_n200 %>%
+    specify(y ~ x) %>%
+    generate(reps = 10, type = "bootstrap") %>%
+    fit()
+
+    bootstrapped_fits_wide <- bootstrapped_fits %>%
+    spread(term, estimate)
+
+    ggplot(
+    data = data_n200,
+    mapping = aes(x = x, y = y)
+    ) +
+    geom_point(alpha = 0) +
+    geom_abline(data = bootstrapped_fits_wide,
+        aes(slope =  x, intercept = intercept, group = replicate))  +
+    #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, linewidth = 2) +
+    labs(tag = "B", title = "10 similar model fits")
+
+    ggplot(
+    data = data_n200,
+    mapping = aes(x = x, y = y)
+    ) +
+    geom_point(alpha = 0) +
+    geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 2, formula = "y ~ x") +
+    #geom_smooth(method = "lm", formula = "y ~ x", se = FALSE, linewidth = 2) +
+    labs(tag = "C", title = "10 identical model fits")
+
+    ```
+
+
+    - [ ] Figure A
+    - [ ] Figure B
+    - [ ] Figure C
+
+\clearpage
+
+
+## 2. Nonlinear models 
+
+(a) Circle the figure below that plots the model represented by the equation $y = \beta_0 + \beta_1x_1 + \beta_2x_1^2$
+
+    ![](/include/figures/polys.png)
+
+
+(b) Which of the model specifications expresses a cubic polynomial model in R? 
+
+    - [ ] `y ~ poly(x, 1)`
+    - [ ] `y ~ poly(x, 2)`
+    - [ ] `y ~ poly(x, 3)`
+    - [ ] `y ~ poly(x, 4)`
+
+(c) True or false, we can use `lm()` to fit a quadratic polynomial.
+
+    - [ ] `True`
+    - [ ] `False` 
+
+(d) Which of the following aspects of model building apply to nonlinear models? Choose all that apply.
+
+    - [ ] model specification
+    - [ ] model fitting 
+    - [ ] model accuracy 
+    - [ ] model reliability 
+
+\clearpage
+
+
+## 3. Classification 
+
+(a) True or false, logistic regression is a linear classificaiton model. 
+
+    - [ ] True
+    - [ ] False
+
+(b) What is the difference between regression and classification? 
+
+    \answerbox 
+
+(c) What accuracy metric(s) have we been applying to classification models? Choose all that apply.
+
+    - [ ] Percent correct 
+    - [ ] $R^2$
+    - [ ] RMSE 
+    - [ ] Sum of squared error
+
+(d) True or false, each of the following figures can be modeled with a linear classifier. 
+
+    ![](/include/figures/pquiz4-3e.png)
+
+    - [ ] True
+    - [ ] False 
+
+\clearpage
+
+## 4. Classification in R 
+
+(a) Which of the following can be used to fit a logistic regression model in R? Choose all that apply.
+
+    - [ ] `lm()`
+    - [ ] `glm()`
+    - [ ] `poly()`
+    - [ ] `log()`
+
+(b) True or false, the link function in a generalized linear model **must be** the logistic function.
+
+    - [ ] True
+    - [ ] False
+
+(c) Which of the following fits a logistic regression model in R? Choose all that apply. 
+
+    ```r
+    # code A
+    glm(y ~ x, data = data, family = "binomial")
+
+    # code B
+    data %>%
+        specify(y ~ x) %>%
+        fit() 
+
+    # code C 
+    linear_reg %>%
+        set_engine("lm") %>%
+        fit(y ~ x, data = data)
+    ```
+
+    - [ ] Code A
+    - [ ] Code B 
+    - [ ] Code C 
+
+(d) What 3 elements do all generalized linear models have? 
+
+    \answerbox 
