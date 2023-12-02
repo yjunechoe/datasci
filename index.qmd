@@ -43,7 +43,7 @@ Week | Day | Topic | Resources |
 | 13 | 11-23 |  **No class, break** | | 
 | 14 | 11-28 | [Quiz 4 review](/labs/lab-08.qmd) | | 
 | 14 | 11-30 | Quiz 4 (thursday!) | | 
-| 14 | 12-03 | Problem set 5 | | 
+| 14 | 12-03 | [Problem set 5](/psets/problem-set-05.qmd) | | 
 | 15 | 12-05 | Inference | | 
 | 15 | 12-07 | Multilevel models | | 
 | 15 | 12-10 | Problem set 6 | | 
