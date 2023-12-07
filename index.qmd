@@ -44,7 +44,7 @@ Week | Day | Topic | Resources |
 | 14 | 11-28 | [Quiz 4 review](/labs/lab-08.qmd) | | 
 | 14 | 11-30 | Quiz 4 (thursday!) | | 
 | 14 | 12-03 | [Problem set 5](/psets/problem-set-05.qmd) | | 
-| 15 | 12-05 | Inference | | 
-| 15 | 12-07 | [Inference (and more)](https://docs.google.com/presentation/d/1ChPMvUpOhJRwIhrlTDD75pqL-rcschMxIbKniJbaqdQ/edit?usp=sharing) | | 
+| 15 | 12-05 | **Class cancelled**| | 
+| 15 | 12-07 | [Inference (and more)](https://docs.google.com/presentation/d/1ChPMvUpOhJRwIhrlTDD75pqL-rcschMxIbKniJbaqdQ/edit?usp=sharing) | 
 | 15 | 12-10 | Problem set 6 | | 
 
