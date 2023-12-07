@@ -453,7 +453,7 @@ window.onload = function() {
   <li><a href="#problem-3-model-fitting" id="toc-problem-3-model-fitting" class="nav-link" data-scroll-target="#problem-3-model-fitting">Problem 3: Model Fitting</a></li>
   <li><a href="#problem-4-model-accuracy" id="toc-problem-4-model-accuracy" class="nav-link" data-scroll-target="#problem-4-model-accuracy">Problem 4: Model Accuracy</a></li>
   <li><a href="#problem-5-model-reliability" id="toc-problem-5-model-reliability" class="nav-link" data-scroll-target="#problem-5-model-reliability">Problem 5: Model Reliability</a></li>
-  <li><a href="#problem-6-visualize-your-model" id="toc-problem-6-visualize-your-model" class="nav-link" data-scroll-target="#problem-6-visualize-your-model">Problem 6: Visualize your model</a></li>
+  <li><a href="#problem-6-model-predictions" id="toc-problem-6-model-predictions" class="nav-link" data-scroll-target="#problem-6-model-predictions">Problem 6: Model Predictions</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="problem-set-05.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -518,14 +518,14 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 <ul>
 <li>Load the dataset and perform exploratory data analysis</li>
 <li>Examine the dataset’s structure (<code>glimpse</code>), summary statistics, and handle missing values if any.</li>
-<li>Visualize key relationships between variables using appropriate plots (scatter plots, histograms, etc.).</li>
+<li>Visualize the <em>pairwise relationship</em> between the response variable and each of the three explanatory variables using appropriate plots (scatter plots, histograms, etc.).</li>
 </ul>
 </section>
 <section id="problem-2-model-specification" class="level2">
 <h2 class="anchored" data-anchor-id="problem-2-model-specification">Problem 2: Model Specification</h2>
 <ul>
 <li>Choose an appropriate type of model and explain why you’ve selected this type (e.g.&nbsp;regression, classification)</li>
-<li>Specify the model with an equation (e.g.&nbsp;<span class="math inline">\(y = \beta_0 +  beta_1x_1\)</span>). Note that you can create math equations in google colab text blocks by placing the equation between two dollar signs: <code>$y = \beta_0 + beta_1x_1$</code></li>
+<li>Specify the model with an equation (e.g.&nbsp;<span class="math inline">\(y = \beta_0 +  \beta_1x_1\)</span>). Note that you can create math equations in google colab text blocks by placing the equation between two dollar signs: <code>$y = \beta_0 + \beta_1x_1$</code></li>
 <li>Specify the model in R code (e.g.&nbsp;<code>y ~ x</code>)</li>
 </ul>
 </section>
@@ -533,17 +533,16 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 <h2 class="anchored" data-anchor-id="problem-3-model-fitting">Problem 3: Model Fitting</h2>
 <ul>
 <li>Fit the model you specified in R</li>
-<li>Remember that the model fit also gives you predictions!</li>
 <li>What does the model tell us? How is realization of NP/PP impacted by the animacy of the theme (<code>AnimacyOfTheme</code>), the animacy of the recipient (<code>AnimacyOfRec</code>), and the length of the theme (<code>LengthofTheme</code>)?</li>
-<li>Convert to probabilities where appropriate.</li>
+<li>What is the meaning of the intercept? Convert the estimate for the intercept to probability.</li>
 </ul>
 </section>
 <section id="problem-4-model-accuracy" class="level2">
 <h2 class="anchored" data-anchor-id="problem-4-model-accuracy">Problem 4: Model Accuracy</h2>
 <ul>
 <li>Assess the accuracy of the model using cross-validation</li>
-<li>Take care to choose use <code>collect_metrics()</code> to report any accuracy metrics</li>
-<li>Add text explaining how accurate your model is and what this means.</li>
+<li>Take care to use <code>collect_metrics()</code> to report any accuracy metrics</li>
+<li>Add text explaining how accurate your model is, looking at the mean and standard deviation of accuracy.</li>
 </ul>
 </section>
 <section id="problem-5-model-reliability" class="level2">
@@ -553,12 +552,38 @@ Upload your <code>.ipynb</code> notebook to gradescope by 11:59pm on the due dat
 <li>Get a 95% confidence interval around the parameter estimates of your model.</li>
 <li>Visualize your bootstrapped distribution and shade the confidence interval.</li>
 </ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you get the error <code>contrasts can be applied only to factors with 2 or more levels</code>, try the bootstrap with a seed of 2 (<code>set.seed(2)</code>) and a reduced number of replicates <code>reps = 500</code>!</p>
+</div>
+</div>
+</div>
 </section>
-<section id="problem-6-visualize-your-model" class="level2">
-<h2 class="anchored" data-anchor-id="problem-6-visualize-your-model">Problem 6: Visualize your model</h2>
+<section id="problem-6-model-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6-model-predictions">Problem 6: Model Predictions</h2>
+<p>Using the coefficients returned from your model from Problem 3, get the predicted probability of <code>PP</code> or <code>NP</code> (your choice) for the following:</p>
 <ul>
-<li>Create a visualization to plot your model’s fit (<code>geom_smooth()</code>)</li>
+<li><code>AnimacyOfTheme</code> and <code>AnimacyOfRec</code> are both animate, and <code>LengthOfTheme</code> is 5</li>
+<li><code>AnimacyOfTheme</code> is inanimate, <code>AnimacyOfRec</code> is animate, and <code>LengthOfTheme</code> is 3</li>
 </ul>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>A previous version of Problem 6 stated:</p>
+<blockquote class="blockquote">
+<p>Create a visualization to plot your model’s fit (<code>geom_smooth()</code>)</p>
+</blockquote>
+<p>You have a choice to do either version of Problem 6.</p>
+</div>
+</div>
+</div>
 
 
 </section>

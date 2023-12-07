@@ -46,25 +46,23 @@ Dative alternation refers to the fact that some sentences can have two different
 
    - Load the dataset and perform exploratory data analysis
    - Examine the dataset's structure (`glimpse`), summary statistics, and handle missing values if any.
-   - Visualize key relationships between variables using appropriate plots (scatter plots, histograms, etc.).
+   - Visualize the *pairwise relationship* between the response variable and each of the three explanatory variables using appropriate plots (scatter plots, histograms, etc.).
 
 ## Problem 2: Model Specification
    - Choose an appropriate type of model and explain why you've selected this type (e.g. regression, classification)
    - Specify the model with an equation (e.g. $y = \beta_0 + 
-   beta_1x_1$). Note that you can create math equations in google colab text blocks by placing the equation between two dollar signs: `$y = \beta_0 + beta_1x_1$`
+   \beta_1x_1$). Note that you can create math equations in google colab text blocks by placing the equation between two dollar signs: `$y = \beta_0 + \beta_1x_1$`
    - Specify the model in R code (e.g. `y ~ x`)
 
 ## Problem 3: Model Fitting
    - Fit the model you specified in R
-   - Remember that the model fit also gives you predictions! 
    - What does the model tell us? How is realization of NP/PP impacted by the animacy of the theme (`AnimacyOfTheme`), the animacy of the recipient (`AnimacyOfRec`), and the length of the theme (`LengthofTheme`)? 
-   - Convert to probabilities where appropriate. 
+   - What is the meaning of the intercept? Convert the estimate for the intercept to probability. 
 
 ## Problem 4: Model Accuracy
-
    - Assess the accuracy of the model using cross-validation
-   - Take care to choose use `collect_metrics()` to report any accuracy metrics 
-   - Add text explaining how accurate your model is and what this means. 
+   - Take care to use `collect_metrics()` to report any accuracy metrics 
+   - Add text explaining how accurate your model is, looking at the mean and standard deviation of accuracy.
 
 ## Problem 5: Model Reliability
 
@@ -72,6 +70,20 @@ Dative alternation refers to the fact that some sentences can have two different
 - Get a 95% confidence interval around the parameter estimates of your model. 
 - Visualize your bootstrapped distribution and shade the confidence interval.
 
-## Problem 6:  Visualize your model 
-   - Create a visualization to plot your model's fit (`geom_smooth()`)
+::: {.callout-note}
+If you get the error `contrasts can be applied only to factors with 2 or more levels`, try the bootstrap with a seed of 2 (`set.seed(2)`) and a reduced number of replicates `reps = 500`!
+:::
 
+## Problem 6:  Model Predictions
+Using the coefficients returned from your model from Problem 3, get the predicted probability of `PP` or `NP` (your choice) for the following:
+
+- `AnimacyOfTheme` and `AnimacyOfRec` are both animate, and `LengthOfTheme` is 5
+- `AnimacyOfTheme` is inanimate, `AnimacyOfRec` is animate, and `LengthOfTheme` is 3
+
+::: {.callout-note}
+A previous version of Problem 6 stated:
+
+> Create a visualization to plot your model’s fit (`geom_smooth()`)
+
+You have a choice to do either version of Problem 6.
+:::
