@@ -54,6 +54,7 @@ website:
       - labs/lab-07.qmd
       - text: "Lab 7: Classification (Colab notebook)"
         url: https://colab.research.google.com/drive/1VhCLfcai1jCOfEFlRYLKgSC7EP9Kcgxj?usp=sharing
+      - labs/lab-08.qmd
   - title: Problem sets
     contents:
     - psets/problem-set-01.qmd
@@ -69,6 +70,8 @@ website:
     - text: Problem set 4 solutions
       url: https://colab.research.google.com/drive/1qrJkTLrxa-b-hnI1V3S4JHfS2y2w-9p6?usp=sharing
     - psets/problem-set-05.qmd
+    - text: Problem set 5 solutions
+      url: https://colab.research.google.com/drive/1XGCr1hrU3uHFXuPlPUd8qTPjILteGMid?usp=sharing
     - psets/problem-set-06.qmd
     - text: '---'
     - rubric.qmd
